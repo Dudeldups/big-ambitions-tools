@@ -39,6 +39,9 @@ export default function RootLayout({
                 <li>
                   <NavLink href="/about">About</NavLink>
                 </li>
+                <li>
+                  <NavLink href="/contact">Contact</NavLink>
+                </li>
               </ul>
             </nav>
           </header>
