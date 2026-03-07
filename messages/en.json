@@ -69,7 +69,9 @@
     "Clothing (Classic Expensive Male)": "Clothing (Classic Expensive Male)",
     "Clothing (Classic Expensive Female)": "Clothing (Classic Expensive Female)",
     "Clothing (Modern Expensive Male)": "Clothing (Modern Expensive Male)",
-    "Clothing (Modern Expensive Female)": "Clothing (Modern Expensive Female)",
+    "Clothing (Modern Expensive Female)": "Clothing (Modern Expensive Female)"
+  },
+  "ingredients": {
     "Battery": "Battery",
     "Capacitors": "Capacitors",
     "Copper Clad Laminate": "Copper Clad Laminate",
@@ -117,6 +119,8 @@
     "Tea Leaves": "Tea Leaves",
     "Vermouth": "Vermouth",
     "Yeast": "Yeast",
+    "Bag of Lettuce": "Bag of Lettuce",
+    "Bag of Tomatoes": "Bag of Tomatoes",
     "Baking Mix": "Baking Mix",
     "Butter": "Butter",
     "Cheese": "Cheese",
