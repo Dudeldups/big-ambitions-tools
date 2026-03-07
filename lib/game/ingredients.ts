@@ -15,7 +15,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 15.6,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Maritime Freight Line"],
   },
   Capacitors: {
@@ -24,7 +24,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 5.85,
     },
-    boxAmount: 300,
+    boxAmount: 1000,
     importers: ["Maritime Freight Line"],
   },
   "Copper Clad Laminate": {
@@ -33,7 +33,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 7.8,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Maritime Freight Line"],
   },
   "Fabric (Cheap)": {
@@ -42,7 +42,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 5.85,
     },
-    boxAmount: 300,
+    boxAmount: 150,
     importers: ["Maritime Freight Line"],
   },
   "Fabric (Expensive)": {
@@ -51,7 +51,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 11.7,
     },
-    boxAmount: 300,
+    boxAmount: 150,
     importers: ["Maritime Freight Line"],
   },
   Glass: {
@@ -60,7 +60,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Maritime Freight Line", "Global Harvest Traders"],
   },
   "Integrated Circuits": {
@@ -69,7 +69,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 9.75,
     },
-    boxAmount: 300,
+    boxAmount: 1000,
     importers: ["Maritime Freight Line"],
   },
   "Metal Band": {
@@ -78,7 +78,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.59,
     },
-    boxAmount: 300,
+    boxAmount: 150,
     importers: ["Maritime Freight Line"],
   },
   Microphone: {
@@ -87,7 +87,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 7.8,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Maritime Freight Line"],
   },
   Plastic: {
@@ -96,7 +96,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.59,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Maritime Freight Line", "Global Harvest Traders"],
   },
   Resistors: {
@@ -105,7 +105,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 3.9,
     },
-    boxAmount: 300,
+    boxAmount: 1000,
     importers: ["Maritime Freight Line"],
   },
   Speaker: {
@@ -114,7 +114,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 5.85,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Maritime Freight Line"],
   },
   Transistors: {
@@ -123,7 +123,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 7.8,
     },
-    boxAmount: 300,
+    boxAmount: 1000,
     importers: ["Maritime Freight Line"],
   },
   "Uncut Gems (Cheap)": {
@@ -132,7 +132,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 39,
     },
-    boxAmount: 300,
+    boxAmount: 150,
     importers: ["Maritime Freight Line"],
   },
   "Uncut Gems (Expensive)": {
@@ -141,7 +141,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 438.75,
     },
-    boxAmount: 300,
+    boxAmount: 150,
     importers: ["Maritime Freight Line"],
   },
   "Cigar Paper": {
@@ -150,7 +150,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.98,
     },
-    boxAmount: 3000,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Cigarette Paper": {
@@ -159,7 +159,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 3000,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   Clay: {
@@ -168,7 +168,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 2.44,
     },
-    boxAmount: 300,
+    boxAmount: 150,
     importers: ["Global Harvest Traders"],
   },
   "Metal Wire": {
@@ -177,7 +177,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 3.41,
     },
-    boxAmount: 0,
+    boxAmount: 500,
     importers: ["Global Harvest Traders"],
   },
   "Paper Ream": {
@@ -195,7 +195,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 0,
+    boxAmount: 500,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Apple)": {
@@ -204,7 +204,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Banana)": {
@@ -213,7 +213,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Carrot)": {
@@ -222,7 +222,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Flower Cheap)": {
@@ -231,7 +231,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 1.46,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Flower Expensive)": {
@@ -240,7 +240,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 2.93,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Lettuce)": {
@@ -249,7 +249,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Pear)": {
@@ -258,7 +258,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Tomato)": {
@@ -267,7 +267,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 1000,
     importers: ["Global Harvest Traders"],
   },
   Tobacco: {
@@ -276,7 +276,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Global Harvest Traders"],
   },
   Water: {
@@ -285,7 +285,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Global Harvest Traders", "Aquatic Bay Cargo"],
   },
   Barley: {
@@ -294,7 +294,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.23,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Blue Agave": {
@@ -303,7 +303,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.12,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Caffeine Extract": {
@@ -312,7 +312,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 0,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Carbon Dioxide": {
@@ -321,7 +321,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 1500,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Cola Flavoring": {
@@ -330,7 +330,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.02,
     },
-    boxAmount: 1500,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Flavor Syrup": {
@@ -339,7 +339,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.04,
     },
-    boxAmount: 0,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Grapes: {
@@ -348,7 +348,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.34,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Ground Coffee Beans": {
@@ -357,7 +357,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.12,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Hair Care Formula": {
@@ -366,7 +366,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 2.44,
     },
-    boxAmount: 40,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Hops: {
@@ -375,7 +375,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.02,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Juniper Berries": {
@@ -384,7 +384,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.15,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Lime Juice": {
@@ -393,7 +393,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.02,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Sugar: {
@@ -402,7 +402,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.05,
     },
-    boxAmount: 3000,
+    boxAmount: 1500,
     importers: ["Aquatic Bay Cargo", "Lunar Tide Shipments"],
   },
   "Tea Leaves": {
@@ -411,7 +411,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.12,
     },
-    boxAmount: 0,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Vermouth: {
@@ -420,7 +420,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Yeast: {
@@ -429,7 +429,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 150,
+    boxAmount: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Bag of Lettuce": {
@@ -438,7 +438,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.37,
     },
-    boxAmount: 150,
+    boxAmount: 250,
     importers: ["Lunar Tide Shipments"],
   },
   "Bag of Tomatoes": {
@@ -447,7 +447,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.35,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Baking Mix": {
@@ -456,7 +456,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Butter: {
@@ -465,7 +465,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 0,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Cheese: {
@@ -474,7 +474,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.31,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Chicken Breast": {
@@ -483,7 +483,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.34,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Dough: {
@@ -492,7 +492,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.54,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Ground Beef": {
@@ -501,7 +501,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.54,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Milk: {
@@ -510,7 +510,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.05,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Onion: {
@@ -519,7 +519,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.14,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Pepper: {
@@ -528,7 +528,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Raw Sausage": {
@@ -537,7 +537,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.33,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Russet Potatoes": {
@@ -546,7 +546,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.39,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Vinaigrette: {
@@ -555,7 +555,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 300,
+    boxAmount: 500,
     importers: ["Lunar Tide Shipments"],
   },
 };
