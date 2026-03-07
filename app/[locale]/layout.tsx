@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Rubik, Rubik_Mono_One } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import NavLink from "../_components/NavLink";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const rubikSans = Rubik({
+  variable: "--font-rubik-sans",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const rubikMono = Rubik_Mono_One({
+  variable: "--font-rubik-mono",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -27,12 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${rubikSans.variable} ${rubikMono.variable} antialiased`}
       >
         <NextIntlClientProvider>
           <header>
             <nav>
-              <ul className="flex gap-4 p-4 pt-2">
+              <ul className="flex gap-4 p-4">
                 <li>
                   <NavLink href="/">Home</NavLink>
                 </li>

@@ -9,6 +9,20 @@ export default function Home() {
       <hgroup>
         <h1>{t("title")}</h1>
         <p>{t("description")}</p>
+        <p>
+          {t.rich("description2", {
+            github: (chunks) => (
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                {chunks}
+              </a>
+            ),
+          })}
+        </p>
       </hgroup>
 
       <Link locale="en" href="/" className="underline">

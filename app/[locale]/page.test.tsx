@@ -4,13 +4,24 @@ import type { ReactNode } from "react";
 import Home from "./page";
 
 vi.mock("next-intl", () => ({
-  useTranslations: () => (key: string) => {
-    const messages: Record<string, string> = {
-      title: "Home",
-      description: "Welcome",
+  useTranslations: () => {
+    const t = (key: string) => {
+      const messages: Record<string, string> = {
+        title: "Home",
+        description: "Welcome",
+      };
+      return messages[key] ?? key;
     };
 
-    return messages[key] ?? key;
+    t.rich = (
+      key: string,
+      values: Record<string, (chunks: ReactNode) => ReactNode>,
+    ) => {
+      if (key === "description2") return values.github?.("GitHub");
+      return key;
+    };
+
+    return t;
   },
 }));
 
