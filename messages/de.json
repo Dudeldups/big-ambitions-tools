@@ -1,7 +1,8 @@
 {
   "home": {
     "title": "Willkommen zu Big Ambitions Tools!",
-    "description": "Dies ist eine Sammlung von Tools für das Spiel Big Ambitions von Hovgaard Games."
+    "description": "Dies ist eine Sammlung von Tools für das Spiel Big Ambitions von Hovgaard Games.",
+    "description2": "Alle Tools befinden sich in früher Entwicklung und können Fehler enthalten. Wenn du ein Problem findest, melde es bitte auf <github>GitHub</github>."
   },
   "about": {
     "title": "Über Big Ambitions Tools"
