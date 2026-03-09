@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubikSans.variable} ${rubikMono.variable} antialiased`}
+        className={`${rubikSans.variable} ${rubikMono.variable} flex min-h-screen flex-col antialiased`}
       >
         <NextIntlClientProvider>
           <header>
@@ -37,6 +37,12 @@ export default function RootLayout({
               <ul className="flex gap-4 p-4">
                 <li>
                   <NavLink href="/">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink href="/database">Database</NavLink>
+                </li>
+                <li>
+                  <NavLink href="/tools">Tools</NavLink>
                 </li>
                 <li>
                   <NavLink href="/about">About</NavLink>
@@ -50,7 +56,7 @@ export default function RootLayout({
 
           <main>{children}</main>
 
-          <footer>Footer</footer>
+          <footer className="mt-auto">Footer</footer>
         </NextIntlClientProvider>
       </body>
     </html>
