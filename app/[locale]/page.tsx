@@ -1,9 +1,18 @@
-import { useFormatter, useTranslations } from "next-intl";
+import {
+  DateTimeFormatOptions,
+  useFormatter,
+  useTranslations,
+} from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export default function Home() {
   const t = useTranslations("home");
   const format = useFormatter();
+  const dateFormattingRules: DateTimeFormatOptions = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  };
 
   return (
     <div>
@@ -76,11 +85,7 @@ export default function Home() {
         <h2>{t("updates.title")}</h2>
         <p>
           <strong>
-            {format.dateTime(new Date("2026-03-09"), {
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit",
-            })}
+            {format.dateTime(new Date("2026-03-09"), dateFormattingRules)}
           </strong>{" "}
           - {t("updates.update1")}
         </p>
