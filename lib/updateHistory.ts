@@ -1,5 +1,5 @@
-export const updateHistory = {
-  1: {
+export const updateHistory = [
+  {
     date: "2026-03-10",
   },
-};
+];

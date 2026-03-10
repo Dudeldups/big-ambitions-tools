@@ -88,15 +88,16 @@ export default function Home() {
 
       <section>
         <h2>{t("updates.title")}</h2>
-        <p>
-          <time dateTime={updateHistory[1].date}>
-            {format.dateTime(
-              new Date(updateHistory[1].date),
-              dateFormattingRules,
-            )}
-          </time>{" "}
-          - {t("updates.1")}
-        </p>
+        <ul>
+          {updateHistory.map((update, index) => (
+            <li key={`update-${index}`}>
+              <time dateTime={update.date}>
+                {format.dateTime(new Date(update.date), dateFormattingRules)}
+              </time>{" "}
+              - {t(`updates.${index}`)}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <Link locale="en" href="/" className="underline">
