@@ -2,7 +2,7 @@
   "home": {
     "intro": {
       "title": "Welcome to Big Ambitions Tools!",
-      "desc": "Here you can find a collection of infos and tools for the game 'Big Ambitions' by Hovgaard Games. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version 0.10 of the game and may change with future updates.",
+      "desc": "Here you can find a collection of infos and tools for the game <i>Big Ambitions</i> by Hovgaard Games. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version 0.10 of the game and may change with future updates.",
       "desc2": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!",
       "gameDesc": "Don't even know the game yet? What a shame!",
       "gameDesc2": "Check out the official website at <website>Hovgaard Games</website> or visit the game directly on <steam>Steam</steam>."
@@ -14,7 +14,17 @@
     },
     "updates": {
       "title": "Latest updates",
-      "update1": "Website launched with initial data on machines, workstations, and products."
+      "1": "Website launched with initial data on workstations, goods and factory planners."
+    }
+  },
+  "database": {
+    "intro": {
+      "title": "Database",
+      "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for."
+    },
+    "table": {
+      "title": "Products",
+      "caption": "Here you can find all products in the game along with their details. Click on a product to see more information about it, including its ingredients and production process."
     }
   },
   "about": {

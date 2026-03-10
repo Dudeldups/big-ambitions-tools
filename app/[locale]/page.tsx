@@ -4,6 +4,7 @@ import {
   useTranslations,
 } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { updateHistory } from "@/lib/updateHistory";
 
 export default function Home() {
   const t = useTranslations("home");
@@ -19,7 +20,11 @@ export default function Home() {
       <section>
         <hgroup>
           <h1>{t("intro.title")}</h1>
-          <p>{t("intro.desc")}</p>
+          <p>
+            {t.rich("intro.desc", {
+              i: (chunks) => <i>{chunks}</i>,
+            })}
+          </p>
           <p>
             {t.rich("intro.desc2", {
               contact: (chunks) => (
@@ -84,10 +89,13 @@ export default function Home() {
       <section>
         <h2>{t("updates.title")}</h2>
         <p>
-          <strong>
-            {format.dateTime(new Date("2026-03-09"), dateFormattingRules)}
-          </strong>{" "}
-          - {t("updates.update1")}
+          <time dateTime={updateHistory[1].date}>
+            {format.dateTime(
+              new Date(updateHistory[1].date),
+              dateFormattingRules,
+            )}
+          </time>{" "}
+          - {t("updates.1")}
         </p>
       </section>
 
