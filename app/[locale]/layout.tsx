@@ -32,8 +32,8 @@ export default function RootLayout({
         className={`${rubikSans.variable} ${rubikMono.variable} flex min-h-screen flex-col antialiased`}
       >
         <NextIntlClientProvider>
-          <header>
-            <nav>
+          <header className="flex justify-center">
+            <nav className="max-w-page w-full bg-gray-800">
               <ul className="flex gap-4 p-4">
                 <li>
                   <NavLink href="/">Home</NavLink>
