@@ -24,7 +24,16 @@
     },
     "table": {
       "title": "Products",
-      "caption": "Here you can find all products in the game along with their details. Click on a product to see more information about it, including its ingredients and production process."
+      "caption": "Here you can find all products in the game along with their details. Click on a product to see more information about it, including its ingredients and production process.",
+      "headers": {
+        "name": "Name",
+        "amountPerBox": "Amount / box",
+        "importPrice": "Import price",
+        "importers": "Importers",
+        "ingredients": "Ingredients",
+        "productionRate": "Production / hr",
+        "workstation": "Workstation"
+      }
     }
   },
   "about": {
