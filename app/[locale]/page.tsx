@@ -89,14 +89,17 @@ export default function Home() {
       <section>
         <h2>{t("updates.title")}</h2>
         <ul>
-          {updateHistory.map((update, index) => (
-            <li key={`update-${index}`}>
-              <time dateTime={update.date}>
-                {format.dateTime(new Date(update.date), dateFormattingRules)}
-              </time>{" "}
-              - {t(`updates.${index}`)}
-            </li>
-          ))}
+          {updateHistory
+            .slice()
+            .reverse()
+            .map((update, index) => (
+              <li key={`update-${index}`}>
+                <time dateTime={update.date}>
+                  {format.dateTime(new Date(update.date), dateFormattingRules)}
+                </time>{" "}
+                - {t(`updates.${index}`)}
+              </li>
+            ))}
         </ul>
       </section>
 
