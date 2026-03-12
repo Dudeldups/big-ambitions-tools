@@ -10,7 +10,7 @@
     "cta": {
       "title": "Let's get started!",
       "desc": "Just want to look something up and do some number crunching? <i>Mhmm, tasty numbers!</i> Have a look at the <database>database</database>.",
-      "desc2": "Want to optimize your factory layout and production lines? Check out the <tools>tools</tools> section."
+      "desc2": "Want to optimize your factories and production lines? Check out the <tools>tools</tools> section."
     },
     "updates": {
       "title": "Latest updates",
@@ -23,16 +23,38 @@
       "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for."
     },
     "table": {
-      "title": "Products",
-      "caption": "Here you can find all products in the game along with their details. Click on a product to see more information about it, including its ingredients and production process.",
-      "headers": {
-        "name": "Name",
-        "amountPerBox": "Amount / box",
-        "importPrice": "Import price",
-        "importers": "Importers",
-        "ingredients": "Ingredients",
-        "productionRate": "Production / hr",
-        "workstation": "Workstation"
+      "products": {
+        "title": "Products",
+        "caption": "Here you can find all products you can sell in your stores along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "amountPerBox": "Amount / box",
+          "importPrice": "Import price",
+          "importers": "Importers",
+          "ingredients": "Ingredients",
+          "productionRate": "Production / hr",
+          "workstation": "Workstation"
+        }
+      },
+      "ingredients": {
+        "title": "Ingredients",
+        "caption": "Here you can find all factory ingredients in the game along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "importPrice": "Import price",
+          "importers": "Importers",
+          "usedInProducts": "Used in products"
+        }
+      },
+      "machines": {
+        "title": "Machines",
+        "caption": "Here you can find all machines in the game along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "productionRate": "Production / hr",
+          "produces": "Produces",
+          "ingredients": "Ingredients"
+        }
       }
     }
   },
