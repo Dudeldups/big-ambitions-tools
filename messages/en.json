@@ -52,9 +52,7 @@
         "caption": "Here you can find all machines in the game along with their details.",
         "headers": {
           "itemName": "Item name",
-          "productionRate": "Production / hr",
-          "produces": "Produces",
-          "ingredients": "Ingredients"
+          "purchasePrice": "Price"
         }
       }
     }
@@ -188,5 +186,26 @@
     "Raw Sausage": "Raw Sausage",
     "Russet Potatoes": "Russet Potatoes",
     "Vinaigrette": "Vinaigrette"
+  },
+  "workstations": {
+    "Clothing Workstation": "Clothing Workstation",
+    "Electronics Workstation": "Electronics Workstation",
+    "Jewelry Workstation": "Jewelry Workstation",
+    "Consumer Goods Workstation": "Consumer Goods Workstation",
+    "Bottled Goods Workstation": "Bottled Goods Workstation",
+    "Food Workstation": "Food Workstation",
+    "Garden Workstation": "Garden Workstation"
+  },
+  "machines": {
+    "Consumer Goods Assembly Machine": "Consumer Goods Assembly Machine",
+    "Industrial Sewing Machine": "Industrial Sewing Machine",
+    "Laser Cutting Machine": "Laser Cutting Machine",
+    "Kiln Machine": "Kiln Machine",
+    "Polishing Machine": "Polishing Machine",
+    "Food Assembly Machine": "Food Assembly Machine",
+    "Bottling Machine": "Bottling Machine",
+    "Industrial Blending Machine": "Industrial Blending Machine",
+    "Automated Baking Machine": "Automated Baking Machine",
+    "Hydroponic Planter": "Hydroponic Planter"
   }
 }
