@@ -10,7 +10,7 @@ const Table = () => {
   const [sortConfig, setSortConfig] = useState<{
     field: string;
     direction: "asc" | "desc";
-  }>({ field: "name", direction: "asc" });
+  }>({ field: "itemName", direction: "asc" });
 
   const sortedProducts = useMemo(() => {
     const sortableProducts = Object.entries(products);
@@ -21,17 +21,17 @@ const Table = () => {
         let bValue: string | number;
 
         switch (sortConfig.field) {
-          case "name":
+          case "itemName":
             aValue = aName;
             bValue = bName;
             break;
-          case "boxAmount":
-            aValue = a.boxAmount;
-            bValue = b.boxAmount;
+          case "amountPerBox":
+            aValue = a.amountPerBox;
+            bValue = b.amountPerBox;
             break;
           case "importPrice":
-            aValue = a.purchasePrice.hard === 0 ? -1 : a.purchasePrice.hard;
-            bValue = b.purchasePrice.hard === 0 ? -1 : b.purchasePrice.hard;
+            aValue = a.importPrice.hard === 0 ? -1 : a.importPrice.hard;
+            bValue = b.importPrice.hard === 0 ? -1 : b.importPrice.hard;
             break;
           case "importers":
             aValue = a.importers.length;
@@ -59,7 +59,6 @@ const Table = () => {
   }, [sortConfig]);
 
   const handleSort = (field: string) => {
-    console.log("sorter called with field:", field);
     setSortConfig((current) => {
       if (current?.field === field) {
         return {
@@ -83,7 +82,7 @@ const Table = () => {
           <tr>
             <th scope="col">
               <button
-                onClick={() => handleSort("name")}
+                onClick={() => handleSort("itemName")}
                 className="h-full w-full text-left"
               >
                 {t("table.headers.name")}
@@ -91,7 +90,7 @@ const Table = () => {
             </th>
             <th scope="col">
               <button
-                onClick={() => handleSort("boxAmount")}
+                onClick={() => handleSort("amountPerBox")}
                 className="h-full w-full text-left"
               >
                 {t("table.headers.amountPerBox")}
@@ -139,11 +138,11 @@ const Table = () => {
               <th scope="row" className="text-left">
                 {name}
               </th>
-              <td className="amount">{product.boxAmount}</td>
+              <td className="amount">{product.amountPerBox}</td>
               <td className="amount">
-                {product.purchasePrice.hard === 0
+                {product.importPrice.hard === 0
                   ? "-"
-                  : product.purchasePrice.hard}
+                  : product.importPrice.hard}
               </td>
               <td>
                 <ul>
