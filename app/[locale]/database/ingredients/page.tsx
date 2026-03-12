@@ -49,7 +49,7 @@ const Ingredients = () => {
             return (
               <th key={key} scope="col">
                 <button
-                  className="flex items-center gap-2 text-left"
+                  className="flex w-full items-center gap-2 text-left"
                   onClick={() => requestSort(key)}
                 >
                   {t(headerKey)}
