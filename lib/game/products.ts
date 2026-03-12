@@ -5,8 +5,8 @@ import { Price } from "./types";
 import { WorkstationName } from "./machineNames";
 
 export type Product = {
-  purchasePrice: Price;
-  boxAmount: number;
+  importPrice: Price;
+  amountPerBox: number;
   importers: Importer[];
   ingredients: {
     [key in IngredientName]?: number;
@@ -17,144 +17,144 @@ export type Product = {
 
 export const products: Record<ProductName, Product> = {
   "Gift (Cheap)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ Clay: 50 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Gift (Expensive)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ Glass: 100 }, { Plastic: 250 }, { Water: 100 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   Umbrella: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ Plastic: 50 }, { "Metal Wire": 100 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   Cigar: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [{ "Cigar Paper": 50 }, { Tobacco: 100 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Pack of Cigarettes": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [{ "Cigarette Paper": 50 }, { Tobacco: 100 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   Novel: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Paper Ream": 1 }, { "Fabric (Cheap)": 20 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Picture Book": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 450,
+    amountPerBox: 450,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Paper Ream": 1 }, { "Fabric (Cheap)": 20 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Technical Manual": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Paper Ream": 5 }, { "Fabric (Expensive)": 50 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Youth Novel": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 450,
+    amountPerBox: 450,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Paper Ream": 1 }, { "Fabric (Cheap)": 20 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Motivational Book": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Paper Ream": 3 }, { "Fabric (Expensive)": 50 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Limited Edition Book": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Paper Ream": 2 }, { "Fabric (Expensive)": 100 }],
     productionRate: 100,
     workstation: "Consumer Goods Workstation",
   },
   "Paper Bag": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: [
       "JetCargo Imports",
       "SeaSide Internationals",
@@ -166,156 +166,156 @@ export const products: Record<ProductName, Product> = {
     workstation: "Consumer Goods Workstation",
   },
   "Flower (Cheap)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 100,
+    amountPerBox: 100,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Seeds (Flower Cheap)": 100 }, { Water: 100 }],
     productionRate: 100,
     workstation: "Garden Workstation",
   },
   "Flower (Expensive)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 100,
+    amountPerBox: 100,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Seeds (Flower Expensive)": 100 }, { Water: 100 }],
     productionRate: 100,
     workstation: "Garden Workstation",
   },
   "Bag of Pears": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Seeds (Pear)": 50 }, { Water: 50 }],
     productionRate: 250,
     workstation: "Garden Workstation",
   },
   "Bag of Apples": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Seeds (Apple)": 50 }, { Water: 50 }],
     productionRate: 250,
     workstation: "Garden Workstation",
   },
   "Bag of Tomatoes": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals", "Lunar Tide Shipments"],
     ingredients: [{ "Seeds (Tomato)": 50 }, { Water: 50 }],
     productionRate: 250,
     workstation: "Garden Workstation",
   },
   "Bag of Carrots": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Seeds (Carrot)": 50 }, { Water: 50 }],
     productionRate: 250,
     workstation: "Garden Workstation",
   },
   "Bag of Lettuce": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 250,
+    amountPerBox: 250,
     importers: ["SeaSide Internationals", "Lunar Tide Shipments"],
     ingredients: [{ "Seeds (Lettuce)": 50 }, { Water: 50 }],
     productionRate: 250,
     workstation: "Garden Workstation",
   },
   "Bag of Bananas": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Seeds (Banana)": 50 }, { Water: 50 }],
     productionRate: 250,
     workstation: "Garden Workstation",
   },
   "Ice Cream": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ Milk: 200 }, { Sugar: 200 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Cupcake: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ "Baking Mix": 200 }, { Milk: 100 }, { Sugar: 100 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Popcorn: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Popcorn Kernels": 200 }, { Butter: 10 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Donut: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ Dough: 200 }, { Milk: 100 }, { Sugar: 100 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   "Fresh Food": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [
       { "Bag of Tomatoes": 100 },
@@ -326,48 +326,48 @@ export const products: Record<ProductName, Product> = {
     workstation: "Food Workstation",
   },
   "Frozend Food": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Chicken Breast": 200 }, { Vinaigrette: 100 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Pizza: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ Dough: 200 }, { Cheese: 200 }, { "Bag of Tomatoes": 100 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   "French Fries": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ "Russet Potatoes": 200 }, { "Bag of Tomatoes": 50 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   "Chicken Kabob Skewer": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [
       { "Chicken Breast": 200 },
@@ -379,48 +379,48 @@ export const products: Record<ProductName, Product> = {
     workstation: "Food Workstation",
   },
   Burger: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ Cheese: 40 }, { Dough: 200 }, { "Ground Beef": 200 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Croissant: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ Butter: 100 }, { Dough: 200 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   "Cheese Platter": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["United Ocean Import"],
     ingredients: [{ Cheese: 200 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Hotdog: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [
       { Dough: 200 },
@@ -431,24 +431,24 @@ export const products: Record<ProductName, Product> = {
     workstation: "Food Workstation",
   },
   "Cotton Candy": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ Sugar: 200 }],
     productionRate: 200,
     workstation: "Food Workstation",
   },
   Salad: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [
       { "Bag of Lettuce": 200 },
@@ -461,12 +461,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Food Workstation",
   },
   "Energy Drink": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [
       { "Caffeine Extract": 250 },
@@ -478,60 +478,60 @@ export const products: Record<ProductName, Product> = {
     workstation: "Bottled Goods Workstation",
   },
   "Cup of Tea": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ "Tea Leaves": 250 }, { Water: 250 }],
     productionRate: 250,
     workstation: "Bottled Goods Workstation",
   },
   "Cup of Coffee": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["JetCargo Imports"],
     ingredients: [{ "Ground Coffee Beans": 250 }, { Water: 250 }],
     productionRate: 250,
     workstation: "Bottled Goods Workstation",
   },
   Whisky: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [{ Barley: 100 }, { Water: 50 }, { Yeast: 50 }],
     productionRate: 50,
     workstation: "Bottled Goods Workstation",
   },
   Slushie: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Flavor Syrup": 250 }, { Sugar: 250 }, { Water: 250 }],
     productionRate: 250,
     workstation: "Bottled Goods Workstation",
   },
   "Soda Can": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: [
       "JetCargo Imports",
       "SeaSide Internationals",
@@ -548,24 +548,24 @@ export const products: Record<ProductName, Product> = {
     workstation: "Bottled Goods Workstation",
   },
   "Bottle of Wine": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [{ Grapes: 100 }, { Sugar: 50 }, { Yeast: 50 }],
     productionRate: 50,
     workstation: "Bottled Goods Workstation",
   },
   Margarita: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [
       { Barley: 50 },
@@ -578,12 +578,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Bottled Goods Workstation",
   },
   Beer: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [
       { Barley: 50 },
@@ -596,12 +596,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Bottled Goods Workstation",
   },
   Martini: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["United Ocean Import"],
     ingredients: [
       { Barley: 50 },
@@ -614,48 +614,48 @@ export const products: Record<ProductName, Product> = {
     workstation: "Bottled Goods Workstation",
   },
   "Hair Care Product": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["SeaSide Internationals"],
     ingredients: [{ "Hair Care Formula": 150 }, { Water: 150 }],
     productionRate: 150,
     workstation: "Bottled Goods Workstation",
   },
   "Jewelry (Cheap)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["BlueStone Imports"],
     ingredients: [{ "Uncut Gems (Cheap)": 60 }, { "Metal Band": 60 }],
     productionRate: 60,
     workstation: "Jewelry Workstation",
   },
   "Jewelry (Expensive)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: [],
     ingredients: [{ "Uncut Gems (Expensive)": 30 }, { "Metal Band": 30 }],
     productionRate: 30,
     workstation: "Jewelry Workstation",
   },
   "Rhythm By Tre Headphones": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["BlueStone Imports"],
     ingredients: [
       { Capacitors: 120 },
@@ -671,12 +671,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Electronics Workstation",
   },
   "Noize Boss Earbuds": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["BlueStone Imports"],
     ingredients: [
       { Capacitors: 60 },
@@ -692,12 +692,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Electronics Workstation",
   },
   "Arty Fish Phone": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: [],
     ingredients: [
       { Battery: 30 },
@@ -715,12 +715,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Electronics Workstation",
   },
   "ZanaMan Phone": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: [],
     ingredients: [
       { Battery: 30 },
@@ -738,12 +738,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Electronics Workstation",
   },
   "Arty Fish Smartwatch": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: [],
     ingredients: [
       { Battery: 30 },
@@ -761,12 +761,12 @@ export const products: Record<ProductName, Product> = {
     workstation: "Electronics Workstation",
   },
   "ZanaMan Smartwatch": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: [],
     ingredients: [
       { Battery: 30 },
@@ -784,96 +784,96 @@ export const products: Record<ProductName, Product> = {
     workstation: "Electronics Workstation",
   },
   "Clothing (Classic Cheap Male)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["United Ocean Import"],
     ingredients: [{ "Fabric (Cheap)": 120 }],
     productionRate: 60,
     workstation: "Clothing Workstation",
   },
   "Clothing (Classic Cheap Female)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["United Ocean Import"],
     ingredients: [{ "Fabric (Cheap)": 120 }],
     productionRate: 60,
     workstation: "Clothing Workstation",
   },
   "Clothing (Modern Cheap Male)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["United Ocean Import"],
     ingredients: [{ "Fabric (Cheap)": 120 }],
     productionRate: 60,
     workstation: "Clothing Workstation",
   },
   "Clothing (Modern Cheap Female)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["United Ocean Import"],
     ingredients: [{ "Fabric (Cheap)": 120 }],
     productionRate: 60,
     workstation: "Clothing Workstation",
   },
   "Clothing (Classic Expensive Male)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: [],
     ingredients: [{ "Fabric (Expensive)": 60 }],
     productionRate: 30,
     workstation: "Clothing Workstation",
   },
   "Clothing (Classic Expensive Female)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: [],
     ingredients: [{ "Fabric (Expensive)": 60 }],
     productionRate: 30,
     workstation: "Clothing Workstation",
   },
   "Clothing (Modern Expensive Male)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: [],
     ingredients: [{ "Fabric (Expensive)": 60 }],
     productionRate: 30,
     workstation: "Clothing Workstation",
   },
   "Clothing (Modern Expensive Female)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: [],
     ingredients: [{ "Fabric (Expensive)": 60 }],
     productionRate: 30,

@@ -3,559 +3,559 @@ import { IngredientName } from "./ingredientNames";
 import { Price } from "./types";
 
 export type Ingredient = {
-  purchasePrice: Price;
-  boxAmount: number;
+  importPrice: Price;
+  amountPerBox: number;
   importers: Importer[];
 };
 
 export const ingredients: Record<IngredientName, Ingredient> = {
   Battery: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 15.6,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Maritime Freight Line"],
   },
   Capacitors: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 5.85,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Maritime Freight Line"],
   },
   "Copper Clad Laminate": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 7.8,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Maritime Freight Line"],
   },
   "Fabric (Cheap)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 5.85,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["Maritime Freight Line"],
   },
   "Fabric (Expensive)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 11.7,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["Maritime Freight Line"],
   },
   Glass: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Maritime Freight Line", "Global Harvest Traders"],
   },
   "Integrated Circuits": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 9.75,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Maritime Freight Line"],
   },
   "Metal Band": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.59,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["Maritime Freight Line"],
   },
   Microphone: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 7.8,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Maritime Freight Line"],
   },
   Plastic: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.59,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Maritime Freight Line", "Global Harvest Traders"],
   },
   Resistors: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 3.9,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Maritime Freight Line"],
   },
   Speaker: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 5.85,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Maritime Freight Line"],
   },
   Transistors: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 7.8,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Maritime Freight Line"],
   },
   "Uncut Gems (Cheap)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 39,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["Maritime Freight Line"],
   },
   "Uncut Gems (Expensive)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 438.75,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["Maritime Freight Line"],
   },
   "Cigar Paper": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.98,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Cigarette Paper": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   Clay: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 2.44,
     },
-    boxAmount: 150,
+    amountPerBox: 150,
     importers: ["Global Harvest Traders"],
   },
   "Metal Wire": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 3.41,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Global Harvest Traders"],
   },
   "Paper Ream": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 6.09,
     },
-    boxAmount: 300,
+    amountPerBox: 300,
     importers: ["Global Harvest Traders"],
   },
   "Popcorn Kernels": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Apple)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Banana)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Carrot)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Flower Cheap)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 1.46,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Flower Expensive)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 2.93,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Lettuce)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Pear)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   "Seeds (Tomato)": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 1000,
+    amountPerBox: 1000,
     importers: ["Global Harvest Traders"],
   },
   Tobacco: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Global Harvest Traders"],
   },
   Water: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Global Harvest Traders", "Aquatic Bay Cargo"],
   },
   Barley: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.23,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Blue Agave": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.12,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Caffeine Extract": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Carbon Dioxide": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Cola Flavoring": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.02,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Flavor Syrup": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.04,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Grapes: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.34,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Ground Coffee Beans": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.12,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Hair Care Formula": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 2.44,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Hops: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.02,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Juniper Berries": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.15,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Lime Juice": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.02,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Sugar: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.05,
     },
-    boxAmount: 1500,
+    amountPerBox: 1500,
     importers: ["Aquatic Bay Cargo", "Lunar Tide Shipments"],
   },
   "Tea Leaves": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.12,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Vermouth: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   Yeast: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.01,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Aquatic Bay Cargo"],
   },
   "Bag of Lettuce": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.37,
     },
-    boxAmount: 250,
+    amountPerBox: 250,
     importers: ["Lunar Tide Shipments"],
   },
   "Bag of Tomatoes": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.35,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Baking Mix": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Butter: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.49,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Cheese: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.31,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Chicken Breast": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.34,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Dough: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.54,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Ground Beef": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.54,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Milk: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.05,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Onion: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.14,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Pepper: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Raw Sausage": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.33,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   "Russet Potatoes": {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.39,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
   Vinaigrette: {
-    purchasePrice: {
+    importPrice: {
       easy: 0,
       normal: 0,
       hard: 0.1,
     },
-    boxAmount: 500,
+    amountPerBox: 500,
     importers: ["Lunar Tide Shipments"],
   },
 };
