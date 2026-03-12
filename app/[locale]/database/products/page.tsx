@@ -6,7 +6,7 @@ import { Product, products } from "@/lib/game/products";
 import DatabaseTable from "../_components/DatabaseTable";
 import DatabaseTableHead from "../_components/DatabaseTableHead";
 import DatabaseTableBody from "../_components/DatabaseTableBody";
-import { useMemo, useState } from "react";
+import { useSortableData } from "@/lib/hooks/useSortableData";
 
 const Products = () => {
   const t = useTranslations("database.table.products");
@@ -17,70 +17,28 @@ const Products = () => {
     "itemName",
     ...(Object.keys(productEntries[0][1]) as (keyof Product)[]),
   ];
-  const [sortConfig, setSortConfig] = useState<{
-    field: string;
-    direction: "asc" | "desc";
-  }>({ field: "itemName", direction: "asc" });
+  const accessors = {
+    itemName: ([name]: [string, Product]) => name,
 
-  const sortedProducts = useMemo(() => {
-    const sortableProducts = Object.entries(products);
+    amountPerBox: ([, p]: [string, Product]) => p.amountPerBox,
 
-    if (sortConfig) {
-      sortableProducts.sort(([aName, a], [bName, b]) => {
-        let aValue: string | number;
-        let bValue: string | number;
+    importPrice: ([, p]: [string, Product]) =>
+      p.importPrice[difficulty] === 0 ? -1 : p.importPrice[difficulty],
 
-        switch (sortConfig.field) {
-          case "itemName":
-            aValue = aName;
-            bValue = bName;
-            break;
-          case "amountPerBox":
-            aValue = a.amountPerBox;
-            bValue = b.amountPerBox;
-            break;
-          case "importPrice":
-            aValue =
-              a.importPrice[difficulty] === 0 ? -1 : a.importPrice[difficulty];
-            bValue =
-              b.importPrice[difficulty] === 0 ? -1 : b.importPrice[difficulty];
-            break;
-          case "importers":
-            aValue = a.importers.length;
-            bValue = b.importers.length;
-            break;
-          case "productionRate":
-            aValue = a.productionRate;
-            bValue = b.productionRate;
-            break;
-          case "workstation":
-            aValue = a.workstation;
-            bValue = b.workstation;
-            break;
-          default:
-            return 0;
-        }
+    importers: ([, p]: [string, Product]) => p.importers.length,
 
-        if (aValue < bValue) return sortConfig.direction === "asc" ? -1 : 1;
-        if (aValue > bValue) return sortConfig.direction === "asc" ? 1 : -1;
-        return 0;
-      });
-    }
+    ingredients: ([, p]: [string, Product]) => p.ingredients.length,
 
-    return sortableProducts;
-  }, [sortConfig]);
+    productionRate: ([, p]: [string, Product]) => p.productionRate,
 
-  const handleSort = (field: string) => {
-    setSortConfig((current) => {
-      if (current?.field === field) {
-        return {
-          field,
-          direction: current.direction === "asc" ? "desc" : "asc",
-        };
-      }
-      return { field, direction: "asc" };
-    });
+    workstation: ([, p]: [string, Product]) => p.workstation,
   };
+
+  const {
+    sortedData: sortedProducts,
+    sortConfig,
+    requestSort,
+  } = useSortableData(productEntries, accessors, "itemName");
 
   return (
     <>
@@ -95,10 +53,15 @@ const Products = () => {
             return (
               <th key={key} scope="col">
                 <button
-                  onClick={() => handleSort(key)}
-                  className="h-full w-full text-left"
+                  className="flex items-center gap-2 text-left"
+                  onClick={() => requestSort(key)}
                 >
                   {t(headerKey)}
+                  {sortConfig.field === key && (
+                    <span aria-hidden="true">
+                      {sortConfig.direction === "asc" ? "▲" : "▼"}
+                    </span>
+                  )}
                 </button>
               </th>
             );
@@ -111,12 +74,12 @@ const Products = () => {
               <th scope="row" className="text-left">
                 {tProducts(itemName)}
               </th>
+              <td className="amount">{product.amountPerBox}</td>
               <td className="amount">
                 {product.importPrice[difficulty] === 0
                   ? "-"
-                  : product.importPrice[difficulty]}
+                  : product.importPrice[difficulty].toFixed(2)}
               </td>
-              <td className="amount">{product.amountPerBox}</td>
               <td>
                 <ul>
                   {product.importers.map((importer, i) => (

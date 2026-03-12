@@ -30,11 +30,11 @@ const Ingredients = () => {
     importers: ([, p]: [string, Ingredient]) => p.importers.length,
   };
 
-  const { sortedData: sortedIngredients, requestSort } = useSortableData(
-    ingredientEntries,
-    accessors,
-    "itemName",
-  );
+  const {
+    sortedData: sortedIngredients,
+    sortConfig,
+    requestSort,
+  } = useSortableData(ingredientEntries, accessors, "itemName");
 
   return (
     <>
@@ -49,10 +49,19 @@ const Ingredients = () => {
             return (
               <th key={key} scope="col">
                 <button
-                  className="h-full w-full text-left"
+                  className="flex items-center gap-2 text-left"
                   onClick={() => requestSort(key)}
                 >
                   {t(headerKey)}
+                  {sortConfig.field === key && (
+                    <span aria-hidden="true">
+                      {sortConfig?.field === key
+                        ? sortConfig.direction === "asc"
+                          ? "▲"
+                          : "▼"
+                        : ""}
+                    </span>
+                  )}
                 </button>
               </th>
             );
