@@ -27,3 +27,7 @@ body {
   font-family: var(--font-rubik-sans), sans-serif;
   font-weight: 500;
 }
+
+button {
+  cursor: pointer;
+}
