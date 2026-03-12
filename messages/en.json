@@ -42,6 +42,7 @@
         "headers": {
           "itemName": "Item name",
           "importPrice": "Import price",
+          "amountPerBox": "Amount / box",
           "importers": "Importers",
           "usedInProducts": "Used in products"
         }
