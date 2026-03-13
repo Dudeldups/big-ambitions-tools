@@ -1,6 +1,23 @@
 {
   "general": {
-    "summedUpAmount": "Total"
+    "summedUpAmount": "Total",
+    "noResultsFound": "No results found.",
+    "columnsDescription": "Columns",
+    "filterResults": "Filter results...",
+    "tableColumns": {
+      "itemName": "Item name",
+      "purchasePrice": "Price",
+      "storageCapacity": "Storage capacity",
+      "workstation": "Workstation",
+      "neededMachines": "Machines",
+      "usedForProducts": "Used for products",
+      "importPrice": "Import price",
+      "amountPerBox": "Amount / box",
+      "usedInProducts": "Used in products",
+      "importers": "Importers",
+      "ingredients": "Ingredients",
+      "productionRate": "Production / hr"
+    }
   },
   "home": {
     "intro": {
@@ -66,6 +83,15 @@
           "purchasePrice": "Price",
           "neededMachines": "Machines",
           "usedForProducts": "Used for products"
+        }
+      },
+      "inventory": {
+        "title": "Inventory",
+        "caption": "Here you can find all inventory for your stores and warehouses in the game along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "purchasePrice": "Price",
+          "storageCapacity": "Storage capacity"
         }
       }
     }
@@ -220,5 +246,9 @@
     "Industrial Blending Machine": "Industrial Blending Machine",
     "Automated Baking Machine": "Automated Baking Machine",
     "Hydroponic Planter": "Hydroponic Planter"
+  },
+  "inventory": {
+    "Pallet Shelf": "Pallet Shelf",
+    "Storage Shelf": "Storage Shelf"
   }
 }
