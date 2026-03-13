@@ -6,14 +6,12 @@ import DatabaseTableHead from "../_components/DatabaseTableHead";
 import { machines, Workstation, workstations } from "@/lib/game/machines";
 import { useSortableData } from "@/lib/hooks/useSortableData";
 import { getWorkstationPrice } from "@/lib/utils/getWorkstationPrice";
-import { getWorkstationProducts } from "@/lib/utils/getWorkstationProducts";
 
 const WorkstationsTable = () => {
   const t = useTranslations("database.table.workstations");
   const tGeneral = useTranslations("general");
   const tWorkstations = useTranslations("workstations");
   const tMachines = useTranslations("machines");
-  const tProducts = useTranslations("products");
   const workstationEntries = Object.entries(workstations);
   const workstationHeaders = [
     "workstation",
