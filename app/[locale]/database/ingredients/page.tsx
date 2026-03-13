@@ -22,12 +22,12 @@ const Ingredients = () => {
   const accessors = {
     itemName: ([name]: [string, Ingredient]) => name,
 
-    amountPerBox: ([, p]: [string, Ingredient]) => p.amountPerBox,
+    amountPerBox: ([, i]: [string, Ingredient]) => i.amountPerBox,
 
-    importPrice: ([, p]: [string, Ingredient]) =>
-      p.importPrice[difficulty] === 0 ? -1 : p.importPrice[difficulty],
+    importPrice: ([, i]: [string, Ingredient]) =>
+      i.importPrice[difficulty] === 0 ? -1 : i.importPrice[difficulty],
 
-    importers: ([, p]: [string, Ingredient]) => p.importers.length,
+    importers: ([, i]: [string, Ingredient]) => i.importers.length,
   };
 
   const {
