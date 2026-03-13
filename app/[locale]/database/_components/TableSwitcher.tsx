@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
@@ -11,28 +12,34 @@ const TableSwitcher = () => {
     <div>
       <ul className="flex gap-4">
         <li>
-          <Link
-            href="/database/products"
-            className={`${pathname === "/database/products" ? "text-red-300" : ""}`}
+          <Button
+            asChild
+            variant={`${pathname === "/database/products" ? "default" : "secondary"}`}
           >
-            {t("table.products.title")}
-          </Link>
+            <Link href="/database/products" className={``}>
+              {t("table.products.title")}
+            </Link>
+          </Button>
         </li>
         <li>
-          <Link
-            href="/database/ingredients"
-            className={`${pathname === "/database/ingredients" ? "text-red-300" : ""}`}
+          <Button
+            asChild
+            variant={`${pathname === "/database/ingredients" ? "default" : "secondary"}`}
           >
-            {t("table.ingredients.title")}
-          </Link>
+            <Link href="/database/ingredients" className={``}>
+              {t("table.ingredients.title")}
+            </Link>
+          </Button>
         </li>
         <li>
-          <Link
-            href="/database/machines"
-            className={`${pathname === "/database/machines" ? "text-red-300" : ""}`}
+          <Button
+            asChild
+            variant={`${pathname === "/database/machines" ? "default" : "secondary"}`}
           >
-            {t("table.machines.title")}
-          </Link>
+            <Link href="/database/machines" className={``}>
+              {t("table.machines.title")}
+            </Link>
+          </Button>
         </li>
       </ul>
     </div>
