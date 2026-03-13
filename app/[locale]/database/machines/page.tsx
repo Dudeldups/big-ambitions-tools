@@ -7,6 +7,7 @@ import DatabaseTable from "../_components/DatabaseTable";
 import { useSortableData } from "@/lib/hooks/useSortableData";
 import DatabaseTableHead from "../_components/DatabaseTableHead";
 import DatabaseTableBody from "../_components/DatabaseTableBody";
+import WorkstationsTable from "./WorkstationsTable";
 
 const Machines = () => {
   const t = useTranslations("database.table.machines");
@@ -19,7 +20,7 @@ const Machines = () => {
     ) as (keyof (typeof machineEntries)[0][1])[]),
   ];
   const accessors = {
-    purchasePrice: ([, p]: [string, Machine]) => p.purchasePrice,
+    purchasePrice: ([, m]: [string, Machine]) => m.purchasePrice,
   };
 
   const {
@@ -67,6 +68,8 @@ const Machines = () => {
           ))}
         </DatabaseTableBody>
       </DatabaseTable>
+
+      <WorkstationsTable />
     </>
   );
 };

@@ -1,5 +1,6 @@
+import { workstations } from "./machines";
 import { IngredientName } from "./ingredientNames";
-import { MachineName } from "./machineNames";
+import { MachineName, WorkstationName } from "./machineNames";
 import { ProductName } from "./productNames";
 
 export type Difficulty = "easy" | "normal" | "hard";
@@ -12,9 +13,14 @@ type TableKeyMap = {
   products: ProductName;
   ingredients: IngredientName;
   machines: MachineName;
+  workstations: WorkstationName;
 };
 
-export type ItemName = ProductName | IngredientName | MachineName;
+export type ItemName =
+  | ProductName
+  | IngredientName
+  | MachineName
+  | WorkstationName;
 
 export type TableType = keyof TableKeyMap;
 
