@@ -1,4 +1,3 @@
-import { workstations } from "./machines";
 import { IngredientName } from "./ingredientNames";
 import { MachineName, WorkstationName } from "./machineNames";
 import { ProductName } from "./productNames";
