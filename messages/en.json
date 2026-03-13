@@ -1,4 +1,7 @@
 {
+  "general": {
+    "summedUpAmount": "Total"
+  },
   "home": {
     "intro": {
       "title": "Welcome to Big Ambitions Tools!",
@@ -53,6 +56,16 @@
         "headers": {
           "itemName": "Item name",
           "purchasePrice": "Price"
+        }
+      },
+      "workstations": {
+        "title": "Workstations",
+        "caption": "Here you can find all workstations in the game along with their details.",
+        "headers": {
+          "workstation": "Workstation",
+          "purchasePrice": "Price",
+          "neededMachines": "Machines",
+          "usedForProducts": "Used for products"
         }
       }
     }
