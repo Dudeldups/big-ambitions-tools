@@ -29,7 +29,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
-import { Difficulty } from "@/lib/game/types";
+import { useAppStore } from "@/lib/store/app-store";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -45,7 +45,7 @@ export function DataTable<TData, TValue>({
   ]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  const [difficulty, setDifficulty] = useState<Difficulty>("hard");
+  const difficulty = useAppStore((state) => state.difficulty);
 
   const t = useTranslations();
   const tGeneral = useTranslations("general");
