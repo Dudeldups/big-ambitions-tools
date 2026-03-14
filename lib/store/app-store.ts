@@ -5,12 +5,15 @@ import { Difficulty } from "../game/types";
 
 type AppState = {
   difficulty: Difficulty;
+};
+
+type AppActions = {
   setDifficulty: (difficulty: Difficulty) => void;
 };
 
 export const useAppStore = create(
   persist(
-    immer<AppState>((set) => ({
+    immer<AppState & AppActions>((set) => ({
       difficulty: "easy",
 
       setDifficulty: (difficulty: Difficulty) =>
