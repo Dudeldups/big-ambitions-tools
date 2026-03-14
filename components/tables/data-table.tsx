@@ -29,6 +29,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { Difficulty } from "@/lib/game/types";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -39,9 +40,12 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>([
+    { id: "itemName", desc: false },
+  ]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [difficulty, setDifficulty] = useState<Difficulty>("hard");
 
   const t = useTranslations();
   const tGeneral = useTranslations("general");
@@ -52,6 +56,7 @@ export function DataTable<TData, TValue>({
     columns,
     meta: {
       t,
+      difficulty,
     },
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
