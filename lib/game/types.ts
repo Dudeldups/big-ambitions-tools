@@ -11,6 +11,11 @@ declare module "@tanstack/react-table" {
   interface TableMeta<TData extends RowData> {
     t: Translator;
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface ColumnMeta<TData extends RowData, TValue> {
+    align?: "left" | "center" | "right";
+  }
 }
 
 export type Difficulty = "easy" | "normal" | "hard";
