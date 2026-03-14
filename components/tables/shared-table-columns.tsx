@@ -9,6 +9,7 @@ import { Column, ColumnDef, Table } from "@tanstack/react-table";
 export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey: K,
   translationKeyPrefix: string,
+  { enableHiding = true, enableSorting = true } = {},
 ): ColumnDef<T> => ({
   accessorKey,
   header: ({ column, table }) => {
@@ -21,6 +22,12 @@ export const createTranslatedColumn = <T, K extends keyof T>(
     );
   },
   cell: translateCell(translationKeyPrefix),
+  enableHiding: !enableHiding
+    ? false
+    : accessorKey === "itemName"
+      ? false
+      : true,
+  enableSorting,
 });
 
 export const createCurrencyColumn = <T, K extends keyof T>(
