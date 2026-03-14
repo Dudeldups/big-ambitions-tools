@@ -4,11 +4,13 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Shelf } from "@/lib/game/inventory";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getMeta } from "@/lib/utils/getMeta";
 
-export const getColumns = (t: (key: string) => string): ColumnDef<Shelf>[] => [
+export const columns: ColumnDef<Shelf>[] = [
   {
     accessorKey: "itemName",
-    header: ({ column }) => {
+    header: ({ column, table }) => {
+      const { t } = getMeta(table);
       const isSorted = column.getIsSorted();
       return (
         <Button
@@ -23,7 +25,9 @@ export const getColumns = (t: (key: string) => string): ColumnDef<Shelf>[] => [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row, table }) => {
+      const { t } = getMeta(table);
+
       const value = row.getValue("itemName") as string;
       return t(`inventory.${value}`);
     },

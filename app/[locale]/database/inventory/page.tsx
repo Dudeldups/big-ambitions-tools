@@ -1,13 +1,8 @@
-"use client";
-
 import { DataTable } from "../../../../components/tables/data-table";
 import { shelves } from "@/lib/game/inventory";
-import { getColumns } from "./table-columns";
-import { useTranslations } from "next-intl";
+import { columns } from "./table-columns";
 
 export default function DemoPage() {
-  const tInventory = useTranslations();
-  const columns = getColumns(tInventory);
   const data = Object.entries(shelves).map(([itemName, shelf]) => ({
     itemName,
     ...shelf,
