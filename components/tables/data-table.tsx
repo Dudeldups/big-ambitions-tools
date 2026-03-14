@@ -90,7 +90,7 @@ export function DataTable<TData, TValue>({
               {tGeneral("columnsDescription")}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="min-w-44">
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
