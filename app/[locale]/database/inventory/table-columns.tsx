@@ -12,7 +12,7 @@ type InventoryColumnData = Shelf & {
   itemName: string;
 };
 
-export const columns: ColumnDef<InventoryColumnData>[] = [
+export const inventoryColumns: ColumnDef<InventoryColumnData>[] = [
   createTranslatedColumn("itemName", "inventory"),
   createCurrencyColumn("purchasePrice"),
   createNumericColumn("storageCapacity"),

@@ -1,6 +1,6 @@
 import { DataTable } from "../../../../components/tables/data-table";
 import { shelves } from "@/lib/game/inventory";
-import { columns } from "./table-columns";
+import { inventoryColumns } from "./table-columns";
 
 export default function DemoPage() {
   const data = Object.entries(shelves).map(([itemName, shelf]) => ({
@@ -10,7 +10,7 @@ export default function DemoPage() {
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={inventoryColumns} data={data} />
     </div>
   );
 }
