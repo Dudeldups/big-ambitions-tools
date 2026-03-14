@@ -30,6 +30,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { useAppStore } from "@/lib/store/app-store";
+import { ButtonGroup } from "../ui/button-group";
+import { Label } from "../ui/label";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -46,6 +48,7 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const difficulty = useAppStore((state) => state.difficulty);
+  const setDifficulty = useAppStore((state) => state.setDifficulty);
 
   const t = useTranslations();
   const tGeneral = useTranslations("general");
@@ -74,19 +77,37 @@ export function DataTable<TData, TValue>({
   return (
     <>
       <div className="flex items-center py-4">
-        <Input
-          placeholder={tGeneral("filterResults")}
-          value={
-            (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
-          }
-          onChange={(event) =>
-            table.getColumn("itemName")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
+        <form className="mr-auto">
+          <Label htmlFor="search" className="sr-only">
+            {tGeneral("filterResults")}
+          </Label>
+          <Input
+            placeholder={tGeneral("filterResults")}
+            value={
+              (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
+            }
+            onChange={(event) =>
+              table.getColumn("itemName")?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm"
+          />
+        </form>
+
+        <ButtonGroup className="">
+          <Button variant="outline" onClick={() => setDifficulty("easy")}>
+            Easy
+          </Button>
+          <Button variant="outline" onClick={() => setDifficulty("normal")}>
+            Normal
+          </Button>
+          <Button variant="outline" onClick={() => setDifficulty("hard")}>
+            Hard
+          </Button>
+        </ButtonGroup>
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="ml-6">
               {tGeneral("columnsDescription")}
             </Button>
           </DropdownMenuTrigger>
