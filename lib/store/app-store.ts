@@ -11,7 +11,7 @@ type AppState = {
 export const useAppStore = create(
   persist(
     immer<AppState>((set) => ({
-      difficulty: "hard",
+      difficulty: "easy",
 
       setDifficulty: (difficulty: Difficulty) =>
         set((state) => {
@@ -20,6 +20,7 @@ export const useAppStore = create(
     })),
     {
       name: "app-storage",
+      version: 0,
       skipHydration: true,
     },
   ),
