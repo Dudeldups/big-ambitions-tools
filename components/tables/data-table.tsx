@@ -32,6 +32,7 @@ import { useTranslations } from "next-intl";
 import { useAppStore } from "@/lib/store/app-store";
 import { ButtonGroup } from "../ui/button-group";
 import { Label } from "../ui/label";
+import { usePathname } from "@/i18n/navigation";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -49,6 +50,10 @@ export function DataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const difficulty = useAppStore((state) => state.difficulty);
   const setDifficulty = useAppStore((state) => state.setDifficulty);
+
+  const pathname = usePathname();
+  const hasDifficultySelector =
+    pathname === "/database/ingredients" || pathname === "/database/products";
 
   const t = useTranslations();
   const tGeneral = useTranslations("general");
@@ -93,26 +98,28 @@ export function DataTable<TData, TValue>({
           />
         </form>
 
-        <ButtonGroup className="">
-          <Button
-            variant={difficulty === "easy" ? "secondary" : "outline"}
-            onClick={() => setDifficulty("easy")}
-          >
-            Easy
-          </Button>
-          <Button
-            variant={difficulty === "normal" ? "secondary" : "outline"}
-            onClick={() => setDifficulty("normal")}
-          >
-            Normal
-          </Button>
-          <Button
-            variant={difficulty === "hard" ? "secondary" : "outline"}
-            onClick={() => setDifficulty("hard")}
-          >
-            Hard
-          </Button>
-        </ButtonGroup>
+        {hasDifficultySelector && (
+          <ButtonGroup className="">
+            <Button
+              variant={difficulty === "easy" ? "secondary" : "outline"}
+              onClick={() => setDifficulty("easy")}
+            >
+              Easy
+            </Button>
+            <Button
+              variant={difficulty === "normal" ? "secondary" : "outline"}
+              onClick={() => setDifficulty("normal")}
+            >
+              Normal
+            </Button>
+            <Button
+              variant={difficulty === "hard" ? "secondary" : "outline"}
+              onClick={() => setDifficulty("hard")}
+            >
+              Hard
+            </Button>
+          </ButtonGroup>
+        )}
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
