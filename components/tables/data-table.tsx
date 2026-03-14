@@ -94,13 +94,22 @@ export function DataTable<TData, TValue>({
         </form>
 
         <ButtonGroup className="">
-          <Button variant="outline" onClick={() => setDifficulty("easy")}>
+          <Button
+            variant={difficulty === "easy" ? "secondary" : "outline"}
+            onClick={() => setDifficulty("easy")}
+          >
             Easy
           </Button>
-          <Button variant="outline" onClick={() => setDifficulty("normal")}>
+          <Button
+            variant={difficulty === "normal" ? "secondary" : "outline"}
+            onClick={() => setDifficulty("normal")}
+          >
             Normal
           </Button>
-          <Button variant="outline" onClick={() => setDifficulty("hard")}>
+          <Button
+            variant={difficulty === "hard" ? "secondary" : "outline"}
+            onClick={() => setDifficulty("hard")}
+          >
             Hard
           </Button>
         </ButtonGroup>
