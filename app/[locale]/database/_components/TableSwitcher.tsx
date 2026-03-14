@@ -10,7 +10,7 @@ const TableSwitcher = () => {
 
   return (
     <div>
-      <ul className="flex gap-4">
+      <ul className="flex flex-col gap-4 md:flex-row">
         <li>
           <Button
             asChild
