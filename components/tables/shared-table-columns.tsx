@@ -5,6 +5,7 @@ import { getMeta } from "@/lib/utils/getMeta";
 import { translateCell } from "@/lib/utils/translateCell";
 import { currencyCell } from "@/lib/utils/currencyCell";
 import { Column, ColumnDef, Table } from "@tanstack/react-table";
+import { Difficulty, Price } from "@/lib/game/types";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey: K,
@@ -32,6 +33,7 @@ export const createTranslatedColumn = <T, K extends keyof T>(
 
 export const createCurrencyColumn = <T, K extends keyof T>(
   accessorKey: K,
+  difficulty?: Difficulty,
 ): ColumnDef<T> => ({
   accessorKey,
   header: ({
@@ -49,6 +51,13 @@ export const createCurrencyColumn = <T, K extends keyof T>(
     );
   },
   cell: currencyCell(),
+  sortingFn: (rowA, rowB, columnId) => {
+    const valueA = rowA.getValue(columnId) as Price | number;
+    const valueB = rowB.getValue(columnId) as Price | number;
+    const numberA = typeof valueA === "number" ? valueA : valueA[difficulty!];
+    const numberB = typeof valueB === "number" ? valueB : valueB[difficulty!];
+    return numberA - numberB;
+  },
   meta: {
     align: "right",
   },
