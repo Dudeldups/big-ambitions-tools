@@ -100,7 +100,7 @@ export const createImportersColumn = <
   }) => {
     const { t } = getMeta(table);
     return (
-      <TableHeaderContent column={column} align="end">
+      <TableHeaderContent column={column}>
         {t(`general.tableColumns.importers`)}
       </TableHeaderContent>
     );
