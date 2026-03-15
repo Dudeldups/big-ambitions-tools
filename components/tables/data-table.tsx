@@ -74,7 +74,6 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <>
     <div className={`mx-auto w-full max-w-3xl ${className}`}>
       <div className="flex items-center py-4">
         <form className="mr-auto">
@@ -105,7 +104,11 @@ export function DataTable<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="p-0" scope="col" key={header.id}>
+                    <TableHead
+                      className={`p-0 ${header.column.columnDef.meta?.align === "right" ? "justify-end" : ""}`}
+                      scope="col"
+                      key={header.id}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -155,7 +158,6 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-    </>
     </div>
   );
 }
