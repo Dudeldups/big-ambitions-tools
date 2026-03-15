@@ -4,7 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { createTranslatedColumn } from "@/components/tables/shared-table-columns";
 import { Workstation } from "@/lib/game/machines";
 import { getMeta } from "@/lib/utils/getMeta";
-import TableHeaderContent from "@/components/tables/table-header-content";
+import TableHeadContent from "@/components/tables/table-head-content";
 
 type WorkstationsColumnData = Workstation & {
   itemName: string;
@@ -17,9 +17,9 @@ export const workstationsColumns: ColumnDef<WorkstationsColumnData>[] = [
     header: ({ column, table }) => {
       const { t } = getMeta(table);
       return (
-        <TableHeaderContent column={column} align="start">
+        <TableHeadContent column={column} align="start">
           {t(`general.tableColumns.neededMachines`)}
-        </TableHeaderContent>
+        </TableHeadContent>
       );
     },
     cell: ({ getValue, table }) => {

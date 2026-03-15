@@ -8,7 +8,7 @@ import {
   createTranslatedColumn,
 } from "@/components/tables/shared-table-columns";
 import { Product } from "@/lib/game/products";
-import TableHeaderContent from "@/components/tables/table-header-content";
+import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 
 type ProductsColumnData = Product & {
@@ -26,9 +26,9 @@ export const productsColumns: ColumnDef<ProductsColumnData>[] = [
     header: ({ column, table }) => {
       const { t } = getMeta(table);
       return (
-        <TableHeaderContent column={column}>
+        <TableHeadContent column={column}>
           {t(`general.tableColumns.ingredients`)}
-        </TableHeaderContent>
+        </TableHeadContent>
       );
     },
     cell: ({ row }) => {

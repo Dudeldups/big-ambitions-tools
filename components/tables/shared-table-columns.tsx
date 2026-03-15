@@ -1,6 +1,6 @@
 "use client";
 
-import TableHeaderContent from "@/components/tables/table-header-content";
+import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { translateCell } from "@/lib/utils/translateCell";
 import { currencyCell } from "@/lib/utils/currencyCell";
@@ -18,9 +18,9 @@ export const createTranslatedColumn = <T, K extends keyof T>(
     const { t } = getMeta(table);
 
     return (
-      <TableHeaderContent column={column} align="start">
+      <TableHeadContent column={column} align="start">
         {t(`general.tableColumns.${String(accessorKey)}`)}
-      </TableHeaderContent>
+      </TableHeadContent>
     );
   },
   cell: translateCell(translationKeyPrefix),
@@ -46,9 +46,9 @@ export const createCurrencyColumn = <T, K extends keyof T>(
   }) => {
     const { t } = getMeta(table);
     return (
-      <TableHeaderContent column={column} align="end">
+      <TableHeadContent column={column} align="end">
         {t(`general.tableColumns.${String(accessorKey)}`)}
-      </TableHeaderContent>
+      </TableHeadContent>
     );
   },
   cell: currencyCell(),
@@ -77,9 +77,9 @@ export const createNumericColumn = <T, K extends keyof T>(
   }) => {
     const { t } = getMeta(table);
     return (
-      <TableHeaderContent column={column} align="end">
+      <TableHeadContent column={column} align="end">
         {t(`general.tableColumns.${String(accessorKey)}`)}
-      </TableHeaderContent>
+      </TableHeadContent>
     );
   },
   meta: {
@@ -104,9 +104,9 @@ export const createImportersColumn = <
   }) => {
     const { t } = getMeta(table);
     return (
-      <TableHeaderContent column={column}>
+      <TableHeadContent column={column}>
         {t(`general.tableColumns.importers`)}
-      </TableHeaderContent>
+      </TableHeadContent>
     );
   },
   cell: ({ getValue, table }) => {

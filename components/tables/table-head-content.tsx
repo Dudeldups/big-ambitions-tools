@@ -10,7 +10,7 @@ type Props<TData, TValue> = {
   children: React.ReactNode;
 };
 
-const TableHeaderContent = <TData, TValue>({
+const TableHeadContent = <TData, TValue>({
   column,
   align = "start",
   children,
@@ -40,4 +40,4 @@ const TableHeaderContent = <TData, TValue>({
   );
 };
 
-export default TableHeaderContent;
+export default TableHeadContent;
