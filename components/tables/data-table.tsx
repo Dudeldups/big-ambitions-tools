@@ -10,6 +10,7 @@ import {
   ColumnFiltersState,
   getFilteredRowModel,
   VisibilityState,
+  Row,
 } from "@tanstack/react-table";
 import {
   Table,
@@ -32,12 +33,17 @@ interface DataTableProps<TData, TValue> {
   className?: string;
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  renderRow?: (
+    row: Row<TData>,
+    t: ReturnType<typeof useTranslations>,
+  ) => React.ReactNode;
 }
 
 export function DataTable<TData, TValue>({
   className,
   columns,
   data,
+  renderRow,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([
     { id: "itemName", desc: false },
@@ -123,28 +129,32 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell
-                      key={cell.id}
-                      className={`${
-                        cell.column.columnDef.meta?.align === "right"
-                          ? "text-right"
-                          : ""
-                      } align-top`}
-                    >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
+              table.getRowModel().rows.map((row) =>
+                renderRow ? (
+                  renderRow(row, t)
+                ) : (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell
+                        key={cell.id}
+                        className={`${
+                          cell.column.columnDef.meta?.align === "right"
+                            ? "text-right"
+                            : ""
+                        } align-top`}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ),
+              )
             ) : (
               <TableRow>
                 <TableCell
