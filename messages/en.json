@@ -1,14 +1,14 @@
 {
   "general": {
+    "summedUpAmount": "Total",
+    "noResultsFound": "No results found.",
+    "columnsDescription": "Columns",
+    "filterResults": "Filter results...",
     "difficultyOptions": {
       "easy": "Easy",
       "normal": "Normal",
       "hard": "Hard"
     },
-    "summedUpAmount": "Total",
-    "noResultsFound": "No results found.",
-    "columnsDescription": "Columns",
-    "filterResults": "Filter results...",
     "tableColumns": {
       "itemName": "Item name",
       "purchasePrice": "Price",
@@ -103,6 +103,16 @@
   },
   "about": {
     "title": "About Big Ambitions Tools"
+  },
+  "importers": {
+    "jetcargo": "Jet Cargo Imports",
+    "seaside": "Seaside Internationals",
+    "unitedocean": "United Ocean Import",
+    "bluestone": "Bluestone Imports",
+    "lunartide": "Lunar Tide Shipments",
+    "maritimefreight": "Maritime Freight Line",
+    "aquaticbay": "Aquatic Bay Cargo",
+    "globalharvest": "Global Harvest Traders"
   },
   "products": {
     "Gift (Cheap)": "Gift (Cheap)",
