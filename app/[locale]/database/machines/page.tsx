@@ -6,6 +6,7 @@ import { machines, workstations } from "@/lib/game/machines";
 import { workstationsColumns } from "./workstations-table-columns";
 import React from "react";
 import { TableCell, TableRow } from "@/components/ui/table";
+import { formatToUSD } from "@/lib/utils/formatToUSD";
 
 export default function MachinesPage() {
   const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
@@ -54,7 +55,7 @@ export default function MachinesPage() {
                 <TableCell className="text-right">
                   <ul>
                     {prices.map((p, i) => (
-                      <li key={i}>{p}</li>
+                      <li key={i}>{formatToUSD(p)}</li>
                     ))}
                   </ul>
                 </TableCell>
@@ -65,7 +66,7 @@ export default function MachinesPage() {
                   {t("general.summedUpAmount")}
                 </TableCell>
                 <TableCell className="text-right font-semibold">
-                  {total}
+                  {formatToUSD(total)}
                 </TableCell>
               </TableRow>
             </React.Fragment>
