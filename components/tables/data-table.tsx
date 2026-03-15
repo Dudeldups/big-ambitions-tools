@@ -29,11 +29,13 @@ import ColumnSelector from "./column-selector";
 import DifficultyButtonGroup from "./difficulty-button-group";
 
 interface DataTableProps<TData, TValue> {
+  className?: string;
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
 
 export function DataTable<TData, TValue>({
+  className,
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
@@ -73,6 +75,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <>
+    <div className={`mx-auto w-full max-w-3xl ${className}`}>
       <div className="flex items-center py-4">
         <form className="mr-auto">
           <Label htmlFor="search" className="sr-only">
@@ -153,5 +156,6 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
     </>
+    </div>
   );
 }
