@@ -19,20 +19,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { useAppStore } from "@/lib/store/appStore";
-import { ButtonGroup } from "../ui/button-group";
 import { Label } from "../ui/label";
 import { usePathname } from "@/i18n/navigation";
+import ColumnSelector from "./column-selector";
+import DifficultyButtonGroup from "./difficulty-button-group";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -49,14 +43,12 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const difficulty = useAppStore((state) => state.difficulty);
-  const setDifficulty = useAppStore((state) => state.setDifficulty);
 
   const pathname = usePathname();
   const hasDifficultySelector =
     pathname === "/database/ingredients" || pathname === "/database/products";
 
   const t = useTranslations();
-  const tGeneral = useTranslations("general");
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
@@ -84,10 +76,10 @@ export function DataTable<TData, TValue>({
       <div className="flex items-center py-4">
         <form className="mr-auto">
           <Label htmlFor="search" className="sr-only">
-            {tGeneral("filterResults")}
+            {t("general.filterResults")}
           </Label>
           <Input
-            placeholder={tGeneral("filterResults")}
+            placeholder={t("general.filterResults")}
             value={
               (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
             }
@@ -98,55 +90,9 @@ export function DataTable<TData, TValue>({
           />
         </form>
 
-        {hasDifficultySelector && (
-          <ButtonGroup className="">
-            <Button
-              variant={difficulty === "easy" ? "secondary" : "outline"}
-              onClick={() => setDifficulty("easy")}
-            >
-              Easy
-            </Button>
-            <Button
-              variant={difficulty === "normal" ? "secondary" : "outline"}
-              onClick={() => setDifficulty("normal")}
-            >
-              Normal
-            </Button>
-            <Button
-              variant={difficulty === "hard" ? "secondary" : "outline"}
-              onClick={() => setDifficulty("hard")}
-            >
-              Hard
-            </Button>
-          </ButtonGroup>
-        )}
+        {hasDifficultySelector && <DifficultyButtonGroup className="mr-6" />}
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-6">
-              {tGeneral("columnsDescription")}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="min-w-44">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {tGeneral(`tableColumns.${column.id}`)}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <ColumnSelector table={table} />
       </div>
 
       <div className="rounded-md border max-lg:overflow-x-hidden">
@@ -199,7 +145,7 @@ export function DataTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  {tGeneral("noResultsFound")}
+                  {t("general.noResultsFound")}
                 </TableCell>
               </TableRow>
             )}
