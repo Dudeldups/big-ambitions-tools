@@ -179,11 +179,11 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={
+                      className={`${
                         cell.column.columnDef.meta?.align === "right"
                           ? "text-right"
                           : ""
-                      }
+                      } align-top`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
