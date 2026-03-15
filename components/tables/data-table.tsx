@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className={`mx-auto w-full max-w-3xl ${className}`}>
+    <div className={`mx-auto w-full ${className}`}>
       <div className="flex items-center py-4">
         <form className="mr-auto">
           <Label htmlFor="search" className="sr-only">
