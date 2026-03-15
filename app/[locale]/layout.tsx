@@ -4,6 +4,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import NavLink from "../_components/NavLink";
 import DifficultySpan from "@/components/difficulty-span";
+import { StoreHydration } from "@/components/store-hydration";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${rubikSans.variable} ${rubikMono.variable} flex min-h-screen flex-col antialiased`}
       >
+        <StoreHydration />
         <NextIntlClientProvider>
           <header className="flex justify-center">
             <nav className="max-w-page w-full bg-gray-800">
