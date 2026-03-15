@@ -85,3 +85,46 @@ export const createNumericColumn = <T, K extends keyof T>(
     align: "right",
   },
 });
+
+export const createImportersColumn = <
+  T,
+  K extends keyof T,
+>(): ColumnDef<T> => ({
+  accessorKey: "importers" as K,
+  header: ({
+    column,
+    table,
+  }: {
+    column: Column<T, unknown>;
+    table: Table<T>;
+  }) => {
+    const { t } = getMeta(table);
+    return (
+      <TableHeaderContent column={column} align="end">
+        {t(`general.tableColumns.importers`)}
+      </TableHeaderContent>
+    );
+  },
+  cell: ({ getValue, table }) => {
+    const importers = getValue() as string[];
+    const { t } = getMeta(table);
+
+    if (!importers?.length) {
+      return "-";
+    }
+
+    if (importers.length === 1) {
+      return t(`importers.${importers[0]}`);
+    }
+
+    return (
+      <ul>
+        {importers.map((importer, index) => (
+          <li className="not-first:pt-1" key={index}>
+            {t(`importers.${importer}`)}
+          </li>
+        ))}
+      </ul>
+    );
+  },
+});
