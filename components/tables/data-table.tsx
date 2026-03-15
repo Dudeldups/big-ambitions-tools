@@ -149,14 +149,14 @@ export function DataTable<TData, TValue>({
         </DropdownMenu>
       </div>
 
-      <div className="overflow-hidden rounded-md border">
+      <div className="rounded-md border max-lg:overflow-x-hidden">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 z-10">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="p-0" key={header.id}>
+                    <TableHead className="p-0" scope="col" key={header.id}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
