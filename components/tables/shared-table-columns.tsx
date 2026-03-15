@@ -6,6 +6,7 @@ import { translateCell } from "@/lib/utils/translateCell";
 import { currencyCell } from "@/lib/utils/currencyCell";
 import { Column, ColumnDef, Table } from "@tanstack/react-table";
 import { Difficulty, Price } from "@/lib/game/types";
+import { Importer } from "@/lib/game/importerNames";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey: K,
@@ -86,11 +87,14 @@ export const createNumericColumn = <T, K extends keyof T>(
   },
 });
 
+type WithImporters = {
+  importers?: Importer[];
+};
+
 export const createImportersColumn = <
-  T,
-  K extends keyof T,
+  T extends WithImporters,
 >(): ColumnDef<T> => ({
-  accessorKey: "importers" as K,
+  accessorKey: "importers",
   header: ({
     column,
     table,
