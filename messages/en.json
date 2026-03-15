@@ -1,5 +1,10 @@
 {
   "general": {
+    "difficultyOptions": {
+      "easy": "Easy",
+      "normal": "Normal",
+      "hard": "Hard"
+    },
     "summedUpAmount": "Total",
     "noResultsFound": "No results found.",
     "columnsDescription": "Columns",
