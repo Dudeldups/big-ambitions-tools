@@ -3,6 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import {
   createCurrencyColumn,
+  createImportersColumn,
   createNumericColumn,
   createTranslatedColumn,
 } from "@/components/tables/shared-table-columns";
@@ -18,35 +19,7 @@ export const productsColumns: ColumnDef<ProductsColumnData>[] = [
   createTranslatedColumn("itemName", "products"),
   createNumericColumn("amountPerBox"),
   createCurrencyColumn("importPrice", "hard"),
-  {
-    accessorKey: "importers",
-    header: ({ column, table }) => {
-      const { t } = getMeta(table);
-      return (
-        <TableHeaderContent column={column}>
-          {t(`general.tableColumns.importers`)}
-        </TableHeaderContent>
-      );
-    },
-    cell: ({ row }) => {
-      const importers = row.original.importers;
-      if (!importers || importers.length === 0) {
-        return "-";
-      }
-
-      if (importers.length === 1) {
-        return importers[0];
-      }
-
-      return (
-        <ul>
-          {importers.map((importer, index) => {
-            return <li key={index}>{importer}</li>;
-          })}
-        </ul>
-      );
-    },
-  },
+  createImportersColumn(),
   {
     accessorKey: "ingredients",
     enableSorting: false,
@@ -71,7 +44,7 @@ export const productsColumns: ColumnDef<ProductsColumnData>[] = [
             const [name, amount] = Object.entries(ingredient)[0];
 
             return (
-              <li key={index}>
+              <li className="not-first:pt-1" key={index}>
                 {amount} x {name}
               </li>
             );
