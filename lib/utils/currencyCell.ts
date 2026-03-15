@@ -1,3 +1,4 @@
+import { formatToUSD } from "./formatToUSD";
 import { CellContext } from "@tanstack/react-table";
 import { getMeta } from "./getMeta";
 import { Price } from "../game/types";
@@ -16,9 +17,6 @@ export function currencyCell<TData, TValue>() {
       value = price[difficulty];
     }
 
-    return value.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
+    return formatToUSD(value);
   };
 }
