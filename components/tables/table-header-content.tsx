@@ -12,24 +12,22 @@ type Props<TData, TValue> = {
 
 const TableHeaderContent = <TData, TValue>({
   column,
-  align,
+  align = "start",
   children,
 }: Props<TData, TValue>) => {
   const isSorted = column.getIsSorted();
   const canSort = column.getCanSort();
 
+  const className = `flex justify-${align} w-full px-2 py-0`;
+
   if (!canSort) {
-    return (
-      <span className={`flex justify-${align ?? "start"} w-full px-2 py-0`}>
-        {children}
-      </span>
-    );
+    return <span className={className}>{children}</span>;
   }
 
   return (
     <Button
       variant="ghost"
-      className={`flex w-full justify-${align ?? "start"} px-2 py-0`}
+      className={className}
       onClick={() => column.toggleSorting(isSorted === "asc")}
     >
       {children}
