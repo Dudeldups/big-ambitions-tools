@@ -2,7 +2,7 @@ import { products } from "@/lib/game/products";
 import { DataTable } from "../../../../components/tables/data-table";
 import { productsColumns } from "./table-columns";
 
-export default function DemoPage() {
+export default function ProductsPage() {
   const data = Object.entries(products).map(([itemName, product]) => ({
     itemName,
     ...product,

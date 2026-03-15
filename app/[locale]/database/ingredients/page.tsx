@@ -2,7 +2,7 @@ import { ingredients } from "@/lib/game/ingredients";
 import { DataTable } from "../../../../components/tables/data-table";
 import { ingredientsColumns } from "./table-columns";
 
-export default function DemoPage() {
+export default function IngredientsPage() {
   const data = Object.entries(ingredients).map(([itemName, ingredient]) => ({
     itemName,
     ...ingredient,
