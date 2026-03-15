@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { createTranslatedColumn } from "@/components/tables/shared-table-columns";
-import { Workstation } from "@/lib/game/machines";
+import { machines, Workstation } from "@/lib/game/machines";
 import { getMeta } from "@/lib/utils/getMeta";
 import TableHeadContent from "@/components/tables/table-head-content";
 
@@ -22,27 +22,29 @@ export const workstationsColumns: ColumnDef<WorkstationsColumnData>[] = [
         </TableHeadContent>
       );
     },
-    cell: ({ getValue, table }) => {
-      const machines = getValue() as string[];
+    enableSorting: false,
+  },
+  {
+    accessorKey: "purchasePrice",
+    header: ({ column, table }) => {
       const { t } = getMeta(table);
-
-      if (!machines?.length) {
-        return "-";
-      }
-
-      if (machines.length === 1) {
-        return t(`machines.${machines[0]}`);
-      }
-
       return (
-        <ul>
-          {machines.map((machine, index) => (
-            <li className="not-first:pt-1" key={index}>
-              {t(`machines.${machine}`)}
-            </li>
-          ))}
-        </ul>
+        <TableHeadContent column={column} align="end">
+          {t(`general.tableColumns.purchasePrice`)}
+        </TableHeadContent>
       );
+    },
+    sortingFn: (rowA, rowB) => {
+      const totalA = rowA.original.neededMachines
+        .map((m) => machines[m]?.purchasePrice)
+        .reduce((acc, price) => acc + (price || 0), 0);
+      const totalB = rowB.original.neededMachines
+        .map((m) => machines[m]?.purchasePrice)
+        .reduce((acc, price) => acc + (price || 0), 0);
+
+      if (totalA > totalB) return 1;
+      if (totalA < totalB) return -1;
+      return 0;
     },
   },
 ];
