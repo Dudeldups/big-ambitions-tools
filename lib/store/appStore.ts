@@ -3,17 +3,25 @@ import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { Difficulty } from "../game/types";
 
-type AppState = {
+export type AppState = {
+  _hasHydrated: boolean;
   difficulty: Difficulty;
 };
 
-type AppActions = {
+export type AppActions = {
+  _setHasHydrated: (hasHydrated: boolean) => void;
   setDifficulty: (difficulty: Difficulty) => void;
 };
 
 export const useAppStore = create(
   persist(
     immer<AppState & AppActions>((set) => ({
+      _hasHydrated: false,
+      _setHasHydrated: (hasHydrated: boolean) =>
+        set((state) => {
+          state._hasHydrated = hasHydrated;
+        }),
+
       difficulty: "easy",
 
       setDifficulty: (difficulty: Difficulty) =>
@@ -25,6 +33,9 @@ export const useAppStore = create(
       name: "app-storage",
       version: 0,
       skipHydration: true,
+      onRehydrateStorage: () => (state) => {
+        state?._setHasHydrated(true);
+      },
     },
   ),
 );

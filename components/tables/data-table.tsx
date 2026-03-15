@@ -29,7 +29,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
-import { useAppStore } from "@/lib/store/app-store";
+import { useAppStore } from "@/lib/store/appStore";
 import { ButtonGroup } from "../ui/button-group";
 import { Label } from "../ui/label";
 import { usePathname } from "@/i18n/navigation";
