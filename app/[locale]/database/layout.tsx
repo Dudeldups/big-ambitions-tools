@@ -1,5 +1,5 @@
+import TableSwitcher from "@/components/tables/table-switcher";
 import { useTranslations } from "next-intl";
-import TableSwitcher from "./_components/TableSwitcher";
 
 const Database = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("database");
