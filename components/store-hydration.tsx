@@ -1,6 +1,6 @@
 "use client";
 
-import { useAppStore } from "@/lib/store/appStore";
+import { useAppStore } from "@/lib/stores/appStore";
 import { useEffect } from "react";
 
 export function StoreHydration() {

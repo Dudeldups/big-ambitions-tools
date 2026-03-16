@@ -23,7 +23,7 @@ import {
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
-import { useAppStore } from "@/lib/store/appStore";
+import { useAppStore } from "@/lib/stores/appStore";
 import { Label } from "../ui/label";
 import { usePathname } from "@/i18n/navigation";
 import ColumnSelector from "./column-selector";

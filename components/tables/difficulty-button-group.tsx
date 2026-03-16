@@ -3,7 +3,7 @@
 import { useAppState } from "@/lib/hooks/useAppState";
 import { Button } from "../ui/button";
 import { ButtonGroup } from "../ui/button-group";
-import { useAppStore } from "@/lib/store/appStore";
+import { useAppStore } from "@/lib/stores/appStore";
 import { useTranslations } from "next-intl";
 
 type DifficultyButtonGroupProps = {

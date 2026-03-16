@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { AppActions, AppState, useAppStore } from "../store/appStore";
+import { AppActions, AppState, useAppStore } from "../stores/appStore";
 
 const subscribe = () => () => {};
 const getClientSnapshot = () => true;
