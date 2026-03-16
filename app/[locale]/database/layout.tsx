@@ -1,12 +1,12 @@
 import TableSwitcher from "@/components/tables/table-switcher";
 import { useTranslations } from "next-intl";
 
-const Database = ({ children }: { children: React.ReactNode }) => {
+const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("database");
 
   return (
-    <div className="flex flex-col items-center px-4 py-8">
-      <section className="max-w-page w-full">
+    <div className="px-4 py-8">
+      <section className="max-w-page mx-auto w-full">
         <hgroup>
           <h1>{t("intro.title")}</h1>
           <p>{t("intro.desc")}</p>
@@ -20,4 +20,4 @@ const Database = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Database;
+export default DatabaseLayout;
