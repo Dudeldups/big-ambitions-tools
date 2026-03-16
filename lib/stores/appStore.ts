@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { Difficulty } from "../game/types";
+import { omit } from "./omit";
 
 export type AppState = {
   _hasHydrated: boolean;
@@ -32,6 +33,7 @@ export const useAppStore = create(
     {
       name: "app-storage",
       version: 0,
+      partialize: (state) => omit(state, ["_hasHydrated"]),
       skipHydration: true,
       onRehydrateStorage: () => (state) => {
         state?._setHasHydrated(true);
