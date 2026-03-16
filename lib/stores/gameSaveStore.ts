@@ -18,14 +18,14 @@ export type GameSaveState = {
 
 export type GameSaveActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
-  addGameSave: (gameSave: GameSave) => void;
+  addGameSave: (gameSave: GameSaveFormValues) => GameSave;
   setActiveGameSave: (gameSaveId: string) => void;
-  deleteGameSave: (gameSaveId: string) => void;
+  deleteGameSave: (gameSaveId: string) => GameSave;
 };
 
 export const useGameSaveStore = create(
   persist(
-    immer<GameSaveState & GameSaveActions>((set) => ({
+    immer<GameSaveState & GameSaveActions>((set, get) => ({
       _hasHydrated: false,
       _setHasHydrated: (hasHydrated: boolean) =>
         set((state) => {
@@ -35,24 +35,39 @@ export const useGameSaveStore = create(
       gameSaves: [],
       activeGameSaveId: null,
 
-      addGameSave: (gameSave: GameSave) =>
+      addGameSave: (values) => {
+        const newGameSave: GameSave = {
+          ...values,
+          id: crypto.randomUUID(),
+          createdAt: Date.now(),
+        };
         set((state) => {
-          state.gameSaves.push(gameSave);
-          state.activeGameSaveId = gameSave.id;
-        }),
+          state.gameSaves.push(newGameSave);
+          state.activeGameSaveId = newGameSave.id;
+        });
+        return newGameSave;
+      },
       setActiveGameSave: (gameSaveId: string) =>
         set((state) => {
           state.activeGameSaveId = gameSaveId;
         }),
-      deleteGameSave: (gameSaveId: string) =>
+      deleteGameSave: (gameSaveId: string) => {
+        const gameSaveToDelete = get().gameSaves.find(
+          (gs) => gs.id === gameSaveId,
+        );
+
         set((state) => {
           state.gameSaves = state.gameSaves.filter(
             (gs) => gs.id !== gameSaveId,
           );
+
           if (state.activeGameSaveId === gameSaveId) {
             state.activeGameSaveId = null;
           }
-        }),
+        });
+
+        return gameSaveToDelete!;
+      },
     })),
     {
       name: "gameSave-storage",
