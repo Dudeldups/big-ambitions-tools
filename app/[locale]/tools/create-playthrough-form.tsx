@@ -52,7 +52,6 @@ const CreatePlaythroughForm = () => {
   });
 
   const onSubmit = (values: PlaythroughFormValues) => {
-    console.log("onSubmit called", values);
     const save = addPlaythrough(values);
     toast.success(
       t("toasts.playthroughSaveSuccess", { characterName: save.characterName }),
