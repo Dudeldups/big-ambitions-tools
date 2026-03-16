@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import NavLink from "../_components/NavLink";
 import DifficultySpan from "@/components/difficulty-span";
 import { StoreHydration } from "@/components/store-hydration";
+import { Toaster } from "sonner";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({
 
           <footer className="mt-auto">Footer</footer>
         </NextIntlClientProvider>
+        <Toaster />
       </body>
     </html>
   );
