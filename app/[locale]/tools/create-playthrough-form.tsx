@@ -6,15 +6,18 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { DIFFICULTIES } from "@/lib/constants";
 import { useAppState } from "@/lib/hooks/useAppState";
-import { GameSaveFormValues, gameSaveSchema } from "@/lib/schemas/gameSave";
-import { useGameSaveStore } from "@/lib/stores/gameSaveStore";
+import {
+  PlaythroughFormValues,
+  playthroughSchema,
+} from "@/lib/schemas/playthrough";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-const CreateGameSaveForm = () => {
-  const addGameSave = useGameSaveStore((state) => state.addGameSave);
+const CreatePlaythroughForm = () => {
+  const addPlaythrough = usePlaythroughStore((state) => state.addPlaythrough);
   const appDifficulty = useAppState((state) => state.difficulty);
 
   const t = useTranslations();
@@ -25,8 +28,8 @@ const CreateGameSaveForm = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<GameSaveFormValues>({
-    resolver: zodResolver(gameSaveSchema),
+  } = useForm<PlaythroughFormValues>({
+    resolver: zodResolver(playthroughSchema),
     mode: "onChange",
     defaultValues: {
       characterName: "",
@@ -34,10 +37,10 @@ const CreateGameSaveForm = () => {
     },
   });
 
-  const onSubmit = (values: GameSaveFormValues) => {
-    const save = addGameSave(values);
+  const onSubmit = (values: PlaythroughFormValues) => {
+    const save = addPlaythrough(values);
     toast.success(
-      t("toasts.gameSaveSuccess", { characterName: save.characterName }),
+      t("toasts.playthroughSaveSuccess", { characterName: save.characterName }),
       {
         position: "bottom-right",
       },
@@ -102,4 +105,4 @@ const CreateGameSaveForm = () => {
   );
 };
 
-export default CreateGameSaveForm;
+export default CreatePlaythroughForm;

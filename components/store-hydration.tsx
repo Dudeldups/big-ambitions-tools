@@ -1,13 +1,13 @@
 "use client";
 
 import { useAppStore } from "@/lib/stores/appStore";
-import { useGameSaveStore } from "@/lib/stores/gameSaveStore";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useEffect } from "react";
 
 export function StoreHydration() {
   useEffect(() => {
     useAppStore.persist.rehydrate();
-    useGameSaveStore.persist.rehydrate();
+    usePlaythroughStore.persist.rehydrate();
   }, []);
 
   return null;

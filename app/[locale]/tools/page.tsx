@@ -1,20 +1,21 @@
-import CreateSavegameForm from "./create-gamesave-form";
+import CreatePlaythroughForm from "./create-playthrough-form";
 
 const Tools = () => {
   return (
     <div className="px-4 py-8">
       <section className="max-w-page mx-auto w-full">
         <hgroup>
-          <h2>Let&apos;s get started</h2>
+          <h2>Your playthroughs</h2>
           <p>
-            Create a new plan for your current playthrough. Select the
-            difficulty so the tools can calculate the correct prices for the
-            products and ingredients.
+            Here you can create and manage your playthroughs. A playthrough
+            represents a single run of the game. You can create multiple
+            playthroughs to compare different runs, experiment with different
+            characters and difficulties, or just keep track of your progress.
           </p>
         </hgroup>
-      </section>
 
-      <CreateSavegameForm />
+        <CreatePlaythroughForm />
+      </section>
     </div>
   );
 };

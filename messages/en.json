@@ -25,7 +25,7 @@
     }
   },
   "toasts": {
-    "gameSaveSuccess": "Game save {characterName} created!"
+    "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!"
   },
   "home": {
     "intro": {
