@@ -5,9 +5,9 @@
     "columnsDescription": "Columns",
     "filterResults": "Filter results...",
     "difficultyOptions": {
-      "easy": "Easy",
-      "normal": "Normal",
-      "hard": "Hard"
+      "easy": "easy",
+      "normal": "normal",
+      "hard": "hard"
     },
     "tableColumns": {
       "itemName": "Item name",
@@ -23,6 +23,9 @@
       "ingredients": "Ingredients",
       "productionRate": "Production / hr"
     }
+  },
+  "toasts": {
+    "gameSaveSuccess": "Game save {characterName} created!"
   },
   "home": {
     "intro": {
@@ -99,6 +102,16 @@
           "storageCapacity": "Storage capacity"
         }
       }
+    }
+  },
+  "tools": {
+    "intro": {
+      "title": "Tools",
+      "desc": "Here you can find various tools to help you optimize your factories and production lines. Just select the products you want to produce to see the required ingredients, machines, and workstations."
+    },
+    "factoryPlanner": {
+      "title": "Factory Planner",
+      "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest."
     }
   },
   "about": {
