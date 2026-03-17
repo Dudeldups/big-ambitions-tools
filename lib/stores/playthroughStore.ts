@@ -20,6 +20,10 @@ export type PlaythroughActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   addPlaythrough: (playthrough: PlaythroughFormValues) => Playthrough;
   setActivePlaythrough: (playthroughId: string) => void;
+  editPlaythrough: (
+    playthroughId: string,
+    updatedFields: Partial<PlaythroughFormValues>,
+  ) => Playthrough | undefined;
   deletePlaythrough: (playthroughId: string) => Playthrough | undefined;
 };
 
@@ -51,14 +55,30 @@ export const usePlaythroughStore = create(
         set((state) => {
           state.activePlaythroughId = playthroughId;
         }),
+      editPlaythrough: (
+        playthroughId: string,
+        updatedFields: Partial<PlaythroughFormValues>,
+      ) => {
+        let updatedPlaythrough: Playthrough | undefined;
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+          if (playthrough) {
+            Object.assign(playthrough, updatedFields);
+            updatedPlaythrough = playthrough;
+          }
+        });
+        return updatedPlaythrough;
+      },
       deletePlaythrough: (playthroughId: string) => {
         const playthroughToDelete = get().playthroughs.find(
-          (gs) => gs.id === playthroughId,
+          (p) => p.id === playthroughId,
         );
 
         set((state) => {
           state.playthroughs = state.playthroughs.filter(
-            (gs) => gs.id !== playthroughId,
+            (p) => p.id !== playthroughId,
           );
 
           if (state.activePlaythroughId === playthroughId) {
