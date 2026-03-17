@@ -10,9 +10,9 @@ const ToolsLayout = ({ children }: { children: React.ReactNode }) => {
           <h1>{t("intro.title")}</h1>
           <p>{t("intro.desc")}</p>
         </hgroup>
-
-        {children}
       </section>
+
+      {children}
     </div>
   );
 };
