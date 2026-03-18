@@ -24,6 +24,7 @@ import {
 } from "@/lib/schemas/playthrough";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -75,25 +76,30 @@ const CreatePlaythroughForm = () => {
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline">Create new playthrough</Button>
+        <Button variant="outline">
+          <Plus className="size-5" />
+        </Button>
       </DialogTrigger>
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create New Playthrough</DialogTitle>
+          <DialogTitle>
+            {t("tools.dashboard.createPlaythroughTitle")}
+          </DialogTitle>
           <DialogDescription>
-            Create a new playthrough. Select the difficulty so the tools can
-            calculate the correct prices for the products and ingredients.
+            {t("tools.dashboard.createPlaythroughDesc")}
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <FieldGroup>
             <Field>
-              <Label htmlFor="characterName">Character Name</Label>
+              <Label htmlFor="characterName">
+                {t("general.characterName")}
+              </Label>
               <Input
                 id="characterName"
-                placeholder="e.g. John Manhattan"
+                placeholder={t("tools.dashboard.createPlaythroughPlaceholder")}
                 {...register("characterName")}
               />
               {errors.characterName && (
@@ -143,9 +149,9 @@ const CreatePlaythroughForm = () => {
 
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">{t("general.cancel")}</Button>
             </DialogClose>
-            <Button type="submit">Create</Button>
+            <Button type="submit">{t("general.confirm")}</Button>
           </DialogFooter>
         </form>
       </DialogContent>
