@@ -5,10 +5,10 @@ export const playthroughSchema = z.object({
   characterName: z
     .string()
     .trim()
-    .min(1, "Character name is required")
-    .max(50, "Character name must be at most 50 characters"),
+    .min(1, "errors.playthrough.nameRequired")
+    .max(30, "errors.playthrough.nameTooLong"),
   difficulty: z.enum(DIFFICULTY_OPTIONS, {
-    message: "Please select a difficulty",
+    message: "errors.playthrough.difficultyRequired",
   }),
 });
 
