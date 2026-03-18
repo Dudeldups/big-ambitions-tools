@@ -33,6 +33,17 @@
     "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",
     "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!"
   },
+  "errors": {
+    "playthrough": {
+      "nameRequired": "Character name is required.",
+      "nameTooLong": "Character name must be at most 30 characters.",
+      "difficultyRequired": "Please select a difficulty."
+    },
+    "factory": {
+      "nameTooLong": "Factory name must be at most 50 characters.",
+      "descriptionTooLong": "Factory description must be at most 150 characters."
+    }
+  },
   "home": {
     "intro": {
       "title": "Welcome to Big Ambitions Tools!",
@@ -114,6 +125,12 @@
     "intro": {
       "title": "Tools",
       "desc": "Here you can find various tools to help you optimize your factories and production lines. Just select the products you want to produce to see the required ingredients, machines, and workstations."
+    },
+    "overview": {
+      "empire": {
+        "title": "Your empire",
+        "desc": "Get a quick overview of your empire!"
+      }
     },
     "dashboard": {
       "title": "Dashboard",

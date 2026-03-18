@@ -102,9 +102,9 @@ const CreatePlaythroughForm = () => {
                 placeholder={t("tools.dashboard.createPlaythroughPlaceholder")}
                 {...register("characterName")}
               />
-              {errors.characterName && (
+              {errors.characterName?.message && (
                 <p className="text-destructive text-sm">
-                  {errors.characterName.message}
+                  {t(errors.characterName.message)}
                 </p>
               )}
             </Field>
@@ -139,9 +139,9 @@ const CreatePlaythroughForm = () => {
                 <Spinner />
               )}
 
-              {errors.difficulty && (
+              {errors.difficulty?.message && (
                 <p className="text-destructive text-sm">
-                  {errors.difficulty.message}
+                  {t(errors.difficulty.message)}
                 </p>
               )}
             </Field>
