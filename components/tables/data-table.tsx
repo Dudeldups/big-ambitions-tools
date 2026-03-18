@@ -142,7 +142,7 @@ export function DataTable<TData, TValue>({
                         key={cell.id}
                         className={`${
                           cell.column.columnDef.meta?.align === "right"
-                            ? "text-right"
+                            ? "amount"
                             : ""
                         } align-top`}
                       >

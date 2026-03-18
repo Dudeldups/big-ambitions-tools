@@ -52,7 +52,7 @@ export default function MachinesPage() {
                   </ul>
                 </TableCell>
 
-                <TableCell className="text-right">
+                <TableCell className="amount">
                   <ul>
                     {prices.map((p, i) => (
                       <li key={i}>{formatToUSD(p)}</li>
@@ -65,7 +65,7 @@ export default function MachinesPage() {
                 <TableCell className="font-semibold">
                   {t("general.summedUpAmount")}
                 </TableCell>
-                <TableCell className="text-right font-semibold">
+                <TableCell className="amount underline underline-offset-2">
                   {formatToUSD(total)}
                 </TableCell>
               </TableRow>
