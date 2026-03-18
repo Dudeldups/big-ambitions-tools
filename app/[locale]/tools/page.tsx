@@ -1,8 +1,9 @@
 import CreatePlaythroughForm from "./create-playthrough-form";
+import Dashboard from "./dashboard";
 
 const Tools = () => {
   return (
-    <div className="px-4 py-8">
+    <>
       <section className="max-w-page mx-auto w-full">
         <hgroup>
           <h2>Your playthroughs</h2>
@@ -15,8 +16,10 @@ const Tools = () => {
         </hgroup>
 
         <CreatePlaythroughForm />
+
+        <Dashboard />
       </section>
-    </div>
+    </>
   );
 };
 
