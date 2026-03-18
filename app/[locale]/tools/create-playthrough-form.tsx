@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Spinner } from "@/components/ui/spinner";
-import { DIFFICULTIES } from "@/lib/constants";
+import { DIFFICULTY_OPTIONS } from "@/lib/constants";
 import { useAppState } from "@/lib/hooks/useAppState";
 import {
   PlaythroughFormValues,
@@ -82,9 +82,8 @@ const CreatePlaythroughForm = () => {
         <DialogHeader>
           <DialogTitle>Create New Playthrough</DialogTitle>
           <DialogDescription>
-            Create a new save for your current playthrough. Select the
-            difficulty so the tools can calculate the correct prices for the
-            products and ingredients.
+            Create a new playthrough. Select the difficulty so the tools can
+            calculate the correct prices for the products and ingredients.
           </DialogDescription>
         </DialogHeader>
 
@@ -105,7 +104,7 @@ const CreatePlaythroughForm = () => {
             </Field>
 
             <Field>
-              <Label>Difficulty</Label>
+              <Label>{t("general.difficulty")}</Label>
               {appDifficulty ? (
                 <Controller
                   control={control}
@@ -116,7 +115,7 @@ const CreatePlaythroughForm = () => {
                       value={field.value}
                       className="flex gap-4"
                     >
-                      {DIFFICULTIES.map((d) => (
+                      {DIFFICULTY_OPTIONS.map((d) => (
                         <div key={d} className="flex items-center gap-2">
                           <RadioGroupItem value={d} id={d} />
                           <Label

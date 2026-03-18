@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { DIFFICULTIES } from "../constants";
+import { DIFFICULTY_OPTIONS } from "../constants";
 
 export const playthroughSchema = z.object({
   characterName: z
@@ -7,7 +7,7 @@ export const playthroughSchema = z.object({
     .trim()
     .min(1, "Character name is required")
     .max(50, "Character name must be at most 50 characters"),
-  difficulty: z.enum(DIFFICULTIES, {
+  difficulty: z.enum(DIFFICULTY_OPTIONS, {
     message: "Please select a difficulty",
   }),
 });

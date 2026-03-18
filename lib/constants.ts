@@ -1,6 +1,6 @@
 import { Difficulty } from "./game/types";
 
-export const DIFFICULTIES = [
+export const DIFFICULTY_OPTIONS = [
   "easy",
   "normal",
   "hard",
