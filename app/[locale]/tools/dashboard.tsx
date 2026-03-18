@@ -24,8 +24,8 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import DeletePlaythroughDialog from "./delete-playthrough-dialog";
 import CreatePlaythroughForm from "./create-playthrough-form";
+import DeletePlaythroughDialog from "./delete-playthrough-dialog";
 
 const Dashboard = () => {
   const t = useTranslations();
@@ -77,7 +77,7 @@ const Dashboard = () => {
   return (
     <div>
       <hgroup>
-        <h3>{t("tools.dashboard.title")}</h3>
+        <h2>{t("tools.dashboard.title")}</h2>
 
         <p>{t("tools.dashboard.desc")}</p>
       </hgroup>
@@ -147,9 +147,9 @@ const Dashboard = () => {
                 ) : (
                   <div className="flex items-center gap-8">
                     <hgroup>
-                      <h4 className="w-60 truncate text-xl font-semibold">
+                      <h3 className="w-60 truncate text-xl font-semibold">
                         {pt.characterName}
-                      </h4>
+                      </h3>
                       <p className="text-muted-foreground mt-2">
                         {t("general.difficulty")}:{" "}
                         {t(`general.difficultyOptions.${pt.difficulty}`)}

@@ -2,14 +2,14 @@ import { useTranslations } from "next-intl";
 import Dashboard from "./dashboard";
 
 const Tools = () => {
-  const t = useTranslations("tools.dashboard");
+  const t = useTranslations("tools");
 
   return (
     <>
       <section className="max-w-page mx-auto w-full">
         <hgroup>
-          <h2>{t("title")}</h2>
-          <p>{t("desc")}</p>
+          <h1>{t("intro.title")}</h1>
+          <p>{t("intro.desc")}</p>
         </hgroup>
 
         <Dashboard />
