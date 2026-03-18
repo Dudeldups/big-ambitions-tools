@@ -19,18 +19,18 @@ import {
   Playthrough,
   usePlaythroughStore,
 } from "@/lib/stores/playthroughStore";
-import { SquareCheckBig, SquarePen, Trash2, X } from "lucide-react";
+import { SquareCheckBig, SquarePen, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
+import DeletePlaythroughDialog from "./delete-playthrough-dialog";
+import CreatePlaythroughForm from "./create-playthrough-form";
 
 const Dashboard = () => {
   const t = useTranslations();
   const playthroughs = usePlaythroughState((state) => state.playthroughs);
-  const deletePlaythrough = usePlaythroughStore(
-    (state) => state.deletePlaythrough,
-  );
+
   const editPlaythrough = usePlaythroughStore((state) => state.editPlaythrough);
 
   const [isEditing, setIsEditing] = useState(false);
@@ -77,21 +77,21 @@ const Dashboard = () => {
   return (
     <div>
       <hgroup>
-        <h3>Dashboard</h3>
+        <h3>{t("tools.dashboard.title")}</h3>
 
-        <p>
-          Manage your playthroughs and view stats. This is where you can keep
-          track of all your progress and make adjustments as needed.
-        </p>
+        <p>{t("tools.dashboard.desc")}</p>
       </hgroup>
+
+      <div className="flex items-center gap-5">
+        <p>{t("tools.dashboard.createPlaythroughButtonDesc")}</p>
+        <CreatePlaythroughForm />
+      </div>
 
       <div>
         {!playthroughs ? (
           <Spinner />
         ) : playthroughs.length === 0 ? (
-          <p>
-            You don&apos;t have any playthroughs yet. Create one to get started!
-          </p>
+          <p>{t("tools.dashboard.noPlaythroughs")}</p>
         ) : (
           <ul className="flex flex-wrap gap-5">
             {playthroughs.map((pt) => (
@@ -170,14 +170,7 @@ const Dashboard = () => {
                       >
                         <SquarePen className="size-5" />
                       </Button>
-                      <Button
-                        size="icon-lg"
-                        variant="destructive"
-                        disabled={isEditing && editingPlaythroughId === pt.id}
-                        onClick={() => deletePlaythrough(pt.id)}
-                      >
-                        <Trash2 className="size-5" />
-                      </Button>
+                      <DeletePlaythroughDialog playthroughToDelete={pt.id} />
                     </div>
                   </div>
                 )}

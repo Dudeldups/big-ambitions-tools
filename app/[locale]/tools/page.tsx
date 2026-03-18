@@ -1,21 +1,16 @@
-import CreatePlaythroughForm from "./create-playthrough-form";
+import { useTranslations } from "next-intl";
 import Dashboard from "./dashboard";
 
 const Tools = () => {
+  const t = useTranslations("tools.dashboard");
+
   return (
     <>
       <section className="max-w-page mx-auto w-full">
         <hgroup>
-          <h2>Your playthroughs</h2>
-          <p>
-            Here you can create and manage your playthroughs. A playthrough
-            represents a single run of the game. You can create multiple
-            playthroughs to compare different runs, experiment with different
-            characters and difficulties, or just keep track of your progress.
-          </p>
+          <h2>{t("title")}</h2>
+          <p>{t("desc")}</p>
         </hgroup>
-
-        <CreatePlaythroughForm />
 
         <Dashboard />
       </section>
