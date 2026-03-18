@@ -49,27 +49,24 @@ export const usePlaythroughStore = create(
           state.playthroughs.push(newPlaythrough);
           state.activePlaythroughId = newPlaythrough.id;
         });
+
         return newPlaythrough;
       },
       setActivePlaythrough: (playthroughId: string) =>
         set((state) => {
           state.activePlaythroughId = playthroughId;
         }),
-      editPlaythrough: (
-        playthroughId: string,
-        updatedFields: Partial<PlaythroughFormValues>,
-      ) => {
-        let updatedPlaythrough: Playthrough | undefined;
+      editPlaythrough: (playthroughId, updatedFields) => {
         set((state) => {
           const playthrough = state.playthroughs.find(
             (p) => p.id === playthroughId,
           );
           if (playthrough) {
             Object.assign(playthrough, updatedFields);
-            updatedPlaythrough = playthrough;
           }
         });
-        return updatedPlaythrough;
+
+        return get().playthroughs.find((p) => p.id === playthroughId);
       },
       deletePlaythrough: (playthroughId: string) => {
         const playthroughToDelete = get().playthroughs.find(
