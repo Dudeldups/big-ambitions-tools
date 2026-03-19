@@ -31,7 +31,9 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const CreatePlaythroughForm = () => {
-  const addPlaythrough = usePlaythroughStore((state) => state.addPlaythrough);
+  const createPlaythrough = usePlaythroughStore(
+    (state) => state.createPlaythrough,
+  );
   const appDifficulty = useAppState((state) => state.difficulty);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -53,7 +55,7 @@ const CreatePlaythroughForm = () => {
   });
 
   const onSubmit = (values: PlaythroughFormValues) => {
-    const save = addPlaythrough(values);
+    const save = createPlaythrough(values);
     toast.success(
       t("toasts.playthroughSaveSuccess", { characterName: save.characterName }),
       {
