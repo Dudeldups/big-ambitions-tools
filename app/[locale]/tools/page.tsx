@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import Dashboard from "./dashboard";
+import PlaythroughOverview from "./playthrough-overview";
 
 const Tools = () => {
   const t = useTranslations("tools");
@@ -12,7 +12,7 @@ const Tools = () => {
           <p>{t("intro.desc")}</p>
         </hgroup>
 
-        <Dashboard />
+        <PlaythroughOverview />
       </section>
     </>
   );

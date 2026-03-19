@@ -26,12 +26,16 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import CreatePlaythroughForm from "./create-playthrough-form";
 import DeletePlaythroughDialog from "./delete-playthrough-dialog";
+import { Link } from "@/i18n/navigation";
 
-const Dashboard = () => {
+const PlaythroughOverview = () => {
   const t = useTranslations();
   const playthroughs = usePlaythroughState((state) => state.playthroughs);
 
   const editPlaythrough = usePlaythroughStore((state) => state.editPlaythrough);
+  const setActivePlaythrough = usePlaythroughStore(
+    (state) => state.setActivePlaythrough,
+  );
 
   const [isEditing, setIsEditing] = useState(false);
   const [editingPlaythroughId, setEditingPlaythroughId] = useState<
@@ -146,15 +150,20 @@ const Dashboard = () => {
                   </form>
                 ) : (
                   <div className="flex items-center gap-8">
-                    <hgroup>
-                      <h3 className="w-60 truncate text-xl font-semibold">
-                        {pt.characterName}
-                      </h3>
-                      <p className="text-muted-foreground mt-2">
-                        {t("general.difficulty")}:{" "}
-                        {t(`general.difficultyOptions.${pt.difficulty}`)}
-                      </p>
-                    </hgroup>
+                    <Link
+                      href={`/tools/dashboard`}
+                      onClick={() => setActivePlaythrough(pt.id)}
+                    >
+                      <hgroup>
+                        <h3 className="w-60 truncate text-xl font-semibold">
+                          {pt.characterName}
+                        </h3>
+                        <p className="text-muted-foreground mt-2">
+                          {t("general.difficulty")}:{" "}
+                          {t(`general.difficultyOptions.${pt.difficulty}`)}
+                        </p>
+                      </hgroup>
+                    </Link>
 
                     <div className="flex items-center gap-2">
                       <Button
@@ -183,4 +192,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default PlaythroughOverview;
