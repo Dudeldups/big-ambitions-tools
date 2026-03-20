@@ -1,63 +1,66 @@
-export type ProductName =
-  | "Gift (Cheap)"
-  | "Gift (Expensive)"
-  | "Umbrella"
-  | "Cigar"
-  | "Pack of Cigarettes"
-  | "Novel"
-  | "Picture Book"
-  | "Technical Manual"
-  | "Youth Novel"
-  | "Motivational Book"
-  | "Limited Edition Book"
-  | "Paper Bag"
-  | "Flower (Cheap)"
-  | "Flower (Expensive)"
-  | "Bag of Pears"
-  | "Bag of Apples"
-  | "Bag of Tomatoes"
-  | "Bag of Carrots"
-  | "Bag of Lettuce"
-  | "Bag of Bananas"
-  | "Ice Cream"
-  | "Cupcake"
-  | "Popcorn"
-  | "Donut"
-  | "Fresh Food"
-  | "Frozend Food"
-  | "Pizza"
-  | "French Fries"
-  | "Chicken Kabob Skewer"
-  | "Burger"
-  | "Croissant"
-  | "Cheese Platter"
-  | "Hotdog"
-  | "Cotton Candy"
-  | "Salad"
-  | "Energy Drink"
-  | "Cup of Tea"
-  | "Cup of Coffee"
-  | "Whisky"
-  | "Slushie"
-  | "Soda Can"
-  | "Bottle of Wine"
-  | "Margarita"
-  | "Beer"
-  | "Martini"
-  | "Hair Care Product"
-  | "Jewelry (Cheap)"
-  | "Jewelry (Expensive)"
-  | "Rhythm By Tre Headphones"
-  | "Noize Boss Earbuds"
-  | "Arty Fish Phone"
-  | "ZanaMan Phone"
-  | "Arty Fish Smartwatch"
-  | "ZanaMan Smartwatch"
-  | "Clothing (Classic Cheap Male)"
-  | "Clothing (Classic Cheap Female)"
-  | "Clothing (Modern Cheap Male)"
-  | "Clothing (Modern Cheap Female)"
-  | "Clothing (Classic Expensive Male)"
-  | "Clothing (Classic Expensive Female)"
-  | "Clothing (Modern Expensive Male)"
-  | "Clothing (Modern Expensive Female)";
+export const PRODUCT_NAMES = [
+  "Gift (Cheap)",
+  "Gift (Expensive)",
+  "Umbrella",
+  "Cigar",
+  "Pack of Cigarettes",
+  "Novel",
+  "Picture Book",
+  "Technical Manual",
+  "Youth Novel",
+  "Motivational Book",
+  "Limited Edition Book",
+  "Paper Bag",
+  "Flower (Cheap)",
+  "Flower (Expensive)",
+  "Bag of Pears",
+  "Bag of Apples",
+  "Bag of Tomatoes",
+  "Bag of Carrots",
+  "Bag of Lettuce",
+  "Bag of Bananas",
+  "Ice Cream",
+  "Cupcake",
+  "Popcorn",
+  "Donut",
+  "Fresh Food",
+  "Frozend Food",
+  "Pizza",
+  "French Fries",
+  "Chicken Kabob Skewer",
+  "Burger",
+  "Croissant",
+  "Cheese Platter",
+  "Hotdog",
+  "Cotton Candy",
+  "Salad",
+  "Energy Drink",
+  "Cup of Tea",
+  "Cup of Coffee",
+  "Whisky",
+  "Slushie",
+  "Soda Can",
+  "Bottle of Wine",
+  "Margarita",
+  "Beer",
+  "Martini",
+  "Hair Care Product",
+  "Jewelry (Cheap)",
+  "Jewelry (Expensive)",
+  "Rhythm By Tre Headphones",
+  "Noize Boss Earbuds",
+  "Arty Fish Phone",
+  "ZanaMan Phone",
+  "Arty Fish Smartwatch",
+  "ZanaMan Smartwatch",
+  "Clothing (Classic Cheap Male)",
+  "Clothing (Classic Cheap Female)",
+  "Clothing (Modern Cheap Male)",
+  "Clothing (Modern Cheap Female)",
+  "Clothing (Classic Expensive Male)",
+  "Clothing (Classic Expensive Female)",
+  "Clothing (Modern Expensive Male)",
+  "Clothing (Modern Expensive Female)",
+] as const;
+
+export type ProductName = (typeof PRODUCT_NAMES)[number];
