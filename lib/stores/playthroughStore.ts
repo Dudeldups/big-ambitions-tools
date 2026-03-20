@@ -36,6 +36,7 @@ export type PlaythroughActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   createPlaythrough: (playthrough: PlaythroughFormValues) => Playthrough;
   setActivePlaythrough: (playthroughId: string) => void;
+  setActivePlaythrough: (playthroughId: string | null) => void;
   editPlaythrough: (
     playthroughId: string,
     updatedFields: Partial<PlaythroughFormValues>,
