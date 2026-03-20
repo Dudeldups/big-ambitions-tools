@@ -35,7 +35,6 @@ export type PlaythroughState = {
 export type PlaythroughActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   createPlaythrough: (playthrough: PlaythroughFormValues) => Playthrough;
-  setActivePlaythrough: (playthroughId: string) => void;
   setActivePlaythrough: (playthroughId: string | null) => void;
   editPlaythrough: (
     playthroughId: string,
@@ -47,7 +46,7 @@ export type PlaythroughActions = {
     playthroughId: string,
     factoryId: string,
   ) => void;
-  createFactory: (playthroughId: string, factory: FactoryFormValues) => Factory;
+  createFactory: (factory: FactoryFormValues) => Factory;
   editFactory: (
     factoryId: string,
     updatedFields: Partial<FactoryFormValues>,
@@ -145,7 +144,7 @@ export const usePlaythroughStore = create(
           }
         }),
 
-      createFactory: (playthroughId, factory) => {
+      createFactory: (factory) => {
         const newFactory: Factory = {
           ...factory,
           id: crypto.randomUUID(),
@@ -153,13 +152,7 @@ export const usePlaythroughStore = create(
           workstations: [],
         };
         set((state) => {
-          const playthrough = state.playthroughs.find(
-            (p) => p.id === playthroughId,
-          );
-          if (playthrough) {
-            state.factories.push(newFactory);
-            playthrough.factoryIds.push(newFactory.id);
-          }
+          state.factories.push(newFactory);
         });
 
         return newFactory;
