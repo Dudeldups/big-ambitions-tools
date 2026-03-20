@@ -32,13 +32,15 @@
   "toasts": {
     "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
     "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",
-    "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!"
+    "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!",
+    "workstationCopyError": "Please select a workstation and a product first."
   },
   "errors": {
     "playthrough": {
       "nameRequired": "Character name is required.",
       "nameTooLong": "Character name must be at most 30 characters.",
-      "difficultyRequired": "Please select a difficulty."
+      "difficultyRequired": "Please select a difficulty.",
+      "workstationProductRequired": "Please select a product for each workstation."
     },
     "factory": {
       "nameTooLong": "Factory name must be at most 50 characters.",
