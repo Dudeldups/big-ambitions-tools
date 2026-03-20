@@ -1,4 +1,6 @@
-export type ShelfName = "Pallet Shelf" | "Storage Shelf";
+export const SHELF_NAMES = ["Pallet Shelf", "Storage Shelf"] as const;
+
+export type ShelfName = (typeof SHELF_NAMES)[number];
 
 export type Shelf = {
   purchasePrice: number;
