@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
-import { Difficulty } from "@/lib/game/types";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { PlaythroughFormValues } from "@/lib/schemas/playthrough";
 import {
@@ -41,10 +40,8 @@ const PlaythroughOverview = () => {
     string | null
   >(null);
 
-  const { register, handleSubmit, reset, control } = useForm<{
-    characterName: string;
-    difficulty: Difficulty;
-  }>();
+  const { register, handleSubmit, reset, control } =
+    useForm<PlaythroughFormValues>();
 
   const startEditing = (pt: Playthrough) => {
     reset({ characterName: pt.characterName, difficulty: pt.difficulty });
