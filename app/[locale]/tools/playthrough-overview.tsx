@@ -40,8 +40,13 @@ const PlaythroughOverview = () => {
     string | null
   >(null);
 
-  const { register, handleSubmit, reset, control } =
-    useForm<PlaythroughFormValues>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    control,
+    formState: { isDirty },
+  } = useForm<PlaythroughFormValues>();
 
   const startEditing = (pt: Playthrough) => {
     reset({ characterName: pt.characterName, difficulty: pt.difficulty });
@@ -58,17 +63,19 @@ const PlaythroughOverview = () => {
   const onSubmit = (values: PlaythroughFormValues) => {
     if (!editingPlaythroughId) return;
 
-    const updatedPlaythrough = editPlaythrough(editingPlaythroughId, {
-      characterName: values.characterName,
-      difficulty: values.difficulty as (typeof DIFFICULTY_OPTIONS)[number],
-    });
-    if (updatedPlaythrough) {
-      toast.success(
-        t("toasts.playthroughEditSuccess", {
-          characterName: updatedPlaythrough.characterName,
-        }),
-        { position: "bottom-right" },
-      );
+    if (isDirty) {
+      const updatedPlaythrough = editPlaythrough(editingPlaythroughId, {
+        characterName: values.characterName,
+        difficulty: values.difficulty as (typeof DIFFICULTY_OPTIONS)[number],
+      });
+      if (updatedPlaythrough) {
+        toast.success(
+          t("toasts.playthroughEditSuccess", {
+            characterName: updatedPlaythrough.characterName,
+          }),
+          { position: "bottom-right" },
+        );
+      }
     }
     setIsEditing(false);
     setEditingPlaythroughId(null);
