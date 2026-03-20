@@ -26,7 +26,6 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import CreatePlaythroughForm from "./create-playthrough-form";
 import DeletePlaythroughDialog from "./delete-playthrough-dialog";
-import { Link } from "@/i18n/navigation";
 
 const PlaythroughOverview = () => {
   const t = useTranslations();
@@ -99,7 +98,7 @@ const PlaythroughOverview = () => {
         ) : (
           <ul className="flex flex-wrap gap-5">
             {playthroughs.map((pt) => (
-              <li key={pt.id} className="rounded-md border p-4">
+              <li key={pt.id} className="bg-card rounded-md border p-4">
                 {isEditing && editingPlaythroughId === pt.id ? (
                   <form
                     className="flex items-center gap-8"
@@ -150,8 +149,8 @@ const PlaythroughOverview = () => {
                   </form>
                 ) : (
                   <div className="flex items-center gap-8">
-                    <Link
-                      href={`/tools/dashboard`}
+                    <button
+                      className="text-left"
                       onClick={() => setActivePlaythrough(pt.id)}
                     >
                       <hgroup>
@@ -162,8 +161,11 @@ const PlaythroughOverview = () => {
                           {t("general.difficulty")}:{" "}
                           {t(`general.difficultyOptions.${pt.difficulty}`)}
                         </p>
+                        <p className="text-muted-foreground">
+                          {t("general.factories")}: {pt.factoryIds.length}
+                        </p>
                       </hgroup>
-                    </Link>
+                    </button>
 
                     <div className="flex items-center gap-2">
                       <Button
