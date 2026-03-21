@@ -91,8 +91,8 @@ const CreateFactoryForm = () => {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="">
-        <DialogHeader>
+      <DialogContent className="p-0">
+        <DialogHeader className="p-4">
           <DialogTitle>Create Factory</DialogTitle>
           <DialogDescription>
             Create a new factory and add it to the current playthrough.
@@ -100,14 +100,16 @@ const CreateFactoryForm = () => {
         </DialogHeader>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <FieldGroup>
+          <FieldGroup className="px-4">
             <Field>
               <Label htmlFor="name" {...register("name")}>
                 Factory Name
               </Label>
               <Input id="name" {...register("name")} autoComplete="off" />
-              {errors.name && (
-                <p className="text-red-500">{errors.name.message}</p>
+              {errors.name?.message && (
+                <p className="text-destructive text-sm">
+                  {t(errors.name.message)}
+                </p>
               )}
             </Field>
             <Field>
@@ -115,10 +117,15 @@ const CreateFactoryForm = () => {
                 Description
               </Label>
               <Textarea id="description" {...register("description")} />
+              {errors.description?.message && (
+                <p className="text-destructive text-sm">
+                  {t(errors.description.message)}
+                </p>
+              )}
             </Field>
           </FieldGroup>
 
-          <FieldGroup>
+          <FieldGroup className="px-4">
             <Field>
               <FieldDescription>Workstations</FieldDescription>
 
@@ -156,7 +163,7 @@ const CreateFactoryForm = () => {
             </Field>
           </FieldGroup>
 
-          <DialogFooter>
+          <DialogFooter className="bg-card p-4">
             <Button type="button" variant="outline" onClick={() => reset()}>
               Reset
             </Button>
