@@ -1,15 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
@@ -18,13 +9,14 @@ import {
   Playthrough,
   usePlaythroughStore,
 } from "@/lib/stores/playthroughStore";
-import { SquareCheckBig, SquarePen, X } from "lucide-react";
+import { SquarePen } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import CreatePlaythroughForm from "./create-playthrough-form";
 import DeletePlaythroughDialog from "./delete-playthrough-dialog";
+import EditPlaythroughForm from "./edit-playthrough-form";
 
 const PlaythroughOverview = () => {
   const t = useTranslations();
@@ -40,13 +32,11 @@ const PlaythroughOverview = () => {
     string | null
   >(null);
 
+  const form = useForm<PlaythroughFormValues>();
   const {
-    register,
-    handleSubmit,
     reset,
-    control,
     formState: { isDirty },
-  } = useForm<PlaythroughFormValues>();
+  } = form;
 
   const startEditing = (pt: Playthrough) => {
     reset({ characterName: pt.characterName, difficulty: pt.difficulty });
@@ -104,53 +94,12 @@ const PlaythroughOverview = () => {
             {playthroughs.map((pt) => (
               <li key={pt.id} className="bg-card rounded-md border p-4">
                 {isEditing && editingPlaythroughId === pt.id ? (
-                  <form
-                    className="flex items-center gap-8"
-                    onSubmit={handleSubmit(onSubmit)}
-                  >
-                    <div className="flex flex-col items-end">
-                      <Input
-                        className="mb-2 w-60"
-                        {...register("characterName")}
-                      />
-                      <Controller
-                        control={control}
-                        name="difficulty"
-                        render={({ field }) => (
-                          <Select
-                            value={field.value}
-                            onValueChange={field.onChange}
-                          >
-                            <SelectTrigger>
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectGroup>
-                                {DIFFICULTY_OPTIONS.map((opt) => (
-                                  <SelectItem key={opt} value={opt}>
-                                    {t(`general.difficultyOptions.${opt}`)}
-                                  </SelectItem>
-                                ))}
-                              </SelectGroup>
-                            </SelectContent>
-                          </Select>
-                        )}
-                      />
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <Button size="icon-lg" variant="outline" type="submit">
-                        <SquareCheckBig className="size-5" />
-                      </Button>
-                      <Button
-                        size="icon-lg"
-                        variant="destructive"
-                        onClick={cancelEditing}
-                      >
-                        <X className="size-5" />
-                      </Button>
-                    </div>
-                  </form>
+                  <FormProvider key={pt.id} {...form}>
+                    <EditPlaythroughForm
+                      onSubmit={onSubmit}
+                      cancelEditing={cancelEditing}
+                    />
+                  </FormProvider>
                 ) : (
                   <div className="flex items-center gap-8">
                     <button
