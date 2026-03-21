@@ -44,7 +44,8 @@
     },
     "factory": {
       "nameTooLong": "Factory name must be at most 50 characters.",
-      "descriptionTooLong": "Factory description must be at most 150 characters."
+      "descriptionTooLong": "Factory description must be at most 150 characters.",
+      "workstationsRequired": "Please add at least one workstation."
     }
   },
   "home": {
@@ -148,7 +149,8 @@
     },
     "factoryPlanner": {
       "title": "Factory Planner",
-      "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest."
+      "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
+      "genericFactoryName": "{productName} factory"
     }
   },
   "about": {
