@@ -21,7 +21,7 @@ import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import WorkstationSelects from "./workstation-selects";
@@ -82,12 +82,6 @@ const CreateFactoryForm = () => {
     setIsModalOpen(false);
     reset();
   };
-
-  useEffect(() => {
-    if (!isModalOpen) {
-      reset();
-    }
-  }, [isModalOpen, reset]);
 
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -163,6 +157,9 @@ const CreateFactoryForm = () => {
           </FieldGroup>
 
           <DialogFooter>
+            <Button type="button" variant="outline" onClick={() => reset()}>
+              Reset
+            </Button>
             <DialogClose asChild>
               <Button variant="outline">{t("general.cancel")}</Button>
             </DialogClose>
