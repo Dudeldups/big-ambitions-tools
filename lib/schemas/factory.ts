@@ -15,7 +15,7 @@ export const factorySchema = z.object({
         product: z.enum(PRODUCT_NAMES),
       }),
     )
-    .optional(),
+    .min(1, "errors.factory.workstationsRequired"),
 });
 
 export type FactoryFormValues = z.infer<typeof factorySchema>;

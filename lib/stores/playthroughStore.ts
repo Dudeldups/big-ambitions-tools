@@ -148,7 +148,6 @@ export const usePlaythroughStore = create(
         const newFactory: Factory = {
           id: crypto.randomUUID(),
           createdAt: Date.now(),
-          workstations: [],
           ...factory,
         };
         set((state) => {
