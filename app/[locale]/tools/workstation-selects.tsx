@@ -16,7 +16,7 @@ import { products } from "@/lib/game/products";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Copy, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   Control,
   Controller,
@@ -57,7 +57,12 @@ const WorkstationSelects = ({
     name: `workstations.${index}.product`,
   });
 
+  const prevWorkstation = useRef(selectedWorkstation);
+
   useEffect(() => {
+    if (prevWorkstation.current === selectedWorkstation) return;
+    prevWorkstation.current = selectedWorkstation;
+
     const firstProduct = productData.find(
       (p) => p.workstation === selectedWorkstation,
     )?.name as ProductName;
@@ -66,10 +71,10 @@ const WorkstationSelects = ({
         shouldValidate: true,
       });
     }
-  }, [selectedWorkstation, setValue, index]);
+  }, [selectedWorkstation, index, setValue]);
 
   return (
-    <div className="flex items-center justify-between gap-2 rounded-md border p-3">
+    <div className="flex items-center gap-2 rounded-md border p-3">
       <div className="flex flex-1 flex-col items-end gap-2">
         <Controller
           control={control}
