@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import PlaythroughOverview from "./playthrough-overview";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
-import PlaythroughDashboard from "./playthrough-dashboard";
 import { Spinner } from "@/components/ui/spinner";
 
 const Tools = () => {
@@ -22,8 +21,6 @@ const Tools = () => {
 
         {activePlaythroughId === undefined ? (
           <Spinner />
-        ) : activePlaythroughId ? (
-          <PlaythroughDashboard />
         ) : (
           <PlaythroughOverview />
         )}

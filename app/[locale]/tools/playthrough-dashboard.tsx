@@ -1,21 +1,20 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
-import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import CreateFactoryForm from "./create-factory-form";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 
 const PlaythroughDashboard = () => {
-  const activePlaythrough = usePlaythroughState((s) =>
-    s.playthroughs.find((p) => p.id === s.activePlaythroughId),
-  );
+  const activePlaythrough = useActivePlaythrough();
+
   const factories = usePlaythroughState((s) => s.factories);
-  const setActivePlaythrough = usePlaythroughStore(
-    (s) => s.setActivePlaythrough,
-  );
+
+  if (!activePlaythrough) {
+    return null;
+  }
 
   return (
     <div>
-      <Button onClick={() => setActivePlaythrough(null)}>Go back</Button>
-
       <h2>PlaythroughDashboard for</h2>
       <p>{activePlaythrough?.characterName}</p>
 
