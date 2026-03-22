@@ -37,6 +37,7 @@
   },
   "errors": {
     "playthrough": {
+      "notFound": "This resource does not exist.",
       "nameRequired": "Character name is required.",
       "nameTooLong": "Character name must be at most 30 characters.",
       "difficultyRequired": "Please select a difficulty.",
