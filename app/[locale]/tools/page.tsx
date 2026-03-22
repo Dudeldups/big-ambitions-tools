@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import PlaythroughOverview from "./playthrough-overview";
-import FactoryOverview from "./factory-overview";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import PlaythroughDashboard from "./playthrough-dashboard";
 import { Spinner } from "@/components/ui/spinner";
@@ -26,10 +25,7 @@ const Tools = () => {
         ) : activePlaythroughId ? (
           <PlaythroughDashboard />
         ) : (
-          <>
-            <PlaythroughOverview />
-            <FactoryOverview />
-          </>
+          <PlaythroughOverview />
         )}
       </section>
     </>
