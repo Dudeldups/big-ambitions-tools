@@ -7,6 +7,7 @@ import { PlaythroughFormValues } from "../schemas/playthrough";
 import { WorkstationName } from "../game/machineNames";
 import { ProductName } from "../game/productNames";
 import { FactoryFormValues } from "../schemas/factory";
+import { generateUniqueId } from "./generateUniqueId";
 
 export type FactoryWorkstation = {
   name: WorkstationName;
@@ -68,15 +69,21 @@ export const usePlaythroughStore = create(
       factories: [],
 
       createPlaythrough: (values) => {
-        const newPlaythrough: Playthrough = {
+        const { playthroughs } = get();
+
+        const existingIds = new Set(playthroughs.map((p) => p.id));
+        const id = generateUniqueId(existingIds);
+
+        const newPlaythrough = {
           ...values,
-          id: crypto.randomUUID(),
+          id,
           createdAt: Date.now(),
           factoryIds: [],
         };
+
         set((state) => {
           state.playthroughs.push(newPlaythrough);
-          state.activePlaythroughId = newPlaythrough.id;
+          state.activePlaythroughId = id;
         });
 
         return newPlaythrough;
@@ -144,12 +151,18 @@ export const usePlaythroughStore = create(
           }
         }),
 
-      createFactory: (factory) => {
+      createFactory: (values) => {
+        const { factories } = get();
+
+        const existingIds = new Set(factories.map((f) => f.id));
+        const id = generateUniqueId(existingIds);
+
         const newFactory: Factory = {
-          id: crypto.randomUUID(),
+          ...values,
+          id,
           createdAt: Date.now(),
-          ...factory,
         };
+
         set((state) => {
           state.factories.push(newFactory);
         });
