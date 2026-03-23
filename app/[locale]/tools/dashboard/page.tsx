@@ -1,7 +1,7 @@
 import PlaythroughDashboard from "../playthrough-dashboard";
 
-const Page = () => {
+const Dashboard = () => {
   return <PlaythroughDashboard />;
 };
 
-export default Page;
+export default Dashboard;
