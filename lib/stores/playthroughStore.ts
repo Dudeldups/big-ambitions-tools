@@ -29,7 +29,7 @@ export type Playthrough = PlaythroughFormValues & {
 export type PlaythroughState = {
   _hasHydrated: boolean;
   playthroughs: Playthrough[];
-  activePlaythroughId: string | null;
+  activePlaythrough: Playthrough | null;
   factories: Factory[];
 };
 
@@ -67,7 +67,7 @@ export const usePlaythroughStore = create(
         }),
 
       playthroughs: [],
-      activePlaythroughId: null,
+      activePlaythrough: null,
       factories: [],
 
       createPlaythrough: (values) => {
@@ -85,14 +85,13 @@ export const usePlaythroughStore = create(
 
         set((state) => {
           state.playthroughs.unshift(newPlaythrough);
-          state.activePlaythroughId = id;
+          state.activePlaythrough = newPlaythrough;
         });
 
         return newPlaythrough;
       },
       setActivePlaythrough: (playthroughId) =>
         set((state) => {
-          state.activePlaythroughId = playthroughId;
           const playthroughIndex = state.playthroughs.findIndex(
             (p) => p.id === playthroughId,
           );
@@ -102,6 +101,7 @@ export const usePlaythroughStore = create(
               1,
             );
             state.playthroughs.unshift(playthrough);
+            state.activePlaythrough = playthrough;
           }
         }),
       editPlaythrough: (playthroughId, updatedFields) => {
@@ -125,8 +125,8 @@ export const usePlaythroughStore = create(
             (p) => p.id !== playthroughId,
           );
 
-          if (state.activePlaythroughId === playthroughId) {
-            state.activePlaythroughId = null;
+          if (state.activePlaythrough?.id === playthroughId) {
+            state.activePlaythrough = null;
           }
         });
 

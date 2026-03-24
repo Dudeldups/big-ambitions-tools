@@ -64,12 +64,6 @@ const PlaythroughOverview = () => {
 
   return (
     <div>
-      <hgroup>
-        <h2>{t("tools.dashboard.title")}</h2>
-
-        <p>{t("tools.dashboard.desc")}</p>
-      </hgroup>
-
       <div className="flex items-center gap-5">
         <p>{t("tools.dashboard.createPlaythroughButtonDesc")}</p>
         <CreatePlaythroughForm />

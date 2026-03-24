@@ -8,7 +8,6 @@ import {
 import { SquarePen } from "lucide-react";
 import { useTranslations } from "next-intl";
 import DeletePlaythroughDialog from "./delete-playthrough-dialog";
-import { Link } from "@/i18n/navigation";
 
 type PlaythroughInfoCardProps = {
   pt: Playthrough;
@@ -30,11 +29,7 @@ const PlaythroughInfoCard = ({
 
   return (
     <div className="flex items-center gap-8">
-      <Link
-        className="text-left"
-        href="/tools/dashboard"
-        onClick={() => setActivePlaythrough(pt.id)}
-      >
+      <button className="text-left" onClick={() => setActivePlaythrough(pt.id)}>
         <hgroup>
           <h3 className="w-60 truncate text-xl font-semibold">
             {pt.characterName}
@@ -47,7 +42,7 @@ const PlaythroughInfoCard = ({
             {t("general.factories")}: {pt.factoryIds.length}
           </p>
         </hgroup>
-      </Link>
+      </button>
 
       <div className="flex items-center gap-2">
         <Button

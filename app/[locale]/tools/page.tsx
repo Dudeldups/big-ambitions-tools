@@ -1,15 +1,11 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import PlaythroughOverview from "./playthrough-overview";
-import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
-import { Spinner } from "@/components/ui/spinner";
 
 const Tools = () => {
   const t = useTranslations("tools");
-  const activePlaythroughId = usePlaythroughState(
-    (state) => state.activePlaythroughId,
-  );
 
   return (
     <>
@@ -19,11 +15,9 @@ const Tools = () => {
           <p>{t("intro.desc")}</p>
         </hgroup>
 
-        {activePlaythroughId === undefined ? (
-          <Spinner />
-        ) : (
-          <PlaythroughOverview />
-        )}
+        <Button asChild>
+          <Link href="/tools/dashboard">Dashboard</Link>
+        </Button>
       </section>
     </>
   );
