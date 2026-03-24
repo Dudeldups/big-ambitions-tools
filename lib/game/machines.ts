@@ -5,34 +5,34 @@ export type Machine = {
 };
 
 export const machines: Record<MachineName, Machine> = {
-  "Automated Baking Machine": {
+  automatedBakingMachine: {
     purchasePrice: 75000,
   },
-  "Bottling Machine": {
+  bottlingMachine: {
     purchasePrice: 27500,
   },
-  "Consumer Goods Assembly Machine": {
+  consumerGoodsAssemblyMachine: {
     purchasePrice: 240000,
   },
-  "Food Assembly Machine": {
+  foodAssemblyMachine: {
     purchasePrice: 60000,
   },
-  "Hydroponic Planter": {
+  hydroponicPlanter: {
     purchasePrice: 35000,
   },
-  "Industrial Blending Machine": {
+  industrialBlendingMachine: {
     purchasePrice: 45000,
   },
-  "Industrial Sewing Machine": {
+  industrialSewingMachine: {
     purchasePrice: 95000,
   },
-  "Kiln Machine": {
+  kilnMachine: {
     purchasePrice: 115000,
   },
-  "Laser Cutting Machine": {
+  laserCuttingMachine: {
     purchasePrice: 145000,
   },
-  "Polishing Machine": {
+  polishingMachine: {
     purchasePrice: 125000,
   },
 };
@@ -42,48 +42,45 @@ export type Workstation = {
 };
 
 export const workstations: Record<WorkstationName, Workstation> = {
-  "Clothing Workstation": {
+  clothingWorkstation: {
     neededMachines: [
-      "Consumer Goods Assembly Machine",
-      "Industrial Sewing Machine",
-      "Laser Cutting Machine",
+      "consumerGoodsAssemblyMachine",
+      "industrialSewingMachine",
+      "laserCuttingMachine",
     ],
   },
-  "Electronics Workstation": {
+  electronicsWorkstation: {
     neededMachines: [
-      "Consumer Goods Assembly Machine",
-      "Laser Cutting Machine",
-      "Kiln Machine",
+      "consumerGoodsAssemblyMachine",
+      "laserCuttingMachine",
+      "kilnMachine",
     ],
   },
-  "Jewelry Workstation": {
+  jewelryWorkstation: {
     neededMachines: [
-      "Consumer Goods Assembly Machine",
-      "Polishing Machine",
-      "Laser Cutting Machine",
+      "consumerGoodsAssemblyMachine",
+      "polishingMachine",
+      "laserCuttingMachine",
     ],
   },
-  "Consumer Goods Workstation": {
+  consumerGoodsWorkstation: {
+    neededMachines: ["consumerGoodsAssemblyMachine", "laserCuttingMachine"],
+  },
+  bottledGoodsWorkstation: {
     neededMachines: [
-      "Consumer Goods Assembly Machine",
-      "Laser Cutting Machine",
+      "foodAssemblyMachine",
+      "bottlingMachine",
+      "industrialBlendingMachine",
     ],
   },
-  "Bottled Goods Workstation": {
+  foodWorkstation: {
     neededMachines: [
-      "Food Assembly Machine",
-      "Bottling Machine",
-      "Industrial Blending Machine",
+      "foodAssemblyMachine",
+      "automatedBakingMachine",
+      "industrialBlendingMachine",
     ],
   },
-  "Food Workstation": {
-    neededMachines: [
-      "Food Assembly Machine",
-      "Automated Baking Machine",
-      "Industrial Blending Machine",
-    ],
-  },
-  "Garden Workstation": {
-    neededMachines: ["Food Assembly Machine", "Hydroponic Planter"],
+  gardenWorkstation: {
+    neededMachines: ["foodAssemblyMachine", "hydroponicPlanter"],
   },
 };

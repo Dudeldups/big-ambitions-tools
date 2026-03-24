@@ -1,561 +1,502 @@
 import { Importer } from "./importerNames";
 import { IngredientName } from "./ingredientNames";
-import { Price } from "./types";
 
 export type Ingredient = {
   amountPerBox: number;
-  importPrice: Price;
+  id: number;
+  wholesalePrice: number;
+  defaultMarketPrice: number;
+  productSalesRatio: number;
   importers: Importer[];
 };
 
 export const ingredients: Record<IngredientName, Ingredient> = {
-  Battery: {
+  battery: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 15.6,
-    },
+    id: 460,
+    wholesalePrice: 16,
+    defaultMarketPrice: 16,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  Capacitors: {
+  capacitors: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 5.85,
-    },
+    id: 447,
+    wholesalePrice: 6,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Copper Clad Laminate": {
+  copperCladLaminate: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 7.8,
-    },
+    id: 450,
+    wholesalePrice: 8,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Fabric (Cheap)": {
+  fabricCheap: {
     amountPerBox: 150,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 5.85,
-    },
+    id: 426,
+    wholesalePrice: 6,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Fabric (Expensive)": {
+  fabricExpensive: {
     amountPerBox: 150,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 11.7,
-    },
+    id: 427,
+    wholesalePrice: 12,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  Glass: {
+  glass: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 453,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.5,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight", "globalharvest"],
   },
-  "Integrated Circuits": {
+  integratedCircuits: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 9.75,
-    },
+    id: 449,
+    wholesalePrice: 10,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Metal Band": {
+  metalBand: {
     amountPerBox: 150,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.59,
-    },
+    id: 443,
+    wholesalePrice: 0.6,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  Microphone: {
+  microphone: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 7.8,
-    },
+    id: 456,
+    wholesalePrice: 8,
+    defaultMarketPrice: 8,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  Plastic: {
+  plastic: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.59,
-    },
+    id: 461,
+    wholesalePrice: 0.6,
+    defaultMarketPrice: 0.6,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight", "globalharvest"],
   },
-  Resistors: {
+  resistors: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 3.9,
-    },
+    id: 446,
+    wholesalePrice: 4,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  Speaker: {
+  speaker: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 5.85,
-    },
+    id: 457,
+    wholesalePrice: 6,
+    defaultMarketPrice: 6,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  Transistors: {
+  transistors: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 7.8,
-    },
+    id: 448,
+    wholesalePrice: 8,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Uncut Gems (Cheap)": {
+  uncutGemsCheap: {
     amountPerBox: 150,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 39,
-    },
+    id: 435,
+    wholesalePrice: 40,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Uncut Gems (Expensive)": {
+  uncutGemsExpensive: {
     amountPerBox: 150,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 438.75,
-    },
+    id: 436,
+    wholesalePrice: 450,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["maritimefreight"],
   },
-  "Cigar Paper": {
+  cigarPaper: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.98,
-    },
+    id: 432,
+    wholesalePrice: 1,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Cigarette Paper": {
+  cigarettePaper: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 433,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  Clay: {
+  clay: {
     amountPerBox: 150,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 2.44,
-    },
+    id: 493,
+    wholesalePrice: 2.5,
+    defaultMarketPrice: 2.5,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Metal Wire": {
+  metalWire: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 3.41,
-    },
+    id: 702,
+    wholesalePrice: 3.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Paper Ream": {
+  paperReam: {
     amountPerBox: 300,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 6.09,
-    },
+    id: 703,
+    wholesalePrice: 6.25,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Popcorn Kernels": {
+  popcornKernels: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.01,
-    },
+    id: 713,
+    wholesalePrice: 0.01,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Apple)": {
+  appleSeed: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 704,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Banana)": {
+  bananaSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 705,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Carrot)": {
+  carrotSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 706,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Flower Cheap)": {
+  flowerCheapSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 1.46,
-    },
+    id: 707,
+    wholesalePrice: 1.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Flower Expensive)": {
+  flowerExpensiveSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 2.93,
-    },
+    id: 708,
+    wholesalePrice: 3,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Lettuce)": {
+  lettuceSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 711,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Pear)": {
+  pearSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 709,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  "Seeds (Tomato)": {
+  tomatoSeeds: {
     amountPerBox: 1000,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 710,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  Tobacco: {
+  tobacco: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 431,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.5,
+    productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  Water: {
+  water: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.01,
-    },
+    id: 471,
+    wholesalePrice: 0.01,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["globalharvest", "aquaticbay"],
   },
-  Barley: {
+  barley: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.23,
-    },
+    id: 475,
+    wholesalePrice: 0.24,
+    defaultMarketPrice: 0.24,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Blue Agave": {
+  blueAgave: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.12,
-    },
+    id: 489,
+    wholesalePrice: 0.12,
+    defaultMarketPrice: 0.12,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Caffeine Extract": {
+  caffeineExtract: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.1,
-    },
+    id: 699,
+    wholesalePrice: 0.1,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Carbon Dioxide": {
+  carbonDioxide: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.01,
-    },
+    id: 473,
+    wholesalePrice: 0.01,
+    defaultMarketPrice: 69,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Cola Flavoring": {
+  colaFlavoring: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.02,
-    },
+    id: 472,
+    wholesalePrice: 0.02,
+    defaultMarketPrice: 69,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Flavor Syrup": {
+  flavorSyrup: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.04,
-    },
+    id: 700,
+    wholesalePrice: 0.04,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  Grapes: {
+  grapes: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.34,
-    },
+    id: 478,
+    wholesalePrice: 0.35,
+    defaultMarketPrice: 0.35,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Ground Coffee Beans": {
+  groundCoffeeBeans: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.12,
-    },
+    id: 469,
+    wholesalePrice: 0.12,
+    defaultMarketPrice: 0.12,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Hair Care Formula": {
+  hairCareFormula: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 2.44,
-    },
+    id: 701,
+    wholesalePrice: 2.5,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  Hops: {
+  hops: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.02,
-    },
+    id: 480,
+    wholesalePrice: 0.02,
+    defaultMarketPrice: 0.02,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Juniper Berries": {
+  juniperBerries: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.15,
-    },
+    id: 483,
+    wholesalePrice: 0.15,
+    defaultMarketPrice: 0.15,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Lime Juice": {
+  limeJuice: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.02,
-    },
+    id: 491,
+    wholesalePrice: 0.02,
+    defaultMarketPrice: 69,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  Sugar: {
+  sugar: {
     amountPerBox: 1500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.05,
-    },
+    id: 408,
+    wholesalePrice: 0.05,
+    defaultMarketPrice: 0.05,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay", "lunartide"],
   },
-  "Tea Leaves": {
+  teaLeaves: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.12,
-    },
+    id: 712,
+    wholesalePrice: 0.12,
+    defaultMarketPrice: 0.12,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  Vermouth: {
+  vermouth: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.1,
-    },
+    id: 485,
+    wholesalePrice: 0.1,
+    defaultMarketPrice: 69,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  Yeast: {
+  yeast: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.01,
-    },
+    id: 476,
+    wholesalePrice: 0.01,
+    defaultMarketPrice: 0.01,
+    productSalesRatio: 0.01,
     importers: ["aquaticbay"],
   },
-  "Bag of Lettuce": {
+  lettuce: {
     amountPerBox: 250,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.37,
-    },
+    id: 181,
+    wholesalePrice: 0.28,
+    defaultMarketPrice: 2.12,
+    productSalesRatio: 0.9,
     importers: ["lunartide"],
   },
-  "Bag of Tomatoes": {
+  tomato: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.35,
-    },
+    id: 182,
+    wholesalePrice: 0.29,
+    defaultMarketPrice: 2.56,
+    productSalesRatio: 0.9,
     importers: ["lunartide"],
   },
-  "Baking Mix": {
+  bakingMix: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.1,
-    },
+    id: 395,
+    wholesalePrice: 0.1,
+    defaultMarketPrice: 0.1,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Butter: {
+  butter: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.49,
-    },
+    id: 396,
+    wholesalePrice: 0.5,
+    defaultMarketPrice: 0.5,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Cheese: {
+  cheese: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.31,
-    },
+    id: 397,
+    wholesalePrice: 0.32,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  "Chicken Breast": {
+  chickenBreast: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.34,
-    },
+    id: 402,
+    wholesalePrice: 0.35,
+    defaultMarketPrice: 0.35,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Dough: {
+  dough: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.54,
-    },
+    id: 400,
+    wholesalePrice: 0.55,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  "Ground Beef": {
+  groundBeef: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.54,
-    },
+    id: 401,
+    wholesalePrice: 0.55,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Milk: {
+  milk: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.05,
-    },
+    id: 404,
+    wholesalePrice: 0.05,
+    defaultMarketPrice: 0.05,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Onion: {
+  onion: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.14,
-    },
+    id: 405,
+    wholesalePrice: 0.14,
+    defaultMarketPrice: 0.14,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Pepper: {
+  pepper: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.1,
-    },
+    id: 406,
+    wholesalePrice: 0.1,
+    defaultMarketPrice: 0.1,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  "Raw Sausage": {
+  rawSausage: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.33,
-    },
+    id: 410,
+    wholesalePrice: 0.34,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  "Russet Potatoes": {
+  russetPotatoes: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.39,
-    },
+    id: 407,
+    wholesalePrice: 0.4,
+    defaultMarketPrice: 10,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
-  Vinaigrette: {
+  vinaigrette: {
     amountPerBox: 500,
-    importPrice: {
-      easy: 0,
-      normal: 0,
-      hard: 0.1,
-    },
+    id: 409,
+    wholesalePrice: 0.1,
+    defaultMarketPrice: 0.1,
+    productSalesRatio: 0.01,
     importers: ["lunartide"],
   },
 };
