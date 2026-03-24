@@ -8,13 +8,17 @@ export function currencyCell<TData, TValue>() {
     const { difficulty } = getMeta(ctx.table);
     const rawValue = ctx.getValue();
 
-    let value: number;
+    let value: number | undefined;
 
     if (typeof rawValue === "number") {
       value = rawValue;
-    } else {
+    } else if (difficulty) {
       const price = rawValue as Price;
       value = price[difficulty];
+    }
+
+    if (!value) {
+      return "Loading...";
     }
 
     return formatToUSD(value);

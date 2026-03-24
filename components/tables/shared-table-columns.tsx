@@ -4,7 +4,7 @@ import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { translateCell } from "@/lib/utils/translateCell";
 import { currencyCell } from "@/lib/utils/currencyCell";
-import { Column, ColumnDef, Table } from "@tanstack/react-table";
+import { Column, ColumnDef, Row, Table } from "@tanstack/react-table";
 import { Difficulty, Price } from "@/lib/game/types";
 import { Importer } from "@/lib/game/importerNames";
 
@@ -34,7 +34,7 @@ export const createTranslatedColumn = <T, K extends keyof T>(
 
 export const createCurrencyColumn = <T, K extends keyof T>(
   accessorKey: K,
-  difficulty?: Difficulty,
+  difficulty?: Difficulty | null,
 ): ColumnDef<T> => ({
   accessorKey,
   header: ({
@@ -53,11 +53,16 @@ export const createCurrencyColumn = <T, K extends keyof T>(
   },
   cell: currencyCell(),
   sortingFn: (rowA, rowB, columnId) => {
-    const valueA = rowA.getValue(columnId) as Price | number;
-    const valueB = rowB.getValue(columnId) as Price | number;
-    const numberA = typeof valueA === "number" ? valueA : valueA[difficulty!];
-    const numberB = typeof valueB === "number" ? valueB : valueB[difficulty!];
-    return numberA - numberB;
+    const resolveValue = (row: Row<T>) => {
+      const rawValue = row.getValue(columnId);
+      if (typeof rawValue === "number") {
+        return rawValue;
+      } else {
+        return (rawValue as Price)[difficulty ?? "easy"];
+      }
+    };
+
+    return resolveValue(rowA) - resolveValue(rowB);
   },
   meta: {
     align: "right",

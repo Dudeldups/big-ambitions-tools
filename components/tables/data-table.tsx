@@ -23,11 +23,11 @@ import {
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
-import { useAppStore } from "@/lib/stores/appStore";
 import { Label } from "../ui/label";
 import { usePathname } from "@/i18n/navigation";
 import ColumnSelector from "./column-selector";
 import DifficultyButtonGroup from "./difficulty-button-group";
+import { useAppState } from "@/lib/hooks/useAppState";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -50,7 +50,7 @@ export function DataTable<TData, TValue>({
   ]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  const difficulty = useAppStore((state) => state.difficulty);
+  const difficulty = useAppState((state) => state.difficulty);
 
   const pathname = usePathname();
   const hasDifficultySelector =

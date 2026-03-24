@@ -10,7 +10,7 @@ declare module "@tanstack/react-table" {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface TableMeta<TData extends RowData> {
     t: Translator;
-    difficulty: Difficulty;
+    difficulty: Difficulty | null;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
