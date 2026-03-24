@@ -10,15 +10,18 @@ import {
 import { Product } from "@/lib/game/products";
 import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
+import { Difficulty } from "@/lib/game/types";
 
 type ProductsColumnData = Product & {
   itemName: string;
 };
 
-export const productsColumns: ColumnDef<ProductsColumnData>[] = [
+export const productsColumns = (
+  difficulty: Difficulty | null,
+): ColumnDef<ProductsColumnData>[] => [
   createTranslatedColumn("itemName", "products"),
   createNumericColumn("amountPerBox"),
-  createCurrencyColumn("importPrice", "hard"),
+  createCurrencyColumn("importPrice", difficulty),
   createImportersColumn(),
   {
     accessorKey: "ingredients",
