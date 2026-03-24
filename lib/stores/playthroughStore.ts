@@ -23,6 +23,7 @@ export type Factory = FactoryFormValues & {
 export type Playthrough = PlaythroughFormValues & {
   id: string;
   createdAt: number;
+  isActive: boolean;
   factoryIds: string[];
 };
 
@@ -40,6 +41,7 @@ export type PlaythroughActions = {
     updatedFields: Partial<PlaythroughFormValues>,
   ) => Playthrough | undefined;
   deletePlaythrough: (playthroughId: string) => Playthrough | undefined;
+  setActivePlaythrough: (playthroughId: string | null) => void;
   addFactoryToPlaythrough: (playthroughId: string, factoryId: string) => void;
   removeFactoryFromPlaythrough: (
     playthroughId: string,
@@ -51,7 +53,6 @@ export type PlaythroughActions = {
     updatedFields: Partial<FactoryFormValues>,
   ) => Factory | undefined;
   deleteFactory: (factoryId: string) => Factory | undefined;
-  getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
 };
 
@@ -65,7 +66,6 @@ export const usePlaythroughStore = create(
         }),
 
       playthroughs: [],
-      activePlaythrough: null,
       factories: [],
 
       createPlaythrough: (values) => {
@@ -77,11 +77,15 @@ export const usePlaythroughStore = create(
         const newPlaythrough = {
           ...values,
           id,
+          isActive: true,
           createdAt: Date.now(),
           factoryIds: [],
         };
 
         set((state) => {
+          state.playthroughs.forEach((p) => {
+            p.isActive = false;
+          });
           state.playthroughs.unshift(newPlaythrough);
         });
 
@@ -111,6 +115,21 @@ export const usePlaythroughStore = create(
 
         return playthroughToDelete;
       },
+      setActivePlaythrough: (playthroughId) =>
+        set((state) => {
+          const playthroughIndex = state.playthroughs.findIndex(
+            (p) => p.id === playthroughId,
+          );
+          if (playthroughIndex > -1) {
+            state.playthroughs.forEach((p) => (p.isActive = false));
+            const [playthrough] = state.playthroughs.splice(
+              playthroughIndex,
+              1,
+            );
+            playthrough.isActive = true;
+            state.playthroughs.unshift(playthrough);
+          }
+        }),
       addFactoryToPlaythrough: (playthroughId, factoryId) =>
         set((state) => {
           const playthrough = state.playthroughs.find(
@@ -174,8 +193,6 @@ export const usePlaythroughStore = create(
 
         return factoryToDelete;
       },
-
-      getPlaythroughById: (id) => get().playthroughs.find((p) => p.id === id),
 
       getFactoryById: (id) => get().factories.find((f) => f.id === id),
     })),

@@ -2,10 +2,11 @@
 
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import CreateFactoryForm from "./create-factory-form";
-import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 
 const PlaythroughDashboard = () => {
-  const activePlaythrough = useActivePlaythrough();
+  const activePlaythrough = usePlaythroughState((s) =>
+    s.playthroughs.find((p) => p.isActive),
+  );
 
   const factories = usePlaythroughState((s) => s.factories);
 
