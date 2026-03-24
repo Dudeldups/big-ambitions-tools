@@ -1,13 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Playthrough,
-  usePlaythroughStore,
-} from "@/lib/stores/playthroughStore";
+import { Playthrough } from "@/lib/stores/playthroughStore";
 import { SquarePen } from "lucide-react";
 import { useTranslations } from "next-intl";
 import DeletePlaythroughDialog from "./delete-playthrough-dialog";
+import { useSessionStore } from "@/lib/stores/sessionStore";
 
 type PlaythroughInfoCardProps = {
   pt: Playthrough;
@@ -23,13 +21,11 @@ const PlaythroughInfoCard = ({
   startEditing,
 }: PlaythroughInfoCardProps) => {
   const t = useTranslations();
-  const setActivePlaythrough = usePlaythroughStore(
-    (s) => s.setActivePlaythrough,
-  );
+  const setActivePlaythrough = useSessionStore((s) => s.setActivePlaythrough);
 
   return (
     <div className="flex items-center gap-8">
-      <button className="text-left" onClick={() => setActivePlaythrough(pt.id)}>
+      <button className="text-left" onClick={() => setActivePlaythrough(pt)}>
         <hgroup>
           <h3 className="w-60 truncate text-xl font-semibold">
             {pt.characterName}

@@ -2,9 +2,10 @@
 
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import CreateFactoryForm from "../../create-factory-form";
+import { useSessionStore } from "@/lib/stores/sessionStore";
 
 const PlaythroughDashboard = () => {
-  const activePlaythrough = usePlaythroughState((s) => s.activePlaythrough);
+  const activePlaythrough = useSessionStore((s) => s.activePlaythrough);
 
   const factories = usePlaythroughState((s) => s.factories);
 

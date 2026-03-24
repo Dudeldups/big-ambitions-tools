@@ -29,14 +29,12 @@ export type Playthrough = PlaythroughFormValues & {
 export type PlaythroughState = {
   _hasHydrated: boolean;
   playthroughs: Playthrough[];
-  activePlaythrough: Playthrough | null;
   factories: Factory[];
 };
 
 export type PlaythroughActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   createPlaythrough: (playthrough: PlaythroughFormValues) => Playthrough;
-  setActivePlaythrough: (playthroughId: string | null) => void;
   editPlaythrough: (
     playthroughId: string,
     updatedFields: Partial<PlaythroughFormValues>,
@@ -85,25 +83,10 @@ export const usePlaythroughStore = create(
 
         set((state) => {
           state.playthroughs.unshift(newPlaythrough);
-          state.activePlaythrough = newPlaythrough;
         });
 
         return newPlaythrough;
       },
-      setActivePlaythrough: (playthroughId) =>
-        set((state) => {
-          const playthroughIndex = state.playthroughs.findIndex(
-            (p) => p.id === playthroughId,
-          );
-          if (playthroughIndex > -1) {
-            const [playthrough] = state.playthroughs.splice(
-              playthroughIndex,
-              1,
-            );
-            state.playthroughs.unshift(playthrough);
-            state.activePlaythrough = playthrough;
-          }
-        }),
       editPlaythrough: (playthroughId, updatedFields) => {
         set((state) => {
           const playthrough = state.playthroughs.find(
@@ -124,10 +107,6 @@ export const usePlaythroughStore = create(
           state.playthroughs = state.playthroughs.filter(
             (p) => p.id !== playthroughId,
           );
-
-          if (state.activePlaythrough?.id === playthroughId) {
-            state.activePlaythrough = null;
-          }
         });
 
         return playthroughToDelete;
