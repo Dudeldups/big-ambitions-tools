@@ -179,7 +179,7 @@ export const ingredients: Record<IngredientName, Ingredient> = {
     productSalesRatio: 0.01,
     importers: ["globalharvest"],
   },
-  appleSeed: {
+  appleSeeds: {
     amountPerBox: 1000,
     id: 704,
     wholesalePrice: 0.5,

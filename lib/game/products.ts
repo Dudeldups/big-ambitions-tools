@@ -190,7 +190,7 @@ export const products: Record<ProductName, Product> = {
     defaultMarketPrice: 2.89,
     productSalesRatio: 1,
     importers: ["seaside"],
-    ingredients: [{ appleSeed: 50 }, { water: 50 }],
+    ingredients: [{ appleSeeds: 50 }, { water: 50 }],
     productionRate: 250,
     workstation: "gardenWorkstation",
   },

@@ -20,7 +20,7 @@ export const INGREDIENT_NAMES = [
   "metalWire",
   "paperReam",
   "popcornKernels",
-  "appleSeed",
+  "appleSeeds",
   "bananaSeeds",
   "carrotSeeds",
   "flowerCheapSeeds",
