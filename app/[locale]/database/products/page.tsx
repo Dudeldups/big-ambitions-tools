@@ -2,13 +2,16 @@
 
 import { products } from "@/lib/game/products";
 import { DataTable } from "../../../../components/tables/data-table";
-import { productsColumns } from "./table-columns";
+import { ProductsColumnData, productsColumns } from "./table-columns";
 import { useAppState } from "@/lib/hooks/useAppState";
+import { ProductName } from "@/lib/game/productNames";
 
-const data = Object.entries(products).map(([itemName, product]) => ({
-  itemName,
-  ...product,
-}));
+const data: ProductsColumnData[] = (Object.keys(products) as ProductName[]).map(
+  (itemName) => ({
+    ...products[itemName],
+    itemName,
+  }),
+);
 
 export default function ProductsPage() {
   const difficulty = useAppState((state) => state.difficulty);

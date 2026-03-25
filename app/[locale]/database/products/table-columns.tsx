@@ -10,18 +10,22 @@ import {
 import { Product } from "@/lib/game/products";
 import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
-import { Difficulty } from "@/lib/game/types";
+import { Difficulty, StoreDifficulty } from "@/lib/game/types";
+import { ProductName } from "@/lib/game/productNames";
+import { getImportPrice } from "@/lib/utils/math";
 
-type ProductsColumnData = Product & {
-  itemName: string;
+export type ProductsColumnData = Product & {
+  itemName: ProductName;
 };
 
 export const productsColumns = (
-  difficulty: Difficulty | null,
+  difficulty: StoreDifficulty,
 ): ColumnDef<ProductsColumnData>[] => [
   createTranslatedColumn("itemName", "products"),
   createNumericColumn("amountPerBox"),
-  createCurrencyColumn("importPrice", difficulty),
+  createCurrencyColumn("importPrice", difficulty, (row, diff) =>
+    getImportPrice(row.wholesalePrice, diff as Difficulty),
+  ),
   createImportersColumn(),
   {
     accessorKey: "ingredients",
@@ -34,7 +38,8 @@ export const productsColumns = (
         </TableHeadContent>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row, table }) => {
+      const { t } = getMeta(table);
       const ingredients = row.original.ingredients;
 
       if (!ingredients || ingredients.length === 0) {
@@ -48,7 +53,7 @@ export const productsColumns = (
 
             return (
               <li className="not-first:pt-1" key={index}>
-                {amount} x {name}
+                {amount} x {t(`ingredients.${name}`)}
               </li>
             );
           })}
