@@ -3,7 +3,6 @@ import { Rubik, Rubik_Mono_One } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import NavLink from "../_components/NavLink";
-import DifficultySpan from "@/components/difficulty-span";
 import { StoreHydration } from "@/components/store-hydration";
 import { Toaster } from "sonner";
 
@@ -55,7 +54,6 @@ export default function RootLayout({
                   <NavLink href="/contact">Contact</NavLink>
                 </li>
               </ul>
-              <DifficultySpan />
             </nav>
           </header>
 
