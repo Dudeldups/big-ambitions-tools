@@ -21,6 +21,8 @@ declare module "@tanstack/react-table" {
 
 export type Difficulty = "easy" | "normal" | "hard";
 
+export type StoreDifficulty = Difficulty | null | undefined;
+
 export type Price = {
   [K in Difficulty]: number;
 };
