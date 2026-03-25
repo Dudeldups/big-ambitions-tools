@@ -9,6 +9,7 @@ import {
 } from "@/components/tables/shared-table-columns";
 import { Ingredient } from "@/lib/game/ingredients";
 import { Difficulty } from "@/lib/game/types";
+import { getImportPrice } from "@/lib/utils/math";
 
 type IngredientsColumnData = Ingredient & {
   itemName: string;
@@ -19,6 +20,8 @@ export const ingredientsColumns = (
 ): ColumnDef<IngredientsColumnData>[] => [
   createTranslatedColumn("itemName", "ingredients"),
   createNumericColumn("amountPerBox"),
-  createCurrencyColumn("importPrice", difficulty),
+  createCurrencyColumn("importPrice", difficulty, (row, diff) =>
+    getImportPrice(row.wholesalePrice, diff as Difficulty),
+  ),
   createImportersColumn(),
 ];
