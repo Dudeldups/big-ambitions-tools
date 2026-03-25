@@ -12,7 +12,7 @@ import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { Difficulty, StoreDifficulty } from "@/lib/game/types";
 import { ProductName } from "@/lib/game/productNames";
-import { getImportPrice } from "@/lib/utils/math";
+import { getExportPrice, getImportPrice } from "@/lib/utils/math";
 
 export type ProductsColumnData = Product & {
   itemName: ProductName;
@@ -25,6 +25,9 @@ export const productsColumns = (
   createNumericColumn("amountPerBox"),
   createCurrencyColumn("importPrice", difficulty, (row, diff) =>
     getImportPrice(row.wholesalePrice, diff as Difficulty),
+  ),
+  createCurrencyColumn("exportPrice", difficulty, (row, diff) =>
+    getExportPrice(row.wholesalePrice, diff as Difficulty),
   ),
   createImportersColumn(),
   {

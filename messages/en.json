@@ -22,6 +22,7 @@
       "neededMachines": "Machines",
       "usedForProducts": "Used for products",
       "importPrice": "Import price",
+      "exportPrice": "Export price",
       "amountPerBox": "Amount / box",
       "usedInProducts": "Used in products",
       "importers": "Importers",
