@@ -38,7 +38,9 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
         <ul>
           {groupedWorkstations.map((workstation) => (
             <li key={workstation.name}>
-              {workstation.count}x {t(`workstations.${workstation.name}`)}
+              <p>
+                {workstation.count}x {t(`workstations.${workstation.name}`)}
+              </p>
             </li>
           ))}
         </ul>
