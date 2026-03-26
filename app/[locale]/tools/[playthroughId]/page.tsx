@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { useParams } from "next/navigation";
 
@@ -24,8 +25,8 @@ const PlaythroughId = () => {
 
       <div>
         <div>
-          <p>Add a factory:</p>
-          <button>Button</button>
+          <p>Go back to the playthrough overview:</p>
+          <Link href="/tools">Playthroughs</Link>
         </div>
 
         <h3>Factories in this playthrough:</h3>
