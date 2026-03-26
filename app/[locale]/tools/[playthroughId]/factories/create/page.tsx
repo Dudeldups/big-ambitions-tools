@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Field, FieldDescription, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "@/i18n/navigation";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
@@ -16,7 +17,7 @@ import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
-import { useFieldArray, useForm } from "react-hook-form";
+import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const productData = Object.entries(products).map(([key, value]) => ({
@@ -43,7 +44,7 @@ const FactoryCreatePage = () => {
     formState: { errors },
   } = useForm<FactoryFormValues>({
     resolver: zodResolver(factorySchema),
-    defaultValues: { workstations: [] },
+    defaultValues: { workstations: [], openingHours: 24 },
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -67,7 +68,6 @@ const FactoryCreatePage = () => {
     startTransition(() => {
       router.push(`/tools/${activePlaythrough.id}/factories`);
     });
-    // reset();
   };
 
   return (
@@ -79,9 +79,7 @@ const FactoryCreatePage = () => {
           </Label>
           <Input
             id="name"
-            {...register("name")}
-            autoComplete="off"
-            maxLength={50}
+            {...(register("name"), { maxLength: 50, autoComplete: "off" })}
           />
           {errors.name?.message && (
             <p className="text-destructive text-sm">{t(errors.name.message)}</p>
@@ -138,6 +136,32 @@ const FactoryCreatePage = () => {
             Add Workstation
           </Button>
         </Field>
+      </FieldGroup>
+
+      <FieldGroup>
+        <Controller
+          name="openingHours"
+          control={control}
+          render={({ field }) => (
+            <>
+              <div className="flex justify-between">
+                <Label id="slider-label" htmlFor="openingHours">
+                  Opening hours / day
+                </Label>
+                <span>{field.value}h</span>
+              </div>
+              <Slider
+                aria-labelledby="slider-label"
+                id="openingHours"
+                value={[field.value]}
+                onValueChange={field.onChange}
+                min={1}
+                max={24}
+                step={1}
+              />
+            </>
+          )}
+        />
       </FieldGroup>
 
       <div className="bg-card flex gap-4 rounded-md p-4">
