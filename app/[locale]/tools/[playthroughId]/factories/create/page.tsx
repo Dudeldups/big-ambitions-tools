@@ -53,7 +53,6 @@ const FactoryCreatePage = () => {
   });
 
   const onSubmit = (values: FactoryFormValues) => {
-    console.log(values);
     const hasMissingName = values.name.trim() === "";
     if (hasMissingName) {
       values.name = t("tools.factoryPlanner.genericFactoryName", {
