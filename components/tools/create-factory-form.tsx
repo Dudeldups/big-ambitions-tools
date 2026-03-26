@@ -16,7 +16,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
-import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { Plus } from "lucide-react";
@@ -28,6 +27,7 @@ import WorkstationSelects from "./workstation-selects";
 import { products } from "@/lib/game/products";
 import { ProductName } from "@/lib/game/productNames";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 
 const productData = Object.entries(products).map(([key, value]) => ({
   name: key,
@@ -40,7 +40,7 @@ const CreateFactoryForm = () => {
   const addFactoryToPlaythrough = usePlaythroughStore(
     (state) => state.addFactoryToPlaythrough,
   );
-  const activePlaythroughId = usePlaythroughState((s) => s.activePlaythroughId);
+  const { activePlaythrough } = useActivePlaythrough();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {
@@ -61,7 +61,7 @@ const CreateFactoryForm = () => {
   });
 
   const onSubmit = (values: FactoryFormValues) => {
-    if (!activePlaythroughId) {
+    if (!activePlaythrough.id) {
       // TODO: add error messages
       toast.error("No active playthrough selected");
       return;
@@ -75,7 +75,7 @@ const CreateFactoryForm = () => {
     }
 
     const newFactory = createFactory(values);
-    addFactoryToPlaythrough(activePlaythroughId, newFactory.id);
+    addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
     toast.success(
       `Factory "${newFactory.name}" created and added to playthrough!`,
     );
