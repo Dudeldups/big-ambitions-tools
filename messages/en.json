@@ -2,11 +2,14 @@
   "general": {
     "confirm": "Confirm",
     "cancel": "Cancel",
+    "reset": "Reset",
     "summedUpAmount": "Total",
     "noResultsFound": "No results found.",
     "columnsDescription": "Columns",
     "filterResults": "Filter results...",
     "characterName": "Character name",
+    "workstation": "Workstation",
+    "product": "Product",
     "factories": "Factories",
     "difficulty": "Difficulty",
     "difficultyOptions": {
