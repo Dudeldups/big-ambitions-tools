@@ -1,16 +1,13 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
-import { useParams } from "next/navigation";
+import { Plus } from "lucide-react";
 
 const PlaythroughId = () => {
-  const { playthroughId } = useParams<{ playthroughId: string }>();
-  const activePlaythrough = usePlaythroughState((s) =>
-    s.playthroughs.find((p) => p.id === playthroughId),
-  );
-
-  console.log(activePlaythrough);
+  const { activePlaythrough } = useActivePlaythrough();
 
   const factories = usePlaythroughState((s) => s.factories);
 
@@ -18,9 +15,11 @@ const PlaythroughId = () => {
     return null;
   }
 
+  const hasFactories = activePlaythrough.factoryIds.length !== 0;
+
   return (
     <div>
-      <h2>Playthrough info for</h2>
+      <h1>Playthrough info for</h1>
       <p>{activePlaythrough?.characterName}</p>
 
       <div>
@@ -29,15 +28,36 @@ const PlaythroughId = () => {
           <Link href="/tools">Playthroughs</Link>
         </div>
 
-        <h3>Factories in this playthrough:</h3>
-        <ul>
-          {activePlaythrough?.factoryIds.map((factoryId) => (
-            <li key={factoryId}>
-              <p>{factoryId}</p>
-              <p>{factories?.find((f) => f.id === factoryId)?.name}</p>
-            </li>
-          ))}
-        </ul>
+        {hasFactories && (
+          <>
+            <p>Create a new factory</p>
+            <Button size="icon-lg" asChild>
+              <Link href={`/tools/${activePlaythrough.id}/factories/create`}>
+                <Plus className="size-5" />
+              </Link>
+            </Button>
+          </>
+        )}
+
+        <h2>Factories in this playthrough:</h2>
+
+        {!hasFactories ? (
+          <>
+            <p>No factories yet. Create one here:</p>
+            <Link href={`/tools/${activePlaythrough.id}/factories/create`}>
+              Click me
+            </Link>
+          </>
+        ) : (
+          <ul>
+            {activePlaythrough?.factoryIds.map((factoryId) => (
+              <li key={factoryId}>
+                <p>{factoryId}</p>
+                <p>{factories?.find((f) => f.id === factoryId)?.name}</p>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
