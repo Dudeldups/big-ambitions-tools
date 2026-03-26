@@ -16,7 +16,7 @@ export const factorySchema = z.object({
       }),
     )
     .min(1, "errors.factory.workstationsRequired"),
-  openingHours: z.number(),
+  openingHours: z.number().min(1).max(24),
 });
 
 export type FactoryFormValues = z.infer<typeof factorySchema>;

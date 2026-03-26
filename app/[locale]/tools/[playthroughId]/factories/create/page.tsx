@@ -53,6 +53,7 @@ const FactoryCreatePage = () => {
   });
 
   const onSubmit = (values: FactoryFormValues) => {
+    console.log(values);
     const hasMissingName = values.name.trim() === "";
     if (hasMissingName) {
       values.name = t("tools.factoryPlanner.genericFactoryName", {
@@ -74,22 +75,24 @@ const FactoryCreatePage = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <FieldGroup className="px-4">
         <Field>
-          <Label htmlFor="name" {...register("name")}>
-            Factory Name
-          </Label>
+          <Label htmlFor="name">Factory Name</Label>
           <Input
             id="name"
-            {...(register("name"), { maxLength: 50, autoComplete: "off" })}
+            autoComplete="off"
+            maxLength={50}
+            {...register("name")}
           />
           {errors.name?.message && (
             <p className="text-destructive text-sm">{t(errors.name.message)}</p>
           )}
         </Field>
         <Field>
-          <Label htmlFor="description" {...register("description")}>
-            Description
-          </Label>
-          <Textarea id="description" {...register("description")} />
+          <Label htmlFor="description">Description</Label>
+          <Textarea
+            id="description"
+            {...register("description")}
+            maxLength={150}
+          />
           {errors.description?.message && (
             <p className="text-destructive text-sm">
               {t(errors.description.message)}
