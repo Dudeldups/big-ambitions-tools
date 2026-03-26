@@ -53,6 +53,7 @@ export type PlaythroughActions = {
     updatedFields: Partial<FactoryFormValues>,
   ) => Factory | undefined;
   deleteFactory: (factoryId: string) => Factory | undefined;
+  getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
 };
 
@@ -194,6 +195,7 @@ export const usePlaythroughStore = create(
         return factoryToDelete;
       },
 
+      getPlaythroughById: (id) => get().playthroughs.find((p) => p.id === id),
       getFactoryById: (id) => get().factories.find((f) => f.id === id),
     })),
     {
