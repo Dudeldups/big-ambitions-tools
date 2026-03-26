@@ -86,10 +86,10 @@ const WorkstationSelects = ({
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Workstation</SelectLabel>
+                  <SelectLabel>{t("general.workstation")}</SelectLabel>
                   {WORKSTATION_NAMES.map((ws) => (
                     <SelectItem key={ws} value={ws}>
-                      {ws}
+                      {t(`workstations.${ws}`)}
                     </SelectItem>
                   ))}
                 </SelectGroup>
@@ -107,12 +107,12 @@ const WorkstationSelects = ({
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Product</SelectLabel>
+                  <SelectLabel>{t("general.product")}</SelectLabel>
                   {productData
                     .filter((p) => p.workstation === selectedWorkstation)
                     .map((p) => (
                       <SelectItem key={p.name} value={p.name}>
-                        {p.name}
+                        {t(`products.${p.name}`)}
                       </SelectItem>
                     ))}
                 </SelectGroup>
