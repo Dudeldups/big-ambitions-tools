@@ -1,11 +1,12 @@
 "use client";
 
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
-import CreateFactoryForm from "../../create-factory-form";
+import { useParams } from "next/navigation";
 
-const PlaythroughDashboard = () => {
+const PlaythroughId = () => {
+  const { playthroughId } = useParams<{ playthroughId: string }>();
   const activePlaythrough = usePlaythroughState((s) =>
-    s.playthroughs.find((p) => p.isActive),
+    s.playthroughs.find((p) => p.id === playthroughId),
   );
 
   console.log(activePlaythrough);
@@ -24,7 +25,7 @@ const PlaythroughDashboard = () => {
       <div>
         <div>
           <p>Add a factory:</p>
-          <CreateFactoryForm />
+          <button>Button</button>
         </div>
 
         <h3>Factories in this playthrough:</h3>
@@ -41,4 +42,4 @@ const PlaythroughDashboard = () => {
   );
 };
 
-export default PlaythroughDashboard;
+export default PlaythroughId;

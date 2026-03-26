@@ -1,7 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
+import PlaythroughOverview from "@/components/tools/playthrough-overview";
 import { useTranslations } from "next-intl";
 
 const Tools = () => {
@@ -15,9 +14,7 @@ const Tools = () => {
           <p>{t("intro.desc")}</p>
         </hgroup>
 
-        <Button asChild>
-          <Link href="/tools/dashboard">Dashboard</Link>
-        </Button>
+        <PlaythroughOverview />
       </section>
     </>
   );
