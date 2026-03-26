@@ -590,7 +590,7 @@ export const products: Record<ProductName, Product> = {
     workstation: "jewelryWorkstation",
   },
   rhythmByTreHeadphones: {
-    amountPerBox: 500,
+    amountPerBox: 600,
     id: 275,
     wholesalePrice: 200,
     defaultMarketPrice: 349,
@@ -610,7 +610,7 @@ export const products: Record<ProductName, Product> = {
     workstation: "electronicsWorkstation",
   },
   noizeBossEarbuds: {
-    amountPerBox: 500,
+    amountPerBox: 600,
     id: 274,
     wholesalePrice: 79,
     defaultMarketPrice: 159,
