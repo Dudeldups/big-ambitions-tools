@@ -1,10 +1,327 @@
 {
+  "general": {
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen",
+    "reset": "Zurücksetzen",
+    "summedUpAmount": "Gesamt",
+    "noResultsFound": "Keine Ergebnisse gefunden.",
+    "columnsDescription": "Spalten",
+    "filterResults": "Ergebnisse filtern...",
+    "characterName": "Charaktername",
+    "workstation": "Arbeitsplatz",
+    "product": "Produkt",
+    "factories": "Fabriken",
+    "difficulty": "Schwierigkeit",
+    "difficultyOptions": {
+      "easy": "einfach",
+      "normal": "normal",
+      "hard": "schwer"
+    },
+    "tableColumns": {
+      "itemName": "Artikelname",
+      "purchasePrice": "Preis",
+      "storageCapacity": "Lagerkapazität",
+      "workstation": "Arbeitsplatz",
+      "neededMachines": "Maschinen benötigt",
+      "usedForProducts": "Verwendet für Produkte",
+      "importPrice": "Importpreis",
+      "exportPrice": "Exportpreis",
+      "amountPerBox": "Menge / Box",
+      "usedInProducts": "In Produkten verwendet",
+      "importers": "Importeure",
+      "ingredients": "Zutaten",
+      "productionRate": "Produktion / Std."
+    }
+  },
+  "toasts": {
+    "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
+    "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",
+    "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!",
+    "workstationCopyError": "Please select a workstation and a product first."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "This resource does not exist.",
+      "nameRequired": "Character name is required.",
+      "nameTooLong": "Character name must be at most 30 characters.",
+      "difficultyRequired": "Please select a difficulty.",
+      "workstationProductRequired": "Please select a product for each workstation."
+    },
+    "factory": {
+      "nameTooLong": "Factory name must be at most 50 characters.",
+      "descriptionTooLong": "Factory description must be at most 150 characters.",
+      "workstationsRequired": "Please add at least one workstation."
+    }
+  },
   "home": {
-    "title": "Willkommen zu Big Ambitions Tools!",
-    "description": "Dies ist eine Sammlung von Tools für das Spiel Big Ambitions von Hovgaard Games.",
-    "description2": "Alle Tools befinden sich in früher Entwicklung und können Fehler enthalten. Wenn du ein Problem findest, melde es bitte auf <github>GitHub</github>."
+    "intro": {
+      "title": "Willkommen zu Big Ambitions Tools!",
+
+      "desc": "Here you can find a collection of infos and tools for the game <i>Big Ambitions</i> by Hovgaard Games. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version 0.10 of the game and may change with future updates.",
+      "desc2": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!",
+      "gameDesc": "Don't even know the game yet? What a shame!",
+      "gameDesc2": "Check out the official website at <website>Hovgaard Games</website> or visit the game directly on <steam>Steam</steam>."
+    },
+    "cta": {
+      "title": "Let's get started!",
+      "desc": "Just want to look something up and do some number crunching? <i>Mhmm, tasty numbers!</i> Have a look at the <database>database</database>.",
+      "desc2": "Want to optimize your factories and production lines? Check out the <tools>tools</tools> section."
+    },
+    "updates": {
+      "0": "Website launched with initial data on workstations, goods and factory planners.",
+      "title": "Latest updates"
+    }
+  },
+  "database": {
+    "intro": {
+      "title": "Database",
+      "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for."
+    },
+    "table": {
+      "products": {
+        "title": "Produkte",
+        "caption": "Here you can find all products you can sell in your stores along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "amountPerBox": "Amount / box",
+          "importPrice": "Import price",
+          "importers": "Importers",
+          "ingredients": "Ingredients",
+          "productionRate": "Production / hr",
+          "workstation": "Workstation"
+        }
+      },
+      "ingredients": {
+        "title": "Zutaten",
+        "caption": "Here you can find all factory ingredients in the game along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "importPrice": "Import price",
+          "amountPerBox": "Amount / box",
+          "importers": "Importers",
+          "usedInProducts": "Used in products"
+        }
+      },
+      "machines": {
+        "title": "Machines",
+        "caption": "Here you can find all machines in the game along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "purchasePrice": "Price"
+        }
+      },
+      "workstations": {
+        "title": "Arbeitsstationen",
+        "caption": "Here you can find all workstations in the game along with their details.",
+        "headers": {
+          "workstation": "Workstation",
+          "purchasePrice": "Price",
+          "neededMachines": "Machines",
+          "usedForProducts": "Used for products"
+        }
+      },
+      "inventory": {
+        "title": "Inventar",
+        "caption": "Here you can find all inventory for your stores and warehouses in the game along with their details.",
+        "headers": {
+          "itemName": "Item name",
+          "purchasePrice": "Preis",
+          "storageCapacity": "Storage capacity"
+        }
+      }
+    }
+  },
+  "tools": {
+    "intro": {
+      "title": "Tools",
+      "desc": "Here you can find various tools to help you optimize your factories and production lines. Just select the products you want to produce to see the required ingredients, machines, and workstations."
+    },
+    "overview": {
+      "empire": {
+        "title": "Your empire",
+        "desc": "Get a quick overview of your empire!"
+      }
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "desc": "Create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with different characters and difficulties, or just keep track of your progress.",
+      "noPlaythroughs": "No playthroughs yet. Create one to get started!",
+      "createPlaythroughButtonDesc": "Create a new playthrough:",
+      "createPlaythroughTitle": "Create a new playthrough",
+      "createPlaythroughDesc": "Enter a name for your playthrough and select the difficulty so the tools can calculate the correct prices. You can edit or delete your playthroughs at any time.",
+      "createPlaythroughPlaceholder": "e.g. John Manhattan",
+      "deletePlaythroughTitle": "Delete playthrough",
+      "deletePlaythroughDesc": "Are you sure you want to delete this playthrough? This action cannot be undone."
+    },
+    "factoryPlanner": {
+      "title": "Factory Planner",
+      "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
+      "genericFactoryName": "{productName} factory"
+    }
   },
   "about": {
-    "title": "Über Big Ambitions Tools"
+    "title": "About Big Ambitions Tools"
+  },
+  "importers": {
+    "jetcargo": "Jet Cargo Imports",
+    "seaside": "Seaside Internationals",
+    "unitedocean": "United Ocean Import",
+    "bluestone": "Bluestone Imports",
+    "lunartide": "Lunar Tide Lieferungen",
+    "maritimefreight": "Maritime Frachtlinie",
+    "aquaticbay": "Aquatic Bay Fracht",
+    "globalharvest": "Global Harvest Traders"
+  },
+  "products": {
+    "cheapGift": "Geschenk (Billig)",
+    "expensiveGift": "Geschenk (Teuer)",
+    "umbrella": "Regenschirm",
+    "cigar": "Zigarre",
+    "cigarette": "Schachtel Zigaretten",
+    "novel": "Roman",
+    "pictureBook": "Bilderbuch",
+    "technicalManual": "Technisches Handbuch",
+    "youngNovel": "Jugendroman",
+    "motivationalBook": "Motivationsbuch",
+    "limitedEditionBook": "Limitierte Buchausgabe",
+    "paperBag": "Papiertüte",
+    "cheapFlower": "Blume (Günstig)",
+    "expensiveFlower": "Blume (Teuer)",
+    "pear": "Tüte Birnen",
+    "apple": "Tüte Äpfel",
+    "tomato": "Bag of Tomatoes",
+    "carrot": "Tüte Karotten",
+    "lettuce": "Bag of Lettuce",
+    "banana": "Tüte Bananen",
+    "iceCream": "Eiscreme",
+    "cupcake": "Cupcake",
+    "popcorn": "Popcorn",
+    "donut": "Donut",
+    "freshFood": "Frische Lebensmittel",
+    "frozenFood": "Tiefkühlkost",
+    "pizza": "Pizza",
+    "frenchFries": "Pommes frites",
+    "kabob": "Hähnchen-Kebab-Spieß",
+    "burger": "Burger",
+    "croissant": "Croissant",
+    "cheesePlatter": "Käseplatte",
+    "hotdog": "Hotdog",
+    "cottonCandy": "Zuckerwatte",
+    "salad": "Salat",
+    "energyDrink": "Energy-Drink",
+    "cupOfTea": "Tasse Tee",
+    "cupOfCoffee": "Cup of Coffee",
+    "whisky": "Whisky",
+    "slushie": "Slushie",
+    "sodaCan": "Limonadendose",
+    "bottleOfWine": "Weinflasche",
+    "margarita": "Margarita",
+    "beer": "Bier",
+    "martini": "Martini",
+    "hairCareProduct": "Haarpflegeprodukt",
+    "cheapJewelry": "Schmuck (Billig)",
+    "expensiveJewelry": "Schmuck (Teuer)",
+    "rhythmByTreHeadphones": "Rhythm By Tre Headphones",
+    "noizeBossEarbuds": "Noize Boss Earbuds",
+    "artyFishPhone": "Arty Fish Phone",
+    "zanaManPhone": "ZanaMan Phone",
+    "artyFishSmartwatch": "Arty Fish Smartwatch",
+    "zanaManSmartwatch": "ZanaMan Smartwatch",
+    "classicCheapMaleClothing": "Kleidung (Klassisch Billig, Herren)",
+    "classicCheapFemaleClothing": "Kleidung (Klassisch Billig, Damen)",
+    "modernCheapMaleClothing": "Kleidung (Modern Billig, Herren)",
+    "modernCheapFemaleClothing": "Kleidung (Modern Billig, Damen)",
+    "classicExpensiveMaleClothing": "Kleidung (Klassisch Teuer, Herren)",
+    "classicExpensiveFemaleClothing": "Kleidung (Klassisch Teuer, Damen)",
+    "modernExpensiveMaleClothing": "Kleidung (Modern Teuer, Herren)",
+    "modernExpensiveFemaleClothing": "Kleidung (Modern Teuer, Damen)"
+  },
+  "ingredients": {
+    "battery": "Batterie",
+    "capacitors": "Kondensatoren",
+    "copperCladLaminate": "Kupferkaschiertes Laminat",
+    "fabricCheap": "Stoff (Günstig)",
+    "fabricExpensive": "Stoff (Teuer)",
+    "glass": "Glas",
+    "integratedCircuits": "Integrierte Schaltkreise",
+    "metalBand": "Metallband",
+    "microphone": "Mikrofon",
+    "plastic": "Kunststoff",
+    "resistors": "Widerstände",
+    "speaker": "Lautsprecher",
+    "transistors": "Transistoren",
+    "uncutGemsCheap": "Unbearbeitete Edelsteine (Günstig)",
+    "uncutGemsExpensive": "Unbearbeitete Edelsteine (Teuer)",
+    "cigarPaper": "Zigarrenpapier",
+    "cigarettePaper": "Zigarettenpapier",
+    "clay": "Ton",
+    "metalWire": "Metalldraht",
+    "paperReam": "Papierpaket",
+    "popcornKernels": "Popcornkörner",
+    "appleSeeds": "Samen (Apfel)",
+    "bananaSeeds": "Samen (Banane)",
+    "carrotSeeds": "Samen (Karotte)",
+    "flowerCheapSeeds": "Samen (Blume Günstig)",
+    "flowerExpensiveSeeds": "Samen (Blume Teuer)",
+    "lettuceSeeds": "Samen (Salat)",
+    "pearSeeds": "Samen (Birne)",
+    "tomatoSeeds": "Samen (Tomate)",
+    "tobacco": "Tabak",
+    "water": "Wasser",
+    "barley": "Gerste",
+    "blueAgave": "Blaue Agave",
+    "caffeineExtract": "Koffeinextrakt",
+    "carbonDioxide": "Kohlendioxid",
+    "colaFlavoring": "Cola-Aroma",
+    "flavorSyrup": "Aromasirup",
+    "grapes": "Trauben",
+    "groundCoffeeBeans": "Gemahlene Kaffeebohnen",
+    "hairCareFormula": "Haarpflegeformel",
+    "hops": "Hopfen",
+    "juniperBerries": "Wacholderbeeren",
+    "limeJuice": "Limettensaft",
+    "sugar": "Zucker",
+    "teaLeaves": "Teeblätter",
+    "vermouth": "Wermut",
+    "yeast": "Hefe",
+    "lettuce": "Salatbeutel",
+    "tomato": "Beutel mit Tomaten",
+    "bakingMix": "Backmischung",
+    "butter": "Butter",
+    "cheese": "Käse",
+    "chickenBreast": "Hähnchenbrust",
+    "dough": "Teig",
+    "groundBeef": "Rinderhackfleisch",
+    "milk": "Milch",
+    "onion": "Zwiebel",
+    "pepper": "Paprika",
+    "rawSausage": "Rohe Wurst",
+    "russetPotatoes": "Russet-Kartoffeln",
+    "vinaigrette": "Vinaigrette"
+  },
+  "workstations": {
+    "clothingWorkstation": "Arbeitsstation Bekleidung",
+    "electronicsWorkstation": "Arbeitsstation Elektronik",
+    "jewelryWorkstation": "Arbeitsstation Schmuck",
+    "consumerGoodsWorkstation": "Arbeitsstation Konsumgüter",
+    "bottledGoodsWorkstation": "Arbeitsstation Flaschenwaren",
+    "foodWorkstation": "Arbeitsstation Lebensmittel",
+    "gardenWorkstation": "Arbeitsstation Garten"
+  },
+  "machines": {
+    "consumerGoodsAssemblyMachine": "Montagemaschine für Konsumgüter",
+    "industrialSewingMachine": "Industrielle Nähmaschine",
+    "laserCuttingMachine": "Laserschneidemaschine",
+    "kilnMachine": "Brennofen",
+    "polishingMachine": "Poliermaschine",
+    "foodAssemblyMachine": "Lebensmittel-Montagemaschine",
+    "bottlingMachine": "Abfüllmaschine",
+    "industrialBlendingMachine": "Industrielle Mischmaschine",
+    "automatedBakingMachine": "Automatische Backmaschine",
+    "hydroponicPlanter": "Hydroponik-Pflanzgefäß"
+  },
+  "inventory": {
+    "palletShelf": "Palettenregal",
+    "storageShelf": "Lagerregal"
   }
 }

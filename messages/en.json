@@ -320,7 +320,7 @@
     "hydroponicPlanter": "Hydroponic Planter"
   },
   "inventory": {
-    "Pallet Shelf": "Pallet Shelf",
-    "Storage Shelf": "Storage Shelf"
+    "palletShelf": "Pallet Shelf",
+    "storageShelf": "Storage Shelf"
   }
 }
