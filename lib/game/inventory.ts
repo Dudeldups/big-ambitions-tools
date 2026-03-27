@@ -1,6 +1,4 @@
-export const SHELF_NAMES = ["Pallet Shelf", "Storage Shelf"] as const;
-
-export type ShelfName = (typeof SHELF_NAMES)[number];
+import { InventoryItemName, ShelfName } from "./inventoryNames";
 
 export type Shelf = {
   purchasePrice: number;
@@ -8,12 +6,28 @@ export type Shelf = {
 };
 
 export const shelves: Record<ShelfName, Shelf> = {
-  "Pallet Shelf": {
+  palletShelf: {
     purchasePrice: 2500,
     storageCapacity: 60,
   },
-  "Storage Shelf": {
+  storageShelf: {
     purchasePrice: 1200,
     storageCapacity: 16,
+  },
+};
+
+export type InventoryItem = {
+  purchasePrice: number;
+};
+
+export const inventoryItems: Record<InventoryItemName, InventoryItem> = {
+  cheapCoffeeMachine: {
+    purchasePrice: 400,
+  },
+  standardFridge: {
+    purchasePrice: 1800,
+  },
+  waterCooler: {
+    purchasePrice: 130,
   },
 };
