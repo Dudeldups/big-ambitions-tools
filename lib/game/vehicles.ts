@@ -1,4 +1,4 @@
-import { VehicleItemName } from "./vehicleNames";
+import { VehicleName } from "./vehicleNames";
 
 export type Vehicle = {
   id: number;
@@ -16,7 +16,7 @@ export type Vehicle = {
   destinationsThatCanDeliver: number;
 };
 
-export const vehicles: Record<VehicleItemName, Vehicle> = {
+export const vehicles: Record<VehicleName, Vehicle> = {
   AnselmoAF90: {
     id: 15,
     price: 520000,

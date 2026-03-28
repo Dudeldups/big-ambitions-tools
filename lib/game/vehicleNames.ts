@@ -1,4 +1,4 @@
-export const VEHICLE_ITEM_NAMES = [
+export const VEHICLE_NAMES = [
   "AnselmoAF90",
   "VordPony",
   "ElectricScooter",
@@ -16,4 +16,4 @@ export const VEHICLE_ITEM_NAMES = [
   "MersaidiDash",
 ] as const;
 
-export type VehicleItemName = (typeof VEHICLE_ITEM_NAMES)[number];
+export type VehicleName = (typeof VEHICLE_NAMES)[number];
