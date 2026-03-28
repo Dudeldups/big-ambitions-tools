@@ -73,7 +73,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
       <FieldGroup className="px-4">
         <Field>
           <Label htmlFor="name">Factory Name</Label>
@@ -87,7 +87,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
             <p className="text-destructive text-sm">{t(errors.name.message)}</p>
           )}
         </Field>
-        <Field>
+        <Field className="-mt-2">
           <Label htmlFor="description">Description</Label>
           <Textarea
             id="description"
@@ -124,6 +124,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
 
       <FieldGroup className="px-4">
         <Field>
+          <Label>Vehicles</Label>
           <VehicleSelect control={control} index={1} />
           <VehicleSelect control={control} index={2} />
         </Field>
