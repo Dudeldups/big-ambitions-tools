@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Field, FieldDescription, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "@/i18n/navigation";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
@@ -16,7 +15,7 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
-import { Controller, useFieldArray, UseFormReturn } from "react-hook-form";
+import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 
 type CreateFactoryFormProps = {
@@ -51,6 +50,8 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     control,
     name: "workstations",
   });
+
+  const openingHours = useWatch({ control, name: "openingHours" });
 
   const onSubmit = (values: FactoryFormValues) => {
     const hasMissingName = values.name.trim() === "";
@@ -102,6 +103,26 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
 
       <FieldGroup className="px-4">
         <Field>
+          <Label htmlFor="openingHours">Opening hours / day</Label>
+          <div className="flex items-center gap-3">
+            <Input
+              className="max-w-20"
+              id="openingHours"
+              type="number"
+              min={1}
+              max={24}
+              step={1}
+              {...register("openingHours", { valueAsNumber: true })}
+            />
+            <span className="text-muted-foreground">
+              {openingHours * 7}h / week
+            </span>
+          </div>
+        </Field>
+      </FieldGroup>
+
+      <FieldGroup className="px-4">
+        <Field>
           <FieldDescription className="text-foreground">
             Workstations
           </FieldDescription>
@@ -138,32 +159,6 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
             Add Workstation
           </Button>
         </Field>
-      </FieldGroup>
-
-      <FieldGroup>
-        <Controller
-          name="openingHours"
-          control={control}
-          render={({ field }) => (
-            <>
-              <div className="flex justify-between">
-                <Label id="slider-label" htmlFor="openingHours">
-                  Opening hours / day
-                </Label>
-                <span>{field.value}h</span>
-              </div>
-              <Slider
-                aria-labelledby="slider-label"
-                id="openingHours"
-                value={[field.value]}
-                onValueChange={field.onChange}
-                min={1}
-                max={24}
-                step={1}
-              />
-            </>
-          )}
-        />
       </FieldGroup>
 
       <div className="bg-card flex gap-4 rounded-md p-4">
