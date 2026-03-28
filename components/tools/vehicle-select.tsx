@@ -4,6 +4,7 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
@@ -48,11 +49,14 @@ const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
+              <SelectLabel>{t("general.vehicle")}</SelectLabel>
+
               {index === 2 && (
                 <SelectItem value={NONE_VALUE}>
                   {t("general.noValue")}
                 </SelectItem>
               )}
+
               {deliveryVehicles.map((v) => (
                 <SelectItem key={v.name} value={v.name}>
                   {t(`vehicles.${v.name}`)}
