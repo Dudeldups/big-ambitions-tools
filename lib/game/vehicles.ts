@@ -2,7 +2,7 @@ import { VehicleName } from "./vehicleNames";
 
 export type Vehicle = {
   id: number;
-  price: number;
+  purchasePrice: number;
   isATruck: boolean;
   maxFuel: number;
   maxCargoCapacity: number;
@@ -19,7 +19,7 @@ export type Vehicle = {
 export const vehicles: Record<VehicleName, Vehicle> = {
   AnselmoAF90: {
     id: 15,
-    price: 520000,
+    purchasePrice: 520000,
     isATruck: false,
     maxFuel: 68,
     maxCargoCapacity: 3,
@@ -34,7 +34,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   VordPony: {
     id: 10,
-    price: 187000,
+    purchasePrice: 187000,
     isATruck: false,
     maxFuel: 72,
     maxCargoCapacity: 5,
@@ -47,24 +47,9 @@ export const vehicles: Record<VehicleName, Vehicle> = {
     requiredDeliveryDriverSkillValue: 0,
     destinationsThatCanDeliver: 1,
   },
-  ElectricScooter: {
-    id: 17,
-    price: 20,
-    isATruck: false,
-    maxFuel: 0,
-    maxCargoCapacity: 0,
-    maxSpeed: 45,
-    enginePower: 45,
-    brakeForce: 1400,
-    autoParkSupported: false,
-    taxDeductible: false,
-    hasRadio: false,
-    requiredDeliveryDriverSkillValue: 0,
-    destinationsThatCanDeliver: 0,
-  },
   Bima320: {
     id: 8,
-    price: 48000,
+    purchasePrice: 48000,
     isATruck: false,
     maxFuel: 57,
     maxCargoCapacity: 10,
@@ -79,7 +64,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   PetrollsFanton: {
     id: 13,
-    price: 720000,
+    purchasePrice: 720000,
     isATruck: false,
     maxFuel: 80,
     maxCargoCapacity: 8,
@@ -94,7 +79,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   VordTiaraVic: {
     id: 16,
-    price: 11000,
+    purchasePrice: 11000,
     isATruck: false,
     maxFuel: 72,
     maxCargoCapacity: 12,
@@ -109,7 +94,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   MersaidiS500: {
     id: 5,
-    price: 95000,
+    purchasePrice: 95000,
     isATruck: false,
     maxFuel: 80,
     maxCargoCapacity: 8,
@@ -124,7 +109,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   MersaidiMGAGT: {
     id: 14,
-    price: 220000,
+    purchasePrice: 220000,
     isATruck: false,
     maxFuel: 66,
     maxCargoCapacity: 5,
@@ -139,7 +124,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   HonzaMimic: {
     id: 2,
-    price: 2500,
+    purchasePrice: 2500,
     isATruck: false,
     maxFuel: 55,
     maxCargoCapacity: 8,
@@ -154,7 +139,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   Ferdinand112: {
     id: 7,
-    price: 130000,
+    purchasePrice: 130000,
     isATruck: false,
     maxFuel: 77,
     maxCargoCapacity: 3,
@@ -169,7 +154,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   UMCNunavut: {
     id: 11,
-    price: 65000,
+    purchasePrice: 65000,
     isATruck: false,
     maxFuel: 110,
     maxCargoCapacity: 18,
@@ -184,7 +169,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   VordV150: {
     id: 9,
-    price: 44000,
+    purchasePrice: 44000,
     isATruck: false,
     maxFuel: 118,
     maxCargoCapacity: 20,
@@ -199,7 +184,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   DeliveryTruck: {
     id: 18,
-    price: 72500,
+    purchasePrice: 72500,
     isATruck: true,
     maxFuel: 250,
     maxCargoCapacity: 40,
@@ -214,7 +199,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   FreightTruckT1: {
     id: 6,
-    price: 98000,
+    purchasePrice: 98000,
     isATruck: true,
     maxFuel: 378,
     maxCargoCapacity: 60,
@@ -229,7 +214,7 @@ export const vehicles: Record<VehicleName, Vehicle> = {
   },
   MersaidiDash: {
     id: 20,
-    price: 48500,
+    purchasePrice: 48500,
     isATruck: false,
     maxFuel: 185,
     maxCargoCapacity: 24,

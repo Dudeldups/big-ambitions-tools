@@ -1,7 +1,6 @@
 export const VEHICLE_NAMES = [
   "AnselmoAF90",
   "VordPony",
-  "ElectricScooter",
   "Bima320",
   "PetrollsFanton",
   "VordTiaraVic",
