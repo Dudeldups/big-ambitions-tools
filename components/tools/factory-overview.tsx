@@ -40,6 +40,8 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   const totalVehicleCost = vehicleRows.reduce((sum, row) => sum + row.cost, 0);
 
+  const totalOneTimeCost = totalWorkstationCost + totalVehicleCost;
+
   return (
     <div className="space-y-4">
       <InfoTable
@@ -50,7 +52,9 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         }))}
         total={formatToUSD(totalWorkstationCost)}
       />
+
       <Separator />
+
       <InfoTable
         headers={["vehicleName", "purchasePrice"]}
         rows={vehicleRows.map((v) => ({
@@ -59,6 +63,15 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         }))}
         total={formatToUSD(totalVehicleCost)}
       />
+
+      <Separator />
+
+      <div className="flex justify-between px-2">
+        <p className="font-semibold">Total one-time costs</p>
+        <p className="amount font-semibold underline">
+          {formatToUSD(totalOneTimeCost)}
+        </p>
+      </div>
     </div>
   );
 };
