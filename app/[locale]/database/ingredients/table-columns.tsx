@@ -9,7 +9,7 @@ import {
 } from "@/components/tables/shared-table-columns";
 import { Ingredient } from "@/lib/game/ingredients";
 import { Difficulty } from "@/lib/game/types";
-import { getImportPrice } from "@/lib/utils/math";
+import { getImportPrice } from "@/lib/calculations/math";
 
 type IngredientsColumnData = Ingredient & {
   itemName: string;

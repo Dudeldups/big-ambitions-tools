@@ -12,7 +12,7 @@ import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { Difficulty, StoreDifficulty } from "@/lib/game/types";
 import { ProductName } from "@/lib/game/productNames";
-import { getExportPrice, getImportPrice } from "@/lib/utils/math";
+import { getExportPrice, getImportPrice } from "@/lib/calculations/math";
 
 export type ProductsColumnData = Product & {
   itemName: ProductName;

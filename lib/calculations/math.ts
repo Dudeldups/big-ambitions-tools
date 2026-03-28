@@ -1,4 +1,4 @@
-import { EXPORT_PRICE_MULT, PUBLIC_PRICE_MULT } from "./../constants";
+import { EXPORT_PRICE_MULT, PUBLIC_PRICE_MULT } from "../constants";
 import { IMPORT_PRICE_BASE_MULT } from "../constants";
 import { Difficulty } from "../game/types";
 
