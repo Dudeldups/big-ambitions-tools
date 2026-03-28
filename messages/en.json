@@ -30,7 +30,17 @@
       "usedInProducts": "Used in products",
       "importers": "Importers",
       "ingredients": "Ingredients",
-      "productionRate": "Production / hr"
+      "productionRate": "Production / hr",
+      "vehicleName": "Vehicle name",
+      "maxFuel": "Fuel capacity",
+      "maxCargoCapacity": "Cargo capacity",
+      "maxSpeed": "Max speed",
+      "enginePower": "Acceleration",
+      "autoParkSupported": "Auto parking",
+      "taxDeductible": "Tax deductible",
+      "requiredDeliveryDriverSkillValue": "Req. driver skill",
+      "destinationsThatCanDeliver": "Base dest.",
+      "destinationsFull": "With 100% LM"
     }
   },
   "toasts": {
@@ -130,21 +140,7 @@
       },
       "vehicles": {
         "title": "Vehicles",
-        "caption": "An overview of all vehicles in the game.",
-        "headers": {
-          "vehicleName": "Vehicle name",
-          "purchasePrice": "Price",
-          "fuelCapacity": "Fuel capacity",
-          "cargoCapacity": "Cargo capacity",
-          "maxSpeed": "Max speed",
-          "acceleration": "Acceleration",
-          "brakeForce": "Brake force",
-          "autoParking": "Auto parking",
-          "taxDeductible": "Tax deductible",
-          "requiredDeliveryDriverSkill": "Req. delivery driver skill",
-          "destinationsBase": "Base destinations",
-          "destinationsFull": "With 100% LM"
-        }
+        "caption": "An overview of all vehicles in the game."
       }
     }
   },
