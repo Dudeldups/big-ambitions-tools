@@ -319,6 +319,23 @@
     "automatedBakingMachine": "Automated Baking Machine",
     "hydroponicPlanter": "Hydroponic Planter"
   },
+  "vehicles": {
+    "AnselmoAF90": "Anselmo AF90",
+    "VordPony": "Vord Pony",
+    "ElectricScooter": "Electric Scooter",
+    "Bima320": "Bima 320",
+    "PetrollsFanton": "Petrolls Fanton",
+    "VordTiaraVic": "Vord Tiara Vic",
+    "MersaidiS500": "Mersaidi S500",
+    "MersaidiMGAGT": "Mersaidi MGAGT",
+    "HonzaMimic": "Honza Mimic",
+    "Ferdinand112": "Ferdinand 112",
+    "UMCNunavut": "UMC Nunavut",
+    "VordV150": "Vord V150",
+    "DeliveryTruck": "Vord Courier D500",
+    "FreightTruckT1": "Freight Truck T1",
+    "MersaidiDash": "Mersaidi Dash"
+  },
   "inventory": {
     "palletShelf": "Pallet Shelf",
     "storageShelf": "Storage Shelf"
