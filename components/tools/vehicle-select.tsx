@@ -37,6 +37,7 @@ const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
       name={`vehicle${index}`}
       render={({ field }) => (
         <Select
+          key={field.value}
           value={field.value}
           onValueChange={(val) =>
             field.onChange(val === NONE_VALUE ? undefined : val)
