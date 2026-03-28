@@ -17,6 +17,7 @@ import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
 import { toast } from "sonner";
+import VehicleSelect from "./vehicle-select";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -118,6 +119,13 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               {openingHours * 7}h / week
             </span>
           </div>
+        </Field>
+      </FieldGroup>
+
+      <FieldGroup className="px-4">
+        <Field>
+          <VehicleSelect control={control} index={1} />
+          <VehicleSelect control={control} index={2} />
         </Field>
       </FieldGroup>
 

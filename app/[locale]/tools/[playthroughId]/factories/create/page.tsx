@@ -9,7 +9,11 @@ import { useForm, useWatch } from "react-hook-form";
 const CreateFactoryPage = () => {
   const form = useForm<FactoryFormValues>({
     resolver: zodResolver(factorySchema),
-    defaultValues: { workstations: [], openingHours: 24 },
+    defaultValues: {
+      workstations: [],
+      openingHours: 24,
+      vehicle1: "FreightTruckT1",
+    },
   });
 
   const watchedValues = useWatch({ control: form.control });
