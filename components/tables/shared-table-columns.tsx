@@ -7,6 +7,7 @@ import { currencyCell } from "@/lib/utils/currencyCell";
 import { Column, ColumnDef, Table } from "@tanstack/react-table";
 import { StoreDifficulty } from "@/lib/game/types";
 import { Importer } from "@/lib/game/importerNames";
+import { Check, X } from "lucide-react";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey: K,
@@ -134,5 +135,42 @@ export const createImportersColumn = <
         ))}
       </ul>
     );
+  },
+});
+
+export const createBooleanColumn = <T, K extends keyof T>(
+  accessorKey: K,
+): ColumnDef<T> => ({
+  accessorKey,
+  header: ({
+    column,
+    table,
+  }: {
+    column: Column<T, unknown>;
+    table: Table<T>;
+  }) => {
+    const { t } = getMeta(table);
+
+    return (
+      <TableHeadContent column={column} align="center">
+        {t(`general.tableColumns.${String(accessorKey)}`)}
+      </TableHeadContent>
+    );
+  },
+  cell: ({ getValue }) => {
+    const value = getValue() as boolean;
+
+    return (
+      <div className="flex justify-center">
+        {value ? (
+          <Check className="text-green-600" />
+        ) : (
+          <X className="text-red-600" />
+        )}
+      </div>
+    );
+  },
+  meta: {
+    align: "center",
   },
 });
