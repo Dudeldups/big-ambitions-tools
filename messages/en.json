@@ -127,6 +127,24 @@
           "purchasePrice": "Price",
           "storageCapacity": "Storage capacity"
         }
+      },
+      "vehicles": {
+        "title": "Vehicles",
+        "caption": "An overview of all vehicles in the game.",
+        "headers": {
+          "vehicleName": "Vehicle name",
+          "purchasePrice": "Price",
+          "fuelCapacity": "Fuel capacity",
+          "cargoCapacity": "Cargo capacity",
+          "maxSpeed": "Max speed",
+          "acceleration": "Acceleration",
+          "brakeForce": "Brake force",
+          "autoParking": "Auto parking",
+          "taxDeductible": "Tax deductible",
+          "requiredDeliveryDriverSkill": "Req. delivery driver skill",
+          "destinationsBase": "Base destinations",
+          "destinationsFull": "With 100% LM"
+        }
       }
     }
   },
