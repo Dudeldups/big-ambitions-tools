@@ -1,5 +1,6 @@
 import { EXPORT_PRICE_MULT, PUBLIC_PRICE_MULT } from "../constants";
 import { IMPORT_PRICE_BASE_MULT } from "../constants";
+import { machines, Workstation } from "../game/machines";
 import { Difficulty } from "../game/types";
 
 export const getImportPrice = (
@@ -27,3 +28,10 @@ export const getExportPrice = (
     priceIndex
   );
 };
+
+export function getWorkstationPrice(ws: Workstation) {
+  return ws.neededMachines.reduce(
+    (sum, machineName) => sum + machines[machineName].purchasePrice,
+    0,
+  );
+}
