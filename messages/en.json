@@ -11,6 +11,7 @@
     "workstation": "Workstation",
     "product": "Product",
     "factories": "Factories",
+    "vehicle": "Vehicle",
     "difficulty": "Difficulty",
     "difficultyOptions": {
       "easy": "easy",
