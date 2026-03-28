@@ -43,3 +43,7 @@ export type ItemName =
 export type TableType = keyof TableKeyMap;
 
 export type TableData<T extends TableType, V> = [TableKeyMap[T], V][];
+
+export type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
+};
