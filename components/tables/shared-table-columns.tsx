@@ -17,10 +17,14 @@ export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey,
   header: ({ column, table }) => {
     const { t } = getMeta(table);
+    const translationString =
+      translationKeyPrefix === "vehicles"
+        ? "tableColumns.vehicleName"
+        : `tableColumns.${String(accessorKey)}`;
 
     return (
       <TableHeadContent column={column} align="start">
-        {t(`general.tableColumns.${String(accessorKey)}`)}
+        {t(translationString)}
       </TableHeadContent>
     );
   },
@@ -49,7 +53,7 @@ export const createCurrencyColumn = <T, K extends keyof T | string>(
     const { t } = getMeta(table);
     return (
       <TableHeadContent column={column} align="end">
-        {t(`general.tableColumns.${String(accessorKey)}`)}
+        {t(`tableColumns.${String(accessorKey)}`)}
       </TableHeadContent>
     );
   },
@@ -83,7 +87,7 @@ export const createNumericColumn = <T, K extends keyof T>(
     const { t } = getMeta(table);
     return (
       <TableHeadContent column={column} align="end">
-        {t(`general.tableColumns.${String(accessorKey)}`)}
+        {t(`tableColumns.${String(accessorKey)}`)}
       </TableHeadContent>
     );
   },
@@ -110,7 +114,7 @@ export const createImportersColumn = <
     const { t } = getMeta(table);
     return (
       <TableHeadContent column={column}>
-        {t(`general.tableColumns.importers`)}
+        {t(`tableColumns.importers`)}
       </TableHeadContent>
     );
   },
@@ -153,7 +157,7 @@ export const createBooleanColumn = <T, K extends keyof T>(
 
     return (
       <TableHeadContent column={column} align="center">
-        {t(`general.tableColumns.${String(accessorKey)}`)}
+        {t(`tableColumns.${String(accessorKey)}`)}
       </TableHeadContent>
     );
   },

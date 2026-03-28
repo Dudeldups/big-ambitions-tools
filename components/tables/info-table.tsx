@@ -28,9 +28,9 @@ const InfoTable = ({ headers, rows, total }: InfoTableProps) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>{t(`general.tableColumns.${headers[0]}`)}</TableHead>
+            <TableHead>{t(`tableColumns.${headers[0]}`)}</TableHead>
             <TableHead className="text-right">
-              {t(`general.tableColumns.${headers[1]}`)}
+              {t(`tableColumns.${headers[1]}`)}
             </TableHead>
           </TableRow>
         </TableHeader>

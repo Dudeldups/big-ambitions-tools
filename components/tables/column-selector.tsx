@@ -19,13 +19,13 @@ const ColumnSelector = <TData,>({
   className,
   table,
 }: ColumnSelectorProps<TData>) => {
-  const tGeneral = useTranslations("general");
+  const t = useTranslations();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className={`${className}`}>
-          {tGeneral("columnsDescription")}
+          {t("general.columnsDescription")}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-44">
@@ -39,7 +39,7 @@ const ColumnSelector = <TData,>({
               checked={column.getIsVisible()}
               onCheckedChange={(value) => column.toggleVisibility(!!value)}
             >
-              {tGeneral(`tableColumns.${column.id}`)}
+              {t(`tableColumns.${column.id}`)}
             </DropdownMenuCheckboxItem>
           ))}
       </DropdownMenuContent>

@@ -37,7 +37,7 @@ export const productsColumns = (
       const { t } = getMeta(table);
       return (
         <TableHeadContent column={column}>
-          {t(`general.tableColumns.ingredients`)}
+          {t(`tableColumns.ingredients`)}
         </TableHeadContent>
       );
     },

@@ -18,7 +18,7 @@ export const workstationsColumns: ColumnDef<WorkstationsColumnData>[] = [
       const { t } = getMeta(table);
       return (
         <TableHeadContent column={column} align="start">
-          {t(`general.tableColumns.neededMachines`)}
+          {t(`tableColumns.neededMachines`)}
         </TableHeadContent>
       );
     },
@@ -30,7 +30,7 @@ export const workstationsColumns: ColumnDef<WorkstationsColumnData>[] = [
       const { t } = getMeta(table);
       return (
         <TableHeadContent column={column} align="end">
-          {t(`general.tableColumns.purchasePrice`)}
+          {t(`tableColumns.purchasePrice`)}
         </TableHeadContent>
       );
     },

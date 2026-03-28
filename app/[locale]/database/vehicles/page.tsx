@@ -8,7 +8,7 @@ import { VehiclesColumnData, vehiclesColumns } from "./table-columns";
 const data: VehiclesColumnData[] = (Object.keys(vehicles) as VehicleName[]).map(
   (vehicleName) => ({
     ...vehicles[vehicleName],
-    vehicleName,
+    itemName: vehicleName,
   }),
 );
 

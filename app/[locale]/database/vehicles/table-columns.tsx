@@ -11,11 +11,11 @@ import { getMeta } from "@/lib/utils/getMeta";
 import { ColumnDef } from "@tanstack/react-table";
 
 export type VehiclesColumnData = Vehicle & {
-  vehicleName: VehicleName;
+  itemName: VehicleName;
 };
 
 export const vehiclesColumns: ColumnDef<VehiclesColumnData>[] = [
-  createTranslatedColumn("vehicleName", "vehicles"),
+  createTranslatedColumn("itemName", "vehicles"),
   createNumericColumn("maxSpeed"),
   createNumericColumn("enginePower"),
   createNumericColumn("maxFuel"),
@@ -30,7 +30,7 @@ export const vehiclesColumns: ColumnDef<VehiclesColumnData>[] = [
 
       return (
         <TableHeadContent column={column} align="end">
-          {t("general.tableColumns.destinationsFull")}
+          {t("tableColumns.destinationsFull")}
         </TableHeadContent>
       );
     },
