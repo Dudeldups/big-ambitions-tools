@@ -1,5 +1,7 @@
 import { Difficulty } from "./game/types";
 
+export const NONE_VALUE = "__none__" as const;
+
 export const DIFFICULTY_OPTIONS = [
   "easy",
   "normal",
