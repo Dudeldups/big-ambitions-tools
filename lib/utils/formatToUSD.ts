@@ -1,8 +1,15 @@
-export const usdFormatter = new Intl.NumberFormat("en-US", {
+export const usdFormatterWithCents = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
+});
+
+export const usdFormatterRounded = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
 });
 
 /**
@@ -13,12 +20,8 @@ export const usdFormatter = new Intl.NumberFormat("en-US", {
 
 export const formatToUSD = (value: number, hideCents = false) => {
   if (hideCents) {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(value);
+    return usdFormatterRounded.format(value);
+  } else {
+    return usdFormatterWithCents.format(value);
   }
-  return usdFormatter.format(value);
 };
