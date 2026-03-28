@@ -45,6 +45,15 @@ const TableSwitcher = () => {
           {t("table.inventory.title")}
         </Link>
       </Button>
+
+      <Button
+        asChild
+        variant={`${pathname === "/database/vehicles" ? "default" : "secondary"}`}
+      >
+        <Link href="/database/vehicles" className={``}>
+          {t("table.vehicles.title")}
+        </Link>
+      </Button>
     </div>
   );
 };
