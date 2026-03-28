@@ -1,6 +1,7 @@
 import z from "zod";
 import { WORKSTATION_NAMES } from "../game/machineNames";
 import { PRODUCT_NAMES } from "../game/productNames";
+import { VEHICLE_NAMES } from "../game/vehicleNames";
 
 export const factorySchema = z.object({
   name: z.string().max(50, "errors.factory.nameTooLong"),
@@ -17,6 +18,8 @@ export const factorySchema = z.object({
     )
     .min(1, "errors.factory.workstationsRequired"),
   openingHours: z.number().min(1).max(24),
+  vehicle1: z.enum(VEHICLE_NAMES),
+  vehicle2: z.enum(VEHICLE_NAMES).optional(),
 });
 
 export type FactoryFormValues = z.infer<typeof factorySchema>;
