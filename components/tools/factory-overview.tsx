@@ -2,6 +2,7 @@
 
 import {
   deriveEmployeeCost,
+  deriveIngredientCostsOfProduct,
   deriveVehicleCost,
   deriveWorkstationCost,
 } from "@/lib/calculations/derivedFactoryData";
@@ -12,6 +13,7 @@ import InfoTable from "../tables/info-table";
 import { useTranslations } from "next-intl";
 import { Separator } from "../ui/separator";
 import { EmployeeName } from "@/lib/game/employeeNames";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 
 type FactoryOverviewProps = {
   values: DeepPartial<FactoryFormValues>;
@@ -19,6 +21,7 @@ type FactoryOverviewProps = {
 
 const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const t = useTranslations();
+  const { difficulty } = useActivePlaythrough().activePlaythrough;
 
   const workstationRows =
     values.workstations
@@ -61,7 +64,22 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     0,
   );
 
-  const totalRecurringCost = totalEmployeeCost;
+  const ingredientRows = (values.workstations ?? []).flatMap((machine) =>
+    machine?.product
+      ? deriveIngredientCostsOfProduct(
+          machine.product,
+          values.openingHours,
+          difficulty,
+        )
+      : [],
+  );
+
+  const totalIngredientCost = ingredientRows.reduce(
+    (sum, row) => sum + row.cost,
+    0,
+  );
+
+  const totalRecurringCost = totalEmployeeCost + totalIngredientCost;
 
   return (
     <div className="space-y-10">
@@ -103,14 +121,25 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-center font-semibold">Recurring costs</h2>
+        <h2 className="text-center font-semibold">Recurring weekly costs</h2>
         <InfoTable
-          headers={["vehicleName", "purchasePrice"]}
+          headers={["employees", "purchasePrice"]}
           rows={employeeRows.map((e) => ({
             label: `${e.amount}x ${t(`employees.${e.name}`)}`,
             value: formatToUSD(e.cost),
           }))}
           total={formatToUSD(totalEmployeeCost)}
+        />
+
+        <Separator />
+
+        <InfoTable
+          headers={["ingredients", "purchasePrice"]}
+          rows={ingredientRows.map((i) => ({
+            label: `${i.amount}x ${t(`ingredients.${i.name}`)}`,
+            value: formatToUSD(i.cost),
+          }))}
+          total={formatToUSD(totalIngredientCost)}
         />
 
         <Separator />
