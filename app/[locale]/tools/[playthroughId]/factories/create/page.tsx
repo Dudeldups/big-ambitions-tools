@@ -67,7 +67,7 @@ const CreateFactoryPage = () => {
     });
   }, [workstations, setValue, openingHours]);
 
-  const watchedValues = useWatch({ control });
+  const watchedValues = useWatch({ control }) as FactoryFormValues;
 
   return (
     <div className="grid grid-cols-2 gap-8">
