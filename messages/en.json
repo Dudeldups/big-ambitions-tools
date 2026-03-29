@@ -355,5 +355,25 @@
   "inventory": {
     "palletShelf": "Pallet Shelf",
     "storageShelf": "Storage Shelf"
+  },
+  "employees": {
+    "deliveryDriver": "Delivery Driver",
+    "hrManager": "HR Manager",
+    "factoryWorker": "Factory Worker",
+    "purchasingAgent": "Purchasing Agent",
+    "logisticsManager": "Logistics Manager",
+    "customerService": "Customer Service",
+    "cleaning": "Cleaning",
+    "lawyer": "Lawyer",
+    "projectionist": "Projectionist",
+    "hairStylist": "Hair Stylist",
+    "securityGuard": "Security Guard",
+    "graphicDesigner": "Graphic Designer",
+    "stageCrew": "Stage Crew",
+    "actor": "Actor",
+    "dj": "DJ",
+    "headhunter": "Headhunter",
+    "gymTrainer": "Gym Trainer",
+    "programmer": "Programmer"
   }
 }
