@@ -7,20 +7,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { DerivedDataFromFormValues } from "@/lib/calculations/derivedFactoryData";
+import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
 
-type InfoTableRow = {
-  label: string;
-  value: string;
-};
-
 type InfoTableProps = {
-  headers: [string, string];
-  rows: InfoTableRow[];
-  total?: string;
+  label: string;
+  rows: DerivedDataFromFormValues;
+  total: string;
 };
 
-const InfoTable = ({ headers, rows, total }: InfoTableProps) => {
+const InfoTable = ({ label, rows, total }: InfoTableProps) => {
   const t = useTranslations();
 
   return (
@@ -28,30 +25,34 @@ const InfoTable = ({ headers, rows, total }: InfoTableProps) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>{t(`tableColumns.${headers[0]}`)}</TableHead>
             <TableHead className="text-right">
-              {t(`tableColumns.${headers[1]}`)}
+              {t(`tableColumns.amount`)}
+            </TableHead>
+            <TableHead>{t(`tableColumns.${label}`)}</TableHead>
+            <TableHead className="text-right">
+              {t(`tableColumns.purchasePrice`)}
             </TableHead>
           </TableRow>
         </TableHeader>
+
         <TableBody>
           {rows.map((row, i) => (
-            <TableRow key={row.label + i}>
-              <TableCell>{row.label}</TableCell>
-              <TableCell className="amount">{row.value}</TableCell>
+            <TableRow key={row.name + i}>
+              <TableCell className="amount">{row.amount}</TableCell>
+              <TableCell>{t(row.name)}</TableCell>
+              <TableCell className="amount">{formatToUSD(row.cost)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
-        {total && (
-          <TableFooter>
-            <TableRow>
-              <TableCell className="font-semibold">
-                {t("general.summedUpAmount")}
-              </TableCell>
-              <TableCell className="amount">{total}</TableCell>
-            </TableRow>
-          </TableFooter>
-        )}
+
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={2} className="font-semibold">
+              {t("general.summedUpAmount")}
+            </TableCell>
+            <TableCell className="amount">{total}</TableCell>
+          </TableRow>
+        </TableFooter>
       </Table>
     </div>
   );
