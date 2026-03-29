@@ -22,7 +22,7 @@ const EmployeeSalaryField = ({
   const amountFieldName = `employees.${employeeName}.amount` as const;
 
   return (
-    <Field data-invalid={!!error}>
+    <Field data-invalid={!!error} className="my-0">
       <FieldLabel>{t(`employees.${employeeName}`)}</FieldLabel>
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-3">
