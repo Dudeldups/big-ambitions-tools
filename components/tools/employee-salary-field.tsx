@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { _Translator } from "next-intl";
 import { EmployeeName } from "@/lib/game/employeeNames";
+import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
 
 type EmployeeSalaryFieldProps = {
   employeeName: EmployeeName;
@@ -28,7 +29,7 @@ const EmployeeSalaryField = ({
           type="number"
           className="max-w-40"
           placeholder="0"
-          max={500}
+          max={EMPLOYEE_MAX_SALARY}
           aria-invalid={!!error}
           {...register(fieldName, { valueAsNumber: true })}
         />
