@@ -66,7 +66,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
       <Separator />
 
-      <div className="flex justify-between px-2">
+      <div className="bg-card flex justify-between rounded-md border p-2">
         <p className="font-semibold">Total one-time costs</p>
         <p className="amount font-semibold underline">
           {formatToUSD(totalOneTimeCost)}
