@@ -81,10 +81,11 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     });
   };
 
-  const mandatoryEmployees = [
+  const factoryEmployees = [
     "deliveryDriver",
     "logisticsManager",
     "factoryWorker",
+    "purchasingAgent",
   ] as const satisfies readonly EmployeeName[];
 
   return (
@@ -153,7 +154,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
         </FieldDescription>
 
         <FieldGroup className="space-y-6 px-4">
-          {mandatoryEmployees.map((employee) => (
+          {factoryEmployees.map((employee) => (
             <EmployeeSalaryField
               key={employee}
               employeeName={employee}

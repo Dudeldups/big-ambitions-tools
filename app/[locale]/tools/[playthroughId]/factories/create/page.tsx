@@ -14,13 +14,6 @@ const CreateFactoryPage = () => {
     activePlaythrough: { difficulty },
   } = useActivePlaythrough();
 
-  const deliveryDriverSalary = getEmployeeSalary("deliveryDriver", difficulty);
-  const logisticsManagerSalary = getEmployeeSalary(
-    "logisticsManager",
-    difficulty,
-  );
-  const factoryWorkerSalary = getEmployeeSalary("factoryWorker", difficulty);
-
   const form = useForm<FactoryFormValues>({
     resolver: zodResolver(factorySchema),
     defaultValues: {
@@ -30,15 +23,19 @@ const CreateFactoryPage = () => {
       employees: {
         deliveryDriver: {
           amount: 1,
-          salary: deliveryDriverSalary,
+          salary: getEmployeeSalary("deliveryDriver", difficulty),
         },
         logisticsManager: {
           amount: 1,
-          salary: logisticsManagerSalary,
+          salary: getEmployeeSalary("logisticsManager", difficulty),
         },
         factoryWorker: {
           amount: 0,
-          salary: factoryWorkerSalary,
+          salary: getEmployeeSalary("factoryWorker", difficulty),
+        },
+        purchasingAgent: {
+          amount: 0,
+          salary: getEmployeeSalary("purchasingAgent", difficulty),
         },
       },
     },
