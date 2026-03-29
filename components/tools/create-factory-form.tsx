@@ -21,11 +21,17 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
-import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
+import {
+  Controller,
+  useFieldArray,
+  UseFormReturn,
+  useWatch,
+} from "react-hook-form";
 import { toast } from "sonner";
 import VehicleSelect from "./vehicle-select";
 import EmployeeSalaryField from "./employee-salary-field";
 import { EmployeeName } from "@/lib/game/employeeNames";
+import { Switch } from "../ui/switch";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -125,7 +131,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
           </Field>
         </FieldGroup>
 
-        <FieldGroup>
+        <FieldGroup className="flex-row">
           <Field>
             <FieldLabel htmlFor="openingHours">Opening hours / day</FieldLabel>
             <div className="flex items-center gap-3">
@@ -143,6 +149,23 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               </span>
             </div>
           </Field>
+
+          <Controller
+            control={control}
+            name="includeInventory"
+            render={({ field }) => (
+              <Field className="">
+                <FieldLabel htmlFor="includeInventory">
+                  Include inventory for demands
+                </FieldLabel>
+                <Switch
+                  id="includeInventory"
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </Field>
+            )}
+          />
         </FieldGroup>
       </FieldSet>
 
