@@ -3,7 +3,6 @@
 import CreateFactoryForm from "@/components/tools/create-factory-form";
 import FactoryOverview from "@/components/tools/factory-overview";
 import { getEmployeeSalary } from "@/lib/calculations/math";
-import { SALARY_BASE_MULT, SALARY_DIFF_MULT } from "@/lib/constants";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
 import { zodResolver } from "@hookform/resolvers/zod";
