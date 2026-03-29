@@ -18,21 +18,38 @@ const EmployeeSalaryField = ({
   error,
   t,
 }: EmployeeSalaryFieldProps) => {
-  const fieldName = `employees.${employeeName}` as const;
+  const salaryFieldName = `employees.${employeeName}.salary` as const;
+  const amountFieldName = `employees.${employeeName}.amount` as const;
 
   return (
     <Field data-invalid={!!error}>
       <FieldLabel>{t(`employees.${employeeName}`)}</FieldLabel>
-      <div className="flex items-center gap-3">
-        <Input
-          type="number"
-          className="max-w-40"
-          placeholder="0"
-          max={EMPLOYEE_MAX_SALARY}
-          aria-invalid={!!error}
-          {...register(fieldName, { valueAsNumber: true })}
-        />
-        <span className="text-muted-foreground">/ hour</span>
+      <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
+          <Input
+            type="number"
+            className="max-w-24"
+            placeholder="0"
+            max={EMPLOYEE_MAX_SALARY}
+            aria-invalid={!!error}
+            {...register(salaryFieldName, { valueAsNumber: true })}
+          />
+          <span className="text-muted-foreground">/ hour</span>
+        </div>
+        <span className="text-muted-foreground">Amount:</span>
+        <div className="flex items-center gap-3">
+          <Input
+            type="number"
+            className="max-w-24"
+            placeholder="0"
+            disabled={
+              employeeName === "deliveryDriver" ||
+              employeeName === "logisticsManager"
+            }
+            aria-invalid={!!error}
+            {...register(amountFieldName, { valueAsNumber: true })}
+          />
+        </div>
       </div>
       {error?.message && <FieldError>{t(error.message)}</FieldError>}
     </Field>
