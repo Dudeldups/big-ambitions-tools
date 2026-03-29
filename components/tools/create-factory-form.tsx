@@ -63,6 +63,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
   const openingHours = useWatch({ control, name: "openingHours" });
 
   const onSubmit = (values: FactoryFormValues) => {
+    console.log(values);
     const hasMissingName = values.name.trim() === "";
     if (hasMissingName) {
       values.name = t("tools.factoryPlanner.genericFactoryName", {
@@ -80,11 +81,11 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     });
   };
 
-  const mandatoryEmployees: EmployeeName[] = [
+  const mandatoryEmployees = [
     "deliveryDriver",
     "logisticsManager",
     "factoryWorker",
-  ];
+  ] as const satisfies readonly EmployeeName[];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
