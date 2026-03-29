@@ -2,9 +2,15 @@
 
 import WorkstationSelects from "@/components/tools/workstation-selects";
 import { Button } from "@/components/ui/button";
-import { Field, FieldDescription, FieldGroup } from "@/components/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "@/i18n/navigation";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
@@ -72,70 +78,80 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     });
   };
 
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      <FieldGroup className="px-4">
-        <Field>
-          <Label htmlFor="name">Factory Name</Label>
-          <Input
-            id="name"
-            autoComplete="off"
-            maxLength={50}
-            {...register("name")}
-          />
-          {errors.name?.message && (
-            <p className="text-destructive text-sm">{t(errors.name.message)}</p>
-          )}
-        </Field>
-        <Field className="-mt-2">
-          <Label htmlFor="description">Description</Label>
-          <Textarea
-            id="description"
-            {...register("description")}
-            maxLength={150}
-          />
-          {errors.description?.message && (
-            <p className="text-destructive text-sm">
-              {t(errors.description.message)}
-            </p>
-          )}
-        </Field>
-      </FieldGroup>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      {/* Factory Information */}
+      <FieldSet className="px-4">
+        <FieldLegend>Factory Information</FieldLegend>
 
-      <FieldGroup className="px-4">
-        <Field>
-          <Label htmlFor="openingHours">Opening hours / day</Label>
-          <div className="flex items-center gap-3">
+        <FieldGroup>
+          <Field>
+            <FieldLabel htmlFor="name">Factory Name</FieldLabel>
             <Input
-              className="max-w-20"
-              id="openingHours"
-              type="number"
-              min={1}
-              max={24}
-              step={1}
-              {...register("openingHours", { valueAsNumber: true })}
+              id="name"
+              autoComplete="off"
+              maxLength={50}
+              {...register("name")}
             />
-            <span className="text-muted-foreground">
-              {openingHours * 7}h / week
-            </span>
-          </div>
-        </Field>
-      </FieldGroup>
+            {errors.name?.message && (
+              <p className="text-destructive text-sm">
+                {t(errors.name.message)}
+              </p>
+            )}
+          </Field>
 
-      <FieldGroup className="px-4">
-        <Field>
-          <Label>Vehicles</Label>
+          <Field className="-mt-2">
+            <FieldLabel htmlFor="description">Description</FieldLabel>
+            <Textarea
+              id="description"
+              {...register("description")}
+              maxLength={150}
+            />
+            {errors.description?.message && (
+              <p className="text-destructive text-sm">
+                {t(errors.description.message)}
+              </p>
+            )}
+          </Field>
+        </FieldGroup>
+
+        <FieldGroup>
+          <Field>
+            <FieldLabel htmlFor="openingHours">Opening hours / day</FieldLabel>
+            <div className="flex items-center gap-3">
+              <Input
+                className="max-w-20"
+                id="openingHours"
+                type="number"
+                min={1}
+                max={24}
+                step={1}
+                {...register("openingHours", { valueAsNumber: true })}
+              />
+              <span className="text-muted-foreground">
+                {openingHours * 7}h / week
+              </span>
+            </div>
+          </Field>
+        </FieldGroup>
+      </FieldSet>
+
+      {/* Vehicles */}
+      <FieldSet className="px-4">
+        <FieldLegend>Vehicles</FieldLegend>
+
+        <FieldGroup>
           <VehicleSelect control={control} index={1} />
           <VehicleSelect control={control} index={2} />
-        </Field>
-      </FieldGroup>
+        </FieldGroup>
+      </FieldSet>
 
-      <FieldGroup className="px-4">
-        <Field>
-          <FieldDescription className="text-foreground">
-            Workstations
-          </FieldDescription>
+      {/* Workstations */}
+      <FieldSet className="px-4">
+        <FieldLegend>Workstations</FieldLegend>
 
+        <FieldGroup>
           {fields.map((field, index) => (
             <WorkstationSelects
               key={field.id}
@@ -167,9 +183,10 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
           >
             Add Workstation
           </Button>
-        </Field>
-      </FieldGroup>
+        </FieldGroup>
+      </FieldSet>
 
+      {/* Actions */}
       <div className="bg-card flex gap-4 rounded-md p-4">
         <Button type="button" variant="outline" onClick={() => reset()}>
           {t("general.reset")}
