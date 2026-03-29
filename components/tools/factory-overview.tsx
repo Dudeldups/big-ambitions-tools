@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  deriveEmployeeCost,
   deriveVehicleCost,
   deriveWorkstationCost,
 } from "@/lib/calculations/derivedFactoryData";
@@ -10,6 +11,7 @@ import { formatToUSD } from "@/lib/utils/formatToUSD";
 import InfoTable from "../tables/info-table";
 import { useTranslations } from "next-intl";
 import { Separator } from "../ui/separator";
+import { EmployeeName } from "@/lib/game/employeeNames";
 
 type FactoryOverviewProps = {
   values: DeepPartial<FactoryFormValues>;
@@ -42,35 +44,83 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   const totalOneTimeCost = totalWorkstationCost + totalVehicleCost;
 
+  const employeeRows = Object.entries(values.employees ?? {})
+    .filter(([, data]) => (data?.amount ?? 0) > 0)
+    .map(([key, { amount = 0 }]) => {
+      const employeeName = key as EmployeeName;
+
+      return {
+        name: employeeName,
+        amount,
+        cost: amount * deriveEmployeeCost(employeeName, values),
+      };
+    });
+
+  const totalEmployeeCost = employeeRows.reduce(
+    (sum, row) => sum + row.cost,
+    0,
+  );
+
+  const totalRecurringCost = totalEmployeeCost;
+
   return (
-    <div className="space-y-4">
-      <InfoTable
-        headers={["workstation", "purchasePrice"]}
-        rows={workstationRows.map((ws) => ({
-          label: t(`workstations.${ws.name}`),
-          value: formatToUSD(ws.cost),
-        }))}
-        total={formatToUSD(totalWorkstationCost)}
-      />
+    <div className="space-y-10">
+      <div className="space-y-4">
+        <h2 className="text-center font-semibold">One-time costs</h2>
 
-      <Separator />
+        {workstationRows.length > 0 && (
+          <>
+            <InfoTable
+              headers={["workstation", "purchasePrice"]}
+              rows={workstationRows.map((ws) => ({
+                label: t(`workstations.${ws.name}`),
+                value: formatToUSD(ws.cost),
+              }))}
+              total={formatToUSD(totalWorkstationCost)}
+            />
 
-      <InfoTable
-        headers={["vehicleName", "purchasePrice"]}
-        rows={vehicleRows.map((v) => ({
-          label: t(`vehicles.${v.name}`),
-          value: formatToUSD(v.cost),
-        }))}
-        total={formatToUSD(totalVehicleCost)}
-      />
+            <Separator />
+          </>
+        )}
 
-      <Separator />
+        <InfoTable
+          headers={["vehicleName", "purchasePrice"]}
+          rows={vehicleRows.map((v) => ({
+            label: t(`vehicles.${v.name}`),
+            value: formatToUSD(v.cost),
+          }))}
+          total={formatToUSD(totalVehicleCost)}
+        />
 
-      <div className="bg-card flex justify-between rounded-md border p-2">
-        <p className="font-semibold">Total one-time costs</p>
-        <p className="amount font-semibold underline">
-          {formatToUSD(totalOneTimeCost)}
-        </p>
+        <Separator />
+
+        <div className="bg-card flex justify-between rounded-md border p-2">
+          <p className="font-semibold">Total one-time costs</p>
+          <p className="amount font-semibold underline">
+            {formatToUSD(totalOneTimeCost)}
+          </p>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h2 className="text-center font-semibold">Recurring costs</h2>
+        <InfoTable
+          headers={["vehicleName", "purchasePrice"]}
+          rows={employeeRows.map((e) => ({
+            label: `${e.amount}x ${t(`employees.${e.name}`)}`,
+            value: formatToUSD(e.cost),
+          }))}
+          total={formatToUSD(totalEmployeeCost)}
+        />
+
+        <Separator />
+
+        <div className="bg-card flex justify-between rounded-md border p-2">
+          <p className="font-semibold">Total recurring costs / week</p>
+          <p className="amount font-semibold underline">
+            {formatToUSD(totalRecurringCost)}
+          </p>
+        </div>
       </div>
     </div>
   );
