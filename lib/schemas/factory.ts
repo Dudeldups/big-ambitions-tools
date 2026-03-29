@@ -2,7 +2,7 @@ import z from "zod";
 import { WORKSTATION_NAMES } from "../game/machineNames";
 import { PRODUCT_NAMES } from "../game/productNames";
 import { VEHICLE_NAMES } from "../game/vehicleNames";
-import { employeesSchema } from "./employeeSalary";
+import { employeeSchema } from "./employee";
 
 export const factorySchema = z.object({
   name: z.string().max(50, "errors.factory.nameTooLong"),
@@ -13,7 +13,11 @@ export const factorySchema = z.object({
 
   openingHours: z.number().min(1).max(24),
 
-  employees: employeesSchema,
+  employees: z.object({
+    deliveryDriver: employeeSchema,
+    logisticsManager: employeeSchema,
+    factoryWorker: employeeSchema,
+  }),
 
   vehicle1: z.enum(VEHICLE_NAMES),
   vehicle2: z.enum(VEHICLE_NAMES).optional(),
