@@ -42,10 +42,7 @@ const EmployeeSalaryField = ({
             type="number"
             className="max-w-24"
             placeholder="0"
-            disabled={
-              employeeName === "deliveryDriver" ||
-              employeeName === "logisticsManager"
-            }
+            disabled={employeeName === "deliveryDriver"}
             aria-invalid={!!error}
             {...register(amountFieldName, { valueAsNumber: true })}
           />
