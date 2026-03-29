@@ -2,6 +2,7 @@ import z from "zod";
 import { WORKSTATION_NAMES } from "../game/machineNames";
 import { PRODUCT_NAMES } from "../game/productNames";
 import { VEHICLE_NAMES } from "../game/vehicleNames";
+import { employeesSchema } from "./employeeSalary";
 
 export const factorySchema = z.object({
   name: z.string().max(50, "errors.factory.nameTooLong"),
@@ -9,6 +10,14 @@ export const factorySchema = z.object({
     .string()
     .max(150, "errors.factory.descriptionTooLong")
     .optional(),
+
+  openingHours: z.number().min(1).max(24),
+
+  employees: employeesSchema,
+
+  vehicle1: z.enum(VEHICLE_NAMES),
+  vehicle2: z.enum(VEHICLE_NAMES).optional(),
+
   workstations: z
     .array(
       z.object({
@@ -17,9 +26,8 @@ export const factorySchema = z.object({
       }),
     )
     .min(1, "errors.factory.workstationsRequired"),
-  openingHours: z.number().min(1).max(24),
-  vehicle1: z.enum(VEHICLE_NAMES),
-  vehicle2: z.enum(VEHICLE_NAMES).optional(),
 });
 
 export type FactoryFormValues = z.infer<typeof factorySchema>;
+
+export type EmployeeSalaryFieldName = keyof FactoryFormValues["employees"];
