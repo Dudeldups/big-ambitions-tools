@@ -1,9 +1,14 @@
+import { getImportPrice } from "@/lib/calculations/math";
 import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
+import { IngredientName } from "../game/ingredientNames";
+import { ingredients } from "../game/ingredients";
 import { WorkstationName } from "../game/machineNames";
 import { workstations } from "../game/machines";
-import { DeepPartial } from "../game/types";
+import { ProductName } from "../game/productNames";
+import { products } from "../game/products";
+import { DeepPartial, Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
 import { vehicles } from "../game/vehicles";
 import { FactoryFormValues } from "../schemas/factory";
@@ -55,4 +60,30 @@ export const deriveFactoryWorkerAmount = (
   const extraBuffer = rawAmount % 1 >= ROUNDING_THRESHOLD ? 1 : 0;
 
   return Math.ceil(rawAmount) + extraBuffer;
+};
+
+export const deriveIngredientCostsOfProduct = (
+  productName: ProductName,
+  openingHours: number | undefined,
+  difficulty: Difficulty,
+): { name: IngredientName; cost: number; amount: number }[] => {
+  if (!productName || !openingHours) return [];
+
+  const product = products[productName];
+
+  const ingredientEntries = product.ingredients
+    .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
+    .filter(
+      (entry): entry is [IngredientName, number] => entry[1] !== undefined,
+    );
+
+  return ingredientEntries.map(([name, amount]) => ({
+    name,
+    amount: amount * openingHours * 7,
+    cost:
+      getImportPrice(ingredients[name].wholesalePrice, difficulty) *
+      amount *
+      openingHours *
+      7,
+  }));
 };
