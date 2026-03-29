@@ -14,11 +14,12 @@ import { useTranslations } from "next-intl";
 type InfoTableProps = {
   label: string;
   rows: DerivedDataFromFormValues;
-  total: string;
 };
 
-const InfoTable = ({ label, rows, total }: InfoTableProps) => {
+const InfoTable = ({ label, rows }: InfoTableProps) => {
   const t = useTranslations();
+
+  const total = rows.reduce((sum, item) => sum + item.cost, 0);
 
   return (
     <div className="rounded-md border">
@@ -50,7 +51,7 @@ const InfoTable = ({ label, rows, total }: InfoTableProps) => {
             <TableCell colSpan={2} className="font-semibold">
               {t("general.summedUpAmount")}
             </TableCell>
-            <TableCell className="amount">{total}</TableCell>
+            <TableCell className="amount">{formatToUSD(total)}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

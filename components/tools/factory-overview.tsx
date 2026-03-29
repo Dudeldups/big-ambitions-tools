@@ -2,13 +2,10 @@
 
 import {
   deriveEmployeeCost,
-  deriveIngredientCostsOfProduct,
   derivePalletShelfData,
-  deriveVehicleCost,
-  deriveWorkstationCost,
+  deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
 import { FactoryFormValues } from "@/lib/schemas/factory";
-import { formatToUSD } from "@/lib/utils/formatToUSD";
 import InfoTable from "../tables/info-table";
 import { useTranslations } from "next-intl";
 import { Separator } from "../ui/separator";
@@ -23,28 +20,10 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const t = useTranslations();
   const { difficulty } = useActivePlaythrough().activePlaythrough;
 
-  const workstationRows = values.workstations?.map((ws) => ({
-    name: ws?.name ?? "",
-    cost: deriveWorkstationCost(ws?.name),
-  }));
-
-  const totalWorkstationCost = workstationRows.reduce(
-    (sum, row) => sum + row.cost,
-    0,
-  );
-
-  const vehicleRows = [values.vehicle1, values.vehicle2]
-    .map((v) => ({
-      name: v ?? "",
-      cost: deriveVehicleCost(v),
-    }))
-    .filter((v) => v.name !== "");
-
-  const totalVehicleCost = vehicleRows.reduce((sum, row) => sum + row.cost, 0);
-
-  const oneTimeCostRowData = [...derivePalletShelfData(values)];
-
-  const totalOneTimeCost = totalWorkstationCost + totalVehicleCost;
+  const oneTimeCostRowData = [
+    ...derivePalletShelfData(values),
+    ...deriveWorkstationData(values),
+  ];
 
   const employeeRows = Object.entries(values.employees ?? {})
     .filter(([, data]) => (data?.amount ?? 0) > 0)
@@ -58,38 +37,12 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
       };
     });
 
-  const totalEmployeeCost = employeeRows.reduce(
-    (sum, row) => sum + row.cost,
-    0,
-  );
-
-  const ingredientRows = (values.workstations ?? []).flatMap((machine) =>
-    machine?.product
-      ? deriveIngredientCostsOfProduct(
-          machine.product,
-          values.openingHours,
-          difficulty,
-        )
-      : [],
-  );
-
-  const totalIngredientCost = ingredientRows.reduce(
-    (sum, row) => sum + row.cost,
-    0,
-  );
-
-  const totalRecurringCost = totalEmployeeCost + totalIngredientCost;
-
   return (
     <div className="space-y-10">
       <div className="space-y-4">
         <h2 className="text-center font-semibold">One-time costs</h2>
 
-        <InfoTable
-          label="itemName"
-          total={formatToUSD(totalOneTimeCost)}
-          rows={oneTimeCostRowData}
-        />
+        <InfoTable label="itemName" rows={oneTimeCostRowData} />
       </div>
 
       <Separator />
