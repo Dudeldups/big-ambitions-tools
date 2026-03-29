@@ -3,11 +3,10 @@ import { Field, FieldError, FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { _Translator } from "next-intl";
-import { EmployeeName } from "@/lib/game/employeeNames";
 import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
 
 type EmployeeSalaryFieldProps = {
-  employeeName: EmployeeName;
+  employeeName: keyof FactoryFormValues["employees"];
   register: UseFormRegister<FactoryFormValues>;
   error?: TFieldError;
   t: _Translator;
@@ -19,7 +18,7 @@ const EmployeeSalaryField = ({
   error,
   t,
 }: EmployeeSalaryFieldProps) => {
-  const fieldName = `employees.${employeeName}Salary` as const;
+  const fieldName = `employees.${employeeName}` as const;
 
   return (
     <Field data-invalid={!!error}>
