@@ -37,3 +37,5 @@ export const EXPORT_PRICE_MULT = {
   normal: 0.65,
   hard: 0.5,
 } as const satisfies Record<Difficulty, number>;
+
+export const AVERAGE_DISCTRICT_MULT = 1.36 as const;
