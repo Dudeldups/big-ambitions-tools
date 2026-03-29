@@ -13,7 +13,7 @@ export const employeeSalarySchema = z
 
 export const employeeSchema = z.object({
   salary: employeeSalarySchema,
-  amount: z.number().int().positive().optional(),
+  amount: z.number().int().nonnegative().optional(),
 });
 
 export type EmployeeSchemaShape = Partial<
