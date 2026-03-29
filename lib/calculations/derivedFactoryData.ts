@@ -21,11 +21,26 @@ export type DerivedDataFromFormValues = {
   cost: number;
 }[];
 
-export const deriveWorkstationCost = (
-  wsName: WorkstationName | undefined,
-): number => {
-  if (!wsName) return 0;
-  return getWorkstationPrice(workstations[wsName]);
+export const deriveWorkstationData = (
+  values: FactoryFormValues,
+): DerivedDataFromFormValues => {
+  const workstationData = values.workstations;
+
+  const countsByName = workstationData.reduce(
+    (acc, ws) => {
+      acc[ws.name] = (acc[ws.name] ?? 0) + 1;
+      return acc;
+    },
+    {} as Record<WorkstationName, number>,
+  );
+
+  return (Object.entries(countsByName) as [WorkstationName, number][]).map(
+    ([name, amount]) => ({
+      amount,
+      name: `workstations.${name}`,
+      cost: amount * getWorkstationPrice(workstations[name]),
+    }),
+  );
 };
 
 export const deriveVehicleCost = (
@@ -39,6 +54,7 @@ export const derivePalletShelfData = (
   values: FactoryFormValues,
 ): DerivedDataFromFormValues => {
   const { workstations, openingHours } = values;
+
   const productData = workstations.map((ws) => products[ws.product]);
   const neededIngredients = productData.flatMap((p) => {
     return p.ingredients
@@ -56,6 +72,8 @@ export const derivePalletShelfData = (
   const shelfAmount = Math.ceil(
     totalBoxAmount / shelves.palletShelf.storageCapacity,
   );
+
+  if (shelfAmount === 0) return [];
 
   const cost = shelfAmount * shelves.palletShelf.purchasePrice;
 
