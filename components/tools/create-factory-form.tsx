@@ -24,6 +24,8 @@ import { useTransition } from "react";
 import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import VehicleSelect from "./vehicle-select";
+import EmployeeSalaryField from "./employee-salary-field";
+import { EmployeeName } from "@/lib/game/employeeNames";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -78,6 +80,11 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     });
   };
 
+  const mandatoryEmployees: EmployeeName[] = [
+    "deliveryDriver",
+    "logisticsManager",
+    "factoryWorker",
+  ];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
@@ -134,6 +141,25 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               </span>
             </div>
           </Field>
+        </FieldGroup>
+      </FieldSet>
+
+      {/* Employees */}
+      <FieldSet className="px-4">
+        <FieldLegend>Employees</FieldLegend>
+        <FieldDescription className="text-muted-foreground">
+          Enter the salary for each employee.
+        </FieldDescription>
+
+        <FieldGroup className="space-y-6 px-4">
+          {mandatoryEmployees.map((employee) => (
+            <EmployeeSalaryField
+              key={employee}
+              employeeName={employee}
+              register={register}
+              t={t}
+            />
+          ))}
         </FieldGroup>
       </FieldSet>
 
