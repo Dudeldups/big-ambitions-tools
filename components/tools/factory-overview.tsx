@@ -2,6 +2,7 @@
 
 import {
   deriveEmployeeData,
+  deriveIngredientData,
   derivePalletShelfData,
   deriveVehicleData,
   deriveWorkstationData,
@@ -26,7 +27,10 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     ...deriveWorkstationData(values),
   ];
 
-  const recurringCostRowData = [...deriveEmployeeData(values)];
+  const recurringCostRowData = [
+    ...deriveEmployeeData(values),
+    ...deriveIngredientData(values, difficulty),
+  ];
 
   return (
     <div className="space-y-10">

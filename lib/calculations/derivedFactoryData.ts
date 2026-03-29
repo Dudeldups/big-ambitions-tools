@@ -153,28 +153,42 @@ export const deriveFactoryWorkerAmount = (
   return Math.ceil(rawAmount) + extraBuffer;
 };
 
-export const deriveIngredientCostsOfProduct = (
-  productName: ProductName,
-  openingHours: number | undefined,
+export const deriveIngredientData = (
+  values: FactoryFormValues,
   difficulty: Difficulty,
-): { name: IngredientName; cost: number; amount: number }[] => {
-  if (!productName || !openingHours) return [];
+): DerivedDataFromFormValues => {
+  const { workstations, openingHours } = values;
 
-  const product = products[productName];
+  const productData = workstations.map((ws) => products[ws.product]);
+  const neededIngredients = productData.flatMap((p) => {
+    return p.ingredients
+      .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
+      .filter(
+        (entry): entry is [IngredientName, number] => entry[1] !== undefined,
+      );
+  });
 
-  const ingredientEntries = product.ingredients
-    .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
-    .filter(
-      (entry): entry is [IngredientName, number] => entry[1] !== undefined,
-    );
+  const totalAmounts = neededIngredients.reduce(
+    (acc, [name, amount]) => {
+      acc[name] = (acc[name] ?? 0) + amount;
+      return acc;
+    },
+    {} as Record<IngredientName, number>,
+  );
 
-  return ingredientEntries.map(([name, amount]) => ({
-    name,
-    amount: amount * openingHours * 7,
-    cost:
-      getImportPrice(ingredients[name].wholesalePrice, difficulty) *
+  return Object.entries(totalAmounts).map(([name, amount]) => {
+    const ingredient = ingredients[name as keyof typeof ingredients];
+    const totalAmount = amount * openingHours * 7;
+    const totalCost =
+      getImportPrice(ingredient.wholesalePrice, difficulty) *
       amount *
       openingHours *
-      7,
-  }));
+      7;
+
+    return {
+      name: `ingredients.${name}`,
+      amount: totalAmount,
+      cost: totalCost,
+    };
+  });
 };
