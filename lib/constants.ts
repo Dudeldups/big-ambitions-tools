@@ -12,6 +12,10 @@ export const SALARY_DIFF_MULT = {
   hard: 1,
 } as const satisfies Record<Difficulty, number>;
 
+export const DELIVERY_DRIVER_WORKING_HOURS = 5.75 as const;
+
+export const HQ_WORKING_HOURS = 5.714 as const;
+
 export const DIFFICULTY_OPTIONS = [
   "easy",
   "normal",

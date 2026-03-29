@@ -1,30 +1,43 @@
+import {
+  DELIVERY_DRIVER_WORKING_HOURS,
+  HQ_WORKING_HOURS,
+} from "./../constants";
 import { EmployeeName } from "./employeeNames";
+
+type DeliveryDriverWorkingHours = typeof DELIVERY_DRIVER_WORKING_HOURS;
+type HQWorkingHours = typeof HQ_WORKING_HOURS;
 
 export type Employee = {
   baseHourlyWage: number;
   hasParttimeDemand: boolean;
+  customWorkingHours?: DeliveryDriverWorkingHours | HQWorkingHours;
 };
 
-export const employees: Record<EmployeeName, Employee> = {
+export const employees = {
   deliveryDriver: {
     baseHourlyWage: 18,
     hasParttimeDemand: false,
+    customWorkingHours: DELIVERY_DRIVER_WORKING_HOURS,
   },
   hrManager: {
     baseHourlyWage: 30,
     hasParttimeDemand: false,
+    customWorkingHours: HQ_WORKING_HOURS,
   },
   purchasingAgent: {
     baseHourlyWage: 30,
     hasParttimeDemand: false,
+    customWorkingHours: HQ_WORKING_HOURS,
   },
   logisticsManager: {
     baseHourlyWage: 30,
     hasParttimeDemand: false,
+    customWorkingHours: HQ_WORKING_HOURS,
   },
   headhunter: {
     baseHourlyWage: 30,
     hasParttimeDemand: false,
+    customWorkingHours: HQ_WORKING_HOURS,
   },
   factoryWorker: {
     baseHourlyWage: 12,
@@ -78,4 +91,4 @@ export const employees: Record<EmployeeName, Employee> = {
     baseHourlyWage: 25,
     hasParttimeDemand: true,
   },
-};
+} as const satisfies Record<EmployeeName, Employee>;
