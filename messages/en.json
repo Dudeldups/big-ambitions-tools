@@ -43,7 +43,8 @@
     "taxDeductible": "Tax deductible",
     "requiredDeliveryDriverSkillValue": "Req. driver skill",
     "destinationsThatCanDeliver": "Base dest.",
-    "destinationsFull": "With 100% LM"
+    "destinationsFull": "With 100% LM",
+    "employees": "Employees"
   },
   "toasts": {
     "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
