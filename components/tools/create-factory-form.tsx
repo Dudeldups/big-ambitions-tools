@@ -84,8 +84,8 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
   const factoryEmployees = [
     "deliveryDriver",
     "logisticsManager",
-    "factoryWorker",
     "purchasingAgent",
+    "factoryWorker",
   ] as const satisfies readonly EmployeeName[];
 
   return (
