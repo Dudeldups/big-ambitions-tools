@@ -15,3 +15,7 @@ export const employeeSchema = z.object({
   salary: employeeSalarySchema,
   amount: z.number().int().positive().optional(),
 });
+
+export type EmployeeSchemaShape = Partial<
+  Record<EmployeeName, typeof employeeSchema>
+>;
