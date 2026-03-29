@@ -45,9 +45,11 @@ export const deriveEmployeeCost = (
 };
 
 export const deriveFactoryWorkerAmount = (
-  workstationAmount: number,
-  openingHours: number,
+  workstationAmount: number | undefined,
+  openingHours: number | undefined,
 ): number => {
+  if (!workstationAmount || !openingHours) return 0;
+
   const BUFFER_FACTOR = 1.02;
   const ROUNDING_THRESHOLD = 0.8;
 
