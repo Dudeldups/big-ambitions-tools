@@ -16,7 +16,7 @@ export const FULLTIME_MAX_WORKING_HOURS = 50 as const;
 
 export const DELIVERY_DRIVER_WORKING_HOURS = 5.75 as const;
 
-export const HQ_WORKING_HOURS = 5.714 as const;
+export const HQ_WORKING_HOURS = 5.714285714285714 as const;
 
 export const DIFFICULTY_OPTIONS = [
   "easy",
