@@ -2,6 +2,7 @@
 
 import CreateFactoryForm from "@/components/tools/create-factory-form";
 import FactoryOverview from "@/components/tools/factory-overview";
+import { deriveFactoryWorkerAmount } from "@/lib/calculations/derivedFactoryData";
 import { getEmployeeSalary } from "@/lib/calculations/math";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
@@ -45,6 +46,7 @@ const CreateFactoryPage = () => {
 
   const vehicle1 = useWatch({ control, name: "vehicle1" });
   const vehicle2 = useWatch({ control, name: "vehicle2" });
+  const openingHours = useWatch({ control, name: "openingHours" });
   const workstations = useWatch({ control, name: "workstations" });
 
   useEffect(() => {
@@ -55,10 +57,14 @@ const CreateFactoryPage = () => {
   }, [vehicle1, vehicle2, setValue]);
 
   useEffect(() => {
-    setValue("employees.factoryWorker.amount", workstations.length, {
+    const derivedWorkstationAmount = deriveFactoryWorkerAmount(
+      workstations.length,
+      openingHours,
+    );
+    setValue("employees.factoryWorker.amount", derivedWorkstationAmount, {
       shouldDirty: false,
     });
-  }, [workstations, setValue]);
+  }, [workstations, setValue, openingHours]);
 
   const watchedValues = useWatch({ control });
 
