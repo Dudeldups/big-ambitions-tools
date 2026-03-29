@@ -8,11 +8,18 @@ import { WorkstationName } from "../game/machineNames";
 import { workstations } from "../game/machines";
 import { ProductName } from "../game/productNames";
 import { products } from "../game/products";
-import { DeepPartial, Difficulty } from "../game/types";
+import { Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
 import { vehicles } from "../game/vehicles";
 import { FactoryFormValues } from "../schemas/factory";
 import { getWorkstationPrice } from "./math";
+import { shelves } from "../game/inventory";
+
+export type DerivedDataFromFormValues = {
+  amount: number;
+  name: string;
+  cost: number;
+}[];
 
 export const deriveWorkstationCost = (
   wsName: WorkstationName | undefined,
@@ -28,9 +35,42 @@ export const deriveVehicleCost = (
   return vehicles[vehicleName].purchasePrice;
 };
 
+export const derivePalletShelfData = (
+  values: FactoryFormValues,
+): DerivedDataFromFormValues => {
+  const { workstations, openingHours } = values;
+  const productData = workstations.map((ws) => products[ws.product]);
+  const neededIngredients = productData.flatMap((p) => {
+    return p.ingredients
+      .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
+      .filter(
+        (entry): entry is [IngredientName, number] => entry[1] !== undefined,
+      );
+  });
+  const totalBoxAmount =
+    neededIngredients
+      .map((i) => i[1] / ingredients[i[0]].amountPerBox)
+      .reduce((sum, amount) => sum + amount, 0) *
+    openingHours *
+    7;
+  const shelfAmount = Math.ceil(
+    totalBoxAmount / shelves.palletShelf.storageCapacity,
+  );
+
+  const cost = shelfAmount * shelves.palletShelf.purchasePrice;
+
+  return [
+    {
+      amount: shelfAmount,
+      name: "inventory.palletShelf",
+      cost,
+    },
+  ];
+};
+
 export const deriveEmployeeCost = (
   employeeName: EmployeeName | undefined,
-  values: DeepPartial<FactoryFormValues>,
+  values: FactoryFormValues,
 ): number => {
   if (!employeeName || !values.openingHours) return 0;
   const employee = employees[employeeName];
