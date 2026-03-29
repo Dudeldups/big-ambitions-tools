@@ -105,20 +105,32 @@ export const derivePalletShelfData = (
   ];
 };
 
-export const deriveEmployeeCost = (
-  employeeName: EmployeeName | undefined,
+export const deriveEmployeeData = (
   values: FactoryFormValues,
-): number => {
-  if (!employeeName || !values.openingHours) return 0;
-  const employee = employees[employeeName];
-  const formEmployee =
-    values.employees?.[employeeName as keyof FactoryFormValues["employees"]];
-  if (!formEmployee?.salary) return 0;
-  const workingHours =
-    "customWorkingHours" in employee
-      ? employee.customWorkingHours
-      : values.openingHours;
-  return formEmployee.salary * workingHours * 7;
+): DerivedDataFromFormValues => {
+  const employeeData = values.employees;
+
+  return Object.entries(employeeData).flatMap(([name, data]) => {
+    const n = name as EmployeeName;
+    const salary = data?.salary ?? 0;
+    const amount = data?.amount ?? 0;
+
+    if (amount <= 0) return [];
+
+    const employee = employees[n];
+    const workingHours =
+      "customWorkingHours" in employee
+        ? employee.customWorkingHours
+        : values.openingHours;
+
+    return [
+      {
+        name: `employees.${n}`,
+        amount,
+        cost: amount * salary * workingHours * 7,
+      },
+    ];
+  });
 };
 
 export const deriveFactoryWorkerAmount = (

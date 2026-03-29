@@ -45,7 +45,8 @@
     "requiredDeliveryDriverSkillValue": "Req. driver skill",
     "destinationsThatCanDeliver": "Base dest.",
     "destinationsFull": "With 100% LM",
-    "employees": "Employees"
+    "employees": "Employees",
+    "description": "Description"
   },
   "toasts": {
     "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
