@@ -1,3 +1,4 @@
+import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
 import { WorkstationName } from "../game/machineNames";
@@ -36,4 +37,22 @@ export const deriveEmployeeCost = (
       ? employee.customWorkingHours
       : values.openingHours;
   return formEmployee.salary * workingHours * 7;
+};
+
+export const deriveFactoryWorkerAmount = (
+  workstationAmount: number,
+  openingHours: number,
+): number => {
+  const BUFFER_FACTOR = 1.02;
+  const ROUNDING_THRESHOLD = 0.8;
+
+  const rawAmount =
+    (workstationAmount * openingHours * 7 * BUFFER_FACTOR) /
+    FULLTIME_MAX_WORKING_HOURS;
+
+  if (rawAmount < workstationAmount) return workstationAmount;
+
+  const extraBuffer = rawAmount % 1 >= ROUNDING_THRESHOLD ? 1 : 0;
+
+  return Math.ceil(rawAmount) + extraBuffer;
 };
