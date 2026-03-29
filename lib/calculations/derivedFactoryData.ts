@@ -43,11 +43,30 @@ export const deriveWorkstationData = (
   );
 };
 
-export const deriveVehicleCost = (
-  vehicleName: VehicleName | undefined,
-): number => {
-  if (!vehicleName) return 0;
-  return vehicles[vehicleName].purchasePrice;
+export const deriveVehicleData = (
+  values: FactoryFormValues,
+): DerivedDataFromFormValues => {
+  const { vehicle1, vehicle2 } = values;
+
+  const entries = [vehicle1, vehicle2].filter(
+    (v): v is VehicleName => v != null,
+  );
+
+  const countsByName = entries.reduce(
+    (acc, v) => {
+      acc[v] = (acc[v] ?? 0) + 1;
+      return acc;
+    },
+    {} as Record<VehicleName, number>,
+  );
+
+  return (Object.entries(countsByName) as [VehicleName, number][]).map(
+    ([name, amount]) => ({
+      amount,
+      name: `vehicles.${name}`,
+      cost: amount * vehicles[name].purchasePrice,
+    }),
+  );
 };
 
 export const derivePalletShelfData = (

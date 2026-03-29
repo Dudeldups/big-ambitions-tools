@@ -3,6 +3,7 @@
 import {
   deriveEmployeeCost,
   derivePalletShelfData,
+  deriveVehicleData,
   deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
 import { FactoryFormValues } from "@/lib/schemas/factory";
@@ -22,6 +23,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   const oneTimeCostRowData = [
     ...derivePalletShelfData(values),
+    ...deriveVehicleData(values),
     ...deriveWorkstationData(values),
   ];
 
