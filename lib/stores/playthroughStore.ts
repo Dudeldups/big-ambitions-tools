@@ -6,17 +6,23 @@ import { indexedDBStorage } from "./indexedDBStorage";
 import { PlaythroughFormValues } from "../schemas/playthrough";
 import { FactoryFormValues } from "../schemas/factory";
 import { generateUniqueId } from "./generateUniqueId";
+import { ProductName } from "../game/productNames";
+import { products } from "../game/products";
+import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
 
 export type Factory = FactoryFormValues & {
   id: string;
   createdAt: number;
 };
 
+export type PriceIndices = Partial<Record<ProductName, number>>;
+
 export type Playthrough = PlaythroughFormValues & {
   id: string;
   createdAt: number;
   isActive: boolean;
   factoryIds: string[];
+  priceIndices: PriceIndices;
 };
 
 export type PlaythroughState = {
@@ -67,12 +73,22 @@ export const usePlaythroughStore = create(
         const existingIds = new Set(playthroughs.map((p) => p.id));
         const id = generateUniqueId(existingIds);
 
+        const defaultPriceIndices = Object.fromEntries(
+          Object.entries(products)
+            .filter(([, p]) => p.defaultMarketPrice > 0)
+            .map(([productName]) => [
+              productName as ProductName,
+              BASE_PRODUCT_PRICE_INDEX,
+            ]),
+        ) as PriceIndices;
+
         const newPlaythrough = {
           ...values,
           id,
           isActive: true,
           createdAt: Date.now(),
           factoryIds: [],
+          priceIndices: defaultPriceIndices,
         };
 
         set((state) => {
