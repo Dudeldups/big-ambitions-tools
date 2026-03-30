@@ -87,16 +87,10 @@ export const getProfitMarginForProduct = (
       ? getAverageRetailPrice(product)
       : getExportPrice(product.wholesalePrice, difficulty, priceIndex);
 
-  const costPerItem = (() => {
-    if (source === DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE) {
-      return getManufacturePrice(product, difficulty);
-    } else {
-      return (
-        getImportPrice(product.wholesalePrice, difficulty, priceIndex) /
-        product.productionRate
-      );
-    }
-  })();
+  const costPerItem =
+    source === DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE
+      ? getManufacturePrice(product, difficulty)
+      : getImportPrice(product.wholesalePrice, difficulty, priceIndex);
 
   const margin = salePrice - costPerItem;
   const marginPercent = salePrice !== 0 ? (margin / salePrice) * 100 : 0;
