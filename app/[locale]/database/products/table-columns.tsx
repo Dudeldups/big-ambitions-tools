@@ -12,7 +12,13 @@ import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { Difficulty, StoreDifficulty } from "@/lib/game/types";
 import { ProductName } from "@/lib/game/productNames";
-import { getExportPrice, getImportPrice } from "@/lib/calculations/math";
+import {
+  getExportPrice,
+  getImportPrice,
+  getProfitMarginForProduct,
+} from "@/lib/calculations/math";
+import { formatToUSD } from "@/lib/utils/formatToUSD";
+import { Spinner } from "@/components/ui/spinner";
 
 export type ProductsColumnData = Product & {
   itemName: ProductName;
@@ -29,6 +35,40 @@ export const productsColumns = (
   createCurrencyColumn("exportPrice", difficulty, (row, diff) =>
     getExportPrice(row.wholesalePrice, diff as Difficulty),
   ),
+  {
+    id: "profitMargin",
+    header: ({ column, table }) => {
+      const { t } = getMeta(table);
+      return (
+        <TableHeadContent column={column}>
+          {t(`tableColumns.profitMargin`)}
+        </TableHeadContent>
+      );
+    },
+    cell: ({ row, table }) => {
+      const difficulty = table.options.meta?.difficulty;
+
+      if (!difficulty) return <Spinner />;
+
+      const { margin, marginPercent } = getProfitMarginForProduct(
+        row.original,
+        difficulty,
+      );
+      const isPositive = margin >= 0;
+      return (
+        <div className="flex flex-col">
+          <span
+            className={`amount ${isPositive ? "text-green-600" : "text-red-600"}`}
+          >
+            {formatToUSD(margin)}
+          </span>
+          <span className="amount text-muted-foreground text-sm">
+            {marginPercent.toFixed(0)}%
+          </span>
+        </div>
+      );
+    },
+  },
   createImportersColumn(),
   {
     accessorKey: "ingredients",
