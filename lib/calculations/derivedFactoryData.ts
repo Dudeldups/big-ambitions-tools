@@ -1,4 +1,4 @@
-import { getImportPrice } from "@/lib/calculations/math";
+import { getExportPrice, getImportPrice } from "@/lib/calculations/math";
 import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
@@ -6,7 +6,6 @@ import { IngredientName } from "../game/ingredientNames";
 import { ingredients } from "../game/ingredients";
 import { WorkstationName } from "../game/machineNames";
 import { workstations } from "../game/machines";
-import { ProductName } from "../game/productNames";
 import { products } from "../game/products";
 import { Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
@@ -14,6 +13,7 @@ import { vehicles } from "../game/vehicles";
 import { FactoryFormValues } from "../schemas/factory";
 import { getWorkstationPrice } from "./math";
 import { shelves } from "../game/inventory";
+import { ProductName } from "../game/productNames";
 
 export type DerivedDataFromFormValues = {
   amount: number;
@@ -191,4 +191,39 @@ export const deriveIngredientData = (
       cost: totalCost,
     };
   });
+};
+
+export const deriveProductData = (
+  values: FactoryFormValues,
+  difficulty: Difficulty,
+): DerivedDataFromFormValues => {
+  const { workstations, openingHours } = values;
+
+  const productHourlyYieldByProduct = workstations.reduce(
+    (acc, ws) => {
+      const product = products[ws.product];
+      const totalRate = (acc[ws.product] ?? 0) + product.productionRate;
+      return {
+        ...acc,
+        [ws.product]: totalRate,
+      };
+    },
+    {} as Record<ProductName, number>,
+  );
+
+  return Object.entries(productHourlyYieldByProduct).map(
+    ([name, amountPerHour]) => {
+      const product = products[name as keyof typeof products];
+
+      const totalAmount = amountPerHour * openingHours * 7;
+      const totalCost =
+        getExportPrice(product.wholesalePrice, difficulty) * totalAmount;
+
+      return {
+        name: `products.${name}`,
+        amount: Math.ceil(totalAmount),
+        cost: totalCost,
+      };
+    },
+  );
 };

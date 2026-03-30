@@ -4,6 +4,7 @@ import {
   deriveEmployeeData,
   deriveIngredientData,
   derivePalletShelfData,
+  deriveProductData,
   deriveVehicleData,
   deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
@@ -32,6 +33,8 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     ...deriveIngredientData(values, difficulty),
   ];
 
+  const profitRowData = [...deriveProductData(values, difficulty)];
+
   return (
     <div className="space-y-10">
       <div className="space-y-4">
@@ -46,6 +49,14 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         <h2 className="text-center font-semibold">Recurring weekly costs</h2>
 
         <InfoTable label="description" rows={recurringCostRowData} />
+      </div>
+
+      <Separator />
+
+      <div className="space-y-4">
+        <h2 className="text-center font-semibold">Income per week</h2>
+
+        <InfoTable label="itemName" rows={profitRowData} />
       </div>
     </div>
   );
