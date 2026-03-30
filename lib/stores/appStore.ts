@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { Difficulty, PriceSource, PriceTarget } from "../game/types";
 import { omit } from "./omit";
+import { DISPLAY_PRICE_OPTIONS } from "../constants";
 
 export type AppState = {
   _hasHydrated: boolean;
@@ -16,26 +17,35 @@ export type AppState = {
 export type AppActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   setDifficulty: (difficulty: Difficulty) => void;
+  setDisplayPrices: (source: PriceSource, target: PriceTarget) => void;
 };
 
 export const useAppStore = create(
   persist(
     immer<AppState & AppActions>((set) => ({
       _hasHydrated: false,
-      _setHasHydrated: (hasHydrated: boolean) =>
+      _setHasHydrated: (hasHydrated) =>
         set((state) => {
           state._hasHydrated = hasHydrated;
         }),
 
       difficulty: "easy",
       displayPrices: {
-        source: "IMPORT",
-        target: "RETAIL",
+        source: DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT,
+        target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
       },
 
-      setDifficulty: (difficulty: Difficulty) =>
+      setDifficulty: (difficulty) =>
         set((state) => {
           state.difficulty = difficulty;
+        }),
+
+      setDisplayPrices: (source, target) =>
+        set((state) => {
+          state.displayPrices = {
+            source,
+            target,
+          };
         }),
     })),
     {
