@@ -111,7 +111,7 @@ export function DataTable<TData, TValue>({
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
-                      className={`p-0 ${header.column.columnDef.meta?.align === "right" ? "justify-end" : ""}`}
+                      className={`p-0 ${header.column.columnDef.meta?.align === "right" ? "justify-end" : header.column.columnDef.meta?.align === "center" ? "justify-center text-center" : ""}`}
                       scope="col"
                       key={header.id}
                       colSpan={header.colSpan}
