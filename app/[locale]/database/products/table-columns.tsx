@@ -32,6 +32,8 @@ export const productsColumns = (
   difficulty: StoreDifficulty,
   displayPrices: DisplayPrices | null,
 ): ColumnDef<ProductsColumnData>[] => {
+  const testIndex = 1;
+
   const isExport =
     displayPrices?.target === DISPLAY_PRICE_OPTIONS.TARGET.EXPORT;
   const isImport =
@@ -39,7 +41,7 @@ export const productsColumns = (
 
   const sourcePriceColumn = isImport
     ? createProductCurrencyColumn("importPrice", difficulty, (row, diff) =>
-        getImportPrice(row.wholesalePrice, diff as Difficulty),
+        getImportPrice(row.wholesalePrice, diff as Difficulty, testIndex),
       )
     : createProductCurrencyColumn("manufacturePrice", difficulty, (row, diff) =>
         getManufacturePrice(row, diff as Difficulty),
@@ -47,7 +49,7 @@ export const productsColumns = (
 
   const salePriceColumn = isExport
     ? createProductCurrencyColumn("exportPrice", difficulty, (row, diff) =>
-        getExportPrice(row.wholesalePrice, diff as Difficulty),
+        getExportPrice(row.wholesalePrice, diff as Difficulty, testIndex),
       )
     : createProductCurrencyColumn("retailPrice", difficulty, (row) =>
         getAverageRetailPrice(row),
@@ -74,6 +76,25 @@ export const productsColumns = (
             if (!difficulty || !displayPrices) return -Infinity;
             return getProfitMarginForProduct(row, difficulty, 1, displayPrices)
               .margin;
+          },
+          sortingFn: (rowA, rowB) => {
+            if (!difficulty || !displayPrices) return 0;
+
+            const a = getProfitMarginForProduct(
+              rowA.original,
+              difficulty,
+              1,
+              displayPrices,
+            ).margin;
+
+            const b = getProfitMarginForProduct(
+              rowB.original,
+              difficulty,
+              1,
+              displayPrices,
+            ).margin;
+
+            return a - b;
           },
           header: ({ column }) => (
             <TableHeadContent column={column} align="end">
@@ -106,6 +127,25 @@ export const productsColumns = (
             if (!difficulty || !displayPrices) return -Infinity;
             return getProfitMarginForProduct(row, difficulty, 1, displayPrices)
               .marginPercent;
+          },
+          sortingFn: (rowA, rowB) => {
+            if (!difficulty || !displayPrices) return 0;
+
+            const a = getProfitMarginForProduct(
+              rowA.original,
+              difficulty,
+              1,
+              displayPrices,
+            ).marginPercent;
+
+            const b = getProfitMarginForProduct(
+              rowB.original,
+              difficulty,
+              1,
+              displayPrices,
+            ).marginPercent;
+
+            return a - b;
           },
           header: ({ column }) => (
             <TableHeadContent column={column} align="end">
