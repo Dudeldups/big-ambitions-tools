@@ -1,4 +1,5 @@
 import {
+  AVERAGE_DISCTRICT_MULT,
   EXPORT_PRICE_MULT,
   PUBLIC_PRICE_MULT,
   SALARY_BASE_MULT,
@@ -38,29 +39,8 @@ export const getExportPrice = (
   );
 };
 
-export const getProfitMarginForProduct = (
-  product: Product,
-  difficulty: Difficulty,
-  priceIndex: number = 1,
-) => {
-  const ingredientData = getIngredientDataForProduct(product, difficulty);
-  const totalIngredientPrice = ingredientData.reduce(
-    (acc, ingredient) => acc + ingredient.cost,
-    0,
-  );
-  const ingredientPricePerItem = totalIngredientPrice / product.productionRate;
-
-  const exportPrice = getExportPrice(
-    product.wholesalePrice,
-    difficulty,
-    priceIndex,
-  );
-
-  const margin = exportPrice - ingredientPricePerItem;
-  const marginPercent = (margin / ingredientPricePerItem) * 100;
-
-  return { margin, marginPercent };
-};
+export const getAverageRetailPrice = (product: Product): number =>
+  product.defaultMarketPrice * AVERAGE_DISCTRICT_MULT;
 
 export const getEmployeeSalary = (
   employeeName: EmployeeName,
@@ -71,6 +51,35 @@ export const getEmployeeSalary = (
   return Math.round(
     SALARY_BASE_MULT * SALARY_DIFF_MULT[difficulty] * employee.baseHourlyWage,
   );
+};
+
+export const getProfitMarginForProduct = (
+  product: Product,
+  difficulty: Difficulty,
+  priceIndex: number = 1,
+  marginType: "retail" | "export" = "export",
+) => {
+  const ingredientData = getIngredientDataForProduct(product, difficulty);
+  const totalIngredientPrice = ingredientData.reduce(
+    (acc, ingredient) => acc + ingredient.cost,
+    0,
+  );
+  const ingredientPricePerItem = totalIngredientPrice / product.productionRate;
+
+  const salePrice =
+    marginType === "retail"
+      ? getAverageRetailPrice(product)
+      : getExportPrice(product.wholesalePrice, difficulty, priceIndex);
+
+  const employeeSalary = getEmployeeSalary("factoryWorker", difficulty);
+  const employeeCostPerItem = employeeSalary / product.productionRate;
+
+  const totalCostPerItem = ingredientPricePerItem + employeeCostPerItem;
+
+  const margin = salePrice - totalCostPerItem;
+  const marginPercent = salePrice !== 0 ? (margin / salePrice) * 100 : 0;
+
+  return { margin, marginPercent };
 };
 
 export function getWorkstationPrice(ws: Workstation) {
