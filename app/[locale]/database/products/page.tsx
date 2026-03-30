@@ -5,6 +5,7 @@ import { DataTable } from "../../../../components/tables/data-table";
 import { ProductsColumnData, productsColumns } from "./table-columns";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { ProductName } from "@/lib/game/productNames";
+import { useMemo } from "react";
 
 const data: ProductsColumnData[] = (Object.keys(products) as ProductName[]).map(
   (itemName) => ({
@@ -15,10 +16,16 @@ const data: ProductsColumnData[] = (Object.keys(products) as ProductName[]).map(
 
 export default function ProductsPage() {
   const difficulty = useAppState((state) => state.difficulty);
+  const displayPrices = useAppState((state) => state.displayPrices);
+
+  const columns = useMemo(
+    () => productsColumns(difficulty, displayPrices),
+    [difficulty, displayPrices],
+  );
 
   return (
     <div className="mx-auto py-10">
-      <DataTable columns={productsColumns(difficulty)} data={data} />
+      <DataTable columns={columns} data={data} />
     </div>
   );
 }
