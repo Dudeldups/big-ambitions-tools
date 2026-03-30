@@ -29,6 +29,8 @@
   "tableColumns": {
     "itemName": "Item name",
     "purchasePrice": "Price",
+    "retailPrice": "Retail price",
+    "manufacturePrice": "Manuf. price",
     "storageCapacity": "Storage capacity",
     "workstation": "Workstation",
     "neededMachines": "Machines",

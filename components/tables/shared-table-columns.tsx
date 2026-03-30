@@ -8,6 +8,7 @@ import { Column, ColumnDef, Table } from "@tanstack/react-table";
 import { StoreDifficulty } from "@/lib/game/types";
 import { Importer } from "@/lib/game/importerNames";
 import { Check, X } from "lucide-react";
+import { ProductsColumnData } from "@/app/[locale]/database/products/table-columns";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey: K,
@@ -72,6 +73,20 @@ export const createCurrencyColumn = <T, K extends keyof T | string>(
     align: "right",
   },
 });
+
+export const createProductCurrencyColumn = (
+  accessorKey: string,
+  difficulty: StoreDifficulty | undefined,
+  priceGetter?: (
+    row: ProductsColumnData,
+    difficulty: StoreDifficulty,
+  ) => number,
+) =>
+  createCurrencyColumn<ProductsColumnData, string>(
+    accessorKey,
+    difficulty,
+    priceGetter,
+  );
 
 export const createNumericColumn = <T, K extends keyof T>(
   accessorKey: K,
