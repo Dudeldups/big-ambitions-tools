@@ -40,7 +40,7 @@ const PlaythroughId = () => {
           <>
             <p>No factories yet. Create one here:</p>
             <Link href={`/tools/${activePlaythrough.id}/factories/create`}>
-              Click me
+              <Plus />
             </Link>
           </>
         ) : (
