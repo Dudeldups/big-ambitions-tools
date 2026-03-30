@@ -19,18 +19,21 @@ const DifficultyButtonGroup = ({ className }: DifficultyButtonGroupProps) => {
   return (
     <ButtonGroup className={className}>
       <Button
+        className="capitalize"
         variant={difficulty === "easy" ? "secondary" : "outline"}
         onClick={() => setDifficulty("easy")}
       >
         {tGeneral("difficultyOptions.easy")}
       </Button>
       <Button
+        className="capitalize"
         variant={difficulty === "normal" ? "secondary" : "outline"}
         onClick={() => setDifficulty("normal")}
       >
         {tGeneral("difficultyOptions.normal")}
       </Button>
       <Button
+        className="capitalize"
         variant={difficulty === "hard" ? "secondary" : "outline"}
         onClick={() => setDifficulty("hard")}
       >
