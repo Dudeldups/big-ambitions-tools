@@ -41,6 +41,9 @@ export const productsColumns = (
       const { t } = getMeta(table);
       return t("tableColumns.profitMargin");
     },
+    meta: {
+      align: "center",
+    },
     columns: [
       {
         id: "margin",
@@ -49,7 +52,9 @@ export const productsColumns = (
           return getProfitMarginForProduct(row, difficulty).margin;
         },
         header: ({ column }) => (
-          <TableHeadContent column={column}>$</TableHeadContent>
+          <TableHeadContent column={column} align="end">
+            $
+          </TableHeadContent>
         ),
         cell: ({ row }) => {
           if (!difficulty) return <Spinner />;
@@ -65,6 +70,9 @@ export const productsColumns = (
             </span>
           );
         },
+        meta: {
+          align: "right",
+        },
       },
       {
         id: "marginPercent",
@@ -73,7 +81,9 @@ export const productsColumns = (
           return getProfitMarginForProduct(row, difficulty).marginPercent;
         },
         header: ({ column }) => (
-          <TableHeadContent column={column}>%</TableHeadContent>
+          <TableHeadContent column={column} align="end">
+            %
+          </TableHeadContent>
         ),
         cell: ({ row }) => {
           if (!difficulty) return <Spinner />;
@@ -86,6 +96,9 @@ export const productsColumns = (
               {marginPercent.toFixed(0)}%
             </span>
           );
+        },
+        meta: {
+          align: "right",
         },
       },
     ],
@@ -123,6 +136,9 @@ export const productsColumns = (
           })}
         </ul>
       );
+    },
+    meta: {
+      align: "center",
     },
   },
 ];
