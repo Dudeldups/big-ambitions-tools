@@ -1,12 +1,16 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { Difficulty } from "../game/types";
+import { Difficulty, PriceSource, PriceTarget } from "../game/types";
 import { omit } from "./omit";
 
 export type AppState = {
   _hasHydrated: boolean;
   difficulty: Difficulty;
+  displayPrices: {
+    source: PriceSource;
+    target: PriceTarget;
+  };
 };
 
 export type AppActions = {
@@ -24,6 +28,10 @@ export const useAppStore = create(
         }),
 
       difficulty: "easy",
+      displayPrices: {
+        source: "IMPORT",
+        target: "RETAIL",
+      },
 
       setDifficulty: (difficulty: Difficulty) =>
         set((state) => {

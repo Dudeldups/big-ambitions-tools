@@ -2,6 +2,17 @@ import { Difficulty } from "./game/types";
 
 export const NONE_VALUE = "__none__" as const;
 
+export const DISPLAY_PRICE_OPTIONS = {
+  SOURCE: {
+    MANUFACTURE: "MANUFACTURE",
+    IMPORT: "IMPORT",
+  },
+  TARGET: {
+    EXPORT: "EXPORT",
+    RETAIL: "RETAIL",
+  },
+} as const;
+
 export const EMPLOYEE_MAX_SALARY = 1000 as const;
 
 export const SALARY_BASE_MULT = 2.25 as const;

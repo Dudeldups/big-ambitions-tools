@@ -3,6 +3,7 @@ import { IngredientName } from "./ingredientNames";
 import { MachineName, WorkstationName } from "./machineNames";
 import { ProductName } from "./productNames";
 import { RowData } from "@tanstack/react-table";
+import { DISPLAY_PRICE_OPTIONS } from "../constants";
 
 type Translator = ReturnType<typeof useTranslations>;
 
@@ -26,6 +27,11 @@ export type StoreDifficulty = Difficulty | null | undefined;
 export type Price = {
   [K in Difficulty]: number;
 };
+
+export type PriceSource =
+  (typeof DISPLAY_PRICE_OPTIONS)["SOURCE"][keyof (typeof DISPLAY_PRICE_OPTIONS)["SOURCE"]];
+export type PriceTarget =
+  (typeof DISPLAY_PRICE_OPTIONS)["TARGET"][keyof (typeof DISPLAY_PRICE_OPTIONS)["TARGET"]];
 
 type TableKeyMap = {
   products: ProductName;
