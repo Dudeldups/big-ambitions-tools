@@ -92,7 +92,7 @@ export const productsColumns = (
             difficulty,
           );
           return (
-            <span className="amount text-muted-foreground text-sm">
+            <span className="amount text-muted-foreground">
               {marginPercent.toFixed(0)}%
             </span>
           );
