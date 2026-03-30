@@ -8,7 +8,9 @@ import { IMPORT_PRICE_BASE_MULT } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
 import { machines, Workstation } from "../game/machines";
+import { Product } from "../game/products";
 import { Difficulty } from "../game/types";
+import { getIngredientDataForProduct } from "../utils/getIngredientDataForProduct";
 
 export const getImportPrice = (
   wholesalePrice: number,
@@ -34,6 +36,30 @@ export const getExportPrice = (
     EXPORT_PRICE_MULT[difficulty] *
     priceIndex
   );
+};
+
+export const getProfitMarginForProduct = (
+  product: Product,
+  difficulty: Difficulty,
+  priceIndex: number = 1,
+) => {
+  const ingredientData = getIngredientDataForProduct(product, difficulty);
+  const totalIngredientPrice = ingredientData.reduce(
+    (acc, ingredient) => acc + ingredient.cost,
+    0,
+  );
+  const ingredientPricePerItem = totalIngredientPrice / product.productionRate;
+
+  const exportPrice = getExportPrice(
+    product.wholesalePrice,
+    difficulty,
+    priceIndex,
+  );
+
+  const margin = exportPrice - ingredientPricePerItem;
+  const marginPercent = (margin / ingredientPricePerItem) * 100;
+
+  return { margin, marginPercent };
 };
 
 export const getEmployeeSalary = (
