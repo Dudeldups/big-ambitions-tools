@@ -28,6 +28,7 @@ import { usePathname } from "@/i18n/navigation";
 import ColumnSelector from "./column-selector";
 import DifficultyButtonGroup from "./difficulty-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
+import SalesPriceSelector from "./salesPriceSelector";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -53,6 +54,7 @@ export function DataTable<TData, TValue>({
   const difficulty = useAppState((state) => state.difficulty);
 
   const pathname = usePathname();
+  const isProductsPage = pathname === "/database/products";
   const hasDifficultySelector =
     pathname === "/database/ingredients" || pathname === "/database/products";
 
@@ -98,7 +100,9 @@ export function DataTable<TData, TValue>({
           />
         </form>
 
-        {hasDifficultySelector && <DifficultyButtonGroup className="mr-6" />}
+        {isProductsPage && <SalesPriceSelector />}
+
+        {hasDifficultySelector && <DifficultyButtonGroup className="mx-6" />}
 
         <ColumnSelector table={table} />
       </div>
