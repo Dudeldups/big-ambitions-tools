@@ -127,11 +127,6 @@
   --spacing-page: 100rem;
 }
 
-@utility amount {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -146,4 +141,13 @@
   button:not(:disabled) {
     cursor: pointer;
   }
+}
+
+@utility amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@utility focus-ring {
+  @apply border-ring ring-ring/50 ring-3;
 }
