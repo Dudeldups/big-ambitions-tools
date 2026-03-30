@@ -37,37 +37,58 @@ export const productsColumns = (
   ),
   {
     id: "profitMargin",
-    header: ({ column, table }) => {
+    header: ({ table }) => {
       const { t } = getMeta(table);
-      return (
-        <TableHeadContent column={column}>
-          {t(`tableColumns.profitMargin`)}
-        </TableHeadContent>
-      );
+      return t("tableColumns.profitMargin");
     },
-    cell: ({ row, table }) => {
-      const difficulty = table.options.meta?.difficulty;
-
-      if (!difficulty) return <Spinner />;
-
-      const { margin, marginPercent } = getProfitMarginForProduct(
-        row.original,
-        difficulty,
-      );
-      const isPositive = margin >= 0;
-      return (
-        <div className="flex flex-col">
-          <span
-            className={`amount ${isPositive ? "text-green-600" : "text-red-600"}`}
-          >
-            {formatToUSD(margin)}
-          </span>
-          <span className="amount text-muted-foreground text-sm">
-            {marginPercent.toFixed(0)}%
-          </span>
-        </div>
-      );
-    },
+    columns: [
+      {
+        id: "margin",
+        accessorFn: (row) => {
+          if (!difficulty) return -Infinity;
+          return getProfitMarginForProduct(row, difficulty).margin;
+        },
+        header: ({ column }) => (
+          <TableHeadContent column={column}>$</TableHeadContent>
+        ),
+        cell: ({ row }) => {
+          if (!difficulty) return <Spinner />;
+          const { margin } = getProfitMarginForProduct(
+            row.original,
+            difficulty,
+          );
+          return (
+            <span
+              className={`amount ${margin >= 0 ? "text-green-600" : "text-red-600"}`}
+            >
+              {formatToUSD(margin)}
+            </span>
+          );
+        },
+      },
+      {
+        id: "marginPercent",
+        accessorFn: (row) => {
+          if (!difficulty) return -Infinity;
+          return getProfitMarginForProduct(row, difficulty).marginPercent;
+        },
+        header: ({ column }) => (
+          <TableHeadContent column={column}>%</TableHeadContent>
+        ),
+        cell: ({ row }) => {
+          if (!difficulty) return <Spinner />;
+          const { marginPercent } = getProfitMarginForProduct(
+            row.original,
+            difficulty,
+          );
+          return (
+            <span className="amount text-muted-foreground text-sm">
+              {marginPercent.toFixed(0)}%
+            </span>
+          );
+        },
+      },
+    ],
   },
   createImportersColumn(),
   {
