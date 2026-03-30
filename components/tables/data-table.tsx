@@ -21,14 +21,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
-import { Label } from "../ui/label";
 import { usePathname } from "@/i18n/navigation";
 import ColumnSelector from "./column-selector";
 import DifficultyButtonGroup from "./difficulty-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
 import SalesPriceSelector from "./sales-price-selector";
+import SearchBar from "../search-bar";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -84,21 +83,18 @@ export function DataTable<TData, TValue>({
   return (
     <div className={`mx-auto w-full ${className}`}>
       <div className="flex items-center py-4">
-        <form className="mr-auto">
-          <Label htmlFor="search" className="sr-only">
-            {t("general.filterResults")}
-          </Label>
-          <Input
-            placeholder={t("general.filterResults")}
-            value={
-              (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
-            }
-            onChange={(event) =>
-              table.getColumn("itemName")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
-        </form>
+        <SearchBar
+          label={t("general.filterResults")}
+          id="search"
+          className="mr-auto"
+          placeholder={t("general.filterResults")}
+          value={
+            (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(value) =>
+            table.getColumn("itemName")?.setFilterValue(value)
+          }
+        />
 
         {isProductsPage && <SalesPriceSelector />}
 
