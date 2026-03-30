@@ -114,6 +114,7 @@ export function DataTable<TData, TValue>({
                       className={`p-0 ${header.column.columnDef.meta?.align === "right" ? "justify-end" : ""}`}
                       scope="col"
                       key={header.id}
+                      colSpan={header.colSpan}
                     >
                       {header.isPlaceholder
                         ? null
