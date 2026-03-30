@@ -4,20 +4,12 @@ import { immer } from "zustand/middleware/immer";
 import { omit } from "./omit";
 import { indexedDBStorage } from "./indexedDBStorage";
 import { PlaythroughFormValues } from "../schemas/playthrough";
-import { WorkstationName } from "../game/machineNames";
-import { ProductName } from "../game/productNames";
 import { FactoryFormValues } from "../schemas/factory";
 import { generateUniqueId } from "./generateUniqueId";
-
-export type FactoryWorkstation = {
-  name: WorkstationName;
-  product: ProductName;
-};
 
 export type Factory = FactoryFormValues & {
   id: string;
   createdAt: number;
-  workstations: FactoryWorkstation[];
 };
 
 export type Playthrough = PlaythroughFormValues & {
