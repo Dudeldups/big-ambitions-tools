@@ -1,5 +1,7 @@
 import {
   AVERAGE_DISCTRICT_MULT,
+  BASE_PRODUCT_PRICE_INDEX,
+  DISPLAY_PRICE_OPTIONS,
   EXPORT_PRICE_MULT,
   PUBLIC_PRICE_MULT,
   SALARY_BASE_MULT,
@@ -11,12 +13,13 @@ import { employees } from "../game/employees";
 import { machines, Workstation } from "../game/machines";
 import { Product } from "../game/products";
 import { Difficulty } from "../game/types";
+import { DisplayPrices } from "../stores/appStore";
 import { getIngredientDataForProduct } from "../utils/getIngredientDataForProduct";
 
 export const getImportPrice = (
   wholesalePrice: number,
   difficulty: Difficulty,
-  priceIndex: number = 1,
+  priceIndex: number = BASE_PRODUCT_PRICE_INDEX,
 ) => {
   return (
     wholesalePrice *
@@ -29,7 +32,7 @@ export const getImportPrice = (
 export const getExportPrice = (
   wholesalePrice: number,
   difficulty: Difficulty,
-  priceIndex: number = 1,
+  priceIndex: number = BASE_PRODUCT_PRICE_INDEX,
 ) => {
   return (
     wholesalePrice *
@@ -53,30 +56,49 @@ export const getEmployeeSalary = (
   );
 };
 
-export const getProfitMarginForProduct = (
+export const getManufacturePrice = (
   product: Product,
   difficulty: Difficulty,
-  priceIndex: number = 1,
-  marginType: "retail" | "export" = "export",
-) => {
+): number => {
   const ingredientData = getIngredientDataForProduct(product, difficulty);
   const totalIngredientPrice = ingredientData.reduce(
     (acc, ingredient) => acc + ingredient.cost,
     0,
   );
   const ingredientPricePerItem = totalIngredientPrice / product.productionRate;
+  const employeeSalary = getEmployeeSalary("factoryWorker", difficulty);
+  const employeeCostPerItem = employeeSalary / product.productionRate;
+  return ingredientPricePerItem + employeeCostPerItem;
+};
+
+export const getProfitMarginForProduct = (
+  product: Product,
+  difficulty: Difficulty,
+  priceIndex: number = BASE_PRODUCT_PRICE_INDEX,
+  displayPrices: DisplayPrices = {
+    source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
+    target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
+  },
+) => {
+  const { source, target } = displayPrices;
 
   const salePrice =
-    marginType === "retail"
+    target === DISPLAY_PRICE_OPTIONS.TARGET.RETAIL
       ? getAverageRetailPrice(product)
       : getExportPrice(product.wholesalePrice, difficulty, priceIndex);
 
-  const employeeSalary = getEmployeeSalary("factoryWorker", difficulty);
-  const employeeCostPerItem = employeeSalary / product.productionRate;
+  const costPerItem = (() => {
+    if (source === DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE) {
+      return getManufacturePrice(product, difficulty);
+    } else {
+      return (
+        getImportPrice(product.wholesalePrice, difficulty, priceIndex) /
+        product.productionRate
+      );
+    }
+  })();
 
-  const totalCostPerItem = ingredientPricePerItem + employeeCostPerItem;
-
-  const margin = salePrice - totalCostPerItem;
+  const margin = salePrice - costPerItem;
   const marginPercent = salePrice !== 0 ? (margin / salePrice) * 100 : 0;
 
   return { margin, marginPercent };
