@@ -5,13 +5,15 @@ import { Difficulty, PriceSource, PriceTarget } from "../game/types";
 import { omit } from "./omit";
 import { DISPLAY_PRICE_OPTIONS } from "../constants";
 
+export type DisplayPrices = {
+  source: PriceSource;
+  target: PriceTarget;
+};
+
 export type AppState = {
   _hasHydrated: boolean;
   difficulty: Difficulty;
-  displayPrices: {
-    source: PriceSource;
-    target: PriceTarget;
-  };
+  displayPrices: DisplayPrices;
 };
 
 export type AppActions = {
