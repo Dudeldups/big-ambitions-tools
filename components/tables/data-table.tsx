@@ -28,7 +28,7 @@ import { usePathname } from "@/i18n/navigation";
 import ColumnSelector from "./column-selector";
 import DifficultyButtonGroup from "./difficulty-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
-import SalesPriceSelector from "./salesPriceSelector";
+import SalesPriceSelector from "./sales-price-selector";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
