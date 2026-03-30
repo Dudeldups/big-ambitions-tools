@@ -137,8 +137,5 @@ export const productsColumns = (
         </ul>
       );
     },
-    meta: {
-      align: "center",
-    },
   },
 ];
