@@ -57,7 +57,6 @@ export const productsColumns = (
 
   return [
     createTranslatedColumn("itemName", "products"),
-    createNumericColumn("amountPerBox"),
     sourcePriceColumn,
     salePriceColumn,
     {
@@ -173,6 +172,8 @@ export const productsColumns = (
       ],
     },
     createImportersColumn(),
+    createNumericColumn("amountPerBox"),
+    createNumericColumn("productionRate"),
     {
       accessorKey: "ingredients",
       enableSorting: false,
