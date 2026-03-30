@@ -53,6 +53,11 @@ export type PlaythroughActions = {
   deleteFactory: (factoryId: string) => Factory | undefined;
   getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
+  setPriceIndex: (
+    playthroughId: string,
+    productName: ProductName,
+    index: number,
+  ) => void;
 };
 
 export const usePlaythroughStore = create(
@@ -205,6 +210,18 @@ export const usePlaythroughStore = create(
 
       getPlaythroughById: (id) => get().playthroughs.find((p) => p.id === id),
       getFactoryById: (id) => get().factories.find((f) => f.id === id),
+
+      setPriceIndex: (playthroughId, productName, index) => {
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+
+          if (!playthrough) return;
+
+          playthrough.priceIndices[productName] = index;
+        });
+      },
     })),
     {
       name: "playthrough-storage",
