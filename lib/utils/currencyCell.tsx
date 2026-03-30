@@ -13,7 +13,7 @@ export function currencyCell<TData>(
 
     const value = getValueFn(row, difficulty);
 
-    if (!value) {
+    if (!value === null || value === undefined) {
       return (
         <div className="flex h-4 justify-end">
           <Spinner />
