@@ -17,10 +17,11 @@ const data: ProductsColumnData[] = (Object.keys(products) as ProductName[]).map(
 export default function ProductsPage() {
   const difficulty = useAppState((state) => state.difficulty);
   const displayPrices = useAppState((state) => state.displayPrices);
+  const tablePriceIndex = useAppState((state) => state.tablePriceIndex);
 
   const columns = useMemo(
-    () => productsColumns(difficulty, displayPrices),
-    [difficulty, displayPrices],
+    () => productsColumns(difficulty, displayPrices, tablePriceIndex),
+    [difficulty, displayPrices, tablePriceIndex],
   );
 
   return (

@@ -33,9 +33,8 @@ export type ProductsColumnData = Product & {
 export const productsColumns = (
   difficulty: StoreDifficulty,
   displayPrices: DisplayPrices | null,
+  tablePriceIndex: number | null,
 ): ColumnDef<ProductsColumnData>[] => {
-  const testIndex = 1;
-
   const isExport =
     displayPrices?.target === DISPLAY_PRICE_OPTIONS.TARGET.EXPORT;
   const isImport =
@@ -43,7 +42,11 @@ export const productsColumns = (
 
   const sourcePriceColumn = isImport
     ? createProductCurrencyColumn("importPrice", difficulty, (row, diff) =>
-        getImportPrice(row.wholesalePrice, diff as Difficulty, testIndex),
+        getImportPrice(
+          row.wholesalePrice,
+          diff as Difficulty,
+          tablePriceIndex as number,
+        ),
       )
     : createProductCurrencyColumn("manufacturePrice", difficulty, (row, diff) =>
         getManufacturePrice(row, diff as Difficulty),
@@ -51,7 +54,11 @@ export const productsColumns = (
 
   const salePriceColumn = isExport
     ? createProductCurrencyColumn("exportPrice", difficulty, (row, diff) =>
-        getExportPrice(row.wholesalePrice, diff as Difficulty, testIndex),
+        getExportPrice(
+          row.wholesalePrice,
+          diff as Difficulty,
+          tablePriceIndex as number,
+        ),
       )
     : createProductCurrencyColumn("retailPrice", difficulty, (row) =>
         getAverageRetailPrice(row),
@@ -74,24 +81,29 @@ export const productsColumns = (
         {
           id: "margin",
           accessorFn: (row) => {
-            if (!difficulty || !displayPrices) return -Infinity;
-            return getProfitMarginForProduct(row, difficulty, 1, displayPrices)
-              .margin;
+            if (!difficulty || !displayPrices || !tablePriceIndex)
+              return -Infinity;
+            return getProfitMarginForProduct(
+              row,
+              difficulty,
+              tablePriceIndex,
+              displayPrices,
+            ).margin;
           },
           sortingFn: (rowA, rowB) => {
-            if (!difficulty || !displayPrices) return 0;
+            if (!difficulty || !displayPrices || !tablePriceIndex) return 0;
 
             const a = getProfitMarginForProduct(
               rowA.original,
               difficulty,
-              1,
+              tablePriceIndex,
               displayPrices,
             ).margin;
 
             const b = getProfitMarginForProduct(
               rowB.original,
               difficulty,
-              1,
+              tablePriceIndex,
               displayPrices,
             ).margin;
 
@@ -103,11 +115,13 @@ export const productsColumns = (
             </TableHeadContent>
           ),
           cell: ({ row }) => {
-            if (!difficulty || !displayPrices) return <Spinner />;
+            if (!difficulty || !displayPrices || !tablePriceIndex) {
+              return <Spinner />;
+            }
             const { margin } = getProfitMarginForProduct(
               row.original,
               difficulty,
-              1,
+              tablePriceIndex,
               displayPrices,
             );
             return (
@@ -125,24 +139,29 @@ export const productsColumns = (
         {
           id: "marginPercent",
           accessorFn: (row) => {
-            if (!difficulty || !displayPrices) return -Infinity;
-            return getProfitMarginForProduct(row, difficulty, 1, displayPrices)
-              .marginPercent;
+            if (!difficulty || !displayPrices || !tablePriceIndex)
+              return -Infinity;
+            return getProfitMarginForProduct(
+              row,
+              difficulty,
+              tablePriceIndex,
+              displayPrices,
+            ).marginPercent;
           },
           sortingFn: (rowA, rowB) => {
-            if (!difficulty || !displayPrices) return 0;
+            if (!difficulty || !displayPrices || !tablePriceIndex) return 0;
 
             const a = getProfitMarginForProduct(
               rowA.original,
               difficulty,
-              1,
+              tablePriceIndex,
               displayPrices,
             ).marginPercent;
 
             const b = getProfitMarginForProduct(
               rowB.original,
               difficulty,
-              1,
+              tablePriceIndex,
               displayPrices,
             ).marginPercent;
 
@@ -154,11 +173,12 @@ export const productsColumns = (
             </TableHeadContent>
           ),
           cell: ({ row }) => {
-            if (!difficulty || !displayPrices) return <Spinner />;
+            if (!difficulty || !displayPrices || !tablePriceIndex)
+              return <Spinner />;
             const { marginPercent } = getProfitMarginForProduct(
               row.original,
               difficulty,
-              1,
+              tablePriceIndex,
               displayPrices,
             );
             return (
@@ -176,23 +196,28 @@ export const productsColumns = (
     {
       id: "profitPerHour",
       accessorFn: (row) => {
-        if (!difficulty || !displayPrices) return -Infinity;
-        return getProfitPerHourForProduct(row, difficulty, 1, displayPrices);
+        if (!difficulty || !displayPrices || !tablePriceIndex) return -Infinity;
+        return getProfitPerHourForProduct(
+          row,
+          difficulty,
+          tablePriceIndex,
+          displayPrices,
+        );
       },
       sortingFn: (rowA, rowB) => {
-        if (!difficulty || !displayPrices) return 0;
+        if (!difficulty || !displayPrices || !tablePriceIndex) return 0;
 
         const a = getProfitPerHourForProduct(
           rowA.original,
           difficulty,
-          1,
+          tablePriceIndex,
           displayPrices,
         );
 
         const b = getProfitPerHourForProduct(
           rowB.original,
           difficulty,
-          1,
+          tablePriceIndex,
           displayPrices,
         );
 
@@ -208,11 +233,12 @@ export const productsColumns = (
         );
       },
       cell: ({ row }) => {
-        if (!difficulty || !displayPrices) return <Spinner />;
+        if (!difficulty || !displayPrices || !tablePriceIndex)
+          return <Spinner />;
         const profitPerHour = getProfitPerHourForProduct(
           row.original,
           difficulty,
-          1,
+          tablePriceIndex,
           displayPrices,
         );
         return (
