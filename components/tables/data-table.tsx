@@ -30,7 +30,6 @@ import SalesPriceSelector from "./sales-price-selector";
 import SearchBar from "../search-bar";
 import { Translator } from "@/lib/types";
 import PriceIndexSlider from "./price-index-slider";
-import { BASE_PRODUCT_PRICE_INDEX } from "@/lib/constants";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
