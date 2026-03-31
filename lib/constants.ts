@@ -29,11 +29,7 @@ export const DELIVERY_DRIVER_WORKING_HOURS = 5.75 as const;
 
 export const HQ_WORKING_HOURS = 5.714285714285714 as const;
 
-export const DIFFICULTY_OPTIONS = [
-  "easy",
-  "normal",
-  "hard",
-] as const satisfies readonly Difficulty[];
+export const DIFFICULTY_OPTIONS = ["easy", "normal", "hard"] as const;
 
 export const MIN_PRODUCT_PRICE_INDEX = 0.5 as const;
 export const BASE_PRODUCT_PRICE_INDEX = 1.0 as const;

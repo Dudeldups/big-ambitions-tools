@@ -1,26 +1,10 @@
-import { useTranslations } from "next-intl";
+import { DIFFICULTY_OPTIONS } from "./../constants";
 import { IngredientName } from "./ingredientNames";
 import { MachineName, WorkstationName } from "./machineNames";
 import { ProductName } from "./productNames";
-import { RowData } from "@tanstack/react-table";
 import { DISPLAY_PRICE_OPTIONS } from "../constants";
 
-type Translator = ReturnType<typeof useTranslations>;
-
-declare module "@tanstack/react-table" {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface TableMeta<TData extends RowData> {
-    t: Translator;
-    difficulty: Difficulty | null;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface ColumnMeta<TData extends RowData, TValue> {
-    align?: "left" | "center" | "right";
-  }
-}
-
-export type Difficulty = "easy" | "normal" | "hard";
+export type Difficulty = (typeof DIFFICULTY_OPTIONS)[number];
 
 export type StoreDifficulty = Difficulty | null | undefined;
 
@@ -49,7 +33,3 @@ export type ItemName =
 export type TableType = keyof TableKeyMap;
 
 export type TableData<T extends TableType, V> = [TableKeyMap[T], V][];
-
-export type DeepPartial<T> = {
-  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
-};
