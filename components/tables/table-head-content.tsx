@@ -17,6 +17,7 @@ const TableHeadContent = <TData, TValue>({
 }: Props<TData, TValue>) => {
   const isSorted = column.getIsSorted();
   const canSort = column.getCanSort();
+  const isDescFirstColumn = column.columnDef.sortDescFirst;
 
   const className = `flex justify-${align} w-full px-2 py-0`;
 
@@ -28,7 +29,13 @@ const TableHeadContent = <TData, TValue>({
     <Button
       variant="ghost"
       className={className}
-      onClick={() => column.toggleSorting(isSorted === "asc")}
+      onClick={() => {
+        if (isSorted === false) {
+          column.toggleSorting(isDescFirstColumn ?? false);
+        } else {
+          column.toggleSorting(isSorted === "asc");
+        }
+      }}
     >
       {children}
       {isSorted === "asc" ? (

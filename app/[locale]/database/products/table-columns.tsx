@@ -80,6 +80,7 @@ export const productsColumns = (
       columns: [
         {
           id: "margin",
+          sortDescFirst: true,
           accessorFn: (row) => {
             if (!difficulty || !displayPrices || !tablePriceIndex)
               return -Infinity;
@@ -138,6 +139,7 @@ export const productsColumns = (
         },
         {
           id: "marginPercent",
+          sortDescFirst: true,
           accessorFn: (row) => {
             if (!difficulty || !displayPrices || !tablePriceIndex)
               return -Infinity;
@@ -195,6 +197,7 @@ export const productsColumns = (
     },
     {
       id: "profitPerHour",
+      sortDescFirst: true,
       accessorFn: (row) => {
         if (!difficulty || !displayPrices || !tablePriceIndex) return -Infinity;
         return getProfitPerHourForProduct(
