@@ -2,14 +2,14 @@ import { FieldError as TFieldError, UseFormRegister } from "react-hook-form";
 import { Field, FieldError, FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
 import { FactoryFormValues } from "@/lib/schemas/factory";
-import { _Translator } from "next-intl";
 import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
+import { Translator } from "@/lib/types";
 
 type EmployeeSalaryFieldProps = {
   employeeName: keyof FactoryFormValues["employees"];
   register: UseFormRegister<FactoryFormValues>;
   error?: TFieldError;
-  t: _Translator;
+  t: Translator;
 };
 
 const EmployeeSalaryField = ({

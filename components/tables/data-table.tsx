@@ -28,15 +28,13 @@ import DifficultyButtonGroup from "./difficulty-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
 import SalesPriceSelector from "./sales-price-selector";
 import SearchBar from "../search-bar";
+import { Translator } from "@/lib/types";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  renderRow?: (
-    row: Row<TData>,
-    t: ReturnType<typeof useTranslations>,
-  ) => React.ReactNode;
+  renderRow?: (row: Row<TData>, t: Translator) => React.ReactNode;
 }
 
 export function DataTable<TData, TValue>({
