@@ -3,7 +3,7 @@ import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { Difficulty, PriceSource, PriceTarget } from "../game/types";
 import { omit } from "./omit";
-import { DISPLAY_PRICE_OPTIONS } from "../constants";
+import { BASE_PRODUCT_PRICE_INDEX, DISPLAY_PRICE_OPTIONS } from "../constants";
 
 export type DisplayPrices = {
   source: PriceSource;
@@ -14,12 +14,14 @@ export type AppState = {
   _hasHydrated: boolean;
   difficulty: Difficulty;
   displayPrices: DisplayPrices;
+  tablePriceIndex: number;
 };
 
 export type AppActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   setDifficulty: (difficulty: Difficulty) => void;
   setDisplayPrices: (source: PriceSource, target: PriceTarget) => void;
+  setTablePriceIndex: (index: number) => void;
 };
 
 export const useAppStore = create(
@@ -36,6 +38,7 @@ export const useAppStore = create(
         source: DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT,
         target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
       },
+      tablePriceIndex: BASE_PRODUCT_PRICE_INDEX,
 
       setDifficulty: (difficulty) =>
         set((state) => {
@@ -48,6 +51,10 @@ export const useAppStore = create(
             source,
             target,
           };
+        }),
+      setTablePriceIndex: (index) =>
+        set((state) => {
+          state.tablePriceIndex = index;
         }),
     })),
     {
