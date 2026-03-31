@@ -1,5 +1,7 @@
 import { defineRouting } from "next-intl/routing";
 
+const isDefaultLocaleForced = process.env.FORCE_DEFAULT_LOCALE === "1";
+
 export const routing = defineRouting({
   locales: [
     "en",
@@ -26,4 +28,5 @@ export const routing = defineRouting({
   ],
   defaultLocale: "en",
   localePrefix: "as-needed",
+  localeDetection: !isDefaultLocaleForced,
 });

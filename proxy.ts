@@ -2,26 +2,37 @@ import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextRequest, NextResponse } from "next/server";
 
-const intlMiddleware = createMiddleware(routing);
+type Locale = (typeof routing.locales)[number];
 
 const isTestMode = process.env.TEST_MODE === "1";
-
+const isDefaultLocaleForced = process.env.FORCE_DEFAULT_LOCALE === "1";
 const allowedPaths = process.env.ALLOWED_PATHS
   ? process.env.ALLOWED_PATHS.split(",").map((p) => p.trim())
   : [];
 
-export default function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+const intlMiddleware = createMiddleware(routing);
 
+export default function proxy(request: NextRequest) {
   if (!isTestMode) {
     return intlMiddleware(request);
   }
 
-  if (isTestMode && allowedPaths.length === 0) {
-    console.warn("TEST_MODE enabled but no ALLOWED_PATHS set");
+  const { pathname } = request.nextUrl;
+  let pathnameToCheck = pathname;
+
+  if (isDefaultLocaleForced) {
+    const segments = pathname.split("/");
+
+    if (isLocale(segments[1]) && segments[1] !== "en") {
+      const url = request.nextUrl.clone();
+      url.pathname = "/" + segments.slice(2).join("/") || "/";
+      return NextResponse.redirect(url);
+    }
+
+    pathnameToCheck = stripLocale(pathname);
   }
 
-  if (pathname === "/") {
+  if (pathnameToCheck === "/") {
     const firstAllowed = allowedPaths[0] || "/";
     const url = request.nextUrl.clone();
     url.pathname = firstAllowed;
@@ -29,7 +40,7 @@ export default function proxy(request: NextRequest) {
   }
 
   const isAllowed = allowedPaths.some(
-    (p) => pathname === p || pathname.startsWith(`${p}/`),
+    (p) => pathnameToCheck === p || pathnameToCheck.startsWith(`${p}/`),
   );
 
   if (!isAllowed) {
@@ -44,3 +55,17 @@ export default function proxy(request: NextRequest) {
 export const config = {
   matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 };
+
+function isLocale(value: string): value is Locale {
+  return routing.locales.includes(value as Locale);
+}
+
+function stripLocale(pathname: string) {
+  const segments = pathname.split("/");
+
+  if (isLocale(segments[1])) {
+    return "/" + segments.slice(2).join("/");
+  }
+
+  return pathname;
+}
