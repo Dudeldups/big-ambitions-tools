@@ -25,7 +25,7 @@ const PriceIndexSlider = () => {
         type="range"
         min={MIN_PRODUCT_PRICE_INDEX}
         max={MAX_PRODUCT_PRICE_INDEX}
-        step={0.1}
+        step={0.05}
         value={index ?? BASE_PRODUCT_PRICE_INDEX}
         disabled={isLoading}
         onChange={(e) => setIndex(Number(e.target.value))}
