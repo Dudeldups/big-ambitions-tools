@@ -5,10 +5,18 @@ import { getMeta } from "@/lib/utils/getMeta";
 import { translateCell } from "@/lib/utils/translateCell";
 import { currencyCell } from "@/lib/utils/currencyCell";
 import { Column, ColumnDef, Table } from "@tanstack/react-table";
-import { StoreDifficulty } from "@/lib/game/types";
+import { Difficulty, StoreDifficulty } from "@/lib/game/types";
 import { Importer } from "@/lib/game/importerNames";
 import { Check, X } from "lucide-react";
 import { ProductsColumnData } from "@/app/[locale]/database/products/table-columns";
+import { DisplayPrices } from "@/lib/stores/appStore";
+import { DISPLAY_PRICE_OPTIONS } from "@/lib/constants";
+import {
+  getAverageRetailPrice,
+  getExportPrice,
+  getImportPrice,
+  getManufacturePrice,
+} from "@/lib/calculations/math";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   accessorKey: K,
@@ -110,6 +118,48 @@ export const createNumericColumn = <T, K extends keyof T>(
     align: "right",
   },
 });
+
+export const createSourcePriceColumn = (
+  difficulty: StoreDifficulty | undefined,
+  displayPrices: DisplayPrices | null,
+  tablePriceIndex: number | null,
+) => {
+  const isImport =
+    displayPrices?.source === DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT;
+
+  return isImport
+    ? createProductCurrencyColumn("importPrice", difficulty, (row, diff) =>
+        getImportPrice(
+          row.wholesalePrice,
+          diff as Difficulty,
+          tablePriceIndex as number,
+        ),
+      )
+    : createProductCurrencyColumn("manufacturePrice", difficulty, (row, diff) =>
+        getManufacturePrice(row, diff as Difficulty),
+      );
+};
+
+export const createSalePriceColumn = (
+  difficulty: StoreDifficulty | undefined,
+  displayPrices: DisplayPrices | null,
+  tablePriceIndex: number | null,
+) => {
+  const isExport =
+    displayPrices?.target === DISPLAY_PRICE_OPTIONS.TARGET.EXPORT;
+
+  return isExport
+    ? createProductCurrencyColumn("exportPrice", difficulty, (row, diff) =>
+        getExportPrice(
+          row.wholesalePrice,
+          diff as Difficulty,
+          tablePriceIndex as number,
+        ),
+      )
+    : createProductCurrencyColumn("retailPrice", difficulty, (row) =>
+        getAverageRetailPrice(row),
+      );
+};
 
 type WithImporters = {
   importers?: Importer[];
