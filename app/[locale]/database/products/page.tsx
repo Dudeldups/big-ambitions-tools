@@ -6,20 +6,32 @@ import { productsColumns } from "./table-columns";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { ProductName } from "@/lib/game/productNames";
 import { useMemo } from "react";
-import { getProfitPerHourForProduct } from "@/lib/calculations/math";
+import {
+  getProfitMarginForProduct,
+  getProfitPerHourForProduct,
+} from "@/lib/calculations/math";
 
 export default function ProductsPage() {
   const difficulty = useAppState((state) => state.difficulty);
   const displayPrices = useAppState((state) => state.displayPrices);
   const tablePriceIndex = useAppState((state) => state.tablePriceIndex);
+  const isStateLoaded = !!difficulty && !!displayPrices && !!tablePriceIndex;
 
   const data = useMemo(
     () =>
-      (Object.keys(products) as ProductName[]).map((itemName) => ({
-        ...products[itemName],
-        itemName,
-        profitPerHour:
-          difficulty && displayPrices && tablePriceIndex
+      (Object.keys(products) as ProductName[]).map((itemName) => {
+        const marginData = isStateLoaded
+          ? getProfitMarginForProduct(
+              products[itemName],
+              difficulty,
+              tablePriceIndex,
+              displayPrices,
+            )
+          : null;
+        return {
+          ...products[itemName],
+          itemName,
+          profitPerHour: isStateLoaded
             ? getProfitPerHourForProduct(
                 products[itemName],
                 difficulty,
@@ -27,8 +39,11 @@ export default function ProductsPage() {
                 displayPrices,
               )
             : null,
-      })),
-    [difficulty, displayPrices, tablePriceIndex],
+          margin: marginData?.margin,
+          marginPercent: marginData?.marginPercent,
+        };
+      }),
+    [isStateLoaded, difficulty, tablePriceIndex, displayPrices],
   );
 
   const columns = useMemo(
