@@ -208,7 +208,7 @@ export const productsColumns = (
       ),
       cell: ({ row }) => {
         const value = row.original.profitPerHour;
-        if (value === null) return <Skeleton className="h4 w-14" />;
+        if (value === null) return <Skeleton className="ml-auto h-5 w-[8ch]" />;
         return <CurrencyText color="green">{formatToUSD(value)}</CurrencyText>;
       },
       meta: { align: "right" },
