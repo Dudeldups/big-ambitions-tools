@@ -98,6 +98,18 @@ export const getProfitMarginForProduct = (
   return { margin, marginPercent };
 };
 
+export const getProfitPerHourForProduct = (
+  product: Product,
+  difficulty: Difficulty,
+  priceIndex: number = BASE_PRODUCT_PRICE_INDEX,
+  displayPrices: DisplayPrices = {
+    source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
+    target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
+  },
+) =>
+  getProfitMarginForProduct(product, difficulty, priceIndex, displayPrices)
+    .margin * product.productionRate;
+
 export function getWorkstationPrice(ws: Workstation) {
   return ws.neededMachines.reduce(
     (sum, machineName) => sum + machines[machineName].purchasePrice,

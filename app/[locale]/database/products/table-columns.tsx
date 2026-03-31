@@ -18,6 +18,7 @@ import {
   getImportPrice,
   getManufacturePrice,
   getProfitMarginForProduct,
+  getProfitPerHourForProduct,
 } from "@/lib/calculations/math";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { Spinner } from "@/components/ui/spinner";
@@ -170,6 +171,60 @@ export const productsColumns = (
           },
         },
       ],
+    },
+    {
+      id: "profitPerHour",
+      accessorFn: (row) => {
+        if (!difficulty || !displayPrices) return -Infinity;
+        return getProfitPerHourForProduct(row, difficulty, 1, displayPrices);
+      },
+      sortingFn: (rowA, rowB) => {
+        if (!difficulty || !displayPrices) return 0;
+
+        const a = getProfitPerHourForProduct(
+          rowA.original,
+          difficulty,
+          1,
+          displayPrices,
+        );
+
+        const b = getProfitPerHourForProduct(
+          rowB.original,
+          difficulty,
+          1,
+          displayPrices,
+        );
+
+        return a - b;
+      },
+      header: ({ column, table }) => {
+        const { t } = getMeta(table);
+
+        return (
+          <TableHeadContent column={column} align="end">
+            {t("tableColumns.profitPerHour")}
+          </TableHeadContent>
+        );
+      },
+      cell: ({ row }) => {
+        if (!difficulty || !displayPrices) return <Spinner />;
+        const profitPerHour = getProfitPerHourForProduct(
+          row.original,
+          difficulty,
+          1,
+          displayPrices,
+        );
+        return (
+          <span
+            className={`amount ${profitPerHour >= 0 ? "text-green-600" : "text-red-600"}`}
+          >
+            {formatToUSD(profitPerHour)}
+          </span>
+        );
+      },
+      meta: {
+        align: "right",
+      },
     },
     createImportersColumn(),
     createNumericColumn("amountPerBox"),
