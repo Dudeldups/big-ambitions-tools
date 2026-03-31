@@ -18,16 +18,18 @@ import {
   getImportPrice,
   getManufacturePrice,
   getProfitMarginForProduct,
-  getProfitPerHourForProduct,
 } from "@/lib/calculations/math";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { Spinner } from "@/components/ui/spinner";
 import { DisplayPrices } from "@/lib/stores/appStore";
 import { DISPLAY_PRICE_OPTIONS } from "@/lib/constants";
 import IngredientsCell from "@/components/tables/ingredients-cell";
+import { Skeleton } from "@/components/ui/skeleton";
+import CurrencyText from "@/components/currency-text";
 
 export type ProductsColumnData = Product & {
   itemName: ProductName;
+  profitPerHour: number | null;
 };
 
 export const productsColumns = (
@@ -197,64 +199,19 @@ export const productsColumns = (
     },
     {
       id: "profitPerHour",
+      accessorKey: "profitPerHour",
       sortDescFirst: true,
-      accessorFn: (row) => {
-        if (!difficulty || !displayPrices || !tablePriceIndex) return -Infinity;
-        return getProfitPerHourForProduct(
-          row,
-          difficulty,
-          tablePriceIndex,
-          displayPrices,
-        );
-      },
-      sortingFn: (rowA, rowB) => {
-        if (!difficulty || !displayPrices || !tablePriceIndex) return 0;
-
-        const a = getProfitPerHourForProduct(
-          rowA.original,
-          difficulty,
-          tablePriceIndex,
-          displayPrices,
-        );
-
-        const b = getProfitPerHourForProduct(
-          rowB.original,
-          difficulty,
-          tablePriceIndex,
-          displayPrices,
-        );
-
-        return a - b;
-      },
-      header: ({ column, table }) => {
-        const { t } = getMeta(table);
-
-        return (
-          <TableHeadContent column={column} align="end">
-            {t("tableColumns.profitPerHour")}
-          </TableHeadContent>
-        );
-      },
+      header: ({ column, table }) => (
+        <TableHeadContent column={column} align="end">
+          {getMeta(table).t("tableColumns.profitPerHour")}
+        </TableHeadContent>
+      ),
       cell: ({ row }) => {
-        if (!difficulty || !displayPrices || !tablePriceIndex)
-          return <Spinner />;
-        const profitPerHour = getProfitPerHourForProduct(
-          row.original,
-          difficulty,
-          tablePriceIndex,
-          displayPrices,
-        );
-        return (
-          <span
-            className={`amount ${profitPerHour >= 0 ? "text-green-600" : "text-red-600"}`}
-          >
-            {formatToUSD(profitPerHour)}
-          </span>
-        );
+        const value = row.original.profitPerHour;
+        if (value === null) return <Skeleton className="h4 w-14" />;
+        return <CurrencyText color="green">{formatToUSD(value)}</CurrencyText>;
       },
-      meta: {
-        align: "right",
-      },
+      meta: { align: "right" },
     },
     createImportersColumn(),
     createNumericColumn("amountPerBox"),
