@@ -143,6 +143,18 @@
   }
 }
 
+@layer utilities {
+  .slider-loading::-webkit-slider-thumb {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .slider-loading::-moz-range-thumb {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 @utility amount {
   text-align: right;
   font-variant-numeric: tabular-nums;

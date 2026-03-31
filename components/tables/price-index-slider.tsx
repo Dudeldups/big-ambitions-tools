@@ -9,8 +9,7 @@ import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
 
 const PriceIndexSlider = () => {
-  const index =
-    useAppState((state) => state.tablePriceIndex) ?? BASE_PRODUCT_PRICE_INDEX;
+  const index = useAppState((state) => state.tablePriceIndex);
   const isLoading = index === null;
 
   const setIndex = useAppStore((state) => state.setTablePriceIndex);
@@ -27,11 +26,11 @@ const PriceIndexSlider = () => {
         min={MIN_PRODUCT_PRICE_INDEX}
         max={MAX_PRODUCT_PRICE_INDEX}
         step={0.1}
-        value={index ?? 0}
+        value={index ?? BASE_PRODUCT_PRICE_INDEX}
         disabled={isLoading}
         onChange={(e) => setIndex(Number(e.target.value))}
         className={`accent-foreground w-full transition-opacity ${
-          isLoading ? "cursor-not-allowed opacity-50" : "opacity-100"
+          isLoading ? "slider-loading animate-pulse opacity-50" : ""
         }`}
       />
 
