@@ -20,7 +20,7 @@ const IngredientsCell = ({
   const hasMoreThanOne = ingredients.length > 1;
 
   return (
-    <div className="flex items-start gap-1">
+    <div className="flex items-start justify-between gap-1">
       <ul>
         {visibleIngredients.map((ingredient, index) => {
           const [name, amount] = Object.entries(ingredient)[0];
