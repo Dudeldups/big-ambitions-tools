@@ -209,7 +209,7 @@ export const productsColumns = (
       cell: ({ row }) => {
         const value = row.original.profitPerHour;
         if (value === null) return <Skeleton className="ml-auto h-5 w-[8ch]" />;
-        return <CurrencyText color="green">{formatToUSD(value)}</CurrencyText>;
+        return <CurrencyText value={value} />;
       },
       meta: { align: "right" },
     },

@@ -1,15 +1,16 @@
+import { formatToUSD } from "@/lib/utils/formatToUSD";
+
 type CurrencyTextProps = {
-  children: React.ReactNode;
   className?: string;
-  color: "green" | "red";
+  value: number;
 };
 
-const CurrencyText = ({ children, className, color }: CurrencyTextProps) => {
+const CurrencyText = ({ className, value }: CurrencyTextProps) => {
+  const color = value > 0 ? "text-green-600" : "text-red-600";
+
   return (
-    <span
-      className={`amount ${className} ${color === "green" ? "text-green-600" : "text-red-600"}`}
-    >
-      {children}
+    <span className={`amount ${color} ${className} `}>
+      {formatToUSD(value)}
     </span>
   );
 };
