@@ -20,6 +20,7 @@ export const factorySchema = z.object({
     logisticsManager: employeeSchema,
     factoryWorker: employeeSchema,
     purchasingAgent: employeeSchema,
+    hrManager: employeeSchema,
   } satisfies EmployeeSchemaShape),
 
   vehicle1: z.enum(VEHICLE_NAMES),

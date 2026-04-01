@@ -88,6 +88,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
 
   const factoryEmployees = [
     "deliveryDriver",
+    "hrManager",
     "logisticsManager",
     "purchasingAgent",
     "factoryWorker",
@@ -95,7 +96,6 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
-      {/* Factory Information */}
       <FieldSet className="px-4">
         <FieldLegend>Factory Information</FieldLegend>
 
@@ -169,6 +169,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
       </FieldSet>
 
       {/* Employees */}
+
       <FieldSet className="px-4">
         <FieldLegend>Employees</FieldLegend>
         <FieldDescription className="text-muted-foreground">
@@ -188,6 +189,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
       </FieldSet>
 
       {/* Vehicles */}
+
       <FieldSet className="px-4">
         <FieldLegend>Vehicles</FieldLegend>
 
@@ -198,6 +200,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
       </FieldSet>
 
       {/* Workstations */}
+
       <FieldSet className="px-4">
         <FieldLegend>Workstations</FieldLegend>
 
@@ -237,6 +240,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
       </FieldSet>
 
       {/* Actions */}
+
       <div className="bg-card flex gap-4 rounded-md p-4">
         <Button type="button" variant="outline" onClick={() => reset()}>
           {t("general.reset")}
