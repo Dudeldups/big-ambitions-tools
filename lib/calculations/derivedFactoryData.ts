@@ -28,7 +28,7 @@ export const deriveWorkstationData = (
 
   const countsByName = workstationData.reduce(
     (acc, ws) => {
-      acc[ws.name] = (acc[ws.name] ?? 0) + 1;
+      acc[ws.name] = (acc[ws.name] ?? 0) + ws.amount;
       return acc;
     },
     {} as Record<WorkstationName, number>,
