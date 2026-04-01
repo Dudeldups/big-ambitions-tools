@@ -39,13 +39,13 @@ export const useDerivedEmployees = ({
     const derivedDriverAmount = deriveDeliveryDriverAmount(
       vehicle1,
       vehicle2,
-      getValues("employees"),
+      stableEmployees,
     );
 
     setValue("employees.deliveryDriver.amount", derivedDriverAmount, {
       shouldDirty: false,
     });
-  }, [getValues, setValue, vehicle1, vehicle2]);
+  }, [stableEmployees, setValue, vehicle1, vehicle2]);
 
   useEffect(() => {
     const derivedFactoryWorkerAmount = deriveFactoryWorkerAmount(

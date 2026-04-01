@@ -123,11 +123,15 @@ export const deriveEmployeeData = (
         ? employee.customWorkingHours
         : values.openingHours;
 
+    const cost = amount * salary * workingHours * 7;
+
+    if (cost === 0) return [];
+
     return [
       {
         name: `employees.${n}`,
         amount,
-        cost: amount * salary * workingHours * 7,
+        cost,
       },
     ];
   });
