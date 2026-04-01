@@ -131,7 +131,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
         </FieldGroup>
 
         <FieldGroup className="flex-row">
-          <Field>
+          <Field className="flex-1">
             <FieldLabel htmlFor="openingHours">Opening hours / day</FieldLabel>
             <div className="flex items-center gap-3">
               <Input
@@ -149,22 +149,41 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
             </div>
           </Field>
 
-          <Controller
-            control={control}
-            name="includeInventory"
-            render={({ field }) => (
-              <Field className="">
-                <FieldLabel htmlFor="includeInventory">
-                  Include inventory for demands
-                </FieldLabel>
-                <Switch
-                  id="includeInventory"
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </Field>
-            )}
-          />
+          <div className="flex-1 space-y-4">
+            <Controller
+              control={control}
+              name="includeInventory"
+              render={({ field }) => (
+                <Field className="flex-row items-center gap-6">
+                  <Switch
+                    id="includeInventory"
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                  <FieldLabel htmlFor="includeInventory">
+                    Include inventory for demands
+                  </FieldLabel>
+                </Field>
+              )}
+            />
+
+            <Controller
+              control={control}
+              name="isWeeklyCalculation"
+              render={({ field }) => (
+                <Field className="flex-row items-center gap-6">
+                  <Switch
+                    id="isWeeklyCalculation"
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                  <FieldLabel htmlFor="isWeeklyCalculation">
+                    Weekly calculation
+                  </FieldLabel>
+                </Field>
+              )}
+            />
+          </div>
         </FieldGroup>
       </FieldSet>
 
