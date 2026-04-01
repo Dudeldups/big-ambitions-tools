@@ -48,9 +48,9 @@ const CreateFactoryPage = () => {
 
   const { control, setValue, getValues } = form;
 
-  const [workstations, openingHours, vehicle1, vehicle2] = useWatch({
+  const [workstations, openingHours, vehicle1, vehicle2, employees] = useWatch({
     control,
-    name: ["workstations", "openingHours", "vehicle1", "vehicle2"],
+    name: ["workstations", "openingHours", "vehicle1", "vehicle2", "employees"],
   });
 
   useDerivedEmployees({
@@ -58,6 +58,7 @@ const CreateFactoryPage = () => {
     openingHours,
     vehicle1,
     vehicle2,
+    employees,
     getValues,
     setValue,
   });

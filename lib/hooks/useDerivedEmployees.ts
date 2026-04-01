@@ -12,6 +12,7 @@ export const useDerivedEmployees = ({
   openingHours,
   vehicle1,
   vehicle2,
+  employees,
   getValues,
   setValue,
 }: {
@@ -19,45 +20,40 @@ export const useDerivedEmployees = ({
   openingHours: FactoryFormValues["openingHours"];
   vehicle1: FactoryFormValues["vehicle1"];
   vehicle2: FactoryFormValues["vehicle2"];
+  employees: FactoryFormValues["employees"];
   getValues: UseFormGetValues<FactoryFormValues>;
   setValue: UseFormSetValue<FactoryFormValues>;
 }) => {
   useEffect(() => {
-    const employees = getValues("employees");
+    const derivedDriverAmount = deriveDeliveryDriverAmount(
+      vehicle1,
+      vehicle2,
+      getValues("employees"),
+    );
 
+    setValue("employees.deliveryDriver.amount", derivedDriverAmount, {
+      shouldDirty: false,
+    });
+  }, [getValues, setValue, vehicle1, vehicle2]);
+
+  useEffect(() => {
     const derivedFactoryWorkerAmount = deriveFactoryWorkerAmount(
       workstations.length,
       openingHours,
     );
 
-    const derivedDriverAmount = deriveDeliveryDriverAmount(
-      vehicle1,
-      vehicle2,
-      employees,
-    );
+    setValue("employees.factoryWorker.amount", derivedFactoryWorkerAmount, {
+      shouldDirty: false,
+    });
+  }, [openingHours, setValue, workstations.length]);
 
-    const simulatedEmployees = {
-      ...employees,
-      factoryWorker: {
-        ...employees?.factoryWorker,
-        amount: derivedFactoryWorkerAmount,
-      },
-      deliveryDriver: {
-        ...employees?.deliveryDriver,
-        amount: derivedDriverAmount,
-      },
-    };
+  useEffect(() => {
+    const derivedHrAmount = deriveHrManagerAmount(employees);
 
-    const derivedHrAmount = deriveHrManagerAmount(simulatedEmployees);
+    if (employees?.hrManager?.amount === derivedHrAmount) return;
 
-    const updatedEmployees = {
-      ...simulatedEmployees,
-      hrManager: {
-        ...employees?.hrManager,
-        amount: derivedHrAmount,
-      },
-    };
-
-    setValue("employees", updatedEmployees, { shouldDirty: false });
-  }, [workstations, openingHours, vehicle1, vehicle2, getValues, setValue]);
+    setValue("employees.hrManager.amount", derivedHrAmount, {
+      shouldDirty: false,
+    });
+  }, [employees, setValue]);
 };
