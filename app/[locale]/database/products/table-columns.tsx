@@ -17,9 +17,10 @@ import IngredientsCell from "@/components/tables/ingredients-cell";
 import { Skeleton } from "@/components/ui/skeleton";
 import CurrencyText from "@/components/currency-text";
 import { Translator } from "@/lib/types";
+import { ProductName } from "@/lib/game/productNames";
 
 export type ProductsColumnData = Product & {
-  itemName: string;
+  itemName: ProductName;
   profitPerHour: number | null;
   margin: number | undefined;
   marginPercent: number | undefined;
