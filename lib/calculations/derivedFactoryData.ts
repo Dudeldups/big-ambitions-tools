@@ -134,10 +134,15 @@ export const deriveEmployeeData = (
 };
 
 export const deriveFactoryWorkerAmount = (
-  workstationAmount: number | undefined,
+  workstations: FactoryFormValues["workstations"],
   openingHours: number | undefined,
 ): number => {
-  if (!workstationAmount || !openingHours) return 0;
+  if (!workstations || !openingHours) return 0;
+
+  const workstationAmount = workstations.reduce(
+    (total, workstation) => total + workstation.amount,
+    0,
+  );
 
   const BUFFER_FACTOR = 1.02;
   const ROUNDING_THRESHOLD = 0.8;

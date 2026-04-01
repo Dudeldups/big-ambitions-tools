@@ -1,6 +1,6 @@
 import { UseFormGetValues, UseFormSetValue } from "react-hook-form";
 import { FactoryFormValues } from "../schemas/factory";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   deriveDeliveryDriverAmount,
   deriveFactoryWorkerAmount,
@@ -24,6 +24,17 @@ export const useDerivedEmployees = ({
   getValues: UseFormGetValues<FactoryFormValues>;
   setValue: UseFormSetValue<FactoryFormValues>;
 }) => {
+  const useDeepCompareMemo = <T>(value: T): T => {
+    const ref = useRef<T>(value);
+    if (JSON.stringify(ref.current) !== JSON.stringify(value)) {
+      ref.current = value;
+    }
+    return ref.current;
+  };
+
+  const stableWorkstations = useDeepCompareMemo(workstations);
+  const stableEmployees = useDeepCompareMemo(employees);
+
   useEffect(() => {
     const derivedDriverAmount = deriveDeliveryDriverAmount(
       vehicle1,
@@ -38,22 +49,20 @@ export const useDerivedEmployees = ({
 
   useEffect(() => {
     const derivedFactoryWorkerAmount = deriveFactoryWorkerAmount(
-      workstations.length,
+      stableWorkstations,
       openingHours,
     );
 
     setValue("employees.factoryWorker.amount", derivedFactoryWorkerAmount, {
       shouldDirty: false,
     });
-  }, [openingHours, setValue, workstations.length]);
+  }, [openingHours, setValue, stableWorkstations]);
 
   useEffect(() => {
-    const derivedHrAmount = deriveHrManagerAmount(employees);
-
-    if (employees?.hrManager?.amount === derivedHrAmount) return;
-
+    const derivedHrAmount = deriveHrManagerAmount(stableEmployees);
+    if (stableEmployees?.hrManager?.amount === derivedHrAmount) return;
     setValue("employees.hrManager.amount", derivedHrAmount, {
       shouldDirty: false,
     });
-  }, [employees, setValue]);
+  }, [stableEmployees, setValue]);
 };
