@@ -81,7 +81,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className={`mx-auto w-full ${className}`}>
-      <div className="flex items-center py-4">
+      <div className="flex items-end py-4">
         <SearchBar
           label={t("general.filterResults")}
           id="search"
@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
 
         {isProductsPage && (
           <>
-            <PriceIndexSlider />
+            <PriceIndexSlider className="mx-auto" />
             <SalesPriceSelector />
           </>
         )}
