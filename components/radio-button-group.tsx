@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { ButtonGroup } from "./ui/button-group";
 
@@ -22,7 +23,7 @@ export function RadioButtonGroup<T extends string>({
   className,
 }: RadioButtonGroupProps<T>) {
   return (
-    <ButtonGroup className={className} role="radiogroup">
+    <ButtonGroup className={cn(className)} role="radiogroup">
       {options.map((option) => {
         const isActive = value === option.value;
 

@@ -4,6 +4,7 @@ import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
 import { useTranslations } from "next-intl";
 import { RadioButtonGroup } from "../radio-button-group";
+import { cn } from "@/lib/utils";
 
 type DifficultyButtonGroupProps = {
   className?: string;
@@ -17,7 +18,7 @@ const DifficultyButtonGroup = ({ className }: DifficultyButtonGroupProps) => {
 
   return (
     <RadioButtonGroup
-      className={className}
+      className={cn(className)}
       name="difficulty"
       value={difficulty}
       onChange={setDifficulty}

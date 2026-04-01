@@ -5,6 +5,7 @@ import { useAppStore } from "@/lib/stores/appStore";
 import { useTranslations } from "next-intl";
 import { DISPLAY_PRICE_OPTIONS } from "@/lib/constants";
 import { RadioButtonGroup } from "../radio-button-group";
+import { cn } from "@/lib/utils";
 
 type SalesPriceSelectorProps = {
   className?: string;
@@ -17,7 +18,7 @@ const SalesPriceSelector = ({ className }: SalesPriceSelectorProps) => {
   const tGeneral = useTranslations("general");
 
   return (
-    <div className={`${className} flex gap-6`}>
+    <div className={cn("flex gap-6", className)}>
       <RadioButtonGroup
         name="displayPriceSource"
         value={displayPrices?.source}

@@ -1,6 +1,7 @@
 import { X, Search } from "lucide-react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import { cn } from "@/lib/utils";
 
 type SearchBarProps = {
   value: string;
@@ -20,7 +21,7 @@ const SearchBar = ({
   label,
 }: SearchBarProps) => {
   return (
-    <form className={className} onSubmit={(e) => e.preventDefault()}>
+    <form className={cn(className)} onSubmit={(e) => e.preventDefault()}>
       {label && (
         <Label htmlFor={id} className="sr-only">
           {label}

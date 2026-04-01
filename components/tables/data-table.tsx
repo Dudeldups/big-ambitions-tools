@@ -30,6 +30,7 @@ import SalesPriceSelector from "./sales-price-selector";
 import SearchBar from "../search-bar";
 import { Translator } from "@/lib/types";
 import PriceIndexSlider from "./price-index-slider";
+import { cn } from "@/lib/utils";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -80,7 +81,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className={`mx-auto w-full ${className}`}>
+    <div className={cn("mx-auto w-full", className)}>
       <div className="flex items-end py-4">
         <SearchBar
           label={t("general.filterResults")}

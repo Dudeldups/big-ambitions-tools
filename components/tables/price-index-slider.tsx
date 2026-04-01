@@ -7,6 +7,7 @@ import {
 } from "@/lib/constants";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
+import { cn } from "@/lib/utils";
 
 type PriceIndexSliderProps = {
   className?: string;
@@ -19,7 +20,7 @@ const PriceIndexSlider = ({ className }: PriceIndexSliderProps) => {
   const setIndex = useAppStore((state) => state.setTablePriceIndex);
 
   return (
-    <div className={`w-full max-w-md p-4 ${className}`}>
+    <div className={cn("w-full max-w-md p-4", className)}>
       <label
         htmlFor="price-index-slider"
         className="mb-2 block text-sm font-medium"
@@ -37,9 +38,10 @@ const PriceIndexSlider = ({ className }: PriceIndexSliderProps) => {
         value={index ?? BASE_PRODUCT_PRICE_INDEX}
         disabled={isLoading}
         onChange={(e) => setIndex(Number(e.target.value))}
-        className={`accent-foreground w-full transition-opacity ${
-          isLoading ? "slider-loading animate-pulse opacity-50" : ""
-        }`}
+        className={cn(
+          "accent-foreground w-full transition-opacity",
+          isLoading && "slider-loading animate-pulse opacity-50",
+        )}
       />
 
       <div className="text-muted-foreground mt-2 flex justify-between text-xs">

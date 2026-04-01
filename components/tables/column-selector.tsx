@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { Table } from "@tanstack/react-table";
+import { cn } from "@/lib/utils";
 
 type ColumnSelectorProps<TData> = {
   className?: string;
@@ -24,7 +25,7 @@ const ColumnSelector = <TData,>({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className={`${className}`}>
+        <Button variant="outline" className={cn(className)}>
           {t("general.columnsDescription")}
         </Button>
       </DropdownMenuTrigger>

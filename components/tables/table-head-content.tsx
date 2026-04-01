@@ -3,6 +3,7 @@
 import { ArrowDownWideNarrow, ArrowUpNarrowWide } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Column } from "@tanstack/react-table";
+import { cn } from "@/lib/utils";
 
 type Props<TData, TValue> = {
   column: Column<TData, TValue>;
@@ -22,13 +23,13 @@ const TableHeadContent = <TData, TValue>({
   const className = `flex justify-${align} w-full px-2 py-0`;
 
   if (!canSort) {
-    return <span className={className}>{children}</span>;
+    return <span className={cn(className)}>{children}</span>;
   }
 
   return (
     <Button
       variant="ghost"
-      className={className}
+      className={cn(className)}
       onClick={() => {
         if (isSorted === false) {
           column.toggleSorting(isDescFirstColumn ?? false);
