@@ -7,6 +7,7 @@ import {
 import TableHeadContent from "@/components/tables/table-head-content";
 import { VehicleName } from "@/lib/game/vehicleNames";
 import { Vehicle } from "@/lib/game/vehicles";
+import { Translator } from "@/lib/types";
 import { getMeta } from "@/lib/utils/getMeta";
 import { ColumnDef } from "@tanstack/react-table";
 
@@ -14,8 +15,10 @@ export type VehiclesColumnData = Vehicle & {
   itemName: VehicleName;
 };
 
-export const vehiclesColumns: ColumnDef<VehiclesColumnData>[] = [
-  createTranslatedColumn("itemName", "vehicles"),
+export const vehiclesColumns = (
+  t: Translator,
+): ColumnDef<VehiclesColumnData>[] => [
+  createTranslatedColumn(t, "itemName", "vehicles"),
   createNumericColumn("maxSpeed"),
   createNumericColumn("enginePower"),
   createNumericColumn("maxFuel"),

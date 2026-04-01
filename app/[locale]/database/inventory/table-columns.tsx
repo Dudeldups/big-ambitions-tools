@@ -7,13 +7,16 @@ import {
   createNumericColumn,
   createTranslatedColumn,
 } from "@/components/tables/shared-table-columns";
+import { Translator } from "@/lib/types";
 
 type InventoryColumnData = Shelf & {
   itemName: string;
 };
 
-export const inventoryColumns: ColumnDef<InventoryColumnData>[] = [
-  createTranslatedColumn("itemName", "inventory"),
+export const inventoryColumns = (
+  t: Translator,
+): ColumnDef<InventoryColumnData>[] => [
+  createTranslatedColumn(t, "itemName", "inventory"),
   createCurrencyColumn("purchasePrice"),
   createNumericColumn("storageCapacity"),
 ];

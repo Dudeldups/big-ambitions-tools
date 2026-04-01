@@ -4,6 +4,7 @@ import { DataTable } from "@/components/tables/data-table";
 import { VehicleName } from "@/lib/game/vehicleNames";
 import { vehicles } from "@/lib/game/vehicles";
 import { VehiclesColumnData, vehiclesColumns } from "./table-columns";
+import { useTranslations } from "next-intl";
 
 const data: VehiclesColumnData[] = (Object.keys(vehicles) as VehicleName[]).map(
   (vehicleName) => ({
@@ -13,9 +14,11 @@ const data: VehiclesColumnData[] = (Object.keys(vehicles) as VehicleName[]).map(
 );
 
 export default function VehiclesPage() {
+  const t = useTranslations();
+
   return (
     <div className="mx-auto py-10">
-      <DataTable columns={vehiclesColumns} data={data} />
+      <DataTable columns={vehiclesColumns(t)} data={data} />
     </div>
   );
 }
