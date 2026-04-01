@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 
 type CurrencyTextProps = {
@@ -9,9 +10,7 @@ const CurrencyText = ({ className, value }: CurrencyTextProps) => {
   const color = value > 0 ? "text-green-600" : "text-red-600";
 
   return (
-    <span className={`amount ${color} ${className} `}>
-      {formatToUSD(value)}
-    </span>
+    <span className={cn("amount", color, className)}>{formatToUSD(value)}</span>
   );
 };
 
