@@ -35,7 +35,9 @@ const EmployeeSalaryField = ({
             placeholder="0"
             max={EMPLOYEE_MAX_SALARY}
             aria-invalid={!!error}
-            {...register(salaryFieldName, { valueAsNumber: true })}
+            {...register(salaryFieldName, {
+              setValueAs: (v) => (v === "" || isNaN(v) ? 0 : Number(v)),
+            })}
           />
           <span className="text-muted-foreground">/ hour</span>
         </div>
