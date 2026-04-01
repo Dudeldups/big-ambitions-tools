@@ -227,6 +227,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
             variant="outline"
             onClick={() =>
               append({
+                amount: 1,
                 name: WORKSTATION_NAMES[0],
                 product: productData.find(
                   (p) => p.workstation === WORKSTATION_NAMES[0],

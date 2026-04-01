@@ -25,6 +25,8 @@ import {
   useWatch,
 } from "react-hook-form";
 import { toast } from "sonner";
+import { FieldLabel } from "../ui/field";
+import { Input } from "../ui/input";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -74,8 +76,35 @@ const WorkstationSelects = ({
   }, [selectedWorkstation, index, setValue]);
 
   return (
-    <div className="flex items-center gap-2 rounded-md border p-3">
-      <div className="flex flex-1 flex-col items-end gap-2">
+    <div className="flex items-center gap-4 rounded-md border p-3">
+      <Controller
+        control={control}
+        name={`workstations.${index}.amount`}
+        render={({ field }) => (
+          <div className="flex flex-col gap-2 self-end">
+            <FieldLabel htmlFor={`workstationAmount-${index}`}>
+              {t("general.amount")}
+            </FieldLabel>
+            <div className="flex items-center gap-3">
+              <Input
+                className="max-w-20"
+                id={`workstationAmount-${index}`}
+                type="number"
+                value={field.value}
+                onChange={(e) =>
+                  field.onChange(
+                    e.target.value === "" ? 1 : Number(e.target.value),
+                  )
+                }
+                onBlur={field.onBlur}
+                min={1}
+              />
+            </div>
+          </div>
+        )}
+      />
+
+      <div className="flex flex-1 flex-col gap-2">
         <Controller
           control={control}
           name={`workstations.${index}.name`}
@@ -97,6 +126,7 @@ const WorkstationSelects = ({
             </Select>
           )}
         />
+
         <Controller
           control={control}
           name={`workstations.${index}.product`}
@@ -126,14 +156,19 @@ const WorkstationSelects = ({
         <Button
           type="button"
           variant="ghost"
-          size="icon-lg"
+          size="icon"
+          aria-label={t("general.copy")}
           onClick={() => {
             if (!selectedWorkstation || !selectedProduct) {
               toast.error(t("toasts.workstationCopyError"), {
                 position: "bottom-right",
               });
             } else {
-              append({ name: selectedWorkstation, product: selectedProduct });
+              append({
+                amount: 1,
+                name: selectedWorkstation,
+                product: selectedProduct,
+              });
             }
           }}
         >
@@ -142,7 +177,8 @@ const WorkstationSelects = ({
         <Button
           type="button"
           variant="ghost"
-          size="icon-lg"
+          size="icon"
+          aria-label={t("general.delete")}
           onClick={() => remove(index)}
         >
           <Trash2 className="size-5" />

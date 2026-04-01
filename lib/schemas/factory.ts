@@ -29,6 +29,7 @@ export const factorySchema = z.object({
   workstations: z
     .array(
       z.object({
+        amount: z.number().min(1),
         name: z.enum(WORKSTATION_NAMES),
         product: z.enum(PRODUCT_NAMES),
       }),
