@@ -23,6 +23,8 @@ export const SALARY_DIFF_MULT = {
   hard: 1,
 } as const satisfies Record<Difficulty, number>;
 
+export const MAX_WORKSTATION_AMOUNT = 200 as const;
+
 export const FULLTIME_MAX_WORKING_HOURS = 50 as const;
 
 export const DELIVERY_DRIVER_WORKING_HOURS = 5.75 as const;

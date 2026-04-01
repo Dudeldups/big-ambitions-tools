@@ -27,6 +27,7 @@ import {
 import { toast } from "sonner";
 import { FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
+import { MAX_WORKSTATION_AMOUNT } from "@/lib/constants";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -91,6 +92,7 @@ const WorkstationSelects = ({
                 id={`workstationAmount-${index}`}
                 type="number"
                 value={field.value}
+                max={MAX_WORKSTATION_AMOUNT}
                 onChange={(e) =>
                   field.onChange(
                     e.target.value === "" ? 1 : Number(e.target.value),

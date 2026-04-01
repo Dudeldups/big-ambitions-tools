@@ -3,6 +3,7 @@ import { WORKSTATION_NAMES } from "../game/machineNames";
 import { PRODUCT_NAMES } from "../game/productNames";
 import { VEHICLE_NAMES } from "../game/vehicleNames";
 import { employeeSchema, EmployeeSchemaShape } from "./employee";
+import { MAX_WORKSTATION_AMOUNT } from "../constants";
 
 export const factorySchema = z.object({
   name: z.string().max(50, "errors.factory.nameTooLong"),
@@ -30,7 +31,7 @@ export const factorySchema = z.object({
   workstations: z
     .array(
       z.object({
-        amount: z.number().min(1),
+        amount: z.number().min(1).max(MAX_WORKSTATION_AMOUNT),
         name: z.enum(WORKSTATION_NAMES),
         product: z.enum(PRODUCT_NAMES),
       }),
