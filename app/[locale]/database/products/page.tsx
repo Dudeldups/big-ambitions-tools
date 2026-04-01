@@ -10,8 +10,10 @@ import {
   getProfitMarginForProduct,
   getProfitPerHourForProduct,
 } from "@/lib/calculations/math";
+import { useTranslations } from "next-intl";
 
 export default function ProductsPage() {
+  const t = useTranslations();
   const difficulty = useAppState((state) => state.difficulty);
   const displayPrices = useAppState((state) => state.displayPrices);
   const tablePriceIndex = useAppState((state) => state.tablePriceIndex);
@@ -47,8 +49,8 @@ export default function ProductsPage() {
   );
 
   const columns = useMemo(
-    () => productsColumns(difficulty, displayPrices, tablePriceIndex),
-    [difficulty, displayPrices, tablePriceIndex],
+    () => productsColumns(t, difficulty, displayPrices, tablePriceIndex),
+    [difficulty, displayPrices, t, tablePriceIndex],
   );
 
   return (

@@ -7,29 +7,32 @@ import { workstationsColumns } from "./workstations-table-columns";
 import React from "react";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
+import { useTranslations } from "next-intl";
+
+const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
+  itemName,
+  ...machine,
+}));
+
+const workstationsData = Object.entries(workstations).map(
+  ([itemName, workstation]) => ({
+    itemName,
+    ...workstation,
+  }),
+);
 
 export default function MachinesPage() {
-  const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
-    itemName,
-    ...machine,
-  }));
-
-  const workstationsData = Object.entries(workstations).map(
-    ([itemName, workstation]) => ({
-      itemName,
-      ...workstation,
-    }),
-  );
+  const t = useTranslations();
 
   return (
     <>
       <DataTable
-        columns={machinesColumns}
+        columns={machinesColumns(t)}
         data={machinesData}
         className="max-w-xl"
       />
       <DataTable
-        columns={workstationsColumns}
+        columns={workstationsColumns(t)}
         data={workstationsData}
         className="mt-14"
         renderRow={(row, t) => {

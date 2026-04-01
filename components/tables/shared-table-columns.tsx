@@ -2,7 +2,6 @@
 
 import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
-import { translateCell } from "@/lib/utils/translateCell";
 import { currencyCell } from "@/lib/utils/currencyCell";
 import { Column, ColumnDef, Table } from "@tanstack/react-table";
 import { Difficulty, StoreDifficulty } from "@/lib/game/types";
@@ -17,15 +16,19 @@ import {
   getImportPrice,
   getManufacturePrice,
 } from "@/lib/calculations/math";
+import { Translator } from "@/lib/types";
+import { Skeleton } from "../ui/skeleton";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
+  t: Translator,
   accessorKey: K,
   translationKeyPrefix: string,
   { enableHiding = true, enableSorting = true } = {},
 ): ColumnDef<T> => ({
+  id: String(accessorKey),
   accessorKey,
-  header: ({ column, table }) => {
-    const { t } = getMeta(table);
+  accessorFn: (row) => t(`${translationKeyPrefix}.${String(row[accessorKey])}`),
+  header: ({ column }) => {
     const translationString =
       translationKeyPrefix === "vehicles"
         ? "tableColumns.vehicleName"
@@ -37,7 +40,6 @@ export const createTranslatedColumn = <T, K extends keyof T>(
       </TableHeadContent>
     );
   },
-  cell: translateCell(translationKeyPrefix),
   enableHiding: !enableHiding
     ? false
     : accessorKey === "itemName"
@@ -51,6 +53,7 @@ export const createCurrencyColumn = <T, K extends keyof T | string>(
   difficulty?: StoreDifficulty,
   priceGetter?: (row: T, difficulty: StoreDifficulty) => number,
 ): ColumnDef<T> => ({
+  id: String(accessorKey),
   accessorKey: accessorKey as keyof T,
   header: ({
     column,
@@ -66,9 +69,11 @@ export const createCurrencyColumn = <T, K extends keyof T | string>(
       </TableHeadContent>
     );
   },
-  cell: priceGetter
-    ? currencyCell(priceGetter)
-    : currencyCell((row) => row[accessorKey as keyof T] as number),
+  cell: !priceGetter
+    ? currencyCell((row) => row[accessorKey as keyof T] as number)
+    : !difficulty
+      ? () => <Skeleton className="ml-auto h-5 w-[6ch]" />
+      : currencyCell(priceGetter),
   sortingFn:
     priceGetter && difficulty
       ? (rowA, rowB) => {
@@ -99,6 +104,7 @@ export const createProductCurrencyColumn = (
 export const createNumericColumn = <T, K extends keyof T>(
   accessorKey: K,
 ): ColumnDef<T> => ({
+  id: String(accessorKey),
   accessorKey,
   header: ({
     column,
@@ -168,6 +174,7 @@ type WithImporters = {
 export const createImportersColumn = <
   T extends WithImporters,
 >(): ColumnDef<T> => ({
+  id: "importers",
   accessorKey: "importers",
   header: ({
     column,
@@ -210,6 +217,7 @@ export const createImportersColumn = <
 export const createBooleanColumn = <T, K extends keyof T>(
   accessorKey: K,
 ): ColumnDef<T> => ({
+  id: String(accessorKey),
   accessorKey,
   header: ({
     column,

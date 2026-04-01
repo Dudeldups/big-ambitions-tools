@@ -5,13 +5,16 @@ import { createTranslatedColumn } from "@/components/tables/shared-table-columns
 import { machines, Workstation } from "@/lib/game/machines";
 import { getMeta } from "@/lib/utils/getMeta";
 import TableHeadContent from "@/components/tables/table-head-content";
+import { Translator } from "@/lib/types";
 
 type WorkstationsColumnData = Workstation & {
   itemName: string;
 };
 
-export const workstationsColumns: ColumnDef<WorkstationsColumnData>[] = [
-  createTranslatedColumn("itemName", "workstations"),
+export const workstationsColumns = (
+  t: Translator,
+): ColumnDef<WorkstationsColumnData>[] => [
+  createTranslatedColumn(t, "itemName", "workstations"),
   {
     accessorKey: "neededMachines",
     header: ({ column, table }) => {

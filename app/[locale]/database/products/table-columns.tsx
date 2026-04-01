@@ -12,25 +12,26 @@ import { Product } from "@/lib/game/products";
 import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { StoreDifficulty } from "@/lib/game/types";
-import { ProductName } from "@/lib/game/productNames";
 import { DisplayPrices } from "@/lib/stores/appStore";
 import IngredientsCell from "@/components/tables/ingredients-cell";
 import { Skeleton } from "@/components/ui/skeleton";
 import CurrencyText from "@/components/currency-text";
+import { Translator } from "@/lib/types";
 
 export type ProductsColumnData = Product & {
-  itemName: ProductName;
+  itemName: string;
   profitPerHour: number | null;
   margin: number | undefined;
   marginPercent: number | undefined;
 };
 
 export const productsColumns = (
+  t: Translator,
   difficulty: StoreDifficulty,
   displayPrices: DisplayPrices | null,
   tablePriceIndex: number | null,
 ): ColumnDef<ProductsColumnData>[] => [
-  createTranslatedColumn("itemName", "products"),
+  createTranslatedColumn(t, "itemName", "products"),
   createSourcePriceColumn(difficulty, displayPrices, tablePriceIndex),
   createSalePriceColumn(difficulty, displayPrices, tablePriceIndex),
   {
