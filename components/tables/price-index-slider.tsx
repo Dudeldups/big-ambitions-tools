@@ -20,12 +20,16 @@ const PriceIndexSlider = ({ className }: PriceIndexSliderProps) => {
 
   return (
     <div className={`w-full max-w-md p-4 ${className}`}>
-      <label className="mb-2 block text-sm font-medium">
+      <label
+        htmlFor="price-index-slider"
+        className="mb-2 block text-sm font-medium"
+      >
         Price Index:{" "}
         <span className="font-bold">{isLoading ? "..." : index}</span>
       </label>
 
       <input
+        id="price-index-slider"
         type="range"
         min={MIN_PRODUCT_PRICE_INDEX}
         max={MAX_PRODUCT_PRICE_INDEX}
