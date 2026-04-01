@@ -153,6 +153,29 @@ export const deriveFactoryWorkerAmount = (
   return Math.ceil(rawAmount) + extraBuffer;
 };
 
+export const deriveDeliveryDriverAmount = (
+  vehicle1: VehicleName,
+  vehicle2: VehicleName | undefined,
+  employeeData: FactoryFormValues["employees"],
+) => {
+  if (employeeData.deliveryDriver.salary === 0) return 0;
+
+  return [vehicle1, vehicle2].filter(Boolean).length;
+};
+
+export const deriveHrManagerAmount = (
+  employeeData: FactoryFormValues["employees"],
+): number => {
+  if (employeeData.hrManager.salary === 0) return 0;
+
+  const totalEmployees = Object.values(employeeData).reduce(
+    (total, employee) => total + (employee?.amount ?? 0),
+    0,
+  );
+
+  return Math.round((totalEmployees / 50) * 10) / 10;
+};
+
 export const deriveIngredientData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
