@@ -150,7 +150,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
           </Field>
 
           <div className="flex-1 space-y-4">
-            <p>Select calculation basis</p>
+            <p>Calculation basis</p>
             <RadioButtonGroup
               name="calculationPeriod"
               value={calculationPeriod}
@@ -171,6 +171,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               ]}
             />
 
+            <p>Delivery period</p>
             <DeliveryPeriodSelect control={control} />
           </div>
         </FieldGroup>

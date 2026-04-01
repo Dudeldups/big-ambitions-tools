@@ -83,8 +83,8 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         <>
           <Separator />
           <div className="space-y-4">
-            <h2 className="text-center font-semibold">
-              Income per {calculationPeriod}
+            <h2 className="text-center font-semibold capitalize">
+              {calculationPeriod} income
             </h2>
 
             <InfoTable label="itemName" rows={profitRowData} />
@@ -96,7 +96,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
             <p>
               You will make approx. {formatToUSD(profitPerHour, true)} per hour,{" "}
               {formatToUSD(profitPerDay, true)} per day and{" "}
-              {formatToUSD(profitPerWeek * 7, true)} per week!
+              {formatToUSD(profitPerWeek, true)} per week!
             </p>
             {amortizationDays > 0 ? (
               <p>
