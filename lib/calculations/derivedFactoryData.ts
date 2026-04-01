@@ -72,7 +72,8 @@ export const deriveVehicleData = (
 export const derivePalletShelfData = (
   values: FactoryFormValues,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours } = values;
+  const { workstations, openingHours, isWeeklyCalculation } = values;
+  const timeMult = isWeeklyCalculation ? 7 : 1;
 
   const productData = workstations.map((ws) => products[ws.product]);
   const neededIngredients = productData.flatMap((p) => {
@@ -87,7 +88,7 @@ export const derivePalletShelfData = (
       .map((i) => i[1] / ingredients[i[0]].amountPerBox)
       .reduce((sum, amount) => sum + amount, 0) *
     openingHours *
-    7;
+    timeMult;
   const shelfAmount = Math.ceil(
     totalBoxAmount / shelves.palletShelf.storageCapacity,
   );
@@ -108,7 +109,8 @@ export const derivePalletShelfData = (
 export const deriveEmployeeData = (
   values: FactoryFormValues,
 ): DerivedDataFromFormValues => {
-  const employeeData = values.employees;
+  const { employees: employeeData, isWeeklyCalculation } = values;
+  const timeMult = isWeeklyCalculation ? 7 : 1;
 
   return Object.entries(employeeData).flatMap(([name, data]) => {
     const n = name as EmployeeName;
@@ -123,7 +125,7 @@ export const deriveEmployeeData = (
         ? employee.customWorkingHours
         : values.openingHours;
 
-    const cost = amount * salary * workingHours * 7;
+    const cost = amount * salary * workingHours * timeMult;
 
     if (cost === 0) return [];
 
@@ -189,7 +191,8 @@ export const deriveIngredientData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours } = values;
+  const { workstations, openingHours, isWeeklyCalculation } = values;
+  const timeMult = isWeeklyCalculation ? 7 : 1;
 
   const productData = workstations.map((ws) => products[ws.product]);
   const neededIngredients = productData.flatMap((p) => {
@@ -210,12 +213,12 @@ export const deriveIngredientData = (
 
   return Object.entries(totalAmounts).map(([name, amount]) => {
     const ingredient = ingredients[name as keyof typeof ingredients];
-    const totalAmount = amount * openingHours * 7;
+    const totalAmount = amount * openingHours * timeMult;
     const totalCost =
       getImportPrice(ingredient.wholesalePrice, difficulty) *
       amount *
       openingHours *
-      7;
+      timeMult;
 
     return {
       name: `ingredients.${name}`,
@@ -229,12 +232,14 @@ export const deriveProductData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours } = values;
+  const { workstations, openingHours, isWeeklyCalculation } = values;
+  const timeMult = isWeeklyCalculation ? 7 : 1;
 
   const productHourlyYieldByProduct = workstations.reduce(
     (acc, ws) => {
       const product = products[ws.product];
-      const totalRate = (acc[ws.product] ?? 0) + product.productionRate;
+      const totalRate =
+        (acc[ws.product] ?? 0) + product.productionRate * ws.amount;
       return {
         ...acc,
         [ws.product]: totalRate,
@@ -247,14 +252,14 @@ export const deriveProductData = (
     ([name, amountPerHour]) => {
       const product = products[name as keyof typeof products];
 
-      const totalAmount = amountPerHour * openingHours * 7;
-      const totalCost =
+      const totalAmount = amountPerHour * openingHours * timeMult;
+      const totalExportIncome =
         getExportPrice(product.wholesalePrice, difficulty) * totalAmount;
 
       return {
         name: `products.${name}`,
         amount: Math.ceil(totalAmount),
-        cost: totalCost,
+        cost: totalExportIncome,
       };
     },
   );
