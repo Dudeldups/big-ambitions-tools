@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
 import { Translator } from "@/lib/types";
+import { EmployeeName } from "@/lib/game/employeeNames";
 
 type EmployeeSalaryFieldProps = {
   employeeName: keyof FactoryFormValues["employees"];
@@ -20,6 +21,8 @@ const EmployeeSalaryField = ({
 }: EmployeeSalaryFieldProps) => {
   const salaryFieldName = `employees.${employeeName}.salary` as const;
   const amountFieldName = `employees.${employeeName}.amount` as const;
+
+  const fixedAmountEmployees: EmployeeName[] = ["hrManager", "deliveryDriver"];
 
   return (
     <Field data-invalid={!!error} className="my-0">
@@ -42,7 +45,7 @@ const EmployeeSalaryField = ({
             type="number"
             className="max-w-24"
             placeholder="0"
-            disabled={employeeName === "deliveryDriver"}
+            disabled={fixedAmountEmployees.includes(employeeName)}
             aria-invalid={!!error}
             {...register(amountFieldName, { valueAsNumber: true })}
           />
