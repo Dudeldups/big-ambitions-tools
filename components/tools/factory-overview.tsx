@@ -26,7 +26,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
 
   const oneTimeCostRowData = [
-    ...derivePalletShelfData(values, calculationPeriod),
+    ...derivePalletShelfData(values),
     ...deriveVehicleData(values),
     ...deriveWorkstationData(values),
   ];

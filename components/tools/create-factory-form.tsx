@@ -21,20 +21,15 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
-import {
-  Controller,
-  useFieldArray,
-  UseFormReturn,
-  useWatch,
-} from "react-hook-form";
+import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import VehicleSelect from "./vehicle-select";
 import EmployeeSalaryField from "./employee-salary-field";
 import { EmployeeName } from "@/lib/game/employeeNames";
-import { Switch } from "../ui/switch";
 import { RadioButtonGroup } from "../radio-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
+import DeliveryPeriodSelect from "./delivery-period-select";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -155,23 +150,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
           </Field>
 
           <div className="flex-1 space-y-4">
-            <Controller
-              control={control}
-              name="includeInventory"
-              render={({ field }) => (
-                <Field className="flex-row items-center gap-6">
-                  <Switch
-                    id="includeInventory"
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                  <FieldLabel htmlFor="includeInventory">
-                    Include inventory for demands
-                  </FieldLabel>
-                </Field>
-              )}
-            />
-
+            <p>Select calculation basis</p>
             <RadioButtonGroup
               name="calculationPeriod"
               value={calculationPeriod}
@@ -191,6 +170,8 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
                 },
               ]}
             />
+
+            <DeliveryPeriodSelect control={control} />
           </div>
         </FieldGroup>
       </FieldSet>

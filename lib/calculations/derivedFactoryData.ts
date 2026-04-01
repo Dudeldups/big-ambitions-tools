@@ -93,10 +93,9 @@ export const deriveVehicleData = (
 
 export const derivePalletShelfData = (
   values: FactoryFormValues,
-  calculationPeriod: CalculationPeriod,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours } = values;
-  const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
+  const { workstations, deliveryPeriod } = values;
+  const timeMult = deliveryPeriod === "daily" ? 24 : 168;
 
   const ingredientTotals = calculateIngredientTotals(workstations);
 

@@ -14,7 +14,7 @@ export const factorySchema = z.object({
 
   openingHours: z.number().min(1).max(24),
 
-  includeInventory: z.boolean(),
+  deliveryPeriod: z.enum(["daily", "weekly"]),
 
   employees: z.object({
     deliveryDriver: employeeSchema,
