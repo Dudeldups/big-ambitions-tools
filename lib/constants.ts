@@ -31,6 +31,8 @@ export const DELIVERY_DRIVER_WORKING_HOURS = 5.75 as const;
 
 export const HQ_WORKING_HOURS = 5.714285714285714 as const;
 
+export const CALCULATION_PERIODS = ["hourly", "daily", "weekly"] as const;
+
 export const DIFFICULTY_OPTIONS = ["easy", "normal", "hard"] as const;
 
 export const MIN_PRODUCT_PRICE_INDEX = 0.5 as const;

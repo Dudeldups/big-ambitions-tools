@@ -1,10 +1,12 @@
-import { DIFFICULTY_OPTIONS } from "./../constants";
+import { CALCULATION_PERIODS, DIFFICULTY_OPTIONS } from "./../constants";
 import { IngredientName } from "./ingredientNames";
 import { MachineName, WorkstationName } from "./machineNames";
 import { ProductName } from "./productNames";
 import { DISPLAY_PRICE_OPTIONS } from "../constants";
 
 export type Difficulty = (typeof DIFFICULTY_OPTIONS)[number];
+
+export type CalculationPeriod = (typeof CALCULATION_PERIODS)[number];
 
 export type StoreDifficulty = Difficulty | null | undefined;
 
