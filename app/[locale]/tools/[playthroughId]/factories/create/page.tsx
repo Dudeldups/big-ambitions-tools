@@ -21,7 +21,6 @@ const CreateFactoryPage = () => {
       openingHours: 24,
       vehicle1: "FreightTruckT1",
       includeInventory: true,
-      isWeeklyCalculation: true,
       employees: {
         deliveryDriver: {
           amount: 1,
