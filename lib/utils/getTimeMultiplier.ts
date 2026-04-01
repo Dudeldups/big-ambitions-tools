@@ -6,10 +6,10 @@ export function getTimeMultiplier(
 ): number {
   switch (calculationPeriod) {
     case "hourly":
-      return 1 / openingHours;
-    case "daily":
       return 1;
+    case "daily":
+      return openingHours;
     case "weekly":
-      return 7;
+      return openingHours * 7;
   }
 }

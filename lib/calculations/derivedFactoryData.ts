@@ -7,19 +7,41 @@ import { ingredients } from "../game/ingredients";
 import { WorkstationName } from "../game/machineNames";
 import { workstations } from "../game/machines";
 import { products } from "../game/products";
-import { Difficulty } from "../game/types";
+import { CalculationPeriod, Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
 import { vehicles } from "../game/vehicles";
 import { FactoryFormValues } from "../schemas/factory";
 import { getWorkstationPrice } from "./math";
 import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
+import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 
 export type DerivedDataFromFormValues = {
   amount: number;
   name: string;
   cost: number;
 }[];
+
+type IngredientTotals = Record<IngredientName, number>;
+
+export function calculateIngredientTotals(
+  workstations: FactoryFormValues["workstations"],
+): IngredientTotals {
+  return workstations.reduce((acc, ws) => {
+    const product = products[ws.product];
+
+    product.ingredients.forEach((ingredientGroup) => {
+      Object.entries(ingredientGroup).forEach(([name, amount]) => {
+        if (amount === undefined) return;
+
+        const key = name as IngredientName;
+        acc[key] = (acc[key] ?? 0) + amount * ws.amount;
+      });
+    });
+
+    return acc;
+  }, {} as IngredientTotals);
+}
 
 export const deriveWorkstationData = (
   values: FactoryFormValues,
@@ -71,26 +93,20 @@ export const deriveVehicleData = (
 
 export const derivePalletShelfData = (
   values: FactoryFormValues,
+  calculationPeriod: CalculationPeriod,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours, isWeeklyCalculation } = values;
-  const timeMult = isWeeklyCalculation ? 7 : 1;
+  const { workstations, openingHours } = values;
+  const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
-  const productData = workstations.map((ws) => products[ws.product]);
-  const neededIngredients = productData.flatMap((p) => {
-    return p.ingredients
-      .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
-      .filter(
-        (entry): entry is [IngredientName, number] => entry[1] !== undefined,
-      );
-  });
-  const totalBoxAmount =
-    neededIngredients
-      .map((i) => i[1] / ingredients[i[0]].amountPerBox)
-      .reduce((sum, amount) => sum + amount, 0) *
-    openingHours *
-    timeMult;
+  const ingredientTotals = calculateIngredientTotals(workstations);
+
+  const totalBoxAmountPerHour = (
+    Object.entries(ingredientTotals) as [IngredientName, number][]
+  )
+    .map(([iName, amount]) => amount / ingredients[iName].amountPerBox)
+    .reduce((sum, amount) => sum + amount, 0);
   const shelfAmount = Math.ceil(
-    totalBoxAmount / shelves.palletShelf.storageCapacity,
+    (totalBoxAmountPerHour * timeMult) / shelves.palletShelf.storageCapacity,
   );
 
   if (shelfAmount === 0) return [];
@@ -108,9 +124,10 @@ export const derivePalletShelfData = (
 
 export const deriveEmployeeData = (
   values: FactoryFormValues,
+  calculationPeriod: CalculationPeriod,
 ): DerivedDataFromFormValues => {
-  const { employees: employeeData, isWeeklyCalculation } = values;
-  const timeMult = isWeeklyCalculation ? 7 : 1;
+  const { employees: employeeData, openingHours } = values;
+  const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
   return Object.entries(employeeData).flatMap(([name, data]) => {
     const n = name as EmployeeName;
@@ -120,12 +137,13 @@ export const deriveEmployeeData = (
     if (amount <= 0) return [];
 
     const employee = employees[n];
-    const workingHours =
+    const averageWorkingHoursPerDay =
       "customWorkingHours" in employee
         ? employee.customWorkingHours
         : values.openingHours;
 
-    const cost = amount * salary * workingHours * timeMult;
+    const cost =
+      ((amount * salary * averageWorkingHoursPerDay) / 24) * timeMult;
 
     if (cost === 0) return [];
 
@@ -190,35 +208,18 @@ export const deriveHrManagerAmount = (
 export const deriveIngredientData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
+  calculationPeriod: CalculationPeriod,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours, isWeeklyCalculation } = values;
-  const timeMult = isWeeklyCalculation ? 7 : 1;
+  const { workstations, openingHours } = values;
+  const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
-  const productData = workstations.map((ws) => products[ws.product]);
-  const neededIngredients = productData.flatMap((p) => {
-    return p.ingredients
-      .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
-      .filter(
-        (entry): entry is [IngredientName, number] => entry[1] !== undefined,
-      );
-  });
-
-  const totalAmounts = neededIngredients.reduce(
-    (acc, [name, amount]) => {
-      acc[name] = (acc[name] ?? 0) + amount;
-      return acc;
-    },
-    {} as Record<IngredientName, number>,
-  );
+  const totalAmounts = calculateIngredientTotals(workstations);
 
   return Object.entries(totalAmounts).map(([name, amount]) => {
     const ingredient = ingredients[name as keyof typeof ingredients];
-    const totalAmount = amount * openingHours * timeMult;
+    const totalAmount = amount * timeMult;
     const totalCost =
-      getImportPrice(ingredient.wholesalePrice, difficulty) *
-      amount *
-      openingHours *
-      timeMult;
+      getImportPrice(ingredient.wholesalePrice, difficulty) * amount * timeMult;
 
     return {
       name: `ingredients.${name}`,
@@ -231,9 +232,10 @@ export const deriveIngredientData = (
 export const deriveProductData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
+  calculationPeriod: CalculationPeriod,
 ): DerivedDataFromFormValues => {
-  const { workstations, openingHours, isWeeklyCalculation } = values;
-  const timeMult = isWeeklyCalculation ? 7 : 1;
+  const { workstations, openingHours } = values;
+  const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
   const productHourlyYieldByProduct = workstations.reduce(
     (acc, ws) => {
@@ -252,7 +254,7 @@ export const deriveProductData = (
     ([name, amountPerHour]) => {
       const product = products[name as keyof typeof products];
 
-      const totalAmount = amountPerHour * openingHours * timeMult;
+      const totalAmount = amountPerHour * timeMult;
       const totalExportIncome =
         getExportPrice(product.wholesalePrice, difficulty) * totalAmount;
 

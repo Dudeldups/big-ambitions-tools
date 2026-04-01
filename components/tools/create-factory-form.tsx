@@ -32,6 +32,9 @@ import VehicleSelect from "./vehicle-select";
 import EmployeeSalaryField from "./employee-salary-field";
 import { EmployeeName } from "@/lib/game/employeeNames";
 import { Switch } from "../ui/switch";
+import { RadioButtonGroup } from "../radio-button-group";
+import { useAppState } from "@/lib/hooks/useAppState";
+import { useAppStore } from "@/lib/stores/appStore";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -44,6 +47,8 @@ const productData = Object.entries(products).map(([key, value]) => ({
 
 const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
   const t = useTranslations();
+  const calculationPeriod = useAppState((s) => s.calculationPeriod);
+  const setCalculationPeriod = useAppStore((s) => s.setCalculationPeriod);
   const createFactory = usePlaythroughStore((state) => state.createFactory);
   const addFactoryToPlaythrough = usePlaythroughStore(
     (state) => state.addFactoryToPlaythrough,
@@ -167,21 +172,24 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               )}
             />
 
-            <Controller
-              control={control}
-              name="isWeeklyCalculation"
-              render={({ field }) => (
-                <Field className="flex-row items-center gap-6">
-                  <Switch
-                    id="isWeeklyCalculation"
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                  <FieldLabel htmlFor="isWeeklyCalculation">
-                    Weekly calculation
-                  </FieldLabel>
-                </Field>
-              )}
+            <RadioButtonGroup
+              name="calculationPeriod"
+              value={calculationPeriod}
+              onChange={setCalculationPeriod}
+              options={[
+                {
+                  value: "hourly",
+                  label: t("general.calculationPeriodOptions.hourly"),
+                },
+                {
+                  value: "daily",
+                  label: t("general.calculationPeriodOptions.daily"),
+                },
+                {
+                  value: "weekly",
+                  label: t("general.calculationPeriodOptions.weekly"),
+                },
+              ]}
             />
           </div>
         </FieldGroup>

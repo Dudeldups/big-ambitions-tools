@@ -13,6 +13,8 @@ import InfoTable from "../tables/info-table";
 import { Separator } from "../ui/separator";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
+import { getTimeMultiplier } from "@/lib/utils/getTimeMultiplier";
+import { useAppState } from "@/lib/hooks/useAppState";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
@@ -21,9 +23,10 @@ type FactoryOverviewProps = {
 const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const { activePlaythrough } = useActivePlaythrough();
   const { difficulty } = activePlaythrough;
+  const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
 
   const oneTimeCostRowData = [
-    ...derivePalletShelfData(values),
+    ...derivePalletShelfData(values, calculationPeriod),
     ...deriveVehicleData(values),
     ...deriveWorkstationData(values),
   ];
@@ -33,21 +36,27 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   );
 
   const recurringCostRowData = [
-    ...deriveEmployeeData(values),
-    ...deriveIngredientData(values, difficulty),
+    ...deriveEmployeeData(values, calculationPeriod),
+    ...deriveIngredientData(values, difficulty, calculationPeriod),
   ];
   const totalRecurringCost = recurringCostRowData.reduce(
     (sum, item) => sum + item.cost,
     0,
   );
 
-  const profitRowData = [...deriveProductData(values, difficulty)];
+  const profitRowData = [
+    ...deriveProductData(values, difficulty, calculationPeriod),
+  ];
   const totalIncome = profitRowData.reduce((sum, item) => sum + item.cost, 0);
+  const profitForPeriod = totalIncome - totalRecurringCost;
 
-  const profit = totalIncome - totalRecurringCost;
-  const displayProfitPerDay = Math.round(profit / 7);
+  const timeMult = getTimeMultiplier(calculationPeriod, values.openingHours);
 
-  const amortizationTime = totalOneTimeCost / profit;
+  const profitPerHour = profitForPeriod / timeMult;
+  const profitPerDay = profitPerHour * values.openingHours;
+  const profitPerWeek = profitPerHour * values.openingHours * 7;
+
+  const amortizationDays = Math.ceil(totalOneTimeCost / profitPerDay);
 
   return (
     <div className="space-y-10">
@@ -62,7 +71,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           <Separator />
           <div className="space-y-4">
             <h2 className="text-center font-semibold">
-              Recurring weekly costs
+              Recurring {calculationPeriod} costs
             </h2>
 
             <InfoTable label="description" rows={recurringCostRowData} />
@@ -74,7 +83,9 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         <>
           <Separator />
           <div className="space-y-4">
-            <h2 className="text-center font-semibold">Income per week</h2>
+            <h2 className="text-center font-semibold">
+              Income per {calculationPeriod}
+            </h2>
 
             <InfoTable label="itemName" rows={profitRowData} />
           </div>
@@ -83,13 +94,14 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
             <h2 className="text-center font-semibold">Summary</h2>
 
             <p>
-              You will make approx. {formatToUSD(displayProfitPerDay, true)} per
-              day and {formatToUSD(displayProfitPerDay * 7, true)} per week!
+              You will make approx. {formatToUSD(profitPerHour, true)} per hour,{" "}
+              {formatToUSD(profitPerDay, true)} per day and{" "}
+              {formatToUSD(profitPerWeek * 7, true)} per week!
             </p>
-            {amortizationTime > 0 ? (
+            {amortizationDays > 0 ? (
               <p>
                 Factory will amortize after approx.{" "}
-                {Math.ceil(amortizationTime)} days
+                {Math.ceil(amortizationDays)} days
               </p>
             ) : (
               <p>Factory is never going to amortize :(</p>

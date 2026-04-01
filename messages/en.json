@@ -24,9 +24,14 @@
     },
     "displayPriceOptions": {
       "manufacture": "Manufacture",
-      "import": "Import",
-      "export": "Export",
-      "retail": "Retail"
+      "import": "import",
+      "export": "export",
+      "retail": "retail"
+    },
+    "calculationPeriodOptions": {
+      "hourly": "hourly",
+      "daily": "daily",
+      "weekly": "weekly"
     }
   },
   "tableColumns": {
