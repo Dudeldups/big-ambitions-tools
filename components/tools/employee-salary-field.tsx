@@ -47,7 +47,9 @@ const EmployeeSalaryField = ({
             placeholder="0"
             disabled={fixedAmountEmployees.includes(employeeName)}
             aria-invalid={!!error}
-            {...register(amountFieldName, { valueAsNumber: true })}
+            {...register(amountFieldName, {
+              setValueAs: (v) => (v === "" || isNaN(v) ? 0 : Number(v)),
+            })}
           />
         </div>
       </div>
