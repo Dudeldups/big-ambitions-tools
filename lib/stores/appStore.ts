@@ -1,7 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { Difficulty, PriceSource, PriceTarget } from "../game/types";
+import {
+  CalculationPeriod,
+  Difficulty,
+  PriceSource,
+  PriceTarget,
+} from "../game/types";
 import { omit } from "./omit";
 import { BASE_PRODUCT_PRICE_INDEX, DISPLAY_PRICE_OPTIONS } from "../constants";
 
@@ -14,6 +19,7 @@ export type AppState = {
   _hasHydrated: boolean;
   difficulty: Difficulty;
   displayPrices: DisplayPrices;
+  calculationPeriod: CalculationPeriod;
   tablePriceIndex: number;
 };
 
@@ -21,6 +27,7 @@ export type AppActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   setDifficulty: (difficulty: Difficulty) => void;
   setDisplayPrices: (source: PriceSource, target: PriceTarget) => void;
+  setCalculationPeriod: (period: CalculationPeriod) => void;
   setTablePriceIndex: (index: number) => void;
 };
 
@@ -38,6 +45,7 @@ export const useAppStore = create(
         source: DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT,
         target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
       },
+      calculationPeriod: "weekly",
       tablePriceIndex: BASE_PRODUCT_PRICE_INDEX,
 
       setDifficulty: (difficulty) =>
@@ -51,6 +59,10 @@ export const useAppStore = create(
             source,
             target,
           };
+        }),
+      setCalculationPeriod: (period) =>
+        set((state) => {
+          state.calculationPeriod = period;
         }),
       setTablePriceIndex: (index) =>
         set((state) => {
