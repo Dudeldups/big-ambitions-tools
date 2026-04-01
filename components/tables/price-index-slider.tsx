@@ -8,14 +8,18 @@ import {
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
 
-const PriceIndexSlider = () => {
+type PriceIndexSliderProps = {
+  className?: string;
+};
+
+const PriceIndexSlider = ({ className }: PriceIndexSliderProps) => {
   const index = useAppState((state) => state.tablePriceIndex);
   const isLoading = index === null;
 
   const setIndex = useAppStore((state) => state.setTablePriceIndex);
 
   return (
-    <div className="mx-auto w-full max-w-md p-4">
+    <div className={`w-full max-w-md p-4 ${className}`}>
       <label className="mb-2 block text-sm font-medium">
         Price Index:{" "}
         <span className="font-bold">{isLoading ? "..." : index}</span>
@@ -25,7 +29,7 @@ const PriceIndexSlider = () => {
         type="range"
         min={MIN_PRODUCT_PRICE_INDEX}
         max={MAX_PRODUCT_PRICE_INDEX}
-        step={0.05}
+        step={0.02}
         value={index ?? BASE_PRODUCT_PRICE_INDEX}
         disabled={isLoading}
         onChange={(e) => setIndex(Number(e.target.value))}
