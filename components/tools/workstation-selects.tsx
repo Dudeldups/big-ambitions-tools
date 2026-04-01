@@ -93,11 +93,13 @@ const WorkstationSelects = ({
                 type="number"
                 value={field.value}
                 max={MAX_WORKSTATION_AMOUNT}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const value =
+                    e.target.value === "" ? 1 : Number(e.target.value);
                   field.onChange(
-                    e.target.value === "" ? 1 : Number(e.target.value),
-                  )
-                }
+                    Math.min(MAX_WORKSTATION_AMOUNT, Math.max(1, value)),
+                  );
+                }}
                 onBlur={field.onBlur}
                 min={1}
               />
