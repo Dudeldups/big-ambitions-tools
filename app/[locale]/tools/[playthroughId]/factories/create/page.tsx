@@ -46,7 +46,7 @@ const CreateFactoryPage = () => {
     },
   });
 
-  const { control, setValue, getValues } = form;
+  const { control, setValue } = form;
 
   const [workstations, openingHours, vehicle1, vehicle2, employees] = useWatch({
     control,
@@ -59,7 +59,6 @@ const CreateFactoryPage = () => {
     vehicle1,
     vehicle2,
     employees,
-    getValues,
     setValue,
   });
 

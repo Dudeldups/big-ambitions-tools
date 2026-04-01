@@ -1,4 +1,4 @@
-import { UseFormGetValues, UseFormSetValue } from "react-hook-form";
+import { UseFormSetValue } from "react-hook-form";
 import { FactoryFormValues } from "../schemas/factory";
 import { useEffect, useRef } from "react";
 import {
@@ -13,7 +13,6 @@ export const useDerivedEmployees = ({
   vehicle1,
   vehicle2,
   employees,
-  getValues,
   setValue,
 }: {
   workstations: FactoryFormValues["workstations"];
@@ -21,7 +20,6 @@ export const useDerivedEmployees = ({
   vehicle1: FactoryFormValues["vehicle1"];
   vehicle2: FactoryFormValues["vehicle2"];
   employees: FactoryFormValues["employees"];
-  getValues: UseFormGetValues<FactoryFormValues>;
   setValue: UseFormSetValue<FactoryFormValues>;
 }) => {
   const useDeepCompareMemo = <T>(value: T): T => {
