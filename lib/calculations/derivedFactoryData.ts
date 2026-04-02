@@ -153,6 +153,7 @@ export const deriveEmployeeData = (
 
     return [
       {
+        valueType: "employees",
         name: `employees.${n}`,
         amount,
         value,
@@ -226,6 +227,7 @@ export const deriveIngredientData = (
       getImportPrice(ingredient.wholesalePrice, difficulty) * amount * timeMult;
 
     return {
+      valueType: "ingredient",
       name: `ingredients.${name}`,
       amount: totalAmount,
       value: totalCost,
@@ -256,23 +258,42 @@ export const deriveProductData = (
     {} as Record<ProductName, { rate: number; salesAmount: number }>,
   );
 
-  return Object.entries(productHourlyYieldByProduct).map(
+  return Object.entries(productHourlyYieldByProduct).flatMap(
     ([name, { rate, salesAmount }]) => {
       const product = products[name as keyof typeof products];
 
       const totalAmount = rate * timeMult;
-      const retailAmount = Math.min(salesAmount * timeMult, totalAmount);
+      const weeklyToPeriodMult = timeMult / (openingHours * 7);
+      const retailAmount = Math.min(
+        salesAmount * weeklyToPeriodMult,
+        totalAmount,
+      );
       const exportAmount = totalAmount - retailAmount;
 
-      const totalIncome =
-        getAverageRetailPrice(product) * retailAmount +
-        getExportPrice(product.wholesalePrice, difficulty) * exportAmount;
-
-      return {
-        name: `products.${name}`,
-        amount: Math.ceil(totalAmount),
-        value: totalIncome,
-      };
+      return [
+        ...(retailAmount > 0
+          ? [
+              {
+                valueType: "retail",
+                name: `products.${name}`,
+                amount: Math.ceil(retailAmount),
+                value: getAverageRetailPrice(product) * retailAmount,
+              },
+            ]
+          : []),
+        ...(exportAmount > 0
+          ? [
+              {
+                valueType: "export",
+                name: `products.${name}`,
+                amount: Math.ceil(exportAmount),
+                value:
+                  getExportPrice(product.wholesalePrice, difficulty) *
+                  exportAmount,
+              },
+            ]
+          : []),
+      ];
     },
   );
 };
