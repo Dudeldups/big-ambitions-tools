@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Field, FieldGroup } from "@/components/ui/field";
+import { Field, FieldError, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -142,9 +142,7 @@ const CreatePlaythroughForm = () => {
               )}
 
               {errors.difficulty?.message && (
-                <p className="text-destructive text-sm">
-                  {t(errors.difficulty.message)}
-                </p>
+                <FieldError>{t(errors.difficulty.message)}</FieldError>
               )}
             </Field>
           </FieldGroup>
