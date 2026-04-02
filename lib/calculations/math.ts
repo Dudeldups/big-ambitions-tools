@@ -42,6 +42,19 @@ export const getExportPrice = (
   );
 };
 
+export const getPriceIndexFromExportPrice = (
+  exportPrice: number,
+  wholesalePrice: number,
+  difficulty: Difficulty,
+) => {
+  return (
+    exportPrice /
+    (wholesalePrice *
+      PUBLIC_PRICE_MULT[difficulty] *
+      EXPORT_PRICE_MULT[difficulty])
+  );
+};
+
 export const getAverageRetailPrice = (product: Product): number =>
   product.defaultMarketPrice * AVERAGE_DISCTRICT_MULT;
 
