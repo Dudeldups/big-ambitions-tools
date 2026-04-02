@@ -268,16 +268,20 @@ export const deriveProductData = (
         salesAmount * weeklyToPeriodMult,
         totalAmount,
       );
-      const exportAmount = totalAmount - retailAmount;
+      const retailValue = getAverageRetailPrice(product) * retailAmount;
+      const isValidRetail = retailValue > 0;
+      const exportAmount = !isValidRetail
+        ? totalAmount
+        : totalAmount - retailAmount;
 
       return [
-        ...(retailAmount > 0
+        ...(isValidRetail && retailAmount > 0
           ? [
               {
                 valueType: "retail",
                 name: `products.${name}`,
                 amount: Math.ceil(retailAmount),
-                value: getAverageRetailPrice(product) * retailAmount,
+                value: retailValue,
               },
             ]
           : []),
