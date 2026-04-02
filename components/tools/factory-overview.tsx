@@ -45,9 +45,13 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     0,
   );
 
-  const profitRowData = [
-    ...deriveProductData(values, difficulty, calculationPeriod),
-  ];
+  const sortedProductData = deriveProductData(
+    values,
+    difficulty,
+    calculationPeriod,
+  ).sort((a, b) => (a.valueType ?? "").localeCompare(b.valueType ?? ""));
+
+  const profitRowData = [...sortedProductData];
   const totalIncome = profitRowData.reduce((sum, item) => sum + item.value, 0);
   const profitForPeriod = totalIncome - totalRecurringCost;
 
