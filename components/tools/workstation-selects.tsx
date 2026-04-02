@@ -25,9 +25,10 @@ import {
   useWatch,
 } from "react-hook-form";
 import { toast } from "sonner";
-import { FieldLabel } from "../ui/field";
+import { Field, FieldGroup, FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
 import { MAX_WORKSTATION_AMOUNT } from "@/lib/constants";
+import { Separator } from "../ui/separator";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -77,16 +78,16 @@ const WorkstationSelects = ({
   }, [selectedWorkstation, index, setValue]);
 
   return (
-    <div className="flex items-center gap-4 rounded-md border p-3">
-      <Controller
-        control={control}
-        name={`workstations.${index}.amount`}
-        render={({ field }) => (
-          <div className="flex flex-col gap-2 self-end">
-            <FieldLabel htmlFor={`workstationAmount-${index}`}>
-              {t("general.amount")}
-            </FieldLabel>
-            <div className="flex items-center gap-3">
+    <div className="space-y-4 rounded-md border p-3">
+      <div className="flex items-center gap-4">
+        <Controller
+          control={control}
+          name={`workstations.${index}.amount`}
+          render={({ field }) => (
+            <div className="flex flex-col gap-2 self-end">
+              <FieldLabel htmlFor={`workstationAmount-${index}`}>
+                {t("general.amount")}
+              </FieldLabel>
               <Input
                 className="max-w-20"
                 id={`workstationAmount-${index}`}
@@ -104,90 +105,119 @@ const WorkstationSelects = ({
                 min={1}
               />
             </div>
-          </div>
-        )}
-      />
-
-      <div className="flex flex-1 flex-col gap-2">
-        <Controller
-          control={control}
-          name={`workstations.${index}.name`}
-          render={({ field }) => (
-            <Select value={field.value} onValueChange={field.onChange}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Workstation" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>{t("general.workstation")}</SelectLabel>
-                  {WORKSTATION_NAMES.map((ws) => (
-                    <SelectItem key={ws} value={ws}>
-                      {t(`workstations.${ws}`)}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
           )}
         />
 
-        <Controller
-          control={control}
-          name={`workstations.${index}.product`}
-          render={({ field }) => (
-            <Select value={field.value} onValueChange={field.onChange}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a product" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>{t("general.product")}</SelectLabel>
-                  {productData
-                    .filter((p) => p.workstation === selectedWorkstation)
-                    .map((p) => (
-                      <SelectItem key={p.name} value={p.name}>
-                        {t(`products.${p.name}`)}
+        <div className="flex flex-1 flex-col gap-2">
+          <Controller
+            control={control}
+            name={`workstations.${index}.name`}
+            render={({ field }) => (
+              <Select value={field.value} onValueChange={field.onChange}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Workstation" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>{t("general.workstation")}</SelectLabel>
+                    {WORKSTATION_NAMES.map((ws) => (
+                      <SelectItem key={ws} value={ws}>
+                        {t(`workstations.${ws}`)}
                       </SelectItem>
                     ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          )}
-        />
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            )}
+          />
+
+          <Controller
+            control={control}
+            name={`workstations.${index}.product`}
+            render={({ field }) => (
+              <Select value={field.value} onValueChange={field.onChange}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a product" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>{t("general.product")}</SelectLabel>
+                    {productData
+                      .filter((p) => p.workstation === selectedWorkstation)
+                      .map((p) => (
+                        <SelectItem key={p.name} value={p.name}>
+                          {t(`products.${p.name}`)}
+                        </SelectItem>
+                      ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            )}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={t("general.copy")}
+            onClick={() => {
+              if (!selectedWorkstation || !selectedProduct) {
+                toast.error(t("toasts.workstationCopyError"), {
+                  position: "bottom-right",
+                });
+              } else {
+                append({
+                  amount: 1,
+                  name: selectedWorkstation,
+                  product: selectedProduct,
+                });
+              }
+            }}
+          >
+            <Copy className="size-5" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={t("general.delete")}
+            onClick={() => remove(index)}
+          >
+            <Trash2 className="size-5" />
+          </Button>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-2">
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          aria-label={t("general.copy")}
-          onClick={() => {
-            if (!selectedWorkstation || !selectedProduct) {
-              toast.error(t("toasts.workstationCopyError"), {
-                position: "bottom-right",
-              });
-            } else {
-              append({
-                amount: 1,
-                name: selectedWorkstation,
-                product: selectedProduct,
-              });
-            }
-          }}
-        >
-          <Copy className="size-5" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          aria-label={t("general.delete")}
-          onClick={() => remove(index)}
-        >
-          <Trash2 className="size-5" />
-        </Button>
-      </div>
+      <Separator />
+
+      <FieldGroup>
+        <Field>
+          <Controller
+            control={control}
+            name={`workstations.${index}.salesAmount`}
+            render={({ field }) => (
+              <div className="flex gap-4 self-end">
+                <FieldLabel htmlFor={`workstationSalesAmount-${index}`}>
+                  {t("tools.factoryPlanner.estimatedSales")}
+                </FieldLabel>
+                <Input
+                  className="max-w-20"
+                  id={`workstationSalesAmount-${index}`}
+                  type="number"
+                  value={field.value ?? ""}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    field.onChange(value === "" ? undefined : Number(value));
+                  }}
+                  onBlur={field.onBlur}
+                />
+              </div>
+            )}
+          />
+        </Field>
+      </FieldGroup>
     </div>
   );
 };

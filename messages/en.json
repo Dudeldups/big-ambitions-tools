@@ -17,6 +17,7 @@
     "factories": "Factories",
     "vehicle": "Vehicle",
     "difficulty": "Difficulty",
+
     "difficultyOptions": {
       "easy": "easy",
       "normal": "normal",
@@ -48,11 +49,11 @@
     "profitMargin": "Profit margin",
     "profitPerHour": "Profit / hr",
     "amount": "Amount",
-    "amountPerBox": "Amount / box",
+    "amountPerBox": "Amt. / box",
     "usedInProducts": "Used in products",
     "importers": "Importers",
     "ingredients": "Ingredients",
-    "productionRate": "Production / hr",
+    "productionRate": "Prod./hr",
     "vehicleName": "Vehicle name",
     "maxFuel": "Fuel capacity",
     "maxCargoCapacity": "Cargo capacity",
@@ -193,7 +194,10 @@
     "factoryPlanner": {
       "title": "Factory Planner",
       "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
-      "genericFactoryName": "{productName} factory"
+      "genericFactoryName": "{productName} factory",
+      "estimatedSales": "Estimated weekly sales",
+      "estimatedSalesTooltip": "Enter the expected sales for each product in your shops.",
+      "priceIndexDesc": "Provide the current price index ingame to calculate the correct prices."
     }
   },
   "about": {
