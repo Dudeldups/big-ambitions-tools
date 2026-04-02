@@ -1,25 +1,29 @@
 import { UseFormSetValue } from "react-hook-form";
-import { FactoryFormValues } from "../schemas/factory";
+import {
+  FactoryFormValues,
+  FormOpeningHours,
+  FormVehicles,
+  FormWorkstations,
+} from "../schemas/factory";
 import { useEffect, useRef } from "react";
 import {
   deriveDeliveryDriverAmount,
   deriveFactoryWorkerAmount,
   deriveHrManagerAmount,
 } from "../calculations/derivedFactoryData";
+import { FormEmployees } from "../schemas/employee";
 
 export const useDerivedEmployees = ({
   workstations,
   openingHours,
-  vehicle1,
-  vehicle2,
+  vehicles,
   employees,
   setValue,
 }: {
-  workstations: FactoryFormValues["workstations"];
-  openingHours: FactoryFormValues["openingHours"];
-  vehicle1: FactoryFormValues["vehicle1"];
-  vehicle2: FactoryFormValues["vehicle2"];
-  employees: FactoryFormValues["employees"];
+  workstations: FormWorkstations;
+  openingHours: FormOpeningHours;
+  vehicles: FormVehicles;
+  employees: FormEmployees;
   setValue: UseFormSetValue<FactoryFormValues>;
 }) => {
   const useDeepCompareMemo = <T>(value: T): T => {
@@ -32,18 +36,18 @@ export const useDerivedEmployees = ({
 
   const stableWorkstations = useDeepCompareMemo(workstations);
   const stableEmployees = useDeepCompareMemo(employees);
+  const stableVehicles = useDeepCompareMemo(vehicles);
 
   useEffect(() => {
     const derivedDriverAmount = deriveDeliveryDriverAmount(
-      vehicle1,
-      vehicle2,
+      stableVehicles,
       stableEmployees,
     );
 
     setValue("employees.deliveryDriver.amount", derivedDriverAmount, {
       shouldDirty: false,
     });
-  }, [stableEmployees, setValue, vehicle1, vehicle2]);
+  }, [stableEmployees, setValue, stableVehicles]);
 
   useEffect(() => {
     const derivedFactoryWorkerAmount = deriveFactoryWorkerAmount(

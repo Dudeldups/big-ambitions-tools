@@ -19,7 +19,7 @@ const CreateFactoryPage = () => {
     defaultValues: {
       workstations: [],
       openingHours: 24,
-      vehicle1: "FreightTruckT1",
+      vehicles: ["FreightTruckT1"],
       deliveryPeriod: "weekly",
       employees: {
         deliveryDriver: {
@@ -48,16 +48,15 @@ const CreateFactoryPage = () => {
 
   const { control, setValue } = form;
 
-  const [workstations, openingHours, vehicle1, vehicle2, employees] = useWatch({
+  const [workstations, openingHours, vehicles, employees] = useWatch({
     control,
-    name: ["workstations", "openingHours", "vehicle1", "vehicle2", "employees"],
+    name: ["workstations", "openingHours", "vehicles", "employees"],
   });
 
   useDerivedEmployees({
     workstations,
     openingHours,
-    vehicle1,
-    vehicle2,
+    vehicles,
     employees,
     setValue,
   });

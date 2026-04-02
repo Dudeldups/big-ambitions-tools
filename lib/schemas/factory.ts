@@ -18,8 +18,7 @@ export const factorySchema = z.object({
 
   employees: employeesSchema,
 
-  vehicle1: z.enum(VEHICLE_NAMES),
-  vehicle2: z.enum(VEHICLE_NAMES).optional(),
+  vehicles: z.tuple([z.enum(VEHICLE_NAMES), z.enum(VEHICLE_NAMES).optional()]),
 
   workstations: z
     .array(
@@ -36,3 +35,5 @@ export const factorySchema = z.object({
 export type FactoryFormValues = z.infer<typeof factorySchema>;
 
 export type FormWorkstations = FactoryFormValues["workstations"];
+export type FormVehicles = FactoryFormValues["vehicles"];
+export type FormOpeningHours = FactoryFormValues["openingHours"];

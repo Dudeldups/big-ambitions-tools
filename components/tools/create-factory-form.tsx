@@ -216,8 +216,8 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
         <FieldLegend>Vehicles</FieldLegend>
 
         <FieldGroup>
+          <VehicleSelect control={control} index={0} />
           <VehicleSelect control={control} index={1} />
-          <VehicleSelect control={control} index={2} />
         </FieldGroup>
       </FieldSet>
 

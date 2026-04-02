@@ -15,7 +15,11 @@ import { products } from "../game/products";
 import { CalculationPeriod, Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
 import { vehicles } from "../game/vehicles";
-import { FactoryFormValues, FormWorkstations } from "../schemas/factory";
+import {
+  FactoryFormValues,
+  FormVehicles,
+  FormWorkstations,
+} from "../schemas/factory";
 import { getWorkstationPrice } from "./math";
 import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
@@ -74,11 +78,9 @@ export const deriveWorkstationData = (
 export const deriveVehicleData = (
   values: FactoryFormValues,
 ): DerivedDataFromFormValues => {
-  const { vehicle1, vehicle2 } = values;
+  const { vehicles: formVehicles } = values;
 
-  const entries = [vehicle1, vehicle2].filter(
-    (v): v is VehicleName => v != null,
-  );
+  const entries = formVehicles.filter((v) => v !== undefined);
 
   const countsByName = entries.reduce(
     (acc, v) => {
@@ -196,13 +198,12 @@ export const deriveFactoryWorkerAmount = (
 };
 
 export const deriveDeliveryDriverAmount = (
-  vehicle1: VehicleName,
-  vehicle2: VehicleName | undefined,
+  vehicles: FormVehicles,
   employeeData: FormEmployees,
 ) => {
   if (employeeData.deliveryDriver.salary === 0) return 0;
 
-  return [vehicle1, vehicle2].filter(Boolean).length;
+  return vehicles.filter(Boolean).length;
 };
 
 export const deriveHrManagerAmount = (employeeData: FormEmployees): number => {

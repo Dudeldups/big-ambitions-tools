@@ -15,7 +15,7 @@ import { NONE_VALUE } from "@/lib/constants";
 
 type VehicleSelectProps = {
   control: Control<FactoryFormValues>;
-  index: 1 | 2;
+  index: number;
 };
 
 const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
@@ -35,11 +35,11 @@ const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
   return (
     <Controller
       control={control}
-      name={`vehicle${index}`}
+      name={`vehicles.${index}` as `vehicles.0` | `vehicles.1`}
       render={({ field }) => (
         <Select
-          key={field.value}
-          value={field.value}
+          key={field.value ?? "none"}
+          value={field.value ?? NONE_VALUE}
           onValueChange={(val) =>
             field.onChange(val === NONE_VALUE ? undefined : val)
           }
@@ -51,7 +51,7 @@ const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
             <SelectGroup>
               <SelectLabel>{t("general.vehicle")}</SelectLabel>
 
-              {index === 2 && (
+              {index > 0 && (
                 <SelectItem value={NONE_VALUE}>
                   {t("general.noValue")}
                 </SelectItem>

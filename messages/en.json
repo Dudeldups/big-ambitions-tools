@@ -85,7 +85,9 @@
     "factory": {
       "nameTooLong": "Factory name must be at most 50 characters.",
       "descriptionTooLong": "Factory description must be at most 150 characters.",
-      "workstationsRequired": "Please add at least one workstation."
+      "workstationsRequired": "Please add at least one workstation.",
+      "atLeastOneVehicle": "At least one vehicle is required for the factory.",
+      "maxTwoVehicles": "At most two vehicles are allowed for the factory."
     }
   },
   "home": {
@@ -197,6 +199,7 @@
       "genericFactoryName": "{productName} factory",
       "estimatedSales": "Estimated weekly sales",
       "estimatedSalesTooltip": "Enter the expected sales for each product in your shops.",
+      "priceIndexButton": "Set price index",
       "priceIndexDesc": "Provide the current price index ingame to calculate the correct prices."
     }
   },
