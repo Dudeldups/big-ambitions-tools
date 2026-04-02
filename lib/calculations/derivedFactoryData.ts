@@ -143,11 +143,18 @@ export const deriveEmployeeData = (
     const employee = employees[n];
     const averageWorkingHoursPerDay =
       "customWorkingHours" in employee
-        ? employee.customWorkingHours
-        : values.openingHours;
+        ? employee.customWorkingHours / 7
+        : FULLTIME_MAX_WORKING_HOURS / 7;
+
+    const totalWorkstationAmount = values.workstations.reduce(
+      (sum, ws) => sum + ws.amount,
+      0,
+    );
 
     const value =
-      ((amount * salary * averageWorkingHoursPerDay) / 24) * timeMult;
+      n === "factoryWorker"
+        ? salary * totalWorkstationAmount * timeMult
+        : ((amount * salary * averageWorkingHoursPerDay) / 24) * timeMult;
 
     if (value === 0) return [];
 
