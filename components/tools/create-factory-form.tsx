@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   Field,
   FieldDescription,
+  FieldError,
   FieldGroup,
   FieldLabel,
   FieldLegend,
@@ -21,7 +22,12 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
-import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
+import {
+  FieldErrors,
+  useFieldArray,
+  UseFormReturn,
+  useWatch,
+} from "react-hook-form";
 import { toast } from "sonner";
 import VehicleSelect from "./vehicle-select";
 import EmployeeSalaryField from "./employee-salary-field";
@@ -30,6 +36,7 @@ import { RadioButtonGroup } from "../radio-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
 import DeliveryPeriodSelect from "./delivery-period-select";
+import { safeLog } from "@/lib/utils/safeLog";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -76,6 +83,8 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
       });
     }
 
+    console.log("In onsubmit with values:", values);
+
     const newFactory = createFactory(values);
     addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
     toast.success(
@@ -84,6 +93,10 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     startTransition(() => {
       router.push(`/tools/${activePlaythrough.id}/factories`);
     });
+  };
+
+  const onError = (errors: FieldErrors) => {
+    safeLog("Form errors:", errors);
   };
 
   const factoryEmployees = [
@@ -95,7 +108,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
   ] as const satisfies readonly EmployeeName[];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+    <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-10">
       <FieldSet className="px-4">
         <FieldLegend>Factory Information</FieldLegend>
 
@@ -226,9 +239,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
           ))}
 
           {errors.workstations?.message && (
-            <p className="text-destructive text-sm">
-              {t(errors.workstations.message)}
-            </p>
+            <FieldError>{t(errors.workstations.message)}</FieldError>
           )}
 
           <Button
