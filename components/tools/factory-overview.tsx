@@ -15,6 +15,7 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { getTimeMultiplier } from "@/lib/utils/getTimeMultiplier";
 import { useAppState } from "@/lib/hooks/useAppState";
+import { cn } from "@/lib/utils";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
@@ -52,9 +53,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   const timeMult = getTimeMultiplier(calculationPeriod, values.openingHours);
 
-  const profitPerHour = profitForPeriod / timeMult;
-  const profitPerDay = profitPerHour * values.openingHours;
-  const profitPerWeek = profitPerHour * values.openingHours * 7;
+  const profitPerDay = (profitForPeriod / timeMult) * values.openingHours;
 
   const amortizationDays = Math.ceil(totalOneTimeCost / profitPerDay);
 
@@ -89,26 +88,53 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
             <InfoTable label="itemName" rows={profitRowData} />
           </div>
-          <Separator />
-          <div className="space-y-4">
-            <h2 className="text-center font-semibold">Summary</h2>
-
-            <p>
-              You will make approx. {formatToUSD(profitPerHour, true)} per hour,{" "}
-              {formatToUSD(profitPerDay, true)} per day and{" "}
-              {formatToUSD(profitPerWeek, true)} per week!
-            </p>
-            {amortizationDays > 0 ? (
-              <p>
-                Factory will amortize after approx.{" "}
-                {Math.ceil(amortizationDays)} days
-              </p>
-            ) : (
-              <p>Factory is never going to amortize :(</p>
-            )}
-          </div>
         </>
       )}
+
+      <Separator />
+      <div className="space-y-3 rounded-lg border p-4">
+        <h2 className="text-center">Summary</h2>
+
+        <Separator />
+
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">Income</span>
+          <span className="amount text-green-600">
+            {formatToUSD(totalIncome)}
+          </span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">Expenses</span>
+          <span className="amount text-red-600">
+            {formatToUSD(totalRecurringCost)}
+          </span>
+        </div>
+
+        <Separator />
+
+        <div className="flex justify-between">
+          <span className="font-semibold">Profit</span>
+          <span
+            className={cn(
+              "amount",
+              profitForPeriod >= 0 ? "text-green-600" : "text-red-600",
+            )}
+          >
+            {formatToUSD(profitForPeriod)}
+          </span>
+        </div>
+
+        <Separator />
+
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">Amortization</span>
+          {amortizationDays > 0 ? (
+            <span>{amortizationDays} Days</span>
+          ) : (
+            <span className="text-red-600">Never</span>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
