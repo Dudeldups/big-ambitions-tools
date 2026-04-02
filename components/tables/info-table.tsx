@@ -10,6 +10,7 @@ import {
 import { DerivedDataFromFormValues } from "@/lib/calculations/derivedFactoryData";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
+import { Fragment } from "react/jsx-runtime";
 
 type InfoTableProps = {
   label: string;
@@ -37,13 +38,33 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
         </TableHeader>
 
         <TableBody>
-          {rows.map((row, i) => (
-            <TableRow key={row.name + i}>
-              <TableCell className="amount">{row.amount}</TableCell>
-              <TableCell>{t(row.name)}</TableCell>
-              <TableCell className="amount">{formatToUSD(row.value)}</TableCell>
-            </TableRow>
-          ))}
+          {rows.map((row, i) => {
+            const showDivider =
+              row.valueType && row.valueType !== rows[i - 1]?.valueType;
+
+            return (
+              <Fragment key={"f-" + row.name + i}>
+                {showDivider && (
+                  <TableRow key={`divider-${row.valueType}`}>
+                    <TableCell colSpan={3}>
+                      <div className="text-muted-foreground flex items-center gap-2 text-xs">
+                        <div className="bg-border h-px flex-1" />
+                        <span>{row.valueType?.toUpperCase()}</span>
+                        <div className="bg-border h-px flex-1" />
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                )}
+                <TableRow key={row.name + i}>
+                  <TableCell className="amount">{row.amount}</TableCell>
+                  <TableCell>{t(row.name)}</TableCell>
+                  <TableCell className="amount">
+                    {formatToUSD(row.value)}
+                  </TableCell>
+                </TableRow>
+              </Fragment>
+            );
+          })}
         </TableBody>
 
         <TableFooter>
