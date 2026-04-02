@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import NavLink from "../_components/NavLink";
 import { StoreHydration } from "@/components/store-hydration";
 import { Toaster } from "sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -35,31 +36,33 @@ export default function RootLayout({
       >
         <StoreHydration />
         <NextIntlClientProvider>
-          <header className="flex justify-center">
-            <nav className="max-w-page w-full bg-gray-800">
-              <ul className="flex gap-4 p-4">
-                <li>
-                  <NavLink href="/">Home</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/database">Database</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/tools">Tools</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/about">About</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/contact">Contact</NavLink>
-                </li>
-              </ul>
-            </nav>
-          </header>
+          <TooltipProvider>
+            <header className="flex justify-center">
+              <nav className="max-w-page w-full bg-gray-800">
+                <ul className="flex gap-4 p-4">
+                  <li>
+                    <NavLink href="/">Home</NavLink>
+                  </li>
+                  <li>
+                    <NavLink href="/database">Database</NavLink>
+                  </li>
+                  <li>
+                    <NavLink href="/tools">Tools</NavLink>
+                  </li>
+                  <li>
+                    <NavLink href="/about">About</NavLink>
+                  </li>
+                  <li>
+                    <NavLink href="/contact">Contact</NavLink>
+                  </li>
+                </ul>
+              </nav>
+            </header>
 
-          <main>{children}</main>
+            <main>{children}</main>
 
-          <footer className="mt-auto">Footer</footer>
+            <footer className="mt-auto">Footer</footer>
+          </TooltipProvider>
         </NextIntlClientProvider>
         <Toaster />
       </body>
