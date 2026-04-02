@@ -35,4 +35,4 @@ export const factorySchema = z.object({
 
 export type FactoryFormValues = z.infer<typeof factorySchema>;
 
-export type EmployeeSalaryFieldName = keyof FactoryFormValues["employees"];
+export type FormWorkstations = FactoryFormValues["workstations"];

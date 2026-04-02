@@ -1,3 +1,4 @@
+import { FormEmployees } from "./../schemas/employee";
 import {
   getAverageRetailPrice,
   getExportPrice,
@@ -14,7 +15,7 @@ import { products } from "../game/products";
 import { CalculationPeriod, Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
 import { vehicles } from "../game/vehicles";
-import { FactoryFormValues } from "../schemas/factory";
+import { FactoryFormValues, FormWorkstations } from "../schemas/factory";
 import { getWorkstationPrice } from "./math";
 import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
@@ -30,7 +31,7 @@ export type DerivedDataFromFormValues = {
 type IngredientTotals = Record<IngredientName, number>;
 
 export function calculateIngredientTotals(
-  workstations: FactoryFormValues["workstations"],
+  workstations: FormWorkstations,
 ): IngredientTotals {
   return workstations.reduce((acc, ws) => {
     const product = products[ws.product];
@@ -170,7 +171,7 @@ export const deriveEmployeeData = (
 };
 
 export const deriveFactoryWorkerAmount = (
-  workstations: FactoryFormValues["workstations"],
+  workstations: FormWorkstations,
   openingHours: number | undefined,
 ): number => {
   if (!workstations || !openingHours) return 0;
@@ -197,16 +198,14 @@ export const deriveFactoryWorkerAmount = (
 export const deriveDeliveryDriverAmount = (
   vehicle1: VehicleName,
   vehicle2: VehicleName | undefined,
-  employeeData: FactoryFormValues["employees"],
+  employeeData: FormEmployees,
 ) => {
   if (employeeData.deliveryDriver.salary === 0) return 0;
 
   return [vehicle1, vehicle2].filter(Boolean).length;
 };
 
-export const deriveHrManagerAmount = (
-  employeeData: FactoryFormValues["employees"],
-): number => {
+export const deriveHrManagerAmount = (employeeData: FormEmployees): number => {
   if (employeeData.hrManager.salary === 0) return 0;
 
   const totalEmployees = Object.values(employeeData).reduce(
