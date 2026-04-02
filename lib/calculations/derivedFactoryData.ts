@@ -1,4 +1,8 @@
-import { getExportPrice, getImportPrice } from "@/lib/calculations/math";
+import {
+  getAverageRetailPrice,
+  getExportPrice,
+  getImportPrice,
+} from "@/lib/calculations/math";
 import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
@@ -17,9 +21,10 @@ import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 
 export type DerivedDataFromFormValues = {
+  valueType?: string;
   amount: number;
   name: string;
-  cost: number;
+  value: number;
 }[];
 
 type IngredientTotals = Record<IngredientName, number>;
@@ -60,7 +65,7 @@ export const deriveWorkstationData = (
     ([name, amount]) => ({
       amount,
       name: `workstations.${name}`,
-      cost: amount * getWorkstationPrice(workstations[name]),
+      value: amount * getWorkstationPrice(workstations[name]),
     }),
   );
 };
@@ -86,7 +91,7 @@ export const deriveVehicleData = (
     ([name, amount]) => ({
       amount,
       name: `vehicles.${name}`,
-      cost: amount * vehicles[name].purchasePrice,
+      value: amount * vehicles[name].purchasePrice,
     }),
   );
 };
@@ -110,13 +115,13 @@ export const derivePalletShelfData = (
 
   if (shelfAmount === 0) return [];
 
-  const cost = shelfAmount * shelves.palletShelf.purchasePrice;
+  const value = shelfAmount * shelves.palletShelf.purchasePrice;
 
   return [
     {
       amount: shelfAmount,
       name: "inventory.palletShelf",
-      cost,
+      value,
     },
   ];
 };
@@ -141,16 +146,16 @@ export const deriveEmployeeData = (
         ? employee.customWorkingHours
         : values.openingHours;
 
-    const cost =
+    const value =
       ((amount * salary * averageWorkingHoursPerDay) / 24) * timeMult;
 
-    if (cost === 0) return [];
+    if (value === 0) return [];
 
     return [
       {
         name: `employees.${n}`,
         amount,
-        cost,
+        value,
       },
     ];
   });
@@ -223,7 +228,7 @@ export const deriveIngredientData = (
     return {
       name: `ingredients.${name}`,
       amount: totalAmount,
-      cost: totalCost,
+      value: totalCost,
     };
   });
 };
@@ -239,28 +244,34 @@ export const deriveProductData = (
   const productHourlyYieldByProduct = workstations.reduce(
     (acc, ws) => {
       const product = products[ws.product];
-      const totalRate =
-        (acc[ws.product] ?? 0) + product.productionRate * ws.amount;
+      const prev = acc[ws.product] ?? { rate: 0, salesAmount: 0 };
       return {
         ...acc,
-        [ws.product]: totalRate,
+        [ws.product]: {
+          rate: prev.rate + product.productionRate * ws.amount,
+          salesAmount: prev.salesAmount + (ws.salesAmount ?? 0),
+        },
       };
     },
-    {} as Record<ProductName, number>,
+    {} as Record<ProductName, { rate: number; salesAmount: number }>,
   );
 
   return Object.entries(productHourlyYieldByProduct).map(
-    ([name, amountPerHour]) => {
+    ([name, { rate, salesAmount }]) => {
       const product = products[name as keyof typeof products];
 
-      const totalAmount = amountPerHour * timeMult;
-      const totalExportIncome =
-        getExportPrice(product.wholesalePrice, difficulty) * totalAmount;
+      const totalAmount = rate * timeMult;
+      const retailAmount = Math.min(salesAmount * timeMult, totalAmount);
+      const exportAmount = totalAmount - retailAmount;
+
+      const totalIncome =
+        getAverageRetailPrice(product) * retailAmount +
+        getExportPrice(product.wholesalePrice, difficulty) * exportAmount;
 
       return {
         name: `products.${name}`,
         amount: Math.ceil(totalAmount),
-        cost: totalExportIncome,
+        value: totalIncome,
       };
     },
   );

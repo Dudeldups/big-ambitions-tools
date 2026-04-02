@@ -31,7 +31,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     ...deriveWorkstationData(values),
   ];
   const totalOneTimeCost = oneTimeCostRowData.reduce(
-    (sum, item) => sum + item.cost,
+    (sum, item) => sum + item.value,
     0,
   );
 
@@ -40,14 +40,14 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     ...deriveIngredientData(values, difficulty, calculationPeriod),
   ];
   const totalRecurringCost = recurringCostRowData.reduce(
-    (sum, item) => sum + item.cost,
+    (sum, item) => sum + item.value,
     0,
   );
 
   const profitRowData = [
     ...deriveProductData(values, difficulty, calculationPeriod),
   ];
-  const totalIncome = profitRowData.reduce((sum, item) => sum + item.cost, 0);
+  const totalIncome = profitRowData.reduce((sum, item) => sum + item.value, 0);
   const profitForPeriod = totalIncome - totalRecurringCost;
 
   const timeMult = getTimeMultiplier(calculationPeriod, values.openingHours);

@@ -19,7 +19,7 @@ type InfoTableProps = {
 const InfoTable = ({ label, rows }: InfoTableProps) => {
   const t = useTranslations();
 
-  const total = rows.reduce((sum, item) => sum + item.cost, 0);
+  const total = rows.reduce((sum, item) => sum + item.value, 0);
 
   return (
     <div className="rounded-md border">
@@ -41,7 +41,7 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
             <TableRow key={row.name + i}>
               <TableCell className="amount">{row.amount}</TableCell>
               <TableCell>{t(row.name)}</TableCell>
-              <TableCell className="amount">{formatToUSD(row.cost)}</TableCell>
+              <TableCell className="amount">{formatToUSD(row.value)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
