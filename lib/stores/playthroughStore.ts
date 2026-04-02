@@ -58,6 +58,7 @@ export type PlaythroughActions = {
     productName: ProductName,
     index: number,
   ) => void;
+  getPriceIndices: (playthroughId: string) => PriceIndices;
 };
 
 export const usePlaythroughStore = create(
@@ -222,6 +223,9 @@ export const usePlaythroughStore = create(
           playthrough.priceIndices[productName] = index;
         });
       },
+      getPriceIndices: (playthroughId) =>
+        get().playthroughs.find((p) => p.id === playthroughId)?.priceIndices ||
+        {},
     })),
     {
       name: "playthrough-storage",
