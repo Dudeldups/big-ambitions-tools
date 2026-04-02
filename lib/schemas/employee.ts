@@ -31,4 +31,4 @@ export const employeesSchema = z.object({
   hrManager: employeeSchemaFloat,
 });
 
-export type Employees = z.infer<typeof employeesSchema>;
+export type FormEmployees = z.infer<typeof employeesSchema>;
