@@ -27,9 +27,9 @@ export const MAX_WORKSTATION_AMOUNT = 200 as const;
 
 export const FULLTIME_MAX_WORKING_HOURS = 50 as const;
 
-export const DELIVERY_DRIVER_WORKING_HOURS = 5.75 as const;
+export const DELIVERY_DRIVER_WORKING_HOURS = 40 as const;
 
-export const HQ_WORKING_HOURS = 5.714285714285714 as const;
+export const HQ_WORKING_HOURS = 40 as const;
 
 export const CALCULATION_PERIODS = ["hourly", "daily", "weekly"] as const;
 

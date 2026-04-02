@@ -1,16 +1,10 @@
-import {
-  DELIVERY_DRIVER_WORKING_HOURS,
-  HQ_WORKING_HOURS,
-} from "./../constants";
+import { DELIVERY_DRIVER_WORKING_HOURS, HQ_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "./employeeNames";
-
-type DeliveryDriverWorkingHours = typeof DELIVERY_DRIVER_WORKING_HOURS;
-type HQWorkingHours = typeof HQ_WORKING_HOURS;
 
 export type Employee = {
   baseHourlyWage: number;
   hasParttimeDemand: boolean;
-  customWorkingHours?: DeliveryDriverWorkingHours | HQWorkingHours;
+  customWorkingHours?: number;
 };
 
 export const employees = {
