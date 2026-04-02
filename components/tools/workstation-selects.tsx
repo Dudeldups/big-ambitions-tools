@@ -29,6 +29,7 @@ import { Field, FieldGroup, FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
 import { MAX_WORKSTATION_AMOUNT } from "@/lib/constants";
 import { Separator } from "../ui/separator";
+import PriceIndexPopover from "../price-index-popover";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -192,31 +193,34 @@ const WorkstationSelects = ({
 
       <Separator />
 
-      <FieldGroup>
-        <Field>
-          <Controller
-            control={control}
-            name={`workstations.${index}.salesAmount`}
-            render={({ field }) => (
-              <div className="flex gap-4 self-end">
-                <FieldLabel htmlFor={`workstationSalesAmount-${index}`}>
-                  {t("tools.factoryPlanner.estimatedSales")}
-                </FieldLabel>
-                <Input
-                  className="max-w-20"
-                  id={`workstationSalesAmount-${index}`}
-                  type="number"
-                  value={field.value ?? ""}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    field.onChange(value === "" ? undefined : Number(value));
-                  }}
-                  onBlur={field.onBlur}
-                />
-              </div>
-            )}
-          />
-        </Field>
+      <FieldGroup className="flex-row">
+        <Controller
+          control={control}
+          name={`workstations.${index}.salesAmount`}
+          render={({ field }) => (
+            <Field orientation="horizontal" className="w-fit">
+              <FieldLabel htmlFor={`workstationSalesAmount-${index}`}>
+                {t("tools.factoryPlanner.estimatedSales")}
+              </FieldLabel>
+              <Input
+                className="max-w-24"
+                id={`workstationSalesAmount-${index}`}
+                type="number"
+                value={field.value ?? ""}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  field.onChange(value === "" ? undefined : Number(value));
+                }}
+                onBlur={field.onBlur}
+              />
+            </Field>
+          )}
+        />
+
+        <PriceIndexPopover
+          selectedProduct={selectedProduct}
+          className="ml-auto"
+        />
       </FieldGroup>
     </div>
   );

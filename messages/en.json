@@ -4,6 +4,7 @@
     "cancel": "Cancel",
     "reset": "Reset",
     "copy": "Copy",
+    "close": "Close",
     "delete": "Delete",
     "amount": "Amount",
     "summedUpAmount": "Total",
@@ -17,6 +18,8 @@
     "factories": "Factories",
     "vehicle": "Vehicle",
     "difficulty": "Difficulty",
+    "priceIndex": "Price index",
+    "exportPrice": "Export price",
 
     "difficultyOptions": {
       "easy": "easy",
@@ -200,7 +203,7 @@
       "estimatedSales": "Estimated weekly sales",
       "estimatedSalesTooltip": "Enter the expected sales for each product in your shops.",
       "priceIndexButton": "Set price index",
-      "priceIndexDesc": "Provide the current price index ingame to calculate the correct prices."
+      "priceIndexDesc": "Enter the current ingame price index to calculate the correct income. Entering the export price is more accurate."
     }
   },
   "about": {
