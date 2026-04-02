@@ -227,7 +227,7 @@ export const deriveIngredientData = (
       getImportPrice(ingredient.wholesalePrice, difficulty) * amount * timeMult;
 
     return {
-      valueType: "ingredient",
+      valueType: "ingredients",
       name: `ingredients.${name}`,
       amount: totalAmount,
       value: totalCost,
