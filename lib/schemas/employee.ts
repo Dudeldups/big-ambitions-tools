@@ -4,18 +4,31 @@ import { EmployeeName } from "../game/employeeNames";
 
 export type EmployeeSalaryKey = `${EmployeeName}Salary`;
 
-export const employeeSalarySchema = z
+const baseSalarySchema = z
   .number()
   .nonnegative("errors.factory.salaryPositive")
-  .int("errors.factory.salaryInteger")
-  .max(EMPLOYEE_MAX_SALARY, "errors.factory.salaryTooHigh")
-  .optional();
+  .max(EMPLOYEE_MAX_SALARY, "errors.factory.salaryTooHigh");
 
-export const employeeSchema = z.object({
-  salary: employeeSalarySchema,
+const integerSalarySchema = baseSalarySchema.int();
+
+const floatSalarySchema = baseSalarySchema;
+
+export const employeeSchemaInteger = z.object({
+  salary: integerSalarySchema.optional(),
   amount: z.number().int().nonnegative().optional(),
 });
 
-export type EmployeeSchemaShape = Partial<
-  Record<EmployeeName, typeof employeeSchema>
->;
+export const employeeSchemaFloat = z.object({
+  salary: floatSalarySchema.optional(),
+  amount: z.number().nonnegative().optional(),
+});
+
+export const employeesSchema = z.object({
+  deliveryDriver: employeeSchemaInteger,
+  logisticsManager: employeeSchemaInteger,
+  factoryWorker: employeeSchemaInteger,
+  purchasingAgent: employeeSchemaInteger,
+  hrManager: employeeSchemaFloat,
+});
+
+export type Employees = z.infer<typeof employeesSchema>;
