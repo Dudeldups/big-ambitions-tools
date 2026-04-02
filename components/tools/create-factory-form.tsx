@@ -83,7 +83,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
       });
     }
 
-    console.log("In onsubmit with values:", values);
+    safeLog("In onsubmit with values:", values);
 
     const newFactory = createFactory(values);
     addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
