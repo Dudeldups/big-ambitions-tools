@@ -9,8 +9,8 @@ import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
 import { IngredientName } from "../game/ingredientNames";
 import { ingredients } from "../game/ingredients";
-import { WorkstationName } from "../game/machineNames";
-import { workstations } from "../game/machines";
+import { MachineName, WorkstationName } from "../game/machineNames";
+import { machines, workstations } from "../game/machines";
 import { products } from "../game/products";
 import { CalculationPeriod, Difficulty } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
@@ -57,21 +57,22 @@ export function calculateIngredientTotals(
 export const deriveWorkstationData = (
   values: FactoryFormValues,
 ): DerivedDataFromFormValues => {
-  const workstationData = values.workstations;
-
-  const countsByName = workstationData.reduce(
+  const machineCountsByName = values.workstations.reduce(
     (acc, ws) => {
-      acc[ws.name] = (acc[ws.name] ?? 0) + ws.amount;
+      const neededMachines = workstations[ws.name].neededMachines;
+      for (const machine of neededMachines) {
+        acc[machine] = (acc[machine] ?? 0) + ws.amount;
+      }
       return acc;
     },
-    {} as Record<WorkstationName, number>,
+    {} as Record<MachineName, number>,
   );
 
-  return (Object.entries(countsByName) as [WorkstationName, number][]).map(
+  return (Object.entries(machineCountsByName) as [MachineName, number][]).map(
     ([name, amount]) => ({
       amount,
-      name: `workstations.${name}`,
-      value: amount * getWorkstationPrice(workstations[name]),
+      name: `machines.${name}`,
+      value: amount * machines[name].purchasePrice,
     }),
   );
 };
