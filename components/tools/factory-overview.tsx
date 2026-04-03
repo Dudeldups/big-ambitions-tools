@@ -16,6 +16,7 @@ import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { getTimeMultiplier } from "@/lib/utils/getTimeMultiplier";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { cn } from "@/lib/utils";
+import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
@@ -25,6 +26,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const { activePlaythrough } = useActivePlaythrough();
   const { difficulty } = activePlaythrough;
   const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
+  const priceIndices = usePriceIndices();
 
   const oneTimeCostRowData = [
     ...derivePalletShelfData(values),
@@ -49,6 +51,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     values,
     difficulty,
     calculationPeriod,
+    priceIndices,
   ).sort((a, b) => (a.valueType ?? "").localeCompare(b.valueType ?? ""));
 
   const profitRowData = [...sortedProductData];

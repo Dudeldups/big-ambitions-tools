@@ -24,6 +24,7 @@ import { getWorkstationPrice } from "./math";
 import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
+import { PriceIndices } from "../stores/playthroughStore";
 
 export type DerivedDataFromFormValues = {
   valueType?: string;
@@ -246,6 +247,7 @@ export const deriveProductData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
   calculationPeriod: CalculationPeriod,
+  priceIndices: PriceIndices,
 ): DerivedDataFromFormValues => {
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
@@ -299,8 +301,11 @@ export const deriveProductData = (
                 name: `products.${name}`,
                 amount: Math.ceil(exportAmount),
                 value:
-                  getExportPrice(product.wholesalePrice, difficulty) *
-                  exportAmount,
+                  getExportPrice(
+                    product.wholesalePrice,
+                    difficulty,
+                    priceIndices[name as ProductName],
+                  ) * exportAmount,
               },
             ]
           : []),
