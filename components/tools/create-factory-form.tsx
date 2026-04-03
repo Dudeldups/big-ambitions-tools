@@ -266,7 +266,9 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
         <Button type="button" variant="outline" onClick={() => reset()}>
           {t("general.reset")}
         </Button>
-        <Button variant="outline">{t("general.cancel")}</Button>
+        <Button type="button" variant="outline">
+          {t("general.cancel")}
+        </Button>
         <Button type="submit" disabled={isPending}>
           {t("general.confirm")}
         </Button>
