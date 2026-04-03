@@ -42,7 +42,7 @@ export const useAppStore = create(
 
       difficulty: "easy",
       displayPrices: {
-        source: DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT,
+        source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
         target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
       },
       calculationPeriod: "weekly",
