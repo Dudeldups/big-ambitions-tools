@@ -9,7 +9,7 @@ import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
 import { IngredientName } from "../game/ingredientNames";
 import { ingredients } from "../game/ingredients";
-import { MachineName, WorkstationName } from "../game/machineNames";
+import { MachineName } from "../game/machineNames";
 import { machines, workstations } from "../game/machines";
 import { products } from "../game/products";
 import { CalculationPeriod, Difficulty } from "../game/types";
@@ -20,7 +20,6 @@ import {
   FormVehicles,
   FormWorkstations,
 } from "../schemas/factory";
-import { getWorkstationPrice } from "./math";
 import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
