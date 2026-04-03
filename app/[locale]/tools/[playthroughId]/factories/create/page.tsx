@@ -64,7 +64,7 @@ const CreateFactoryPage = () => {
   const watchedValues = useWatch({ control }) as FactoryFormValues;
 
   return (
-    <div className="grid grid-cols-2 gap-8">
+    <div className="grid gap-8 lg:grid-cols-2">
       <CreateFactoryForm form={form} />
       <FactoryOverview values={watchedValues} />
     </div>
