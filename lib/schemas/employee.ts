@@ -14,13 +14,13 @@ const integerSalarySchema = baseSalarySchema.int();
 const floatSalarySchema = baseSalarySchema;
 
 export const employeeSchemaInteger = z.object({
-  salary: integerSalarySchema.optional(),
-  amount: z.number().int().nonnegative().optional(),
+  salary: integerSalarySchema,
+  amount: z.number().int().nonnegative(),
 });
 
 export const employeeSchemaFloat = z.object({
-  salary: floatSalarySchema.optional(),
-  amount: z.number().nonnegative().optional(),
+  salary: floatSalarySchema,
+  amount: z.number().nonnegative(),
 });
 
 export const employeesSchema = z.object({
