@@ -199,9 +199,9 @@ export const deriveFactoryWorkerAmount = (
 
 export const deriveDeliveryDriverAmount = (
   vehicles: FormVehicles,
-  employeeData: FormEmployees,
+  salary: number,
 ) => {
-  if (employeeData.deliveryDriver.salary === 0) return 0;
+  if (salary === 0) return 0;
 
   return vehicles.filter(Boolean).length;
 };

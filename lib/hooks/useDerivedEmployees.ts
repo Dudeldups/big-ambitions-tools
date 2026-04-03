@@ -5,7 +5,7 @@ import {
   FormVehicles,
   FormWorkstations,
 } from "../schemas/factory";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import {
   deriveDeliveryDriverAmount,
   deriveFactoryWorkerAmount,
@@ -26,45 +26,33 @@ export const useDerivedEmployees = ({
   employees: FormEmployees;
   setValue: UseFormSetValue<FactoryFormValues>;
 }) => {
-  const useDeepCompareMemo = <T>(value: T): T => {
-    const ref = useRef<T>(value);
-    if (JSON.stringify(ref.current) !== JSON.stringify(value)) {
-      ref.current = value;
+  useEffect(() => {
+    const { salary, amount } = employees.deliveryDriver;
+    const derivedDriverAmount = deriveDeliveryDriverAmount(vehicles, salary);
+    if (amount !== derivedDriverAmount) {
+      setValue("employees.deliveryDriver.amount", derivedDriverAmount, {
+        shouldDirty: false,
+      });
     }
-    return ref.current;
-  };
-
-  const stableWorkstations = useDeepCompareMemo(workstations);
-  const stableEmployees = useDeepCompareMemo(employees);
-  const stableVehicles = useDeepCompareMemo(vehicles);
+  }, [employees.deliveryDriver, setValue, vehicles]);
 
   useEffect(() => {
-    const derivedDriverAmount = deriveDeliveryDriverAmount(
-      stableVehicles,
-      stableEmployees,
-    );
+    const derived = deriveFactoryWorkerAmount(workstations, openingHours);
+    const currentAmount = employees.factoryWorker.amount;
 
-    setValue("employees.deliveryDriver.amount", derivedDriverAmount, {
-      shouldDirty: false,
-    });
-  }, [stableEmployees, setValue, stableVehicles]);
-
-  useEffect(() => {
-    const derivedFactoryWorkerAmount = deriveFactoryWorkerAmount(
-      stableWorkstations,
-      openingHours,
-    );
-
-    setValue("employees.factoryWorker.amount", derivedFactoryWorkerAmount, {
-      shouldDirty: false,
-    });
-  }, [openingHours, setValue, stableWorkstations]);
+    if (currentAmount !== derived) {
+      setValue("employees.factoryWorker.amount", derived, {
+        shouldDirty: false,
+      });
+    }
+  }, [employees.factoryWorker.amount, openingHours, setValue, workstations]);
 
   useEffect(() => {
-    const derivedHrAmount = deriveHrManagerAmount(stableEmployees);
-    if (stableEmployees?.hrManager?.amount === derivedHrAmount) return;
-    setValue("employees.hrManager.amount", derivedHrAmount, {
-      shouldDirty: false,
-    });
-  }, [stableEmployees, setValue]);
+    const derived = deriveHrManagerAmount(employees);
+    const currentAmount = employees.hrManager?.amount;
+
+    if (currentAmount !== derived) {
+      setValue("employees.hrManager.amount", derived, { shouldDirty: false });
+    }
+  }, [employees, setValue]);
 };
