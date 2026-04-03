@@ -72,14 +72,16 @@ export const getEmployeeSalary = (
 export const getManufacturePrice = (
   product: Product,
   difficulty: Difficulty,
+  factoryWorkerSalary?: number,
 ): number => {
+  const employeeSalary =
+    factoryWorkerSalary ?? getEmployeeSalary("factoryWorker", difficulty);
   const ingredientData = getIngredientDataForProduct(product, difficulty);
   const totalIngredientPrice = ingredientData.reduce(
     (acc, ingredient) => acc + ingredient.cost,
     0,
   );
   const ingredientPricePerItem = totalIngredientPrice / product.productionRate;
-  const employeeSalary = getEmployeeSalary("factoryWorker", difficulty);
   const employeeCostPerItem = employeeSalary / product.productionRate;
   return ingredientPricePerItem + employeeCostPerItem;
 };
