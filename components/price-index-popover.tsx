@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/popover";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import {
-  BASE_PRODUCT_PRICE_INDEX,
   MAX_PRODUCT_PRICE_INDEX,
   MIN_PRODUCT_PRICE_INDEX,
 } from "@/lib/constants";
