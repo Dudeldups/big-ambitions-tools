@@ -74,6 +74,10 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
   });
 
   const openingHours = useWatch({ control, name: "openingHours" });
+  const factoryWorkerSalary = useWatch({
+    control,
+    name: "employees.factoryWorker.salary",
+  });
 
   const onSubmit = (values: FactoryFormValues) => {
     const hasMissingName = values.name.trim() === "";
@@ -235,6 +239,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               append={append}
               remove={remove}
               setValue={setValue}
+              factoryWorkerSalary={factoryWorkerSalary}
             />
           ))}
 

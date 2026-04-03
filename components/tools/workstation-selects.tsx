@@ -37,6 +37,7 @@ type WorkstationSelectsProps = {
   append: UseFieldArrayAppend<FactoryFormValues, "workstations">;
   remove: (index: number) => void;
   setValue: UseFormSetValue<FactoryFormValues>;
+  factoryWorkerSalary: number;
 };
 
 const productData = Object.entries(products).map(([key, value]) => ({
@@ -50,6 +51,7 @@ const WorkstationSelects = ({
   append,
   remove,
   setValue,
+  factoryWorkerSalary,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
 
@@ -219,6 +221,7 @@ const WorkstationSelects = ({
 
         <PriceIndexPopover
           selectedProduct={selectedProduct}
+          factoryWorkerSalary={factoryWorkerSalary}
           className="ml-auto"
         />
       </FieldGroup>
