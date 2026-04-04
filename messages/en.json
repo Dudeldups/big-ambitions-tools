@@ -22,7 +22,6 @@
     "exportPrice": "Export price",
     "profit": "Profit",
     "manufacturingCosts": "Manufacturing costs",
-
     "difficultyOptions": {
       "easy": "easy",
       "normal": "normal",
@@ -109,8 +108,8 @@
       "desc2": "Want to optimize your factories and production lines? Check out the <tools>tools</tools> section."
     },
     "updates": {
-      "title": "Latest updates",
-      "0": "Website launched with initial data on workstations, goods and factory planners."
+      "0": "Website launched with initial data on workstations, goods and factory planners.",
+      "title": "Latest updates"
     }
   },
   "database": {
@@ -209,7 +208,8 @@
     }
   },
   "about": {
-    "title": "About Big Ambitions Tools"
+    "title": "FAQ",
+    "desc": "This page contains answers to frequently asked questions. If you still have a question, feel free to ask in the Discord server."
   },
   "importers": {
     "jetcargo": "Jet Cargo Imports",

@@ -31,136 +31,28 @@
       "importers": "Importeure",
       "ingredients": "Zutaten",
       "productionRate": "Produktion / Std."
+    },
+    "copy": "Kopieren",
+    "close": "Schließen",
+    "delete": "Löschen",
+    "amount": "Betrag",
+    "noValue": "Kein Wert",
+    "vehicle": "Fahrzeug",
+    "priceIndex": "Preisindex",
+    "exportPrice": "Exportpreis",
+    "profit": "Gewinn",
+    "manufacturingCosts": "Herstellungskosten",
+    "displayPriceOptions": {
+      "manufacture": "Herstellung",
+      "import": "Import",
+      "export": "Export",
+      "retail": "Verkauf"
+    },
+    "calculationPeriodOptions": {
+      "hourly": "Stündlich",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich"
     }
-  },
-  "toasts": {
-    "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
-    "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",
-    "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!",
-    "workstationCopyError": "Please select a workstation and a product first."
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "This resource does not exist.",
-      "nameRequired": "Character name is required.",
-      "nameTooLong": "Character name must be at most 30 characters.",
-      "difficultyRequired": "Please select a difficulty.",
-      "workstationProductRequired": "Please select a product for each workstation."
-    },
-    "factory": {
-      "nameTooLong": "Factory name must be at most 50 characters.",
-      "descriptionTooLong": "Factory description must be at most 150 characters.",
-      "workstationsRequired": "Please add at least one workstation."
-    }
-  },
-  "home": {
-    "intro": {
-      "title": "Willkommen zu Big Ambitions Tools!",
-
-      "desc": "Here you can find a collection of infos and tools for the game <i>Big Ambitions</i> by Hovgaard Games. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version 0.10 of the game and may change with future updates.",
-      "desc2": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!",
-      "gameDesc": "Don't even know the game yet? What a shame!",
-      "gameDesc2": "Check out the official website at <website>Hovgaard Games</website> or visit the game directly on <steam>Steam</steam>."
-    },
-    "cta": {
-      "title": "Let's get started!",
-      "desc": "Just want to look something up and do some number crunching? <i>Mhmm, tasty numbers!</i> Have a look at the <database>database</database>.",
-      "desc2": "Want to optimize your factories and production lines? Check out the <tools>tools</tools> section."
-    },
-    "updates": {
-      "0": "Website launched with initial data on workstations, goods and factory planners.",
-      "title": "Latest updates"
-    }
-  },
-  "database": {
-    "intro": {
-      "title": "Database",
-      "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for."
-    },
-    "table": {
-      "products": {
-        "title": "Produkte",
-        "caption": "Here you can find all products you can sell in your stores along with their details.",
-        "headers": {
-          "itemName": "Item name",
-          "amountPerBox": "Amount / box",
-          "importPrice": "Import price",
-          "importers": "Importers",
-          "ingredients": "Ingredients",
-          "productionRate": "Production / hr",
-          "workstation": "Workstation"
-        }
-      },
-      "ingredients": {
-        "title": "Zutaten",
-        "caption": "Here you can find all factory ingredients in the game along with their details.",
-        "headers": {
-          "itemName": "Item name",
-          "importPrice": "Import price",
-          "amountPerBox": "Amount / box",
-          "importers": "Importers",
-          "usedInProducts": "Used in products"
-        }
-      },
-      "machines": {
-        "title": "Machines",
-        "caption": "Here you can find all machines in the game along with their details.",
-        "headers": {
-          "itemName": "Item name",
-          "purchasePrice": "Price"
-        }
-      },
-      "workstations": {
-        "title": "Arbeitsstationen",
-        "caption": "Here you can find all workstations in the game along with their details.",
-        "headers": {
-          "workstation": "Workstation",
-          "purchasePrice": "Price",
-          "neededMachines": "Machines",
-          "usedForProducts": "Used for products"
-        }
-      },
-      "inventory": {
-        "title": "Inventar",
-        "caption": "Here you can find all inventory for your stores and warehouses in the game along with their details.",
-        "headers": {
-          "itemName": "Item name",
-          "purchasePrice": "Preis",
-          "storageCapacity": "Storage capacity"
-        }
-      }
-    }
-  },
-  "tools": {
-    "intro": {
-      "title": "Tools",
-      "desc": "Here you can find various tools to help you optimize your factories and production lines. Just select the products you want to produce to see the required ingredients, machines, and workstations."
-    },
-    "overview": {
-      "empire": {
-        "title": "Your empire",
-        "desc": "Get a quick overview of your empire!"
-      }
-    },
-    "dashboard": {
-      "title": "Dashboard",
-      "desc": "Create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with different characters and difficulties, or just keep track of your progress.",
-      "noPlaythroughs": "No playthroughs yet. Create one to get started!",
-      "createPlaythroughButtonDesc": "Create a new playthrough:",
-      "createPlaythroughTitle": "Create a new playthrough",
-      "createPlaythroughDesc": "Enter a name for your playthrough and select the difficulty so the tools can calculate the correct prices. You can edit or delete your playthroughs at any time.",
-      "createPlaythroughPlaceholder": "e.g. John Manhattan",
-      "deletePlaythroughTitle": "Delete playthrough",
-      "deletePlaythroughDesc": "Are you sure you want to delete this playthrough? This action cannot be undone."
-    },
-    "factoryPlanner": {
-      "title": "Factory Planner",
-      "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
-      "genericFactoryName": "{productName} factory"
-    }
-  },
-  "about": {
-    "title": "About Big Ambitions Tools"
   },
   "importers": {
     "jetcargo": "Jet Cargo Imports",
@@ -323,5 +215,214 @@
   "inventory": {
     "palletShelf": "Palettenregal",
     "storageShelf": "Lagerregal"
+  },
+  "tableColumns": {
+    "itemName": "Artikelname",
+    "purchasePrice": "Kaufpreis",
+    "retailPrice": "Verkaufspreis",
+    "manufacturePrice": "Herstellkosten",
+    "storageCapacity": "Speicherkapazität",
+    "workstation": "Arbeitsplatz",
+    "neededMachines": "Maschinen",
+    "usedForProducts": "Verwendung für Produkte",
+    "importPrice": "Einfuhrpreis",
+    "exportPrice": "Ausfuhrpreis",
+    "profitMargin": "Gewinnmarge",
+    "profitPerHour": "Gewinn/Stunde",
+    "amount": "Menge",
+    "amountPerBox": "Menge/Karton",
+    "usedInProducts": "Verwendung in Produkten",
+    "importers": "Einführer",
+    "ingredients": "Zutaten",
+    "productionRate": "Produktion/Stunde",
+    "vehicleName": "Fahrzeugname",
+    "maxFuel": "Kraftstoffkapazität",
+    "maxCargoCapacity": "Frachtkapazität",
+    "maxSpeed": "Max. Geschwindigkeit",
+    "enginePower": "Beschleunigung",
+    "autoParkSupported": "Automatisches Parken",
+    "taxDeductible": "Steuerabsetzbar",
+    "requiredDeliveryDriverSkillValue": "Erforderl. Fahrerqualif.",
+    "destinationsThatCanDeliver": "Basisziele",
+    "destinationsFull": "Mit 100% LM",
+    "employees": "Mitarbeiter",
+    "description": "Beschreibung"
+  },
+  "vehicles": {
+    "AnselmoAF90": "Anselmo AF90",
+    "VordPony": "Vord Pony",
+    "ElectricScooter": "Elektro-Scooter",
+    "Bima320": "Bima 320",
+    "PetrollsFanton": "Petrolls Fanton",
+    "VordTiaraVic": "Vord Tiara Vic",
+    "MersaidiS500": "Mersaidi S500",
+    "MersaidiMGAGT": "Mersaidi MGAGT",
+    "HonzaMimic": "Honza Mimic",
+    "Ferdinand112": "Ferdinand 112",
+    "UMCNunavut": "UMC Nunavut",
+    "VordV150": "Vord V150",
+    "DeliveryTruck": "Vord Kurier D500",
+    "FreightTruckT1": "Fracht-LKW T1",
+    "MersaidiDash": "Mersaidi Dash"
+  },
+  "employees": {
+    "deliveryDriver": "Lieferfahrer",
+    "hrManager": "HR-Manager",
+    "factoryWorker": "Produktionsmitarbeiter",
+    "purchasingAgent": "Einkäufer",
+    "logisticsManager": "Logistikmanager",
+    "customerService": "Kundendienstmitarbeiter",
+    "cleaning": "Gebäudereiniger",
+    "lawyer": "Anwalt",
+    "projectionist": "Projektionist",
+    "hairStylist": "Haarstylist",
+    "securityGuard": "Sicherheitswächter",
+    "graphicDesigner": "Grafikdesigner",
+    "stageCrew": "Bühnencrew",
+    "actor": "Schauspieler",
+    "dj": "DJ",
+    "headhunter": "Headhunter",
+    "gymTrainer": "Fitness-Trainer",
+    "programmer": "Programmierer"
+  },
+  "toasts": {
+    "playthroughSaveSuccess": "Durchlauf \"{characterName}\" erstellt!",
+    "playthroughEditSuccess": "Durchlauf \"{characterName}\" aktualisiert!",
+    "playthroughDeleteSuccess": "Durchlauf \"{characterName}\" gelöscht!",
+    "workstationCopyError": "Bitte wähle zuerst einen Arbeitsplatz und ein Produkt aus."
+  },
+  "errors": {
+    "invalidPriceIndex": "Da passt die Rechnung nicht – prüfe deine Eingaben und versuche es nochmal. Wenn du denkst, das ist ein Fehler, sag uns Bescheid!",
+    "playthrough": {
+      "notFound": "Diese Ressource existiert leider nicht.",
+      "nameRequired": "Bitte gib dem Charakter einen Namen an.",
+      "nameTooLong": "Der Charaktername darf maximal 30 Zeichen lang sein.",
+      "difficultyRequired": "Bitte wähle eine Schwierigkeit aus.",
+      "workstationProductRequired": "Bitte wähle für jede Arbeitsstation ein Produkt aus."
+    },
+    "factory": {
+      "nameTooLong": "Der Fabrikname darf maximal 50 Zeichen lang sein.",
+      "descriptionTooLong": "Die Fabriksbeschreibung darf maximal 150 Zeichen lang sein.",
+      "workstationsRequired": "Bitte füge mindestens eine Arbeitsstation hinzu.",
+      "atLeastOneVehicle": "Du brauchst mindestens ein Fahrzeug für die Fabrik.",
+      "maxTwoVehicles": "Für die Fabrik sind maximal zwei Fahrzeuge erlaubt."
+    }
+  },
+  "home": {
+    "intro": {
+      "title": "Willkommen bei Big Ambitions Werkzeuge!",
+      "desc": "Hier findest du eine Sammlung an Infos und Werkzeugen für das Spiel <i>Big Ambitions</i> von Hovgaard Games. Diese Fansite konzentriert sich aktuell auf Fabrikmechaniken, um dir beim Optimieren deines Gameplay zu helfen. Die Berechnungen basieren auf Version 0.10 des Spiels und können bei zukünftigen Updates angepasst werden.",
+      "desc2": "Fandest du einen Fehler oder fehlen Infos? Oder hast du Verbesserungsvorschläge für die Seite? Schreib einfach mal <contact>uns an</contact>!",
+      "gameDesc": "Kennst du das Spiel noch nicht? Was für ein Jammer!",
+      "gameDesc2": "Schau mal auf der offiziellen Website von <website>Hovgaard Games</website> vorbei oder besuche das Spiel direkt auf <steam>Steam</steam>."
+    },
+    "cta": {
+      "title": "Los geht's!",
+      "desc": "Willst du nur etwas nachschlagen und mit Zahlen herumschrauben? <i>Mhmm, leckere Zahlen!</i> Schau dir die <database>Datenbank</database> an.",
+      "desc2": "Willst du deine Fabriken und Produktionslinien optimieren? Schau dir den <tools>Werkzeuge</tools>-Bereich an."
+    },
+    "updates": {
+      "0": "Webseite gestartet mit ersten Daten zu Arbeitsstationen, Gütern und Fabrikplanern.",
+      "title": "Neueste Updates"
+    }
+  },
+  "database": {
+    "intro": {
+      "title": "Datenbank",
+      "desc": "Schau dir Preise, Produktionszeiten und Zutatenanforderungen für alle Produkte im Spiel an. Nutze die Suchfunktion, um schnell das zu finden, was du suchst."
+    },
+    "table": {
+      "products": {
+        "title": "Produkte",
+        "caption": "Hier findest du alle Produkte, die du in deinen Geschäften verkaufen kannst, inklusive aller Details.",
+        "headers": {
+          "itemName": "Name",
+          "amountPerBox": "Menge pro Kiste",
+          "importPrice": "Importpreis",
+          "importers": "Lieferanten",
+          "ingredients": "Zutaten",
+          "productionRate": "Produktion / Std",
+          "workstation": "Arbeitsplatz"
+        }
+      },
+      "ingredients": {
+        "title": "Zutaten",
+        "caption": "Hier findest du alle Zutaten für die Fabrik im Spiel inklusive aller Details.",
+        "headers": {
+          "itemName": "Name",
+          "importPrice": "Importpreis",
+          "amountPerBox": "Menge pro Kiste",
+          "importers": "Lieferanten",
+          "usedInProducts": "Verwendet in Produkten"
+        }
+      },
+      "machines": {
+        "title": "Maschinen",
+        "caption": "Hier findest du alle Maschinen im Spiel inklusive aller Details.",
+        "headers": {
+          "itemName": "Name",
+          "purchasePrice": "Kaufpreis"
+        }
+      },
+      "workstations": {
+        "title": "Arbeitsplätze",
+        "caption": "Hier findest du alle Arbeitsplätze im Spiel inklusive aller Details.",
+        "headers": {
+          "workstation": "Bezeichnung",
+          "purchasePrice": "Kaufpreis",
+          "neededMachines": "Benötigte Maschinen",
+          "usedForProducts": "Verwendet für Produkte"
+        }
+      },
+      "inventory": {
+        "title": "Lagerbestand",
+        "caption": "Hier findest du alle Lagerbestände für deine Geschäfte und Lagerhallen im Spiel inklusive aller Details.",
+        "headers": {
+          "itemName": "Name",
+          "purchasePrice": "Kaufpreis",
+          "storageCapacity": "Lagerkapazität"
+        }
+      },
+      "vehicles": {
+        "title": "Fahrzeuge",
+        "caption": "Ein Überblick über alle Fahrzeuge im Spiel."
+      }
+    }
+  },
+  "tools": {
+    "intro": {
+      "title": "Werkzeuge",
+      "desc": "Hier findest du verschiedene Werkzeuge, um deine Fabriken und Produktionslinien zu optimieren. Wähle einfach die Produkte aus, die du produzieren möchtest, um die benötigten Zutaten, Maschinen und Arbeitsplätze zu sehen."
+    },
+    "overview": {
+      "empire": {
+        "title": "Dein Imperium",
+        "desc": "Erhalte einen schnellen Überblick über dein Imperium!"
+      }
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "desc": "Erstelle und verwalte deine Durchgänge. Ein Durchgang ist ein einzelner Spielverlauf. Du kannst mehrere Durchgänge erstellen, um verschiedene Versuche zu vergleichen, mit verschiedenen Charakteren und Schwierigkeitsgraden zu experimentieren oder einfach deinen Fortschritt im Blick zu behalten.",
+      "noPlaythroughs": "Noch keine Durchgänge. Erstelle einen, um loszulegen!",
+      "createPlaythroughButtonDesc": "Neuen Durchgang erstellen:",
+      "createPlaythroughTitle": "Neuen Durchgang erstellen",
+      "createPlaythroughDesc": "Gib einen Namen für deinen Durchgang ein und wähle die Schwierigkeit aus, damit die Werkzeuge den korrekten Preis berechnen können. Du kannst deine Durchgänge jederzeit bearbeiten oder löschen.",
+      "createPlaythroughPlaceholder": "z.B. John Manhattan",
+      "deletePlaythroughTitle": "Durchgang löschen",
+      "deletePlaythroughDesc": "Bist du sicher, dass du diesen Durchgang löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "factoryPlanner": {
+      "title": "Fabrikplaner",
+      "desc": "Der Fabrikplaner hilft dir dabei, die benötigten Zutaten, Maschinen und Arbeitsplätze für deine Produktionslinien zu berechnen. Wähle einfach die Produkte aus, die du produzieren möchtest, und der Planer macht den Rest.",
+      "genericFactoryName": "{productName}-Fabrik",
+      "estimatedSales": "Geschätzte wöchentliche Verkäufe",
+      "estimatedSalesTooltip": "Gib die erwarteten Verkäufe für jedes Produkt in deinen Geschäften ein.",
+      "priceIndexButton": "Preisindex festlegen",
+      "priceIndexDesc": "Wähle den aktuellen Spiel-Preisindex für dieses Produkt aus, um das korrekte Einkommen zu berechnen. (Der Exportpreis ist genauer)."
+    }
+  },
+  "about": {
+    "title": "FAQ",
+    "desc": "Hier findest du Antworten auf die häufigsten Fragen. Wenn du noch eine Frage hast, frag uns einfach im Discord-Server!"
   }
 }
