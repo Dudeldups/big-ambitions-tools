@@ -11,7 +11,6 @@ export const routing = defineRouting({
     "it",
     "pt",
     "ru",
-    "zh",
     "ja",
     "ko",
     "tr",
@@ -25,6 +24,8 @@ export const routing = defineRouting({
     "cs",
     "ro",
     "lt",
+    "zh-CN", // Simplified Chinese
+    "zh-TW", // Traditional Chinese
   ],
   defaultLocale: "en",
   localePrefix: "as-needed",
