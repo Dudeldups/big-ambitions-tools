@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest",
-    "translate": "tsx local/translator/translate.ts"
+    "test": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -46,7 +45,6 @@
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
-    "tsx": "^4.21.0",
     "typescript": "^5",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.0.18"
