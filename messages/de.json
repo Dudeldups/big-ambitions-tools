@@ -1,59 +1,4 @@
 {
-  "general": {
-    "confirm": "Bestätigen",
-    "cancel": "Abbrechen",
-    "reset": "Zurücksetzen",
-    "summedUpAmount": "Gesamt",
-    "noResultsFound": "Keine Ergebnisse gefunden.",
-    "columnsDescription": "Spalten",
-    "filterResults": "Ergebnisse filtern...",
-    "characterName": "Charaktername",
-    "workstation": "Arbeitsplatz",
-    "product": "Produkt",
-    "factories": "Fabriken",
-    "difficulty": "Schwierigkeit",
-    "difficultyOptions": {
-      "easy": "einfach",
-      "normal": "normal",
-      "hard": "schwer"
-    },
-    "tableColumns": {
-      "itemName": "Artikelname",
-      "purchasePrice": "Preis",
-      "storageCapacity": "Lagerkapazität",
-      "workstation": "Arbeitsplatz",
-      "neededMachines": "Maschinen benötigt",
-      "usedForProducts": "Verwendet für Produkte",
-      "importPrice": "Importpreis",
-      "exportPrice": "Exportpreis",
-      "amountPerBox": "Menge / Box",
-      "usedInProducts": "In Produkten verwendet",
-      "importers": "Importeure",
-      "ingredients": "Zutaten",
-      "productionRate": "Produktion / Std."
-    },
-    "copy": "Kopieren",
-    "close": "Schließen",
-    "delete": "Löschen",
-    "amount": "Betrag",
-    "noValue": "Kein Wert",
-    "vehicle": "Fahrzeug",
-    "priceIndex": "Preisindex",
-    "exportPrice": "Exportpreis",
-    "profit": "Gewinn",
-    "manufacturingCosts": "Herstellungskosten",
-    "displayPriceOptions": {
-      "manufacture": "Herstellung",
-      "import": "Import",
-      "export": "Export",
-      "retail": "Verkauf"
-    },
-    "calculationPeriodOptions": {
-      "hourly": "Stündlich",
-      "daily": "Täglich",
-      "weekly": "Wöchentlich"
-    }
-  },
   "importers": {
     "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
@@ -81,9 +26,9 @@
     "expensiveFlower": "Blume (Teuer)",
     "pear": "Tüte Birnen",
     "apple": "Tüte Äpfel",
-    "tomato": "Bag of Tomatoes",
+    "tomato": "Beutel mit Tomaten",
     "carrot": "Tüte Karotten",
-    "lettuce": "Bag of Lettuce",
+    "lettuce": "Salatbeutel",
     "banana": "Tüte Bananen",
     "iceCream": "Eiscreme",
     "cupcake": "Cupcake",
@@ -102,7 +47,7 @@
     "salad": "Salat",
     "energyDrink": "Energy-Drink",
     "cupOfTea": "Tasse Tee",
-    "cupOfCoffee": "Cup of Coffee",
+    "cupOfCoffee": "Tasse Kaffee",
     "whisky": "Whisky",
     "slushie": "Slushie",
     "sodaCan": "Limonadendose",
@@ -212,217 +157,117 @@
     "automatedBakingMachine": "Automatische Backmaschine",
     "hydroponicPlanter": "Hydroponik-Pflanzgefäß"
   },
-  "inventory": {
-    "palletShelf": "Palettenregal",
-    "storageShelf": "Lagerregal"
-  },
-  "tableColumns": {
-    "itemName": "Artikelname",
-    "purchasePrice": "Kaufpreis",
-    "retailPrice": "Verkaufspreis",
-    "manufacturePrice": "Herstellkosten",
-    "storageCapacity": "Speicherkapazität",
-    "workstation": "Arbeitsplatz",
-    "neededMachines": "Maschinen",
-    "usedForProducts": "Verwendung für Produkte",
-    "importPrice": "Einfuhrpreis",
-    "exportPrice": "Ausfuhrpreis",
-    "profitMargin": "Gewinnmarge",
-    "profitPerHour": "Gewinn/Stunde",
-    "amount": "Menge",
-    "amountPerBox": "Menge/Karton",
-    "usedInProducts": "Verwendung in Produkten",
-    "importers": "Einführer",
-    "ingredients": "Zutaten",
-    "productionRate": "Produktion/Stunde",
-    "vehicleName": "Fahrzeugname",
-    "maxFuel": "Kraftstoffkapazität",
-    "maxCargoCapacity": "Frachtkapazität",
-    "maxSpeed": "Max. Geschwindigkeit",
-    "enginePower": "Beschleunigung",
-    "autoParkSupported": "Automatisches Parken",
-    "taxDeductible": "Steuerabsetzbar",
-    "requiredDeliveryDriverSkillValue": "Erforderl. Fahrerqualif.",
-    "destinationsThatCanDeliver": "Basisziele",
-    "destinationsFull": "Mit 100% LM",
-    "employees": "Mitarbeiter",
-    "description": "Beschreibung"
-  },
   "vehicles": {
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
-    "ElectricScooter": "Elektro-Scooter",
-    "Bima320": "Bima 320",
+    "ElectricScooter": "E‑Scooter",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
-    "MersaidiMGAGT": "Mersaidi MGAGT",
+    "MersaidiMGAGT": "Mersaidi MGA GT",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
     "VordV150": "Vord V150",
-    "DeliveryTruck": "Vord Kurier D500",
-    "FreightTruckT1": "Fracht-LKW T1",
+    "DeliveryTruck": "Vord Courier D500",
+    "FreightTruckT1": "Fracht-Lkw T1",
     "MersaidiDash": "Mersaidi Dash"
+  },
+  "inventory": {
+    "palletShelf": "Palettenregal",
+    "storageShelf": "Lagerregal"
   },
   "employees": {
     "deliveryDriver": "Lieferfahrer",
     "hrManager": "HR-Manager",
-    "factoryWorker": "Produktionsmitarbeiter",
+    "factoryWorker": "Fabrikarbeiter",
     "purchasingAgent": "Einkäufer",
     "logisticsManager": "Logistikmanager",
-    "customerService": "Kundendienstmitarbeiter",
-    "cleaning": "Gebäudereiniger",
+    "customerService": "Kundenservice",
+    "cleaning": "Reinigung",
     "lawyer": "Anwalt",
-    "projectionist": "Projektionist",
+    "projectionist": "Filmvorführer",
     "hairStylist": "Haarstylist",
-    "securityGuard": "Sicherheitswächter",
+    "securityGuard": "Sicherheitskraft",
     "graphicDesigner": "Grafikdesigner",
     "stageCrew": "Bühnencrew",
     "actor": "Schauspieler",
     "dj": "DJ",
     "headhunter": "Headhunter",
-    "gymTrainer": "Fitness-Trainer",
+    "gymTrainer": "Fitnesstrainer",
     "programmer": "Programmierer"
   },
-  "toasts": {
-    "playthroughSaveSuccess": "Durchlauf \"{characterName}\" erstellt!",
-    "playthroughEditSuccess": "Durchlauf \"{characterName}\" aktualisiert!",
-    "playthroughDeleteSuccess": "Durchlauf \"{characterName}\" gelöscht!",
-    "workstationCopyError": "Bitte wähle zuerst einen Arbeitsplatz und ein Produkt aus."
-  },
-  "errors": {
-    "invalidPriceIndex": "Da passt die Rechnung nicht – prüfe deine Eingaben und versuche es nochmal. Wenn du denkst, das ist ein Fehler, sag uns Bescheid!",
-    "playthrough": {
-      "notFound": "Diese Ressource existiert leider nicht.",
-      "nameRequired": "Bitte gib dem Charakter einen Namen an.",
-      "nameTooLong": "Der Charaktername darf maximal 30 Zeichen lang sein.",
-      "difficultyRequired": "Bitte wähle eine Schwierigkeit aus.",
-      "workstationProductRequired": "Bitte wähle für jede Arbeitsstation ein Produkt aus."
+  "general": {
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen",
+    "reset": "Zurücksetzen",
+    "copy": "Kopieren",
+    "close": "Schließen",
+    "delete": "Löschen",
+    "amount": "Menge",
+    "summedUpAmount": "Gesamt",
+    "noValue": "Keine",
+    "noResultsFound": "Keine Ergebnisse gefunden.",
+    "columnsDescription": "Spalten",
+    "filterResults": "Ergebnisse filtern...",
+    "characterName": "Charaktername",
+    "workstation": "Arbeitsplatz",
+    "product": "Produkt",
+    "factories": "Fabriken",
+    "vehicle": "Fahrzeug",
+    "difficulty": "Schwierigkeit",
+    "priceIndex": "Preisindex",
+    "exportPrice": "Exportpreis",
+    "profit": "Gewinn",
+    "manufacturingCosts": "Herstellungskosten",
+    "difficultyOptions": {
+      "easy": "Leicht",
+      "normal": "Normal",
+      "hard": "Schwer"
     },
-    "factory": {
-      "nameTooLong": "Der Fabrikname darf maximal 50 Zeichen lang sein.",
-      "descriptionTooLong": "Die Fabriksbeschreibung darf maximal 150 Zeichen lang sein.",
-      "workstationsRequired": "Bitte füge mindestens eine Arbeitsstation hinzu.",
-      "atLeastOneVehicle": "Du brauchst mindestens ein Fahrzeug für die Fabrik.",
-      "maxTwoVehicles": "Für die Fabrik sind maximal zwei Fahrzeuge erlaubt."
+    "displayPriceOptions": {
+      "manufacture": "Fertigen",
+      "import": "Importieren",
+      "export": "Export",
+      "retail": "Einzelhandel"
+    },
+    "calculationPeriodOptions": {
+      "hourly": "Stündlich",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich"
     }
   },
-  "home": {
-    "intro": {
-      "title": "Willkommen bei Big Ambitions Werkzeuge!",
-      "desc": "Hier findest du eine Sammlung an Infos und Werkzeugen für das Spiel <i>Big Ambitions</i> von Hovgaard Games. Diese Fansite konzentriert sich aktuell auf Fabrikmechaniken, um dir beim Optimieren deines Gameplay zu helfen. Die Berechnungen basieren auf Version 0.10 des Spiels und können bei zukünftigen Updates angepasst werden.",
-      "desc2": "Fandest du einen Fehler oder fehlen Infos? Oder hast du Verbesserungsvorschläge für die Seite? Schreib einfach mal <contact>uns an</contact>!",
-      "gameDesc": "Kennst du das Spiel noch nicht? Was für ein Jammer!",
-      "gameDesc2": "Schau mal auf der offiziellen Website von <website>Hovgaard Games</website> vorbei oder besuche das Spiel direkt auf <steam>Steam</steam>."
-    },
-    "cta": {
-      "title": "Los geht's!",
-      "desc": "Willst du nur etwas nachschlagen und mit Zahlen herumschrauben? <i>Mhmm, leckere Zahlen!</i> Schau dir die <database>Datenbank</database> an.",
-      "desc2": "Willst du deine Fabriken und Produktionslinien optimieren? Schau dir den <tools>Werkzeuge</tools>-Bereich an."
-    },
-    "updates": {
-      "0": "Webseite gestartet mit ersten Daten zu Arbeitsstationen, Gütern und Fabrikplanern.",
-      "title": "Neueste Updates"
-    }
-  },
-  "database": {
-    "intro": {
-      "title": "Datenbank",
-      "desc": "Schau dir Preise, Produktionszeiten und Zutatenanforderungen für alle Produkte im Spiel an. Nutze die Suchfunktion, um schnell das zu finden, was du suchst."
-    },
-    "table": {
-      "products": {
-        "title": "Produkte",
-        "caption": "Hier findest du alle Produkte, die du in deinen Geschäften verkaufen kannst, inklusive aller Details.",
-        "headers": {
-          "itemName": "Name",
-          "amountPerBox": "Menge pro Kiste",
-          "importPrice": "Importpreis",
-          "importers": "Lieferanten",
-          "ingredients": "Zutaten",
-          "productionRate": "Produktion / Std",
-          "workstation": "Arbeitsplatz"
-        }
-      },
-      "ingredients": {
-        "title": "Zutaten",
-        "caption": "Hier findest du alle Zutaten für die Fabrik im Spiel inklusive aller Details.",
-        "headers": {
-          "itemName": "Name",
-          "importPrice": "Importpreis",
-          "amountPerBox": "Menge pro Kiste",
-          "importers": "Lieferanten",
-          "usedInProducts": "Verwendet in Produkten"
-        }
-      },
-      "machines": {
-        "title": "Maschinen",
-        "caption": "Hier findest du alle Maschinen im Spiel inklusive aller Details.",
-        "headers": {
-          "itemName": "Name",
-          "purchasePrice": "Kaufpreis"
-        }
-      },
-      "workstations": {
-        "title": "Arbeitsplätze",
-        "caption": "Hier findest du alle Arbeitsplätze im Spiel inklusive aller Details.",
-        "headers": {
-          "workstation": "Bezeichnung",
-          "purchasePrice": "Kaufpreis",
-          "neededMachines": "Benötigte Maschinen",
-          "usedForProducts": "Verwendet für Produkte"
-        }
-      },
-      "inventory": {
-        "title": "Lagerbestand",
-        "caption": "Hier findest du alle Lagerbestände für deine Geschäfte und Lagerhallen im Spiel inklusive aller Details.",
-        "headers": {
-          "itemName": "Name",
-          "purchasePrice": "Kaufpreis",
-          "storageCapacity": "Lagerkapazität"
-        }
-      },
-      "vehicles": {
-        "title": "Fahrzeuge",
-        "caption": "Ein Überblick über alle Fahrzeuge im Spiel."
-      }
-    }
-  },
-  "tools": {
-    "intro": {
-      "title": "Werkzeuge",
-      "desc": "Hier findest du verschiedene Werkzeuge, um deine Fabriken und Produktionslinien zu optimieren. Wähle einfach die Produkte aus, die du produzieren möchtest, um die benötigten Zutaten, Maschinen und Arbeitsplätze zu sehen."
-    },
-    "overview": {
-      "empire": {
-        "title": "Dein Imperium",
-        "desc": "Erhalte einen schnellen Überblick über dein Imperium!"
-      }
-    },
-    "dashboard": {
-      "title": "Dashboard",
-      "desc": "Erstelle und verwalte deine Durchgänge. Ein Durchgang ist ein einzelner Spielverlauf. Du kannst mehrere Durchgänge erstellen, um verschiedene Versuche zu vergleichen, mit verschiedenen Charakteren und Schwierigkeitsgraden zu experimentieren oder einfach deinen Fortschritt im Blick zu behalten.",
-      "noPlaythroughs": "Noch keine Durchgänge. Erstelle einen, um loszulegen!",
-      "createPlaythroughButtonDesc": "Neuen Durchgang erstellen:",
-      "createPlaythroughTitle": "Neuen Durchgang erstellen",
-      "createPlaythroughDesc": "Gib einen Namen für deinen Durchgang ein und wähle die Schwierigkeit aus, damit die Werkzeuge den korrekten Preis berechnen können. Du kannst deine Durchgänge jederzeit bearbeiten oder löschen.",
-      "createPlaythroughPlaceholder": "z.B. John Manhattan",
-      "deletePlaythroughTitle": "Durchgang löschen",
-      "deletePlaythroughDesc": "Bist du sicher, dass du diesen Durchgang löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden."
-    },
-    "factoryPlanner": {
-      "title": "Fabrikplaner",
-      "desc": "Der Fabrikplaner hilft dir dabei, die benötigten Zutaten, Maschinen und Arbeitsplätze für deine Produktionslinien zu berechnen. Wähle einfach die Produkte aus, die du produzieren möchtest, und der Planer macht den Rest.",
-      "genericFactoryName": "{productName}-Fabrik",
-      "estimatedSales": "Geschätzte wöchentliche Verkäufe",
-      "estimatedSalesTooltip": "Gib die erwarteten Verkäufe für jedes Produkt in deinen Geschäften ein.",
-      "priceIndexButton": "Preisindex festlegen",
-      "priceIndexDesc": "Wähle den aktuellen Spiel-Preisindex für dieses Produkt aus, um das korrekte Einkommen zu berechnen. (Der Exportpreis ist genauer)."
-    }
-  },
-  "about": {
-    "title": "FAQ",
-    "desc": "Hier findest du Antworten auf die häufigsten Fragen. Wenn du noch eine Frage hast, frag uns einfach im Discord-Server!"
+  "tableColumns": {
+    "itemName": "Artikelname",
+    "purchasePrice": "Preis",
+    "retailPrice": "Verkaufspreis",
+    "manufacturePrice": "Herstellungspreis",
+    "storageCapacity": "Speicherkapazität",
+    "workstation": "Arbeitsplatz",
+    "neededMachines": "Maschinen",
+    "usedForProducts": "Für Produkte genutzt",
+    "importPrice": "Importpreis",
+    "exportPrice": "Exportpreis",
+    "profitMargin": "Gewinnmarge",
+    "profitPerHour": "Gewinn/Stunde",
+    "amount": "Menge",
+    "amountPerBox": "Menge/Karton",
+    "usedInProducts": "Verwendung in Produkten",
+    "importers": "Importer",
+    "ingredients": "Zutaten",
+    "productionRate": "Produktion/Stunde",
+    "vehicleName": "Fahrzeugname",
+    "maxFuel": "Tankinhalt",
+    "maxCargoCapacity": "Ladekapazität",
+    "maxSpeed": "Höchstgeschwindigkeit",
+    "enginePower": "Beschleunigung",
+    "autoParkSupported": "Automatisches Parken",
+    "taxDeductible": "Absetzbar",
+    "requiredDeliveryDriverSkillValue": "Erforderliche Fahrerfahrung",
+    "destinationsThatCanDeliver": "Startziele",
+    "destinationsFull": "Mit 100% LM",
+    "employees": "Mitarbeiter",
+    "description": "Beschreibung"
   }
 }
