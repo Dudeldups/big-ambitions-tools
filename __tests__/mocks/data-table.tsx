@@ -8,6 +8,9 @@ const MockedDataTable = ({
   <div data-testid="data-table">
     <span data-testid="row-count">{data.length}</span>
     <span data-testid="column-count">{columns.length}</span>
+    <span data-testid="row-data" data-value={JSON.stringify(data)}>
+      {JSON.stringify(data)}
+    </span>
   </div>
 );
 
