@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     environment: "jsdom",
+    setupFiles: ["./__tests__/setup.ts"],
     server: {
       deps: {
         // https://github.com/vercel/next.js/issues/77200
