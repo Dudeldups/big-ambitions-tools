@@ -29,7 +29,7 @@ const CreateFactoryPage = () => {
     defaultValues: {
       workstations: [],
       openingHours: 24,
-      vehicles: ["FreightTruckT1"],
+      vehicles: [{ name: "FreightTruckT1" }],
       deliveryPeriod: "weekly",
       employees: {
         deliveryDriver: {
