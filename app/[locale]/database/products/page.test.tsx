@@ -4,6 +4,7 @@ import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import ProductsPage from "./page";
 import { products } from "@/lib/game/products";
 import { initialAppState, useAppStore } from "@/lib/stores/appStore";
+import { getTableData } from "@/__tests__/helpers/table-page";
 
 describe("ProductsPage", () => {
   it("renders the data table", () => {
@@ -18,22 +19,14 @@ describe("ProductsPage", () => {
     );
   });
 
-  it("passes null profit data when store is not hydrated", () => {
-    useAppStore.setState({
-      ...initialAppState,
-      _hasHydrated: false,
-    });
+  it("passes undefined profit data when store is not hydrated", () => {
+    useAppStore.setState({ ...initialAppState, difficulty: undefined });
     renderWithIntl(<ProductsPage />);
-    // table still renders, data is there but margins are null
-    expect(screen.getByTestId("data-table")).toBeInTheDocument();
-  });
 
-  it("computes profit data when store is loaded", () => {
-    useAppStore.setState({
-      ...initialAppState,
-      difficulty: "hard",
-    });
-    renderWithIntl(<ProductsPage />);
-    expect(screen.getByTestId("data-table")).toBeInTheDocument();
+    const data = getTableData(screen);
+
+    expect(data[0].profitPerHour).toBeNull();
+    expect(data[0].margin).toBeUndefined();
+    expect(data[0].marginPercent).toBeUndefined();
   });
 });
