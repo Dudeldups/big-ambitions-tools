@@ -31,22 +31,26 @@ export type AppActions = {
   setTablePriceIndex: (index: number) => void;
 };
 
+export const initialState: AppState = {
+  _hasHydrated: false,
+  difficulty: "easy",
+  displayPrices: {
+    source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
+    target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
+  },
+  calculationPeriod: "weekly",
+  tablePriceIndex: BASE_PRODUCT_PRICE_INDEX,
+};
+
 export const useAppStore = create(
   persist(
     immer<AppState & AppActions>((set) => ({
-      _hasHydrated: false,
+      ...initialState,
+
       _setHasHydrated: (hasHydrated) =>
         set((state) => {
           state._hasHydrated = hasHydrated;
         }),
-
-      difficulty: "easy",
-      displayPrices: {
-        source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
-        target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
-      },
-      calculationPeriod: "weekly",
-      tablePriceIndex: BASE_PRODUCT_PRICE_INDEX,
 
       setDifficulty: (difficulty) =>
         set((state) => {
@@ -60,10 +64,12 @@ export const useAppStore = create(
             target,
           };
         }),
+
       setCalculationPeriod: (period) =>
         set((state) => {
           state.calculationPeriod = period;
         }),
+
       setTablePriceIndex: (index) =>
         set((state) => {
           state.tablePriceIndex = index;
