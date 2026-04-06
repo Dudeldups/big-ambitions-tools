@@ -8,6 +8,7 @@ import React from "react";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
+import { WorkstationName } from "@/lib/game/machineNames";
 
 const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
   itemName,
@@ -35,8 +36,8 @@ export default function MachinesPage() {
         columns={workstationsColumns(t)}
         data={workstationsData}
         className="mt-14"
-        renderRow={(row, t) => {
-          const rowMachines = row.original.neededMachines;
+        renderRow={(row) => {
+          const { neededMachines: rowMachines, itemName } = row.original;
           const prices = rowMachines.map((m) => machines[m]?.purchasePrice);
           const total = prices.reduce((acc, price) => acc + (price || 0), 0);
 
@@ -44,7 +45,7 @@ export default function MachinesPage() {
             <React.Fragment key={row.id}>
               <TableRow>
                 <TableCell rowSpan={2} className="align-top">
-                  {t(`workstations.${row.original.itemName}`)}
+                  {t(`workstations.${itemName as WorkstationName}`)}
                 </TableCell>
 
                 <TableCell>
