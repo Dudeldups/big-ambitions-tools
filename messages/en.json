@@ -307,9 +307,11 @@
       "desc2": "Want to optimize your factories and production lines? Check out the <tools>tools</tools> section."
     },
     "updates": {
-      "0": "Website launched with initial data on workstations, goods and factory planners.",
       "title": "Latest updates"
     }
+  },
+  "updateHistory": {
+    "launch": "Website launched"
   },
   "database": {
     "intro": {

@@ -8,6 +8,7 @@ import { updateHistory } from "@/lib/updateHistory";
 
 export default function Home() {
   const t = useTranslations("home");
+  const tUpdateHistory = useTranslations("updateHistory");
   const format = useFormatter();
   const dateFormattingRules: DateTimeFormatOptions = {
     year: "numeric",
@@ -97,7 +98,7 @@ export default function Home() {
                 <time dateTime={update.date}>
                   {format.dateTime(new Date(update.date), dateFormattingRules)}
                 </time>{" "}
-                - {t(`updates.${index}`)}
+                - {tUpdateHistory(update.id)}
               </li>
             ))}
         </ul>
