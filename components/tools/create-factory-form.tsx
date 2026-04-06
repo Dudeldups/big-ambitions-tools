@@ -126,9 +126,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               {...register("name")}
             />
             {errors.name?.message && (
-              <p className="text-destructive text-sm">
-                {t(errors.name.message)}
-              </p>
+              <FieldError>{t(errors.name.message as never)}</FieldError>
             )}
           </Field>
 
@@ -140,9 +138,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
               maxLength={150}
             />
             {errors.description?.message && (
-              <p className="text-destructive text-sm">
-                {t(errors.description.message)}
-              </p>
+              <FieldError>{t(errors.description.message as never)}</FieldError>
             )}
           </Field>
         </FieldGroup>
@@ -244,7 +240,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
           ))}
 
           {errors.workstations?.message && (
-            <FieldError>{t(errors.workstations.message)}</FieldError>
+            <FieldError>{t(errors.workstations.message as never)}</FieldError>
           )}
 
           <Button
