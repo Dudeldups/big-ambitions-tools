@@ -40,3 +40,5 @@ export function renderWithIntl(
     ...options,
   });
 }
+
+export * from "@testing-library/react";
