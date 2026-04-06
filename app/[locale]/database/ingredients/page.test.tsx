@@ -1,15 +1,10 @@
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
-import IngredientsPage from "./page";
 import { ingredients } from "@/lib/game/ingredients";
+import { mockDataTable } from "@/__tests__/mocks/data-table";
 
-vi.mock("@/components/tables/data-table", () => ({
-  DataTable: ({ data, columns }: { data: unknown[]; columns: unknown[] }) => (
-    <div data-testid="data-table">
-      <span data-testid="row-count">{data.length}</span>
-      <span data-testid="column-count">{columns.length}</span>
-    </div>
-  ),
-}));
+mockDataTable();
+
+import IngredientsPage from "./page";
 
 describe("IngredientsPage", () => {
   it("renders the data table", () => {
