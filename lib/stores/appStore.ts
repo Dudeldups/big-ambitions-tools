@@ -31,7 +31,7 @@ export type AppActions = {
   setTablePriceIndex: (index: number) => void;
 };
 
-export const initialState: AppState = {
+export const initialAppState: AppState = {
   _hasHydrated: false,
   difficulty: "easy",
   displayPrices: {
@@ -45,7 +45,7 @@ export const initialState: AppState = {
 export const useAppStore = create(
   persist(
     immer<AppState & AppActions>((set) => ({
-      ...initialState,
+      ...initialAppState,
 
       _setHasHydrated: (hasHydrated) =>
         set((state) => {
