@@ -274,7 +274,10 @@
     "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
     "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",
     "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!",
-    "workstationCopyError": "Please select a workstation and a product first."
+    "workstationCopyError": "Please select a workstation and a product first.",
+    "factorySaveSuccess": "\"{factoryName}\" created and added to playthrough!",
+    "factoryEditSuccess": "\"{factoryName}\" updated!",
+    "factoryDeleteSuccess": "\"{factoryName}\" deleted!"
   },
   "errors": {
     "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",

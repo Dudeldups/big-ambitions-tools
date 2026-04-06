@@ -13,22 +13,17 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useRouter } from "@/i18n/navigation";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
 import { ProductName } from "@/lib/game/productNames";
 import { products } from "@/lib/game/products";
-import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { FactoryFormValues } from "@/lib/schemas/factory";
-import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
-import { useTransition } from "react";
 import {
   FieldErrors,
   useFieldArray,
   UseFormReturn,
   useWatch,
 } from "react-hook-form";
-import { toast } from "sonner";
 import VehicleSelect from "./vehicle-select";
 import EmployeeSalaryField from "./employee-salary-field";
 import { EmployeeName } from "@/lib/game/employeeNames";
@@ -40,6 +35,7 @@ import { safeLog } from "@/lib/utils/safeLog";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
+  onSubmit: (data: FactoryFormValues) => void;
 };
 
 const productData = Object.entries(products).map(([key, value]) => ({
@@ -47,17 +43,10 @@ const productData = Object.entries(products).map(([key, value]) => ({
   ...value,
 }));
 
-const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
+const CreateFactoryForm = ({ form, onSubmit }: CreateFactoryFormProps) => {
   const t = useTranslations();
   const calculationPeriod = useAppState((s) => s.calculationPeriod);
   const setCalculationPeriod = useAppStore((s) => s.setCalculationPeriod);
-  const createFactory = usePlaythroughStore((state) => state.createFactory);
-  const addFactoryToPlaythrough = usePlaythroughStore(
-    (state) => state.addFactoryToPlaythrough,
-  );
-  const router = useRouter();
-  const { activePlaythrough } = useActivePlaythrough();
-  const [isPending, startTransition] = useTransition();
 
   const {
     register,
@@ -78,26 +67,6 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
     control,
     name: "employees.factoryWorker.salary",
   });
-
-  const onSubmit = (values: FactoryFormValues) => {
-    const hasMissingName = values.name.trim() === "";
-    if (hasMissingName) {
-      values.name = t("tools.factoryPlanner.genericFactoryName", {
-        productName: t(`products.${values.workstations[0].product}`),
-      });
-    }
-
-    safeLog("In onsubmit with values:", values);
-
-    const newFactory = createFactory(values);
-    addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
-    toast.success(
-      `Factory "${newFactory.name}" created and added to playthrough!`,
-    );
-    startTransition(() => {
-      router.push(`/tools/${activePlaythrough.id}/factories`);
-    });
-  };
 
   const onError = (errors: FieldErrors) => {
     safeLog("Form errors:", errors);
@@ -270,7 +239,7 @@ const CreateFactoryForm = ({ form }: CreateFactoryFormProps) => {
         <Button type="button" variant="outline">
           {t("general.cancel")}
         </Button>
-        <Button type="submit" disabled={isPending}>
+        <Button className="min-w-20" type="submit">
           {t("general.confirm")}
         </Button>
       </div>
