@@ -8,19 +8,25 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { vehicles } from "@/lib/game/vehicles";
+import { Vehicle, vehicles } from "@/lib/game/vehicles";
 import { useTranslations } from "next-intl";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { NONE_VALUE } from "@/lib/constants";
+import { VehicleName } from "@/lib/game/vehicleNames";
+import { Button } from "../ui/button";
+import { Trash2 } from "lucide-react";
 
 type VehicleSelectProps = {
   control: Control<FactoryFormValues>;
   index: number;
+  onRemove: () => void;
 };
 
-const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
+const VehicleSelect = ({ control, index, onRemove }: VehicleSelectProps) => {
   const t = useTranslations();
-  const deliveryVehicles = Object.entries(vehicles)
+  const deliveryVehicles = (
+    Object.entries(vehicles) as [VehicleName, Vehicle][]
+  )
     .map(([vName, vData]) => ({
       ...vData,
       name: vName,
@@ -35,36 +41,47 @@ const VehicleSelect = ({ control, index }: VehicleSelectProps) => {
   return (
     <Controller
       control={control}
-      name={`vehicles.${index}` as `vehicles.0` | `vehicles.1`}
+      name={`vehicles.${index}`}
       render={({ field }) => (
-        <Select
-          key={field.value ?? "none"}
-          value={field.value ?? NONE_VALUE}
-          onValueChange={(val) =>
-            field.onChange(val === NONE_VALUE ? undefined : val)
-          }
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder={t("general.vehicle")} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>{t("general.vehicle")}</SelectLabel>
+        <div className="flex gap-4">
+          <Select
+            key={field.value.name ?? "none"}
+            value={field.value.name}
+            onValueChange={(val) => {
+              if (val === NONE_VALUE) {
+                onRemove();
+              } else {
+                field.onChange({ name: val });
+              }
+            }}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder={t("general.vehicle")} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>{t("general.vehicle")}</SelectLabel>
 
-              {index > 0 && (
-                <SelectItem value={NONE_VALUE}>
-                  {t("general.noValue")}
-                </SelectItem>
-              )}
-
-              {deliveryVehicles.map((v) => (
-                <SelectItem key={v.name} value={v.name}>
-                  {t(`vehicles.${v.name}`)}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+                {deliveryVehicles.map((v) => (
+                  <SelectItem key={v.name} value={v.name}>
+                    {t(`vehicles.${v.name}`)}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          {index > 0 && (
+            <Button
+              type="button"
+              aria-label={t("general.delete")}
+              onClick={onRemove}
+              size="icon"
+              variant="ghost"
+            >
+              <Trash2 className="size-5" />
+            </Button>
+          )}
+        </div>
       )}
     />
   );

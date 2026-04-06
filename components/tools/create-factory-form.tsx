@@ -33,6 +33,7 @@ import { useAppStore } from "@/lib/stores/appStore";
 import DeliveryPeriodSelect from "./delivery-period-select";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
+import { VEHICLE_NAMES } from "@/lib/game/vehicleNames";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -63,9 +64,21 @@ const CreateFactoryForm = ({
     formState: { errors },
   } = form;
 
-  const { fields, append, remove } = useFieldArray({
+  const {
+    fields: workstationFields,
+    append: appendWs,
+    remove: removeWs,
+  } = useFieldArray({
     control,
     name: "workstations",
+  });
+  const {
+    fields: vehicleFields,
+    append: appendVehicle,
+    remove: removeVehicle,
+  } = useFieldArray({
+    control,
+    name: "vehicles",
   });
 
   const openingHours = useWatch({ control, name: "openingHours" });
@@ -75,6 +88,7 @@ const CreateFactoryForm = ({
   });
 
   const onError = (errors: FieldErrors) => {
+    safeLog("Form state:", form.getValues());
     safeLog("Form errors:", errors);
   };
 
@@ -191,8 +205,24 @@ const CreateFactoryForm = ({
         <FieldLegend>Vehicles</FieldLegend>
 
         <FieldGroup>
-          <VehicleSelect control={control} index={0} />
-          <VehicleSelect control={control} index={1} />
+          {vehicleFields.map((field, index) => (
+            <VehicleSelect
+              key={field.id}
+              control={control}
+              index={index}
+              onRemove={() => removeVehicle(index)}
+            />
+          ))}
+
+          {vehicleFields.length < 2 && (
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => appendVehicle({ name: "FreightTruckT1" })}
+            >
+              Add vehicle
+            </Button>
+          )}
         </FieldGroup>
       </FieldSet>
 
@@ -202,13 +232,13 @@ const CreateFactoryForm = ({
         <FieldLegend>Workstations</FieldLegend>
 
         <FieldGroup>
-          {fields.map((field, index) => (
+          {workstationFields.map((field, index) => (
             <WorkstationSelects
               key={field.id}
               control={control}
               index={index}
-              append={append}
-              remove={remove}
+              append={appendWs}
+              remove={removeWs}
               setValue={setValue}
               factoryWorkerSalary={factoryWorkerSalary}
             />
@@ -220,9 +250,9 @@ const CreateFactoryForm = ({
 
           <Button
             type="button"
-            variant="outline"
+            variant="secondary"
             onClick={() =>
-              append({
+              appendWs({
                 amount: 1,
                 name: WORKSTATION_NAMES[0],
                 product: productData.find(
@@ -231,7 +261,7 @@ const CreateFactoryForm = ({
               })
             }
           >
-            Add Workstation
+            Add workstation
           </Button>
         </FieldGroup>
       </FieldSet>
