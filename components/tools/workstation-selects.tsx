@@ -149,7 +149,7 @@ const WorkstationSelects = ({
                       .filter((p) => p.workstation === selectedWorkstation)
                       .map((p) => (
                         <SelectItem key={p.name} value={p.name}>
-                          {t(`products.${p.name}`)}
+                          {t(`products.${p.name}` as never)}
                         </SelectItem>
                       ))}
                   </SelectGroup>
