@@ -279,6 +279,9 @@
     "factoryEditSuccess": "\"{factoryName}\" updated!",
     "factoryDeleteSuccess": "\"{factoryName}\" deleted!"
   },
+  "modals": {
+    "discardChanges": "Discard unsaved changes?"
+  },
   "errors": {
     "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",
     "playthrough": {
