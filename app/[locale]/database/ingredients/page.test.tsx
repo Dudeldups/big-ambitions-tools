@@ -1,8 +1,7 @@
+import "@/__tests__/mocks/data-table";
+
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { ingredients } from "@/lib/game/ingredients";
-import { mockDataTable } from "@/__tests__/mocks/data-table";
-
-mockDataTable();
 
 import IngredientsPage from "./page";
 

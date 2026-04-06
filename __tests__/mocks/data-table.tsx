@@ -1,4 +1,4 @@
-export const MockedDataTable = ({
+const MockedDataTable = ({
   data,
   columns,
 }: {
@@ -11,8 +11,6 @@ export const MockedDataTable = ({
   </div>
 );
 
-export const mockDataTable = () => {
-  vi.mock("@/components/tables/data-table", () => ({
-    DataTable: MockedDataTable,
-  }));
-};
+vi.mock("@/components/tables/data-table", () => ({
+  DataTable: MockedDataTable,
+}));
