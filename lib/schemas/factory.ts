@@ -18,7 +18,10 @@ export const factorySchema = z.object({
 
   employees: employeesSchema,
 
-  vehicles: z.tuple([z.enum(VEHICLE_NAMES), z.enum(VEHICLE_NAMES).optional()]),
+  vehicles: z
+    .array(z.object({ name: z.enum(VEHICLE_NAMES) }))
+    .min(1)
+    .max(2),
 
   workstations: z
     .array(
