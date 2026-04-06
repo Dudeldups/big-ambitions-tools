@@ -1,6 +1,4 @@
-import { describe, it, expect } from "vitest";
-import { screen } from "@testing-library/react";
-import { renderWithIntl } from "@/__tests__/test-utils";
+import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import DatabaseLayout from "./layout";
 
 describe("DatabaseLayout", () => {
