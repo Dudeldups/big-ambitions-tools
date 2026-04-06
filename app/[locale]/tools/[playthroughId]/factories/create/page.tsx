@@ -56,6 +56,23 @@ const CreateFactoryPage = () => {
     },
   });
 
+  const { control, setValue } = form;
+
+  const [workstations, openingHours, vehicles, employees] = useWatch({
+    control,
+    name: ["workstations", "openingHours", "vehicles", "employees"],
+  });
+
+  useDerivedEmployees({
+    workstations,
+    openingHours,
+    vehicles,
+    employees,
+    setValue,
+  });
+
+  const watchedValues = useWatch({ control }) as FactoryFormValues;
+
   const onSubmit = (values: FactoryFormValues) => {
     const hasMissingName = values.name.trim() === "";
     if (hasMissingName) {
@@ -74,26 +91,13 @@ const CreateFactoryPage = () => {
     );
   };
 
-  const { control, setValue } = form;
-
-  const [workstations, openingHours, vehicles, employees] = useWatch({
-    control,
-    name: ["workstations", "openingHours", "vehicles", "employees"],
-  });
-
-  useDerivedEmployees({
-    workstations,
-    openingHours,
-    vehicles,
-    employees,
-    setValue,
-  });
-
-  const watchedValues = useWatch({ control }) as FactoryFormValues;
+  const onCancel = () => {
+    router.push(`/tools/${activePlaythrough.id}/factories`);
+  };
 
   return (
     <div className="grid gap-8 lg:grid-cols-2">
-      <CreateFactoryForm form={form} onSubmit={onSubmit} />
+      <CreateFactoryForm form={form} onSubmit={onSubmit} onCancel={onCancel} />
       <FactoryOverview values={watchedValues} />
     </div>
   );

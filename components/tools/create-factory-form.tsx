@@ -32,10 +32,12 @@ import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
 import DeliveryPeriodSelect from "./delivery-period-select";
 import { safeLog } from "@/lib/utils/safeLog";
+import CancelConfirmModal from "../cancel-confirm-modal";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
   onSubmit: (data: FactoryFormValues) => void;
+  onCancel: () => void;
 };
 
 const productData = Object.entries(products).map(([key, value]) => ({
@@ -43,7 +45,11 @@ const productData = Object.entries(products).map(([key, value]) => ({
   ...value,
 }));
 
-const CreateFactoryForm = ({ form, onSubmit }: CreateFactoryFormProps) => {
+const CreateFactoryForm = ({
+  form,
+  onSubmit,
+  onCancel,
+}: CreateFactoryFormProps) => {
   const t = useTranslations();
   const calculationPeriod = useAppState((s) => s.calculationPeriod);
   const setCalculationPeriod = useAppStore((s) => s.setCalculationPeriod);
@@ -236,12 +242,8 @@ const CreateFactoryForm = ({ form, onSubmit }: CreateFactoryFormProps) => {
         <Button type="button" variant="outline" onClick={() => reset()}>
           {t("general.reset")}
         </Button>
-        <Button type="button" variant="outline">
-          {t("general.cancel")}
-        </Button>
-        <Button className="min-w-20" type="submit">
-          {t("general.confirm")}
-        </Button>
+        <CancelConfirmModal onModalSubmit={onCancel} />
+        <Button type="submit">{t("general.confirm")}</Button>
       </div>
     </form>
   );
