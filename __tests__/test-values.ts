@@ -27,7 +27,7 @@ export const _testFactoryFormValues: FactoryFormValues = {
       salary: 25,
     },
   },
-  vehicles: ["FreightTruckT1"],
+  vehicles: [{ name: "FreightTruckT1" }],
   workstations: [
     {
       amount: 3,
