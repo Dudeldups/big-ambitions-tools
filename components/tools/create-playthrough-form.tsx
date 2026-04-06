@@ -106,7 +106,7 @@ const CreatePlaythroughForm = () => {
               />
               {errors.characterName?.message && (
                 <p className="text-destructive text-sm">
-                  {t(errors.characterName.message)}
+                  {t(errors.characterName.message as never)}
                 </p>
               )}
             </Field>
@@ -142,7 +142,7 @@ const CreatePlaythroughForm = () => {
               )}
 
               {errors.difficulty?.message && (
-                <FieldError>{t(errors.difficulty.message)}</FieldError>
+                <FieldError>{t(errors.difficulty.message as never)}</FieldError>
               )}
             </Field>
           </FieldGroup>
