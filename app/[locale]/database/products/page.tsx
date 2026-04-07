@@ -30,17 +30,19 @@ export default function ProductsPage() {
               displayPrices,
             )
           : null;
+        const profitPerHourData = isStateLoaded
+          ? getProfitPerHourForProduct(
+              products[itemName],
+              difficulty,
+              tablePriceIndex,
+              displayPrices,
+            )
+          : null;
+
         return {
           ...products[itemName],
           itemName,
-          profitPerHour: isStateLoaded
-            ? getProfitPerHourForProduct(
-                products[itemName],
-                difficulty,
-                tablePriceIndex,
-                displayPrices,
-              )
-            : null,
+          profitPerHour: profitPerHourData,
           margin: marginData?.margin,
           marginPercent: marginData?.marginPercent,
         };
