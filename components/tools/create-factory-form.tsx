@@ -240,6 +240,7 @@ const CreateFactoryForm = ({
               remove={removeWs}
               setValue={setValue}
               factoryWorkerSalary={factoryWorkerSalary}
+              openingHours={openingHours}
             />
           ))}
 

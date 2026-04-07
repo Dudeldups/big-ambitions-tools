@@ -38,6 +38,7 @@ type WorkstationSelectsProps = {
   remove: (index: number) => void;
   setValue: UseFormSetValue<FactoryFormValues>;
   factoryWorkerSalary: number;
+  openingHours: number;
 };
 
 const productData = Object.entries(products).map(([key, value]) => ({
@@ -52,6 +53,7 @@ const WorkstationSelects = ({
   remove,
   setValue,
   factoryWorkerSalary,
+  openingHours,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
 
@@ -63,8 +65,18 @@ const WorkstationSelects = ({
     control,
     name: `workstations.${index}.product`,
   });
+  const workstationAmount = useWatch({
+    control,
+    name: `workstations.${index}.amount`,
+  });
 
   const prevWorkstation = useRef(selectedWorkstation);
+
+  const productionAmount =
+    products[selectedProduct].productionRate *
+    workstationAmount *
+    openingHours *
+    7;
 
   useEffect(() => {
     if (prevWorkstation.current === selectedWorkstation) return;
@@ -211,10 +223,18 @@ const WorkstationSelects = ({
                 value={field.value ?? ""}
                 onChange={(e) => {
                   const value = e.target.value;
-                  field.onChange(value === "" ? undefined : Number(value));
+                  field.onChange(
+                    value === ""
+                      ? undefined
+                      : Number(value) > productionAmount
+                        ? productionAmount
+                        : Number(value),
+                  );
                 }}
                 onBlur={field.onBlur}
+                max={productionAmount}
               />
+              <span>/ {productionAmount}</span>
             </Field>
           )}
         />
