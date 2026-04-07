@@ -35,9 +35,9 @@ export const CALCULATION_PERIODS = ["hourly", "daily", "weekly"] as const;
 
 export const DIFFICULTY_OPTIONS = ["easy", "normal", "hard"] as const;
 
-export const MIN_PRODUCT_PRICE_INDEX = 0.5 as const;
+export const MIN_PRODUCT_PRICE_INDEX = 0.3 as const;
 export const BASE_PRODUCT_PRICE_INDEX = 1.0 as const;
-export const MAX_PRODUCT_PRICE_INDEX = 1.5 as const;
+export const MAX_PRODUCT_PRICE_INDEX = 2.0 as const;
 
 export const IMPORT_PRICE_BASE_MULT = 0.75 as const;
 
