@@ -411,7 +411,7 @@
       "estimatedSales": "Estimated weekly sales",
       "estimatedSalesTooltip": "Enter the expected sales for each product in your shops.",
       "priceIndexButton": "Set price index",
-      "priceIndexDesc": "Select the current ingame price index for this product to calculate the correct income. (Export price is more accurate)"
+      "priceIndexDesc": "Select the current ingame price index for this product to calculate the correct income. (Export price is more accurate.)"
     }
   },
   "about": {
