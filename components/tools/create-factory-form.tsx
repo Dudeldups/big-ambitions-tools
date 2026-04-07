@@ -33,7 +33,6 @@ import { useAppStore } from "@/lib/stores/appStore";
 import DeliveryPeriodSelect from "./delivery-period-select";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
-import { VEHICLE_NAMES } from "@/lib/game/vehicleNames";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
