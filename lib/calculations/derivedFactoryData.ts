@@ -3,6 +3,7 @@ import {
   getAverageRetailPrice,
   getExportPrice,
   getImportPrice,
+  getManufacturePrice,
 } from "@/lib/calculations/math";
 import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
@@ -30,6 +31,7 @@ export type DerivedDataFromFormValues = {
   amount: number;
   name: string;
   value: number;
+  diff?: number;
 }[];
 
 type IngredientTotals = Record<IngredientName, number>;
@@ -279,9 +281,24 @@ export const deriveProductData = (
       );
       const retailValue = getAverageRetailPrice(product) * retailAmount;
       const isValidRetail = retailValue > 0;
+
       const exportAmount = !isValidRetail
         ? totalAmount
         : totalAmount - retailAmount;
+      const exportValue =
+        getExportPrice(
+          product.wholesalePrice,
+          difficulty,
+          priceIndices[name as ProductName],
+        ) * exportAmount;
+
+      const manufacturePrice = getManufacturePrice(
+        product,
+        difficulty,
+        values.employees.factoryWorker.salary,
+      );
+      const retailProfit = retailValue - manufacturePrice * retailAmount;
+      const exportProfit = exportValue - manufacturePrice * exportAmount;
 
       return [
         ...(isValidRetail && retailAmount > 0
@@ -291,6 +308,7 @@ export const deriveProductData = (
                 name: `products.${name}`,
                 amount: Math.ceil(retailAmount),
                 value: retailValue,
+                diff: retailProfit,
               },
             ]
           : []),
@@ -300,12 +318,8 @@ export const deriveProductData = (
                 valueType: "export",
                 name: `products.${name}`,
                 amount: Math.ceil(exportAmount),
-                value:
-                  getExportPrice(
-                    product.wholesalePrice,
-                    difficulty,
-                    priceIndices[name as ProductName],
-                  ) * exportAmount,
+                value: exportValue,
+                diff: exportProfit,
               },
             ]
           : []),

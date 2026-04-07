@@ -11,6 +11,8 @@ import { DerivedDataFromFormValues } from "@/lib/calculations/derivedFactoryData
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
 import { Fragment } from "react/jsx-runtime";
+import CurrencyText from "../currency-text";
+import { cn } from "@/lib/utils";
 
 type InfoTableProps = {
   label: string;
@@ -58,8 +60,18 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
                 <TableRow key={row.name + i}>
                   <TableCell className="amount">{row.amount}</TableCell>
                   <TableCell>{t(row.name)}</TableCell>
-                  <TableCell className="amount">
-                    {formatToUSD(row.value)}
+                  <TableCell
+                    className={cn(
+                      "amount",
+                      row.diff && "grid grid-cols-2 gap-2",
+                    )}
+                  >
+                    {row.diff && (
+                      <>
+                        <CurrencyText value={row.diff} />
+                      </>
+                    )}
+                    <span>{formatToUSD(row.value)}</span>
                   </TableCell>
                 </TableRow>
               </Fragment>
