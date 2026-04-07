@@ -31,65 +31,10 @@ export const productsColumns = (
   difficulty: StoreDifficulty,
   displayPrices: DisplayPrices | null,
   tablePriceIndex: number | null,
-): ColumnDef<ProductsColumnData>[] => [
-  createTranslatedColumn(t, "itemName", "products"),
-  createSourcePriceColumn(difficulty, displayPrices, tablePriceIndex),
-  createSalePriceColumn(difficulty, displayPrices, tablePriceIndex),
-  {
-    id: "profitMargin",
-    header: ({ table }) => {
-      const { t } = getMeta(table);
-      return t("tableColumns.profitMargin");
-    },
-    meta: {
-      align: "center",
-    },
-    columns: [
-      {
-        id: "margin",
-        accessorKey: "margin",
-        sortDescFirst: true,
-        header: ({ column }) => (
-          <TableHeadContent column={column} align="end">
-            $
-          </TableHeadContent>
-        ),
-        cell: ({ row }) => {
-          const value = row.original.margin;
-          if (value === null || value === undefined)
-            return <Skeleton className="ml-auto h-5 w-[6ch]" />;
-          return <CurrencyText value={value} />;
-        },
-        meta: {
-          align: "right",
-        },
-      },
-      {
-        id: "marginPercent",
-        accessorKey: "marginPercent",
-        sortDescFirst: true,
-        header: ({ column }) => (
-          <TableHeadContent column={column} align="end">
-            %
-          </TableHeadContent>
-        ),
-        cell: ({ row }) => {
-          const value = row.original.marginPercent;
-          if (value == null)
-            return <Skeleton className="ml-auto h-5 w-[5ch]" />;
-          return (
-            <span className="amount text-muted-foreground">
-              {value.toFixed(0)}%
-            </span>
-          );
-        },
-        meta: {
-          align: "right",
-        },
-      },
-    ],
-  },
-  {
+): ColumnDef<ProductsColumnData>[] => {
+  const isManufactureMode = displayPrices?.source === "MANUFACTURE";
+
+  const profitPerHourCol: ColumnDef<ProductsColumnData> = {
     id: "profitPerHour",
     accessorKey: "profitPerHour",
     sortDescFirst: true,
@@ -104,24 +49,85 @@ export const productsColumns = (
       return <CurrencyText value={value} />;
     },
     meta: { align: "right" },
-  },
-  createImportersColumn(),
-  createNumericColumn("amountPerBox"),
-  createNumericColumn("productionRate"),
-  {
-    accessorKey: "ingredients",
-    enableSorting: false,
-    header: ({ column, table }) => {
-      const { t } = getMeta(table);
-      return (
-        <TableHeadContent column={column}>
-          {t("tableColumns.ingredients")}
-        </TableHeadContent>
-      );
+  };
+
+  return [
+    createTranslatedColumn(t, "itemName", "products"),
+    createSourcePriceColumn(difficulty, displayPrices, tablePriceIndex),
+    createSalePriceColumn(difficulty, displayPrices, tablePriceIndex),
+    {
+      id: "profitMargin",
+      header: ({ table }) => {
+        const { t } = getMeta(table);
+        return t("tableColumns.profitMargin");
+      },
+      meta: {
+        align: "center",
+      },
+      columns: [
+        {
+          id: "margin",
+          accessorKey: "margin",
+          sortDescFirst: true,
+          header: ({ column }) => (
+            <TableHeadContent column={column} align="end">
+              $
+            </TableHeadContent>
+          ),
+          cell: ({ row }) => {
+            const value = row.original.margin;
+            if (value === null || value === undefined)
+              return <Skeleton className="ml-auto h-5 w-[6ch]" />;
+            return <CurrencyText value={value} />;
+          },
+          meta: {
+            align: "right",
+          },
+        },
+        {
+          id: "marginPercent",
+          accessorKey: "marginPercent",
+          sortDescFirst: true,
+          header: ({ column }) => (
+            <TableHeadContent column={column} align="end">
+              %
+            </TableHeadContent>
+          ),
+          cell: ({ row }) => {
+            const value = row.original.marginPercent;
+            if (value == null)
+              return <Skeleton className="ml-auto h-5 w-[5ch]" />;
+            return (
+              <span className="amount text-muted-foreground">
+                {value.toFixed(0)}%
+              </span>
+            );
+          },
+          meta: {
+            align: "right",
+          },
+        },
+      ],
     },
-    cell: ({ row, table }) => {
-      const { t } = getMeta(table);
-      return <IngredientsCell ingredients={row.original.ingredients} t={t} />;
+    ...(isManufactureMode ? [profitPerHourCol] : []),
+    createImportersColumn(),
+    createNumericColumn("amountPerBox"),
+    createNumericColumn("productionRate"),
+    {
+      accessorKey: "ingredients",
+      enableSorting: false,
+      header: ({ column, table }) => {
+        const { t } = getMeta(table);
+        return (
+          <TableHeadContent column={column}>
+            {t("tableColumns.ingredients")}
+          </TableHeadContent>
+        );
+      },
+      cell: ({ row, table }) => {
+        const { t } = getMeta(table);
+        return <IngredientsCell ingredients={row.original.ingredients} t={t} />;
+      },
     },
-  },
-];
+  ];
+};
