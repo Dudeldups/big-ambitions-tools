@@ -12,7 +12,6 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import CreatePlaythroughForm from "./create-playthrough-form";
 import EditPlaythroughForm from "./edit-playthrough-form";
 import PlaythroughInfoCard from "./playthrough-info-card";
 
@@ -64,11 +63,6 @@ const PlaythroughOverview = () => {
 
   return (
     <div>
-      <div className="flex items-center gap-5">
-        <p>{t("tools.dashboard.createPlaythroughButtonDesc")}</p>
-        <CreatePlaythroughForm />
-      </div>
-
       <div>
         {!playthroughs ? (
           <Spinner />
