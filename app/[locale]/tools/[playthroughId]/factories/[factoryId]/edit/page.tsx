@@ -35,6 +35,7 @@ const EditFactoryPage = () => {
       });
     }
 
+    if (!activeFactory || !activePlaythrough) return null;
     const editedFactory = editFactory(activeFactory.id, values);
     if (editedFactory) {
       router.push(`/tools/${activePlaythrough.id}/factories`);
@@ -47,7 +48,9 @@ const EditFactoryPage = () => {
   };
 
   const onCancel = () => {
-    router.push(`/tools/${activePlaythrough.id}/factories/${activeFactory.id}`);
+    router.push(
+      `/tools/${activePlaythrough?.id}/factories/${activeFactory?.id}`,
+    );
   };
 
   const { control, setValue } = form;
@@ -66,6 +69,9 @@ const EditFactoryPage = () => {
   });
 
   const watchedValues = useWatch({ control }) as FactoryFormValues;
+
+  // TODO add skeletons
+  if (!activeFactory || !activePlaythrough) return null;
 
   return (
     <div className="grid gap-8 lg:grid-cols-2">

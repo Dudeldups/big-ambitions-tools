@@ -1,5 +1,5 @@
 import { useParams } from "next/navigation";
-import { Factory, usePlaythroughStore } from "../stores/playthroughStore";
+import { usePlaythroughStore } from "../stores/playthroughStore";
 
 export function useActiveFactory() {
   const params = useParams<{ playthroughId: string; factoryId: string }>();
@@ -12,6 +12,6 @@ export function useActiveFactory() {
   return {
     isLoading: !hasHydrated,
     isInvalid: hasHydrated && !activeFactory,
-    activeFactory: activeFactory as Factory,
+    activeFactory: activeFactory,
   };
 }

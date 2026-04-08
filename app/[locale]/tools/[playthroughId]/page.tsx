@@ -10,6 +10,11 @@ const PlaythroughId = () => {
   // const t = useTranslations();
   const { activePlaythrough } = useActivePlaythrough();
 
+  // TODO add skeletons
+  if (!activePlaythrough) {
+    return null;
+  }
+
   const hasFactories = activePlaythrough.factoryIds.length !== 0;
 
   return (

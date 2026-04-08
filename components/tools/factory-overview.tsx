@@ -24,9 +24,12 @@ type FactoryOverviewProps = {
 
 const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const { activePlaythrough } = useActivePlaythrough();
-  const { difficulty } = activePlaythrough;
+  const difficulty = activePlaythrough?.difficulty;
   const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
   const priceIndices = usePriceIndices();
+
+  // TODO add skeletons
+  if (!difficulty || !priceIndices || !activePlaythrough) return null;
 
   const oneTimeCostRowData = [
     ...derivePalletShelfData(values),

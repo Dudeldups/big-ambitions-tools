@@ -1,5 +1,5 @@
 import { useParams } from "next/navigation";
-import { Playthrough, usePlaythroughStore } from "../stores/playthroughStore";
+import { usePlaythroughStore } from "../stores/playthroughStore";
 
 export function useActivePlaythrough() {
   const params = useParams<{ playthroughId: string }>();
@@ -14,6 +14,6 @@ export function useActivePlaythrough() {
   return {
     isLoading: !hasHydrated,
     isInvalid: hasHydrated && !activePlaythrough,
-    activePlaythrough: activePlaythrough as Playthrough,
+    activePlaythrough: activePlaythrough,
   };
 }

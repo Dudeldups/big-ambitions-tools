@@ -5,7 +5,8 @@ import { useActivePlaythrough } from "./useActivePlaythrough";
 export const usePriceIndex = (productName: ProductName) => {
   const { activePlaythrough } = useActivePlaythrough();
 
-  return usePlaythroughStore(
-    (state) => state.getPriceIndices(activePlaythrough.id)[productName],
-  );
+  return usePlaythroughStore((state) => {
+    if (!activePlaythrough) return undefined;
+    return state.getPriceIndices(activePlaythrough.id)[productName];
+  });
 };

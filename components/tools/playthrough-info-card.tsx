@@ -25,18 +25,18 @@ const PlaythroughInfoCard = ({
   return (
     <div className="flex items-center gap-8">
       <Link className="text-left" href={`/tools/${pt.id}`}>
-        <hgroup>
-          <h3 className="w-60 truncate text-xl font-semibold">
+        <dl>
+          <dt className="w-60 truncate text-xl font-semibold">
             {pt.characterName}
-          </h3>
-          <p className="text-muted-foreground mt-2">
+          </dt>
+          <dd className="text-muted-foreground mt-2">
             {t("general.difficulty")}:{" "}
             {t(`general.difficultyOptions.${pt.difficulty}`)}
-          </p>
-          <p className="text-muted-foreground">
+          </dd>
+          <dd className="text-muted-foreground">
             {t("general.factories")}: {pt.factoryIds.length}
-          </p>
-        </hgroup>
+          </dd>
+        </dl>
       </Link>
 
       <div className="flex items-center gap-2">

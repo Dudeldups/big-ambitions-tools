@@ -10,13 +10,14 @@ import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 
 const CreateFactoryPage = () => {
   const t = useTranslations();
   const { activePlaythrough } = useActivePlaythrough();
-  const { difficulty } = activePlaythrough;
+  const difficulty = activePlaythrough?.difficulty;
 
   const createFactory = usePlaythroughStore((state) => state.createFactory);
   const addFactoryToPlaythrough = usePlaythroughStore(
@@ -31,6 +32,20 @@ const CreateFactoryPage = () => {
       openingHours: 24,
       vehicles: [{ name: "FreightTruckT1" }],
       deliveryPeriod: "weekly",
+      employees: {
+        deliveryDriver: { amount: 1, salary: 0 },
+        hrManager: { amount: 0, salary: 0 },
+        logisticsManager: { amount: 1, salary: 0 },
+        purchasingAgent: { amount: 0, salary: 0 },
+        factoryWorker: { amount: 0, salary: 0 },
+      },
+    },
+  });
+
+  useEffect(() => {
+    if (!difficulty) return;
+    form.reset({
+      ...form.getValues(),
       employees: {
         deliveryDriver: {
           amount: 1,
@@ -53,8 +68,8 @@ const CreateFactoryPage = () => {
           salary: getEmployeeSalary("factoryWorker", difficulty),
         },
       },
-    },
-  });
+    });
+  }, [difficulty, form]);
 
   const { control, setValue } = form;
 
@@ -81,6 +96,8 @@ const CreateFactoryPage = () => {
       });
     }
 
+    if (!activePlaythrough) return null;
+
     const newFactory = createFactory(values);
     addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
     router.push(`/tools/${activePlaythrough.id}/factories`);
@@ -92,8 +109,10 @@ const CreateFactoryPage = () => {
   };
 
   const onCancel = () => {
-    router.push(`/tools/${activePlaythrough.id}/factories`);
+    router.push(`/tools/${activePlaythrough?.id}/factories`);
   };
+
+  // TODO add skeletons
 
   return (
     <div className="grid gap-8 lg:grid-cols-2">
