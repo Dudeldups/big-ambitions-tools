@@ -23,8 +23,8 @@ const PlaythroughInfoCard = ({
   const t = useTranslations();
 
   return (
-    <div className="flex items-center gap-8">
-      <Link className="text-left" href={`/tools/${pt.id}`}>
+    <div className="flex items-center">
+      <Link className="p-4 text-left" href={`/tools/${pt.id}`}>
         <dl>
           <dt className="w-60 truncate text-xl font-semibold">
             {pt.characterName}
@@ -39,7 +39,7 @@ const PlaythroughInfoCard = ({
         </dl>
       </Link>
 
-      <div className="flex items-center gap-2">
+      <div className="mx-4 flex items-center gap-2">
         <Button
           size="icon-lg"
           variant="outline"
