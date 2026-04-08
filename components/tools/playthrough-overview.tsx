@@ -14,6 +14,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import EditPlaythroughForm from "./edit-playthrough-form";
 import PlaythroughInfoCard from "./playthrough-info-card";
+import CreatePlaythroughForm from "./create-playthrough-form";
 
 const PlaythroughOverview = () => {
   const t = useTranslations();
@@ -67,7 +68,10 @@ const PlaythroughOverview = () => {
         {!playthroughs ? (
           <Spinner />
         ) : playthroughs.length === 0 ? (
-          <p>{t("tools.intro.noPlaythroughs")}</p>
+          <div>
+            <p>{t("tools.intro.noPlaythroughs")}</p>
+            <CreatePlaythroughForm />
+          </div>
         ) : (
           <ul className="flex flex-wrap gap-5">
             {playthroughs.map((pt) => (
