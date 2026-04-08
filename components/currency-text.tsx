@@ -4,13 +4,20 @@ import { formatToUSD } from "@/lib/utils/formatToUSD";
 type CurrencyTextProps = {
   className?: string;
   value: number;
+  hideCents?: boolean;
 };
 
-const CurrencyText = ({ className, value }: CurrencyTextProps) => {
+const CurrencyText = ({
+  className,
+  value,
+  hideCents = false,
+}: CurrencyTextProps) => {
   const color = value > 0 ? "text-green-600" : "text-red-600";
 
   return (
-    <span className={cn("amount", color, className)}>{formatToUSD(value)}</span>
+    <span className={cn("amount", color, className)}>
+      {formatToUSD(value, hideCents)}
+    </span>
   );
 };
 
