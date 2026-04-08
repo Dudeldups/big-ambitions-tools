@@ -222,9 +222,9 @@
     "profit": "Profit",
     "manufacturingCosts": "Manufacturing costs",
     "difficultyOptions": {
-      "easy": "easy",
-      "normal": "normal",
-      "hard": "hard"
+      "easy": "Easy",
+      "normal": "Normal",
+      "hard": "Hard"
     },
     "displayPriceOptions": {
       "manufacture": "Manufacture",

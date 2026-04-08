@@ -30,9 +30,9 @@ const EditPlaythroughForm = ({
     useFormContext<PlaythroughFormValues>();
 
   return (
-    <form className="flex items-center gap-8" onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-col items-end">
-        <Input className="mb-2 w-60" {...register("characterName")} />
+    <form className="flex items-center" onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex flex-col items-end p-4">
+        <Input className="mb-3 w-60" {...register("characterName")} />
         <Controller
           control={control}
           name="difficulty"
@@ -55,7 +55,7 @@ const EditPlaythroughForm = ({
         />
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="mx-4 flex items-center gap-2">
         <Button size="icon-lg" variant="outline" type="submit">
           <SquareCheckBig className="size-5" />
         </Button>
