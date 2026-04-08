@@ -5,7 +5,7 @@ import {
   getImportPrice,
   getManufacturePrice,
 } from "@/lib/calculations/math";
-import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
+import { FULLTIME_MAX_WORKING_HOURS, TAX_RATE } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
 import { IngredientName } from "../game/ingredientNames";
@@ -297,8 +297,11 @@ export const deriveProductData = (
         difficulty,
         values.employees.factoryWorker.salary,
       );
-      const retailProfit = retailValue - manufacturePrice * retailAmount;
-      const exportProfit = exportValue - manufacturePrice * exportAmount;
+      const taxMult = 1 - TAX_RATE[difficulty];
+      const retailProfit =
+        retailValue * taxMult - manufacturePrice * retailAmount;
+      const exportProfit =
+        exportValue * taxMult - manufacturePrice * exportAmount;
 
       return [
         ...(isValidRetail && retailAmount > 0

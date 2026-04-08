@@ -6,6 +6,7 @@ import {
   PUBLIC_PRICE_MULT,
   SALARY_BASE_MULT,
   SALARY_DIFF_MULT,
+  TAX_RATE,
 } from "../constants";
 import { IMPORT_PRICE_BASE_MULT } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
@@ -107,7 +108,9 @@ export const getProfitMarginForProduct = (
       ? getManufacturePrice(product, difficulty)
       : getImportPrice(product.wholesalePrice, difficulty, priceIndex);
 
-  const margin = salePrice - costPerItem;
+  const taxMult = 1 - TAX_RATE[difficulty];
+
+  const margin = salePrice * taxMult - costPerItem;
   const marginPercent = salePrice !== 0 ? (margin / salePrice) * 100 : 0;
 
   return { margin, marginPercent };

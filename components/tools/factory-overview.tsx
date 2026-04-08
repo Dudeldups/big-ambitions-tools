@@ -17,6 +17,7 @@ import { getTimeMultiplier } from "@/lib/utils/getTimeMultiplier";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { cn } from "@/lib/utils";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
+import { TAX_RATE } from "@/lib/constants";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
@@ -59,9 +60,10 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   const profitRowData = [...sortedProductData];
   const totalIncome = profitRowData.reduce((sum, item) => sum + item.value, 0);
-  const profitForPeriod = totalIncome - totalRecurringCost;
 
   const timeMult = getTimeMultiplier(calculationPeriod, values.openingHours);
+  const taxMult = 1 - TAX_RATE[difficulty];
+  const profitForPeriod = totalIncome * taxMult - totalRecurringCost;
 
   const profitPerDay = (profitForPeriod / timeMult) * values.openingHours;
 
