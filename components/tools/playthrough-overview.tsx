@@ -67,11 +67,11 @@ const PlaythroughOverview = () => {
         {!playthroughs ? (
           <Spinner />
         ) : playthroughs.length === 0 ? (
-          <p>{t("tools.dashboard.noPlaythroughs")}</p>
+          <p>{t("tools.intro.noPlaythroughs")}</p>
         ) : (
           <ul className="flex flex-wrap gap-5">
             {playthroughs.map((pt) => (
-              <li key={pt.id} className="bg-card rounded-md border p-4">
+              <li key={pt.id} className="bg-card rounded-md border">
                 {editingPlaythroughId === pt.id ? (
                   <FormProvider key={pt.id} {...form}>
                     <EditPlaythroughForm

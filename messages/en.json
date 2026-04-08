@@ -403,9 +403,6 @@
         "desc": "Get a quick overview of your empire!"
       }
     },
-    "dashboard": {
-      "title": "Dashboard"
-    },
     "factoryPlanner": {
       "title": "Factory Planner",
       "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
