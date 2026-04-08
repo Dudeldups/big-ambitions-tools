@@ -21,6 +21,10 @@ const Tools = () => {
           <p>{t("intro.desc")}</p>
         </hgroup>
 
+        <div>
+          <p>{t("intro.warning")}</p>
+        </div>
+
         <PlaythroughOverview />
       </section>
     </>

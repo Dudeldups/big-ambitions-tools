@@ -385,9 +385,9 @@
   "tools": {
     "intro": {
       "title": "Tools",
-      "desc": "Here you can find various tools to help you optimize your factories and production lines. Just select the products you want to produce to see the required ingredients, machines, and workstations.",
+      "desc": "Welcome to the tools section! This is where you can dive deep into the numbers and statistics of the game. Below, you can create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with different difficulties, or just keep track of your progress.",
+      "warning": "Important: Your progress is stored in your browser. If you clear your browser data or use private/incognito mode, it may be lost.",
       "createButtonDesc": "New playthrough",
-      "playthroughDesc": "Create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with different characters and difficulties, or just keep track of your progress.",
       "noPlaythroughs": "No playthroughs yet. Create one to get started!"
     },
     "playthroughForm": {
