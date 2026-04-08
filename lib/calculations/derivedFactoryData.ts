@@ -24,7 +24,7 @@ import {
 import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
-import { PriceIndices } from "../stores/playthroughStore";
+import { Factory, Playthrough, PriceIndices } from "../stores/playthroughStore";
 
 export type DerivedDataFromFormValues = {
   valueType?: string;
@@ -326,4 +326,28 @@ export const deriveProductData = (
       ];
     },
   );
+};
+
+export const deriveWeeklyIncome = (
+  factories: Factory[],
+  playthrough: Playthrough,
+): number => {
+  const { difficulty, priceIndices } = playthrough;
+  const calculationPeriod = "weekly";
+
+  return factories.reduce((total, factory) => {
+    const recurringCost = [
+      ...deriveEmployeeData(factory, calculationPeriod),
+      ...deriveIngredientData(factory, difficulty, calculationPeriod),
+    ].reduce((sum, item) => sum + item.value, 0);
+
+    const income = deriveProductData(
+      factory,
+      difficulty,
+      calculationPeriod,
+      priceIndices,
+    ).reduce((sum, item) => sum + item.value, 0);
+
+    return total + (income - recurringCost);
+  }, 0);
 };
