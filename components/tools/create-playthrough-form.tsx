@@ -86,11 +86,9 @@ const CreatePlaythroughForm = () => {
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>
-            {t("tools.dashboard.createPlaythroughTitle")}
-          </DialogTitle>
+          <DialogTitle>{t("tools.playthroughForm.title")}</DialogTitle>
           <DialogDescription>
-            {t("tools.dashboard.createPlaythroughDesc")}
+            {t("tools.playthroughForm.desc")}
           </DialogDescription>
         </DialogHeader>
 
@@ -102,12 +100,12 @@ const CreatePlaythroughForm = () => {
               </Label>
               <Input
                 id="characterName"
-                placeholder={t("tools.dashboard.createPlaythroughPlaceholder")}
+                placeholder={t("tools.playthroughForm.placeholder")}
                 {...register("characterName")}
               />
               {errors.characterName?.message && (
                 <p className="text-destructive text-sm">
-                  {t(errors.characterName.message as never)}
+                  {t(errors.characterName.message)}
                 </p>
               )}
             </Field>

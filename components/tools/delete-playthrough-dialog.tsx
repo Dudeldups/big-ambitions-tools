@@ -53,11 +53,9 @@ const DeletePlaythroughDialog = ({
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>
-            {t("tools.dashboard.deletePlaythroughTitle")}
-          </DialogTitle>
+          <DialogTitle>{t("tools.playthroughForm.deleteTitle")}</DialogTitle>
           <DialogDescription>
-            {t("tools.dashboard.deletePlaythroughDesc")}
+            {t("tools.playthroughForm.deleteDesc")}
           </DialogDescription>
         </DialogHeader>
 
