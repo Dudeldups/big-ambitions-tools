@@ -78,8 +78,9 @@ const CreatePlaythroughForm = () => {
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon-lg">
+        <Button variant="outline">
           <Plus className="size-5" />
+          {t("tools.intro.createButtonDesc")}
         </Button>
       </DialogTrigger>
 
