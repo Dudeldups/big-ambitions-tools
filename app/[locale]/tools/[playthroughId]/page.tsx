@@ -29,11 +29,10 @@ const PlaythroughIdPage = () => {
         </h2>
 
         <p>
-          This section is still a work in progress. You can visit the factories
-          page to see an overview of your factories, keep track of items you
-          need to order for your production lines and more. The factory planner
-          also shows you how many pallet shelves and factory workers you will
-          need for an efficient production process.
+          You can visit the factories page to see an overview of your factories,
+          keep track of items you need to order for your production lines and
+          more. The factory planner will show you how many pallet shelves and
+          factory workers you need for an efficient production process.
         </p>
 
         <Link href={`/tools/${activePlaythrough.id}/factories`}>
