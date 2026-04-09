@@ -272,6 +272,17 @@
     "employees": "Employees",
     "description": "Description"
   },
+  "workstationPresets": {
+    "cheapClothing": "Cheap clothing",
+    "expensiveClothing": "Expensive clothing",
+    "electronics": "Electronics",
+    "jewelry": "Jewelry",
+    "gifts": "Gifts",
+    "books": "Books",
+    "bottledGoods": "Bottled goods",
+    "food": "Food",
+    "gardenProducts": "Garden products"
+  },
   "toasts": {
     "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
     "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",

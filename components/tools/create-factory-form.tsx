@@ -33,6 +33,7 @@ import { useAppStore } from "@/lib/stores/appStore";
 import DeliveryPeriodSelect from "./delivery-period-select";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
+import WorkstationPresetDialog from "./workstation-preset-dialog";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -248,21 +249,25 @@ const CreateFactoryForm = ({
             <FieldError>{t(errors.workstations.message as never)}</FieldError>
           )}
 
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={() =>
-              appendWs({
-                amount: 1,
-                name: WORKSTATION_NAMES[0],
-                product: productData.find(
-                  (p) => p.workstation === WORKSTATION_NAMES[0],
-                )!.name as ProductName,
-              })
-            }
-          >
-            Add workstation
-          </Button>
+          <Field orientation="horizontal">
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() =>
+                appendWs({
+                  amount: 1,
+                  name: WORKSTATION_NAMES[0],
+                  product: productData.find(
+                    (p) => p.workstation === WORKSTATION_NAMES[0],
+                  )!.name as ProductName,
+                })
+              }
+            >
+              Add workstation
+            </Button>
+
+            <WorkstationPresetDialog append={appendWs} />
+          </Field>
         </FieldGroup>
       </FieldSet>
 
