@@ -97,7 +97,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           <Separator />
           <div className="space-y-4">
             <h2 className="text-center font-semibold capitalize">
-              {calculationPeriod} income
+              {calculationPeriod} revenue
             </h2>
 
             <InfoTable label="itemName" rows={profitRowData} />
@@ -112,7 +112,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         <Separator />
 
         <div className="flex justify-between">
-          <span className="text-muted-foreground">Income</span>
+          <span className="text-muted-foreground">Revenue</span>
           <span className="amount text-green-600">
             {formatToUSD(totalIncome)}
           </span>
