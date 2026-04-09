@@ -120,23 +120,26 @@ const PriceIndexPopover = ({
 
           <dl className="flex justify-between gap-2">
             <dt>{t("general.exportPrice")}</dt>
-            <dd>{formatToUSD(exportPrice)}</dd>
+            <dd className="amount">{formatToUSD(exportPrice)}</dd>
           </dl>
 
           <dl className="flex justify-between gap-2">
             <dt>{t("general.taxes")}</dt>
-            <dd>-{formatToUSD(taxAmount)}</dd>
+            <dd className="amount">-{formatToUSD(taxAmount)}</dd>
           </dl>
 
           <dl className="flex justify-between gap-2">
             <dt>{t("general.manufacturingCostsShort")}</dt>
-            <dd>-{formatToUSD(manufacturePrice)}</dd>
+            <dd className="amount">-{formatToUSD(manufacturePrice)}</dd>
           </dl>
 
           <dl className="flex justify-between gap-2">
             <dt>{t("general.profit")}</dt>
             <dd
-              className={cn("", profit > 0 ? "text-green-600" : "text-red-600")}
+              className={cn(
+                "amount",
+                profit > 0 ? "text-green-600" : "text-red-600",
+              )}
             >
               {formatToUSD(profit)}
             </dd>
