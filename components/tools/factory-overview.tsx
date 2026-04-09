@@ -62,7 +62,8 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const totalIncome = profitRowData.reduce((sum, item) => sum + item.value, 0);
 
   const timeMult = getTimeMultiplier(calculationPeriod, values.openingHours);
-  const totalTaxes = totalIncome * TAX_RATE[difficulty];
+  const taxRate = TAX_RATE[difficulty];
+  const totalTaxes = totalIncome * taxRate;
 
   const profitForPeriod = totalIncome - totalTaxes - totalRecurringCost;
 
@@ -117,7 +118,9 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted-foreground">Taxes</span>
+          <span className="text-muted-foreground">
+            Taxes ({taxRate * 100}%)
+          </span>
           <span className="amount text-red-600">{formatToUSD(totalTaxes)}</span>
         </div>
         <div className="flex justify-between">
