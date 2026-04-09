@@ -28,13 +28,15 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
   );
 
   return (
-    <Card className="flex h-full flex-col">
+    <Card className="h-full">
       <CardHeader>
         <h3>{factory.name}</h3>
-        {factory.description && <p>{factory.description}</p>}
+        {factory.description && (
+          <p className="truncate">{factory.description}</p>
+        )}
       </CardHeader>
       <CardContent className="mt-auto">
-        <p>Opening hours / week: {factory.openingHours * 7}h</p>
+        <p>Opening hours / day: {factory.openingHours}h</p>
         <ul>
           {groupedWorkstations.map((workstation) => (
             <li key={workstation.name}>

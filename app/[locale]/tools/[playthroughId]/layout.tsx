@@ -36,7 +36,7 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="bg-background border-border max-w-page sticky top-0 z-10 mx-auto border-b">
+      <div className="bg-background border-border max-w-page mx-auto border-b">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3">
           <div className="flex flex-col gap-4 md:flex-row md:gap-6">
             {activePlaythrough ? (

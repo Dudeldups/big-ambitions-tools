@@ -39,7 +39,7 @@ export default function RootLayout({
           <TooltipProvider>
             <header className="flex justify-center">
               <nav className="max-w-page w-full bg-gray-800">
-                <ul className="flex gap-4 p-4">
+                <ul className="flex flex-col gap-4 p-4 md:flex-row">
                   <li>
                     <NavLink href="/">Home</NavLink>
                   </li>
