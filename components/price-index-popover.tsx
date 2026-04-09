@@ -13,6 +13,7 @@ import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import {
   MAX_PRODUCT_PRICE_INDEX,
   MIN_PRODUCT_PRICE_INDEX,
+  TAX_RATE,
 } from "@/lib/constants";
 import { ProductName } from "@/lib/game/productNames";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
@@ -35,11 +36,25 @@ const PriceIndexPopover = ({
   className,
   factoryWorkerSalary,
 }: PriceIndexPopoverProps) => {
+  const t = useTranslations();
   const { activePlaythrough } = useActivePlaythrough();
   const setPriceIndex = usePlaythroughStore((state) => state.setPriceIndex);
   const currentPriceIndex = usePriceIndex(selectedProduct);
   const selectedProductObj = products[selectedProduct];
   const { wholesalePrice } = selectedProductObj;
+
+  const assertIndex = (index: number) =>
+    index >= MIN_PRODUCT_PRICE_INDEX && index <= MAX_PRODUCT_PRICE_INDEX;
+
+  const onIndexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!activePlaythrough) return;
+    const value = parseFloat(e.target.value);
+    if (isNaN(value) || !assertIndex(value)) return;
+
+    setPriceIndex(activePlaythrough.id, selectedProduct, value);
+  };
+
+  if (!activePlaythrough) return null;
 
   const exportPrice = parseFloat(
     getExportPrice(
@@ -57,19 +72,11 @@ const PriceIndexPopover = ({
     ).toFixed(2),
   );
 
-  const profit = Math.round((exportPrice - manufacturePrice) * 100) / 100;
+  const taxRate = TAX_RATE[activePlaythrough.difficulty];
+  const taxAmount = exportPrice * taxRate;
 
-  const t = useTranslations();
-
-  const assertIndex = (index: number) =>
-    index >= MIN_PRODUCT_PRICE_INDEX && index <= MAX_PRODUCT_PRICE_INDEX;
-
-  const onIndexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    if (isNaN(value) || !assertIndex(value)) return;
-
-    setPriceIndex(activePlaythrough.id, selectedProduct, value);
-  };
+  const profit =
+    Math.round((exportPrice - taxAmount - manufacturePrice) * 100) / 100;
 
   return (
     <Popover>
@@ -89,7 +96,7 @@ const PriceIndexPopover = ({
           </PopoverDescription>
         </PopoverHeader>
 
-        <FieldGroup className="gap-4">
+        <FieldGroup className="gap-2">
           <Field>
             <FieldLabel htmlFor="price-index-popover">
               {t("general.priceIndex")}:
@@ -117,14 +124,19 @@ const PriceIndexPopover = ({
           </dl>
 
           <dl className="flex justify-between gap-2">
+            <dt>{t("general.taxes")}</dt>
+            <dd>-{formatToUSD(taxAmount)}</dd>
+          </dl>
+
+          <dl className="flex justify-between gap-2">
+            <dt>{t("general.manufacturingCostsShort")}</dt>
+            <dd>-{formatToUSD(manufacturePrice)}</dd>
+          </dl>
+
+          <dl className="flex justify-between gap-2">
             <dt>{t("general.profit")}</dt>
             <dd
-              className={cn(
-                "",
-                manufacturePrice < exportPrice
-                  ? "text-green-600"
-                  : "text-red-600",
-              )}
+              className={cn("", profit > 0 ? "text-green-600" : "text-red-600")}
             >
               {formatToUSD(profit)}
             </dd>
