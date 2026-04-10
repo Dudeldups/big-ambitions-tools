@@ -2,11 +2,11 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import {
+  createColumnWithImage,
   createImportersColumn,
   createNumericColumn,
   createSalePriceColumn,
   createSourcePriceColumn,
-  createTranslatedColumn,
 } from "@/components/tables/shared-table-columns";
 import { Product } from "@/lib/game/products";
 import TableHeadContent from "@/components/tables/table-head-content";
@@ -52,7 +52,7 @@ export const productsColumns = (
   };
 
   return [
-    createTranslatedColumn(t, "itemName", "products"),
+    createColumnWithImage(t, "itemName", "products"),
     createSourcePriceColumn(difficulty, displayPrices, tablePriceIndex),
     createSalePriceColumn(difficulty, displayPrices, tablePriceIndex),
     {

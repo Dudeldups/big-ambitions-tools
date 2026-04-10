@@ -18,6 +18,7 @@ import {
 } from "@/lib/calculations/math";
 import { Translator } from "@/lib/types";
 import { Skeleton } from "../ui/skeleton";
+import Image from "next/image";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   t: Translator,
@@ -45,6 +46,57 @@ export const createTranslatedColumn = <T, K extends keyof T>(
     : accessorKey === "itemName"
       ? false
       : true,
+  enableSorting,
+});
+
+export const createColumnWithImage = <T extends { itemName: string }>(
+  t: Translator,
+  accessorKey: keyof T,
+  translationKeyPrefix: string,
+  { enableHiding = true, enableSorting = true } = {},
+): ColumnDef<T> => ({
+  id: String(accessorKey),
+  accessorKey,
+
+  accessorFn: (row) => t(`${translationKeyPrefix}.${String(row[accessorKey])}`),
+
+  header: ({ column }) => {
+    const translationString =
+      translationKeyPrefix === "vehicles"
+        ? "tableColumns.vehicleName"
+        : `tableColumns.${String(accessorKey)}`;
+
+    return (
+      <TableHeadContent column={column} align="start">
+        {t(translationString)}
+      </TableHeadContent>
+    );
+  },
+
+  cell: ({ row, getValue }) => {
+    const itemName = row.original.itemName;
+    const translatedValue = getValue<string>();
+
+    return (
+      <div className="flex items-center gap-2">
+        <Image
+          src={`/assets/gameImages/${itemName}.png`}
+          alt={itemName}
+          width={24}
+          height={24}
+          className="object-contain"
+        />
+        <span>{translatedValue}</span>
+      </div>
+    );
+  },
+
+  enableHiding: !enableHiding
+    ? false
+    : accessorKey === "itemName"
+      ? false
+      : true,
+
   enableSorting,
 });
 
