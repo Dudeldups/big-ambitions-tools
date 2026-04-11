@@ -3,10 +3,14 @@ import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { Link, useRouter } from "@/i18n/navigation";
-import { Copy, Edit } from "lucide-react";
+import { Clock, Copy, Edit, TrendingUp } from "lucide-react";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import DeleteFactoryDialog from "./delete-factory-dialog";
 import { Factory, usePlaythroughStore } from "@/lib/stores/playthroughStore";
+import { deriveWeeklyIncome } from "@/lib/calculations/derivedFactoryData";
+import CurrencyText from "../currency-text";
+import TextSkeleton from "../cemetery/text-skeleton";
+import { Separator } from "../ui/separator";
 
 type FactoryInfoCardProps = {
   factoryId: string;
@@ -30,7 +34,7 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
           acc[ws.name] = { name: ws.name, count: 0 };
         }
 
-        acc[ws.name].count += 1;
+        acc[ws.name].count += ws.amount;
 
         return acc;
       },
@@ -42,6 +46,8 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
     setTemplateFactory(factory);
     router.push(`/tools/${activePlaythrough.id}/factories/create`);
   };
+
+  const weeklyProfit = deriveWeeklyIncome([factory], activePlaythrough);
 
   return (
     <Card className="relative h-full border">
@@ -60,19 +66,37 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
         )}
       </CardHeader>
 
-      <CardContent className="mt-auto flex flex-row items-end justify-between">
-        <div>
+      <CardContent className="mt-auto flex flex-row items-end justify-between gap-2">
+        <div className="w-full">
           <ul className="mb-2">
             {groupedWorkstations.map((workstation) => (
               <li key={workstation.name}>
-                <p>
+                <span>
                   {workstation.count}x {t(`workstations.${workstation.name}`)}
-                </p>
+                </span>
               </li>
             ))}
           </ul>
 
-          <p>Opening hours / day: {factory.openingHours}h</p>
+          <Separator className="my-2" />
+
+          <div className="flex flex-wrap gap-4">
+            <span className="flex items-center gap-2">
+              <Clock className="text-muted-foreground" />
+              {factory.openingHours}h
+            </span>
+
+            <span className="flex items-center gap-1.5">
+              <TrendingUp className="text-muted-foreground size-5 shrink-0" />
+              <span className="text-foreground font-medium">
+                {weeklyProfit !== null ? (
+                  <CurrencyText value={weeklyProfit} hideCents />
+                ) : (
+                  <TextSkeleton />
+                )}
+              </span>
+            </span>
+          </div>
         </div>
 
         <div className="grid gap-2">
