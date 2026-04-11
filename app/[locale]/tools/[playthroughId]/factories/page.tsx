@@ -40,11 +40,7 @@ const FactoriesPage = () => {
         <ul className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {activePlaythrough.factoryIds.map((factoryId) => (
             <li key={factoryId} className="w-full max-w-96">
-              <Link
-                href={`/tools/${activePlaythrough.id}/factories/${factoryId}`}
-              >
-                <FactoryInfoCard factoryId={factoryId} />
-              </Link>
+              <FactoryInfoCard factoryId={factoryId} />
             </li>
           ))}
         </ul>

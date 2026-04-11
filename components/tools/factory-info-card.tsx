@@ -1,6 +1,11 @@
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader } from "../ui/card";
+import { Button } from "../ui/button";
+import { Link } from "@/i18n/navigation";
+import { Copy, Edit } from "lucide-react";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
+import DeleteFactoryDialog from "./delete-factory-dialog";
 
 type FactoryInfoCardProps = {
   factoryId: string;
@@ -8,9 +13,10 @@ type FactoryInfoCardProps = {
 
 const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
   const t = useTranslations();
+  const { activePlaythrough } = useActivePlaythrough();
   const factory = usePlaythroughState((s) => s.getFactoryById(factoryId));
 
-  if (!factory) return null;
+  if (!factory || !activePlaythrough) return null;
 
   const groupedWorkstations = Object.values(
     factory.workstations.reduce(
@@ -28,24 +34,69 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
   );
 
   return (
-    <Card className="h-full">
+    <Card className="relative h-full border">
+      <Link
+        href={`/tools/${activePlaythrough.id}/factories/${factoryId}`}
+        className="absolute inset-0 z-0"
+        aria-label={factory.name}
+      />
+
       <CardHeader>
-        <h3>{factory.name}</h3>
+        <h3 className="truncate font-semibold">{factory.name}</h3>
         {factory.description && (
-          <p className="truncate">{factory.description}</p>
+          <p className="text-muted-foreground mt-2 truncate">
+            {factory.description}
+          </p>
         )}
       </CardHeader>
-      <CardContent className="mt-auto">
-        <p>Opening hours / day: {factory.openingHours}h</p>
-        <ul>
-          {groupedWorkstations.map((workstation) => (
-            <li key={workstation.name}>
-              <p>
-                {workstation.count}x {t(`workstations.${workstation.name}`)}
-              </p>
-            </li>
-          ))}
-        </ul>
+
+      <CardContent className="mt-auto flex flex-row items-end justify-between">
+        <div>
+          <ul className="mb-2">
+            {groupedWorkstations.map((workstation) => (
+              <li key={workstation.name}>
+                <p>
+                  {workstation.count}x {t(`workstations.${workstation.name}`)}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <p>Opening hours / day: {factory.openingHours}h</p>
+        </div>
+
+        <div className="grid gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            size="icon-lg"
+            asChild
+            className="relative z-20"
+          >
+            <Link
+              href={`/tools/${activePlaythrough.id}/factories/${factoryId}`}
+            >
+              <Copy className="size-5" />
+            </Link>
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            size="icon-lg"
+            asChild
+            className="relative z-20"
+          >
+            <Link
+              href={`/tools/${activePlaythrough.id}/factories/${factoryId}/edit`}
+            >
+              <Edit className="size-5" />
+            </Link>
+          </Button>
+          <DeleteFactoryDialog
+            factoryToDelete={factoryId}
+            playthroughId={activePlaythrough.id}
+          />
+        </div>
       </CardContent>
     </Card>
   );
