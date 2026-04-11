@@ -30,7 +30,10 @@ const EditPlaythroughForm = ({
     useFormContext<PlaythroughFormValues>();
 
   return (
-    <form className="flex items-center" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="bg-card flex items-center rounded-md border"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className="flex flex-col items-end p-4">
         <Input className="mb-3 w-60" {...register("characterName")} />
         <Controller

@@ -23,7 +23,7 @@ const PlaythroughInfoCard = ({
   const t = useTranslations();
 
   return (
-    <div className="flex items-center">
+    <div className="bg-card flex items-center rounded-md border">
       <Link className="p-4 text-left" href={`/tools/${pt.id}`}>
         <dl>
           <dt className="w-60 truncate text-xl font-semibold">
