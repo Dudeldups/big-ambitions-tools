@@ -50,7 +50,10 @@ export type PlaythroughActions = {
     factoryId: string,
     updatedFields: Partial<FactoryFormValues>,
   ) => Factory | undefined;
-  deleteFactory: (factoryId: string) => Factory | undefined;
+  deleteFactory: (
+    factoryId: string,
+    playthroughId: string,
+  ) => Factory | undefined;
   getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
   setPriceIndex: (
@@ -208,12 +211,13 @@ export const usePlaythroughStore = create(
         return get().factories.find((f) => f.id === factoryId);
       },
 
-      deleteFactory: (factoryId) => {
+      deleteFactory: (factoryId, playthroughId) => {
         const factoryToDelete = get().factories.find((f) => f.id === factoryId);
         set((state) => {
-          state.factories = state.factories.filter((f) => f.id !== factoryId);
           state.playthroughs.forEach((p) => {
-            p.factoryIds = p.factoryIds.filter((id) => id !== factoryId);
+            if (p.id === playthroughId && p.factoryIds.includes(factoryId)) {
+              p.factoryIds = p.factoryIds.filter((id) => id !== factoryId);
+            }
           });
         });
 
