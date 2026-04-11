@@ -354,3 +354,21 @@ export const deriveWeeklyIncome = (
     return total + (income - recurringCost);
   }, 0);
 };
+
+export const deriveWeeklyIngredientCosts = (
+  factories: Factory[],
+  playthrough: Playthrough,
+): number => {
+  const { difficulty } = playthrough;
+  const calculationPeriod = "weekly";
+
+  return factories.reduce((total, factory) => {
+    const ingredientCosts = deriveIngredientData(
+      factory,
+      difficulty,
+      calculationPeriod,
+    ).reduce((sum, item) => sum + item.value, 0);
+
+    return total + ingredientCosts;
+  }, 0);
+};

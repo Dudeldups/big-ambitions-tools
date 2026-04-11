@@ -4,10 +4,19 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import PlaythroughNotFound from "./not-found";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useShallow } from "zustand/shallow";
-import { Factory, Plus, SlidersHorizontal, TrendingUp } from "lucide-react";
+import {
+  Factory,
+  HandCoins,
+  Plus,
+  SlidersHorizontal,
+  TrendingUp,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TextSkeleton from "@/components/cemetery/text-skeleton";
-import { deriveWeeklyIncome } from "@/lib/calculations/derivedFactoryData";
+import {
+  deriveWeeklyIncome,
+  deriveWeeklyIngredientCosts,
+} from "@/lib/calculations/derivedFactoryData";
 import CurrencyText from "@/components/currency-text";
 import { Link, usePathname } from "@/i18n/navigation";
 
@@ -32,6 +41,10 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
 
   const weeklyIncome = activePlaythrough
     ? deriveWeeklyIncome(factories, activePlaythrough)
+    : null;
+
+  const weeklyIngredientCosts = activePlaythrough
+    ? deriveWeeklyIngredientCosts(factories, activePlaythrough)
     : null;
 
   return (
@@ -68,7 +81,24 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
                       <TextSkeleton />
                     )}
                   </span>{" "}
-                  / week
+                  profit / week
+                </span>
+              </span>
+
+              <span className="flex items-center gap-1.5">
+                <HandCoins className="size-5 shrink-0" />
+                <span>
+                  <span className="text-foreground font-medium">
+                    {weeklyIngredientCosts !== null ? (
+                      <CurrencyText
+                        value={weeklyIngredientCosts * -1}
+                        hideCents
+                      />
+                    ) : (
+                      <TextSkeleton />
+                    )}
+                  </span>{" "}
+                  orders / week
                 </span>
               </span>
             </div>
