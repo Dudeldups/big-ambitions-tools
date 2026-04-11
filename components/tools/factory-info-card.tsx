@@ -2,10 +2,11 @@ import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { Copy, Edit } from "lucide-react";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import DeleteFactoryDialog from "./delete-factory-dialog";
+import { Factory, usePlaythroughStore } from "@/lib/stores/playthroughStore";
 
 type FactoryInfoCardProps = {
   factoryId: string;
@@ -13,8 +14,12 @@ type FactoryInfoCardProps = {
 
 const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
   const t = useTranslations();
+  const router = useRouter();
   const { activePlaythrough } = useActivePlaythrough();
   const factory = usePlaythroughState((s) => s.getFactoryById(factoryId));
+  const setTemplateFactory = usePlaythroughStore(
+    (state) => state.setTemplateFactory,
+  );
 
   if (!factory || !activePlaythrough) return null;
 
@@ -32,6 +37,11 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
       {} as Record<string, { name: string; count: number }>,
     ),
   );
+
+  const handleCopy = (factory: Factory) => {
+    setTemplateFactory(factory);
+    router.push(`/tools/${activePlaythrough.id}/factories/create`);
+  };
 
   return (
     <Card className="relative h-full border">
@@ -70,14 +80,10 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
             type="button"
             variant="outline"
             size="icon-lg"
-            asChild
             className="relative z-20"
+            onClick={() => handleCopy(factory)}
           >
-            <Link
-              href={`/tools/${activePlaythrough.id}/factories/${factoryId}`}
-            >
-              <Copy className="size-5" />
-            </Link>
+            <Copy className="size-5" />
           </Button>
           <Button
             type="button"

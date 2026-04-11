@@ -6,6 +6,7 @@ import { useRouter } from "@/i18n/navigation";
 import { getEmployeeSalary } from "@/lib/calculations/math";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useDerivedEmployees } from "@/lib/hooks/useDerivedEmployees";
+import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,6 +20,10 @@ const CreateFactoryPage = () => {
   const { activePlaythrough } = useActivePlaythrough();
   const difficulty = activePlaythrough?.difficulty;
 
+  const templateFactory = usePlaythroughState((state) => state.templateFactory);
+  const setTemplateFactory = usePlaythroughStore(
+    (state) => state.setTemplateFactory,
+  );
   const createFactory = usePlaythroughStore((state) => state.createFactory);
   const addFactoryToPlaythrough = usePlaythroughStore(
     (state) => state.addFactoryToPlaythrough,
@@ -27,7 +32,7 @@ const CreateFactoryPage = () => {
 
   const form = useForm<FactoryFormValues>({
     resolver: zodResolver(factorySchema),
-    defaultValues: {
+    defaultValues: templateFactory ?? {
       workstations: [],
       openingHours: 24,
       vehicles: [{ name: "FreightTruckT1" }],
@@ -42,10 +47,12 @@ const CreateFactoryPage = () => {
     },
   });
 
+  const { reset, control, setValue, getValues } = form;
+
   useEffect(() => {
     if (!difficulty) return;
-    form.reset({
-      ...form.getValues(),
+    reset({
+      ...getValues(),
       employees: {
         deliveryDriver: {
           amount: 1,
@@ -69,9 +76,14 @@ const CreateFactoryPage = () => {
         },
       },
     });
-  }, [difficulty, form]);
+  }, [difficulty, getValues, reset]);
 
-  const { control, setValue } = form;
+  useEffect(() => {
+    if (templateFactory) {
+      reset(templateFactory);
+      setTemplateFactory(undefined);
+    }
+  }, [reset, setTemplateFactory, templateFactory]);
 
   const [workstations, openingHours, vehicles, employees] = useWatch({
     control,
@@ -96,7 +108,7 @@ const CreateFactoryPage = () => {
       });
     }
 
-    if (!activePlaythrough) return null;
+    if (!activePlaythrough || templateFactory === null) return null;
 
     const newFactory = createFactory(values);
     addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
