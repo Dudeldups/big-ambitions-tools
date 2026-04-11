@@ -81,7 +81,7 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
                       <TextSkeleton />
                     )}
                   </span>{" "}
-                  profit / week
+                  net profit / week
                 </span>
               </span>
 
