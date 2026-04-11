@@ -19,12 +19,30 @@ const FactoriesPage = () => {
 
   return (
     <div className="max-w-page mx-auto">
-      <div>
+      <div className="my-8 space-y-4">
         <p>Go back to the playthrough overview:</p>
-        <Link href="/tools">Playthroughs</Link>
+        <Button asChild variant="default">
+          <Link href="/tools">Playthroughs</Link>
+        </Button>
       </div>
 
-      <h2>Factories in this playthrough:</h2>
+      <div className="my-8 rounded-xl border bg-cyan-900 p-4">
+        <h2>Your factories</h2>
+
+        <p className="mt-6 mb-2">
+          An overview of your factories. You can edit or delete them and also
+          copy the current values for a new factory. To see more details about
+          each factory including a shopping list, just click their respective
+          card.
+        </p>
+
+        <p>
+          You can also group them together by clicking the Group factories
+          button at the top of the page. This will allow you to see those
+          factories in one place and manage them as a group. Helpful if you use
+          a central warehouse to provide ingredients for multiple factories.
+        </p>
+      </div>
 
       {!hasFactories ? (
         <>

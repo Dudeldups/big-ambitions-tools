@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { Factory } from "lucide-react";
@@ -14,13 +15,13 @@ const PlaythroughIdPage = () => {
   }
 
   return (
-    <div>
-      <div>
-        <div>
-          <p>Go back to the playthrough overview:</p>
-          <Link href="/tools">Playthroughs</Link>
-        </div>
+    <div className="max-w-page mx-auto">
+      <div className="mt-8">
+        <p>Go back to the playthrough overview:</p>
+        <Link href="/tools">Playthroughs</Link>
+      </div>
 
+      <div className="my-8 max-w-xl rounded-xl border bg-cyan-900 p-4">
         <h2>
           Your playthrough{" "}
           <span className="font-semibold">
@@ -29,17 +30,22 @@ const PlaythroughIdPage = () => {
         </h2>
 
         <p>
-          You can visit the factories page to see an overview of your factories,
-          keep track of items you need to order for your production lines and
-          more. The factory planner will show you how many pallet shelves and
-          factory workers you need for an efficient production process.
+          Visit the factories page to see an overview of your factories, keep
+          track of items you need to order for your production lines and more.
+          The factory planner will show you how many pallet shelves and factory
+          workers you need for maximum efficiency.
         </p>
-
-        <Link href={`/tools/${activePlaythrough.id}/factories`}>
-          <Factory />
-          Factories
-        </Link>
       </div>
+
+      <Button className="size-32">
+        <Link
+          href={`/tools/${activePlaythrough.id}/factories`}
+          className="flex flex-col items-center gap-4"
+        >
+          <Factory className="size-10" />
+          <span className="text-lg font-bold">Factories</span>
+        </Link>
+      </Button>
     </div>
   );
 };
