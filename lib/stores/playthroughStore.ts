@@ -29,6 +29,7 @@ export type PlaythroughState = {
   _hasHydrated: boolean;
   playthroughs: Playthrough[];
   factories: Factory[];
+  templateFactory: Factory | undefined;
 };
 
 export type PlaythroughActions = {
@@ -62,12 +63,14 @@ export type PlaythroughActions = {
     index: number,
   ) => void;
   getPriceIndices: (playthroughId: string) => PriceIndices;
+  setTemplateFactory: (factory: Factory | undefined) => void;
 };
 
 export const initialPlaythroughState: PlaythroughState = {
   _hasHydrated: false,
   playthroughs: [],
   factories: [],
+  templateFactory: undefined,
 };
 
 export const usePlaythroughStore = create(
@@ -241,6 +244,11 @@ export const usePlaythroughStore = create(
       getPriceIndices: (playthroughId) =>
         get().playthroughs.find((p) => p.id === playthroughId)?.priceIndices ||
         {},
+
+      setTemplateFactory: (factory) =>
+        set((state) => {
+          state.templateFactory = factory;
+        }),
     })),
     {
       name: "playthrough-storage",
