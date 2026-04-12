@@ -30,6 +30,7 @@ import { Input } from "../ui/input";
 import { MAX_WORKSTATION_AMOUNT } from "@/lib/constants";
 import { Separator } from "../ui/separator";
 import PriceIndexPopover from "../price-index-popover";
+import Image from "next/image";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -161,6 +162,13 @@ const WorkstationSelects = ({
                       .filter((p) => p.workstation === selectedWorkstation)
                       .map((p) => (
                         <SelectItem key={p.name} value={p.name}>
+                          <Image
+                            src={`/assets/gameImages/${p.name}.png`}
+                            alt={p.name}
+                            width={24}
+                            height={24}
+                            className="object-contain"
+                          />
                           {t(`products.${p.name}` as never)}
                         </SelectItem>
                       ))}
