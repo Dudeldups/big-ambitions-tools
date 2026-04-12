@@ -1,9 +1,9 @@
 import { ingredients } from "../game/ingredients";
 import { Difficulty } from "../game/types";
 import { FactoryFormValues } from "../schemas/factory";
-import { getTimeMultiplier } from "../utils/getTimeMultiplier";
-import { calculateIngredientTotals } from "./derivedFactoryData";
-import { getImportPrice } from "./math";
+import { getTimeMultiplier } from "./getTimeMultiplier";
+import { calculateIngredientTotals } from "../calculations/derivedFactoryData";
+import { getImportPrice } from "../calculations/math";
 
 export type ImporterShoppingList = {
   importer: string;

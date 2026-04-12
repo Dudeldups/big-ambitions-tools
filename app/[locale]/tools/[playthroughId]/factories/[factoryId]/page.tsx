@@ -2,7 +2,7 @@
 
 import ImporterTable from "@/components/tables/importer-table";
 import { Link } from "@/i18n/navigation";
-import { getShoppingList } from "@/lib/calculations/getShoppingList";
+import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useTranslations } from "next-intl";

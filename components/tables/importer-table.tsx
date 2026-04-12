@@ -1,6 +1,6 @@
 import { Translator } from "@/lib/types";
 import CopyButton from "../copy-button";
-import { ImporterShoppingList } from "@/lib/calculations/getShoppingList";
+import { ImporterShoppingList } from "@/lib/utils/getShoppingList";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import {
   Table,
