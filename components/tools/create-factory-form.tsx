@@ -274,10 +274,16 @@ const CreateFactoryForm = ({
       {/* Actions */}
 
       <div className="bg-card flex gap-4 rounded-md p-4">
-        <Button type="button" variant="outline" onClick={() => reset()}>
-          {t("general.reset")}
-        </Button>
-        <CancelConfirmModal onModalSubmit={onCancel} />
+        <CancelConfirmModal
+          buttonText={t("general.reset")}
+          modalText={t("modals.resetForm")}
+          onModalSubmit={reset}
+        />
+        <CancelConfirmModal
+          buttonText={t("general.cancel")}
+          modalText={t("modals.discardChanges")}
+          onModalSubmit={onCancel}
+        />
         <Button type="submit">{t("general.confirm")}</Button>
       </div>
     </form>

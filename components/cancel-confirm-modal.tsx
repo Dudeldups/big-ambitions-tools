@@ -11,23 +11,28 @@ import {
 } from "./ui/dialog";
 
 type CancelConfirmModalProps = {
+  buttonText: string;
+  modalText: string;
   onModalSubmit: () => void;
 };
 
-const CancelConfirmModal = ({ onModalSubmit }: CancelConfirmModalProps) => {
+const CancelConfirmModal = ({
+  buttonText,
+  modalText,
+  onModalSubmit,
+}: CancelConfirmModalProps) => {
   const tGeneral = useTranslations("general");
-  const tModals = useTranslations("modals");
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button type="button" variant="outline">
-          {tGeneral("cancel")}
+          {buttonText}
         </Button>
       </DialogTrigger>
       <DialogContent className="w-auto sm:w-auto" showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>{tModals("discardChanges")}</DialogTitle>
+          <DialogTitle>{modalText}</DialogTitle>
         </DialogHeader>
 
         <DialogFooter className="mt-4">
@@ -37,9 +42,16 @@ const CancelConfirmModal = ({ onModalSubmit }: CancelConfirmModalProps) => {
             </Button>
           </DialogClose>
 
-          <Button type="button" onClick={onModalSubmit}>
-            {tGeneral("confirm")}
-          </Button>
+          <DialogClose asChild>
+            <Button
+              type="button"
+              onClick={() => {
+                onModalSubmit();
+              }}
+            >
+              {tGeneral("confirm")}
+            </Button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
