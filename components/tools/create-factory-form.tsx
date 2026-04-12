@@ -55,6 +55,10 @@ const CreateFactoryForm = ({
   const calculationPeriod = useAppState((s) => s.calculationPeriod);
   const setCalculationPeriod = useAppStore((s) => s.setCalculationPeriod);
 
+  const sortedProductData = productData.sort((a, b) =>
+    t(`products.${a.name}`).localeCompare(t(`products.${b.name}`)),
+  );
+
   const {
     register,
     handleSubmit,
@@ -242,6 +246,7 @@ const CreateFactoryForm = ({
               setValue={setValue}
               factoryWorkerSalary={factoryWorkerSalary}
               openingHours={openingHours}
+              productData={sortedProductData}
             />
           ))}
 
@@ -257,7 +262,7 @@ const CreateFactoryForm = ({
                 appendWs({
                   amount: 1,
                   name: WORKSTATION_NAMES[0],
-                  product: productData.find(
+                  product: sortedProductData.find(
                     (p) => p.workstation === WORKSTATION_NAMES[0],
                   )!.name as ProductName,
                 })

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
 import { ProductName } from "@/lib/game/productNames";
-import { products } from "@/lib/game/products";
+import { Product, products } from "@/lib/game/products";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Copy, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -40,12 +40,8 @@ type WorkstationSelectsProps = {
   setValue: UseFormSetValue<FactoryFormValues>;
   factoryWorkerSalary: number;
   openingHours: number;
+  productData: (Product & { name: string })[];
 };
-
-const productData = Object.entries(products).map(([key, value]) => ({
-  name: key,
-  ...value,
-}));
 
 const WorkstationSelects = ({
   control,
@@ -55,6 +51,7 @@ const WorkstationSelects = ({
   setValue,
   factoryWorkerSalary,
   openingHours,
+  productData,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
 
@@ -91,7 +88,7 @@ const WorkstationSelects = ({
         shouldValidate: true,
       });
     }
-  }, [selectedWorkstation, index, setValue]);
+  }, [selectedWorkstation, index, setValue, productData]);
 
   return (
     <div className="space-y-4 rounded-md border p-3">
