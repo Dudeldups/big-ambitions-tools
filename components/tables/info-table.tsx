@@ -40,43 +40,45 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
         </TableHeader>
 
         <TableBody>
-          {rows.map((row, i) => {
-            const showDivider =
-              row.valueType && row.valueType !== rows[i - 1]?.valueType;
+          {rows
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((row, i) => {
+              const showDivider =
+                row.valueType && row.valueType !== rows[i - 1]?.valueType;
 
-            return (
-              <Fragment key={"f-" + row.name + i}>
-                {showDivider && (
-                  <TableRow key={`divider-${row.valueType}`}>
-                    <TableCell colSpan={3}>
-                      <div className="text-muted-foreground flex items-center gap-2 text-xs">
-                        <div className="bg-border h-px flex-1" />
-                        <span>{row.valueType?.toUpperCase()}</span>
-                        <div className="bg-border h-px flex-1" />
-                      </div>
+              return (
+                <Fragment key={"f-" + row.name + i}>
+                  {showDivider && (
+                    <TableRow key={`divider-${row.valueType}`}>
+                      <TableCell colSpan={3}>
+                        <div className="text-muted-foreground flex items-center gap-2 text-xs">
+                          <div className="bg-border h-px flex-1" />
+                          <span>{row.valueType?.toUpperCase()}</span>
+                          <div className="bg-border h-px flex-1" />
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  )}
+                  <TableRow key={row.name + i}>
+                    <TableCell className="amount">{row.amount}</TableCell>
+                    <TableCell>{t(row.name)}</TableCell>
+                    <TableCell
+                      className={cn(
+                        "amount",
+                        row.diff && "grid grid-cols-2 gap-2",
+                      )}
+                    >
+                      {row.diff && (
+                        <>
+                          <CurrencyText value={row.diff} />
+                        </>
+                      )}
+                      <span>{formatToUSD(row.value)}</span>
                     </TableCell>
                   </TableRow>
-                )}
-                <TableRow key={row.name + i}>
-                  <TableCell className="amount">{row.amount}</TableCell>
-                  <TableCell>{t(row.name)}</TableCell>
-                  <TableCell
-                    className={cn(
-                      "amount",
-                      row.diff && "grid grid-cols-2 gap-2",
-                    )}
-                  >
-                    {row.diff && (
-                      <>
-                        <CurrencyText value={row.diff} />
-                      </>
-                    )}
-                    <span>{formatToUSD(row.value)}</span>
-                  </TableCell>
-                </TableRow>
-              </Fragment>
-            );
-          })}
+                </Fragment>
+              );
+            })}
         </TableBody>
 
         <TableFooter>
