@@ -127,7 +127,7 @@ const CreateFactoryPage = () => {
   // TODO add skeletons
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2">
+    <div className="max-w-page mx-auto grid gap-8 lg:grid-cols-2">
       <CreateFactoryForm form={form} onSubmit={onSubmit} onCancel={onCancel} />
       <FactoryOverview values={watchedValues} />
     </div>
