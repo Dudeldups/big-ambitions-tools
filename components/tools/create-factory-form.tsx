@@ -6,12 +6,9 @@ import {
   Field,
   FieldError,
   FieldGroup,
-  FieldLabel,
   FieldLegend,
   FieldSet,
 } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
 import { ProductName } from "@/lib/game/productNames";
 import { products } from "@/lib/game/products";
@@ -24,14 +21,11 @@ import {
   useWatch,
 } from "react-hook-form";
 import VehicleSelect from "./vehicle-select";
-import { RadioButtonGroup } from "../radio-button-group";
-import { useAppState } from "@/lib/hooks/useAppState";
-import { useAppStore } from "@/lib/stores/appStore";
-import DeliveryPeriodSelect from "./delivery-period-select";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
 import WorkstationPresetDialog from "./workstation-preset-dialog";
 import FormEmployees from "./form-employees";
+import FormInformation from "./form-information";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -50,8 +44,6 @@ const CreateFactoryForm = ({
   onCancel,
 }: CreateFactoryFormProps) => {
   const t = useTranslations();
-  const calculationPeriod = useAppState((s) => s.calculationPeriod);
-  const setCalculationPeriod = useAppStore((s) => s.setCalculationPeriod);
 
   const sortedProductData = productData.sort((a, b) =>
     t(`products.${a.name}`).localeCompare(t(`products.${b.name}`)),
@@ -99,88 +91,7 @@ const CreateFactoryForm = ({
       onSubmit={handleSubmit(onSubmit, onError)}
       className="@container/form space-y-10"
     >
-      <FieldSet className="@container/field-set grid px-4 @[38rem]:grid-cols-2">
-        <FieldLegend className="col-span-full text-lg underline">
-          Factory Information
-        </FieldLegend>
-
-        <FieldGroup>
-          <Field>
-            <FieldLabel htmlFor="name">Factory Name</FieldLabel>
-            <Input
-              id="name"
-              autoComplete="off"
-              maxLength={50}
-              {...register("name")}
-            />
-            {errors.name?.message && (
-              <FieldError>{t(errors.name.message as never)}</FieldError>
-            )}
-          </Field>
-
-          <Field className="-mt-2">
-            <FieldLabel htmlFor="description">Description</FieldLabel>
-            <Textarea
-              id="description"
-              {...register("description")}
-              maxLength={150}
-            />
-            {errors.description?.message && (
-              <FieldError>{t(errors.description.message as never)}</FieldError>
-            )}
-          </Field>
-        </FieldGroup>
-
-        <FieldGroup className="@md:@max-xl:flex-row @md:@max-xl:*:flex-1">
-          <Field>
-            <FieldLabel htmlFor="openingHours">Opening hours / day</FieldLabel>
-            <div className="flex items-center gap-3">
-              <Input
-                className="max-w-20"
-                id="openingHours"
-                type="number"
-                min={1}
-                max={24}
-                step={1}
-                {...register("openingHours", { valueAsNumber: true })}
-              />
-              <span className="text-muted-foreground">
-                {openingHours * 7}h / week
-              </span>
-            </div>
-          </Field>
-
-          <FieldSet>
-            <FieldLegend>Calculation basis</FieldLegend>
-            <RadioButtonGroup
-              name="calculationPeriod"
-              value={calculationPeriod}
-              onChange={setCalculationPeriod}
-              options={[
-                {
-                  value: "hourly",
-                  label: t("general.calculationPeriodOptions.hourly"),
-                },
-                {
-                  value: "daily",
-                  label: t("general.calculationPeriodOptions.daily"),
-                },
-                {
-                  value: "weekly",
-                  label: t("general.calculationPeriodOptions.weekly"),
-                },
-              ]}
-            />
-          </FieldSet>
-        </FieldGroup>
-
-        <FieldGroup className="gap-4 @xl:col-span-2">
-          <FieldLegend className="mb-0">Delivery period</FieldLegend>
-          <DeliveryPeriodSelect control={control} />
-        </FieldGroup>
-      </FieldSet>
-
-      {/* Employees */}
+      <FormInformation form={form} openingHours={openingHours} t={t} />
 
       <FormEmployees register={register} t={t} />
 
