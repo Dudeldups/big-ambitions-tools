@@ -20,12 +20,12 @@ import {
   UseFormReturn,
   useWatch,
 } from "react-hook-form";
-import VehicleSelect from "./vehicle-select";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
 import WorkstationPresetDialog from "./workstation-preset-dialog";
 import FormEmployees from "./form-employees";
 import FormInformation from "./form-information";
+import FormVehicles from "./form-vehicles";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -66,14 +66,6 @@ const CreateFactoryForm = ({
     control,
     name: "workstations",
   });
-  const {
-    fields: vehicleFields,
-    append: appendVehicle,
-    remove: removeVehicle,
-  } = useFieldArray({
-    control,
-    name: "vehicles",
-  });
 
   const openingHours = useWatch({ control, name: "openingHours" });
   const factoryWorkerSalary = useWatch({
@@ -95,33 +87,7 @@ const CreateFactoryForm = ({
 
       <FormEmployees register={register} t={t} />
 
-      {/* Vehicles */}
-
-      <FieldSet className="@container/field-set px-4">
-        <FieldLegend>Vehicles</FieldLegend>
-
-        <FieldGroup className="gap-3 @md:flex-row @md:*:flex-1">
-          {vehicleFields.map((field, index) => (
-            <VehicleSelect
-              key={field.id}
-              control={control}
-              index={index}
-              onRemove={() => removeVehicle(index)}
-            />
-          ))}
-
-          {vehicleFields.length < 2 && (
-            <Button
-              type="button"
-              variant="secondary"
-              className="px-0"
-              onClick={() => appendVehicle({ name: "FreightTruckT1" })}
-            >
-              Add vehicle
-            </Button>
-          )}
-        </FieldGroup>
-      </FieldSet>
+      <FormVehicles control={control} t={t} />
 
       {/* Workstations */}
 
