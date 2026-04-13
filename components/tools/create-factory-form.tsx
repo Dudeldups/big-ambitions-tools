@@ -4,7 +4,6 @@ import WorkstationSelects from "@/components/tools/workstation-selects";
 import { Button } from "@/components/ui/button";
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -25,8 +24,6 @@ import {
   useWatch,
 } from "react-hook-form";
 import VehicleSelect from "./vehicle-select";
-import EmployeeSalaryField from "./employee-salary-field";
-import { EmployeeName } from "@/lib/game/employeeNames";
 import { RadioButtonGroup } from "../radio-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
@@ -34,6 +31,7 @@ import DeliveryPeriodSelect from "./delivery-period-select";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
 import WorkstationPresetDialog from "./workstation-preset-dialog";
+import FormEmployees from "./form-employees";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -95,14 +93,6 @@ const CreateFactoryForm = ({
     safeLog("Form state:", form.getValues());
     safeLog("Form errors:", errors);
   };
-
-  const factoryEmployees = [
-    "deliveryDriver",
-    "hrManager",
-    "logisticsManager",
-    "purchasingAgent",
-    "factoryWorker",
-  ] as const satisfies readonly EmployeeName[];
 
   return (
     <form
@@ -192,23 +182,7 @@ const CreateFactoryForm = ({
 
       {/* Employees */}
 
-      <FieldSet className="@container/field-set px-4">
-        <FieldLegend>Employees</FieldLegend>
-        <FieldDescription className="text-muted-foreground">
-          Enter the salary for each employee.
-        </FieldDescription>
-
-        <FieldGroup className="grid space-y-6 px-4 @[43rem]:grid-cols-2">
-          {factoryEmployees.map((employee) => (
-            <EmployeeSalaryField
-              key={employee}
-              employeeName={employee}
-              register={register}
-              t={t}
-            />
-          ))}
-        </FieldGroup>
-      </FieldSet>
+      <FormEmployees register={register} t={t} />
 
       {/* Vehicles */}
 
