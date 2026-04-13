@@ -35,7 +35,7 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
 
   return (
     <FieldSet className="@container/field-set px-4">
-      <div className="flex justify-between gap-4">
+      <div className="flex flex-wrap justify-between gap-4">
         <div>
           <FieldLegend>Employees</FieldLegend>
           <FieldDescription className="text-muted-foreground">
@@ -43,11 +43,15 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
           </FieldDescription>
         </div>
 
-        <Field orientation="horizontal" className="w-auto self-start">
+        <Field
+          orientation="horizontal"
+          className="w-auto items-start self-start"
+        >
           <Checkbox
             id="factory-worker-check"
             checked={isOptimalWorkerChecked}
             onCheckedChange={() => toggleOptimalWorker()}
+            className="mt-0.5"
           />
           <FieldLabel htmlFor="factory-worker-check">
             Use optimal factory worker amount
