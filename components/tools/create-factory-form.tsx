@@ -184,7 +184,7 @@ const CreateFactoryForm = ({
           </FieldSet>
         </FieldGroup>
 
-        <FieldGroup className="@xl:col-span-2">
+        <FieldGroup className="gap-4 @xl:col-span-2">
           <FieldLegend className="mb-0">Delivery period</FieldLegend>
           <DeliveryPeriodSelect control={control} />
         </FieldGroup>
