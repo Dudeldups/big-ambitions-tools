@@ -91,13 +91,13 @@ const WorkstationSelects = ({
   }, [selectedWorkstation, index, setValue, productData]);
 
   return (
-    <div className="space-y-4 rounded-md border p-3">
-      <div className="flex items-center gap-4">
+    <div className="@container/workstations space-y-4 rounded-md border p-3">
+      <div className="grid grid-cols-[1fr_auto] items-center gap-4 @md:@max-2xl:flex">
         <Controller
           control={control}
           name={`workstations.${index}.amount`}
           render={({ field }) => (
-            <div className="flex flex-col gap-2 self-end">
+            <div className="order-1 flex gap-2 self-end @md:@max-2xl:flex-col">
               <FieldLabel htmlFor={`workstationAmount-${index}`}>
                 {t("general.amount")}
               </FieldLabel>
@@ -121,7 +121,40 @@ const WorkstationSelects = ({
           )}
         />
 
-        <div className="flex flex-1 flex-col gap-2">
+        <div className="order-2 flex gap-2 @md:@max-2xl:order-3 @md:@max-2xl:flex-col">
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={t("general.copy")}
+            onClick={() => {
+              if (!selectedWorkstation || !selectedProduct) {
+                toast.error(t("toasts.workstationCopyError"), {
+                  position: "bottom-right",
+                });
+              } else {
+                append({
+                  amount: 1,
+                  name: selectedWorkstation,
+                  product: selectedProduct,
+                });
+              }
+            }}
+          >
+            <Copy className="size-5" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={t("general.delete")}
+            onClick={() => remove(index)}
+          >
+            <Trash2 className="size-5" />
+          </Button>
+        </div>
+
+        <div className="order-3 col-span-2 flex flex-1 flex-col gap-2 @md:@max-2xl:order-2 @2xl:flex-row">
           <Controller
             control={control}
             name={`workstations.${index}.name`}
@@ -175,71 +208,40 @@ const WorkstationSelects = ({
             )}
           />
         </div>
-
-        <div className="flex flex-col gap-2">
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            aria-label={t("general.copy")}
-            onClick={() => {
-              if (!selectedWorkstation || !selectedProduct) {
-                toast.error(t("toasts.workstationCopyError"), {
-                  position: "bottom-right",
-                });
-              } else {
-                append({
-                  amount: 1,
-                  name: selectedWorkstation,
-                  product: selectedProduct,
-                });
-              }
-            }}
-          >
-            <Copy className="size-5" />
-          </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            aria-label={t("general.delete")}
-            onClick={() => remove(index)}
-          >
-            <Trash2 className="size-5" />
-          </Button>
-        </div>
       </div>
 
       <Separator />
 
-      <FieldGroup className="flex-row">
+      <FieldGroup className="flex-row @max-sm:flex-col @sm:items-end">
         <Controller
           control={control}
           name={`workstations.${index}.salesAmount`}
           render={({ field }) => (
-            <Field orientation="horizontal" className="w-fit">
+            <Field orientation="horizontal" className="w-fit flex-wrap">
               <FieldLabel htmlFor={`workstationSalesAmount-${index}`}>
                 {t("tools.factoryPlanner.estimatedSales")}
               </FieldLabel>
-              <Input
-                className="max-w-24"
-                id={`workstationSalesAmount-${index}`}
-                type="number"
-                value={field.value ?? ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  field.onChange(
-                    value === ""
-                      ? undefined
-                      : Number(value) > productionAmount
-                        ? productionAmount
-                        : Number(value),
-                  );
-                }}
-                onBlur={field.onBlur}
-                max={productionAmount}
-              />
-              <span>/ {productionAmount}</span>
+              <div className="flex items-center gap-2">
+                <Input
+                  className="max-w-24"
+                  id={`workstationSalesAmount-${index}`}
+                  type="number"
+                  value={field.value ?? ""}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    field.onChange(
+                      value === ""
+                        ? undefined
+                        : Number(value) > productionAmount
+                          ? productionAmount
+                          : Number(value),
+                    );
+                  }}
+                  onBlur={field.onBlur}
+                  max={productionAmount}
+                />
+                <span>/ {productionAmount}</span>
+              </div>
             </Field>
           )}
         />

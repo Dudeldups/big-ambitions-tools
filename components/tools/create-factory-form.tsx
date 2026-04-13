@@ -44,11 +44,7 @@ const CreateFactoryForm = ({
 
       <FormVehicles control={control} t={t} />
 
-      {/* Workstations */}
-
       <FormWorkstations form={form} t={t} />
-
-      {/* Actions */}
 
       <div className="bg-card mx-4 rounded-md">
         <div className="flex w-full max-w-xl flex-wrap gap-4 p-4 *:flex-1">
