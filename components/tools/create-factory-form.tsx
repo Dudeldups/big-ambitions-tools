@@ -192,13 +192,13 @@ const CreateFactoryForm = ({
 
       {/* Employees */}
 
-      <FieldSet className="px-4">
+      <FieldSet className="@container/field-set px-4">
         <FieldLegend>Employees</FieldLegend>
         <FieldDescription className="text-muted-foreground">
           Enter the salary for each employee.
         </FieldDescription>
 
-        <FieldGroup className="space-y-6 px-4">
+        <FieldGroup className="grid space-y-6 px-4 @[43rem]:grid-cols-2">
           {factoryEmployees.map((employee) => (
             <EmployeeSalaryField
               key={employee}
@@ -215,7 +215,7 @@ const CreateFactoryForm = ({
       <FieldSet className="@container/field-set px-4">
         <FieldLegend>Vehicles</FieldLegend>
 
-        <FieldGroup className="@md:flex-row @md:*:flex-1">
+        <FieldGroup className="gap-3 @md:flex-row @md:*:flex-1">
           {vehicleFields.map((field, index) => (
             <VehicleSelect
               key={field.id}
@@ -229,6 +229,7 @@ const CreateFactoryForm = ({
             <Button
               type="button"
               variant="secondary"
+              className="px-0"
               onClick={() => appendVehicle({ name: "FreightTruckT1" })}
             >
               Add vehicle
@@ -261,7 +262,7 @@ const CreateFactoryForm = ({
             <FieldError>{t(errors.workstations.message as never)}</FieldError>
           )}
 
-          <Field orientation="horizontal" className="*:flex-1">
+          <Field orientation="horizontal" className="flex-wrap *:flex-1">
             <Button
               type="button"
               variant="secondary"
@@ -285,18 +286,20 @@ const CreateFactoryForm = ({
 
       {/* Actions */}
 
-      <div className="bg-card flex flex-wrap gap-4 rounded-md p-4 *:flex-1">
-        <CancelConfirmModal
-          buttonText={t("general.reset")}
-          modalText={t("modals.resetForm")}
-          onModalSubmit={reset}
-        />
-        <CancelConfirmModal
-          buttonText={t("general.cancel")}
-          modalText={t("modals.discardChanges")}
-          onModalSubmit={onCancel}
-        />
-        <Button type="submit">{t("general.confirm")}</Button>
+      <div className="bg-card mx-4 rounded-md">
+        <div className="flex w-full max-w-xl flex-wrap gap-4 p-4 *:flex-1">
+          <Button type="submit">{t("general.confirm")}</Button>
+          <CancelConfirmModal
+            buttonText={t("general.cancel")}
+            modalText={t("modals.discardChanges")}
+            onModalSubmit={onCancel}
+          />
+          <CancelConfirmModal
+            buttonText={t("general.reset")}
+            modalText={t("modals.resetForm")}
+            onModalSubmit={reset}
+          />
+        </div>
       </div>
     </form>
   );

@@ -30,12 +30,12 @@ const EmployeeSalaryField = ({
       <FieldLabel htmlFor={`employee-${employeeName}`}>
         {t(`employees.${employeeName}`)}
       </FieldLabel>
-      <div className="flex items-center gap-5">
+      <div className="flex flex-wrap items-center gap-5">
         <div className="flex items-center gap-3">
           <Input
             id={`employee-${employeeName}`}
             type="number"
-            className="max-w-24"
+            className="max-w-20"
             placeholder="0"
             max={EMPLOYEE_MAX_SALARY}
             aria-invalid={!!error}
@@ -45,17 +45,18 @@ const EmployeeSalaryField = ({
           />
           <span className="text-muted-foreground">/ hour</span>
         </div>
-        <Label
-          htmlFor={`employee-amount-${employeeName}`}
-          className="text-muted-foreground"
-        >
-          Amount:
-        </Label>
+
         <div className="flex items-center gap-3">
+          <Label
+            htmlFor={`employee-amount-${employeeName}`}
+            className="text-muted-foreground"
+          >
+            Amount:
+          </Label>
           <Input
             id={`employee-amount-${employeeName}`}
             type="number"
-            className="max-w-24"
+            className="max-w-20"
             placeholder="0"
             disabled={fixedAmountEmployees.includes(employeeName)}
             aria-invalid={!!error}
