@@ -1,11 +1,16 @@
 import { FieldError as TFieldError, UseFormRegister } from "react-hook-form";
-import { Field, FieldError, FieldLabel } from "../ui/field";
+import {
+  Field,
+  FieldError,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "../ui/field";
 import { Input } from "../ui/input";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
 import { Translator } from "@/lib/types";
 import { EmployeeName } from "@/lib/game/employeeNames";
-import { Label } from "../ui/label";
 
 type EmployeeSalaryFieldProps = {
   employeeName: keyof FactoryFormValues["employees"];
@@ -26,14 +31,19 @@ const EmployeeSalaryField = ({
   const fixedAmountEmployees: EmployeeName[] = ["hrManager", "deliveryDriver"];
 
   return (
-    <Field data-invalid={!!error} className="my-0">
-      <FieldLabel htmlFor={`employee-${employeeName}`}>
-        {t(`employees.${employeeName}`)}
-      </FieldLabel>
+    <FieldSet data-invalid={!!error} className="my-0 w-auto">
+      <FieldLegend>{t(`employees.${employeeName}`)}</FieldLegend>
+
       <div className="flex flex-wrap items-center gap-5">
-        <div className="flex items-center gap-3">
+        <Field className="w-auto">
+          <FieldLabel
+            htmlFor={`employee-salary-${employeeName}`}
+            className="text-muted-foreground"
+          >
+            Salary
+          </FieldLabel>
           <Input
-            id={`employee-${employeeName}`}
+            id={`employee-salary-${employeeName}`}
             type="number"
             className="max-w-20"
             placeholder="0"
@@ -43,16 +53,15 @@ const EmployeeSalaryField = ({
               setValueAs: (v) => (v === "" || isNaN(v) ? 0 : Number(v)),
             })}
           />
-          <span className="text-muted-foreground">/ hour</span>
-        </div>
+        </Field>
 
-        <div className="flex items-center gap-3">
-          <Label
+        <Field className="w-auto">
+          <FieldLabel
             htmlFor={`employee-amount-${employeeName}`}
             className="text-muted-foreground"
           >
-            Amount:
-          </Label>
+            Amount
+          </FieldLabel>
           <Input
             id={`employee-amount-${employeeName}`}
             type="number"
@@ -64,10 +73,10 @@ const EmployeeSalaryField = ({
               setValueAs: (v) => (v === "" || isNaN(v) ? 0 : Number(v)),
             })}
           />
-        </div>
+        </Field>
       </div>
       {error?.message && <FieldError>{t(error.message)}</FieldError>}
-    </Field>
+    </FieldSet>
   );
 };
 
