@@ -5,6 +5,7 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
 import { Translator } from "@/lib/types";
 import { EmployeeName } from "@/lib/game/employeeNames";
+import { Label } from "../ui/label";
 
 type EmployeeSalaryFieldProps = {
   employeeName: keyof FactoryFormValues["employees"];
@@ -26,10 +27,13 @@ const EmployeeSalaryField = ({
 
   return (
     <Field data-invalid={!!error} className="my-0">
-      <FieldLabel>{t(`employees.${employeeName}`)}</FieldLabel>
+      <FieldLabel htmlFor={`employee-${employeeName}`}>
+        {t(`employees.${employeeName}`)}
+      </FieldLabel>
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-3">
           <Input
+            id={`employee-${employeeName}`}
             type="number"
             className="max-w-24"
             placeholder="0"
@@ -41,9 +45,15 @@ const EmployeeSalaryField = ({
           />
           <span className="text-muted-foreground">/ hour</span>
         </div>
-        <span className="text-muted-foreground">Amount:</span>
+        <Label
+          htmlFor={`employee-amount-${employeeName}`}
+          className="text-muted-foreground"
+        >
+          Amount:
+        </Label>
         <div className="flex items-center gap-3">
           <Input
+            id={`employee-amount-${employeeName}`}
             type="number"
             className="max-w-24"
             placeholder="0"
