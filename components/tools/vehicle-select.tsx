@@ -43,7 +43,7 @@ const VehicleSelect = ({ control, index, onRemove }: VehicleSelectProps) => {
       control={control}
       name={`vehicles.${index}`}
       render={({ field }) => (
-        <div className="flex">
+        <div className="flex gap-2">
           <Select
             key={field.value.name ?? "none"}
             value={field.value.name}
