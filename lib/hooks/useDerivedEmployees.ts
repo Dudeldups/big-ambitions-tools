@@ -12,6 +12,7 @@ import {
   deriveHrManagerAmount,
 } from "../calculations/derivedFactoryData";
 import { FormEmployees } from "../schemas/employee";
+import { useUiStore } from "../stores/uiStore";
 
 export const useDerivedEmployees = ({
   workstations,
@@ -26,6 +27,8 @@ export const useDerivedEmployees = ({
   employees: FormEmployees;
   setValue: UseFormSetValue<FactoryFormValues>;
 }) => {
+  const isOptimalWorkerChecked = useUiStore((s) => s.isOptimalWorkerChecked);
+
   useEffect(() => {
     const { salary, amount } = employees.deliveryDriver;
     const derivedDriverAmount = deriveDeliveryDriverAmount(vehicles, salary);
@@ -37,6 +40,8 @@ export const useDerivedEmployees = ({
   }, [employees.deliveryDriver, setValue, vehicles]);
 
   useEffect(() => {
+    if (!isOptimalWorkerChecked) return;
+
     const derived = deriveFactoryWorkerAmount(workstations, openingHours);
     const currentAmount = employees.factoryWorker.amount;
 
@@ -45,7 +50,13 @@ export const useDerivedEmployees = ({
         shouldDirty: false,
       });
     }
-  }, [employees.factoryWorker.amount, openingHours, setValue, workstations]);
+  }, [
+    employees.factoryWorker.amount,
+    isOptimalWorkerChecked,
+    openingHours,
+    setValue,
+    workstations,
+  ]);
 
   useEffect(() => {
     const derived = deriveHrManagerAmount(employees);
