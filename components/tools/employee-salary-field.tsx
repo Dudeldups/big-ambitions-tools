@@ -11,6 +11,7 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { EMPLOYEE_MAX_SALARY } from "@/lib/constants";
 import { Translator } from "@/lib/types";
 import { EmployeeName } from "@/lib/game/employeeNames";
+import { useUiStore } from "@/lib/stores/uiStore";
 
 type EmployeeSalaryFieldProps = {
   employeeName: keyof FactoryFormValues["employees"];
@@ -25,10 +26,15 @@ const EmployeeSalaryField = ({
   error,
   t,
 }: EmployeeSalaryFieldProps) => {
+  const isOptimalWorkerChecked = useUiStore((s) => s.isOptimalWorkerChecked);
+
   const salaryFieldName = `employees.${employeeName}.salary` as const;
   const amountFieldName = `employees.${employeeName}.amount` as const;
 
   const fixedAmountEmployees: EmployeeName[] = ["hrManager", "deliveryDriver"];
+  const isAmountDisabled =
+    (employeeName === "factoryWorker" && isOptimalWorkerChecked) ||
+    fixedAmountEmployees.includes(employeeName);
 
   return (
     <FieldSet data-invalid={!!error} className="my-0 w-auto">
@@ -67,7 +73,7 @@ const EmployeeSalaryField = ({
             type="number"
             className="max-w-20"
             placeholder="0"
-            disabled={fixedAmountEmployees.includes(employeeName)}
+            disabled={isAmountDisabled}
             aria-invalid={!!error}
             {...register(amountFieldName, {
               setValueAs: (v) => (v === "" || isNaN(v) ? 0 : Number(v)),

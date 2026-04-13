@@ -14,6 +14,7 @@ import EmployeeSalaryField from "./employee-salary-field";
 import { Translator } from "@/lib/types";
 import { UseFormRegister } from "react-hook-form";
 import { FactoryFormValues } from "@/lib/schemas/factory";
+import { useUiStore } from "@/lib/stores/uiStore";
 
 type FormEmployeesProps = {
   register: UseFormRegister<FactoryFormValues>;
@@ -29,6 +30,9 @@ const factoryEmployees = [
 ] as const satisfies readonly EmployeeName[];
 
 const FormEmployees = ({ register, t }: FormEmployeesProps) => {
+  const isOptimalWorkerChecked = useUiStore((s) => s.isOptimalWorkerChecked);
+  const toggleOptimalWorker = useUiStore((s) => s.toggleOptimalWorker);
+
   return (
     <FieldSet className="@container/field-set px-4">
       <div className="flex justify-between gap-4">
@@ -40,7 +44,11 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
         </div>
 
         <Field orientation="horizontal" className="w-auto self-start">
-          <Checkbox id="factory-worker-check" />
+          <Checkbox
+            id="factory-worker-check"
+            checked={isOptimalWorkerChecked}
+            onCheckedChange={() => toggleOptimalWorker()}
+          />
           <FieldLabel htmlFor="factory-worker-check">
             Use optimal factory worker amount
           </FieldLabel>
