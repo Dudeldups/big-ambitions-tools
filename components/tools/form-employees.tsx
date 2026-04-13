@@ -47,7 +47,7 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
         </Field>
       </div>
 
-      <FieldGroup className="flex-row flex-wrap space-y-6 px-4">
+      <FieldGroup className="grid grid-cols-(--grid-cols-form) gap-6 px-4">
         {factoryEmployees.map((employee) => (
           <EmployeeSalaryField
             key={employee}
