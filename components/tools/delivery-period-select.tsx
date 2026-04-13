@@ -21,7 +21,7 @@ const DeliveryPeriodSelect = ({
         <RadioGroup
           value={field.value}
           onValueChange={field.onChange}
-          className={cn("w-fit", className)}
+          className={cn("w-fit @md:grid-cols-2", className)}
         >
           <Field orientation="horizontal">
             <RadioGroupItem value="daily" id="order-pref-daily" />

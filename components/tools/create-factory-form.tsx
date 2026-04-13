@@ -105,9 +105,14 @@ const CreateFactoryForm = ({
   ] as const satisfies readonly EmployeeName[];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-10">
-      <FieldSet className="px-4">
-        <FieldLegend>Factory Information</FieldLegend>
+    <form
+      onSubmit={handleSubmit(onSubmit, onError)}
+      className="@container/form space-y-10"
+    >
+      <FieldSet className="@container/field-set grid px-4 @[38rem]:grid-cols-2">
+        <FieldLegend className="col-span-full text-lg underline">
+          Factory Information
+        </FieldLegend>
 
         <FieldGroup>
           <Field>
@@ -136,8 +141,8 @@ const CreateFactoryForm = ({
           </Field>
         </FieldGroup>
 
-        <FieldGroup className="flex-row">
-          <Field className="flex-1">
+        <FieldGroup className="@md:@max-xl:flex-row @md:@max-xl:*:flex-1">
+          <Field>
             <FieldLabel htmlFor="openingHours">Opening hours / day</FieldLabel>
             <div className="flex items-center gap-3">
               <Input
@@ -155,8 +160,8 @@ const CreateFactoryForm = ({
             </div>
           </Field>
 
-          <div className="flex-1 space-y-4">
-            <p>Calculation basis</p>
+          <FieldSet>
+            <FieldLegend>Calculation basis</FieldLegend>
             <RadioButtonGroup
               name="calculationPeriod"
               value={calculationPeriod}
@@ -176,10 +181,12 @@ const CreateFactoryForm = ({
                 },
               ]}
             />
+          </FieldSet>
+        </FieldGroup>
 
-            <p>Delivery period</p>
-            <DeliveryPeriodSelect control={control} />
-          </div>
+        <FieldGroup className="@xl:col-span-2">
+          <FieldLegend className="mb-0">Delivery period</FieldLegend>
+          <DeliveryPeriodSelect control={control} />
         </FieldGroup>
       </FieldSet>
 
@@ -205,10 +212,10 @@ const CreateFactoryForm = ({
 
       {/* Vehicles */}
 
-      <FieldSet className="px-4">
+      <FieldSet className="@container/field-set px-4">
         <FieldLegend>Vehicles</FieldLegend>
 
-        <FieldGroup>
+        <FieldGroup className="@md:flex-row @md:*:flex-1">
           {vehicleFields.map((field, index) => (
             <VehicleSelect
               key={field.id}
@@ -254,7 +261,7 @@ const CreateFactoryForm = ({
             <FieldError>{t(errors.workstations.message as never)}</FieldError>
           )}
 
-          <Field orientation="horizontal">
+          <Field orientation="horizontal" className="*:flex-1">
             <Button
               type="button"
               variant="secondary"
@@ -278,7 +285,7 @@ const CreateFactoryForm = ({
 
       {/* Actions */}
 
-      <div className="bg-card flex gap-4 rounded-md p-4">
+      <div className="bg-card flex flex-wrap gap-4 rounded-md p-4 *:flex-1">
         <CancelConfirmModal
           buttonText={t("general.reset")}
           modalText={t("modals.resetForm")}
