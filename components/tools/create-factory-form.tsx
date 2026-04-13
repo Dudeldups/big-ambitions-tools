@@ -1,42 +1,21 @@
 "use client";
 
-import WorkstationSelects from "@/components/tools/workstation-selects";
 import { Button } from "@/components/ui/button";
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLegend,
-  FieldSet,
-} from "@/components/ui/field";
-import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
-import { ProductName } from "@/lib/game/productNames";
-import { products } from "@/lib/game/products";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { useTranslations } from "next-intl";
-import {
-  FieldErrors,
-  useFieldArray,
-  UseFormReturn,
-  useWatch,
-} from "react-hook-form";
+import { FieldErrors, UseFormReturn, useWatch } from "react-hook-form";
 import { safeLog } from "@/lib/utils/safeLog";
 import CancelConfirmModal from "../cancel-confirm-modal";
-import WorkstationPresetDialog from "./workstation-preset-dialog";
 import FormEmployees from "./form-employees";
 import FormInformation from "./form-information";
 import FormVehicles from "./form-vehicles";
+import FormWorkstations from "./form-workstations";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
   onSubmit: (data: FactoryFormValues) => void;
   onCancel: () => void;
 };
-
-const productData = Object.entries(products).map(([key, value]) => ({
-  name: key,
-  ...value,
-}));
 
 const CreateFactoryForm = ({
   form,
@@ -45,33 +24,9 @@ const CreateFactoryForm = ({
 }: CreateFactoryFormProps) => {
   const t = useTranslations();
 
-  const sortedProductData = productData.sort((a, b) =>
-    t(`products.${a.name}`).localeCompare(t(`products.${b.name}`)),
-  );
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    setValue,
-    control,
-    formState: { errors },
-  } = form;
-
-  const {
-    fields: workstationFields,
-    append: appendWs,
-    remove: removeWs,
-  } = useFieldArray({
-    control,
-    name: "workstations",
-  });
+  const { register, handleSubmit, reset, control } = form;
 
   const openingHours = useWatch({ control, name: "openingHours" });
-  const factoryWorkerSalary = useWatch({
-    control,
-    name: "employees.factoryWorker.salary",
-  });
 
   const onError = (errors: FieldErrors) => {
     safeLog("Form state:", form.getValues());
@@ -91,49 +46,7 @@ const CreateFactoryForm = ({
 
       {/* Workstations */}
 
-      <FieldSet className="px-4">
-        <FieldLegend>Workstations</FieldLegend>
-
-        <FieldGroup>
-          {workstationFields.map((field, index) => (
-            <WorkstationSelects
-              key={field.id}
-              control={control}
-              index={index}
-              append={appendWs}
-              remove={removeWs}
-              setValue={setValue}
-              factoryWorkerSalary={factoryWorkerSalary}
-              openingHours={openingHours}
-              productData={sortedProductData}
-            />
-          ))}
-
-          {errors.workstations?.message && (
-            <FieldError>{t(errors.workstations.message as never)}</FieldError>
-          )}
-
-          <Field orientation="horizontal" className="flex-wrap *:flex-1">
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() =>
-                appendWs({
-                  amount: 1,
-                  name: WORKSTATION_NAMES[0],
-                  product: sortedProductData.find(
-                    (p) => p.workstation === WORKSTATION_NAMES[0],
-                  )!.name as ProductName,
-                })
-              }
-            >
-              Add workstation
-            </Button>
-
-            <WorkstationPresetDialog append={appendWs} />
-          </Field>
-        </FieldGroup>
-      </FieldSet>
+      <FormWorkstations form={form} t={t} />
 
       {/* Actions */}
 
