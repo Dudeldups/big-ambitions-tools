@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 import { Fragment } from "react/jsx-runtime";
 import CurrencyText from "../currency-text";
 import { cn } from "@/lib/utils";
+import { useOverflowDetection } from "@/lib/hooks/useOverflowDetection";
 
 type InfoTableProps = {
   label: string;
@@ -26,9 +27,17 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
 
   const hasDiff = rows.some((item) => !!item.diff);
 
+  const { overflowRef, isOverflowing } = useOverflowDetection();
+
   return (
-    <div className="mx-auto w-full max-w-3xl rounded-md border">
-      <Table className="overflow-x-auto">
+    <div
+      ref={overflowRef}
+      className={cn(
+        "mx-auto w-full max-w-3xl rounded-md border",
+        isOverflowing && "overflow-x-auto",
+      )}
+    >
+      <Table className={cn("", !isOverflowing && "overflow-x-auto")}>
         <TableHeader>
           <TableRow>
             <TableHead className="text-right">
