@@ -31,6 +31,7 @@ import { MAX_WORKSTATION_AMOUNT } from "@/lib/constants";
 import { Separator } from "../ui/separator";
 import PriceIndexPopover from "../price-index-popover";
 import Image from "next/image";
+import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -67,6 +68,10 @@ const WorkstationSelects = ({
     control,
     name: `workstations.${index}.amount`,
   });
+  const salesAmount = useWatch({
+    control,
+    name: `workstations.${index}.salesAmount`,
+  });
 
   const prevWorkstation = useRef(selectedWorkstation);
 
@@ -89,6 +94,20 @@ const WorkstationSelects = ({
       });
     }
   }, [selectedWorkstation, index, setValue, productData]);
+
+  const wasMaxedOnProductChange = useMaxSalesAmount({
+    selectedProduct,
+    productionAmount,
+    salesAmount,
+  });
+
+  useEffect(() => {
+    if (!wasMaxedOnProductChange) return;
+
+    setValue(`workstations.${index}.salesAmount`, productionAmount, {
+      shouldValidate: true,
+    });
+  }, [wasMaxedOnProductChange, productionAmount, index, setValue]);
 
   return (
     <div className="@container/workstations space-y-4 rounded-md border p-3">
