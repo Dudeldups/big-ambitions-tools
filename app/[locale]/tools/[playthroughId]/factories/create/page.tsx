@@ -95,7 +95,7 @@ const CreateFactoryPage = () => {
 
     const newFactory = createFactory(values);
     addFactoryToPlaythrough(activePlaythrough.id, newFactory.id);
-    router.push(`/tools/${activePlaythrough.id}/factories`);
+    router.push(`/tools/${activePlaythrough.id}/factories/${newFactory.id}`);
     toast.success(
       t("toasts.factorySaveSuccess", {
         factoryName: newFactory.name,
