@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type Params = {
   selectedProduct: string;
@@ -9,13 +9,12 @@ type Params = {
 export function useMaxSalesAmount({
   selectedProduct,
   productionAmount,
-  salesAmount = 0,
-}: Params) {
+  salesAmount,
+  onPreserve,
+}: Params & { onPreserve: () => void }) {
   const prevProduct = useRef(selectedProduct);
   const prevProduction = useRef(productionAmount);
   const prevSales = useRef(salesAmount);
-
-  const [wasMaxedOnChange, setWasMaxedOnChange] = useState(false);
 
   useEffect(() => {
     const productChanged = prevProduct.current !== selectedProduct;
@@ -23,15 +22,13 @@ export function useMaxSalesAmount({
     if (productChanged) {
       const wasMaxed = prevSales.current === prevProduction.current;
 
-      setWasMaxedOnChange(wasMaxed);
-    } else {
-      setWasMaxedOnChange(false);
+      if (wasMaxed) {
+        onPreserve();
+      }
     }
 
     prevProduct.current = selectedProduct;
     prevProduction.current = productionAmount;
     prevSales.current = salesAmount;
-  }, [selectedProduct, productionAmount, salesAmount]);
-
-  return wasMaxedOnChange;
+  }, [selectedProduct, productionAmount, salesAmount, onPreserve]);
 }

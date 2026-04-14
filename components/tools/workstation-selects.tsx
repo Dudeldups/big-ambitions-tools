@@ -73,13 +73,13 @@ const WorkstationSelects = ({
     name: `workstations.${index}.salesAmount`,
   });
 
-  const prevWorkstation = useRef(selectedWorkstation);
-
   const productionAmount =
     products[selectedProduct].productionRate *
     workstationAmount *
     openingHours *
     7;
+
+  const prevWorkstation = useRef(selectedWorkstation);
 
   useEffect(() => {
     if (prevWorkstation.current === selectedWorkstation) return;
@@ -95,19 +95,15 @@ const WorkstationSelects = ({
     }
   }, [selectedWorkstation, index, setValue, productData]);
 
-  const wasMaxedOnProductChange = useMaxSalesAmount({
+  useMaxSalesAmount({
     selectedProduct,
     productionAmount,
     salesAmount,
+    onPreserve: () =>
+      setValue(`workstations.${index}.salesAmount`, productionAmount, {
+        shouldValidate: true,
+      }),
   });
-
-  useEffect(() => {
-    if (!wasMaxedOnProductChange) return;
-
-    setValue(`workstations.${index}.salesAmount`, productionAmount, {
-      shouldValidate: true,
-    });
-  }, [wasMaxedOnProductChange, productionAmount, index, setValue]);
 
   return (
     <div className="@container/workstations space-y-4 rounded-md border p-3">
