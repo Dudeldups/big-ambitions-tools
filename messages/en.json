@@ -297,7 +297,10 @@
     "discardChanges": "Discard unsaved changes",
     "discardDesc": "You have unsaved changes. Are you sure you want to discard them?",
     "resetForm": "Reset form values",
-    "resetDesc": "Are you sure you want to reset the form values to their default settings?"
+    "resetDesc": "Are you sure you want to reset the form values to their default settings?",
+    "wsPresetBtn": "Add preset",
+    "wsPresetTitle": "Select preset",
+    "wsPresetDesc": "Choose a preset from the list to add it to your factory."
   },
   "errors": {
     "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -19,17 +20,20 @@ type Props = {
 
 const WorkstationPresetDialog = ({ append }: Props) => {
   const t = useTranslations("workstationPresets");
+  const tModals = useTranslations("modals");
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline">Add preset</Button>
+        <Button variant="outline">{tModals("wsPresetBtn")}</Button>
       </DialogTrigger>
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Select a preset</DialogTitle>
+          <DialogTitle>{tModals("wsPresetTitle")}</DialogTitle>
+          <DialogDescription>{tModals("wsPresetDesc")}</DialogDescription>
         </DialogHeader>
 
         <div className="flex flex-col gap-2">
