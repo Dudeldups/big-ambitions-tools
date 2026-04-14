@@ -55,22 +55,16 @@ const WorkstationSelects = ({
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
 
-  const selectedWorkstation = useWatch({
-    control,
-    name: `workstations.${index}.name`,
-  });
-  const selectedProduct = useWatch({
-    control,
-    name: `workstations.${index}.product`,
-  });
-  const workstationAmount = useWatch({
-    control,
-    name: `workstations.${index}.amount`,
-  });
-  const salesAmount = useWatch({
-    control,
-    name: `workstations.${index}.salesAmount`,
-  });
+  const [selectedWorkstation, selectedProduct, workstationAmount, salesAmount] =
+    useWatch({
+      control,
+      name: [
+        `workstations.${index}.name`,
+        `workstations.${index}.product`,
+        `workstations.${index}.amount`,
+        `workstations.${index}.salesAmount`,
+      ],
+    });
 
   const productionAmount =
     products[selectedProduct].productionRate *
