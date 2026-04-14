@@ -1,18 +1,16 @@
 "use client";
 
-import CreateFactoryForm from "@/components/tools/create-factory-form";
-import FactoryOverview from "@/components/tools/factory-overview";
+import FormWrapper from "@/components/tools/form-wrapper";
 import { useRouter } from "@/i18n/navigation";
 import { getEmployeeSalary } from "@/lib/calculations/math";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import { useDerivedEmployees } from "@/lib/hooks/useDerivedEmployees";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const CreateFactoryPage = () => {
@@ -47,7 +45,7 @@ const CreateFactoryPage = () => {
     },
   });
 
-  const { reset, control, setValue, getValues } = form;
+  const { reset, getValues } = form;
 
   useEffect(() => {
     if (!difficulty) return;
@@ -85,21 +83,6 @@ const CreateFactoryPage = () => {
     }
   }, [reset, setTemplateFactory, templateFactory]);
 
-  const [workstations, openingHours, vehicles, employees] = useWatch({
-    control,
-    name: ["workstations", "openingHours", "vehicles", "employees"],
-  });
-
-  useDerivedEmployees({
-    workstations,
-    openingHours,
-    vehicles,
-    employees,
-    setValue,
-  });
-
-  const watchedValues = useWatch({ control }) as FactoryFormValues;
-
   const onSubmit = (values: FactoryFormValues) => {
     const hasMissingName = values.name.trim() === "";
     if (hasMissingName) {
@@ -126,12 +109,7 @@ const CreateFactoryPage = () => {
 
   // TODO add skeletons
 
-  return (
-    <div className="max-w-page mx-auto grid gap-8 lg:grid-cols-2">
-      <CreateFactoryForm form={form} onSubmit={onSubmit} onCancel={onCancel} />
-      <FactoryOverview values={watchedValues} />
-    </div>
-  );
+  return <FormWrapper form={form} onSubmit={onSubmit} onCancel={onCancel} />;
 };
 
 export default CreateFactoryPage;
