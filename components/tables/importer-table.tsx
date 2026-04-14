@@ -11,6 +11,8 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
+import { useOverflowDetection } from "@/lib/hooks/useOverflowDetection";
+import { cn } from "@/lib/utils";
 
 type ImporterTableProps = {
   data: ImporterShoppingList;
@@ -22,12 +24,16 @@ const ImporterTable = ({ data, t }: ImporterTableProps) => {
 
   const total = items.reduce((sum, item) => sum + item.value, 0);
 
+  const { overflowRef, isOverflowing } = useOverflowDetection();
+
   return (
-    <div className="space-y-2">
+    <div ref={overflowRef} className={cn("mx-auto w-full max-w-2xl space-y-2")}>
       <h3 className="text-lg font-semibold">{t(`importers.${importer}`)}</h3>
 
-      <div className="max-w-2xl rounded-md border">
-        <Table>
+      <div
+        className={cn("rounded-md border", isOverflowing && "overflow-x-auto")}
+      >
+        <Table className={cn("", !isOverflowing && "overflow-x-auto")}>
           <TableHeader>
             <TableRow>
               <TableHead className="text-right">
