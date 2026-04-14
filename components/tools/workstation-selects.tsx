@@ -11,12 +11,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
-import { ProductName } from "@/lib/game/productNames";
 import { Product, products } from "@/lib/game/products";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Copy, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef } from "react";
 import {
   Control,
   Controller,
@@ -32,6 +30,7 @@ import { Separator } from "../ui/separator";
 import PriceIndexPopover from "../price-index-popover";
 import Image from "next/image";
 import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
+import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWorkstation";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -79,21 +78,14 @@ const WorkstationSelects = ({
     openingHours *
     7;
 
-  const prevWorkstation = useRef(selectedWorkstation);
-
-  useEffect(() => {
-    if (prevWorkstation.current === selectedWorkstation) return;
-    prevWorkstation.current = selectedWorkstation;
-
-    const firstProduct = productData.find(
-      (p) => p.workstation === selectedWorkstation,
-    )?.name as ProductName;
-    if (firstProduct) {
-      setValue(`workstations.${index}.product`, firstProduct, {
+  useSyncProductWithWorkstation({
+    selectedWorkstation,
+    productData,
+    onProductChange: (product) =>
+      setValue(`workstations.${index}.product`, product, {
         shouldValidate: true,
-      });
-    }
-  }, [selectedWorkstation, index, setValue, productData]);
+      }),
+  });
 
   useMaxSalesAmount({
     selectedProduct,
