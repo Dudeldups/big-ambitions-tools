@@ -108,8 +108,10 @@ export function DataTable<TData, TValue>({
         <ColumnSelector table={table} />
       </div>
 
-      <div className="rounded-md border max-lg:overflow-x-hidden">
-        <Table>
+      {/* //TODO: fix overflow / sticky headers */}
+
+      <div className="rounded-md border max-2xl:overflow-x-hidden">
+        <Table className="max-2xl:overflow-x-auto">
           <TableHeader className="sticky top-0 z-10">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
