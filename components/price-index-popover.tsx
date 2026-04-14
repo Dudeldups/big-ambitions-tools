@@ -134,7 +134,7 @@ const PriceIndexPopover = ({
           </dl>
 
           <dl className="flex justify-between gap-2">
-            <dt>{t("general.profit")}</dt>
+            <dt>{t("general.netProfit")}</dt>
             <dd
               className={cn(
                 "amount",
