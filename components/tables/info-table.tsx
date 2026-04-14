@@ -24,6 +24,8 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
 
   const total = rows.reduce((sum, item) => sum + item.value, 0);
 
+  const hasDiff = rows.some((item) => !!item.diff);
+
   return (
     <div className="rounded-md border">
       <Table>
@@ -33,6 +35,11 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
               {t(`tableColumns.amount`)}
             </TableHead>
             <TableHead>{t(`tableColumns.${label}`)}</TableHead>
+            {hasDiff && (
+              <TableHead className="text-right">
+                {t(`general.netProfit`)}
+              </TableHead>
+            )}
             <TableHead className="text-right">
               {t(`tableColumns.purchasePrice`)}
             </TableHead>
@@ -41,7 +48,11 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
 
         <TableBody>
           {rows
-            .sort((a, b) => a.name.localeCompare(b.name))
+            .sort(
+              (a, b) =>
+                (a.valueType ?? "").localeCompare(b.valueType ?? "") ||
+                a.name.localeCompare(b.name),
+            )
             .map((row, i) => {
               const showDivider =
                 row.valueType && row.valueType !== rows[i - 1]?.valueType;
@@ -50,7 +61,7 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
                 <Fragment key={"f-" + row.name + i}>
                   {showDivider && (
                     <TableRow key={`divider-${row.valueType}`}>
-                      <TableCell colSpan={3}>
+                      <TableCell colSpan={row.diff ? 4 : 3}>
                         <div className="text-muted-foreground flex items-center gap-2 text-xs">
                           <div className="bg-border h-px flex-1" />
                           <span>{row.valueType?.toUpperCase()}</span>
@@ -62,17 +73,12 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
                   <TableRow key={row.name + i}>
                     <TableCell className="amount">{row.amount}</TableCell>
                     <TableCell>{t(row.name)}</TableCell>
-                    <TableCell
-                      className={cn(
-                        "amount",
-                        row.diff && "grid grid-cols-2 gap-2",
-                      )}
-                    >
-                      {row.diff && (
-                        <>
-                          <CurrencyText value={row.diff} />
-                        </>
-                      )}
+                    {row.diff && (
+                      <TableCell className="amount">
+                        <CurrencyText value={row.diff} />
+                      </TableCell>
+                    )}
+                    <TableCell className={cn("amount")}>
                       <span>{formatToUSD(row.value)}</span>
                     </TableCell>
                   </TableRow>
@@ -83,7 +89,7 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
 
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={2} className="font-semibold">
+            <TableCell colSpan={hasDiff ? 3 : 2} className="font-semibold">
               {t("general.summedUpAmount")}
             </TableCell>
             <TableCell className="amount">{formatToUSD(total)}</TableCell>

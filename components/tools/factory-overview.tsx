@@ -56,7 +56,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     difficulty,
     calculationPeriod,
     priceIndices,
-  ).sort((a, b) => (a.valueType ?? "").localeCompare(b.valueType ?? ""));
+  );
 
   const profitRowData = [...sortedProductData];
   const totalIncome = profitRowData.reduce((sum, item) => sum + item.value, 0);
