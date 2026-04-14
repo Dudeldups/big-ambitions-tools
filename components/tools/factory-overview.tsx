@@ -72,7 +72,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const amortizationDays = Math.ceil(totalOneTimeCost / profitPerDay);
 
   return (
-    <div className="space-y-10 px-4">
+    <div className="space-y-10 overflow-x-hidden px-4">
       <div className="space-y-4">
         <h2 className="text-center font-semibold">One-time costs</h2>
 
