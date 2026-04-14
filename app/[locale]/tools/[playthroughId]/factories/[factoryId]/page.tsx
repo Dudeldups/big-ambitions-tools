@@ -75,7 +75,7 @@ const FactoryIdPage = () => {
             <p>This is what your factory needs to run at full capacity.</p>
           </hgroup>
 
-          <div className="mt-8 flex w-full flex-wrap gap-4 space-y-6">
+          <div className="mt-8 flex w-full flex-col gap-4 space-y-6">
             {shoppingListData.map((group) => (
               <ImporterTable key={group.importer} data={group} t={t} />
             ))}
