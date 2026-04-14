@@ -220,6 +220,7 @@
     "priceIndex": "Price index",
     "exportPrice": "Export price",
     "profit": "Profit",
+    "netProfit": "Net profit",
     "taxes": "Taxes",
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
