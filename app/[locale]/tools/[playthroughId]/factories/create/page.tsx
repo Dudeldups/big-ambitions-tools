@@ -104,7 +104,7 @@ const CreateFactoryPage = () => {
   };
 
   const onCancel = () => {
-    router.push(`/tools/${activePlaythrough?.id}/factories`);
+    router.back();
   };
 
   // TODO add skeletons
