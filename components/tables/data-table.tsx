@@ -31,6 +31,7 @@ import SearchBar from "../search-bar";
 import { Translator } from "@/lib/types";
 import PriceIndexSlider from "./price-index-slider";
 import { cn } from "@/lib/utils";
+import { useOverflowDetection } from "@/lib/hooks/useOverflowDetection";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -80,6 +81,8 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  const { overflowRef, isOverflowing } = useOverflowDetection();
+
   return (
     <div className={cn("mx-auto w-full", className)}>
       <div className="flex items-end py-4">
@@ -110,9 +113,14 @@ export function DataTable<TData, TValue>({
 
       {/* //TODO: fix overflow / sticky headers */}
 
-      <div className="rounded-md border max-2xl:overflow-x-hidden">
-        <Table className="max-2xl:overflow-x-auto">
-          <TableHeader className="sticky top-0 z-10">
+      <div
+        ref={overflowRef}
+        className={cn("rounded-md border", isOverflowing && "overflow-x-auto")}
+      >
+        <Table className={cn("", !isOverflowing && "overflow-x-auto")}>
+          <TableHeader
+            className={cn("", !isOverflowing && "sticky top-0 z-10")}
+          >
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
