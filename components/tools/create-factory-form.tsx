@@ -10,6 +10,8 @@ import FormEmployees from "./form-employees";
 import FormInformation from "./form-information";
 import FormVehicles from "./form-vehicles";
 import FormWorkstations from "./form-workstations";
+import { useUiStore } from "@/lib/stores/uiStore";
+import { useEffect } from "react";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -23,6 +25,9 @@ const CreateFactoryForm = ({
   onCancel,
 }: CreateFactoryFormProps) => {
   const t = useTranslations();
+  const setIsOptimalWorkerChecked = useUiStore(
+    (s) => s.setIsOptimalWorkerChecked,
+  );
 
   const { register, handleSubmit, reset, control } = form;
 
@@ -32,6 +37,10 @@ const CreateFactoryForm = ({
     safeLog("Form state:", form.getValues());
     safeLog("Form errors:", errors);
   };
+
+  useEffect(() => {
+    setIsOptimalWorkerChecked(true);
+  }, [setIsOptimalWorkerChecked]);
 
   return (
     <form
