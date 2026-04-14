@@ -24,7 +24,6 @@ const ImporterTable = ({ data, t }: ImporterTableProps) => {
 
   return (
     <div className="space-y-2">
-      {/* Importer title */}
       <h3 className="text-lg font-semibold">{t(`importers.${importer}`)}</h3>
 
       <div className="max-w-2xl rounded-md border">
@@ -50,17 +49,15 @@ const ImporterTable = ({ data, t }: ImporterTableProps) => {
               )
               .map((item) => (
                 <TableRow key={item.name}>
-                  <TableCell className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <span className="amount">{item.amount}</span>
+                  <TableCell className="flex items-center justify-end gap-2">
+                    <span className="amount">{item.amount}</span>
 
-                      <CopyButton value={item.amount} />
-                    </div>
+                    <CopyButton value={item.amount} />
                   </TableCell>
 
                   <TableCell>{t(`ingredients.${item.name}`)}</TableCell>
 
-                  <TableCell className="text-right">
+                  <TableCell className="amount">
                     {formatToUSD(item.value)}
                   </TableCell>
                 </TableRow>
