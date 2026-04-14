@@ -293,8 +293,10 @@
     "factoryDeleteSuccess": "\"{factoryName}\" deleted!"
   },
   "modals": {
-    "discardChanges": "Discard unsaved changes?",
-    "resetForm": "Reset form values to defaults?"
+    "discardChanges": "Discard unsaved changes",
+    "discardDesc": "You have unsaved changes. Are you sure you want to discard them?",
+    "resetForm": "Reset form values",
+    "resetDesc": "Are you sure you want to reset the form values to their default settings?"
   },
   "errors": {
     "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",

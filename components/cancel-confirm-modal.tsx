@@ -4,6 +4,7 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -13,12 +14,14 @@ import {
 type CancelConfirmModalProps = {
   buttonText: string;
   modalText: string;
+  modalDescription: string;
   onModalSubmit: () => void;
 };
 
 const CancelConfirmModal = ({
   buttonText,
   modalText,
+  modalDescription,
   onModalSubmit,
 }: CancelConfirmModalProps) => {
   const tGeneral = useTranslations("general");
@@ -33,6 +36,7 @@ const CancelConfirmModal = ({
       <DialogContent className="w-auto sm:w-auto" showCloseButton={false}>
         <DialogHeader>
           <DialogTitle>{modalText}</DialogTitle>
+          <DialogDescription>{modalDescription}</DialogDescription>
         </DialogHeader>
 
         <DialogFooter className="mt-4">

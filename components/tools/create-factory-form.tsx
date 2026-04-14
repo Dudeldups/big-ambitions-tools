@@ -61,11 +61,13 @@ const CreateFactoryForm = ({
           <CancelConfirmModal
             buttonText={t("general.cancel")}
             modalText={t("modals.discardChanges")}
+            modalDescription={t("modals.discardDesc")}
             onModalSubmit={onCancel}
           />
           <CancelConfirmModal
             buttonText={t("general.reset")}
             modalText={t("modals.resetForm")}
+            modalDescription={t("modals.resetDesc")}
             onModalSubmit={reset}
           />
         </div>
