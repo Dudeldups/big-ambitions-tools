@@ -22,27 +22,101 @@ const DataTableOptionsBar = <TData,>({
     pathname === "/database/ingredients" || pathname === "/database/products";
 
   return (
-    <div className="flex items-end py-4">
-      <SearchBar
-        label={t("general.filterResults")}
-        id="search"
-        className="mr-auto"
-        placeholder={t("general.filterResults")}
-        value={(table.getColumn("itemName")?.getFilterValue() as string) ?? ""}
-        onChange={(value) => table.getColumn("itemName")?.setFilterValue(value)}
-      />
+    <>
+      {/* Mobile */}
 
-      {isProductsPage && (
-        <>
-          <PriceIndexSlider className="mx-auto" />
-          <SalesPriceSelector />
-        </>
-      )}
+      <div className="grid gap-4 py-4 md:hidden">
+        <div className="flex flex-1 flex-wrap items-end gap-4">
+          {isProductsPage && (
+            <>
+              <PriceIndexSlider className="mr-2" />
+              <SalesPriceSelector className="flex-wrap gap-4" />
+            </>
+          )}
 
-      {hasDifficultySelector && <DifficultyButtonGroup className="mx-6" />}
+          {hasDifficultySelector && <DifficultyButtonGroup className="" />}
+        </div>
 
-      <ColumnSelector table={table} />
-    </div>
+        <div className="flex gap-4">
+          <SearchBar
+            className=""
+            label={t("general.filterResults")}
+            id="search"
+            placeholder={t("general.filterResults")}
+            value={
+              (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
+            }
+            onChange={(value) =>
+              table.getColumn("itemName")?.setFilterValue(value)
+            }
+          />
+
+          <ColumnSelector className="ml-auto" table={table} />
+        </div>
+      </div>
+
+      {/* Tablet */}
+
+      <div className="hidden gap-4 py-4 md:max-xl:grid">
+        <div className="flex flex-1 items-end gap-4">
+          {isProductsPage && (
+            <>
+              <PriceIndexSlider className="mr-2" />
+              <SalesPriceSelector className="gap-4" />
+            </>
+          )}
+        </div>
+
+        <div className="flex gap-4">
+          <SearchBar
+            className=""
+            label={t("general.filterResults")}
+            id="search"
+            placeholder={t("general.filterResults")}
+            value={
+              (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
+            }
+            onChange={(value) =>
+              table.getColumn("itemName")?.setFilterValue(value)
+            }
+          />
+
+          {hasDifficultySelector && <DifficultyButtonGroup className="" />}
+
+          <ColumnSelector className="ml-auto" table={table} />
+        </div>
+      </div>
+
+      {/* Desktop */}
+
+      <div className="hidden flex-wrap items-end gap-4 py-4 xl:flex">
+        <SearchBar
+          className=""
+          label={t("general.filterResults")}
+          id="search"
+          placeholder={t("general.filterResults")}
+          value={
+            (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(value) =>
+            table.getColumn("itemName")?.setFilterValue(value)
+          }
+        />
+
+        <div className="flex flex-1 items-end gap-4">
+          {isProductsPage && (
+            <>
+              <PriceIndexSlider className="mx-2" />
+              <SalesPriceSelector className="gap-4" />
+            </>
+          )}
+
+          {hasDifficultySelector && <DifficultyButtonGroup className="" />}
+        </div>
+
+        <ColumnSelector className="" table={table} />
+      </div>
+    </>
   );
 };
 

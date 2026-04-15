@@ -18,7 +18,7 @@ const SalesPriceSelector = ({ className }: SalesPriceSelectorProps) => {
   const tGeneral = useTranslations("general");
 
   return (
-    <div className={cn("flex gap-6", className)}>
+    <div className={cn("flex", className)}>
       <RadioButtonGroup
         name="displayPriceSource"
         value={displayPrices?.source}
