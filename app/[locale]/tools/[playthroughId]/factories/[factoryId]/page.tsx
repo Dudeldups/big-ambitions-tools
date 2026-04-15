@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { deriveProductData } from "@/lib/calculations/derivedFactoryData";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import InfoTable from "@/components/tables/info-table";
+import DeleteFactoryDialog from "@/components/tools/delete-factory-dialog";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -59,14 +60,21 @@ const FactoryIdPage = () => {
               <dd>{workstationAmount}</dd>
             </dl>
           </div>
-          <Button variant="outline" asChild>
-            <Link
-              href={`/tools/${activePlaythrough.id}/factories/${activeFactory.id}/edit`}
-            >
-              <Edit className="size-5" />
-              Edit factory
-            </Link>
-          </Button>
+          <div className="flex gap-3">
+            <Button variant="outline" asChild>
+              <Link
+                href={`/tools/${activePlaythrough.id}/factories/${activeFactory.id}/edit`}
+              >
+                <Edit className="size-5" />
+                Edit factory
+              </Link>
+            </Button>
+
+            <DeleteFactoryDialog
+              factoryToDelete={activeFactory.id}
+              playthroughId={activePlaythrough.id}
+            />
+          </div>
         </div>
 
         <div className="mt-8">
