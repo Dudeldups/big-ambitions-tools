@@ -32,6 +32,7 @@ import { Translator } from "@/lib/types";
 import PriceIndexSlider from "./price-index-slider";
 import { cn } from "@/lib/utils";
 import { useOverflowDetection } from "@/lib/hooks/useOverflowDetection";
+import { useIsSticky } from "@/lib/hooks/useIsSticky";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -82,6 +83,7 @@ export function DataTable<TData, TValue>({
   });
 
   const { overflowRef, isOverflowing } = useOverflowDetection();
+  const { sentinelRef, isSticky } = useIsSticky();
 
   return (
     <div className={cn("mx-auto w-full", className)}>
@@ -113,20 +115,39 @@ export function DataTable<TData, TValue>({
 
       {/* //TODO: fix overflow / sticky headers */}
 
+      <div ref={sentinelRef} />
       <div
         ref={overflowRef}
         className={cn("rounded-md border", isOverflowing && "overflow-x-auto")}
       >
-        <Table className={cn("", !isOverflowing && "overflow-x-auto")}>
+        <Table
+          className={cn(
+            "border-separate border-spacing-0",
+            !isOverflowing && "overflow-x-auto",
+            isSticky && "",
+          )}
+        >
           <TableHeader
-            className={cn("", !isOverflowing && "sticky top-0 z-10")}
+            className={cn(
+              "",
+              !isOverflowing && "sticky top-0 z-10",
+              !isOverflowing && isSticky && "bg-accent-foreground",
+            )}
           >
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
-                      className={`p-0 ${header.column.columnDef.meta?.align === "right" ? "justify-end" : header.column.columnDef.meta?.align === "center" ? "justify-center text-center" : ""}`}
+                      className={cn(
+                        "p-0",
+                        !isOverflowing && isSticky && "text-muted",
+                        header.column.columnDef.meta?.align === "right"
+                          ? "justify-end"
+                          : header.column.columnDef.meta?.align === "center"
+                            ? "justify-center text-center"
+                            : "",
+                      )}
                       scope="col"
                       key={header.id}
                       colSpan={header.colSpan}
@@ -152,6 +173,7 @@ export function DataTable<TData, TValue>({
                   <TableRow
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
+                    className="odd:bg-card"
                   >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell
