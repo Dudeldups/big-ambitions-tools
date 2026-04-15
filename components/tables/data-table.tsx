@@ -76,7 +76,7 @@ export function DataTable<TData, TValue>({
   const { sentinelRef, isSticky } = useIsSticky();
 
   return (
-    <div className={cn("mx-auto w-full", className)}>
+    <div className={cn("mx-auto", className)}>
       <DataTableOptionsBar<TData> table={table} t={t} />
 
       <div ref={sentinelRef} />
@@ -88,7 +88,6 @@ export function DataTable<TData, TValue>({
           className={cn(
             "border-separate border-spacing-0",
             !isOverflowing && "overflow-x-auto",
-            isSticky && "",
           )}
         >
           <TableHeader
