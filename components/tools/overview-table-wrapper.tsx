@@ -14,7 +14,7 @@ const OverviewTableWrapper = ({
 }: OverviewTableWrapperProps) => {
   return (
     <div className="space-y-4">
-      <h2 className="text-center font-semibold">{title}</h2>
+      <h2 className="text-center font-semibold capitalize">{title}</h2>
 
       <InfoTable label={label} rows={rowData} />
     </div>

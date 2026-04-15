@@ -107,7 +107,7 @@ const FactoryIdPage = () => {
 
       <div className="overflow-x-auto px-4 py-8">
         <OverviewTableWrapper
-          title="Revenue"
+          title="weekly revenue"
           label="itemName"
           rowData={sortedProductData}
         />
