@@ -10,8 +10,8 @@ import { Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { deriveProductData } from "@/lib/calculations/derivedFactoryData";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
-import InfoTable from "@/components/tables/info-table";
 import DeleteFactoryDialog from "@/components/tools/delete-factory-dialog";
+import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -92,12 +92,11 @@ const FactoryIdPage = () => {
       </div>
 
       <div className="overflow-x-auto px-4 py-8">
-        <div className="space-y-4">
-          <h2 className="text-center font-semibold capitalize">
-            {calculationPeriod} revenue
-          </h2>
-          <InfoTable label="itemName" rows={sortedProductData} />
-        </div>
+        <OverviewTableWrapper
+          title="One-time costs"
+          label="itemName"
+          rowData={sortedProductData}
+        />
       </div>
     </div>
   );

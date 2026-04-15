@@ -9,7 +9,6 @@ import {
   deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
 import { FactoryFormValues } from "@/lib/schemas/factory";
-import InfoTable from "../tables/info-table";
 import { Separator } from "../ui/separator";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
@@ -18,6 +17,7 @@ import { useAppState } from "@/lib/hooks/useAppState";
 import { cn } from "@/lib/utils";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import { TAX_RATE } from "@/lib/constants";
+import OverviewTableWrapper from "./overview-table-wrapper";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
@@ -73,35 +73,33 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   return (
     <div className="space-y-10 overflow-x-hidden px-4">
-      <div className="space-y-4">
-        <h2 className="text-center font-semibold">One-time costs</h2>
-
-        <InfoTable label="itemName" rows={oneTimeCostRowData} />
-      </div>
+      <OverviewTableWrapper
+        title="One-time costs"
+        label="itemName"
+        rowData={oneTimeCostRowData}
+      />
 
       {recurringCostRowData.length > 0 && (
         <>
           <Separator />
-          <div className="space-y-4">
-            <h2 className="text-center font-semibold">
-              Recurring {calculationPeriod} costs
-            </h2>
 
-            <InfoTable label="description" rows={recurringCostRowData} />
-          </div>
+          <OverviewTableWrapper
+            title="Recurring costs"
+            label="description"
+            rowData={recurringCostRowData}
+          />
         </>
       )}
 
       {profitRowData.length > 0 && (
         <>
           <Separator />
-          <div className="space-y-4">
-            <h2 className="text-center font-semibold capitalize">
-              {calculationPeriod} revenue
-            </h2>
 
-            <InfoTable label="itemName" rows={profitRowData} />
-          </div>
+          <OverviewTableWrapper
+            title={`${calculationPeriod} Revenue`}
+            label="itemName"
+            rowData={profitRowData}
+          />
         </>
       )}
 
