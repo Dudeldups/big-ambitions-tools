@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
+  deriveEmployeeData,
   derivePalletShelfData,
   deriveProductData,
   deriveVehicleData,
@@ -18,6 +19,8 @@ import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import DeleteFactoryDialog from "@/components/tools/delete-factory-dialog";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 import OneTimeCostDialog from "@/components/tools/one-time-cost-dialog";
+import { formatToUSD } from "@/lib/utils/formatToUSD";
+import { Separator } from "@/components/ui/separator";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -39,6 +42,13 @@ const FactoryIdPage = () => {
     activeFactory,
     activePlaythrough.difficulty,
   );
+  const shoppingListTotal = Object.entries(shoppingListData).reduce(
+    (sum, [, data]) =>
+      sum + data.items.reduce((sum, item) => sum + item.value, 0),
+    0,
+  );
+
+  const employeeRowData = deriveEmployeeData(activeFactory, calculationPeriod);
 
   const sortedProductData = deriveProductData(
     activeFactory,
@@ -56,23 +66,8 @@ const FactoryIdPage = () => {
   return (
     <div className="max-w-page mx-auto grid xl:grid-cols-2">
       <div className="overflow-x-auto px-4 py-8">
-        <div className="flex justify-between max-md:flex-col">
-          <div>
-            <h2>{activeFactory.name}</h2>
-            {activeFactory.description && <p>{activeFactory.description}</p>}
-
-            <dl>
-              <dt>Opening hours</dt>
-              <dd>{activeFactory.openingHours}</dd>
-
-              <dt>Delivery period</dt>
-              <dd>{activeFactory.deliveryPeriod}</dd>
-
-              <dt>Workstation amount</dt>
-              <dd>{workstationAmount}</dd>
-            </dl>
-          </div>
-          <div className="flex flex-col items-end gap-3">
+        <div className="flex w-full flex-col gap-8">
+          <div className="flex w-full flex-wrap justify-end gap-3">
             <OneTimeCostDialog rows={oneTimeCostRowData} />
 
             <Button variant="outline" asChild>
@@ -89,13 +84,33 @@ const FactoryIdPage = () => {
               playthroughId={activePlaythrough.id}
             />
           </div>
+
+          <div>
+            <h2>{activeFactory.name}</h2>
+            {activeFactory.description && <p>{activeFactory.description}</p>}
+
+            <dl>
+              <dt>Opening hours</dt>
+              <dd>{activeFactory.openingHours}</dd>
+
+              <dt>Delivery period</dt>
+              <dd>{activeFactory.deliveryPeriod}</dd>
+
+              <dt>Workstation amount</dt>
+              <dd>{workstationAmount}</dd>
+            </dl>
+          </div>
         </div>
 
         <div className="mt-8">
           <hgroup className="space-y-4">
             <h2 className="text-xl font-semibold">Shopping list</h2>
-            <p>This is what your factory needs to run at full capacity.</p>
+            <p>
+              This is what your factory needs weekly to run at full capacity.
+            </p>
           </hgroup>
+
+          <p>Cost for all ingredients: {formatToUSD(shoppingListTotal)}</p>
 
           <div className="mt-14 flex w-full flex-col gap-4 space-y-6">
             {shoppingListData.map((group) => (
@@ -105,12 +120,24 @@ const FactoryIdPage = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto px-4 py-8">
+      <div className="space-y-10 overflow-x-auto px-4 py-8">
         <OverviewTableWrapper
           title="weekly revenue"
           label="itemName"
           rowData={sortedProductData}
         />
+
+        {employeeRowData.length > 0 && (
+          <>
+            <Separator />
+
+            <OverviewTableWrapper
+              title="weekly expenses"
+              label="itemName"
+              rowData={employeeRowData}
+            />
+          </>
+        )}
       </div>
     </div>
   );
