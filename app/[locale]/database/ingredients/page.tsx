@@ -17,7 +17,11 @@ export default function IngredientsPage() {
 
   return (
     <div className="mx-auto py-10">
-      <DataTable columns={ingredientsColumns(t, difficulty)} data={data} />
+      <DataTable
+        columns={ingredientsColumns(t, difficulty)}
+        data={data}
+        className="max-w-4xl"
+      />
     </div>
   );
 }

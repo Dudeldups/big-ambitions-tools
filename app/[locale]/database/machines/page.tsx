@@ -30,12 +30,13 @@ export default function MachinesPage() {
       <DataTable
         columns={machinesColumns(t)}
         data={machinesData}
-        className="max-w-xl"
+        className="max-w-4xl"
       />
+
       <DataTable
         columns={workstationsColumns(t)}
         data={workstationsData}
-        className="mt-14"
+        className="mt-14 max-w-4xl"
         renderRow={(row) => {
           const { neededMachines: rowMachines, itemName } = row.original;
           const prices = rowMachines.map((m) => machines[m]?.purchasePrice);

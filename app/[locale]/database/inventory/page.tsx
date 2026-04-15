@@ -15,7 +15,11 @@ export default function InventoryPage() {
 
   return (
     <div className="mx-auto py-10">
-      <DataTable columns={inventoryColumns(t)} data={data} />
+      <DataTable
+        columns={inventoryColumns(t)}
+        data={data}
+        className="max-w-4xl"
+      />
     </div>
   );
 }
