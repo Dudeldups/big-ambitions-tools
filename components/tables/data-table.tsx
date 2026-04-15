@@ -22,17 +22,12 @@ import {
 } from "@/components/ui/table";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/navigation";
-import ColumnSelector from "./column-selector";
-import DifficultyButtonGroup from "./difficulty-button-group";
 import { useAppState } from "@/lib/hooks/useAppState";
-import SalesPriceSelector from "./sales-price-selector";
-import SearchBar from "../search-bar";
 import { Translator } from "@/lib/types";
-import PriceIndexSlider from "./price-index-slider";
 import { cn } from "@/lib/utils";
 import { useOverflowDetection } from "@/lib/hooks/useOverflowDetection";
 import { useIsSticky } from "@/lib/hooks/useIsSticky";
+import DataTableOptionsBar from "./data-table-options-bar";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -53,11 +48,6 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const difficulty = useAppState((state) => state.difficulty);
-
-  const pathname = usePathname();
-  const isProductsPage = pathname === "/database/products";
-  const hasDifficultySelector =
-    pathname === "/database/ingredients" || pathname === "/database/products";
 
   const t = useTranslations();
 
@@ -87,31 +77,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className={cn("mx-auto w-full", className)}>
-      <div className="flex items-end py-4">
-        <SearchBar
-          label={t("general.filterResults")}
-          id="search"
-          className="mr-auto"
-          placeholder={t("general.filterResults")}
-          value={
-            (table.getColumn("itemName")?.getFilterValue() as string) ?? ""
-          }
-          onChange={(value) =>
-            table.getColumn("itemName")?.setFilterValue(value)
-          }
-        />
-
-        {isProductsPage && (
-          <>
-            <PriceIndexSlider className="mx-auto" />
-            <SalesPriceSelector />
-          </>
-        )}
-
-        {hasDifficultySelector && <DifficultyButtonGroup className="mx-6" />}
-
-        <ColumnSelector table={table} />
-      </div>
+      <DataTableOptionsBar<TData> table={table} t={t} />
 
       <div ref={sentinelRef} />
       <div
