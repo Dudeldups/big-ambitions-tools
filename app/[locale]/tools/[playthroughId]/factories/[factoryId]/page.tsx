@@ -8,10 +8,16 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useTranslations } from "next-intl";
 import { Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { deriveProductData } from "@/lib/calculations/derivedFactoryData";
+import {
+  derivePalletShelfData,
+  deriveProductData,
+  deriveVehicleData,
+  deriveWorkstationData,
+} from "@/lib/calculations/derivedFactoryData";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import DeleteFactoryDialog from "@/components/tools/delete-factory-dialog";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
+import OneTimeCostDialog from "@/components/tools/one-time-cost-dialog";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -41,6 +47,12 @@ const FactoryIdPage = () => {
     priceIndices,
   ).sort((a, b) => (a.valueType ?? "").localeCompare(b.valueType ?? ""));
 
+  const oneTimeCostRowData = [
+    ...derivePalletShelfData(activeFactory),
+    ...deriveVehicleData(activeFactory),
+    ...deriveWorkstationData(activeFactory),
+  ];
+
   return (
     <div className="max-w-page mx-auto grid xl:grid-cols-2">
       <div className="overflow-x-auto px-4 py-8">
@@ -60,7 +72,9 @@ const FactoryIdPage = () => {
               <dd>{workstationAmount}</dd>
             </dl>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col items-end gap-3">
+            <OneTimeCostDialog rows={oneTimeCostRowData} />
+
             <Button variant="outline" asChild>
               <Link
                 href={`/tools/${activePlaythrough.id}/factories/${activeFactory.id}/edit`}
@@ -93,7 +107,7 @@ const FactoryIdPage = () => {
 
       <div className="overflow-x-auto px-4 py-8">
         <OverviewTableWrapper
-          title="One-time costs"
+          title="Revenue"
           label="itemName"
           rowData={sortedProductData}
         />
