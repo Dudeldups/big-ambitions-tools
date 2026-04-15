@@ -113,8 +113,6 @@ export function DataTable<TData, TValue>({
         <ColumnSelector table={table} />
       </div>
 
-      {/* //TODO: fix overflow / sticky headers */}
-
       <div ref={sentinelRef} />
       <div
         ref={overflowRef}
