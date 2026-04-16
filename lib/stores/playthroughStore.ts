@@ -80,11 +80,10 @@ export type PlaythroughActions = {
     factoryId: string,
     groupId: string,
   ) => FactoryGroup | undefined;
-  removeFactoryFromGroup: (
+  removeFactoryFromAllGroups: (
     playthroughId: string,
     factoryId: string,
-    groupId: string,
-  ) => FactoryGroup | undefined;
+  ) => void;
 
   getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
@@ -363,9 +362,7 @@ export const usePlaythroughStore = create(
         return updatedGroup;
       },
 
-      removeFactoryFromGroup: (playthroughId, factoryId, groupId) => {
-        let updatedGroup: FactoryGroup | undefined;
-
+      removeFactoryFromAllGroups: (playthroughId, factoryId) => {
         set((state) => {
           const playthrough = state.playthroughs.find(
             (p) => p.id === playthroughId,
@@ -373,18 +370,14 @@ export const usePlaythroughStore = create(
           if (!playthrough) return;
           if (!playthrough.factoryIds.includes(factoryId)) return;
 
-          const group = playthrough.factoryGroups.find((g) => g.id === groupId);
-          if (!group) return;
-
-          const index = group.factoryIds.indexOf(factoryId);
-          if (index === -1) return;
-
-          group.factoryIds.splice(index, 1);
-
-          updatedGroup = group;
+          for (const group of playthrough.factoryGroups) {
+            const index = group.factoryIds.indexOf(factoryId);
+            if (index !== -1) {
+              group.factoryIds.splice(index, 1);
+              break;
+            }
+          }
         });
-
-        return updatedGroup;
       },
 
       getPlaythroughById: (id) => get().playthroughs.find((p) => p.id === id),
