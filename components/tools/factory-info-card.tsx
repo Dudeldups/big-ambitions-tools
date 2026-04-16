@@ -55,13 +55,13 @@ const FactoryInfoCard = ({
   const weeklyProfit = deriveWeeklyIncome([factory], activePlaythrough);
 
   return (
-    <Card className="relative h-full border">
-      <div
-        draggable
-        onDragStart={() => setDraggedFactoryId(factoryId)}
-        onDragEnd={() => setDraggedFactoryId(null)}
-        className="absolute inset-s-[90%] inset-bs-2 z-100 flex size-5 cursor-grab items-center justify-center active:cursor-grabbing"
-      >
+    <Card
+      className="relative h-full border"
+      draggable
+      onDragStart={() => setDraggedFactoryId(factoryId)}
+      onDragEnd={() => setDraggedFactoryId(null)}
+    >
+      <div className="absolute inset-s-[92%] inset-bs-2 z-100 flex size-5 cursor-grab items-center justify-center active:cursor-grabbing">
         <GripVertical />
       </div>
 
