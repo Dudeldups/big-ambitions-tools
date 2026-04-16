@@ -1,7 +1,7 @@
 "use client";
 
 import ImporterTable from "@/components/tables/importer-table";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
@@ -17,16 +17,20 @@ import {
   deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
-import DeleteFactoryDialog from "@/components/tools/delete-factory-dialog";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 import OneTimeCostDialog from "@/components/tools/one-time-cost-dialog";
 import { Separator } from "@/components/ui/separator";
+import DeleteDialog from "@/components/delete-dialog";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
+import { toast } from "sonner";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
+  const router = useRouter();
   const { activePlaythrough } = useActivePlaythrough();
   const { activeFactory } = useActiveFactory();
   const priceIndices = usePriceIndices();
+  const deleteFactory = usePlaythroughStore((state) => state.deleteFactory);
 
   // TODO add skeletons
   if (!activeFactory || !activePlaythrough || !priceIndices) return null;
@@ -61,6 +65,22 @@ const FactoryIdPage = () => {
     ...deriveWorkstationData(activeFactory),
   ];
 
+  const onDelete = () => {
+    const deleted = deleteFactory(activeFactory.id, activePlaythrough.id);
+    if (deleted) {
+      toast.success(
+        t("toasts.factoryDeleteSuccess", {
+          factoryName: deleted.name,
+        }),
+        {
+          position: "bottom-right",
+        },
+      );
+    }
+
+    router.push(`/tools/${activePlaythrough.id}/factories`);
+  };
+
   return (
     <div className="max-w-page mx-auto grid xl:grid-cols-2">
       <div className="overflow-x-auto px-4 py-8">
@@ -77,9 +97,10 @@ const FactoryIdPage = () => {
               </Link>
             </Button>
 
-            <DeleteFactoryDialog
-              factoryToDelete={activeFactory.id}
-              playthroughId={activePlaythrough.id}
+            <DeleteDialog
+              onDelete={onDelete}
+              title={t("tools.factoryForm.deleteTitle")}
+              description={t("tools.factoryForm.deleteDesc")}
             />
           </div>
 

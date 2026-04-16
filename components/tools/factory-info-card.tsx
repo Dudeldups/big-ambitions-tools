@@ -5,13 +5,14 @@ import { Button } from "../ui/button";
 import { Link, useRouter } from "@/i18n/navigation";
 import { Clock, Copy, Edit, GripVertical, TrendingUp } from "lucide-react";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import DeleteFactoryDialog from "./delete-factory-dialog";
 import { Factory, usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { deriveWeeklyIncome } from "@/lib/calculations/derivedFactoryData";
 import CurrencyText from "../currency-text";
 import TextSkeleton from "../cemetery/text-skeleton";
 import { Separator } from "../ui/separator";
 import { cn } from "@/lib/utils";
+import DeleteDialog from "../delete-dialog";
+import { toast } from "sonner";
 
 type FactoryInfoCardProps = {
   factoryId: string;
@@ -26,6 +27,7 @@ const FactoryInfoCard = ({
   const router = useRouter();
   const { activePlaythrough } = useActivePlaythrough();
   const factory = usePlaythroughState((s) => s.getFactoryById(factoryId));
+  const deleteFactory = usePlaythroughStore((state) => state.deleteFactory);
   const setTemplateFactory = usePlaythroughStore(
     (state) => state.setTemplateFactory,
   );
@@ -47,12 +49,28 @@ const FactoryInfoCard = ({
     ),
   );
 
+  const weeklyProfit = deriveWeeklyIncome([factory], activePlaythrough);
+
   const handleCopy = (factory: Factory) => {
     setTemplateFactory(factory);
     router.push(`/tools/${activePlaythrough.id}/factories/create`);
   };
 
-  const weeklyProfit = deriveWeeklyIncome([factory], activePlaythrough);
+  const onDelete = () => {
+    const deleted = deleteFactory(factoryId, activePlaythrough.id);
+    if (deleted) {
+      toast.success(
+        t("toasts.factoryDeleteSuccess", {
+          factoryName: deleted.name,
+        }),
+        {
+          position: "bottom-right",
+        },
+      );
+    }
+
+    router.push(`/tools/${activePlaythrough.id}/factories`);
+  };
 
   return (
     <Card
@@ -136,9 +154,12 @@ const FactoryInfoCard = ({
               <Edit className="size-5" />
             </Link>
           </Button>
-          <DeleteFactoryDialog
-            factoryToDelete={factoryId}
-            playthroughId={activePlaythrough.id}
+
+          <DeleteDialog
+            onDelete={onDelete}
+            title={t("tools.factoryForm.deleteTitle")}
+            description={t("tools.factoryForm.deleteDesc")}
+            className="z-20"
           />
         </div>
       </CardContent>
