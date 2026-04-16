@@ -10,6 +10,7 @@ import { Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   deriveEmployeeData,
+  deriveImporterTotals,
   derivePalletShelfData,
   deriveProductData,
   deriveVehicleData,
@@ -19,7 +20,6 @@ import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import DeleteFactoryDialog from "@/components/tools/delete-factory-dialog";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 import OneTimeCostDialog from "@/components/tools/one-time-cost-dialog";
-import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { Separator } from "@/components/ui/separator";
 
 const FactoryIdPage = () => {
@@ -42,13 +42,11 @@ const FactoryIdPage = () => {
     activeFactory,
     activePlaythrough.difficulty,
   );
-  const shoppingListTotal = Object.entries(shoppingListData).reduce(
-    (sum, [, data]) =>
-      sum + data.items.reduce((sum, item) => sum + item.value, 0),
-    0,
-  );
 
-  const employeeRowData = deriveEmployeeData(activeFactory, calculationPeriod);
+  const recurringRowData = [
+    ...deriveImporterTotals(shoppingListData),
+    ...deriveEmployeeData(activeFactory, calculationPeriod),
+  ];
 
   const sortedProductData = deriveProductData(
     activeFactory,
@@ -110,8 +108,6 @@ const FactoryIdPage = () => {
             </p>
           </hgroup>
 
-          <p>Cost for all ingredients: {formatToUSD(shoppingListTotal)}</p>
-
           <div className="mt-14 flex w-full flex-col gap-4 space-y-6">
             {shoppingListData.map((group) => (
               <ImporterTable key={group.importer} data={group} t={t} />
@@ -127,14 +123,14 @@ const FactoryIdPage = () => {
           rowData={sortedProductData}
         />
 
-        {employeeRowData.length > 0 && (
+        {recurringRowData.length > 0 && (
           <>
             <Separator />
 
             <OverviewTableWrapper
               title="weekly expenses"
-              label="itemName"
-              rowData={employeeRowData}
+              label="description"
+              rowData={recurringRowData}
             />
           </>
         )}

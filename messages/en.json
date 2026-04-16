@@ -271,7 +271,9 @@
     "destinationsThatCanDeliver": "Base dest.",
     "destinationsFull": "With 100% LM",
     "employees": "Employees",
-    "description": "Description"
+    "description": "Description",
+    "export": "Export",
+    "retail": "Retail"
   },
   "workstationPresets": {
     "cheapClothing": "Cheap clothing",
