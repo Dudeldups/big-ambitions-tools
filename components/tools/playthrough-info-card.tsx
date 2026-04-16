@@ -1,11 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Playthrough } from "@/lib/stores/playthroughStore";
+import {
+  Playthrough,
+  usePlaythroughStore,
+} from "@/lib/stores/playthroughStore";
 import { SquarePen } from "lucide-react";
 import { useTranslations } from "next-intl";
-import DeletePlaythroughDialog from "./delete-playthrough-dialog";
 import { Link } from "@/i18n/navigation";
+import { toast } from "sonner";
+import DeleteDialog from "../delete-dialog";
 
 type PlaythroughInfoCardProps = {
   pt: Playthrough;
@@ -21,6 +25,23 @@ const PlaythroughInfoCard = ({
   startEditing,
 }: PlaythroughInfoCardProps) => {
   const t = useTranslations();
+  const deletePlaythrough = usePlaythroughStore(
+    (state) => state.deletePlaythrough,
+  );
+
+  const onDelete = () => {
+    const deleted = deletePlaythrough(pt.id);
+    if (deleted) {
+      toast.success(
+        t("toasts.playthroughDeleteSuccess", {
+          characterName: deleted.characterName,
+        }),
+        {
+          position: "bottom-right",
+        },
+      );
+    }
+  };
 
   return (
     <div className="bg-card flex items-center rounded-md border">
@@ -53,7 +74,12 @@ const PlaythroughInfoCard = ({
         >
           <SquarePen className="size-5" />
         </Button>
-        <DeletePlaythroughDialog playthroughToDelete={pt.id} />
+
+        <DeleteDialog
+          onDelete={onDelete}
+          title={t("tools.playthroughForm.deleteTitle")}
+          description={t("tools.playthroughForm.deleteDesc")}
+        />
       </div>
     </div>
   );
