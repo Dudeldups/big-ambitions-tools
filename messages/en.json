@@ -295,9 +295,9 @@
     "factorySaveSuccess": "\"{factoryName}\" created and added to playthrough!",
     "factoryEditSuccess": "\"{factoryName}\" updated!",
     "factoryDeleteSuccess": "\"{factoryName}\" deleted!",
-    "groupSaveSuccess": "\"{groupName}\" created and added to playthrough!",
-    "groupEditSuccess": "\"{groupName}\" updated!",
-    "groupDeleteSuccess": "\"{groupName}\" deleted!"
+    "groupSaveSuccess": "Group \"{groupName}\" created!",
+    "groupEditSuccess": "Group \"{groupName}\" updated!",
+    "groupDeleteSuccess": "Group \"{groupName}\" deleted!"
   },
   "modals": {
     "discardChanges": "Discard unsaved changes",

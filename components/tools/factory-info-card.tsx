@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { Link, useRouter } from "@/i18n/navigation";
-import { Clock, Copy, Edit, TrendingUp } from "lucide-react";
+import { Clock, Copy, Edit, GripVertical, TrendingUp } from "lucide-react";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import DeleteFactoryDialog from "./delete-factory-dialog";
 import { Factory, usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -11,12 +11,17 @@ import { deriveWeeklyIncome } from "@/lib/calculations/derivedFactoryData";
 import CurrencyText from "../currency-text";
 import TextSkeleton from "../cemetery/text-skeleton";
 import { Separator } from "../ui/separator";
+import { cn } from "@/lib/utils";
 
 type FactoryInfoCardProps = {
   factoryId: string;
+  setDraggedFactoryId: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
+const FactoryInfoCard = ({
+  factoryId,
+  setDraggedFactoryId,
+}: FactoryInfoCardProps) => {
   const t = useTranslations();
   const router = useRouter();
   const { activePlaythrough } = useActivePlaythrough();
@@ -51,9 +56,18 @@ const FactoryInfoCard = ({ factoryId }: FactoryInfoCardProps) => {
 
   return (
     <Card className="relative h-full border">
+      <div
+        draggable
+        onDragStart={() => setDraggedFactoryId(factoryId)}
+        onDragEnd={() => setDraggedFactoryId(null)}
+        className="absolute inset-s-[90%] inset-bs-2 z-100 flex size-5 cursor-grab items-center justify-center active:cursor-grabbing"
+      >
+        <GripVertical />
+      </div>
+
       <Link
         href={`/tools/${activePlaythrough.id}/factories/${factoryId}`}
-        className="absolute inset-0 z-0"
+        className={cn("absolute inset-0 z-0")}
         aria-label={factory.name}
       />
 
