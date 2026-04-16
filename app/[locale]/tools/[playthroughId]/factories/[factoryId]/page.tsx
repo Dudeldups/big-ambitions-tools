@@ -6,7 +6,7 @@ import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useTranslations } from "next-intl";
-import { Clock, Edit, Hammer, Package, Truck } from "lucide-react";
+import { Clock, Edit, Hammer, ShelvingUnit, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   deriveEmployeeData,
@@ -120,8 +120,8 @@ const FactoryIdPage = () => {
                 {activeFactory.openingHours}h
               </li>
               <li>
-                <Package className="size-6" />
-                {activeFactory.deliveryPeriod} deliveries
+                <ShelvingUnit className="size-6" />
+                {activeFactory.shelfAmount} pallet shelves
               </li>
               <li>
                 <Hammer className="size-6" />

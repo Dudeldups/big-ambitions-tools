@@ -33,8 +33,8 @@ const CreateFactoryPage = () => {
     defaultValues: templateFactory ?? {
       workstations: [],
       openingHours: 24,
+      shelfAmount: 1,
       vehicles: [{ name: "FreightTruckT1" }],
-      deliveryPeriod: "weekly",
       employees: {
         deliveryDriver: { amount: 1, salary: 0 },
         hrManager: { amount: 0, salary: 0 },

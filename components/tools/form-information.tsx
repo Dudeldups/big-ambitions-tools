@@ -10,11 +10,11 @@ import {
 } from "../ui/field";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import DeliveryPeriodSelect from "./delivery-period-select";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Translator } from "@/lib/types";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useAppStore } from "@/lib/stores/appStore";
+import { PalletShelfField } from "./pallet-shelf-field";
 
 type FormInformationProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -108,8 +108,7 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
       </FieldGroup>
 
       <FieldGroup className="gap-4 @xl:col-span-2">
-        <FieldLegend className="mb-0">Delivery period</FieldLegend>
-        <DeliveryPeriodSelect control={control} />
+        <PalletShelfField control={control} />
       </FieldGroup>
     </FieldSet>
   );
