@@ -55,7 +55,7 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
               <TextSkeleton />
             )}
 
-            <div className="text-muted-foreground flex flex-1 flex-wrap items-center gap-x-5 gap-y-1 text-sm">
+            <div className="text-muted-foreground flex flex-1 flex-wrap items-center gap-4 text-sm">
               <span className="flex items-center gap-1.5">
                 <Factory className="size-5 shrink-0" />
                 <span>
