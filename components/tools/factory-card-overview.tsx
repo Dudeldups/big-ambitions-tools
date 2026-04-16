@@ -5,18 +5,23 @@ import {
 import { useMemo, useState } from "react";
 import FactoryInfoCard from "./factory-info-card";
 import { cn } from "@/lib/utils";
+import DeleteDialog from "../delete-dialog";
+import { useTranslations } from "next-intl";
+import CreateGroupForm from "./create-group-form";
 
 type FactoryCardOverviewProps = {
   playthrough: Playthrough;
 };
 
 const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
+  const t = useTranslations();
   const [draggedFactoryId, setDraggedFactoryId] = useState<string | null>(null);
   const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
   const addFactoryToGroup = usePlaythroughStore((s) => s.addFactoryToGroup);
   const removeFactoryFromAllGroups = usePlaythroughStore(
     (s) => s.removeFactoryFromAllGroups,
   );
+  const deleteFactoryGroup = usePlaythroughStore((s) => s.deleteFactoryGroup);
 
   const ungroupedFactoryIds = useMemo(() => {
     const grouped = new Set(
@@ -28,9 +33,13 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
 
   return (
     <section>
-      <h3 className="mb-6 font-semibold">Factory groups</h3>
+      <div className="flex flex-wrap justify-between">
+        <h3 className="mb-6 font-semibold">Factory groups</h3>
 
-      <ul className="grid gap-6">
+        <CreateGroupForm />
+      </div>
+
+      <ul className="mt-6 grid gap-6">
         {playthrough.factoryGroups.map((group) => (
           <li key={group.id} className="w-full">
             <div
@@ -62,9 +71,17 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                 addFactoryToGroup(playthrough.id, draggedFactoryId, group.id);
               }}
             >
-              <span className="mb-6 inline-block font-semibold">
-                {group.name}
-              </span>
+              <div className="flex justify-between">
+                <span className="mb-6 inline-block font-semibold">
+                  {group.name}
+                </span>
+
+                <DeleteDialog
+                  onDelete={() => deleteFactoryGroup(playthrough.id, group.id)}
+                  title={t("modals.deleteGroupTitle")}
+                  description={t("modals.deleteGroupDesc")}
+                />
+              </div>
 
               {group.factoryIds.length > 0 ? (
                 <ul className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

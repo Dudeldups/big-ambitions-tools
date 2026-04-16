@@ -312,7 +312,9 @@
     "groupTitle": "Create a new factory group",
     "groupDesc": "Group factories to get an overview of all needed ingredients.",
     "groupLabelName": "Name",
-    "groupLabelColor": "Color"
+    "groupLabelColor": "Color",
+    "deleteGroupTitle": "Delete group",
+    "deleteGroupDesc": "Are you sure you want to delete this group? If there are factories assigned, they will be reassigned to the default group."
   },
   "errors": {
     "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",

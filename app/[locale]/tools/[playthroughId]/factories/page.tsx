@@ -1,6 +1,5 @@
 "use client";
 
-import CreateGroupForm from "@/components/tools/create-group-form";
 import FactoryCardOverview from "@/components/tools/factory-card-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -24,8 +23,6 @@ const FactoriesPage = () => {
         <Button asChild variant="default">
           <Link href="/tools">Playthroughs</Link>
         </Button>
-
-        <CreateGroupForm />
       </div>
 
       <div className="my-8 rounded-xl border bg-cyan-900 p-4">
@@ -40,9 +37,11 @@ const FactoriesPage = () => {
 
         <p>
           You can also group them together by clicking the Create Group button
-          at the top of the page. This will allow you to see those factories in
-          one place and manage them as a group. Helpful if you use a central
-          warehouse to provide ingredients for multiple factories.
+          below. This will allow you to see those factories in one place and
+          manage them as a group. Helpful if you use a central warehouse to
+          provide ingredients for multiple factories. Depending on the pallet
+          shelves you set on the factory, it will suggest a delivery plan for
+          each factory.
         </p>
       </div>
 
