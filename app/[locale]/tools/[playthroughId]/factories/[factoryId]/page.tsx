@@ -6,7 +6,7 @@ import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useTranslations } from "next-intl";
-import { Edit } from "lucide-react";
+import { Clock, Edit, Hammer, Package, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   deriveEmployeeData,
@@ -83,24 +83,38 @@ const FactoryIdPage = () => {
             />
           </div>
 
-          <div>
-            <h2>{activeFactory.name}</h2>
-            {activeFactory.description && <p>{activeFactory.description}</p>}
+          <div className="@container flex flex-wrap justify-between gap-10">
+            <hgroup>
+              <h2 className="mb-4">{activeFactory.name}</h2>
+              {activeFactory.description && (
+                <p className="text-muted-foreground">
+                  {activeFactory.description}
+                </p>
+              )}
+            </hgroup>
 
-            <dl>
-              <dt>Opening hours</dt>
-              <dd>{activeFactory.openingHours}</dd>
-
-              <dt>Delivery period</dt>
-              <dd>{activeFactory.deliveryPeriod}</dd>
-
-              <dt>Workstation amount</dt>
-              <dd>{workstationAmount}</dd>
-            </dl>
+            <ul className="grid gap-3 *:flex *:gap-3 @xl:flex">
+              <li>
+                <Clock className="size-6" />
+                {activeFactory.openingHours}h
+              </li>
+              <li>
+                <Package className="size-6" />
+                {activeFactory.deliveryPeriod} deliveries
+              </li>
+              <li>
+                <Hammer className="size-6" />
+                {workstationAmount} workstations
+              </li>
+              <li>
+                <Truck className="size-6" />
+                {activeFactory.vehicles.length} vehicle
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-14">
           <hgroup className="space-y-4">
             <h2 className="text-xl font-semibold">Shopping list</h2>
             <p>
@@ -108,7 +122,7 @@ const FactoryIdPage = () => {
             </p>
           </hgroup>
 
-          <div className="mt-14 flex w-full flex-col gap-4 space-y-6">
+          <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
             {shoppingListData.map((group) => (
               <ImporterTable key={group.importer} data={group} t={t} />
             ))}
