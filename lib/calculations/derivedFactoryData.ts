@@ -25,6 +25,7 @@ import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 import { Factory, Playthrough, PriceIndices } from "../stores/playthroughStore";
+import { ImporterShoppingList } from "../utils/getShoppingList";
 
 export type DerivedDataFromFormValues = {
   valueType?: string;
@@ -371,4 +372,22 @@ export const deriveWeeklyIngredientCosts = (
 
     return total + ingredientCosts;
   }, 0);
+};
+
+export const deriveImporterTotals = (
+  shoppingList: ImporterShoppingList[],
+): DerivedDataFromFormValues => {
+  return shoppingList.map((importerEntry) => {
+    const totalValue = importerEntry.items.reduce(
+      (sum, item) => sum + item.value,
+      0,
+    );
+
+    return {
+      valueType: "ingredients",
+      amount: 1,
+      name: `importers.${importerEntry.importer}`,
+      value: totalValue,
+    };
+  });
 };
