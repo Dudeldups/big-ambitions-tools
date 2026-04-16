@@ -39,10 +39,10 @@ const FactoriesPage = () => {
         </p>
 
         <p>
-          You can also group them together by clicking the Group factories
-          button at the top of the page. This will allow you to see those
-          factories in one place and manage them as a group. Helpful if you use
-          a central warehouse to provide ingredients for multiple factories.
+          You can also group them together by clicking the Create Group button
+          at the top of the page. This will allow you to see those factories in
+          one place and manage them as a group. Helpful if you use a central
+          warehouse to provide ingredients for multiple factories.
         </p>
       </div>
 
