@@ -61,7 +61,7 @@ const FactoryInfoCard = ({
       onDragStart={() => setDraggedFactoryId(factoryId)}
       onDragEnd={() => setDraggedFactoryId(null)}
     >
-      <div className="absolute inset-s-[92%] inset-bs-2 z-100 flex size-5 cursor-grab items-center justify-center active:cursor-grabbing">
+      <div className="absolute inset-s-[92%] inset-bs-2 z-20 flex size-5 cursor-grab items-center justify-center active:cursor-grabbing">
         <GripVertical />
       </div>
 
