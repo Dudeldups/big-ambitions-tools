@@ -435,7 +435,7 @@
     },
     "factoryForm": {
       "deleteTitle": "Delete factory",
-      "deleteDesc": "Are you sure you want to delete this factory? This will only remove it from this playthrough."
+      "deleteDesc": "Are you sure you want to delete this factory? This action cannot be undone."
     },
     "overview": {
       "empire": {

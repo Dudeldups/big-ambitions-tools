@@ -253,6 +253,8 @@ export const usePlaythroughStore = create(
               p.factoryIds = p.factoryIds.filter((id) => id !== factoryId);
             }
           });
+
+          state.factories = state.factories.filter((f) => f.id !== factoryId);
         });
 
         return factoryToDelete;
