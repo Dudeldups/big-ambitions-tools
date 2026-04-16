@@ -254,6 +254,14 @@ export const usePlaythroughStore = create(
             }
           });
 
+          state.playthroughs.forEach((p) => {
+            p.factoryGroups.forEach((g) => {
+              if (g.factoryIds.includes(factoryId)) {
+                g.factoryIds = g.factoryIds.filter((id) => id !== factoryId);
+              }
+            });
+          });
+
           state.factories = state.factories.filter((f) => f.id !== factoryId);
         });
 
@@ -325,11 +333,7 @@ export const usePlaythroughStore = create(
 
           deletedGroup = playthrough.factoryGroups[index];
 
-          // remove group
           playthrough.factoryGroups.splice(index, 1);
-
-          // IMPORTANT: unassign factories (no-op since they only live in groups)
-          // If you later rely on grouping, this is where you'd handle fallback logic
         });
 
         return deletedGroup;
