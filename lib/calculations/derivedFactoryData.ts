@@ -106,21 +106,7 @@ export const deriveVehicleData = (
 export const derivePalletShelfData = (
   values: FactoryFormValues,
 ): DerivedDataFromFormValues => {
-  const { workstations, deliveryPeriod } = values;
-  const timeMult = deliveryPeriod === "daily" ? 24 : 168;
-
-  const ingredientTotals = calculateIngredientTotals(workstations);
-
-  const totalBoxAmountPerHour = (
-    Object.entries(ingredientTotals) as [IngredientName, number][]
-  )
-    .map(([iName, amount]) => amount / ingredients[iName].amountPerBox)
-    .reduce((sum, amount) => sum + amount, 0);
-  const shelfAmount = Math.ceil(
-    (totalBoxAmountPerHour * timeMult) / shelves.palletShelf.storageCapacity,
-  );
-
-  if (shelfAmount === 0) return [];
+  const { shelfAmount } = values;
 
   const value = shelfAmount * shelves.palletShelf.purchasePrice;
 

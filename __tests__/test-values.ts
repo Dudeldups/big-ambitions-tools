@@ -4,7 +4,7 @@ export const _testFactoryFormValues: FactoryFormValues = {
   name: "Example Factory",
   description: "This is a test factory.",
   openingHours: 12,
-  deliveryPeriod: "daily",
+  shelfAmount: 50,
   employees: {
     deliveryDriver: {
       amount: 1,
