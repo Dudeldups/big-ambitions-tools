@@ -1,5 +1,6 @@
 "use client";
 
+import CreateGroupForm from "@/components/tools/create-group-form";
 import FactoryInfoCard from "@/components/tools/factory-info-card";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -19,11 +20,12 @@ const FactoriesPage = () => {
 
   return (
     <div className="max-w-page mx-auto">
-      <div className="my-8 space-y-4">
-        <p>Go back to the playthrough overview:</p>
+      <div className="my-8 flex flex-wrap gap-3 space-y-4">
         <Button asChild variant="default">
           <Link href="/tools">Playthroughs</Link>
         </Button>
+
+        <CreateGroupForm />
       </div>
 
       <div className="my-8 rounded-xl border bg-cyan-900 p-4">

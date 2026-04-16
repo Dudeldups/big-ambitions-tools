@@ -294,7 +294,10 @@
     "workstationCopyError": "Please select a workstation and a product first.",
     "factorySaveSuccess": "\"{factoryName}\" created and added to playthrough!",
     "factoryEditSuccess": "\"{factoryName}\" updated!",
-    "factoryDeleteSuccess": "\"{factoryName}\" deleted!"
+    "factoryDeleteSuccess": "\"{factoryName}\" deleted!",
+    "groupSaveSuccess": "\"{groupName}\" created and added to playthrough!",
+    "groupEditSuccess": "\"{groupName}\" updated!",
+    "groupDeleteSuccess": "\"{groupName}\" deleted!"
   },
   "modals": {
     "discardChanges": "Discard unsaved changes",
@@ -304,7 +307,12 @@
     "wsPresetBtn": "Add preset",
     "wsPresetTitle": "Select preset",
     "wsPresetDesc": "Choose a preset from the list to add it to your factory.",
-    "priceIndicesDesc": "Select the current price indices for each item for proper calculations."
+    "priceIndicesDesc": "Select the current price indices for each item for proper calculations.",
+    "groupBtn": "Create group",
+    "groupTitle": "Create a new factory group",
+    "groupDesc": "Group factories to get an overview of all needed ingredients.",
+    "groupLabelName": "Name",
+    "groupLabelColor": "Color"
   },
   "errors": {
     "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",
