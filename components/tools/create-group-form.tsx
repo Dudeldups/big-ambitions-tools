@@ -36,6 +36,11 @@ const CreateGroupForm = () => {
 
   const t = useTranslations();
 
+  const defaultValues = {
+    name: "",
+    color: "#ffffff",
+  };
+
   const {
     register,
     handleSubmit,
@@ -44,10 +49,7 @@ const CreateGroupForm = () => {
   } = useForm<FactoryGroupFormValues>({
     resolver: zodResolver(factoryGroupSchema),
     mode: "onChange",
-    defaultValues: {
-      name: "",
-      color: "#ffffff",
-    },
+    defaultValues,
   });
 
   const onSubmit = (values: FactoryGroupFormValues) => {
@@ -58,7 +60,7 @@ const CreateGroupForm = () => {
       position: "bottom-right",
     });
     setIsModalOpen(false);
-    reset();
+    reset(defaultValues);
   };
 
   return (
@@ -97,7 +99,7 @@ const CreateGroupForm = () => {
 
               <Input
                 type="color"
-                className="h-12 w-12 cursor-pointer p-1"
+                className="h-12 cursor-pointer p-1"
                 {...register("color")}
               />
             </Field>
@@ -105,7 +107,9 @@ const CreateGroupForm = () => {
 
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">{t("general.cancel")}</Button>
+              <Button variant="outline" onClick={() => reset(defaultValues)}>
+                {t("general.cancel")}
+              </Button>
             </DialogClose>
             <Button type="submit">{t("general.confirm")}</Button>
           </DialogFooter>
