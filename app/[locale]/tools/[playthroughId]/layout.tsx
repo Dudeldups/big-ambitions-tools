@@ -4,13 +4,7 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import PlaythroughNotFound from "./not-found";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useShallow } from "zustand/shallow";
-import {
-  Factory,
-  HandCoins,
-  Plus,
-  SlidersHorizontal,
-  TrendingUp,
-} from "lucide-react";
+import { Factory, HandCoins, Plus, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TextSkeleton from "@/components/cemetery/text-skeleton";
 import {
@@ -19,6 +13,7 @@ import {
 } from "@/lib/calculations/derivedFactoryData";
 import CurrencyText from "@/components/currency-text";
 import { Link, usePathname } from "@/i18n/navigation";
+import PriceIndicesDialog from "@/components/tools/price-indices-dialog";
 
 const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
   const { isLoading, isInvalid, activePlaythrough } = useActivePlaythrough();
@@ -119,10 +114,7 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
               </Button>
             )}
 
-            <Button variant="outline" size="sm" className="gap-1.5">
-              <SlidersHorizontal className="size-5" />
-              Price indices
-            </Button>
+            <PriceIndicesDialog />
           </div>
         </div>
       </div>
