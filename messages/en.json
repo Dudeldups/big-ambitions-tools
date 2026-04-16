@@ -321,6 +321,10 @@
       "workstationsRequired": "Please add at least one workstation.",
       "atLeastOneVehicle": "At least one vehicle is required for the factory.",
       "maxTwoVehicles": "At most two vehicles are allowed for the factory."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Group name must be at most 30 characters.",
+      "nameRequired": "Group name is required."
     }
   },
   "home": {
