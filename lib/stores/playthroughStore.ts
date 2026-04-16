@@ -9,6 +9,7 @@ import { generateUniqueId } from "./generateUniqueId";
 import { ProductName } from "../game/productNames";
 import { products } from "../game/products";
 import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
+import { FactoryGroupFormValues } from "../schemas/factoryGroup";
 
 export type Factory = FactoryFormValues & {
   id: string;
@@ -17,11 +18,17 @@ export type Factory = FactoryFormValues & {
 
 export type PriceIndices = Partial<Record<ProductName, number>>;
 
+export type FactoryGroup = FactoryGroupFormValues & {
+  id: string;
+  factoryIds: string[];
+};
+
 export type Playthrough = PlaythroughFormValues & {
   id: string;
   createdAt: number;
   isActive: boolean;
   factoryIds: string[];
+  factoryGroups: FactoryGroup[];
   priceIndices: PriceIndices;
 };
 
@@ -55,6 +62,30 @@ export type PlaythroughActions = {
     factoryId: string,
     playthroughId: string,
   ) => Factory | undefined;
+  createFactoryGroup: (
+    playthroughId: string,
+    group: FactoryGroupFormValues,
+  ) => FactoryGroup;
+  editFactoryGroup: (
+    playthroughId: string,
+    groupId: string,
+    updatedFields: Partial<FactoryGroupFormValues>,
+  ) => FactoryGroup | undefined;
+  deleteFactoryGroup: (
+    playthroughId: string,
+    groupId: string,
+  ) => FactoryGroup | undefined;
+  addFactoryToGroup: (
+    playthroughId: string,
+    factoryId: string,
+    groupId: string,
+  ) => FactoryGroup | undefined;
+  removeFactoryFromGroup: (
+    playthroughId: string,
+    factoryId: string,
+    groupId: string,
+  ) => FactoryGroup | undefined;
+
   getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
   setPriceIndex: (
@@ -104,6 +135,7 @@ export const usePlaythroughStore = create(
           isActive: true,
           createdAt: Date.now(),
           factoryIds: [],
+          factoryGroups: [],
           priceIndices: defaultPriceIndices,
         };
 
@@ -225,6 +257,134 @@ export const usePlaythroughStore = create(
         });
 
         return factoryToDelete;
+      },
+
+      createFactoryGroup: (playthroughId, group) => {
+        const existingGroups =
+          get().playthroughs.find((p) => p.id === playthroughId)
+            ?.factoryGroups || [];
+
+        const existingIds = new Set(existingGroups.map((g) => g.id));
+        const newId = generateUniqueId(existingIds);
+
+        let createdGroup: FactoryGroup | undefined;
+
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+          if (!playthrough) return;
+
+          const newGroup: FactoryGroup = {
+            id: newId,
+            name: group.name,
+            color: group.color,
+            factoryIds: [],
+          };
+
+          playthrough.factoryGroups.push(newGroup);
+          createdGroup = newGroup;
+        });
+
+        return createdGroup!;
+      },
+
+      editFactoryGroup: (playthroughId, groupId, updatedFields) => {
+        let updatedGroup: FactoryGroup | undefined;
+
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+          if (!playthrough) return;
+
+          const group = playthrough.factoryGroups.find((g) => g.id === groupId);
+          if (!group) return;
+
+          Object.assign(group, updatedFields);
+          updatedGroup = group;
+        });
+
+        return updatedGroup;
+      },
+
+      deleteFactoryGroup: (playthroughId, groupId) => {
+        let deletedGroup: FactoryGroup | undefined;
+
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+          if (!playthrough) return;
+
+          const index = playthrough.factoryGroups.findIndex(
+            (g) => g.id === groupId,
+          );
+          if (index === -1) return;
+
+          deletedGroup = playthrough.factoryGroups[index];
+
+          // remove group
+          playthrough.factoryGroups.splice(index, 1);
+
+          // IMPORTANT: unassign factories (no-op since they only live in groups)
+          // If you later rely on grouping, this is where you'd handle fallback logic
+        });
+
+        return deletedGroup;
+      },
+
+      addFactoryToGroup: (playthroughId, factoryId, groupId) => {
+        let updatedGroup: FactoryGroup | undefined;
+
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+          if (!playthrough) return;
+          if (!playthrough.factoryIds.includes(factoryId)) return;
+
+          const targetGroup = playthrough.factoryGroups.find(
+            (g) => g.id === groupId,
+          );
+          if (!targetGroup) return;
+
+          playthrough.factoryGroups.forEach((g) => {
+            if (g.factoryIds.includes(factoryId)) {
+              g.factoryIds = g.factoryIds.filter((id) => id !== factoryId);
+            }
+          });
+
+          targetGroup.factoryIds.push(factoryId);
+
+          updatedGroup = targetGroup;
+        });
+
+        return updatedGroup;
+      },
+
+      removeFactoryFromGroup: (playthroughId, factoryId, groupId) => {
+        let updatedGroup: FactoryGroup | undefined;
+
+        set((state) => {
+          const playthrough = state.playthroughs.find(
+            (p) => p.id === playthroughId,
+          );
+          if (!playthrough) return;
+          if (!playthrough.factoryIds.includes(factoryId)) return;
+
+          const group = playthrough.factoryGroups.find((g) => g.id === groupId);
+          if (!group) return;
+
+          const index = group.factoryIds.indexOf(factoryId);
+          if (index === -1) return;
+
+          group.factoryIds.splice(index, 1);
+
+          updatedGroup = group;
+        });
+
+        return updatedGroup;
       },
 
       getPlaythroughById: (id) => get().playthroughs.find((p) => p.id === id),
