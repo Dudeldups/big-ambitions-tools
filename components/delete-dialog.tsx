@@ -11,10 +11,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 import { Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 type DeleteDialogProps = {
+  className?: string;
   onDelete: () => void;
   title: string;
   description: string;
@@ -22,6 +24,7 @@ type DeleteDialogProps = {
 };
 
 const DeleteDialog = ({
+  className,
   onDelete,
   title,
   description,
@@ -32,7 +35,11 @@ const DeleteDialog = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size={buttonText ? "default" : "icon-lg"} variant="destructive">
+        <Button
+          size={buttonText ? "default" : "icon-lg"}
+          variant="destructive"
+          className={cn(className)}
+        >
           <Trash2 className="size-5" />
           {buttonText && buttonText}
         </Button>
@@ -48,9 +55,11 @@ const DeleteDialog = ({
           <DialogClose asChild>
             <Button variant="outline">{t("cancel")}</Button>
           </DialogClose>
-          <Button type="submit" onClick={() => onDelete()}>
-            {t("confirm")}
-          </Button>
+          <DialogClose asChild>
+            <Button type="submit" onClick={() => onDelete()}>
+              {t("confirm")}
+            </Button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
