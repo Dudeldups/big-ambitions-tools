@@ -73,7 +73,9 @@ const InfoTable = ({ label, rows }: InfoTableProps) => {
                       <TableCell colSpan={row.diff ? 4 : 3}>
                         <div className="text-muted-foreground flex items-center gap-2 text-xs">
                           <div className="bg-border h-px flex-1" />
-                          <span>{row.valueType?.toUpperCase()}</span>
+                          <span>
+                            {t(`tableColumns.${row.valueType}`).toUpperCase()}
+                          </span>
                           <div className="bg-border h-px flex-1" />
                         </div>
                       </TableCell>
