@@ -12,7 +12,7 @@ type FactoryCardOverviewProps = {
 
 const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
   const [draggedFactoryId, setDraggedFactoryId] = useState<string | null>(null);
-  const [isOver, setIsOver] = useState(false);
+  const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
   const addFactoryToGroup = usePlaythroughStore((s) => s.addFactoryToGroup);
   const removeFactoryFromAllGroups = usePlaythroughStore(
     (s) => s.removeFactoryFromAllGroups,
@@ -33,30 +33,34 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
       <ul className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {playthrough.factoryGroups.map((group) => (
           <li key={group.id} className="col-span-full w-full">
-            {/* Group header */}
             <div
-              className="mb-2 flex items-center gap-2 rounded-lg border"
-              style={{ borderColor: group.color }}
+              className={cn(
+                "mb-2 rounded-lg border transition-colors",
+                hoveredGroup === group.id && "bg-accent/40 brightness-125",
+              )}
+              style={{
+                borderColor: group.color,
+              }}
               onDragOver={(e) => {
                 e.preventDefault();
-                setIsOver(true);
+                setHoveredGroup(group.id);
               }}
-              onDragLeave={() => setIsOver(false)}
+              onDragLeave={() => setHoveredGroup(null)}
               onDrop={() => {
-                setIsOver(false);
                 if (!draggedFactoryId) return;
+
+                setDraggedFactoryId(null);
+                setHoveredGroup(null);
 
                 const isAlreadyInGroup =
                   group.factoryIds.includes(draggedFactoryId);
                 if (isAlreadyInGroup) return;
 
                 addFactoryToGroup(playthrough.id, draggedFactoryId, group.id);
-                setDraggedFactoryId(null);
               }}
             >
               <span className="font-semibold">{group.name}</span>
 
-              {/* Group factories */}
               <ul className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {group.factoryIds.map((factoryId) => (
                   <li key={factoryId} className="w-full max-w-96">
@@ -72,42 +76,47 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
         ))}
 
         {ungroupedFactoryIds && (
-          <li
-            className="col-span-full w-full"
-            onDragOver={(e) => {
-              e.preventDefault();
-              setIsOver(true);
-            }}
-            onDragLeave={() => setIsOver(false)}
-            onDrop={() => {
-              setIsOver(false);
-              if (!draggedFactoryId) return;
+          <li className="col-span-full w-full">
+            <div
+              className={cn(
+                "border-muted mb-2 rounded-lg border transition-colors",
+                hoveredGroup === "ungrouped" && "bg-accent/40 brightness-125",
+              )}
+              onDragOver={(e) => {
+                e.preventDefault();
+                setHoveredGroup("ungrouped");
+              }}
+              onDragLeave={() => setHoveredGroup(null)}
+              onDrop={() => {
+                if (!draggedFactoryId) return;
 
-              removeFactoryFromAllGroups(playthrough.id, draggedFactoryId);
-              setDraggedFactoryId(null);
-            }}
-          >
-            <div className="mb-2 font-semibold opacity-70">Ungrouped</div>
+                removeFactoryFromAllGroups(playthrough.id, draggedFactoryId);
+                setDraggedFactoryId(null);
+                setHoveredGroup(null);
+              }}
+            >
+              <h3 className="font-semibold">Ungrouped factories</h3>
 
-            <ul className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {ungroupedFactoryIds.map((factoryId) => (
-                <li
-                  key={factoryId}
-                  className={cn(
-                    "relative z-10 w-full max-w-96 cursor-grab transition-colors",
-                    isOver && "bg-accent/20",
-                  )}
-                  draggable
-                  onDragStart={() => setDraggedFactoryId(factoryId)}
-                  onDragEnd={() => setDraggedFactoryId(null)}
-                >
-                  <FactoryInfoCard
-                    factoryId={factoryId}
-                    setDraggedFactoryId={setDraggedFactoryId}
-                  />
-                </li>
-              ))}
-            </ul>
+              <ul className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {ungroupedFactoryIds.map((factoryId) => (
+                  <li
+                    key={factoryId}
+                    className={cn(
+                      "w-full max-w-96 transition-colors",
+                      hoveredGroup === "ungrouped" && "bg-accent/20",
+                    )}
+                    draggable
+                    onDragStart={() => setDraggedFactoryId(factoryId)}
+                    onDragEnd={() => setDraggedFactoryId(null)}
+                  >
+                    <FactoryInfoCard
+                      factoryId={factoryId}
+                      setDraggedFactoryId={setDraggedFactoryId}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </li>
         )}
       </ul>
