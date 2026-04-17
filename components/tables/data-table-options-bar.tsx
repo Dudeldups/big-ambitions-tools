@@ -104,7 +104,7 @@ const DataTableOptionsBar = <TData,>({
           }
         />
 
-        <div className="flex flex-1 items-end gap-4">
+        <div className="flex flex-1 items-end justify-center gap-4">
           {isProductsPage && (
             <>
               <PriceIndexSlider className="mx-2" />

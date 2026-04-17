@@ -22,7 +22,7 @@ const PriceIndexSlider = ({ className }: PriceIndexSliderProps) => {
   const setIndex = useAppStore((state) => state.setTablePriceIndex);
 
   return (
-    <div className={cn("w-full max-w-md", className)}>
+    <div className={cn("w-full max-w-xs", className)}>
       <div className="flex items-end justify-between">
         <span className="text-muted-foreground mb-1 text-xs">
           {MIN_PRODUCT_PRICE_INDEX}
