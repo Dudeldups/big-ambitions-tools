@@ -63,6 +63,7 @@ export const deriveWorkstationData = (
     (acc, ws) => {
       const neededMachines = workstations[ws.name].neededMachines;
       for (const machine of neededMachines) {
+        if (ws.amount === 0) continue;
         acc[machine] = (acc[machine] ?? 0) + ws.amount;
       }
       return acc;

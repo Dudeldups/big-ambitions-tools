@@ -109,11 +109,15 @@ const WorkstationSelects = ({
                 value={field.value}
                 max={MAX_WORKSTATION_AMOUNT}
                 onChange={(e) => {
-                  const value =
-                    e.target.value === "" ? 1 : Number(e.target.value);
+                  let value = e.target.value.replace(/^0+/, "");
+                  if (value === "") value = "0";
+                  e.target.value = value;
                   field.onChange(
-                    Math.min(MAX_WORKSTATION_AMOUNT, Math.max(1, value)),
+                    Math.min(MAX_WORKSTATION_AMOUNT, Number(value)),
                   );
+                }}
+                onFocus={(e) => {
+                  if (field.value === 0) e.target.select();
                 }}
                 onBlur={field.onBlur}
                 min={1}
