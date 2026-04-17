@@ -330,7 +330,8 @@
       "descriptionTooLong": "Factory description must be at most 150 characters.",
       "workstationsRequired": "Please add at least one workstation.",
       "atLeastOneVehicle": "At least one vehicle is required for the factory.",
-      "maxTwoVehicles": "At most two vehicles are allowed for the factory."
+      "maxTwoVehicles": "At most two vehicles are allowed for the factory.",
+      "shelfAmountTooLow": "You have to prodive shelves for the factory to work."
     },
     "factoryGroup": {
       "nameTooLong": "Group name must be at most 30 characters.",
