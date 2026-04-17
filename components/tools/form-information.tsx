@@ -26,6 +26,7 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
   const {
     register,
     control,
+    setValue,
     formState: { errors },
   } = form;
   const calculationPeriod = useAppState((s) => s.calculationPeriod);
@@ -75,7 +76,20 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
               min={1}
               max={24}
               step={1}
-              {...register("openingHours", { valueAsNumber: true })}
+              value={openingHours}
+              {...register("openingHours", {
+                setValueAs: (v) => (v === "" || isNaN(v) ? 1 : Number(v)),
+                onChange: (e) => {
+                  const val = parseInt(e.target.value, 10);
+                  if (val > 24) {
+                    // Setzt den Wert im Form-State hart auf 24
+                    setValue("openingHours", 24);
+                  }
+                },
+              })}
+              onFocus={(e) => {
+                if (e.target.value === "1") e.target.select();
+              }}
             />
             <span className="text-muted-foreground">
               {openingHours * 7}h / week
