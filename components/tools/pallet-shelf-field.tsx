@@ -59,7 +59,7 @@ export function PalletShelfField({ className, control, errors }: Props) {
           </Field>
 
           <div className="mt-7 space-y-1">
-            {workstations.length > 0 ? (
+            {weekly > 0 ? (
               <>
                 <p>
                   Daily delivery requires <strong>{daily}</strong> shelves.
