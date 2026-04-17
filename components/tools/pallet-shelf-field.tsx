@@ -1,16 +1,19 @@
-import { Control, Controller, useWatch } from "react-hook-form";
+import { Control, Controller, FieldErrors, useWatch } from "react-hook-form";
 import { Input } from "@/components/ui/input";
-import { Field, FieldDescription, FieldLabel } from "../ui/field";
+import { Field, FieldDescription, FieldError, FieldLabel } from "../ui/field";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { cn } from "@/lib/utils";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { useTranslations } from "next-intl";
 
 type Props = {
   className?: string;
   control: Control<FactoryFormValues>;
+  errors: FieldErrors<FactoryFormValues>;
 };
 
-export function PalletShelfField({ className, control }: Props) {
+export function PalletShelfField({ className, control, errors }: Props) {
+  const t = useTranslations();
   const [shelfAmount, workstations] = useWatch({
     control,
     name: ["shelfAmount", "workstations"],
@@ -26,7 +29,7 @@ export function PalletShelfField({ className, control }: Props) {
       control={control}
       name="shelfAmount"
       render={({ field }) => (
-        <div className={cn("flex gap-4 *:flex-1 @max-sm:flex-col", className)}>
+        <div className={cn("flex gap-8 *:flex-1 @max-2xl:flex-col", className)}>
           <Field>
             <FieldLabel htmlFor="shelf-amount">Pallet Shelves</FieldLabel>
             <FieldDescription>
@@ -37,10 +40,22 @@ export function PalletShelfField({ className, control }: Props) {
               className="max-w-20"
               id="shelf-amount"
               type="number"
+              placeholder="0"
               min={1}
               {...field}
-              onChange={(e) => field.onChange(Number(e.target.value))}
+              onChange={(e) => {
+                let value = e.target.value.replace(/^0+/, "");
+                if (value === "") value = "0";
+                e.target.value = value;
+                field.onChange(Number(value));
+              }}
+              onFocus={(e) => {
+                if (field.value === 0) e.target.select();
+              }}
             />
+            {errors?.shelfAmount?.message && (
+              <FieldError>{t(errors.shelfAmount.message)}</FieldError>
+            )}
           </Field>
 
           <div className="mt-7 space-y-1">

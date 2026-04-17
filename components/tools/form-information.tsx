@@ -108,7 +108,7 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
       </FieldGroup>
 
       <FieldGroup className="gap-4 @xl:col-span-2">
-        <PalletShelfField control={control} />
+        <PalletShelfField control={control} errors={errors} />
       </FieldGroup>
     </FieldSet>
   );
