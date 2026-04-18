@@ -9,6 +9,7 @@ import DeleteDialog from "../delete-dialog";
 import { useTranslations } from "next-intl";
 import CreateGroupForm from "./create-group-form";
 import GroupShoppingListDialog from "./group-shopping-list-dialog";
+import GroupDeliveriesDialog from "./group-deliveries-dialog";
 
 type FactoryCardOverviewProps = {
   playthrough: Playthrough;
@@ -45,7 +46,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
           <li key={group.id} className="w-full">
             <div
               className={cn(
-                "rounded-lg border-2 p-4 transition-colors",
+                "space-y-3 rounded-lg border-2 p-4 transition-colors",
                 hoveredGroup === group.id && "bg-accent/40",
               )}
               style={{
@@ -78,6 +79,8 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                 </span>
 
                 <div className="flex gap-2">
+                  <GroupDeliveriesDialog factoryIds={group.factoryIds} />
+
                   <GroupShoppingListDialog factoryIds={group.factoryIds} />
 
                   <DeleteDialog
