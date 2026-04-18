@@ -71,7 +71,7 @@ const GroupShoppingListDialog = ({
             These are all ingredients that are needed to supply those factories
             without enough pallet shelves inside this group. It calculates based
             on the amount of shelves available in the factories so you can order
-            the rest to this warehouse.
+            the rest to a separate warehouse.
             <br />
             Shelves needed in this warehouse:{" "}
             <strong>{neededPalletShelvesTotal}</strong>
