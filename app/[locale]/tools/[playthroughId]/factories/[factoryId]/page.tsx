@@ -84,37 +84,39 @@ const FactoryIdPage = () => {
   return (
     <div className="max-w-page mx-auto grid xl:grid-cols-2">
       <div className="overflow-x-auto px-4 py-8">
-        <div className="flex w-full flex-col gap-8">
-          <div className="flex w-full flex-wrap justify-end gap-3">
-            <OneTimeCostDialog rows={oneTimeCostRowData} />
-
-            <Button variant="outline" asChild>
-              <Link
-                href={`/tools/${activePlaythrough.id}/factories/${activeFactory.id}/edit`}
-              >
-                <Edit className="size-5" />
-                Edit factory
-              </Link>
-            </Button>
-
-            <DeleteDialog
-              onDelete={onDelete}
-              title={t("tools.factoryForm.deleteTitle")}
-              description={t("tools.factoryForm.deleteDesc")}
-            />
-          </div>
-
-          <div className="@container flex flex-wrap justify-between gap-10">
-            <hgroup>
+        <div className="@container flex w-full flex-col gap-10">
+          <div className="flex w-full justify-between gap-10 @max-2xl:flex-col">
+            <hgroup className="@max-2xl:order-1">
               <h2 className="mb-4">{activeFactory.name}</h2>
               {activeFactory.description && (
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground max-w-md">
                   {activeFactory.description}
                 </p>
               )}
             </hgroup>
 
-            <ul className="grid gap-3 *:flex *:gap-3 @xl:flex">
+            <div className="grid gap-3 @max-2xl:self-end @max-lg:justify-items-end @lg:flex">
+              <OneTimeCostDialog rows={oneTimeCostRowData} />
+
+              <Button variant="outline" asChild>
+                <Link
+                  href={`/tools/${activePlaythrough.id}/factories/${activeFactory.id}/edit`}
+                >
+                  <Edit className="size-5" />
+                  Edit factory
+                </Link>
+              </Button>
+
+              <DeleteDialog
+                onDelete={onDelete}
+                title={t("tools.factoryForm.deleteTitle")}
+                description={t("tools.factoryForm.deleteDesc")}
+              />
+            </div>
+          </div>
+
+          <div className="@container flex flex-wrap justify-between gap-10">
+            <ul className="grid gap-3 *:flex *:gap-2 @xl:flex">
               <li>
                 <Clock className="size-6" />
                 {activeFactory.openingHours}h
