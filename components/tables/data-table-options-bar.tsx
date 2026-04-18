@@ -30,10 +30,10 @@ const DataTableOptionsBar = <TData,>({
   if (isMobile) {
     return (
       <div className="grid gap-4 py-4">
-        <div className="flex flex-1 flex-wrap items-end justify-center gap-4">
+        <div className="flex flex-1 flex-wrap items-end justify-center gap-x-8 gap-y-4">
           {isProductsPage && (
             <>
-              <PriceIndexSlider className="mr-2 shrink-0" />
+              <PriceIndexSlider className="mr-2" />
               <SalesPriceSelector className="flex-wrap justify-center gap-4" />
             </>
           )}
@@ -61,7 +61,7 @@ const DataTableOptionsBar = <TData,>({
   } else if (isTablet) {
     return (
       <div className="grid gap-6 py-4">
-        <div className="flex flex-1 items-end gap-8">
+        <div className="flex flex-1 items-end justify-center gap-8">
           {isProductsPage && (
             <>
               <PriceIndexSlider className="mr-2" />
@@ -83,7 +83,9 @@ const DataTableOptionsBar = <TData,>({
             }
           />
 
-          {hasDifficultySelector && <DifficultyButtonGroup />}
+          {hasDifficultySelector && (
+            <DifficultyButtonGroup className="mx-auto" />
+          )}
 
           <ColumnSelector className="ml-auto" table={table} />
         </div>
