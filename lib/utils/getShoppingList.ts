@@ -90,36 +90,3 @@ export const getShoppingList = (
     items,
   }));
 };
-
-type SplitShoppingList = {
-  factoryList: ImporterShoppingList[];
-  externalList: ImporterShoppingList[];
-};
-
-export function splitShoppingListByShelves(
-  list: ImporterShoppingList[],
-  requiredShelves: number,
-  availableShelves: number,
-): SplitShoppingList {
-  if (requiredShelves <= 0 || availableShelves >= requiredShelves) {
-    return { factoryList: list, externalList: [] };
-  }
-
-  const factoryRatio = Math.min(availableShelves / requiredShelves, 1);
-  const externalRatio = 1 - factoryRatio;
-
-  const split = (ratio: number): ImporterShoppingList[] =>
-    list.map((entry) => ({
-      importer: entry.importer,
-      items: entry.items.map((item) => ({
-        name: item.name,
-        amount: Math.round(item.amount * ratio),
-        value: item.value * ratio,
-      })),
-    }));
-
-  return {
-    factoryList: split(factoryRatio),
-    externalList: split(externalRatio),
-  };
-}
