@@ -13,24 +13,15 @@ import { cn } from "@/lib/utils";
 import { DeliveryListItem } from "@/lib/calculations/calculateDailyWarehouseSupply";
 
 type DeliveriesTableProps = {
-  destination: string;
   deliveryList: DeliveryListItem[];
   t: Translator;
 };
 
-const DeliveriesTable = ({
-  destination,
-  deliveryList,
-  t,
-}: DeliveriesTableProps) => {
+const DeliveriesTable = ({ deliveryList, t }: DeliveriesTableProps) => {
   const { overflowRef, isOverflowing } = useOverflowDetection();
 
   return (
     <div ref={overflowRef} className={cn("mx-auto w-full max-w-lg space-y-2")}>
-      <span className="mb-4 inline-block text-lg font-semibold">
-        {destination}
-      </span>
-
       <div
         className={cn("rounded-md border", isOverflowing && "overflow-x-auto")}
       >

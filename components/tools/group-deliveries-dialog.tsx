@@ -14,12 +14,13 @@ import { Package } from "lucide-react";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
-import DeliveriesTable from "../tables/deliveries-table";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
 import { cn } from "@/lib/utils";
+import DeliveriesTable from "../tables/deliveries-table";
+import Details from "../details";
 
 type GroupDeliveriesDialogProps = {
   factoryIds: string[];
@@ -87,15 +88,15 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="max-h-[50vh] space-y-6 overflow-auto lg:max-h-[75vh]">
+        <div className="max-h-[50vh] overflow-y-auto lg:max-h-[75vh]">
           {deliveryLists.length > 0 &&
             deliveryLists.map((item, i) => (
-              <DeliveriesTable
-                key={item.destination + i}
-                destination={item.destination}
-                deliveryList={item.deliveryList}
-                t={t}
-              />
+              <Details
+                key={`${item.destination}-${i}`}
+                title={item.destination}
+              >
+                <DeliveriesTable deliveryList={item.deliveryList} t={t} />
+              </Details>
             ))}
         </div>
 
