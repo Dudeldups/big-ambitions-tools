@@ -2,10 +2,7 @@
 
 import ImporterTable from "@/components/tables/importer-table";
 import { Link, useRouter } from "@/i18n/navigation";
-import {
-  getShoppingList,
-  splitShoppingListByShelves,
-} from "@/lib/utils/getShoppingList";
+import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useTranslations } from "next-intl";
@@ -27,6 +24,7 @@ import DeleteDialog from "@/components/delete-dialog";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { toast } from "sonner";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
