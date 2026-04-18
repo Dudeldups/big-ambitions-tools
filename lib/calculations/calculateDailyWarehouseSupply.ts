@@ -6,11 +6,11 @@ export type DeliveryListItem = {
 };
 
 export function calculateDailyWarehouseSupply(
-  externalList: ImporterShoppingList[],
+  factoryList: ImporterShoppingList[],
 ): DeliveryListItem[] {
   const map = new Map<string, number>();
 
-  externalList.forEach((entry) => {
+  factoryList.forEach((entry) => {
     entry.items.forEach((item) => {
       const prev = map.get(item.name) ?? 0;
       map.set(item.name, prev + item.amount);
@@ -19,6 +19,6 @@ export function calculateDailyWarehouseSupply(
 
   return Array.from(map.entries()).map(([name, weeklyAmount]) => ({
     name,
-    amount: Math.ceil(weeklyAmount / 7),
+    amount: weeklyAmount,
   }));
 }

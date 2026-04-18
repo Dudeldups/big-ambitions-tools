@@ -274,7 +274,8 @@
     "employees": "Employees",
     "description": "Description",
     "export": "Export",
-    "retail": "Retail"
+    "retail": "Retail",
+    "deliverUpTo": "Deliver up to"
   },
   "workstationPresets": {
     "cheapClothing": "Cheap clothing",
