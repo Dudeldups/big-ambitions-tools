@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import DeleteDialog from "../delete-dialog";
 import { useTranslations } from "next-intl";
 import CreateGroupForm from "./create-group-form";
+import GroupShoppingListDialog from "./group-shopping-list-dialog";
 
 type FactoryCardOverviewProps = {
   playthrough: Playthrough;
@@ -76,11 +77,17 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                   {group.name}
                 </span>
 
-                <DeleteDialog
-                  onDelete={() => deleteFactoryGroup(playthrough.id, group.id)}
-                  title={t("modals.deleteGroupTitle")}
-                  description={t("modals.deleteGroupDesc")}
-                />
+                <div className="flex gap-2">
+                  <GroupShoppingListDialog factoryIds={group.factoryIds} />
+
+                  <DeleteDialog
+                    onDelete={() =>
+                      deleteFactoryGroup(playthrough.id, group.id)
+                    }
+                    title={t("modals.deleteGroupTitle")}
+                    description={t("modals.deleteGroupDesc")}
+                  />
+                </div>
               </div>
 
               {group.factoryIds.length > 0 ? (
