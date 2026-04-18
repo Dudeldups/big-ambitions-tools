@@ -1,13 +1,13 @@
 import { ImporterShoppingList } from "../utils/getShoppingList";
 
-type DailySupplyItem = {
+export type DeliveryListItem = {
   name: string;
   amount: number;
 };
 
 export function calculateDailyWarehouseSupply(
   externalList: ImporterShoppingList[],
-): DailySupplyItem[] {
+): DeliveryListItem[] {
   const map = new Map<string, number>();
 
   externalList.forEach((entry) => {
