@@ -113,7 +113,7 @@ export function splitShoppingListByShelves(
       importer: entry.importer,
       items: entry.items.map((item) => ({
         name: item.name,
-        amount: item.amount * ratio,
+        amount: Math.round(item.amount * ratio),
         value: item.value * ratio,
       })),
     }));
