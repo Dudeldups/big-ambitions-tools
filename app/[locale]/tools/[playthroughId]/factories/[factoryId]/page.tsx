@@ -71,7 +71,7 @@ const FactoryIdPage = () => {
     activeFactory.workstations,
   ).weekly;
 
-  const { factoryList } = splitShoppingListByShelves(
+  const { factoryList, externalList } = splitShoppingListByShelves(
     shoppingListData,
     requiredShelves,
     activeFactory.shelfAmount,
@@ -164,27 +164,31 @@ const FactoryIdPage = () => {
           </div>
         </div>
 
-        <div className="mt-14">
-          <hgroup className="space-y-4 pr-10">
-            <h2 className="text-xl font-semibold">Split shopping list</h2>
-            <p>
-              Order this to your factory to split the order. This is what your{" "}
-              {activeFactory.shelfAmount} shelves can hold.
-            </p>
-            <p>
-              The rest must be ordered to the group warehouse by a separate
-              purchasing agent. Go back to the factory overview to see a full
-              list what to order to the warehouse. It will also show you the
-              daily delivery amounts to this factory.
-            </p>
-          </hgroup>
+        {externalList.length > 0 && (
+          <div className="mt-14">
+            <hgroup className="space-y-4 pr-10">
+              <h2 className="text-xl font-semibold">Split shopping list</h2>
+              <p>
+                Order these ingredients to your factory to split the order. This
+                is the maximum amount what your {activeFactory.shelfAmount}{" "}
+                pallet shelves can hold. You would need {requiredShelves}{" "}
+                shelves to store all ingredients.
+              </p>
+              <p>
+                The rest must be ordered to a warehouse by one or more separate
+                purchasing agents. Go back to the factory overview and create a
+                group to see a full list what to order to that warehouse. It
+                will also show you the daily delivery amounts to this factory.
+              </p>
+            </hgroup>
 
-          <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
-            {factoryList.map((group) => (
-              <ImporterTable key={group.importer} data={group} t={t} />
-            ))}
+            <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
+              {factoryList.map((group) => (
+                <ImporterTable key={group.importer} data={group} t={t} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <div className="space-y-10 overflow-x-auto px-4 py-8">
