@@ -88,7 +88,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="max-h-[50vh] overflow-y-auto lg:max-h-[75vh]">
+        <div className="max-h-[50vh] overflow-y-auto xl:max-h-[75vh]">
           {deliveryLists.length > 0 &&
             deliveryLists.map((item, i) => (
               <Details

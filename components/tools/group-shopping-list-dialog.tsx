@@ -76,7 +76,7 @@ const GroupShoppingListDialog = ({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="max-h-[50vh] space-y-6 overflow-auto lg:max-h-[75vh]">
+        <div className="max-h-[50vh] space-y-6 overflow-auto xl:max-h-[75vh]">
           {groupShoppingList.map((list) => (
             <ImporterTable key={list.importer} data={list} t={t} />
           ))}
