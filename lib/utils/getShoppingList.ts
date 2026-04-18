@@ -101,7 +101,7 @@ export function splitShoppingListByShelves(
   requiredShelves: number,
   availableShelves: number,
 ): SplitShoppingList {
-  if (requiredShelves <= 0) {
+  if (requiredShelves <= 0 || availableShelves >= requiredShelves) {
     return { factoryList: list, externalList: [] };
   }
 
