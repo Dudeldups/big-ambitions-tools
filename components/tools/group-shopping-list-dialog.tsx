@@ -18,6 +18,8 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { mergeShoppingLists } from "@/lib/utils/mergeShoppingLists";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
+import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
+import { cn } from "@/lib/utils";
 
 type GroupShoppingListDialogProps = {
   factoryIds: string[];
@@ -34,14 +36,7 @@ const GroupShoppingListDialog = ({
 
   if (!groupFactories || !activePlaythrough) return null;
 
-  const neededPalletShelvesTotal = groupFactories.reduce(
-    (acc, f) =>
-      f
-        ? acc +
-          (getOptimalPalletShelfAmount(f.workstations).weekly - f.shelfAmount)
-        : acc,
-    0,
-  );
+  const neededPalletShelvesTotal = getMissingPalletShelvesTotal(groupFactories);
 
   const splitPerFactory = groupFactories.flatMap((factory) => {
     if (!factory) return [];
@@ -58,7 +53,10 @@ const GroupShoppingListDialog = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">
+        <Button
+          variant="outline"
+          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
+        >
           <ClipboardCheck className="size-5" />
           Group shopping list
         </Button>
