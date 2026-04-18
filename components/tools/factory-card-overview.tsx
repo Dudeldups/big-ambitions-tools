@@ -46,7 +46,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
           <li key={group.id} className="w-full">
             <div
               className={cn(
-                "space-y-3 rounded-lg border-2 p-4 transition-colors",
+                "@container/list-outer space-y-3 rounded-lg border-2 p-4 transition-colors",
                 hoveredGroup === group.id && "bg-accent/40",
               )}
               style={{
@@ -73,12 +73,12 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                 addFactoryToGroup(playthrough.id, draggedFactoryId, group.id);
               }}
             >
-              <div className="flex justify-between">
-                <span className="mb-6 inline-block font-semibold">
+              <div className="@container flex justify-between gap-6 @max-lg:flex-col">
+                <span className="mb-6 inline-block font-semibold @max-lg:order-2">
                   {group.name}
                 </span>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 @max-xl:flex-col-reverse @max-xl:items-end @max-xl/list-outer:self-end">
                   <GroupDeliveriesDialog factoryIds={group.factoryIds} />
 
                   <GroupShoppingListDialog factoryIds={group.factoryIds} />
