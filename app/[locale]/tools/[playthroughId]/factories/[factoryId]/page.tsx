@@ -2,7 +2,10 @@
 
 import ImporterTable from "@/components/tables/importer-table";
 import { Link, useRouter } from "@/i18n/navigation";
-import { getShoppingList } from "@/lib/utils/getShoppingList";
+import {
+  getShoppingList,
+  splitShoppingListByShelves,
+} from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { useTranslations } from "next-intl";
@@ -23,6 +26,7 @@ import { Separator } from "@/components/ui/separator";
 import DeleteDialog from "@/components/delete-dialog";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { toast } from "sonner";
+import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -64,6 +68,16 @@ const FactoryIdPage = () => {
     ...deriveVehicleData(activeFactory),
     ...deriveWorkstationData(activeFactory),
   ];
+
+  const requiredShelves = getOptimalPalletShelfAmount(
+    activeFactory.workstations,
+  ).weekly;
+
+  const { factoryList } = splitShoppingListByShelves(
+    shoppingListData,
+    requiredShelves,
+    activeFactory.shelfAmount,
+  );
 
   const onDelete = () => {
     const deleted = deleteFactory(activeFactory.id, activePlaythrough.id);
@@ -147,6 +161,28 @@ const FactoryIdPage = () => {
 
           <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
             {shoppingListData.map((group) => (
+              <ImporterTable key={group.importer} data={group} t={t} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <hgroup className="space-y-4 pr-10">
+            <h2 className="text-xl font-semibold">Split shopping list</h2>
+            <p>
+              Order this to your factory to split the order. This is what your{" "}
+              {activeFactory.shelfAmount} shelves can hold.
+            </p>
+            <p>
+              The rest must be ordered to the group warehouse by a separate
+              purchasing agent. Go back to the factory overview to see a full
+              list what to order to the warehouse. It will also show you the
+              daily delivery amounts to this factory.
+            </p>
+          </hgroup>
+
+          <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
+            {factoryList.map((group) => (
               <ImporterTable key={group.importer} data={group} t={t} />
             ))}
           </div>
