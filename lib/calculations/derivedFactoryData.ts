@@ -8,7 +8,6 @@ import {
 import { FULLTIME_MAX_WORKING_HOURS, TAX_RATE } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
-import { IngredientName } from "../game/ingredientNames";
 import { ingredients } from "../game/ingredients";
 import { MachineName } from "../game/machineNames";
 import { machines, workstations } from "../game/machines";
@@ -26,6 +25,7 @@ import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 import { Factory, Playthrough, PriceIndices } from "../stores/playthroughStore";
 import { ImporterShoppingList } from "../utils/getShoppingList";
+import { calculateIngredientTotals } from "./calculateIngredientTotals";
 
 export type DerivedDataFromFormValues = {
   valueType?: string;
@@ -34,27 +34,6 @@ export type DerivedDataFromFormValues = {
   value: number;
   diff?: number;
 }[];
-
-type IngredientTotals = Record<IngredientName, number>;
-
-export function calculateIngredientTotals(
-  workstations: FormWorkstations,
-): IngredientTotals {
-  return workstations.reduce((acc, ws) => {
-    const product = products[ws.product];
-
-    product.ingredients.forEach((ingredientGroup) => {
-      Object.entries(ingredientGroup).forEach(([name, amount]) => {
-        if (amount === undefined) return;
-
-        const key = name as IngredientName;
-        acc[key] = (acc[key] ?? 0) + amount * ws.amount;
-      });
-    });
-
-    return acc;
-  }, {} as IngredientTotals);
-}
 
 export const deriveWorkstationData = (
   values: FactoryFormValues,

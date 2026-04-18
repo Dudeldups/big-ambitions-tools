@@ -2,7 +2,7 @@ import { IngredientName } from "../game/ingredientNames";
 import { ingredients } from "../game/ingredients";
 import { shelves } from "../game/inventory";
 import { FormWorkstations } from "../schemas/factory";
-import { calculateIngredientTotals } from "./derivedFactoryData";
+import { calculateIngredientTotals } from "./calculateIngredientTotals";
 
 export const getOptimalPalletShelfAmount = (
   workstations: FormWorkstations,
