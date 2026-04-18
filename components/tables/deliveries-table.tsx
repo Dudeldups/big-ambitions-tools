@@ -8,7 +8,6 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { useOverflowDetection } from "@/lib/hooks/useOverflowDetection";
 import { cn } from "@/lib/utils";
 import { DeliveryListItem } from "@/lib/calculations/calculateDailyWarehouseSupply";
 
@@ -18,16 +17,12 @@ type DeliveriesTableProps = {
 };
 
 const DeliveriesTable = ({ deliveryList, t }: DeliveriesTableProps) => {
-  const { overflowRef, isOverflowing } = useOverflowDetection();
-
   return (
-    <div ref={overflowRef} className={cn("mx-auto w-full max-w-lg space-y-2")}>
-      <div
-        className={cn("rounded-md border", isOverflowing && "overflow-x-auto")}
-      >
-        <Table className={cn("", !isOverflowing && "overflow-x-auto")}>
+    <div className={cn("mx-auto w-full max-w-lg space-y-2")}>
+      <div className={cn("overflow-x-auto rounded-md border")}>
+        <Table>
           <TableHeader>
-            <TableRow>
+            <TableRow className="bg-foreground *:text-muted">
               <TableHead className="text-right">
                 {t(`tableColumns.deliverUpTo`)}
               </TableHead>

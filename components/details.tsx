@@ -35,9 +35,9 @@ const Details = ({ children, title }: DetailsProps) => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
+            className="overflow-hidden pb-4"
           >
-            <div className="pb-4">{children}</div>
+            {children}
           </motion.div>
         )}
       </AnimatePresence>
