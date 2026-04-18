@@ -78,9 +78,9 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
         </DialogHeader>
 
         <div className="max-h-[50vh] space-y-6 overflow-auto lg:max-h-[75vh]">
-          {deliveryLists.map((item) => (
+          {deliveryLists.map((item, i) => (
             <DeliveriesTable
-              key={item.destination}
+              key={item.destination + i}
               destination={item.destination}
               deliveryList={item.deliveryList}
               t={t}
