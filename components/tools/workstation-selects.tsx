@@ -251,11 +251,13 @@ const WorkstationSelects = ({
           )}
         />
 
-        <PriceIndexPopover
-          selectedProduct={selectedProduct}
-          factoryWorkerSalary={factoryWorkerSalary}
-          className="ml-auto"
-        />
+        {products[selectedProduct].productSalesRatio > 0 && (
+          <PriceIndexPopover
+            selectedProduct={selectedProduct}
+            factoryWorkerSalary={factoryWorkerSalary}
+            className="ml-auto"
+          />
+        )}
       </FieldGroup>
     </div>
   );

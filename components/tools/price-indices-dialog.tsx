@@ -65,6 +65,7 @@ const PriceIndicesDialog = () => {
         <form className="flex max-h-[70vh] flex-col gap-2 overflow-y-auto px-6">
           <FieldGroup className="gap-0">
             {productNames
+              .filter((name) => products[name].productSalesRatio > 0)
               .sort((a, b) => {
                 return tProducts(a).localeCompare(tProducts(b));
               })
