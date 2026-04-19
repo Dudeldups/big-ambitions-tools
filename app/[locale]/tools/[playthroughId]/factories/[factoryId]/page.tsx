@@ -127,7 +127,7 @@ const FactoryIdPage = () => {
             </div>
           </div>
 
-          <div className="@container flex flex-wrap justify-between gap-10">
+          <div className="@container">
             <ul className="grid gap-3 *:flex *:gap-2 @xl:flex">
               <li>
                 <Clock className="size-6" />
@@ -170,15 +170,15 @@ const FactoryIdPage = () => {
               <h2 className="text-xl font-semibold">Split shopping list</h2>
               <p>
                 Order these ingredients to your factory to split the order. This
-                is the maximum amount what your {activeFactory.shelfAmount}{" "}
-                pallet shelves can hold. You would need {requiredShelves}{" "}
-                shelves to store all ingredients.
+                is the maximum amount your {activeFactory.shelfAmount} pallet
+                shelves can hold. You would need {requiredShelves} shelves to
+                store all ingredients.
               </p>
               <p>
                 The rest must be ordered to a warehouse by one or more separate
                 purchasing agents. Go back to the factory overview and create a
-                group to see a full list what to order to that warehouse. It
-                will also show you the daily delivery amounts to this factory.
+                group to see a full list of what to order to that warehouse. It
+                will also show you the delivery plan to each factory.
               </p>
             </hgroup>
 
