@@ -29,5 +29,8 @@ export const routing = defineRouting({
   ],
   defaultLocale: "en",
   localePrefix: "as-needed",
+  localeCookie: {
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+  },
   localeDetection: !isDefaultLocaleForced,
 });
