@@ -7,11 +7,18 @@ import { FormWorkstations } from "../schemas/factory";
 import { calculateIngredientTotals } from "./calculateIngredientTotals";
 import { calculateProductTotals } from "./calculateProductTotals";
 
+type OptimalPalletShelves = {
+  daily: number;
+  weekly: number;
+  external: number;
+  isOverflowing: boolean;
+};
+
 export const getOptimalPalletShelfAmount = (
   workstations: FormWorkstations,
-): { daily: number; weekly: number; isOverflowing: boolean } => {
+): OptimalPalletShelves => {
   if (workstations.length === 0)
-    return { daily: 0, weekly: 0, isOverflowing: false };
+    return { daily: 0, weekly: 0, external: 0, isOverflowing: false };
 
   const ingredientTotals = calculateIngredientTotals(workstations);
   const productTotals = calculateProductTotals(workstations);
@@ -45,10 +52,14 @@ export const getOptimalPalletShelfAmount = (
   const weeklyPalletShelfAmount = Math.ceil(
     (dailyIngBoxes * 7 + dailyOverflow) / shelves.palletShelf.storageCapacity,
   );
+  const externalPalletShelfAmount = Math.ceil(
+    (dailyIngBoxes * 7) / shelves.palletShelf.storageCapacity,
+  );
 
   return {
     daily: dailyPalletShelfAmount,
     weekly: weeklyPalletShelfAmount,
+    external: externalPalletShelfAmount,
     isOverflowing: dailyOverflow > 0,
   };
 };

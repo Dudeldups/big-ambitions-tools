@@ -7,7 +7,7 @@ export function getMissingPalletShelvesTotal(
   return factories.reduce((acc, f) => {
     if (!f) return acc;
 
-    const required = getOptimalPalletShelfAmount(f.workstations).weekly;
+    const required = getOptimalPalletShelfAmount(f.workstations).external;
 
     const missing = Math.max(required - f.shelfAmount, 0);
 

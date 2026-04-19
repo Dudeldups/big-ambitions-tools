@@ -43,7 +43,7 @@ const GroupShoppingListDialog = ({
 
     return splitShoppingListByShelves(
       getShoppingList(factory, activePlaythrough.difficulty),
-      getOptimalPalletShelfAmount(factory.workstations).weekly,
+      getOptimalPalletShelfAmount(factory.workstations).external,
       factory.shelfAmount,
     ).externalList;
   });

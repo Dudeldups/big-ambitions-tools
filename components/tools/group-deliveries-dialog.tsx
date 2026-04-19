@@ -42,7 +42,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
     const shoppingList = getShoppingList(factory, activePlaythrough.difficulty);
     const requiredShelves = getOptimalPalletShelfAmount(
       factory.workstations,
-    ).weekly;
+    ).external;
     if (factory.shelfAmount > requiredShelves) return [];
 
     const { factoryList } = splitShoppingListByShelves(
