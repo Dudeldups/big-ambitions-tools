@@ -5,6 +5,7 @@ import { FactoryFormValues } from "@/lib/schemas/factory";
 import { cn } from "@/lib/utils";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { useTranslations } from "next-intl";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type Props = {
   className?: string;
@@ -19,7 +20,8 @@ export function PalletShelfField({ className, control, errors }: Props) {
     name: ["shelfAmount", "workstations"],
   });
 
-  const { daily, weekly } = getOptimalPalletShelfAmount(workstations);
+  const { daily, weekly, isOverflowing } =
+    getOptimalPalletShelfAmount(workstations);
 
   const hasWeekly = shelfAmount >= weekly;
   const hasDaily = shelfAmount >= daily;
@@ -67,6 +69,21 @@ export function PalletShelfField({ className, control, errors }: Props) {
                 <p>
                   Weekly delivery requires <strong>{weekly}</strong> shelves.
                 </p>
+                {isOverflowing && (
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <p className="text-yellow-600">
+                        ⚠ Stocking faster than clearing.
+                      </p>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="">
+                        Production outpaces ingredient consumption. Shelf count
+                        adjusted.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
+                )}
 
                 {hasWeekly ? (
                   <p className="text-green-600">
