@@ -25,7 +25,7 @@ export const getOptimalPalletShelfAmount = (
   const totalProdBoxesPerHour = Object.entries(productTotals).reduce(
     (acc, [pName, amount]) => {
       const product = products[pName as ProductName];
-      return acc + Math.ceil(amount / product.amountPerBox);
+      return acc + amount / product.amountPerBox;
     },
     0,
   );
