@@ -50,7 +50,7 @@ const PriceIndicesDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-1.5">
+        <Button variant="outline" className="gap-1.5">
           <SlidersHorizontal className="size-5" />
           {tGeneral("priceIndices")}
         </Button>
