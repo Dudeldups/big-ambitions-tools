@@ -97,8 +97,8 @@ const FactoryIdPage = () => {
     <div className="max-w-page mx-auto grid xl:grid-cols-2">
       <div className="overflow-x-auto px-4 py-8">
         <div className="@container flex w-full flex-col gap-10">
-          <div className="flex w-full justify-between gap-10 @max-2xl:flex-col">
-            <hgroup className="@max-2xl:order-1">
+          <div className="flex w-full justify-between gap-6 @max-2xl:flex-col">
+            <hgroup className="">
               <h2 className="mb-4">{activeFactory.name}</h2>
               {activeFactory.description && (
                 <p className="text-muted-foreground max-w-md">
@@ -107,7 +107,7 @@ const FactoryIdPage = () => {
               )}
             </hgroup>
 
-            <div className="grid gap-3 @max-2xl:self-end @max-lg:justify-items-end @lg:flex">
+            <div className="flex gap-3 @max-2xl:self-end @max-lg:w-full @max-lg:flex-col @max-lg:*:w-full">
               <OneTimeCostDialog rows={oneTimeCostRowData} />
 
               <Button variant="outline" asChild>
@@ -127,26 +127,24 @@ const FactoryIdPage = () => {
             </div>
           </div>
 
-          <div className="@container">
-            <ul className="grid gap-3 *:flex *:gap-2 @xl:flex">
-              <li>
-                <Clock className="size-6" />
-                {activeFactory.openingHours}h
-              </li>
-              <li>
-                <ShelvingUnit className="size-6" />
-                {activeFactory.shelfAmount} pallet shelves
-              </li>
-              <li>
-                <Hammer className="size-6" />
-                {workstationAmount} workstations
-              </li>
-              <li>
-                <Truck className="size-6" />
-                {activeFactory.vehicles.length} vehicle
-              </li>
-            </ul>
-          </div>
+          <ul className="grid gap-3 *:flex *:gap-2 @xl:flex">
+            <li>
+              <Clock className="size-6" />
+              {activeFactory.openingHours}h
+            </li>
+            <li>
+              <ShelvingUnit className="size-6" />
+              {activeFactory.shelfAmount} pallet shelves
+            </li>
+            <li>
+              <Hammer className="size-6" />
+              {workstationAmount} workstations
+            </li>
+            <li>
+              <Truck className="size-6" />
+              {activeFactory.vehicles.length} vehicle
+            </li>
+          </ul>
         </div>
 
         <div className="mt-14">

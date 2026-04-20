@@ -1,4 +1,5 @@
 import {
+  FactoryGroup,
   Playthrough,
   usePlaythroughStore,
 } from "@/lib/stores/playthroughStore";
@@ -34,6 +35,18 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
     return playthrough.factoryIds.filter((id) => !grouped.has(id));
   }, [playthrough]);
 
+  const onDropGroup = (group: FactoryGroup) => {
+    if (!draggedFactoryId) return;
+
+    setDraggedFactoryId(null);
+    setHoveredGroup(null);
+
+    const isAlreadyInGroup = group.factoryIds.includes(draggedFactoryId);
+    if (isAlreadyInGroup) return;
+
+    addFactoryToGroup(playthrough.id, draggedFactoryId, group.id);
+  };
+
   return (
     <section>
       <div className="flex flex-wrap justify-between">
@@ -61,25 +74,14 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                 setHoveredGroup(group.id);
               }}
               onDragLeave={() => setHoveredGroup(null)}
-              onDrop={() => {
-                if (!draggedFactoryId) return;
-
-                setDraggedFactoryId(null);
-                setHoveredGroup(null);
-
-                const isAlreadyInGroup =
-                  group.factoryIds.includes(draggedFactoryId);
-                if (isAlreadyInGroup) return;
-
-                addFactoryToGroup(playthrough.id, draggedFactoryId, group.id);
-              }}
+              onDrop={() => onDropGroup(group)}
             >
-              <div className="@container flex justify-between gap-6 @max-lg:flex-col">
-                <span className="mb-6 inline-block font-semibold @max-lg:order-2">
+              <div className="@container flex justify-between gap-6 @max-xl:flex-col">
+                <span className="mb-6 inline-block font-semibold">
                   {group.name}
                 </span>
 
-                <div className="flex gap-2 @max-xl:flex-col-reverse @max-xl:items-end @max-xl/list-outer:self-end">
+                <div className="flex gap-2 @max-xl:flex-col @max-xl:*:w-full">
                   <GroupDeliveriesDialog factoryIds={group.factoryIds} />
 
                   <GroupShoppingListDialog factoryIds={group.factoryIds} />
