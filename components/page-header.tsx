@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
+import LanguageSelect from "./language-select";
 
 const PageHeader = () => {
   return (
@@ -34,7 +35,11 @@ const PageHeader = () => {
           </ul>
         </nav>
 
-        <ThemeToggle />
+        <div className="flex gap-4">
+          <ThemeToggle />
+
+          <LanguageSelect />
+        </div>
       </div>
     </header>
   );
