@@ -5,7 +5,6 @@ import {
   deriveProductData,
 } from "@/lib/calculations/derivedFactoryData";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import { useAppState } from "@/lib/hooks/useAppState";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useShallow } from "zustand/shallow";
@@ -35,7 +34,7 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
   const t = useTranslations();
   const { activePlaythrough } = useActivePlaythrough();
   const difficulty = activePlaythrough?.difficulty;
-  const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
+  const calculationPeriod = "weekly";
   const priceIndices = usePriceIndices();
   const factories = usePlaythroughStore(
     useShallow((s) => {
@@ -76,7 +75,7 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
 
   return (
     <div className={cn("px-4", className)}>
-      <h3 className="mb-6 text-center">Production overview</h3>
+      <h3 className="mb-6 text-center">Weekly production overview</h3>
 
       {profitRowData.length > 0 && (
         <DataTable
