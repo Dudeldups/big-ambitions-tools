@@ -129,6 +129,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-heading: var(--font-sans);
 
+  --grid-cols-form: repeat(auto-fit, minmax(11.5rem, 1fr));
   --default-transition-duration: 300ms;
   --spacing-page: 100rem;
   --color-tertiary: var(--tertiary);
