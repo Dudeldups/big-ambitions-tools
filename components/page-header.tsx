@@ -8,7 +8,7 @@ const PageHeader = () => {
     <header className="flex justify-center py-4">
       <div
         className={cn(
-          "max-w-page flex w-full items-center justify-between rounded-lg px-4 py-3",
+          "max-w-page mx-4 flex w-full items-center justify-between rounded-lg px-4 py-3",
           "border-foreground/10 shadow-foreground/5 border shadow-md",
           "bg-background/20",
           "saturate-150 backdrop-blur-md",
