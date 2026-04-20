@@ -82,11 +82,7 @@ const CreateGroupForm = () => {
           <FieldGroup>
             <Field>
               <Label htmlFor="name">{t("modals.groupLabelName")}</Label>
-              <Input
-                id="name"
-                placeholder={"Placeholder"}
-                {...register("name")}
-              />
+              <Input id="name" {...register("name")} />
               {errors.name?.message && (
                 <FieldError className="text-destructive text-sm">
                   {t(errors.name.message)}
