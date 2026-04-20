@@ -75,7 +75,9 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
   ];
 
   return (
-    <div className={cn("space-y-10 overflow-x-hidden px-4", className)}>
+    <div className={cn("px-4", className)}>
+      <h3 className="mb-6 text-center">Production overview</h3>
+
       {profitRowData.length > 0 && (
         <DataTable
           className="max-w-lg"
