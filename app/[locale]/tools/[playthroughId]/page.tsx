@@ -1,5 +1,6 @@
 "use client";
 
+import EmpireOverview from "@/components/tools/empire-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
@@ -21,7 +22,7 @@ const PlaythroughIdPage = () => {
         <Link href="/tools">Playthroughs</Link>
       </div>
 
-      <div className="my-8 max-w-xl rounded-xl border bg-cyan-900 p-4">
+      <div className="my-8 max-w-2xl rounded-xl border bg-cyan-900 p-4">
         <h2>
           Your playthrough{" "}
           <span className="font-semibold">
@@ -46,6 +47,10 @@ const PlaythroughIdPage = () => {
           <span className="text-lg font-bold">Factories</span>
         </Link>
       </Button>
+
+      <div>
+        <EmpireOverview />
+      </div>
     </div>
   );
 };
