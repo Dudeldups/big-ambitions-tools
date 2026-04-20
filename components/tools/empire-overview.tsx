@@ -17,6 +17,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
 import { Translator } from "@/lib/types";
 import { DataTable } from "../tables/data-table";
+import { cn } from "@/lib/utils";
 
 type ProductRow = {
   itemName: string;
@@ -26,7 +27,11 @@ type ProductRow = {
   valueType?: string;
 };
 
-const EmpireOverview = () => {
+type EmpireOverviewProps = {
+  className?: string;
+};
+
+const EmpireOverview = ({ className }: EmpireOverviewProps) => {
   const t = useTranslations();
   const { activePlaythrough } = useActivePlaythrough();
   const difficulty = activePlaythrough?.difficulty;
@@ -70,15 +75,13 @@ const EmpireOverview = () => {
   ];
 
   return (
-    <div className="space-y-10 overflow-x-hidden px-4">
+    <div className={cn("space-y-10 overflow-x-hidden px-4", className)}>
       {profitRowData.length > 0 && (
-        <>
-          <DataTable
-            className="max-w-lg"
-            columns={tableColumns(t)}
-            data={profitRowData}
-          />
-        </>
+        <DataTable
+          className="max-w-lg"
+          columns={tableColumns(t)}
+          data={profitRowData}
+        />
       )}
     </div>
   );
