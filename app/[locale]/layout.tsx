@@ -6,6 +6,7 @@ import NavLink from "../_components/NavLink";
 import { StoreHydration } from "@/components/store-hydration";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -26,44 +27,54 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-}>) {
+  params: { locale: string };
+}) {
   return (
-    <html lang="en">
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${rubikSans.variable} ${rubikMono.variable} flex min-h-screen flex-col antialiased`}
       >
         <StoreHydration />
-        <NextIntlClientProvider>
-          <TooltipProvider>
-            <header className="flex justify-center">
-              <nav className="max-w-page w-full bg-gray-800">
-                <ul className="flex flex-col gap-4 p-4 md:flex-row">
-                  <li>
-                    <NavLink href="/">Home</NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="/database">Database</NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="/tools">Tools</NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="/about">About</NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="/contact">Contact</NavLink>
-                  </li>
-                </ul>
-              </nav>
-            </header>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider>
+            <TooltipProvider>
+              <header className="flex justify-center">
+                <nav className="max-w-page w-full bg-gray-800">
+                  <ul className="flex flex-col gap-4 p-4 md:flex-row">
+                    <li>
+                      <NavLink href="/">Home</NavLink>
+                    </li>
+                    <li>
+                      <NavLink href="/database">Database</NavLink>
+                    </li>
+                    <li>
+                      <NavLink href="/tools">Tools</NavLink>
+                    </li>
+                    <li>
+                      <NavLink href="/about">About</NavLink>
+                    </li>
+                    <li>
+                      <NavLink href="/contact">Contact</NavLink>
+                    </li>
+                  </ul>
+                </nav>
+              </header>
 
-            <main>{children}</main>
+              <main>{children}</main>
 
-            <footer className="mt-auto">Footer</footer>
-          </TooltipProvider>
-        </NextIntlClientProvider>
+              <footer className="mt-auto">Footer</footer>
+            </TooltipProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
+
         <Toaster />
       </body>
     </html>
