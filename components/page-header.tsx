@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
-import { Button } from "./ui/button";
 
 const PageHeader = () => {
   return (
@@ -18,29 +17,19 @@ const PageHeader = () => {
         <nav>
           <ul className="flex flex-col gap-4 md:flex-row">
             <li>
-              <Button asChild variant="outline">
-                <NavLink href="/">Home</NavLink>
-              </Button>
+              <NavLink href="/">Home</NavLink>
             </li>
             <li>
-              <Button asChild variant="outline">
-                <NavLink href="/database">Database</NavLink>
-              </Button>
+              <NavLink href="/database">Database</NavLink>
             </li>
             <li>
-              <Button asChild variant="outline">
-                <NavLink href="/tools">Tools</NavLink>
-              </Button>
+              <NavLink href="/tools">Tools</NavLink>
             </li>
             <li>
-              <Button asChild variant="outline">
-                <NavLink href="/about">About</NavLink>
-              </Button>
+              <NavLink href="/about">About</NavLink>
             </li>
             <li>
-              <Button asChild variant="outline">
-                <NavLink href="/contact">Contact</NavLink>
-              </Button>
+              <NavLink href="/contact">Contact</NavLink>
             </li>
           </ul>
         </nav>
