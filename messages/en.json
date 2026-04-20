@@ -230,6 +230,12 @@
       "normal": "Normal",
       "hard": "Hard"
     },
+    "themes": {
+      "buttonDesc": "toggle themes",
+      "light": "light",
+      "dark": "dark",
+      "system": "system"
+    },
     "displayPriceOptions": {
       "manufacture": "Manufacture",
       "import": "import",

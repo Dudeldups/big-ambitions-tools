@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Rubik, Rubik_Mono_One } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import NavLink from "../_components/NavLink";
 import { StoreHydration } from "@/components/store-hydration";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
+import PageHeader from "@/components/page-header";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -46,27 +46,7 @@ export default function RootLayout({
         >
           <NextIntlClientProvider>
             <TooltipProvider>
-              <header className="flex justify-center">
-                <nav className="max-w-page w-full bg-gray-800">
-                  <ul className="flex flex-col gap-4 p-4 md:flex-row">
-                    <li>
-                      <NavLink href="/">Home</NavLink>
-                    </li>
-                    <li>
-                      <NavLink href="/database">Database</NavLink>
-                    </li>
-                    <li>
-                      <NavLink href="/tools">Tools</NavLink>
-                    </li>
-                    <li>
-                      <NavLink href="/about">About</NavLink>
-                    </li>
-                    <li>
-                      <NavLink href="/contact">Contact</NavLink>
-                    </li>
-                  </ul>
-                </nav>
-              </header>
+              <PageHeader />
 
               <main>{children}</main>
 

@@ -20,7 +20,7 @@ const PlaythroughIdPage = () => {
     <div className="max-w-page mx-auto px-4">
       <div className="mt-8">
         <p>Go back to the playthrough overview:</p>
-        <Button asChild size="sm">
+        <Button asChild>
           <Link href="/tools">Playthroughs</Link>
         </Button>
       </div>
