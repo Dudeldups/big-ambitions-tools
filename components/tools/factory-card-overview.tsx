@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import CreateGroupForm from "./create-group-form";
 import GroupShoppingListDialog from "./group-shopping-list-dialog";
 import GroupDeliveriesDialog from "./group-deliveries-dialog";
+import EditGroupForm from "./edit-group-form";
 
 type FactoryCardOverviewProps = {
   playthrough: Playthrough;
@@ -82,6 +83,8 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                   <GroupDeliveriesDialog factoryIds={group.factoryIds} />
 
                   <GroupShoppingListDialog factoryIds={group.factoryIds} />
+
+                  <EditGroupForm groupId={group.id} />
 
                   <DeleteDialog
                     onDelete={() =>
