@@ -9,7 +9,7 @@ const Tools = () => {
 
   return (
     <>
-      <section className="max-w-page mx-auto w-full">
+      <section className="max-w-page mx-auto w-full px-4">
         <div className="bg-background border-border border-b">
           <div className="mx-auto flex flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3 sm:px-6">
             <CreatePlaythroughForm />

@@ -1,5 +1,6 @@
 "use client";
 
+import IntroTextWrapper from "@/components/intro-text-wrapper";
 import FactoryCardOverview from "@/components/tools/factory-card-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -25,7 +26,7 @@ const FactoriesPage = () => {
         </Button>
       </div>
 
-      <div className="my-8 rounded-xl border bg-cyan-900 p-4">
+      <IntroTextWrapper>
         <h2>Your factories</h2>
 
         <p className="mt-6 mb-2">
@@ -43,7 +44,7 @@ const FactoriesPage = () => {
           shelves you set on the factory, it will suggest a delivery plan for
           each factory.
         </p>
-      </div>
+      </IntroTextWrapper>
 
       {!hasFactories ? (
         <>

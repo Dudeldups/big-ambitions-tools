@@ -1,5 +1,6 @@
 "use client";
 
+import IntroTextWrapper from "@/components/intro-text-wrapper";
 import EmpireOverview from "@/components/tools/empire-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -26,7 +27,7 @@ const PlaythroughIdPage = () => {
 
       <div className="flex flex-col justify-center py-10 *:flex-1 max-lg:gap-14 lg:flex-row">
         <div className="flex flex-col items-center lg:items-start">
-          <div className="my-8 max-w-2xl rounded-xl border bg-cyan-900 p-4">
+          <IntroTextWrapper>
             <h2>
               Your playthrough{" "}
               <span className="font-semibold">
@@ -40,7 +41,7 @@ const PlaythroughIdPage = () => {
               and more. The factory planner will show you how many pallet
               shelves and factory workers you need for maximum efficiency.
             </p>
-          </div>
+          </IntroTextWrapper>
 
           <Button className="size-24 max-md:w-full md:size-32" asChild>
             <Link
