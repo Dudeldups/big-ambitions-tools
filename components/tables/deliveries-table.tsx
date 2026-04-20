@@ -22,7 +22,7 @@ const DeliveriesTable = ({ deliveryList, t }: DeliveriesTableProps) => {
       <div className={cn("overflow-x-auto rounded-md border")}>
         <Table>
           <TableHeader>
-            <TableRow className="bg-foreground *:text-muted">
+            <TableRow className="bg-foreground *:text-muted hover:bg-foreground">
               <TableHead className="text-right">
                 {t(`tableColumns.deliverUpTo`)}
               </TableHead>
