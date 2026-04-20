@@ -58,12 +58,12 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="text-muted-foreground flex flex-1 flex-wrap items-center gap-4 text-sm">
               <span className="flex items-center gap-1.5">
                 <Factory className="size-5 shrink-0" />
-                <span>
+                <Link href={`/tools/${activePlaythrough?.id}/factories`}>
                   <span className="text-foreground font-medium">
                     {factories.length}
                   </span>{" "}
                   {factories.length === 1 ? "factory" : "factories"}
-                </span>
+                </Link>
               </span>
 
               <span className="flex items-center gap-1.5">
