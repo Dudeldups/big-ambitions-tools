@@ -10,7 +10,8 @@ export default function NavLink({
   ...rest
 }: ComponentProps<typeof Link>) {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive =
+    href === "/" ? pathname === "/" : pathname.startsWith(String(href));
 
   return (
     <Button
