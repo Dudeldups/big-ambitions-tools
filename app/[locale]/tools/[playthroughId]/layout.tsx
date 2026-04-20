@@ -101,12 +101,12 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
 
           <div className="ml-auto flex flex-col items-center gap-4 self-start md:flex-row">
             {isNewFactoryDisabled ? (
-              <Button size="sm" className="gap-1.5" disabled>
+              <Button className="gap-1.5" disabled>
                 <Plus className="size-5" />
                 New factory
               </Button>
             ) : (
-              <Button size="sm" className="gap-1.5" asChild>
+              <Button className="gap-1.5" asChild>
                 <Link href={`/tools/${activePlaythrough.id}/factories/create`}>
                   <Plus className="size-5" />
                   New factory

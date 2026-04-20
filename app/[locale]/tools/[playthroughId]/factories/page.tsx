@@ -21,7 +21,7 @@ const FactoriesPage = () => {
   return (
     <div className="max-w-page mx-auto">
       <div className="my-8 flex flex-wrap gap-3 space-y-4">
-        <Button asChild variant="default">
+        <Button asChild>
           <Link href="/tools">Playthroughs</Link>
         </Button>
       </div>
