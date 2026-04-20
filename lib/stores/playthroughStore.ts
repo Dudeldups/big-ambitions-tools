@@ -87,12 +87,17 @@ export type PlaythroughActions = {
 
   getPlaythroughById: (playthroughId: string) => Playthrough | undefined;
   getFactoryById: (factoryId: string) => Factory | undefined;
+  getGroupById: (
+    playthroughId: string,
+    groupId: string,
+  ) => FactoryGroup | undefined;
+  getPriceIndices: (playthroughId: string) => PriceIndices;
+
   setPriceIndex: (
     playthroughId: string,
     productName: ProductName,
     index: number,
   ) => void;
-  getPriceIndices: (playthroughId: string) => PriceIndices;
   setTemplateFactory: (factory: Factory | undefined) => void;
 };
 
@@ -388,6 +393,13 @@ export const usePlaythroughStore = create(
 
       getPlaythroughById: (id) => get().playthroughs.find((p) => p.id === id),
       getFactoryById: (id) => get().factories.find((f) => f.id === id),
+      getGroupById: (pId: string, gId: string) =>
+        get()
+          .playthroughs.find((p) => p.id === pId)
+          ?.factoryGroups.find((g) => g.id === gId),
+      getPriceIndices: (playthroughId) =>
+        get().playthroughs.find((p) => p.id === playthroughId)?.priceIndices ||
+        {},
 
       setPriceIndex: (playthroughId, productName, index) => {
         set((state) => {
@@ -400,9 +412,6 @@ export const usePlaythroughStore = create(
           playthrough.priceIndices[productName] = index;
         });
       },
-      getPriceIndices: (playthroughId) =>
-        get().playthroughs.find((p) => p.id === playthroughId)?.priceIndices ||
-        {},
 
       setTemplateFactory: (factory) =>
         set((state) => {
