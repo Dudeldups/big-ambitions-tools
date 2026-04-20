@@ -63,39 +63,37 @@ const PlaythroughOverview = () => {
   };
 
   return (
-    <div>
-      <div>
-        {!playthroughs ? (
-          <Spinner />
-        ) : playthroughs.length === 0 ? (
-          <div>
-            <p>{t("tools.intro.noPlaythroughs")}</p>
-            <CreatePlaythroughForm />
-          </div>
-        ) : (
-          <ul className="flex flex-wrap gap-5">
-            {playthroughs.map((pt) => (
-              <li key={pt.id} className="">
-                {editingPlaythroughId === pt.id ? (
-                  <FormProvider key={pt.id} {...form}>
-                    <EditPlaythroughForm
-                      onSubmit={onSubmit}
-                      cancelEditing={cancelEditing}
-                    />
-                  </FormProvider>
-                ) : (
-                  <PlaythroughInfoCard
-                    pt={pt}
-                    editingPlaythroughId={editingPlaythroughId}
+    <div className="">
+      {!playthroughs ? (
+        <Spinner />
+      ) : playthroughs.length === 0 ? (
+        <div className="flex flex-col items-center gap-6 px-4 py-20">
+          <p>{t("tools.intro.noPlaythroughs")}</p>
+          <CreatePlaythroughForm />
+        </div>
+      ) : (
+        <ul className="flex flex-wrap gap-5">
+          {playthroughs.map((pt) => (
+            <li key={pt.id} className="">
+              {editingPlaythroughId === pt.id ? (
+                <FormProvider key={pt.id} {...form}>
+                  <EditPlaythroughForm
+                    onSubmit={onSubmit}
                     cancelEditing={cancelEditing}
-                    startEditing={startEditing}
                   />
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+                </FormProvider>
+              ) : (
+                <PlaythroughInfoCard
+                  pt={pt}
+                  editingPlaythroughId={editingPlaythroughId}
+                  cancelEditing={cancelEditing}
+                  startEditing={startEditing}
+                />
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
