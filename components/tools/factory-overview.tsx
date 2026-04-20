@@ -111,7 +111,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
         <div className="flex justify-between">
           <span className="text-muted-foreground">Revenue</span>
-          <span className="amount text-green-600">
+          <span className="amount text-success">
             {formatToUSD(totalIncome)}
           </span>
         </div>
@@ -119,11 +119,13 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           <span className="text-muted-foreground">
             Taxes ({taxRate * 100}%)
           </span>
-          <span className="amount text-red-600">{formatToUSD(totalTaxes)}</span>
+          <span className="amount text-destructive">
+            {formatToUSD(totalTaxes)}
+          </span>
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">Expenses</span>
-          <span className="amount text-red-600">
+          <span className="amount text-destructive">
             {formatToUSD(totalRecurringCost)}
           </span>
         </div>
@@ -135,7 +137,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           <span
             className={cn(
               "amount",
-              profitForPeriod >= 0 ? "text-green-600" : "text-red-600",
+              profitForPeriod >= 0 ? "text-success" : "text-destructive",
             )}
           >
             {formatToUSD(profitForPeriod)}
@@ -149,7 +151,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           {amortizationDays > 0 ? (
             <span>{amortizationDays} Days</span>
           ) : (
-            <span className="text-red-600">Never</span>
+            <span className="text-destructive">Never</span>
           )}
         </div>
       </div>

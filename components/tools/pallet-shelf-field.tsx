@@ -86,16 +86,14 @@ export function PalletShelfField({ className, control, errors }: Props) {
                 )}
 
                 {hasWeekly ? (
-                  <p className="text-green-600">
-                    ✓ Enough for weekly delivery.
-                  </p>
+                  <p className="text-success">✓ Enough for weekly delivery.</p>
                 ) : hasDaily ? (
                   <p className="text-yellow-600">
                     ⚠ Enough for daily delivery only. A warehouse is required
                     for weekly logistics.
                   </p>
                 ) : (
-                  <p className="text-red-600">
+                  <p className="text-destructive">
                     ✕ Not enough storage even for daily delivery.
                   </p>
                 )}

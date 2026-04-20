@@ -12,7 +12,7 @@ const CurrencyText = ({
   value,
   hideCents = false,
 }: CurrencyTextProps) => {
-  const color = value > 0 ? "text-green-600" : "text-red-600";
+  const color = value > 0 ? "text-success" : "text-destructive";
 
   return (
     <span className={cn("amount", color, className)}>

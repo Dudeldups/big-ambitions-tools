@@ -138,7 +138,7 @@ const PriceIndexPopover = ({
             <dd
               className={cn(
                 "amount",
-                profit > 0 ? "text-green-600" : "text-red-600",
+                profit > 0 ? "text-success" : "text-destructive",
               )}
             >
               {formatToUSD(profit)}

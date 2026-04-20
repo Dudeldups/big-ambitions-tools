@@ -18,7 +18,7 @@ const CopyButton = ({ value }: { value: number }) => {
   return (
     <Button variant="outline" size="icon" onClick={handleCopy}>
       {isClicked ? (
-        <Check className="size-4 text-green-600" />
+        <Check className="text-success size-4" />
       ) : (
         <Copy className="size-4" />
       )}

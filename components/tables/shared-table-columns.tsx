@@ -292,9 +292,9 @@ export const createBooleanColumn = <T, K extends keyof T>(
     return (
       <div className="flex justify-center">
         {value ? (
-          <Check className="text-green-600" />
+          <Check className="text-success" />
         ) : (
-          <X className="text-red-600" />
+          <X className="text-destructive" />
         )}
       </div>
     );
