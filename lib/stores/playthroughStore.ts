@@ -281,7 +281,12 @@ export const usePlaythroughStore = create(
         const existingIds = new Set(existingGroups.map((g) => g.id));
         const newId = generateUniqueId(existingIds);
 
-        let createdGroup: FactoryGroup | undefined;
+        const newGroup: FactoryGroup = {
+          id: newId,
+          name: group.name,
+          color: group.color,
+          factoryIds: [],
+        };
 
         set((state) => {
           const playthrough = state.playthroughs.find(
@@ -289,18 +294,10 @@ export const usePlaythroughStore = create(
           );
           if (!playthrough) return;
 
-          const newGroup: FactoryGroup = {
-            id: newId,
-            name: group.name,
-            color: group.color,
-            factoryIds: [],
-          };
-
           playthrough.factoryGroups.push(newGroup);
-          createdGroup = newGroup;
         });
 
-        return createdGroup!;
+        return newGroup;
       },
 
       editFactoryGroup: (playthroughId, groupId, updatedFields) => {
@@ -316,7 +313,7 @@ export const usePlaythroughStore = create(
           if (!group) return;
 
           Object.assign(group, updatedFields);
-          updatedGroup = group;
+          updatedGroup = { ...group };
         });
 
         return updatedGroup;
