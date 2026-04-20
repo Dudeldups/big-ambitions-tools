@@ -60,10 +60,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
-        >
+        <Button className={cn(neededPalletShelvesTotal === 0 && "hidden")}>
           <Package className="size-5" />
           Deliveries
         </Button>

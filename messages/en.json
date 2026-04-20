@@ -289,6 +289,7 @@
     "gardenProducts": "Garden products"
   },
   "toasts": {
+    "genericError": "An error occurred. Please check your inputs and try again. If the problem persists, please try refreshing the page.",
     "playthroughSaveSuccess": "Playthrough \"{characterName}\" created!",
     "playthroughEditSuccess": "Playthrough \"{characterName}\" updated!",
     "playthroughDeleteSuccess": "Playthrough \"{characterName}\" deleted!",
@@ -312,6 +313,8 @@
     "groupBtn": "Create group",
     "groupTitle": "Create a new factory group",
     "groupDesc": "Group factories to get an overview of all needed ingredients.",
+    "editGroupTitle": "Edit factory group",
+    "editGroupDesc": "Select the new values.",
     "groupLabelName": "Name",
     "groupLabelColor": "Color",
     "deleteGroupTitle": "Delete group",

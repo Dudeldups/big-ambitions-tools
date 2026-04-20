@@ -53,10 +53,7 @@ const GroupShoppingListDialog = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
-        >
+        <Button className={cn(neededPalletShelvesTotal === 0 && "hidden")}>
           <ClipboardCheck className="size-5" />
           Group shopping list
         </Button>
