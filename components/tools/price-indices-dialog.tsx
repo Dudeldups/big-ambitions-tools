@@ -62,7 +62,7 @@ const PriceIndicesDialog = () => {
           <DialogDescription>{tModals("priceIndicesDesc")}</DialogDescription>
         </DialogHeader>
 
-        <form className="flex max-h-[70vh] flex-col gap-2 overflow-y-auto px-6">
+        <form className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto px-6 sm:max-h-[70vh]">
           <FieldGroup className="gap-0">
             {productNames
               .filter((name) => products[name].productSalesRatio > 0)
