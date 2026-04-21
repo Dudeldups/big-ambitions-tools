@@ -39,11 +39,15 @@ const PageHeader = () => {
     return <MobileHeader />;
   } else {
     return (
-      <header className={cn("flex flex-col items-center justify-between p-4")}>
+      <header
+        className={cn(
+          "border-border flex flex-col items-center justify-between border-b-2 px-4 pt-4",
+        )}
+      >
         <div
           className={cn(
             "hidden md:flex",
-            "max-w-page mx-4 w-full items-center justify-between rounded-lg px-4 py-3",
+            "max-w-page w-full items-center justify-between rounded-lg px-4 py-3",
             "border-foreground/10 shadow-foreground/5 border shadow-md",
             "bg-background/20 saturate-150 backdrop-blur-md",
             "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
