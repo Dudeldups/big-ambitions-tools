@@ -59,7 +59,7 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary-foreground: oklch(0.984 0.019 200.873);
   --primary: oklch(0.4537 0.0842 222.6);
-  --primary-light: oklch(52.547% 0.09837 223.603);
+  --primary-light: color-mix(in oklch, var(--primary) 35%, white);
   --tertiary: oklch(0.3654 0.146 11.58);
   --tertiary-foreground: oklch(0.8289 0.1059 356.87);
   --secondary: oklch(0.274 0.006 286.033);
