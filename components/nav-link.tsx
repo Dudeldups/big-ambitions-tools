@@ -27,12 +27,12 @@ export default function NavLink({
       )}
     >
       <Link aria-current={isActive ? "page" : undefined} href={href} {...rest}>
-        <span className="relative z-10">{children}</span>
+        {children}
 
         {isActive && (
           <motion.span
             layoutId="nav-link-bg"
-            className="bg-primary absolute inset-0 rounded-md"
+            className="bg-primary absolute inset-0 -z-10 rounded-md"
             initial={false}
             transition={{ type: "spring", stiffness: 380, damping: 30 }}
           />
