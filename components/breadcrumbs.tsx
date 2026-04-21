@@ -13,20 +13,25 @@ import {
 import { Fragment } from "react/jsx-runtime";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { cn } from "@/lib/utils";
+import { useHasHydrated } from "@/lib/hooks/useHasHydrated";
 
 type BreadcrumbsProps = {
   className?: string;
 };
 
 const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
+  const hasHydrated = useHasHydrated();
   const pathname = usePathname();
   const t = useTranslations("breadcrumbs");
 
   const getPlaythroughById = usePlaythroughStore((s) => s.getPlaythroughById);
   const getFactoryById = usePlaythroughStore((s) => s.getFactoryById);
 
-  const rawSegments = pathname.split("/").filter(Boolean);
+  if (!hasHydrated) {
+    return <div className="h-10" />;
+  }
 
+  const rawSegments = pathname.split("/").filter(Boolean);
   const validBreadcrumbs: { href: string; label: string }[] = [];
 
   for (let i = 0; i < rawSegments.length; i++) {
