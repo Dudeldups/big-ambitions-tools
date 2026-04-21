@@ -10,8 +10,8 @@
   --primary-foreground: oklch(0.984 0.019 200.873);
   --primary: oklch(0.5234 0.099455 225.325);
   --primary-light: oklch(57.096% 0.10877 225.588);
-  --tertiary: oklch(0.424 0.169468 14.3414);
-  --tertiary-foreground: oklch(0.828 0.1047 359.02);
+  --brand-secondary: oklch(0.424 0.169468 14.3414);
+  --brand-secondary-foreground: oklch(0.9829 0.1047 359.02);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
@@ -60,8 +60,8 @@
   --primary-foreground: oklch(0.984 0.019 200.873);
   --primary: oklch(0.4537 0.0842 222.6);
   --primary-light: color-mix(in oklch, var(--primary) 35%, white);
-  --tertiary: oklch(0.3654 0.146 11.58);
-  --tertiary-foreground: oklch(0.8289 0.1059 356.87);
+  --brand-secondary: oklch(0.3654 0.146 11.58);
+  --brand-secondary-foreground: oklch(0.9829 0.1059 356.87);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
@@ -135,8 +135,8 @@
   --grid-cols-form: repeat(auto-fit, minmax(11.5rem, 1fr));
   --default-transition-duration: 300ms;
   --spacing-page: 100rem;
-  --color-tertiary: var(--tertiary);
-  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-secondary-foreground: var(--brand-secondary-foreground);
 }
 
 @layer base {
