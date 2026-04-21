@@ -19,14 +19,14 @@ import { useBreakpoint } from "@/lib/hooks/useBreakpoint";
 const MobileHeader = () => {
   const isMobile = useBreakpoint("mobile");
   const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const lastScrollY = useRef(0);
   const threshold = 50;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest < 50) {
-      setHidden(false);
+    if (latest < 100) {
+      setIsHidden(false);
       lastScrollY.current = latest;
       return;
     }
@@ -34,12 +34,11 @@ const MobileHeader = () => {
     const diff = latest - lastScrollY.current;
 
     if (Math.abs(diff) > threshold) {
-      if (diff > 0 && !hidden) {
-        setHidden(true);
-      } else if (diff < 0 && hidden) {
-        setHidden(false);
+      if (diff > 0 && !isHidden) {
+        setIsHidden(true);
+      } else if (diff < 0 && isHidden) {
+        setIsHidden(false);
       }
-
       lastScrollY.current = latest;
     }
   });
@@ -52,18 +51,19 @@ const MobileHeader = () => {
         visible: { y: 0 },
         hidden: { y: "-110%" },
       }}
-      animate={hidden ? "hidden" : "visible"}
+      animate={isHidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={cn(
-        "sticky -top-1 z-50 flex items-center justify-between gap-3 p-3",
-        "border-foreground/10 shadow-foreground/5 border shadow-md",
+        "sticky top-0 z-50",
+        "flex items-center justify-between gap-3 p-3",
+        "shadow-foreground/5 shadow-md",
         "bg-background/20 saturate-150 backdrop-blur-md",
         "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
       )}
     >
       <Breadcrumbs
         className={cn(
-          "max-w-page bg-secondary flex items-center rounded-lg px-4 py-3",
+          "max-w-page bg-secondary flex items-center rounded-lg px-4 py-2",
         )}
       />
 
