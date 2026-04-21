@@ -1,53 +1,63 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import NavLink from "./nav-link";
-import ThemeToggle from "./theme-toggle";
-import LanguageSelect from "./language-select";
 import Breadcrumbs from "./breadcrumbs";
+import NavContent from "./nav-content";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useRef, useState } from "react";
+import { useBreakpoint } from "@/lib/hooks/useBreakpoint";
+import MobileHeader from "./mobile-header";
 
 const PageHeader = () => {
-  return (
-    <header className="flex flex-col items-center p-4">
-      <div
-        className={cn(
-          "max-w-page mx-4 flex w-full items-center justify-between rounded-lg px-4 py-3",
-          "border-foreground/10 shadow-foreground/5 border shadow-md",
-          "bg-background/20",
-          "saturate-150 backdrop-blur-md",
-          "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
-        )}
-      >
-        <nav>
-          <ul className="flex flex-col gap-4 md:flex-row">
-            <li>
-              <NavLink href="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink href="/database">Database</NavLink>
-            </li>
-            <li>
-              <NavLink href="/tools">Tools</NavLink>
-            </li>
-            <li>
-              <NavLink href="/about">About</NavLink>
-            </li>
-            <li>
-              <NavLink href="/contact">Contact</NavLink>
-            </li>
-          </ul>
-        </nav>
+  const isMobile = useBreakpoint("mobile");
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const threshold = 50;
 
-        <div className="flex gap-4">
-          <ThemeToggle />
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 50) {
+      setHidden(false);
+      lastScrollY.current = latest;
+      return;
+    }
 
-          <LanguageSelect />
+    const diff = latest - lastScrollY.current;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0 && !hidden) {
+        setHidden(true);
+      } else if (diff < 0 && hidden) {
+        setHidden(false);
+      }
+
+      lastScrollY.current = latest;
+    }
+  });
+
+  if (isMobile) {
+    return <MobileHeader />;
+  } else {
+    return (
+      <header className={cn("flex flex-col items-center justify-between p-4")}>
+        <div
+          className={cn(
+            "hidden md:flex",
+            "max-w-page mx-4 w-full items-center justify-between rounded-lg px-4 py-3",
+            "border-foreground/10 shadow-foreground/5 border shadow-md",
+            "bg-background/20 saturate-150 backdrop-blur-md",
+            "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
+          )}
+        >
+          <NavContent />
         </div>
-      </div>
 
-      <Breadcrumbs
-        className={cn("max-w-page flex w-full items-center px-4 py-3")}
-      />
-    </header>
-  );
+        <Breadcrumbs
+          className={cn("max-w-page flex w-full items-center py-3 md:px-4")}
+        />
+      </header>
+    );
+  }
 };
 
 export default PageHeader;
