@@ -2,10 +2,11 @@ import { cn } from "@/lib/utils";
 import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
 import LanguageSelect from "./language-select";
+import Breadcrumbs from "./breadcrumbs";
 
 const PageHeader = () => {
   return (
-    <header className="flex justify-center py-4">
+    <header className="flex flex-col items-center p-4">
       <div
         className={cn(
           "max-w-page mx-4 flex w-full items-center justify-between rounded-lg px-4 py-3",
@@ -41,6 +42,10 @@ const PageHeader = () => {
           <LanguageSelect />
         </div>
       </div>
+
+      <Breadcrumbs
+        className={cn("max-w-page flex w-full items-center px-4 py-3")}
+      />
     </header>
   );
 };
