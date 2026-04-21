@@ -10,10 +10,11 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 const ThemeToggle = () => {
   const t = useTranslations("general.themes");
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -27,19 +28,28 @@ const ThemeToggle = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className="cursor-pointer capitalize"
+          className={cn(
+            "cursor-pointer capitalize",
+            theme === "light" && "bg-accent",
+          )}
         >
           {t("light")}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className="cursor-pointer capitalize"
+          className={cn(
+            "cursor-pointer capitalize",
+            theme === "dark" && "bg-accent",
+          )}
         >
           {t("dark")}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className="cursor-pointer capitalize"
+          className={cn(
+            "cursor-pointer capitalize",
+            theme === "system" && "bg-accent",
+          )}
         >
           {t("system")}
         </DropdownMenuItem>
