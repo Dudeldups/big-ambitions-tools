@@ -248,6 +248,22 @@
       "weekly": "weekly"
     }
   },
+  "breadcrumbs": {
+    "home": "Home",
+    "database": "Database",
+    "tools": "Tools",
+    "factories": "Factories",
+    "create": "Create",
+    "edit": "Edit",
+    "about": "About",
+    "contact": "Contact",
+    "products": "Products",
+    "ingredients": "Ingredients",
+    "machines": "Machines",
+    "workstations": "Workstations",
+    "inventory": "Inventory",
+    "vehicles": "Vehicles"
+  },
   "tableColumns": {
     "itemName": "Item name",
     "purchasePrice": "Price",
