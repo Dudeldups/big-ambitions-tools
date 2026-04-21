@@ -2,11 +2,13 @@
 
 import { ComponentProps } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 export default function NavLink({
   href,
+  children,
   ...rest
 }: ComponentProps<typeof Link>) {
   const pathname = usePathname();
@@ -16,16 +18,26 @@ export default function NavLink({
   return (
     <Button
       asChild
+      variant={isActive ? "default" : "link"}
       className={cn(
-        "bg-muted/80 text-foreground border-border hover:bg-accent-foreground! hover:text-background border",
-        isActive && "bg-foreground/90 text-background",
+        "text-foreground relative isolate hover:no-underline",
+        isActive &&
+          "text-primary-foreground bg-transparent hover:bg-transparent!",
+        !isActive && "hover:text-primary dark:hover:text-primary-light",
       )}
     >
-      <Link
-        aria-current={isActive ? "page" : undefined}
-        href={href}
-        {...rest}
-      />
+      <Link aria-current={isActive ? "page" : undefined} href={href} {...rest}>
+        <span className="relative z-10">{children}</span>
+
+        {isActive && (
+          <motion.span
+            layoutId="nav-link-bg"
+            className="bg-primary absolute inset-0 rounded-md"
+            initial={false}
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
+      </Link>
     </Button>
   );
 }
