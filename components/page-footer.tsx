@@ -11,15 +11,15 @@ const PageFooter = () => {
   return (
     <footer
       className={cn(
-        "relative grid place-items-center text-center text-pretty",
+        "px-clamp-x relative grid place-items-center text-center",
         "bg-card/50 backdrop-blur-sm",
         "via-background to-ring/10 from-ring/10 bg-linear-240",
       )}
     >
       <span className="from-primary/20 via-primary/50 to-primary/20 absolute inset-x-0 top-0 h-px bg-linear-to-r" />
-      <div className="max-w-page w-full p-6">
+      <div className="max-w-page w-full py-6">
         <div className="text-muted-foreground space-y-2 pb-3 text-sm">
-          <p>
+          <p className="text-pretty">
             {t.rich("fanMade", {
               link: (chunks) => (
                 <SmartLink href="https://github.com/Dudeldups/big-ambitions-tools">
@@ -29,7 +29,7 @@ const PageFooter = () => {
             })}
           </p>
 
-          <p>{t("assets")}</p>
+          <p className="text-pretty">{t("assets")}</p>
         </div>
 
         <p className="font-medium">
