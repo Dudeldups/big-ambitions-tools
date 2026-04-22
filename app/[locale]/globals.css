@@ -225,3 +225,7 @@
 @utility main-wrapper {
   @apply bg-accent md:pt-52;
 }
+
+@utility link {
+  @apply text-primary dark:text-primary-light underline-offset-4 transition-colors hover:underline;
+}
