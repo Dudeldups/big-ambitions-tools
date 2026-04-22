@@ -59,7 +59,7 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary-foreground: oklch(0.984 0.019 200.873);
   --primary: oklch(0.4537 0.0842 222.6);
-  --primary-light: color-mix(in oklch, var(--primary) 35%, white);
+  --primary-light: color-mix(in oklch, var(--primary) 60%, white);
   --brand-secondary: oklch(0.3654 0.146 11.58);
   --brand-secondary-foreground: oklch(0.9829 0.1059 356.87);
   --secondary: oklch(0.274 0.006 286.033);
@@ -132,6 +132,13 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-heading: var(--font-sans);
 
+  --text-h1: clamp(2rem, 5vw + 1rem, 3rem);
+  --text-h2: clamp(1.5rem, 4vw + 1rem, 2.25rem);
+  --text-h3: clamp(1.25rem, 3vw + 1rem, 1.875rem);
+  --text-h4: clamp(1.125rem, 2vw + 1rem, 1.5rem);
+  --text-h5: clamp(1rem, 1vw + 1rem, 1.25rem);
+  --text-h6: clamp(0.875rem, 0.5vw + 1rem, 1rem);
+
   --grid-cols-form: repeat(auto-fit, minmax(11.5rem, 1fr));
   --default-transition-duration: 300ms;
   --spacing-page: 100rem;
@@ -144,17 +151,53 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    @apply font-sans;
+  }
+
   body {
     font-family: var(--font-rubik-sans), sans-serif;
     font-weight: 500;
     @apply bg-background text-foreground;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-foreground tracking-tight;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    font-weight: 800;
+  }
+  h2 {
+    font-size: var(--text-h2);
+    font-weight: 700;
+  }
+  h3 {
+    font-size: var(--text-h3);
+    font-weight: 700;
+  }
+  h4 {
+    font-size: var(--text-h4);
+    font-weight: 600;
+  }
+  h5 {
+    font-size: var(--text-h5);
+    font-weight: 600;
+  }
+  h6 {
+    font-size: var(--text-h6);
+    font-weight: 600;
+  }
+
   button:not(:disabled) {
     cursor: pointer;
-  }
-  html {
-    @apply font-sans;
   }
 }
 
@@ -177,4 +220,8 @@
 
 @utility focus-ring {
   @apply border-ring ring-ring/50 ring-3;
+}
+
+@utility main-wrapper {
+  @apply bg-accent md:pt-52;
 }
