@@ -41,9 +41,10 @@ const PageHeader = () => {
     return (
       <header
         className={cn(
-          "border-border absolute inset-0 bottom-auto flex flex-col items-center border-b-2 px-4 pt-4",
+          "absolute inset-x-0 top-0 flex flex-col items-center px-4 pt-4",
         )}
       >
+        <span className="from-foreground/5 via-foreground/15 to-foreground/5 absolute inset-x-0 bottom-0 h-px bg-linear-to-r" />
         <div
           className={cn(
             "hidden md:flex",
