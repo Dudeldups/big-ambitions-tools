@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import PageHeader from "@/components/page-header";
+import PageFooter from "@/components/page-footer";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -50,9 +51,9 @@ export default async function RootLayout({
             <TooltipProvider>
               <PageHeader />
 
-              <main>{children}</main>
+              <main className="flex-1">{children}</main>
 
-              <footer className="mt-auto">Footer</footer>
+              <PageFooter />
             </TooltipProvider>
           </NextIntlClientProvider>
         </ThemeProvider>

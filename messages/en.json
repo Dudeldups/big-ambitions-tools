@@ -485,5 +485,9 @@
   "about": {
     "title": "FAQ",
     "desc": "This page contains answers to frequently asked questions. If you still have a question, feel free to ask in the Discord server."
+  },
+  "footer": {
+    "fanMade": " This is a fan-made site and is not affiliated with or endorsed by the game's developers.",
+    "assets": "All game images, trademarks, and assets belong to their respective owners."
   }
 }
