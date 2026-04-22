@@ -12,6 +12,7 @@
   --primary-light: oklch(57.096% 0.10877 225.588);
   --brand-secondary: oklch(0.424 0.169468 14.3414);
   --brand-secondary-foreground: oklch(0.9829 0.1047 359.02);
+  --brand-secondary-light: oklch(0.424 0.169468 14.3414);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
@@ -62,6 +63,11 @@
   --primary-light: color-mix(in oklch, var(--primary) 60%, white);
   --brand-secondary: oklch(0.3654 0.146 11.58);
   --brand-secondary-foreground: oklch(0.9829 0.1059 356.87);
+  --brand-secondary-light: color-mix(
+    in oklch,
+    var(--brand-secondary) 65%,
+    white
+  );
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
@@ -144,6 +150,7 @@
   --spacing-page: 100rem;
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-secondary-foreground: var(--brand-secondary-foreground);
+  --color-brand-secondary-light: var(--brand-secondary-light);
 }
 
 @layer base {
@@ -156,7 +163,7 @@
   }
 
   body {
-    font-family: var(--font-rubik-sans), sans-serif;
+    font-family: var(--font-poppins), sans-serif;
     font-weight: 500;
     @apply bg-background text-foreground;
   }
@@ -167,6 +174,7 @@
   h4,
   h5,
   h6 {
+    font-family: var(--font-rubik-sans), sans-serif;
     @apply text-foreground tracking-tight;
     line-height: 1.2;
   }
@@ -211,21 +219,27 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  .amount {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .focus-ring {
+    @apply border-ring ring-ring/50 ring-3;
+  }
+
+  .link {
+    @apply text-primary dark:text-primary-light underline-offset-4 transition-colors hover:underline;
+  }
+
+  .main-wrapper {
+    @apply pt-24 pb-16 md:pt-60 md:pb-24;
+  }
 }
 
-@utility amount {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-@utility focus-ring {
-  @apply border-ring ring-ring/50 ring-3;
-}
-
-@utility main-wrapper {
-  @apply bg-accent md:pt-52;
-}
-
-@utility link {
-  @apply text-primary dark:text-primary-light underline-offset-4 transition-colors hover:underline;
+.main-wrapper {
+  section {
+    @apply max-w-page mx-auto px-4;
+  }
 }

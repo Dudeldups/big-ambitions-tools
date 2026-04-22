@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rubik, Rubik_Mono_One } from "next/font/google";
+import { Rubik, Rubik_Mono_One, Poppins } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { StoreHydration } from "@/components/store-hydration";
@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import PageHeader from "@/components/page-header";
 import PageFooter from "@/components/page-footer";
+import { cn } from "@/lib/utils";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -18,6 +19,12 @@ const rubikSans = Rubik({
 const rubikMono = Rubik_Mono_One({
   variable: "--font-rubik-mono",
   weight: ["400"],
+  subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -38,7 +45,12 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${rubikSans.variable} ${rubikMono.variable} flex min-h-screen flex-col antialiased`}
+        className={cn(
+          "flex min-h-screen flex-col antialiased",
+          rubikSans.variable,
+          rubikMono.variable,
+          poppins.variable,
+        )}
       >
         <StoreHydration />
         <ThemeProvider
