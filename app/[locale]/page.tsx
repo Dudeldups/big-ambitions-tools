@@ -3,8 +3,8 @@ import {
   useFormatter,
   useTranslations,
 } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { updateHistory } from "@/lib/updateHistory";
+import { SmartLink } from "@/components/smart-link";
 
 export default function Home() {
   const t = useTranslations("home");
@@ -17,10 +17,15 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="main-wrapper">
       <section>
         <hgroup>
-          <h1>{t("intro.title")}</h1>
+          <h1>
+            {t.rich("intro.title", {
+              name: (chunks) => <span className="block">{chunks}</span>,
+            })}
+          </h1>
+
           <p>
             {t.rich("intro.desc", {
               i: (chunks) => <i>{chunks}</i>,
@@ -29,9 +34,7 @@ export default function Home() {
           <p>
             {t.rich("intro.desc2", {
               contact: (chunks) => (
-                <Link href="/contact" className="underline">
-                  {chunks}
-                </Link>
+                <SmartLink href="/contact">{chunks}</SmartLink>
               ),
             })}
           </p>
@@ -41,24 +44,14 @@ export default function Home() {
         <p>
           {t.rich("intro.gameDesc2", {
             website: (chunks) => (
-              <a
-                href="https://https://www.bigambitionsgame.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
+              <SmartLink href="https://https://www.bigambitionsgame.com/">
                 {chunks}
-              </a>
+              </SmartLink>
             ),
             steam: (chunks) => (
-              <a
-                href="https://store.steampowered.com/app/1331550/Big_Ambitions/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
+              <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
                 {chunks}
-              </a>
+              </SmartLink>
             ),
           })}
         </p>
@@ -70,19 +63,13 @@ export default function Home() {
           {t.rich("cta.desc", {
             i: (chunks) => <i>{chunks}</i>,
             database: (chunks) => (
-              <Link href="/database" className="underline">
-                {chunks}
-              </Link>
+              <SmartLink href="/database">{chunks}</SmartLink>
             ),
           })}
         </p>
         <p>
           {t.rich("cta.desc2", {
-            tools: (chunks) => (
-              <Link href="/tools" className="underline">
-                {chunks}
-              </Link>
-            ),
+            tools: (chunks) => <SmartLink href="/tools">{chunks}</SmartLink>,
           })}
         </p>
       </section>
@@ -103,14 +90,6 @@ export default function Home() {
             ))}
         </ul>
       </section>
-
-      <Link locale="en" href="/" className="underline">
-        English
-      </Link>
-      <br />
-      <Link locale="de" href="/" className="underline">
-        Deutsch
-      </Link>
     </div>
   );
 }
