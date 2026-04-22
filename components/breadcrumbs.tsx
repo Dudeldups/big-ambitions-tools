@@ -76,7 +76,10 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 {isLast ? (
-                  <BreadcrumbPage className="truncate max-md:max-w-[15ch]">
+                  <BreadcrumbPage
+                    className="truncate max-md:max-w-[15ch]"
+                    role="none"
+                  >
                     {crumb.label}
                   </BreadcrumbPage>
                 ) : (
