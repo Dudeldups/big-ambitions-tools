@@ -8,52 +8,42 @@ const TableSwitcher = () => {
   const t = useTranslations("database");
   const pathname = usePathname();
 
+  const links = [
+    {
+      title: t("table.products.title"),
+      path: "/database/products",
+    },
+    {
+      title: t("table.ingredients.title"),
+      path: "/database/ingredients",
+    },
+    {
+      title: t("table.machines.title"),
+      path: "/database/machines",
+    },
+    {
+      title: t("table.inventory.title"),
+      path: "/database/inventory",
+    },
+    {
+      title: t("table.vehicles.title"),
+      path: "/database/vehicles",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-4 md:flex-row">
-      <Button
-        asChild
-        variant={`${pathname === "/database/products" ? "default" : "secondary"}`}
-      >
-        <Link href="/database/products" className={``}>
-          {t("table.products.title")}
-        </Link>
-      </Button>
-
-      <Button
-        asChild
-        variant={`${pathname === "/database/ingredients" ? "default" : "secondary"}`}
-      >
-        <Link href="/database/ingredients" className={``}>
-          {t("table.ingredients.title")}
-        </Link>
-      </Button>
-
-      <Button
-        asChild
-        variant={`${pathname === "/database/machines" ? "default" : "secondary"}`}
-      >
-        <Link href="/database/machines" className={``}>
-          {t("table.machines.title")}
-        </Link>
-      </Button>
-
-      <Button
-        asChild
-        variant={`${pathname === "/database/inventory" ? "default" : "secondary"}`}
-      >
-        <Link href="/database/inventory" className={``}>
-          {t("table.inventory.title")}
-        </Link>
-      </Button>
-
-      <Button
-        asChild
-        variant={`${pathname === "/database/vehicles" ? "default" : "secondary"}`}
-      >
-        <Link href="/database/vehicles" className={``}>
-          {t("table.vehicles.title")}
-        </Link>
-      </Button>
+      {links.map((link) => (
+        <Button
+          key={link.path}
+          asChild
+          variant={`${pathname === link.path ? "foreground" : "secondary"}`}
+        >
+          <Link href={link.path} className={`flex items-center gap-2`}>
+            {link.title}
+          </Link>
+        </Button>
+      ))}
     </div>
   );
 };
