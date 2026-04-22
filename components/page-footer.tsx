@@ -11,10 +11,12 @@ const PageFooter = () => {
   return (
     <footer
       className={cn(
+        "relative grid place-items-center text-center text-pretty",
         "bg-card/50 backdrop-blur-sm",
         "via-background to-ring/10 from-ring/10 bg-linear-240",
       )}
     >
+      <span className="from-primary/20 via-primary/50 to-primary/20 absolute inset-x-0 top-0 h-px bg-linear-to-r" />
       <div className="max-w-page w-full p-6">
         <div className="text-muted-foreground space-y-2 pb-3 text-sm">
           <p>
