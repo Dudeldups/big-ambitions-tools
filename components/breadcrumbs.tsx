@@ -22,7 +22,7 @@ type BreadcrumbsProps = {
 const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
   const hasHydrated = useHasHydrated();
   const pathname = usePathname();
-  const t = useTranslations("breadcrumbs");
+  const t = useTranslations("general");
 
   const getPlaythroughById = usePlaythroughStore((s) => s.getPlaythroughById);
   const getFactoryById = usePlaythroughStore((s) => s.getFactoryById);

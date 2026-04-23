@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import LanguageSelect from "./language-select";
 import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
@@ -7,25 +8,27 @@ type NavContentProps = {
 };
 
 const NavContent = ({ onAction }: NavContentProps) => {
+  const tGeneral = useTranslations("general");
+
   const links = [
     {
-      name: "Home",
+      name: tGeneral("home"),
       href: "/",
     },
     {
-      name: "Database",
+      name: tGeneral("database"),
       href: "/database",
     },
     {
-      name: "Tools",
+      name: tGeneral("tools"),
       href: "/tools",
     },
     {
-      name: "About",
+      name: tGeneral("about"),
       href: "/about",
     },
     {
-      name: "Contact",
+      name: tGeneral("contact"),
       href: "/contact",
     },
   ];
