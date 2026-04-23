@@ -21,8 +21,7 @@ export default function NavLink({
       variant={isActive ? "default" : "link"}
       className={cn(
         "text-foreground relative isolate hover:no-underline",
-        isActive &&
-          "text-primary-foreground bg-transparent hover:bg-transparent!",
+        isActive && "text-background bg-transparent hover:bg-transparent!",
         !isActive && "hover:text-primary dark:hover:text-primary-light",
       )}
     >
@@ -32,7 +31,7 @@ export default function NavLink({
         {isActive && (
           <motion.span
             layoutId="nav-link-bg"
-            className="bg-primary absolute inset-0 -z-10 rounded-md"
+            className="bg-foreground absolute inset-0 -z-10 rounded-md"
             initial={false}
             transition={{ type: "spring", stiffness: 380, damping: 30 }}
           />
