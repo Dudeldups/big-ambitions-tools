@@ -41,7 +41,7 @@ const PageHeader = () => {
     return (
       <header
         className={cn(
-          "absolute inset-x-0 top-0 flex flex-col items-center px-4 pt-4",
+          "px-clamp-x absolute inset-x-0 top-0 flex flex-col items-center pt-4",
         )}
       >
         <span className="from-foreground/5 via-foreground/15 to-foreground/5 absolute inset-x-0 bottom-0 h-px bg-linear-to-r" />
