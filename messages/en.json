@@ -214,6 +214,8 @@
     "characterName": "Character name",
     "workstation": "Workstation",
     "product": "Product",
+    "database": "Database",
+    "tools": "Tools",
     "factories": "Factories",
     "vehicle": "Vehicle",
     "difficulty": "Difficulty",
@@ -250,8 +252,8 @@
   },
   "breadcrumbs": {
     "home": "Home",
-    "database": "Database",
-    "tools": "Tools",
+    "database": "{database}",
+    "tools": "{tools}",
     "factories": "Factories",
     "create": "Create",
     "edit": "Edit",
@@ -366,16 +368,16 @@
   },
   "home": {
     "intro": {
-      "title": "Welcome to <name>Big Ambitions Tools</name>",
-      "desc": "Here you can find a collection of infos and tools for the game <i>Big Ambitions</i> by Hovgaard Games. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version 0.10 of the game and may change with future updates.",
+      "title": "Welcome to <name>{siteName}</name>",
+      "desc": "A collection of infos and tools for the game <em>{gameName}</em> by {companyName}. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version {gameVersion} of the game and may change with future updates.",
       "gameDesc": "Don't even know the game yet? What a shame!",
-      "gameDesc2": "Check out the official website at <website>Hovgaard Games</website> or visit the game directly on <steam>Steam</steam>.",
+      "gameDesc2": "Check out the official website at <website>{companyName}</website> or visit the game directly on <link>{steam}</link>.",
       "errorDesc": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!"
     },
     "cta": {
       "title": "Let's get started!",
-      "desc": "Just want to look something up and do some number crunching? <i>Mhmm, tasty numbers!</i> Have a look at the <database>database</database>.",
-      "desc2": "Want to optimize your factories and production lines? Check out the <tools>tools</tools> section."
+      "desc": "Just want to look something up and do some number crunching? <em>Mhmm, tasty numbers!</em> Head over to the <link>{database}</link> and start exploring.",
+      "desc2": "From planning your first factory to managing production rates of your whole empire, you'll find everything in the <link>{tools}</link> section."
     },
     "updates": {
       "title": "Latest updates"
@@ -386,7 +388,7 @@
   },
   "database": {
     "intro": {
-      "title": "Database",
+      "title": "{database}",
       "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for."
     },
     "table": {

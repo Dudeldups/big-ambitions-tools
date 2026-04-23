@@ -4,11 +4,13 @@ import {
   useTranslations,
 } from "next-intl";
 import { updateHistory } from "@/lib/updateHistory";
-import { SmartLink } from "@/components/smart-link";
+import { sLink } from "@/i18n/defaults";
+import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 
 export default function Home() {
-  const t = useTranslations("home");
-  const tUpdateHistory = useTranslations("updateHistory");
+  const tUpdates = useTranslations("updateHistory");
+  const { t: tHome, rich } = useRichDefaults("home");
+
   const format = useFormatter();
   const dateFormattingRules: DateTimeFormatOptions = {
     year: "numeric",
@@ -21,40 +23,28 @@ export default function Home() {
       <div className="section-wrapper">
         <section>
           <hgroup>
-            <h1>
-              {t.rich("intro.title", {
+            <h1 className="home-h1">
+              {rich("intro.title", {
                 name: (chunks) => <span className="block">{chunks}</span>,
               })}
             </h1>
 
-            <p>
-              {t.rich("intro.desc", {
-                i: (chunks) => <i>{chunks}</i>,
-              })}
-            </p>
+            <p>{rich("intro.desc")}</p>
           </hgroup>
 
-          <p>{t("intro.gameDesc")}</p>
+          <p>{tHome("intro.gameDesc")}</p>
           <p>
-            {t.rich("intro.gameDesc2", {
-              website: (chunks) => (
-                <SmartLink href="https://https://www.bigambitionsgame.com/">
-                  {chunks}
-                </SmartLink>
-              ),
-              steam: (chunks) => (
-                <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
-                  {chunks}
-                </SmartLink>
+            {rich("intro.gameDesc2", {
+              website: sLink("https://https://www.bigambitionsgame.com/"),
+              link: sLink(
+                "https://store.steampowered.com/app/1331550/Big_Ambitions/",
               ),
             })}
           </p>
 
           <p>
-            {t.rich("intro.errorDesc", {
-              contact: (chunks) => (
-                <SmartLink href="/contact">{chunks}</SmartLink>
-              ),
+            {rich("intro.errorDesc", {
+              contact: sLink("/contact"),
             })}
           </p>
         </section>
@@ -62,18 +52,15 @@ export default function Home() {
 
       <div className="section-wrapper">
         <section>
-          <h2>{t("cta.title")}</h2>
+          <h2>{tHome("cta.title")}</h2>
           <p>
-            {t.rich("cta.desc", {
-              i: (chunks) => <i>{chunks}</i>,
-              database: (chunks) => (
-                <SmartLink href="/database">{chunks}</SmartLink>
-              ),
+            {rich("cta.desc", {
+              link: sLink("/database"),
             })}
           </p>
           <p>
-            {t.rich("cta.desc2", {
-              tools: (chunks) => <SmartLink href="/tools">{chunks}</SmartLink>,
+            {rich("cta.desc2", {
+              link: sLink("/tools"),
             })}
           </p>
         </section>
@@ -81,7 +68,7 @@ export default function Home() {
 
       <div className="section-wrapper">
         <section>
-          <h2>{t("updates.title")}</h2>
+          <h2>{tHome("updates.title")}</h2>
           <ul>
             {updateHistory
               .slice()
@@ -94,7 +81,7 @@ export default function Home() {
                       dateFormattingRules,
                     )}
                   </time>{" "}
-                  - {tUpdateHistory(update.id)}
+                  - {tUpdates(update.id)}
                 </li>
               ))}
           </ul>
