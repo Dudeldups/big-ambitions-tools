@@ -26,7 +26,7 @@ const LanguageSelect = () => {
 
   return (
     <Select defaultValue={lang} onValueChange={handleLanguageChange}>
-      <SelectTrigger>
+      <SelectTrigger className="bg-background border-border hover:bg-muted">
         {isMounted ? <SelectValue /> : <TextSkeleton className="w-14" />}
       </SelectTrigger>
       <SelectContent position="popper">
