@@ -208,6 +208,12 @@
   button:not(:disabled) {
     cursor: pointer;
   }
+
+  section > hgroup,
+  section > :is(h1, h2, h3, h4, h5, h6),
+  section > p {
+    @apply text-center md:text-left;
+  }
 }
 
 @layer components {
@@ -237,7 +243,7 @@
   }
 
   .link {
-    @apply text-primary dark:text-primary-light underline-offset-4 transition-colors hover:underline;
+    @apply text-primary dark:text-primary-light hocus:underline underline-offset-4 transition-colors;
   }
 }
 

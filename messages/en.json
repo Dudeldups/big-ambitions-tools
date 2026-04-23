@@ -385,7 +385,6 @@
   },
   "database": {
     "intro": {
-      "title": "{database}",
       "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for."
     },
     "table": {
