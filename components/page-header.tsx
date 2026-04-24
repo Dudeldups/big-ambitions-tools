@@ -41,17 +41,16 @@ const PageHeader = () => {
     return (
       <header
         className={cn(
-          "px-clamp-x absolute inset-x-0 top-0 flex flex-col items-center pt-4",
+          "px-clamp-x absolute inset-x-0 top-0 z-40 flex flex-col items-center pt-4",
         )}
       >
-        <span className="from-foreground/5 via-foreground/15 to-foreground/5 absolute inset-x-0 bottom-0 h-px bg-linear-to-r" />
         <div
           className={cn(
             "hidden md:flex",
             "max-w-page w-full items-center justify-between rounded-lg px-4 py-3",
-            "border-foreground/10 shadow-foreground/15 border shadow-md",
+            "border-foreground/10 border",
             "bg-background/20 saturate-150 backdrop-blur-md",
-            "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
+            "from-muted/90 via-accent/70 dark:via-accent/50 dark:from-muted/70 dark:to-muted/70 to-muted/90 bg-linear-150",
           )}
         >
           <NavContent />
