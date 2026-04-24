@@ -7,6 +7,9 @@ import { updateHistory } from "@/lib/updateHistory";
 import { sLink } from "@/i18n/defaults";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import SectionWrapper from "@/components/section-wrapper";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
+import { ExternalLink } from "lucide-react";
 
 export default function Home() {
   const tUpdates = useTranslations("updateHistory");
@@ -22,7 +25,7 @@ export default function Home() {
   return (
     <div className="main-wrapper">
       <SectionWrapper variant="primary" centerMobile>
-        <hgroup className="mb-14 flex flex-col gap-10">
+        <hgroup className="mb-14 flex max-w-md flex-col gap-12">
           <h1 className="home-h1">
             {rich("intro.title", {
               name: (chunks) => <span className="block">{chunks}</span>,
@@ -32,21 +35,35 @@ export default function Home() {
           <p>{rich("intro.desc")}</p>
         </hgroup>
 
-        <p>{tHome("intro.gameDesc")}</p>
-        <p>
-          {rich("intro.gameDesc2", {
-            website: sLink("https://https://www.bigambitionsgame.com/"),
-            link: sLink(
-              "https://store.steampowered.com/app/1331550/Big_Ambitions/",
-            ),
-          })}
-        </p>
+        <div className="max-w-md space-y-6">
+          <p>{tHome("intro.gameDesc")}</p>
+          <p>
+            {rich("intro.gameDesc2", {
+              website: (chunks) => (
+                <Button asChild variant="brand-secondary">
+                  <Link href="https://www.bigambitionsgame.com/">
+                    {chunks}
+                    <ExternalLink />
+                  </Link>
+                </Button>
+              ),
+              link: (chunks) => (
+                <Button asChild variant="brand-secondary">
+                  <Link href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
+                    {chunks}
+                    <ExternalLink />
+                  </Link>
+                </Button>
+              ),
+            })}
+          </p>
 
-        <p>
-          {rich("intro.errorDesc", {
-            contact: sLink("/contact"),
-          })}
-        </p>
+          <p>
+            {rich("intro.errorDesc", {
+              contact: sLink("/contact"),
+            })}
+          </p>
+        </div>
       </SectionWrapper>
 
       <div className="section-wrapper relative">
