@@ -12,6 +12,7 @@ const breakpoints = {
 
 const queries = {
   mobile: `(width < ${breakpoints.md})`,
+  mdAndUp: `(width >= ${breakpoints.md})`,
   mdToLg: `(width >= ${breakpoints.md}) and (width < ${breakpoints.lg})`,
   mdToXl: `(width >= ${breakpoints.md}) and (width < ${breakpoints.xl})`,
   lgAndUp: `(width >= ${breakpoints.lg})`,
