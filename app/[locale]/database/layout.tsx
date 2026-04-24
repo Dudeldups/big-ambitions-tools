@@ -1,3 +1,4 @@
+import SectionWrapper from "@/components/section-wrapper";
 import TableSwitcher from "@/components/tables/table-switcher";
 import { useTranslations } from "next-intl";
 
@@ -7,16 +8,14 @@ const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="main-wrapper">
-      <div className="section-wrapper hero--secondary">
-        <section>
-          <hgroup>
-            <h1>{tGeneral("database")}</h1>
-            <p>{t("intro.desc")}</p>
-          </hgroup>
+      <SectionWrapper variant="secondary" centerMobile>
+        <hgroup>
+          <h1>{tGeneral("database")}</h1>
+          <p>{t("intro.desc")}</p>
+        </hgroup>
 
-          <TableSwitcher />
-        </section>
-      </div>
+        <TableSwitcher />
+      </SectionWrapper>
 
       {children}
     </div>
