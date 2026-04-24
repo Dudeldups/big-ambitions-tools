@@ -55,7 +55,7 @@ const MobileHeader = () => {
         "flex items-center gap-3 p-3",
         "shadow-foreground/5 shadow-md",
         "bg-background/20 saturate-150 backdrop-blur-md",
-        "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
+        "from-muted/90 via-accent/70 dark:via-muted/50 dark:from-muted/60 dark:to-muted/60 to-muted/90 bg-linear-150",
       )}
     >
       <Breadcrumbs
