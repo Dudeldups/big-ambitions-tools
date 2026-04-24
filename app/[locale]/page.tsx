@@ -19,10 +19,11 @@ export default function Home() {
   };
 
   return (
+    // gradient from t->b on main wrapper with slight glow?
     <div className="main-wrapper">
-      <div className="section-wrapper">
+      <div className="section-wrapper hero--primary">
         <section>
-          <hgroup>
+          <hgroup className="mb-14 flex flex-col gap-10">
             <h1 className="home-h1">
               {rich("intro.title", {
                 name: (chunks) => <span className="block">{chunks}</span>,
@@ -50,7 +51,7 @@ export default function Home() {
         </section>
       </div>
 
-      <div className="section-wrapper">
+      <div className="section-wrapper relative">
         <section>
           <h2>{tHome("cta.title")}</h2>
           <p>

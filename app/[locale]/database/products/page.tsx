@@ -56,8 +56,13 @@ export default function ProductsPage() {
   );
 
   return (
-    <div className="mx-auto py-10">
+    <section>
+      <hgroup>
+        <h2>Products</h2>
+        <p>List of all products with their profit per hour and margin.</p>
+      </hgroup>
+
       <DataTable columns={columns} data={data} />
-    </div>
+    </section>
   );
 }

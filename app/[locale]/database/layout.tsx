@@ -3,19 +3,22 @@ import { useTranslations } from "next-intl";
 
 const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("database");
+  const tGeneral = useTranslations("general");
 
   return (
-    <div className="px-4 py-8">
-      <section className="max-w-page mx-auto w-full">
-        <hgroup>
-          <h1>{t("intro.title")}</h1>
-          <p>{t("intro.desc")}</p>
-        </hgroup>
+    <div className="main-wrapper">
+      <div className="section-wrapper hero--secondary">
+        <section>
+          <hgroup>
+            <h1>{tGeneral("database")}</h1>
+            <p>{t("intro.desc")}</p>
+          </hgroup>
 
-        <TableSwitcher />
+          <TableSwitcher />
+        </section>
+      </div>
 
-        {children}
-      </section>
+      {children}
     </div>
   );
 };
