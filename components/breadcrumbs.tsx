@@ -27,10 +27,6 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
   const getPlaythroughById = usePlaythroughStore((s) => s.getPlaythroughById);
   const getFactoryById = usePlaythroughStore((s) => s.getFactoryById);
 
-  if (!hasHydrated) {
-    return <div className="h-10" />;
-  }
-
   const rawSegments = pathname.split("/").filter(Boolean);
   const isHomePage = rawSegments.length === 0;
 
@@ -46,8 +42,10 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
     let label: string | undefined;
 
     if (parentSegment === "tools") {
+      if (!hasHydrated) break;
       label = getPlaythroughById(segment)?.characterName;
     } else if (parentSegment === "factories") {
+      if (!hasHydrated) break;
       label = getFactoryById(segment)?.name;
     } else {
       label = t.has(segment) ? t(segment) : segment;

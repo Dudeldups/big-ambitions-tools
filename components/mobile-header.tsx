@@ -14,10 +14,8 @@ import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
-import { useBreakpoint } from "@/lib/hooks/useBreakpoint";
 
 const MobileHeader = () => {
-  const isMobile = useBreakpoint("mobile");
   const { scrollY } = useScroll();
   const [isHidden, setIsHidden] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -43,8 +41,6 @@ const MobileHeader = () => {
     }
   });
 
-  if (!isMobile) return null;
-
   return (
     <motion.header
       variants={{
@@ -52,10 +48,11 @@ const MobileHeader = () => {
         hidden: { y: "-110%" },
       }}
       animate={isHidden ? "hidden" : "visible"}
+      initial={false}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={cn(
-        "sticky top-0 z-50",
-        "flex items-center justify-between gap-3 p-3",
+        "sticky top-0 z-50 md:hidden",
+        "flex items-center gap-3 p-3",
         "shadow-foreground/5 shadow-md",
         "bg-background/20 saturate-150 backdrop-blur-md",
         "from-accent/20 via-muted dark:via-muted/50 to-accent/20 bg-linear-150",
@@ -72,7 +69,7 @@ const MobileHeader = () => {
           <Button
             variant="outline"
             size="icon-lg"
-            className="bg-secondary border shadow-sm backdrop-blur-md md:hidden"
+            className="bg-secondary ml-auto border shadow-sm backdrop-blur-md md:hidden"
           >
             <Menu className="size-5" />
           </Button>
