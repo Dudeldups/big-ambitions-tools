@@ -66,7 +66,7 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/" className="text-hero-foreground/90">
+            <Link href="/" className="md:text-hero-foreground/90">
               {t("home")}
             </Link>
           </BreadcrumbLink>
@@ -81,7 +81,7 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
               <BreadcrumbItem>
                 {isLast ? (
                   <BreadcrumbPage
-                    className="text-hero-foreground truncate max-md:max-w-[15ch]"
+                    className="md:text-hero-foreground truncate max-md:max-w-[15ch]"
                     role="none"
                   >
                     {crumb.label}
@@ -90,7 +90,7 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
                   <BreadcrumbLink asChild>
                     <Link
                       href={crumb.href}
-                      className="text-hero-foreground/90 truncate max-md:max-w-[15ch]"
+                      className="md:text-hero-foreground/90 truncate max-md:max-w-[15ch]"
                     >
                       {crumb.label}
                     </Link>
