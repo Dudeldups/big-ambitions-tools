@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Rubik, Rubik_Mono_One, Poppins } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { StoreHydration } from "@/components/store-hydration";
 import { Toaster } from "sonner";

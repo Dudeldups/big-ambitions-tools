@@ -1,0 +1,94 @@
+@layer components {
+  section {
+    @apply space-y-6;
+  }
+
+  .section-wrapper {
+    @apply px-clamp-x py-clamp-y relative;
+
+    section {
+      @apply max-w-page mx-auto;
+    }
+  }
+
+  /* Hero section  */
+  .section-wrapper:first-of-type {
+    @apply pt-36 max-md:-mt-16 md:pt-60;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -50;
+
+      background:
+        repeating-linear-gradient(
+          110deg,
+          rgba(255, 255, 255, 0.05) 0px,
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 1px,
+          transparent 20px
+        ),
+        radial-gradient(
+          circle at calc(max(0px, (100vw - var(--spacing-page)) / 2)) 0,
+          transparent,
+          rgba(255, 255, 255, 0.03) calc(var(--spacing-page) * 0.15),
+          rgba(255, 255, 255, 0.02) calc(var(--spacing-page) * 0.85),
+          transparent calc(var(--spacing-page) * 1.1)
+        ),
+        linear-gradient(
+          100deg,
+          color-mix(in oklch, var(--color-hero) 20%, transparent) -20%,
+          color-mix(in oklch, var(--color-hero) 90%, transparent)
+            calc(50% - calc(var(--spacing-page) + 3rem) / 2),
+          var(--color-hero) 50%,
+          color-mix(in oklch, var(--color-hero) 90%, transparent)
+            calc(50% + calc(var(--spacing-page) + 3rem) / 2),
+          color-mix(in oklch, var(--color-hero) 20%, transparent) 120%
+        );
+      background-blend-mode: soft-light, soft-light, normal;
+    }
+
+    /* Section crossover blur */
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      z-index: 1;
+      bottom: calc(var(--spacing-clamp-y) * -1);
+      height: calc(var(--spacing-clamp-y) * 2);
+      pointer-events: none;
+      -webkit-backdrop-filter: blur(16px) saturate(1.5);
+      backdrop-filter: blur(16px) saturate(1.5);
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+  }
+
+  .amount {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .focus-ring {
+    @apply border-ring ring-ring/50 ring-3;
+  }
+
+  .link {
+    @apply text-primary dark:text-primary-light hocus:underline underline-offset-4 transition-colors;
+  }
+
+  .center-mobile {
+    @apply text-center md:text-left;
+  }
+}

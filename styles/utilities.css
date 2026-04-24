@@ -1,0 +1,15 @@
+@layer utilities {
+  .home-h1 {
+    --text-h1: clamp(2rem, calc(1.5rem + 2.5vw), 4rem);
+  }
+
+  .slider-loading::-webkit-slider-thumb {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .slider-loading::-moz-range-thumb {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
