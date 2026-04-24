@@ -25,8 +25,6 @@ const SectionWrapper = ({
       className={cn(
         "section-wrapper",
         variant !== "default" && `hero--${variant}`,
-        centerMobile && "center-mobile",
-        className,
       )}
     >
       <AnimatePresence mode="sync">
@@ -52,6 +50,11 @@ const SectionWrapper = ({
         initial={isMounted ? "hidden" : false}
         animate="visible"
         style={{ willChange: "clip-path, opacity" }}
+        className={cn(
+          "flex flex-col gap-6 max-md:items-center",
+          centerMobile && "center-mobile",
+          className,
+        )}
       >
         {children}
       </motion.section>
