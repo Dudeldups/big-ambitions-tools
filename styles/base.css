@@ -15,12 +15,15 @@
   body {
     @apply w-full!;
   }
+
+  :where(body) {
+    @apply text-foreground;
   }
 
   body {
     font-family: var(--font-poppins), sans-serif;
     font-weight: 500;
-    @apply bg-background text-foreground relative;
+    @apply bg-background relative;
 
     &:has(.hero--primary) {
       --color-hero: var(--color-primary);
