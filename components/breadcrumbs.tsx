@@ -32,6 +32,10 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
   }
 
   const rawSegments = pathname.split("/").filter(Boolean);
+  const isHomePage = rawSegments.length === 0;
+
+  if (isHomePage) return null;
+
   const validBreadcrumbs: { href: string; label: string }[] = [];
 
   for (let i = 0; i < rawSegments.length; i++) {
