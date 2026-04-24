@@ -22,8 +22,7 @@ export default function NavLink({
       className={cn(
         "text-foreground relative isolate hover:no-underline",
         isActive && "text-background bg-transparent hover:bg-transparent!",
-        !isActive &&
-          "hocus:text-primary dark:hocus:text-primary-light hocus:bg-background",
+        !isActive && "hocus:text-primary dark:hocus:text-primary-light",
       )}
     >
       <Link aria-current={isActive ? "page" : undefined} href={href} {...rest}>
