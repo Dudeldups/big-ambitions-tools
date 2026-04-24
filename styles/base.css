@@ -15,11 +15,13 @@
     &:has(.hero--primary) {
       --color-hero: var(--color-primary);
       --color-hero-foreground: var(--color-primary-foreground);
+      --color-hero-accent: var(--color-brand-secondary-light);
     }
 
     &:has(.hero--secondary) {
       --color-hero: var(--color-brand-secondary);
       --color-hero-foreground: var(--color-brand-secondary-foreground);
+      --color-hero-accent: var(--color-primary-light);
     }
   }
 

@@ -15,6 +15,10 @@
   .section-wrapper:first-of-type {
     @apply pt-36 max-md:-mt-16 md:pt-60;
 
+    .link {
+      color: var(--color-hero-accent);
+    }
+
     &::before {
       content: "";
       position: absolute;
