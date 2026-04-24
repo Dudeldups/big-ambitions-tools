@@ -1,8 +1,4 @@
 @layer components {
-  section {
-    @apply space-y-6;
-  }
-
   .section-wrapper {
     @apply px-clamp-x py-clamp-y relative;
 
