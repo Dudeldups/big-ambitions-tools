@@ -5,6 +5,16 @@
 
   html {
     @apply font-sans;
+
+    scrollbar-gutter: stable;
+    scrollbar-color: var(--color-muted-foreground) var(--color-background);
+  }
+
+  /* Override shadcn's JS-injected padding compensation for scrollbar gutter 
+  https://github.com/shadcn-ui/ui/issues/977 */
+  body {
+    @apply w-full!;
+  }
   }
 
   body {
