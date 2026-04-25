@@ -20,6 +20,7 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { SmartLink } from "@/components/smart-link";
 import { Button } from "@/components/ui/button";
+import ImageCircleBg from "@/components/deco/image-circle-bg";
 
 const heroIcons = [
   { Icon: Calculator, id: "calc" },
@@ -51,16 +52,17 @@ export default function Home() {
 
           <div className="hero-icon-container relative flex items-center justify-center gap-3 self-stretch sm:gap-10 md:row-span-2 md:flex-col @sm:gap-6">
             {heroIcons.map(({ Icon, id }) => (
-              <span
+              <ImageCircleBg
                 key={id}
-                className="bg-secondary flex items-center justify-center rounded-full p-2 sm:p-4"
+                size="md"
+                className="border-foreground border-2 lg:p-5 lg:*:size-12"
               >
-                <Icon className="text-secondary-foreground size-10 sm:size-14" />
-              </span>
+                <Icon />
+              </ImageCircleBg>
             ))}
           </div>
 
-          <p className="text-h5 max-w-2xl self-end text-pretty">
+          <p className="text-h5 mt-4 max-w-2xl self-end text-pretty">
             {rich("intro.desc")}
           </p>
         </hgroup>
@@ -143,16 +145,23 @@ export default function Home() {
 
       <SectionWrapper className="max-w-5xl max-lg:items-center max-lg:gap-14 lg:flex-row lg:justify-between">
         {/* CTA */}
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 lg:items-start lg:gap-14">
           <h2>{tHome("cta.title")}</h2>
-          <div className="bg-brand-secondary-foreground p-clamp-x grid place-items-center rounded-full">
-            <Rocket className="text-brand-secondary size-14 sm:size-20" />
-          </div>
+
+          <ImageCircleBg
+            variant="secondary"
+            size="xl"
+            className="border-brand-secondary border-3 md:border-4 md:p-7 md:*:size-20"
+          >
+            <Rocket />
+          </ImageCircleBg>
         </div>
 
         <div className="p-clamp-x border-border bg-popover grid max-w-lg gap-10 rounded-xl border sm:max-w-xl">
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <Database className="size-8 shrink-0 sm:size-12" />
+            <ImageCircleBg variant="foregroundInverted" size="md">
+              <Database />
+            </ImageCircleBg>
             <p>
               {rich("cta.desc", {
                 link: sLink("/database"),
@@ -160,7 +169,10 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <Calculator className="size-8 shrink-0 sm:size-12" />
+            <ImageCircleBg variant="foregroundInverted" size="md">
+              <Calculator />
+            </ImageCircleBg>
+
             <p>
               {rich("cta.desc2", {
                 link: sLink("/tools"),
@@ -168,7 +180,10 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <MessageSquareMore className="size-8 shrink-0 sm:size-12" />
+            <ImageCircleBg variant="foregroundInverted" size="md">
+              <MessageSquareMore />
+            </ImageCircleBg>
+
             <p>
               {rich("cta.errorDesc", {
                 contact: sLink("/contact"),
