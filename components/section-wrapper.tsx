@@ -51,8 +51,8 @@ const SectionWrapper = ({
         animate="visible"
         style={{ willChange: "clip-path, opacity" }}
         className={cn(
-          "flex flex-col gap-6 max-md:items-center",
-          centerMobile && "center-mobile",
+          "flex flex-col gap-6",
+          centerMobile && "center-mobile max-md:items-center",
           className,
         )}
       >
