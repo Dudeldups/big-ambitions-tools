@@ -14,11 +14,11 @@ const imageCircleBgVariants = cva("", {
       foregroundInverted: "text-background bg-foreground",
     },
     size: {
-      sm: "p-3 *:size-6",
-      md: "p-4 *:size-8",
-      lg: "p-5 *:size-10",
-      xl: "p-6 *:size-12",
-      "2xl": "p-8 *:size-14",
+      sm: "p-3 *:size-8",
+      md: "p-4 *:size-10",
+      lg: "p-4 *:size-12",
+      xl: "p-5 *:size-14",
+      "2xl": "p-7 *:size-20",
     },
   },
   defaultVariants: {
