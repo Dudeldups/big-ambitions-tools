@@ -1,4 +1,4 @@
-import SectionWrapper from "@/components/section-wrapper";
+import SectionWrapper from "@/components/deco/section-wrapper";
 import TableSwitcher from "@/components/tables/table-switcher";
 import { useTranslations } from "next-intl";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import IntroTextWrapper from "@/components/intro-text-wrapper";
+import IntroTextWrapper from "@/components/deco/intro-text-wrapper";
 import EmpireOverview from "@/components/tools/empire-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";

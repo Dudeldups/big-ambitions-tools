@@ -6,12 +6,15 @@ import {
 import { updateHistory } from "@/lib/updateHistory";
 import { sLink } from "@/i18n/defaults";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
-import SectionWrapper from "@/components/section-wrapper";
+import SectionWrapper from "@/components/deco/section-wrapper";
 import {
   Calculator,
+  Database,
   DatabaseSearch,
   ExternalLink,
+  MessageSquareMore,
   PencilRuler,
+  Rocket,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
@@ -66,9 +69,9 @@ export default function Home() {
       <SectionWrapper centerMobile className="gap-16 md:gap-32">
         {/* Game description */}
         <div className="grid justify-center gap-8 lg:grid-cols-2">
-          <hgroup className="max-lg:text-center">
+          <hgroup className="relative max-lg:text-center">
             <h2>{tHome("game.title")}</h2>
-            <em className="text-h3 text-muted-foreground my-4 block font-semibold italic">
+            <em className="text-h3 text-muted-foreground my-4 block font-semibold italic underline underline-offset-4">
               {tHome("game.subtitle")}
             </em>
           </hgroup>
@@ -138,26 +141,41 @@ export default function Home() {
 
       <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
 
-      <SectionWrapper>
+      <SectionWrapper className="max-w-5xl max-lg:items-center max-lg:gap-14 lg:flex-row lg:justify-between">
         {/* CTA */}
-        <h2>{tHome("cta.title")}</h2>
-        <p>
-          {rich("cta.desc", {
-            link: sLink("/database"),
-          })}
-        </p>
-        <p>
-          {rich("cta.desc2", {
-            link: sLink("/tools"),
-          })}
-        </p>
+        <div className="flex flex-col items-center gap-8">
+          <h2>{tHome("cta.title")}</h2>
+          <div className="bg-brand-secondary-foreground p-clamp-x grid place-items-center rounded-full">
+            <Rocket className="text-brand-secondary size-14 sm:size-20" />
+          </div>
+        </div>
 
-        {/* Feedback  */}
-        <p className="">
-          {rich("cta.errorDesc", {
-            contact: sLink("/contact"),
-          })}
-        </p>
+        <div className="p-clamp-x border-border bg-popover grid max-w-lg gap-10 rounded-xl border sm:max-w-xl">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
+            <Database className="size-8 shrink-0 sm:size-12" />
+            <p>
+              {rich("cta.desc", {
+                link: sLink("/database"),
+              })}
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
+            <Calculator className="size-8 shrink-0 sm:size-12" />
+            <p>
+              {rich("cta.desc2", {
+                link: sLink("/tools"),
+              })}
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
+            <MessageSquareMore className="size-8 shrink-0 sm:size-12" />
+            <p>
+              {rich("cta.errorDesc", {
+                contact: sLink("/contact"),
+              })}
+            </p>
+          </div>
+        </div>
       </SectionWrapper>
 
       <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
