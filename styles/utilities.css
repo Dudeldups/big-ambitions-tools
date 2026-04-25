@@ -12,4 +12,65 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  /* Background for hero sections */
+  .hero-bg-div {
+    background:
+      repeating-linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 20px
+      ),
+      radial-gradient(
+        circle at calc(max(0px, (100vw - var(--spacing-page)) / 2)) 0,
+        transparent,
+        rgba(255, 255, 255, 0.03) calc(var(--spacing-page) * 0.15),
+        rgba(255, 255, 255, 0.02) calc(var(--spacing-page) * 0.85),
+        transparent calc(var(--spacing-page) * 1.1)
+      ),
+      linear-gradient(
+        110deg,
+        color-mix(in oklch, var(--color-hero) 20%, transparent) -20%,
+        color-mix(in oklch, var(--color-hero) 90%, transparent)
+          calc(50% - calc(var(--spacing-page) + 3rem) / 2),
+        var(--color-hero) 50%,
+        color-mix(in oklch, var(--color-hero) 90%, transparent)
+          calc(50% + calc(var(--spacing-page) + 3rem) / 2),
+        color-mix(in oklch, var(--color-hero) 20%, transparent) 120%
+      );
+    background-blend-mode: soft-light, soft-light, normal;
+  }
+
+  /* Deco to separate hero icon container from text */
+  @media (width >= theme("screens.md")) {
+    .hero-icon-container::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -1rem;
+      top: 10%;
+      height: 80%;
+      width: 4rem;
+
+      background-image: linear-gradient(
+        220deg,
+        var(--color-hero-foreground) 2px,
+        transparent 2px
+      );
+      background-size: 100% 12px;
+      background-repeat: repeat-y;
+
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+
+      mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+      );
+    }
+  }
 }
