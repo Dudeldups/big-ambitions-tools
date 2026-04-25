@@ -22,7 +22,7 @@ export const SmartLink = ({
     return (
       <a
         href={href}
-        className={combinedClassName}
+        className={cn("no-underline", combinedClassName)}
         target="_blank"
         rel="noopener noreferrer"
         {...externalProps}
