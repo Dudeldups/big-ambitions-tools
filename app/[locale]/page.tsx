@@ -7,8 +7,16 @@ import { updateHistory } from "@/lib/updateHistory";
 import { sLink } from "@/i18n/defaults";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import SectionWrapper from "@/components/section-wrapper";
-import { Calculator, DatabaseSearch, PencilRuler } from "lucide-react";
+import {
+  Calculator,
+  DatabaseSearch,
+  ExternalLink,
+  PencilRuler,
+} from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import { SmartLink } from "@/components/smart-link";
+import { Button } from "@/components/ui/button";
 
 const heroIcons = [
   { Icon: Calculator, id: "calc" },
@@ -55,7 +63,7 @@ export default function Home() {
         </hgroup>
       </SectionWrapper>
 
-      <SectionWrapper centerMobile className="gap-16 md:gap-24">
+      <SectionWrapper centerMobile className="gap-16 md:gap-32">
         {/* Game description */}
         <div className="grid justify-center gap-8 lg:grid-cols-2">
           <hgroup className="max-lg:text-center">
@@ -73,25 +81,59 @@ export default function Home() {
         </div>
 
         {/* Official links */}
-        <ul className="flex flex-col items-center gap-6">
-          <li>
-            <div className="border-accent rounded-xl border-2 p-4 md:p-6">
+        <div className="flex flex-col items-center gap-14 *:flex-1 lg:flex-row">
+          <div className="flex flex-col items-center gap-6 rounded-xl">
+            <Image
+              src="/assets/logos/logo_hovgaard_windmill.webp"
+              alt="hovgaard logo"
+              width={64}
+              height={64}
+              className="mx-auto rounded-lg sm:size-20"
+            />
+            <p className="flex flex-col items-center gap-3">
               {rich("game.hovgaard", {
-                website: sLink("https://www.bigambitionsgame.com/"),
-              })}
-            </div>
-          </li>
-
-          <li>
-            <div>
-              {rich("game.steam", {
-                link: sLink(
-                  "https://store.steampowered.com/app/1331550/Big_Ambitions/",
+                website: (chunks) => (
+                  <Button asChild className="">
+                    <SmartLink href="https://www.bigambitionsgame.com/">
+                      {chunks}
+                      <ExternalLink />
+                    </SmartLink>
+                  </Button>
                 ),
               })}
-            </div>
-          </li>
-        </ul>
+            </p>
+          </div>
+          <div className="w-full max-w-sm">
+            <Image
+              src="/assets/logos/logo-big-ambitions.png"
+              alt=""
+              width={231}
+              height={115}
+              className="mx-auto aspect-[2.013]"
+            />
+          </div>
+          <div className="flex flex-col items-center gap-6 rounded-xl">
+            <Image
+              src="/assets/logos/logo_steam.webp"
+              alt="steam logo"
+              width={64}
+              height={64}
+              className="mx-auto rounded-lg sm:size-20"
+            />
+            <p className="flex flex-col items-center gap-3">
+              {rich("game.steam", {
+                link: (chunks) => (
+                  <Button asChild className="">
+                    <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
+                      {chunks}
+                      <ExternalLink />
+                    </SmartLink>
+                  </Button>
+                ),
+              })}
+            </p>
+          </div>
+        </div>
       </SectionWrapper>
 
       <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
