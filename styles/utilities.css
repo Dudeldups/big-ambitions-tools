@@ -1,8 +1,4 @@
 @layer utilities {
-  .home-h1 {
-    --text-h1: clamp(2rem, calc(1.5rem + 2.5vw), 4rem);
-  }
-
   .slider-loading::-webkit-slider-thumb {
     opacity: 0;
     pointer-events: none;
@@ -43,26 +39,22 @@
     background-blend-mode: soft-light, soft-light, normal;
   }
 
-  /* Deco to separate hero icon container from text */
+  /* Deco line to separate hero icon container from text */
   @media (width >= theme("screens.md")) {
     .hero-icon-container::before {
       content: "";
       position: absolute;
-      z-index: -1;
-      left: -1rem;
-      top: 10%;
-      height: 80%;
-      width: 4rem;
-
-      background-image: linear-gradient(
-        220deg,
-        var(--color-hero-foreground) 2px,
-        transparent 2px
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--color-hero-foreground),
+        transparent
       );
-      background-size: 100% 12px;
-      background-repeat: repeat-y;
-
-      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+      opacity: 0.4;
 
       mask-image: linear-gradient(
         to bottom,
@@ -70,6 +62,33 @@
         black 20%,
         black 80%,
         transparent
+      );
+    }
+  }
+
+  /* Section crossover blur */
+  .section-wrapper:first-of-type {
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      z-index: 1;
+      bottom: calc(var(--spacing-clamp-y) * -1);
+      height: calc(var(--spacing-clamp-y) * 2);
+      pointer-events: none;
+      -webkit-backdrop-filter: blur(16px) saturate(1.5);
+      backdrop-filter: blur(16px) saturate(1.5);
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 0) 100%
       );
     }
   }
