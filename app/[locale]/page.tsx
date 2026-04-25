@@ -7,15 +7,14 @@ import { updateHistory } from "@/lib/updateHistory";
 import { sLink } from "@/i18n/defaults";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import SectionWrapper from "@/components/section-wrapper";
-import { Button } from "@/components/ui/button";
-import {
-  Calculator,
-  DatabaseSearch,
-  ExternalLink,
-  PencilRuler,
-} from "lucide-react";
-import { SmartLink } from "@/components/smart-link";
+import { Calculator, DatabaseSearch, PencilRuler } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+
+const heroIcons = [
+  { Icon: Calculator, id: "calc" },
+  { Icon: DatabaseSearch, id: "db" },
+  { Icon: PencilRuler, id: "ruler" },
+];
 
 export default function Home() {
   const tUpdates = useTranslations("updateHistory");
@@ -30,66 +29,74 @@ export default function Home() {
 
   return (
     <div className="main-wrapper">
-      <SectionWrapper variant="primary" centerMobile>
+      <SectionWrapper
+        variant="primary"
+        centerMobile
+        className="gap-20 md:gap-32"
+      >
+        {/* Main hero section */}
         <hgroup className="grid items-start gap-14 max-md:max-w-lg md:grid-cols-[3fr_2fr] md:gap-y-24 xl:grid-cols-2">
           <h1 className="home-h1">Big Ambitions Tools</h1>
 
           <div className="hero-icon-container relative flex items-center justify-center gap-3 self-stretch md:row-span-2 md:flex-col @sm:gap-6 @lg:gap-10">
-            <span className="bg-hero-foreground border-accent flex items-center justify-center rounded-full border p-2 sm:p-4">
-              <Calculator className="text-hero-accent size-10 sm:size-14" />
-            </span>
-            <span className="bg-hero-foreground border-accent flex items-center justify-center rounded-full border p-2 sm:p-4">
-              <DatabaseSearch className="text-hero-accent size-10 sm:size-14" />
-            </span>
-            <span className="bg-hero-foreground border-accent flex items-center justify-center rounded-full border p-2 sm:p-4">
-              <PencilRuler className="text-hero-accent size-10 sm:size-14" />
-            </span>
+            {heroIcons.map(({ Icon, id }) => (
+              <span
+                key={id}
+                className="bg-secondary flex items-center justify-center rounded-full p-2 sm:p-4"
+              >
+                <Icon className="text-secondary-foreground size-10 sm:size-14" />
+              </span>
+            ))}
           </div>
 
-          <p className="max-w-2xl self-end text-lg">{rich("intro.desc")}</p>
+          <p className="text-h5 max-w-2xl self-end text-pretty">
+            {rich("intro.desc")}
+          </p>
         </hgroup>
-
-        <Separator className="bg-hero-foreground/70 mx-auto my-14 max-md:max-w-9/12 md:my-20" />
-
-        <div className="max-w-md space-y-6">
-          <p>{tHome("intro.gameDesc")}</p>
-          <p>
-            {rich("intro.gameDesc2", {
-              website: (chunks) => (
-                <Button asChild variant="foreground">
-                  <SmartLink href="https://www.bigambitionsgame.com/">
-                    {chunks}
-                    <ExternalLink />
-                  </SmartLink>
-                </Button>
-              ),
-              link: (chunks) => (
-                <Button asChild variant="foreground">
-                  <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
-                    {chunks}
-                    <ExternalLink />
-                  </SmartLink>
-                </Button>
-              ),
-            })}
-          </p>
-
-          <p>
-            {rich("intro.errorDesc", {
-              contact: (chunks) => (
-                <SmartLink
-                  href="/contact"
-                  className="text-background font-semibold underline-offset-4 hover:underline"
-                >
-                  {chunks}
-                </SmartLink>
-              ),
-            })}
-          </p>
-        </div>
       </SectionWrapper>
 
+      <SectionWrapper centerMobile className="gap-16 md:gap-24">
+        {/* Game description */}
+        <div className="grid gap-8 lg:grid-cols-2">
+          <hgroup className="max-lg:text-center">
+            <h2>{tHome("game.title")}</h2>
+            <p className="text-h3 text-muted-foreground my-4 block italic">
+              {tHome("game.subtitle")}
+            </p>
+          </hgroup>
+
+          <div className="bg-card border-ring p-clamp-x card--quote mx-auto max-w-xl rounded-xl border">
+            <p className="text-h5 text-card-foreground text-center leading-relaxed text-pretty">
+              {rich("game.desc")}
+            </p>
+          </div>
+        </div>
+
+        {/* Official links */}
+        <ul className="space-y-1">
+          <li>
+            <div className="">
+              {rich("game.hovgaard", {
+                website: sLink("https://www.bigambitionsgame.com/"),
+              })}
+            </div>
+          </li>
+          <li>
+            <div>
+              {rich("game.steam", {
+                link: sLink(
+                  "https://store.steampowered.com/app/1331550/Big_Ambitions/",
+                ),
+              })}
+            </div>
+          </li>
+        </ul>
+      </SectionWrapper>
+
+      <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
+
       <SectionWrapper>
+        {/* CTA */}
         <h2>{tHome("cta.title")}</h2>
         <p>
           {rich("cta.desc", {
@@ -101,7 +108,16 @@ export default function Home() {
             link: sLink("/tools"),
           })}
         </p>
+
+        {/* Feedback  */}
+        <p className="">
+          {rich("cta.errorDesc", {
+            contact: sLink("/contact"),
+          })}
+        </p>
       </SectionWrapper>
+
+      <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
 
       <SectionWrapper>
         <h2>{tHome("updates.title")}</h2>
