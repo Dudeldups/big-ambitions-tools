@@ -23,7 +23,7 @@ const SectionWrapper = ({
   return (
     <div
       className={cn(
-        "section-wrapper",
+        "section-wrapper @container/section",
         variant !== "default" && `hero--${variant}`,
       )}
     >
@@ -38,7 +38,7 @@ const SectionWrapper = ({
             animate="visible"
             exit="exit"
             transition={{ type: "tween", duration: 0.4 }}
-            className="hero-bg-div absolute inset-0 -z-10 overflow-hidden"
+            className="hero-bg-div absolute inset-0 -z-10"
             style={{ willChange: "opacity, transform" }}
           />
         )}
