@@ -93,24 +93,36 @@
     &::after {
       position: absolute;
       font-family: Georgia, serif;
-      font-size: var(--text-h1);
+      font-size: 6rem;
+      color: var(--color-brand-secondary-light);
       font-style: italic;
       font-weight: bold;
-      line-height: 1;
-      opacity: 0.2;
+      opacity: 0.4;
       pointer-events: none;
     }
 
     &::before {
       content: "“";
-      top: -1rem;
-      left: -1rem;
+      top: -3.3rem;
+      left: 0.4rem;
     }
 
     &::after {
       content: "”";
-      bottom: -3rem;
-      right: -1rem;
+      bottom: -6rem;
+      right: 1.2rem;
+    }
+
+    @media (width >= theme("screens.md")) {
+      &::before {
+        top: -0.8rem;
+        left: -2rem;
+      }
+
+      &::after {
+        bottom: -3.8rem;
+        right: -1rem;
+      }
     }
   }
 }

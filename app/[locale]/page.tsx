@@ -38,7 +38,7 @@ export default function Home() {
         <hgroup className="grid items-start gap-14 max-md:max-w-lg md:grid-cols-[3fr_2fr] md:gap-y-24 xl:grid-cols-2">
           <h1 className="home-h1">Big Ambitions Tools</h1>
 
-          <div className="hero-icon-container relative flex items-center justify-center gap-3 self-stretch md:row-span-2 md:flex-col @sm:gap-6 @lg:gap-10">
+          <div className="hero-icon-container relative flex items-center justify-center gap-3 self-stretch sm:gap-10 md:row-span-2 md:flex-col @sm:gap-6">
             {heroIcons.map(({ Icon, id }) => (
               <span
                 key={id}
@@ -57,30 +57,31 @@ export default function Home() {
 
       <SectionWrapper centerMobile className="gap-16 md:gap-24">
         {/* Game description */}
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid justify-center gap-8 lg:grid-cols-2">
           <hgroup className="max-lg:text-center">
             <h2>{tHome("game.title")}</h2>
-            <p className="text-h3 text-muted-foreground my-4 block italic">
+            <em className="text-h3 text-muted-foreground my-4 block font-semibold italic">
               {tHome("game.subtitle")}
-            </p>
+            </em>
           </hgroup>
 
-          <div className="bg-card border-ring p-clamp-x card--quote mx-auto max-w-xl rounded-xl border">
-            <p className="text-h5 text-card-foreground text-center leading-relaxed text-pretty">
+          <div className="bg-card border-ring p-clamp-x card--quote max-w-xl overflow-visible rounded-xl border md:mx-6">
+            <blockquote className="text-h5 text-card-foreground leading-relaxed text-pretty max-lg:text-center">
               {rich("game.desc")}
-            </p>
+            </blockquote>
           </div>
         </div>
 
         {/* Official links */}
-        <ul className="space-y-1">
+        <ul className="flex flex-col items-center gap-6">
           <li>
-            <div className="">
+            <div className="border-accent rounded-xl border-2 p-4 md:p-6">
               {rich("game.hovgaard", {
                 website: sLink("https://www.bigambitionsgame.com/"),
               })}
             </div>
           </li>
+
           <li>
             <div>
               {rich("game.steam", {
