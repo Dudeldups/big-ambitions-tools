@@ -84,4 +84,33 @@
       );
     }
   }
+
+  /* Quotation marks */
+  .card--quote {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      font-family: Georgia, serif;
+      font-size: var(--text-h1);
+      font-style: italic;
+      font-weight: bold;
+      line-height: 1;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "“";
+      top: -1rem;
+      left: -1rem;
+    }
+
+    &::after {
+      content: "”";
+      bottom: -3rem;
+      right: -1rem;
+    }
+  }
 }
