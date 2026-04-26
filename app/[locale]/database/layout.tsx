@@ -18,7 +18,7 @@ const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
         </hgroup>
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper className="block space-y-18">
         <TableSwitcher />
 
         {children}
