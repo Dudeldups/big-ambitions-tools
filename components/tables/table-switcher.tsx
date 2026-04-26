@@ -33,19 +33,21 @@ const TableSwitcher = () => {
   ];
 
   return (
-    <div className="max-w-max space-y-4 rounded-lg border p-3 max-md:mx-auto">
-      <p className="text-muted-foreground">{tDatabase("intro.buttonDesc")}</p>
+    <div className="border-muted-foreground/50 max-w-max rounded-lg border max-md:mx-auto">
+      <div className="bg-card dark:bg-card/80 rounded-t-lg p-3">
+        <p className="text-foreground/90 font-semibold">
+          {tDatabase("intro.buttonDesc")}
+        </p>
+      </div>
 
-      <div className="mx-auto flex flex-col gap-4 max-md:max-w-xs md:flex-row md:flex-wrap">
+      <div className="bg-background mx-auto flex flex-col gap-4 rounded-b-lg p-3 max-md:max-w-xs md:flex-row md:flex-wrap">
         {links.map((link) => (
           <Button
             key={link.path}
             asChild
-            variant={pathname === link.path ? "foreground" : "secondary"}
+            variant={pathname === link.path ? "foreground" : "ghost"}
           >
-            <Link href={link.path} className={`flex items-center gap-2`}>
-              {link.title}
-            </Link>
+            <Link href={link.path}>{link.title}</Link>
           </Button>
         ))}
       </div>
