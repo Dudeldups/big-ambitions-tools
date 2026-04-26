@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 
 const TableSwitcher = () => {
   const t = useTranslations("general");
+  const tDatabase = useTranslations("database");
   const pathname = usePathname();
 
   const links = [
@@ -32,18 +33,22 @@ const TableSwitcher = () => {
   ];
 
   return (
-    <div className="mx-auto flex flex-col gap-4 max-md:max-w-xs md:flex-row md:flex-wrap">
-      {links.map((link) => (
-        <Button
-          key={link.path}
-          asChild
-          variant={pathname === link.path ? "foreground" : "secondary"}
-        >
-          <Link href={link.path} className={`flex items-center gap-2`}>
-            {link.title}
-          </Link>
-        </Button>
-      ))}
+    <div className="max-w-max space-y-4 rounded-lg border p-3 max-md:mx-auto">
+      <p className="text-muted-foreground">{tDatabase("intro.buttonDesc")}</p>
+
+      <div className="mx-auto flex flex-col gap-4 max-md:max-w-xs md:flex-row md:flex-wrap">
+        {links.map((link) => (
+          <Button
+            key={link.path}
+            asChild
+            variant={pathname === link.path ? "foreground" : "secondary"}
+          >
+            <Link href={link.path} className={`flex items-center gap-2`}>
+              {link.title}
+            </Link>
+          </Button>
+        ))}
+      </div>
     </div>
   );
 };
