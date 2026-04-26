@@ -32,7 +32,7 @@ const TableSwitcher = () => {
   ];
 
   return (
-    <div className="mx-auto flex flex-col gap-4 max-md:max-w-xs md:flex-row">
+    <div className="mx-auto flex flex-col gap-4 max-md:max-w-xs md:flex-row md:flex-wrap">
       {links.map((link) => (
         <Button
           key={link.path}
