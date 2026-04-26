@@ -240,6 +240,8 @@
     "taxes": "Taxes",
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
+    "logisticsManager": "Logistics Manager",
+    "deliveryDriver": "Delivery Driver",
     "difficultyOptions": {
       "easy": "Easy",
       "normal": "Normal",
@@ -291,7 +293,7 @@
     "taxDeductible": "Tax deductible",
     "requiredDeliveryDriverSkillValue": "Req. driver skill",
     "destinationsThatCanDeliver": "Base dest.",
-    "destinationsFull": "With 100% LM",
+    "destinationsFull": "Max dest.",
     "employees": "Employees",
     "description": "Description",
     "export": "Export",
@@ -389,26 +391,23 @@
   },
   "database": {
     "intro": {
-      "desc": "Check prices, production times, and ingredient requirements for all products in the game. Use the search function to quickly find what you're looking for.",
+      "desc": "Explore detailed game data across products, machines, vehicles, and more. Use search and category filters to quickly find what you need.",
       "buttonDesc": "Select a category"
     },
     "products": {
-      "caption": "Here you can find all products you can sell in your stores along with their details."
+      "caption": "Infos about all products at a glance. Switch between manufacturing and import prices. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Want to see how it's calculated? Check out the <link>{tools}</link> section."
     },
     "ingredients": {
-      "caption": "Here you can find all factory ingredients in the game along with their details."
+      "caption": "Overview of all factory ingredients including their properties. Select the difficulty to see the correct prices."
     },
     "machines": {
-      "caption": "Here you can find all machines in the game along with their details."
-    },
-    "workstations": {
-      "caption": "Here you can find all workstations in the game along with their details."
+      "caption": "All machines used in production. Combine one primary machine with one or two secondary machines to form a workstation."
     },
     "inventory": {
-      "caption": "Here you can find all inventory for your stores and warehouses in the game along with their details."
+      "caption": "An overview of all... storage options. For now. More to come!"
     },
     "vehicles": {
-      "caption": "An overview of all vehicles in the game."
+      "caption": "Looking for maximum cargo or just the fastest ride? You'll find it here. Driver skill refers to your {deliveryDriver}, and max destinations require a {logisticsManager} at 100% skill."
     }
   },
   "tools": {
