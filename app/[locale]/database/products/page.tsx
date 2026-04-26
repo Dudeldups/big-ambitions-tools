@@ -10,11 +10,13 @@ import {
   getProfitMarginForProduct,
   getProfitPerHourForProduct,
 } from "@/lib/calculations/math";
-import { useTranslations } from "next-intl";
 import DatabaseHgroup from "@/components/deco/database-hgroup";
+import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
+import { SmartLink } from "@/components/smart-link";
+import { Button } from "@/components/ui/button";
 
 export default function ProductsPage() {
-  const t = useTranslations();
+  const { t, rich } = useRichDefaults();
   const difficulty = useAppState((state) => state.difficulty);
   const displayPrices = useAppState((state) => state.displayPrices);
   const tablePriceIndex = useAppState((state) => state.tablePriceIndex);
@@ -60,7 +62,13 @@ export default function ProductsPage() {
     <>
       <DatabaseHgroup
         title={t("general.products")}
-        caption={t("database.products.caption")}
+        caption={rich("database.products.caption", {
+          link: (chunks) => (
+            <Button asChild>
+              <SmartLink href="/tools">{chunks}</SmartLink>
+            </Button>
+          ),
+        })}
       />
 
       <DataTable columns={columns} data={data} />
