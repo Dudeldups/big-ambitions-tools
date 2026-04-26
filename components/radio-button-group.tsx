@@ -31,7 +31,7 @@ export function RadioButtonGroup<T extends string>({
           <Button
             key={option.value}
             asChild
-            variant={isActive ? "secondary" : "outline"}
+            variant={isActive ? "foreground" : "outline"}
             className="has-focus-visible:focus-ring capitalize"
           >
             <label htmlFor={option.value} className="cursor-pointer">
