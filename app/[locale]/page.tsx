@@ -22,6 +22,7 @@ import Image from "next/image";
 import { SmartLink } from "@/components/smart-link";
 import { Button } from "@/components/ui/button";
 import ImageCircleBg from "@/components/deco/image-circle-bg";
+import { cn } from "@/lib/utils";
 
 const heroIcons = [
   { Icon: Calculator, id: "calc" },
@@ -204,7 +205,7 @@ export default function Home() {
 
       <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
 
-      <SectionWrapper className="max-w-5xl gap-10 max-lg:items-center lg:flex-row lg:justify-between">
+      <SectionWrapper className="max-w-5xl gap-10 max-lg:items-center lg:flex-row lg:gap-18">
         {/* Latest updates */}
         <div className="flex flex-col items-center gap-8">
           <ImageCircleBg variant="foregroundInverted">
@@ -213,19 +214,30 @@ export default function Home() {
           <h2>{tHome("updates.title")}</h2>
         </div>
 
-        <ul className="grid grid-cols-[auto_1fr] gap-3 text-left">
+        <Separator
+          orientation="vertical"
+          className="bg-ring/50 hidden lg:block"
+        />
+
+        <ul className="relative grid grid-cols-[auto_auto_minmax(0,1fr)] gap-x-6 gap-y-4 text-left md:pl-0 lg:mx-auto">
           {updateHistory
             .slice()
             .reverse()
             .map((update, index) => (
               <li
                 key={`update-${index}`}
-                className="col-span-2 grid grid-cols-subgrid gap-x-3"
+                className={cn(
+                  "col-span-3 grid items-baseline gap-x-3 rounded-md p-2 max-sm:gap-y-3 sm:grid-cols-subgrid",
+                )}
               >
-                <time dateTime={update.date}>
+                <span className="bg-foreground/60 hidden size-2 rounded-full sm:block" />
+                <time className="text-muted-foreground relative text-sm whitespace-nowrap">
                   {format.dateTime(new Date(update.date), dateFormattingRules)}
-                </time>{" "}
-                {tUpdates(update.id)}
+                </time>
+
+                <span className="min-w-0 leading-relaxed wrap-break-word">
+                  {tUpdates(update.id)}
+                </span>
               </li>
             ))}
         </ul>
