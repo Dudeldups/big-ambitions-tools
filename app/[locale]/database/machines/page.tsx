@@ -10,6 +10,7 @@ import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
 import { WorkstationName } from "@/lib/game/machineNames";
 import DatabaseHgroup from "@/components/deco/database-hgroup";
+import { cn } from "@/lib/utils";
 
 const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
   itemName,
@@ -48,9 +49,17 @@ export default function MachinesPage() {
           const prices = rowMachines.map((m) => machines[m]?.purchasePrice);
           const total = prices.reduce((acc, price) => acc + (price || 0), 0);
 
+          const bgClass =
+            "nth-[4n+1]:bg-card nth-[4n+2]:bg-card nth-[4n+3]:bg-background nth-[4n+4]:bg-background";
+
           return (
             <React.Fragment key={row.id}>
-              <TableRow>
+              <TableRow
+                className={cn(
+                  bgClass,
+                  "peer/row1 hover:bg-muted peer-hover/row2:bg-muted",
+                )}
+              >
                 <TableCell rowSpan={2} className="align-top">
                   {t(`workstations.${itemName as WorkstationName}`)}
                 </TableCell>
@@ -72,7 +81,12 @@ export default function MachinesPage() {
                 </TableCell>
               </TableRow>
 
-              <TableRow>
+              <TableRow
+                className={cn(
+                  bgClass,
+                  "peer/row2 hover:bg-muted peer-hover/row1:bg-muted",
+                )}
+              >
                 <TableCell className="font-semibold">
                   {t("general.summedUpAmount")}
                 </TableCell>
