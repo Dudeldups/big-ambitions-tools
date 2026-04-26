@@ -12,6 +12,7 @@ import {
   Database,
   DatabaseSearch,
   ExternalLink,
+  History,
   MessageSquareMore,
   PencilRuler,
   Rocket,
@@ -98,8 +99,7 @@ export default function Home() {
             <p className="flex flex-col items-center gap-3">
               {rich("game.hovgaard", {
                 website: (chunks) => (
-                  <Button asChild className="">
-                  <Button asChild variant="foreground">
+                  <Button asChild variant="outline">
                     <SmartLink href="https://www.bigambitionsgame.com/">
                       {chunks}
                       <ExternalLink />
@@ -129,7 +129,6 @@ export default function Home() {
             <p className="flex flex-col items-center gap-3">
               {rich("game.steam", {
                 link: (chunks) => (
-                  <Button asChild className="">
                   <Button asChild variant="foreground">
                     <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
                       {chunks}
@@ -197,19 +196,28 @@ export default function Home() {
 
       <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
 
-      <SectionWrapper>
+      <SectionWrapper className="max-w-5xl gap-10 max-lg:items-center lg:flex-row lg:justify-between">
         {/* Latest updates */}
-        <h2>{tHome("updates.title")}</h2>
-        <ul>
+        <div className="flex flex-col items-center gap-8">
+          <ImageCircleBg variant="foregroundInverted">
+            <History />
+          </ImageCircleBg>
+          <h2>{tHome("updates.title")}</h2>
+        </div>
+
+        <ul className="grid grid-cols-[auto_1fr] gap-3 text-left">
           {updateHistory
             .slice()
             .reverse()
             .map((update, index) => (
-              <li key={`update-${index}`}>
+              <li
+                key={`update-${index}`}
+                className="col-span-2 grid grid-cols-subgrid gap-x-3"
+              >
                 <time dateTime={update.date}>
                   {format.dateTime(new Date(update.date), dateFormattingRules)}
                 </time>{" "}
-                - {tUpdates(update.id)}
+                {tUpdates(update.id)}
               </li>
             ))}
         </ul>
