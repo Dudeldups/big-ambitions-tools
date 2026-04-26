@@ -23,6 +23,7 @@ import { SmartLink } from "@/components/smart-link";
 import { Button } from "@/components/ui/button";
 import ImageCircleBg from "@/components/deco/image-circle-bg";
 import { cn } from "@/lib/utils";
+import SectionSeparator from "@/components/deco/section-separator";
 
 const heroIcons = [
   { Icon: Calculator, id: "calc" },
@@ -151,7 +152,7 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
+      <SectionSeparator />
 
       <SectionWrapper className="max-w-5xl max-lg:items-center max-lg:gap-14 lg:flex-row lg:justify-between">
         {/* CTA */}
@@ -203,7 +204,7 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
+      <SectionSeparator />
 
       <SectionWrapper className="max-w-5xl gap-10 max-lg:items-center lg:flex-row lg:gap-18">
         {/* Latest updates */}
