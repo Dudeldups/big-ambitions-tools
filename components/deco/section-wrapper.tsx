@@ -1,6 +1,6 @@
 "use client";
 
-import { glowVariants, revealVariants } from "@/lib/animations";
+import { fadeIn, heroGlow, revealClipPath, withMotion } from "@/lib/animations";
 import { useIsMounted } from "@/lib/hooks/useIsMounted";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
@@ -19,6 +19,7 @@ const SectionWrapper = ({
   centerMobile = true,
 }: SectionWrapperProps) => {
   const isMounted = useIsMounted();
+  const sectionMotionPreset = variant === "default" ? fadeIn : revealClipPath;
 
   return (
     <div
@@ -33,23 +34,21 @@ const SectionWrapper = ({
             key={variant}
             layoutId="hero-background-glow"
             layout="y"
-            variants={glowVariants}
+            {...withMotion(heroGlow)}
             initial={isMounted ? "hidden" : false}
             animate="visible"
             exit="exit"
             transition={{ type: "tween", duration: 0.4 }}
             className="hero-bg-div absolute inset-0 -z-10"
-            style={{ willChange: "opacity, transform" }}
           />
         )}
       </AnimatePresence>
 
       <motion.section
         key={`content-${variant}`}
-        variants={revealVariants}
+        {...withMotion(sectionMotionPreset)}
         initial={isMounted ? "hidden" : false}
         animate="visible"
-        style={{ willChange: "clip-path, opacity" }}
         className={cn(
           "flex flex-col gap-6",
           centerMobile && "center-mobile max-md:items-center",
