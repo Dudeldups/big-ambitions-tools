@@ -92,13 +92,13 @@ export function DataTable<TData, TValue>({
         >
           <TableHeader
             className={cn(
-              "bg-transparent transition-colors duration-300",
+              "bg-background transition-colors duration-300",
               !isOverflowing && "sticky top-0 z-10",
               !isOverflowing && isSticky && "bg-accent-foreground",
             )}
           >
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="hover:bg-transparent">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
@@ -136,7 +136,7 @@ export function DataTable<TData, TValue>({
                   <TableRow
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
-                    className="odd:bg-card"
+                    className="odd:bg-card even:bg-background hover:bg-muted"
                   >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell
