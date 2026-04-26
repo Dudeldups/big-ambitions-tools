@@ -5,28 +5,28 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 const TableSwitcher = () => {
-  const t = useTranslations("database");
+  const t = useTranslations("general");
   const pathname = usePathname();
 
   const links = [
     {
-      title: t("table.products.title"),
+      title: t("products"),
       path: "/database/products",
     },
     {
-      title: t("table.ingredients.title"),
+      title: t("ingredients"),
       path: "/database/ingredients",
     },
     {
-      title: t("table.machines.title"),
+      title: t("machines"),
       path: "/database/machines",
     },
     {
-      title: t("table.inventory.title"),
+      title: t("inventory"),
       path: "/database/inventory",
     },
     {
-      title: t("table.vehicles.title"),
+      title: t("vehicles"),
       path: "/database/vehicles",
     },
   ];
@@ -37,7 +37,7 @@ const TableSwitcher = () => {
         <Button
           key={link.path}
           asChild
-          variant={`${pathname === link.path ? "foreground" : "secondary"}`}
+          variant={pathname === link.path ? "foreground" : "secondary"}
         >
           <Link href={link.path} className={`flex items-center gap-2`}>
             {link.title}
