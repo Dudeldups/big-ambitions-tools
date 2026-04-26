@@ -26,7 +26,7 @@ export default function IngredientsPage() {
       <DataTable
         columns={ingredientsColumns(t, difficulty)}
         data={data}
-        className="max-w-4xl"
+        className="max-w-max"
       />
     </>
   );

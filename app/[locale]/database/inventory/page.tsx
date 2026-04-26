@@ -24,7 +24,7 @@ export default function InventoryPage() {
       <DataTable
         columns={inventoryColumns(t)}
         data={data}
-        className="max-w-4xl"
+        className="max-w-max"
       />
     </>
   );

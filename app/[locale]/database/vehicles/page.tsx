@@ -24,7 +24,11 @@ export default function VehiclesPage() {
         caption={t("database.vehicles.caption")}
       />
 
-      <DataTable columns={vehiclesColumns(t)} data={data} />
+      <DataTable
+        columns={vehiclesColumns(t)}
+        data={data}
+        className="max-w-max"
+      />
     </>
   );
 }
