@@ -80,4 +80,8 @@
   button:not(:disabled) {
     cursor: pointer;
   }
+
+  hgroup {
+    text-wrap: pretty;
+  }
 }
