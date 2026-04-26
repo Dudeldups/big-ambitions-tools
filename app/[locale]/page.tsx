@@ -149,9 +149,9 @@ export default function Home() {
           <h2>{tHome("cta.title")}</h2>
 
           <ImageCircleBg
-            variant="secondary"
+            variant="primary"
             size="xl"
-            className="border-brand-secondary border-3 md:border-4 md:p-7 md:*:size-20"
+            className="border-primary border-3 md:border-4 md:p-7 md:*:size-20"
           >
             <Rocket />
           </ImageCircleBg>
@@ -196,6 +196,7 @@ export default function Home() {
       <Separator className="max-w-page via-foreground/20 mx-auto bg-linear-to-r from-transparent to-transparent" />
 
       <SectionWrapper>
+        {/* Latest updates */}
         <h2>{tHome("updates.title")}</h2>
         <ul>
           {updateHistory
