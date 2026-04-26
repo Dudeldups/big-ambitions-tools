@@ -36,6 +36,7 @@ export const getRichDefaults = (
     ...GLOSSARY,
     em: (chunks) => <em>{chunks}</em>,
     cite: (chunks) => <cite>{chunks}</cite>,
+    br: () => <br />,
   };
 
   fillDefaults(messages.general, tGeneral, defaults);
