@@ -393,27 +393,21 @@
       "buttonDesc": "Select a category"
     },
     "products": {
-      "title": "{products}",
       "caption": "Here you can find all products you can sell in your stores along with their details."
     },
     "ingredients": {
-      "title": "Ingredients",
       "caption": "Here you can find all factory ingredients in the game along with their details."
     },
     "machines": {
-      "title": "Machines",
       "caption": "Here you can find all machines in the game along with their details."
     },
     "workstations": {
-      "title": "Workstations",
       "caption": "Here you can find all workstations in the game along with their details."
     },
     "inventory": {
-      "title": "Inventory",
       "caption": "Here you can find all inventory for your stores and warehouses in the game along with their details."
     },
     "vehicles": {
-      "title": "Vehicles",
       "caption": "An overview of all vehicles in the game."
     }
   },
