@@ -4,6 +4,7 @@ import { DataTable } from "../../../../components/tables/data-table";
 import { shelves } from "@/lib/game/inventory";
 import { inventoryColumns } from "./table-columns";
 import { useTranslations } from "next-intl";
+import DatabaseHgroup from "@/components/deco/database-hgroup";
 
 const data = Object.entries(shelves).map(([itemName, shelf]) => ({
   itemName,
@@ -15,10 +16,10 @@ export default function InventoryPage() {
 
   return (
     <>
-      <hgroup>
-        <h2>{t("general.inventory")}</h2>
-        <p>{t("database.inventory.caption")}</p>
-      </hgroup>
+      <DatabaseHgroup
+        title={t("general.inventory")}
+        caption={t("database.inventory.caption")}
+      />
 
       <DataTable
         columns={inventoryColumns(t)}

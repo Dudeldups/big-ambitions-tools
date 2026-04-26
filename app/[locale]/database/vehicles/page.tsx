@@ -5,6 +5,7 @@ import { VehicleName } from "@/lib/game/vehicleNames";
 import { vehicles } from "@/lib/game/vehicles";
 import { VehiclesColumnData, vehiclesColumns } from "./table-columns";
 import { useTranslations } from "next-intl";
+import DatabaseHgroup from "@/components/deco/database-hgroup";
 
 const data: VehiclesColumnData[] = (Object.keys(vehicles) as VehicleName[]).map(
   (vehicleName) => ({
@@ -18,10 +19,10 @@ export default function VehiclesPage() {
 
   return (
     <>
-      <hgroup>
-        <h2>{t("general.vehicles")}</h2>
-        <p>{t("database.vehicles.caption")}</p>
-      </hgroup>
+      <DatabaseHgroup
+        title={t("general.vehicles")}
+        caption={t("database.vehicles.caption")}
+      />
 
       <DataTable columns={vehiclesColumns(t)} data={data} />
     </>

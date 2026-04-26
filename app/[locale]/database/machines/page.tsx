@@ -9,6 +9,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
 import { WorkstationName } from "@/lib/game/machineNames";
+import DatabaseHgroup from "@/components/deco/database-hgroup";
 
 const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
   itemName,
@@ -27,10 +28,10 @@ export default function MachinesPage() {
 
   return (
     <>
-      <hgroup>
-        <h2>{t("general.machines")}</h2>
-        <p>{t("database.machines.caption")}</p>
-      </hgroup>
+      <DatabaseHgroup
+        title={t("general.machines")}
+        caption={t("database.machines.caption")}
+      />
 
       <DataTable
         columns={machinesColumns(t)}

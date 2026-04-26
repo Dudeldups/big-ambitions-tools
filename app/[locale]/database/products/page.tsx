@@ -11,6 +11,7 @@ import {
   getProfitPerHourForProduct,
 } from "@/lib/calculations/math";
 import { useTranslations } from "next-intl";
+import DatabaseHgroup from "@/components/deco/database-hgroup";
 
 export default function ProductsPage() {
   const t = useTranslations();
@@ -57,10 +58,10 @@ export default function ProductsPage() {
 
   return (
     <>
-      <hgroup>
-        <h2>{t("general.products")}</h2>
-        <p>{t("database.products.caption")}</p>
-      </hgroup>
+      <DatabaseHgroup
+        title={t("general.products")}
+        caption={t("database.products.caption")}
+      />
 
       <DataTable columns={columns} data={data} />
     </>

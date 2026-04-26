@@ -5,6 +5,7 @@ import { DataTable } from "../../../../components/tables/data-table";
 import { ingredientsColumns } from "./table-columns";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { useTranslations } from "next-intl";
+import DatabaseHgroup from "@/components/deco/database-hgroup";
 
 const data = Object.entries(ingredients).map(([itemName, ingredient]) => ({
   itemName,
@@ -17,10 +18,10 @@ export default function IngredientsPage() {
 
   return (
     <>
-      <hgroup>
-        <h2>{t("general.ingredients")}</h2>
-        <p>{t("database.ingredients.caption")}</p>
-      </hgroup>
+      <DatabaseHgroup
+        title={t("general.ingredients")}
+        caption={t("database.ingredients.caption")}
+      />
 
       <DataTable
         columns={ingredientsColumns(t, difficulty)}
