@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 import { WorkstationName } from "@/lib/game/machineNames";
 import DatabaseHgroup from "@/components/deco/database-hgroup";
 import { cn } from "@/lib/utils";
+import SectionSeparator from "@/components/deco/section-separator";
 
 const machinesData = Object.entries(machines).map(([itemName, machine]) => ({
   itemName,
@@ -39,6 +40,10 @@ export default function MachinesPage() {
         data={machinesData}
         className="max-w-max"
       />
+
+      <SectionSeparator />
+
+      <DatabaseHgroup title={t("general.workstations")} />
 
       <DataTable
         columns={workstationsColumns(t)}
