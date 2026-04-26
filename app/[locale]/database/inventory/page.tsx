@@ -14,12 +14,17 @@ export default function InventoryPage() {
   const t = useTranslations();
 
   return (
-    <div className="mx-auto py-10">
+    <>
+      <hgroup>
+        <h2>{t("general.inventory")}</h2>
+        <p>{t("database.inventory.caption")}</p>
+      </hgroup>
+
       <DataTable
         columns={inventoryColumns(t)}
         data={data}
         className="max-w-4xl"
       />
-    </div>
+    </>
   );
 }

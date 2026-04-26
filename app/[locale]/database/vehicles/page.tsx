@@ -17,8 +17,13 @@ export default function VehiclesPage() {
   const t = useTranslations();
 
   return (
-    <div className="mx-auto py-10">
+    <>
+      <hgroup>
+        <h2>{t("general.vehicles")}</h2>
+        <p>{t("database.vehicles.caption")}</p>
+      </hgroup>
+
       <DataTable columns={vehiclesColumns(t)} data={data} />
-    </div>
+    </>
   );
 }

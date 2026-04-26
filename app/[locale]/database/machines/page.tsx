@@ -27,6 +27,11 @@ export default function MachinesPage() {
 
   return (
     <>
+      <hgroup>
+        <h2>{t("general.machines")}</h2>
+        <p>{t("database.machines.caption")}</p>
+      </hgroup>
+
       <DataTable
         columns={machinesColumns(t)}
         data={machinesData}

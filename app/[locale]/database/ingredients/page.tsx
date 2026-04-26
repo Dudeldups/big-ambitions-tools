@@ -16,12 +16,17 @@ export default function IngredientsPage() {
   const t = useTranslations();
 
   return (
-    <div className="mx-auto py-10">
+    <>
+      <hgroup>
+        <h2>{t("general.ingredients")}</h2>
+        <p>{t("database.ingredients.caption")}</p>
+      </hgroup>
+
       <DataTable
         columns={ingredientsColumns(t, difficulty)}
         data={data}
         className="max-w-4xl"
       />
-    </div>
+    </>
   );
 }
