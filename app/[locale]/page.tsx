@@ -99,7 +99,11 @@ export default function Home() {
             <p className="flex flex-col items-center gap-3">
               {rich("game.hovgaard", {
                 website: (chunks) => (
-                  <Button asChild variant="foreground">
+                  <Button
+                    asChild
+                    variant="foreground"
+                    className="font-semibold"
+                  >
                     <SmartLink href="https://www.bigambitionsgame.com/">
                       {chunks}
                       <ExternalLink />
@@ -129,7 +133,11 @@ export default function Home() {
             <p className="flex flex-col items-center gap-3">
               {rich("game.steam", {
                 link: (chunks) => (
-                  <Button asChild variant="foreground">
+                  <Button
+                    asChild
+                    variant="foreground"
+                    className="font-semibold"
+                  >
                     <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
                       {chunks}
                       <ExternalLink />
