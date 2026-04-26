@@ -9,15 +9,20 @@ const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="main-wrapper">
       <SectionWrapper variant="secondary" centerMobile>
-        <hgroup>
+        <hgroup className="grid items-end gap-14 md:grid-cols-[2fr_3fr] lg:gap-24">
           <h1>{tGeneral("database")}</h1>
-          <p>{t("intro.desc")}</p>
-        </hgroup>
 
-        <TableSwitcher />
+          <div className="max-w-lg">
+            <p className="text-h5">{t("intro.desc")}</p>
+          </div>
+        </hgroup>
       </SectionWrapper>
 
-      {children}
+      <SectionWrapper>
+        <TableSwitcher />
+
+        {children}
+      </SectionWrapper>
     </div>
   );
 };
