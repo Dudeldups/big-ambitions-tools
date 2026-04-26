@@ -56,13 +56,13 @@ export default function ProductsPage() {
   );
 
   return (
-    <section>
+    <>
       <hgroup>
-        <h2>Products</h2>
-        <p>List of all products with their profit per hour and margin.</p>
+        <h2>{t("general.products")}</h2>
+        <p>{t("database.products.caption")}</p>
       </hgroup>
 
       <DataTable columns={columns} data={data} />
-    </section>
+    </>
   );
 }
