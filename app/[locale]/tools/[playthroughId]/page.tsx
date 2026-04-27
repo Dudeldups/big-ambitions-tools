@@ -1,14 +1,17 @@
 "use client";
 
-import IntroTextWrapper from "@/components/deco/intro-text-wrapper";
+import DefaultHgroup from "@/components/deco/default-hgroup";
+import SectionWrapper from "@/components/deco/section-wrapper";
 import EmpireOverview from "@/components/tools/empire-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { Factory } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const PlaythroughIdPage = () => {
-  // const t = useTranslations();
+  const t = useTranslations("tools");
+  const tGeneral = useTranslations("general");
   const { activePlaythrough } = useActivePlaythrough();
 
   // TODO add skeletons
@@ -17,46 +20,28 @@ const PlaythroughIdPage = () => {
   }
 
   return (
-    <div className="max-w-page mx-auto px-4">
-      <div className="mt-8">
-        <p>Go back to the playthrough overview:</p>
-        <Button asChild>
-          <Link href="/tools">Playthroughs</Link>
-        </Button>
-      </div>
+    <>
+      <SectionWrapper
+        size="noTopPadding"
+        className="mt-14 flex flex-col justify-center *:flex-1 max-lg:gap-14 lg:flex-row"
+      >
+        <div className="space-y-6">
+          <DefaultHgroup
+            title={`${tGeneral("playthrough")} ${activePlaythrough?.characterName}`}
+            caption={t("playthroughDetail.desc")}
+          />
 
-      <div className="flex flex-col justify-center py-10 *:flex-1 max-lg:gap-14 lg:flex-row">
-        <div className="flex flex-col items-center lg:items-start">
-          <IntroTextWrapper>
-            <h2>
-              Your playthrough{" "}
-              <span className="font-semibold">
-                {activePlaythrough.characterName}
-              </span>
-            </h2>
-
-            <p>
-              Visit the factories page to see an overview of your factories,
-              keep track of items you need to order for your production lines
-              and more. The factory planner will show you how many pallet
-              shelves and factory workers you need for maximum efficiency.
-            </p>
-          </IntroTextWrapper>
-
-          <Button className="size-24 max-md:w-full md:size-32" asChild>
-            <Link
-              href={`/tools/${activePlaythrough.id}/factories`}
-              className="flex flex-col items-center gap-4"
-            >
-              <Factory className="size-8 md:size-10" />
-              <span className="text-lg font-bold">Factories</span>
+          <Button asChild size="lg">
+            <Link href={`/tools/${activePlaythrough.id}/factories`}>
+              <Factory className="size-5" />
+              {tGeneral("factories")}
             </Link>
           </Button>
         </div>
 
-        <EmpireOverview className="" />
-      </div>
-    </div>
+        <EmpireOverview />
+      </SectionWrapper>
+    </>
   );
 };
 

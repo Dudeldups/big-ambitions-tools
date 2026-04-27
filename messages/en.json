@@ -227,6 +227,7 @@
     "products": "Products",
     "database": "Database",
     "tools": "Tools",
+    "playthrough": "Playthrough",
     "playthroughs": "Playthroughs",
     "factory": "Factory",
     "factories": "Factories",
@@ -420,6 +421,10 @@
       "warning": "Important: Your progress is stored in your browser. If you clear your browser data or use private/incognito mode, it may be lost.",
       "createButtonDesc": "New playthrough",
       "noPlaythroughs": "No playthroughs yet. Create one to get started!"
+    },
+    "playthroughDetail": {
+      "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
+      "productionOverview": "Weekly production overview"
     },
     "playthroughForm": {
       "title": "Create a new playthrough",
