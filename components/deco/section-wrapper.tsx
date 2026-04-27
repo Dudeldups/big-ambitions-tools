@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "motion/react";
 interface SectionWrapperProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "default";
+  size?: "default" | "compact";
   className?: string;
   centerMobile?: boolean;
 }
@@ -15,18 +16,26 @@ interface SectionWrapperProps {
 const SectionWrapper = ({
   children,
   variant = "default",
+  size = "default",
   className,
   centerMobile = true,
 }: SectionWrapperProps) => {
   const isMounted = useIsMounted();
   const sectionMotionPreset = variant === "default" ? fadeIn : revealClipPath;
 
+  const sizeClasses = {
+    default: "pt-36 md:pt-52",
+    compact: "pt-20 md:pt-32 pb-12",
+  };
+
   return (
     <div
       className={cn(
         "section-wrapper px-clamp-x py-clamp-y @container/section relative",
-        variant !== "default" &&
-          `hero--${variant} pt-36 text-(--color-hero-foreground) max-md:-mt-16 md:pt-60`,
+        variant !== "default" && [
+          `hero--${variant} text-(--color-hero-foreground) max-md:-mt-16`,
+          sizeClasses[size],
+        ],
       )}
     >
       <AnimatePresence mode="sync">
