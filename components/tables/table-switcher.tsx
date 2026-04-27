@@ -34,8 +34,8 @@ const TableSwitcher = () => {
 
   return (
     <div className="border-muted-foreground/50 max-w-max rounded-lg border max-md:mx-auto">
-      <div className="bg-card dark:bg-card/80 rounded-t-lg p-3">
-        <p className="text-foreground/90 font-semibold">
+      <div className="bg-secondary-foreground rounded-t-lg p-3">
+        <p className="text-background font-semibold">
           {tDatabase("intro.buttonDesc")}
         </p>
       </div>
