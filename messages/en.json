@@ -413,10 +413,10 @@
   },
   "tools": {
     "intro": {
-      "desc": "This is where you can dive deep into the numbers and statistics of the game. Below, you can create and manage your playthroughs."
+      "desc": "This is where you can dive deep into the numbers and statistics of the game. Plan your factories and manage the logistics for your whole empire!"
     },
     "playthroughs": {
-      "desc": "A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with difficulties, or just keep track of your progress.",
+      "desc": "Below, you can create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with other difficulties, or just keep track of your progress.",
       "warning": "Important: Your progress is stored in your browser. If you clear your browser data or use private/incognito mode, it may be lost.",
       "createButtonDesc": "New playthrough",
       "noPlaythroughs": "No playthroughs yet. Create one to get started!"
@@ -432,6 +432,10 @@
       "deleteTitle": "Delete factory",
       "deleteDesc": "Are you sure you want to delete this factory? This action cannot be undone."
     },
+    "stats": {
+      "netProfitPerWeek": "Net profit / week",
+      "ordersPerWeek": "Orders / week"
+    },
     "overview": {
       "empire": {
         "title": "Your empire",
@@ -441,6 +445,7 @@
     "factoryPlanner": {
       "title": "Factory Planner",
       "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
+      "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",
       "estimatedSales": "Estimated weekly sales",
       "estimatedSalesTooltip": "Enter the expected sales for each product in your shops.",
