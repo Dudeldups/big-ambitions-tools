@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type DefaultHgroupProps = {
-  title: string;
+  title: string | React.ReactNode;
   caption?: string | React.ReactNode;
   className?: string;
 };
