@@ -75,7 +75,9 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
 
   return (
     <div className={cn("px-4", className)}>
-      <h3 className="mb-6 text-center">Weekly production overview</h3>
+      <h3 className="mb-6 text-center">
+        {t("tools.playthroughDetail.productionOverview")}
+      </h3>
 
       {profitRowData.length > 0 && (
         <DataTable
