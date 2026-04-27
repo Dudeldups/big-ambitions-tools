@@ -25,17 +25,17 @@ const EditPlaythroughForm = ({
   onSubmit,
   cancelEditing,
 }: EditPlaythroughFormProps) => {
-  const t = useTranslations();
+  const tGeneral = useTranslations("general");
   const { register, handleSubmit, control } =
     useFormContext<PlaythroughFormValues>();
 
   return (
     <form
-      className="bg-card flex items-center rounded-md border"
+      className="bg-card flex w-full items-center justify-between gap-4 rounded-md border p-4 max-sm:flex-col"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex flex-col items-end p-4">
-        <Input className="mb-3 w-60" {...register("characterName")} />
+      <div className="flex flex-col justify-between gap-3">
+        <Input {...register("characterName")} />
         <Controller
           control={control}
           name="difficulty"
@@ -48,7 +48,7 @@ const EditPlaythroughForm = ({
                 <SelectGroup>
                   {DIFFICULTY_OPTIONS.map((opt) => (
                     <SelectItem key={opt} value={opt}>
-                      {t(`general.difficultyOptions.${opt}`)}
+                      {tGeneral(`difficultyOptions.${opt}`)}
                     </SelectItem>
                   ))}
                 </SelectGroup>
@@ -58,11 +58,21 @@ const EditPlaythroughForm = ({
         />
       </div>
 
-      <div className="mx-4 flex items-center gap-2">
-        <Button size="icon-lg" variant="outline" type="submit">
+      <div className="flex items-center gap-3 sm:flex-col">
+        <Button
+          size="icon-lg"
+          variant="outline"
+          type="submit"
+          aria-label={tGeneral("confirm")}
+        >
           <SquareCheckBig className="size-5" />
         </Button>
-        <Button size="icon-lg" variant="destructive" onClick={cancelEditing}>
+        <Button
+          size="icon-lg"
+          variant="destructive"
+          onClick={cancelEditing}
+          aria-label={tGeneral("cancel")}
+        >
           <X className="size-5" />
         </Button>
       </div>

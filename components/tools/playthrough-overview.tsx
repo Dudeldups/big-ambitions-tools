@@ -1,6 +1,5 @@
 "use client";
 
-import { Spinner } from "@/components/ui/spinner";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { PlaythroughFormValues } from "@/lib/schemas/playthrough";
@@ -14,7 +13,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import EditPlaythroughForm from "./edit-playthrough-form";
 import PlaythroughInfoCard from "./playthrough-info-card";
-import CreatePlaythroughForm from "./create-playthrough-form";
+import CenteredSpinner from "../cemetery/centered-spinner";
 
 const PlaythroughOverview = () => {
   const t = useTranslations();
@@ -65,16 +64,17 @@ const PlaythroughOverview = () => {
   return (
     <div className="">
       {!playthroughs ? (
-        <Spinner />
+        <CenteredSpinner />
       ) : playthroughs.length === 0 ? (
-        <div className="flex flex-col items-center gap-6 px-4 py-20">
-          <p>{t("tools.intro.noPlaythroughs")}</p>
-          <CreatePlaythroughForm />
+        <div className="flex flex-col items-center gap-6 px-4 py-10">
+          <p className="text-muted-foreground">
+            {t("tools.playthroughs.noPlaythroughs")}
+          </p>
         </div>
       ) : (
-        <ul className="flex flex-wrap gap-5">
+        <ul className="grid grid-cols-1 gap-5 md:grid-cols-[repeat(auto-fill,minmax(340px,1fr))]">
           {playthroughs.map((pt) => (
-            <li key={pt.id} className="">
+            <li key={pt.id} className="flex">
               {editingPlaythroughId === pt.id ? (
                 <FormProvider key={pt.id} {...form}>
                   <EditPlaythroughForm

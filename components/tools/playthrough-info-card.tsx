@@ -24,7 +24,9 @@ const PlaythroughInfoCard = ({
   cancelEditing,
   startEditing,
 }: PlaythroughInfoCardProps) => {
-  const t = useTranslations();
+  const tGeneral = useTranslations("general");
+  const tTools = useTranslations("tools");
+  const tToasts = useTranslations("toasts");
   const deletePlaythrough = usePlaythroughStore(
     (state) => state.deletePlaythrough,
   );
@@ -33,7 +35,7 @@ const PlaythroughInfoCard = ({
     const deleted = deletePlaythrough(pt.id);
     if (deleted) {
       toast.success(
-        t("toasts.playthroughDeleteSuccess", {
+        tToasts("toasts.playthroughDeleteSuccess", {
           characterName: deleted.characterName,
         }),
         {
@@ -44,26 +46,30 @@ const PlaythroughInfoCard = ({
   };
 
   return (
-    <div className="bg-card flex items-center rounded-md border">
-      <Link className="p-4 text-left" href={`/tools/${pt.id}`}>
+    <div className="bg-card flex w-full items-center justify-between gap-4 rounded-md border max-sm:flex-col">
+      <Link
+        className="w-full min-w-0 flex-1 p-4 text-left"
+        href={`/tools/${pt.id}`}
+      >
         <dl>
-          <dt className="w-60 truncate text-xl font-semibold">
+          <dt className="text-h5 font-semibold sm:truncate">
             {pt.characterName}
           </dt>
           <dd className="text-muted-foreground mt-2">
-            {t("general.difficulty")}:{" "}
-            {t(`general.difficultyOptions.${pt.difficulty}`)}
+            {tGeneral("difficulty")}:{" "}
+            {tGeneral(`difficultyOptions.${pt.difficulty}`)}
           </dd>
           <dd className="text-muted-foreground">
-            {t("general.factories")}: {pt.factoryIds.length}
+            {tGeneral("factories")}: {pt.factoryIds.length}
           </dd>
         </dl>
       </Link>
 
-      <div className="mx-4 flex items-center gap-2">
+      <div className="mr-4 flex shrink-0 justify-between gap-3 pb-4 sm:flex-col sm:pt-4">
         <Button
           size="icon-lg"
           variant="outline"
+          aria-label={tGeneral("edit")}
           onClick={() => {
             if (editingPlaythroughId) {
               cancelEditing();
@@ -77,8 +83,8 @@ const PlaythroughInfoCard = ({
 
         <DeleteDialog
           onDelete={onDelete}
-          title={t("tools.playthroughForm.deleteTitle")}
-          description={t("tools.playthroughForm.deleteDesc")}
+          title={tTools("playthroughForm.deleteTitle")}
+          description={tTools("playthroughForm.deleteDesc")}
         />
       </div>
     </div>
