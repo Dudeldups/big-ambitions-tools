@@ -1,10 +1,18 @@
+"use client";
+
 import SectionWrapper from "@/components/deco/section-wrapper";
 import TableSwitcher from "@/components/tables/table-switcher";
+import { usePathname } from "@/i18n/navigation";
+import { fadeIn, withMotion } from "@/lib/animations";
+import { useIsMounted } from "@/lib/hooks/useIsMounted";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 
 const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("database");
   const tGeneral = useTranslations("general");
+  const isMounted = useIsMounted();
+  const pathname = usePathname();
 
   return (
     <div className="main-wrapper">
@@ -21,7 +29,14 @@ const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
       <SectionWrapper className="block space-y-18">
         <TableSwitcher />
 
-        {children}
+        <motion.div
+          key={`content-${pathname}`}
+          {...withMotion(fadeIn)}
+          initial={isMounted ? "hidden" : false}
+          animate="visible"
+        >
+          {children}
+        </motion.div>
       </SectionWrapper>
     </div>
   );
