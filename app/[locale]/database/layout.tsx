@@ -34,6 +34,7 @@ const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
           {...withMotion(fadeIn)}
           initial={isMounted ? "hidden" : false}
           animate="visible"
+          className="space-y-12"
         >
           {children}
         </motion.div>
