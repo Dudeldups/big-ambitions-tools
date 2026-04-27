@@ -123,9 +123,12 @@ export default function Home() {
 
       <SectionSeparator />
 
-      <SectionWrapper centerMobile className="gap-16 md:gap-32">
+      <SectionWrapper
+        centerMobile
+        className="gap-16 md:gap-32 lg:flex-row lg:gap-0 lg:*:flex-1"
+      >
         {/* Game description */}
-        <div className="grid justify-center gap-8 lg:grid-cols-2">
+        <div className="flex flex-col gap-10 max-lg:items-center lg:gap-14">
           <hgroup className="relative max-lg:text-center">
             <h2>{tHome("game.title")}</h2>
             <em className="text-h3 text-muted-foreground my-4 block font-semibold italic underline underline-offset-4">
@@ -141,24 +144,24 @@ export default function Home() {
         </div>
 
         {/* Official links */}
-        <div className="flex flex-col items-center gap-14 *:flex-1 lg:flex-row">
+        <div className="flex flex-col items-center gap-14 *:flex-1">
           <div className="flex flex-col items-center gap-6 rounded-xl">
             <Image
-              src="/assets/logos/logo_hovgaard_windmill.webp"
-              alt="hovgaard logo"
+              src="/assets/logos/logo_steam.webp"
+              alt="steam logo"
               width={64}
               height={64}
               className="mx-auto rounded-lg sm:size-20"
             />
             <p className="flex flex-col items-center gap-3">
-              {rich("game.hovgaard", {
-                website: (chunks) => (
+              {rich("game.steam", {
+                link: (chunks) => (
                   <Button
                     asChild
                     variant="foreground"
                     className="font-semibold"
                   >
-                    <SmartLink href="https://www.bigambitionsgame.com/">
+                    <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
                       {chunks}
                       <ExternalLink />
                     </SmartLink>
@@ -178,21 +181,21 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center gap-6 rounded-xl">
             <Image
-              src="/assets/logos/logo_steam.webp"
-              alt="steam logo"
+              src="/assets/logos/logo_hovgaard_windmill.webp"
+              alt="hovgaard logo"
               width={64}
               height={64}
               className="mx-auto rounded-lg sm:size-20"
             />
             <p className="flex flex-col items-center gap-3">
-              {rich("game.steam", {
-                link: (chunks) => (
+              {rich("game.hovgaard", {
+                website: (chunks) => (
                   <Button
                     asChild
                     variant="foreground"
                     className="font-semibold"
                   >
-                    <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
+                    <SmartLink href="https://www.bigambitionsgame.com/">
                       {chunks}
                       <ExternalLink />
                     </SmartLink>
