@@ -65,8 +65,8 @@
       position: absolute;
       inset-inline: 0;
       z-index: 1;
-      bottom: calc(var(--spacing-clamp-y) * -1);
-      height: calc(var(--spacing-clamp-y) * 2);
+      bottom: -1.5rem;
+      height: 3rem;
       pointer-events: none;
       -webkit-backdrop-filter: blur(16px) saturate(1.5);
       backdrop-filter: blur(16px) saturate(1.5);
