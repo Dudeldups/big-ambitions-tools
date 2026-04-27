@@ -32,7 +32,7 @@ const Tools = () => {
           <div className="bg-destructive/10 text-foreground border-destructive/50 pointer-events-none rounded-md border p-1.5">
             <TriangleAlert className="size-6" />
           </div>
-          <p>{t("playthroughs.warning")}</p>
+          <p className="text-card-foreground">{t("playthroughs.warning")}</p>
         </div>
 
         <SectionSeparator />
