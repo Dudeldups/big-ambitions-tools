@@ -10,7 +10,7 @@ import {
   getProfitMarginForProduct,
   getProfitPerHourForProduct,
 } from "@/lib/calculations/math";
-import DatabaseHgroup from "@/components/deco/database-hgroup";
+import DefaultHgroup from "@/components/deco/default-hgroup";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { SmartLink } from "@/components/smart-link";
 import { Button } from "@/components/ui/button";
@@ -60,7 +60,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <DatabaseHgroup
+      <DefaultHgroup
         title={t("general.products")}
         caption={rich("database.products.caption", {
           link: (chunks) => (

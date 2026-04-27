@@ -4,7 +4,7 @@ import { DataTable } from "../../../../components/tables/data-table";
 import { shelves } from "@/lib/game/inventory";
 import { inventoryColumns } from "./table-columns";
 import { useTranslations } from "next-intl";
-import DatabaseHgroup from "@/components/deco/database-hgroup";
+import DefaultHgroup from "@/components/deco/default-hgroup";
 
 const data = Object.entries(shelves).map(([itemName, shelf]) => ({
   itemName,
@@ -16,7 +16,7 @@ export default function InventoryPage() {
 
   return (
     <>
-      <DatabaseHgroup
+      <DefaultHgroup
         title={t("general.inventory")}
         caption={t("database.inventory.caption")}
       />

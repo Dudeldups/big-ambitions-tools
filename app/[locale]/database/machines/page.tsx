@@ -9,7 +9,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { useTranslations } from "next-intl";
 import { WorkstationName } from "@/lib/game/machineNames";
-import DatabaseHgroup from "@/components/deco/database-hgroup";
+import DefaultHgroup from "@/components/deco/default-hgroup";
 import { cn } from "@/lib/utils";
 import SectionSeparator from "@/components/deco/section-separator";
 
@@ -30,7 +30,7 @@ export default function MachinesPage() {
 
   return (
     <>
-      <DatabaseHgroup
+      <DefaultHgroup
         title={t("general.machines")}
         caption={t("database.machines.caption")}
       />
@@ -43,7 +43,7 @@ export default function MachinesPage() {
 
       <SectionSeparator />
 
-      <DatabaseHgroup title={t("general.workstations")} />
+      <DefaultHgroup title={t("general.workstations")} />
 
       <DataTable
         columns={workstationsColumns(t)}

@@ -4,7 +4,7 @@ import { DataTable } from "@/components/tables/data-table";
 import { VehicleName } from "@/lib/game/vehicleNames";
 import { vehicles } from "@/lib/game/vehicles";
 import { VehiclesColumnData, vehiclesColumns } from "./table-columns";
-import DatabaseHgroup from "@/components/deco/database-hgroup";
+import DefaultHgroup from "@/components/deco/default-hgroup";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 
 const data: VehiclesColumnData[] = (Object.keys(vehicles) as VehicleName[]).map(
@@ -19,7 +19,7 @@ export default function VehiclesPage() {
 
   return (
     <>
-      <DatabaseHgroup
+      <DefaultHgroup
         title={t("general.vehicles")}
         caption={rich("database.vehicles.caption")}
       />
