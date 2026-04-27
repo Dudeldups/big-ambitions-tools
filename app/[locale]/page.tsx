@@ -208,7 +208,7 @@ export default function Home() {
 
       <SectionWrapper className="max-w-5xl gap-10 max-lg:items-center lg:flex-row lg:gap-18">
         {/* Latest updates */}
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 lg:flex-col-reverse lg:gap-12">
           <ImageCircleBg variant="foregroundInverted">
             <History />
           </ImageCircleBg>
@@ -220,7 +220,7 @@ export default function Home() {
           className="bg-ring/50 hidden lg:block"
         />
 
-        <ul className="relative grid grid-cols-[auto_auto_minmax(0,1fr)] gap-x-6 gap-y-4 text-left md:pl-0 lg:mx-auto">
+        <ul className="relative grid grid-cols-[auto_auto_minmax(0,1fr)] gap-x-6 gap-y-4 text-left lg:mx-auto">
           {updateHistory
             .slice()
             .reverse()
