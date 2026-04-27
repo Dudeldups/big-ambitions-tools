@@ -14,8 +14,12 @@ import {
 import CurrencyText from "@/components/currency-text";
 import { Link, usePathname } from "@/i18n/navigation";
 import PriceIndicesDialog from "@/components/tools/price-indices-dialog";
+import { useTranslations } from "next-intl";
+import SectionWrapper from "@/components/deco/section-wrapper";
 
 const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
+  const t = useTranslations("tools");
+  const tGeneral = useTranslations("general");
   const { isLoading, isInvalid, activePlaythrough } = useActivePlaythrough();
   const pathname = usePathname();
   const isNewFactoryDisabled =
@@ -44,79 +48,87 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="bg-background border-border max-w-page mx-auto border-b">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3">
-          <div className="flex flex-col gap-4 md:flex-row md:gap-6">
-            {activePlaythrough ? (
-              <h1 className="text-foreground min-w-0 truncate text-xl font-semibold tracking-tight">
-                {activePlaythrough.characterName}
-              </h1>
-            ) : (
-              <TextSkeleton />
-            )}
+      <SectionWrapper variant="primary" size="compact" />
 
-            <div className="text-muted-foreground flex flex-1 flex-wrap items-center gap-4 text-sm">
-              <span className="flex items-center gap-1.5">
-                <Factory className="size-5 shrink-0" />
+      <div className="px-clamp-x mt-10">
+        <section className="max-w-page bg-accent border-accent-foreground/40 mx-auto rounded-lg border p-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+            <div className="flex flex-col gap-4 md:flex-row md:gap-6">
+              {activePlaythrough ? (
+                <h1 className="text-foreground min-w-0 truncate text-xl">
+                  {activePlaythrough.characterName}
+                </h1>
+              ) : (
+                <TextSkeleton />
+              )}
+
+              <div className="text-muted-foreground flex flex-1 flex-wrap items-center gap-4 text-sm">
                 <Link href={`/tools/${activePlaythrough?.id}/factories`}>
-                  <span className="text-foreground font-medium">
-                    {factories.length}
-                  </span>{" "}
-                  {factories.length === 1 ? "factory" : "factories"}
+                  <span className="flex items-center gap-1.5">
+                    <Factory className="size-5 shrink-0" />
+                    <span className="text-foreground font-medium">
+                      {factories.length}
+                    </span>{" "}
+                    {factories.length === 1
+                      ? tGeneral("factory")
+                      : tGeneral("factories")}
+                  </span>
                 </Link>
-              </span>
 
-              <span className="flex items-center gap-1.5">
-                <TrendingUp className="size-5 shrink-0" />
-                <span>
-                  <span className="text-foreground font-medium">
-                    {weeklyIncome !== null ? (
-                      <CurrencyText value={weeklyIncome} hideCents />
-                    ) : (
-                      <TextSkeleton />
-                    )}
-                  </span>{" "}
-                  net profit / week
+                <span className="flex items-center gap-1.5">
+                  <TrendingUp className="size-5 shrink-0" />
+                  <span>
+                    <span className="text-foreground font-medium">
+                      {weeklyIncome !== null ? (
+                        <CurrencyText value={weeklyIncome} hideCents />
+                      ) : (
+                        <TextSkeleton />
+                      )}
+                    </span>{" "}
+                    {t("stats.netProfitPerWeek")}
+                  </span>
                 </span>
-              </span>
 
-              <span className="flex items-center gap-1.5">
-                <HandCoins className="size-5 shrink-0" />
-                <span>
-                  <span className="text-foreground font-medium">
-                    {weeklyIngredientCosts !== null ? (
-                      <CurrencyText
-                        value={weeklyIngredientCosts * -1}
-                        hideCents
-                      />
-                    ) : (
-                      <TextSkeleton />
-                    )}
-                  </span>{" "}
-                  orders / week
+                <span className="flex items-center gap-1.5">
+                  <HandCoins className="size-5 shrink-0" />
+                  <span>
+                    <span className="text-foreground font-medium">
+                      {weeklyIngredientCosts !== null ? (
+                        <CurrencyText
+                          value={weeklyIngredientCosts * -1}
+                          hideCents
+                        />
+                      ) : (
+                        <TextSkeleton />
+                      )}
+                    </span>{" "}
+                    {t("stats.ordersPerWeek")}
+                  </span>
                 </span>
-              </span>
+              </div>
+            </div>
+
+            <div className="ml-auto flex flex-col items-center gap-4 self-start md:flex-row">
+              {isNewFactoryDisabled ? (
+                <Button className="gap-1.5" disabled>
+                  <Plus className="size-5" />
+                  {t("factoryPlanner.buttonDesc")}
+                </Button>
+              ) : (
+                <Button className="gap-1.5" asChild>
+                  <Link
+                    href={`/tools/${activePlaythrough.id}/factories/create`}
+                  >
+                    <Plus className="size-5" />
+                    {t("factoryPlanner.buttonDesc")}
+                  </Link>
+                </Button>
+              )}
+
+              <PriceIndicesDialog />
             </div>
           </div>
-
-          <div className="ml-auto flex flex-col items-center gap-4 self-start md:flex-row">
-            {isNewFactoryDisabled ? (
-              <Button className="gap-1.5" disabled>
-                <Plus className="size-5" />
-                New factory
-              </Button>
-            ) : (
-              <Button className="gap-1.5" asChild>
-                <Link href={`/tools/${activePlaythrough.id}/factories/create`}>
-                  <Plus className="size-5" />
-                  New factory
-                </Link>
-              </Button>
-            )}
-
-            <PriceIndicesDialog />
-          </div>
-        </div>
+        </section>
       </div>
 
       {children}
