@@ -56,13 +56,13 @@ const PriceIndicesDialog = () => {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="px-0 pb-0">
-        <DialogHeader className="px-6">
+      <DialogContent className="pb-0 sm:max-w-md">
+        <DialogHeader className="">
           <DialogTitle>{tGeneral("priceIndices")}</DialogTitle>
           <DialogDescription>{tModals("priceIndicesDesc")}</DialogDescription>
         </DialogHeader>
 
-        <form className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto px-6 sm:max-h-[70vh]">
+        <form className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto pr-2 sm:max-h-[70vh]">
           <FieldGroup className="gap-0">
             {productNames
               .filter((name) => products[name].productSalesRatio > 0)
@@ -99,7 +99,7 @@ const PriceIndicesDialog = () => {
           </FieldGroup>
         </form>
 
-        <DialogFooter className="bg-accent rounded-b-xl px-6 py-4">
+        <DialogFooter className="bg-accent rounded-b-xl">
           <DialogClose asChild>
             <Button variant="outline">Cancel</Button>
           </DialogClose>
