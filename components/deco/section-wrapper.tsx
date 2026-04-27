@@ -24,8 +24,9 @@ const SectionWrapper = ({
   return (
     <div
       className={cn(
-        "section-wrapper @container/section",
-        variant !== "default" && `hero--${variant}`,
+        "section-wrapper px-clamp-x py-clamp-y @container/section relative",
+        variant !== "default" &&
+          `hero--${variant} pt-36 text-(--color-hero-foreground) max-md:-mt-16 md:pt-60`,
       )}
     >
       <AnimatePresence mode="sync">
@@ -50,7 +51,7 @@ const SectionWrapper = ({
         initial={isMounted ? "hidden" : false}
         animate="visible"
         className={cn(
-          "flex flex-col gap-6",
+          "max-w-page mx-auto flex flex-col gap-6",
           centerMobile && "center-mobile max-md:items-center",
           className,
         )}

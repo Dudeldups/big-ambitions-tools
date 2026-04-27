@@ -1,18 +1,4 @@
 @layer components {
-  .section-wrapper {
-    @apply px-clamp-x py-clamp-y relative;
-
-    section {
-      @apply max-w-page mx-auto;
-    }
-  }
-
-  /* Hero section  */
-  .section-wrapper:first-of-type {
-    @apply pt-36 max-md:-mt-16 md:pt-60;
-    color: var(--color-hero-foreground);
-  }
-
   .amount {
     text-align: right;
     font-variant-numeric: tabular-nums;
