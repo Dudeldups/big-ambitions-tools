@@ -51,64 +51,62 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
       <SectionWrapper variant="primary" size="compact" />
 
       <div className="px-clamp-x mt-10">
-        <section className="max-w-page bg-accent border-accent-foreground/40 mx-auto rounded-lg border p-4">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-            <div className="flex flex-col gap-4 md:flex-row md:gap-6">
-              {activePlaythrough ? (
-                <h1 className="text-foreground min-w-0 truncate text-xl">
-                  {activePlaythrough.characterName}
-                </h1>
-              ) : (
-                <TextSkeleton />
-              )}
+        <section className="bg-background shadow-foreground/30 border-foreground/20 mx-auto max-w-(--spacing-page) rounded-lg border px-4 py-3 shadow-sm">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
+            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">
+              {/* Playthrough name */}
+              <div className="bg-accent-foreground text-accent self-start rounded-md px-2.5 py-0.5 max-md:mx-auto max-md:w-full">
+                {activePlaythrough ? (
+                  <h1 className="truncate text-xl font-bold">
+                    {activePlaythrough.characterName}
+                  </h1>
+                ) : (
+                  <TextSkeleton className="w-24" />
+                )}
+              </div>
 
-              <div className="text-muted-foreground flex flex-1 flex-wrap items-center gap-4 text-sm">
-                <Link href={`/tools/${activePlaythrough?.id}/factories`}>
-                  <span className="flex items-center gap-1.5">
-                    <Factory className="size-5 shrink-0" />
-                    <span className="text-foreground font-medium">
-                      {factories.length}
-                    </span>{" "}
-                    {factories.length === 1
+              {/* Stat-containers */}
+              <div className="text-muted-foreground flex flex-wrap items-center gap-2 text-sm max-md:justify-center max-md:*:w-full lg:gap-4">
+                <StatBadge
+                  icon={<Factory className="size-5" />}
+                  value={factories.length}
+                  label={
+                    factories.length === 1
                       ? tGeneral("factory")
-                      : tGeneral("factories")}
-                  </span>
-                </Link>
-
-                <span className="flex items-center gap-1.5">
-                  <TrendingUp className="size-5 shrink-0" />
-                  <span>
-                    <span className="text-foreground font-medium">
-                      {weeklyIncome !== null ? (
-                        <CurrencyText value={weeklyIncome} hideCents />
-                      ) : (
-                        <TextSkeleton />
-                      )}
-                    </span>{" "}
-                    {t("stats.netProfitPerWeek")}
-                  </span>
-                </span>
-
-                <span className="flex items-center gap-1.5">
-                  <HandCoins className="size-5 shrink-0" />
-                  <span>
-                    <span className="text-foreground font-medium">
-                      {weeklyIngredientCosts !== null ? (
-                        <CurrencyText
-                          value={weeklyIngredientCosts * -1}
-                          hideCents
-                        />
-                      ) : (
-                        <TextSkeleton />
-                      )}
-                    </span>{" "}
-                    {t("stats.ordersPerWeek")}
-                  </span>
-                </span>
+                      : tGeneral("factories")
+                  }
+                  href={`/tools/${activePlaythrough?.id}/factories`}
+                />
+                <StatBadge
+                  icon={<TrendingUp className="size-5" />}
+                  value={
+                    weeklyIncome !== null ? (
+                      <CurrencyText value={weeklyIncome} hideCents />
+                    ) : (
+                      <TextSkeleton className="w-16" />
+                    )
+                  }
+                  label={t("stats.netProfitPerWeek")}
+                />
+                <StatBadge
+                  icon={<HandCoins className="size-5" />}
+                  value={
+                    weeklyIngredientCosts !== null ? (
+                      <CurrencyText
+                        value={weeklyIngredientCosts * -1}
+                        hideCents
+                      />
+                    ) : (
+                      <TextSkeleton className="w-16" />
+                    )
+                  }
+                  label={t("stats.ordersPerWeek")}
+                />
               </div>
             </div>
 
-            <div className="ml-auto flex flex-col items-center gap-4 self-start md:flex-row">
+            {/* Buttons */}
+            <div className="flex flex-col gap-2 xl:flex-row">
               {isNewFactoryDisabled ? (
                 <Button className="gap-1.5" disabled>
                   <Plus className="size-5" />
@@ -137,3 +135,28 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default PlaythroughIdLayout;
+
+type StatBadgeProps = {
+  icon: React.ReactNode;
+  value: React.ReactNode;
+  label: string;
+  href?: string;
+};
+
+function StatBadge({ icon, value, label, href }: StatBadgeProps) {
+  const content = (
+    <div className="border-muted-foreground hover:bg-accent/10 flex items-center gap-1.5 rounded-md border bg-transparent p-1.5 transition-colors">
+      {icon}
+      <span className="whitespace-nowrap">
+        <span className="text-foreground font-semibold">{value}</span>{" "}
+        <span className="opacity-80">{label}</span>
+      </span>
+    </div>
+  );
+
+  if (href) {
+    return <Link href={href}>{content}</Link>;
+  }
+
+  return content;
+}
