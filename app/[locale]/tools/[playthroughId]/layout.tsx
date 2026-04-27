@@ -50,7 +50,7 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <SectionWrapper variant="primary" size="compact" />
 
-      <div className="px-clamp-x mt-10">
+      <div className="px-clamp-x mt-10 mb-14">
         <section className="bg-background shadow-foreground/30 border-foreground/20 mx-auto max-w-(--spacing-page) rounded-lg border px-4 py-3 shadow-sm">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">

@@ -23,7 +23,7 @@ const PlaythroughIdPage = () => {
     <>
       <SectionWrapper
         size="noTopPadding"
-        className="mt-14 flex flex-col justify-center *:flex-1 max-lg:gap-14 lg:flex-row"
+        className="flex flex-col justify-center *:flex-1 max-lg:gap-14 lg:flex-row"
       >
         <div className="space-y-6">
           <DefaultHgroup
