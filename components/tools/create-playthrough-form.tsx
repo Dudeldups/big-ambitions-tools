@@ -80,7 +80,7 @@ const CreatePlaythroughForm = () => {
       <DialogTrigger asChild>
         <Button>
           <Plus className="size-5" />
-          {t("tools.intro.createButtonDesc")}
+          {t("tools.playthroughs.createButtonDesc")}
         </Button>
       </DialogTrigger>
 
