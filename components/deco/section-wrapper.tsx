@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "motion/react";
 interface SectionWrapperProps {
   children?: React.ReactNode;
   variant?: "primary" | "secondary" | "default";
-  size?: "default" | "compact";
+  size?: "default" | "compact" | "noTopPadding";
   className?: string;
   centerMobile?: boolean;
 }
@@ -26,7 +26,8 @@ const SectionWrapper = ({
   return (
     <div
       className={cn(
-        "section-wrapper px-clamp-x py-clamp-y @container/section relative",
+        "section-wrapper px-clamp-x @container/section relative",
+        size === "noTopPadding" ? "pb-clamp-y pt-0" : "py-clamp-y",
         size === "compact"
           ? "-mt-16 pt-16 pb-0 md:pt-52"
           : variant !== "default" &&
