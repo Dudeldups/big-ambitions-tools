@@ -58,9 +58,9 @@ export default function Home() {
               <ImageCircleBg
                 key={id}
                 size="md"
-                className="border-foreground border-2 lg:p-5 lg:*:size-12"
+                className="border-hero-foreground border-2 bg-transparent lg:p-5 lg:*:size-12"
               >
-                <Icon />
+                <Icon className="text-hero-foreground" />
               </ImageCircleBg>
             ))}
           </div>
@@ -70,6 +70,58 @@ export default function Home() {
           </p>
         </hgroup>
       </SectionWrapper>
+
+      <SectionWrapper className="max-w-5xl max-lg:items-center max-lg:gap-14 lg:flex-row lg:justify-between">
+        {/* CTA */}
+        <div className="flex flex-col items-center gap-8 lg:items-start lg:gap-14">
+          <h2>{tHome("cta.title")}</h2>
+
+          <ImageCircleBg
+            variant="primary"
+            size="xl"
+            className="border-primary shadow-muted-foreground/30 dark:shadow-foreground/50 border-3 shadow-[0_0_15px_rgba(0,0,0,0.2)] md:border-4 md:p-7 md:*:size-20"
+          >
+            <Rocket />
+          </ImageCircleBg>
+        </div>
+
+        <div className="p-clamp-x border-border bg-popover shadow-accent grid max-w-lg gap-10 rounded-xl border shadow-md sm:max-w-xl">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
+            <ImageCircleBg variant="foregroundInverted" size="md">
+              <Database />
+            </ImageCircleBg>
+            <p>
+              {rich("cta.desc", {
+                link: sLink("/database"),
+              })}
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
+            <ImageCircleBg variant="foregroundInverted" size="md">
+              <Calculator />
+            </ImageCircleBg>
+
+            <p>
+              {rich("cta.desc2", {
+                link: sLink("/tools"),
+              })}
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
+            <ImageCircleBg variant="foregroundInverted" size="md">
+              <MessageSquareMore />
+            </ImageCircleBg>
+
+            <p>
+              {rich("cta.errorDesc", {
+                contact: sLink("/contact"),
+              })}
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionSeparator />
 
       <SectionWrapper centerMobile className="gap-16 md:gap-32">
         {/* Game description */}
@@ -146,58 +198,6 @@ export default function Home() {
                     </SmartLink>
                   </Button>
                 ),
-              })}
-            </p>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      <SectionSeparator />
-
-      <SectionWrapper className="max-w-5xl max-lg:items-center max-lg:gap-14 lg:flex-row lg:justify-between">
-        {/* CTA */}
-        <div className="flex flex-col items-center gap-8 lg:items-start lg:gap-14">
-          <h2>{tHome("cta.title")}</h2>
-
-          <ImageCircleBg
-            variant="primary"
-            size="xl"
-            className="border-primary border-3 md:border-4 md:p-7 md:*:size-20"
-          >
-            <Rocket />
-          </ImageCircleBg>
-        </div>
-
-        <div className="p-clamp-x border-border bg-popover grid max-w-lg gap-10 rounded-xl border sm:max-w-xl">
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <ImageCircleBg variant="foregroundInverted" size="md">
-              <Database />
-            </ImageCircleBg>
-            <p>
-              {rich("cta.desc", {
-                link: sLink("/database"),
-              })}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <ImageCircleBg variant="foregroundInverted" size="md">
-              <Calculator />
-            </ImageCircleBg>
-
-            <p>
-              {rich("cta.desc2", {
-                link: sLink("/tools"),
-              })}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <ImageCircleBg variant="foregroundInverted" size="md">
-              <MessageSquareMore />
-            </ImageCircleBg>
-
-            <p>
-              {rich("cta.errorDesc", {
-                contact: sLink("/contact"),
               })}
             </p>
           </div>

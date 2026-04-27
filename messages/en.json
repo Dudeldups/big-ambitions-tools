@@ -369,18 +369,18 @@
     "intro": {
       "desc": "A collection of infos and tools for the game <em>{gameName}</em> by {companyName}. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version {gameVersion} of the game and may change with future updates."
     },
+    "cta": {
+      "title": "Let's get started!",
+      "desc": "Just want to look something up and do some number crunching? <em>Mhmm, tasty numbers!</em> Head over to the <link>{database}</link> and start exploring.",
+      "desc2": "From planning your first factory to managing production rates of your whole empire, you'll find everything in the <link>{tools}</link> section.",
+      "errorDesc": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!"
+    },
     "game": {
       "title": "Don't know the game yet?",
       "subtitle": "What a shame!",
       "desc": "{gameName} is a revolutionary role-playing business sim. Go from nothing to the biggest entrepreneur in New York by opening small businesses or slowly building huge corporations any way you like.",
       "hovgaard": "Check out the official website at <website>{companyName}</website>",
       "steam": "Visit the game directly on <link>{steam}</link>"
-    },
-    "cta": {
-      "title": "Let's get started!",
-      "desc": "Just want to look something up and do some number crunching? <em>Mhmm, tasty numbers!</em> Head over to the <link>{database}</link> and start exploring.",
-      "desc2": "From planning your first factory to managing production rates of your whole empire, you'll find everything in the <link>{tools}</link> section.",
-      "errorDesc": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!"
     },
     "updates": {
       "title": "Latest updates"
