@@ -16,7 +16,7 @@ const twMerge = extendTailwindMerge({
       px: ["px-clamp-x"],
       py: ["py-clamp-y"],
       "text-color": [
-        "text-warn",
+        "text-alert",
         "text-success",
         "text-brand-secondary",
         "text-brand-secondary-foreground",
