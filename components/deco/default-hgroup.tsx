@@ -14,7 +14,12 @@ const DefaultHgroup = ({
   captionAs: Component = "p",
 }: DefaultHgroupProps) => {
   return (
-    <hgroup className={cn("max-w-2xl space-y-4 max-md:mx-auto", className)}>
+    <hgroup
+      className={cn(
+        "max-w-lg space-y-4 max-md:mx-auto md:max-w-2xl",
+        className,
+      )}
+    >
       <h2>{title}</h2>
       {caption && (
         <Component className="text-muted-foreground">{caption}</Component>
