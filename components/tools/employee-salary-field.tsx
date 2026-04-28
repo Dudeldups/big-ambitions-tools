@@ -46,7 +46,7 @@ const EmployeeSalaryField = ({
             htmlFor={`employee-salary-${employeeName}`}
             className="text-muted-foreground"
           >
-            Salary
+            {t("general.salary")}
           </FieldLabel>
           <Input
             id={`employee-salary-${employeeName}`}
@@ -66,7 +66,7 @@ const EmployeeSalaryField = ({
             htmlFor={`employee-amount-${employeeName}`}
             className="text-muted-foreground"
           >
-            Amount
+            {t("general.amount")}
           </FieldLabel>
           <Input
             id={`employee-amount-${employeeName}`}

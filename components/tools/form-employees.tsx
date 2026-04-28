@@ -15,6 +15,7 @@ import { Translator } from "@/lib/types";
 import { UseFormRegister } from "react-hook-form";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { useUiStore } from "@/lib/stores/uiStore";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type FormEmployeesProps = {
   register: UseFormRegister<FactoryFormValues>;
@@ -35,11 +36,13 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
 
   return (
     <FieldSet className="@container/field-set">
-      <div className="flex flex-wrap justify-between gap-4">
+      <div className="flex flex-col justify-between gap-4">
         <div>
-          <FieldLegend className="mb-3 underline">Employees</FieldLegend>
+          <FieldLegend className="mb-3 underline">
+            {t("tableColumns.employees")}
+          </FieldLegend>
           <FieldDescription className="text-muted-foreground">
-            Enter the salary for each employee.
+            {t("tools.factoryPlanner.employees.desc")}
           </FieldDescription>
         </div>
 
@@ -53,9 +56,16 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
             onCheckedChange={() => toggleOptimalWorker()}
             className="mt-0.5"
           />
-          <FieldLabel htmlFor="factory-worker-check">
-            Use optimal factory worker amount
-          </FieldLabel>
+          <Tooltip>
+            <TooltipTrigger>
+              <FieldLabel htmlFor="factory-worker-check">
+                {t("tools.factoryPlanner.employees.optimalWorkers")}
+              </FieldLabel>
+            </TooltipTrigger>
+            <TooltipContent>
+              {t("tools.factoryPlanner.employees.optimalTooltip")}
+            </TooltipContent>
+          </Tooltip>
         </Field>
       </div>
 

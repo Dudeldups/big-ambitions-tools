@@ -246,6 +246,7 @@
     "profit": "Profit",
     "netProfit": "Net profit",
     "taxes": "Taxes",
+    "salary": "Salary",
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
     "oneTimeCosts": "One-time costs",
@@ -521,6 +522,11 @@
         "notEnough": "Not enough storage even for daily delivery.",
         "overflowWarning": "Stocking faster than clearing!",
         "overflowDesc": "Production outpaces ingredient consumption. Shelf count adjusted accordingly."
+      },
+      "employees": {
+        "desc": "Enter the salary for each employee. Leave it empty if you don't want to include salary calculations.",
+        "optimalWorkers": "Use optimal factory worker amount",
+        "optimalTooltip": "Automatically calculate the optimal number of workers based on workstations and opening hours. Will add a small buffer for smooth auto-schedule ingame."
       },
       "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",
