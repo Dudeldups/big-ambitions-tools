@@ -420,7 +420,12 @@
       "desc": "Below, you can create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with other difficulties, or just keep track of your progress.",
       "warning": "Important: Your progress is stored in your browser. If you clear your browser data or use private/incognito mode, it may be lost.",
       "createButtonDesc": "New playthrough",
-      "noPlaythroughs": "No playthroughs yet. Create one to get started!"
+      "noPlaythroughs": "No playthroughs yet. Create one to get started!",
+      "notFound": {
+        "title": "Playthrough not found",
+        "desc": "This playthrough doesn't exist or has been deleted.",
+        "link": "Back to playthrough overview"
+      }
     },
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
