@@ -424,7 +424,14 @@
     },
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
-      "productionOverview": "Weekly production overview"
+      "productionOverview": "Weekly production overview",
+      "noProductionData": "No data available yet. Create factories and you'll see your production stats here."
+    },
+    "factories": {
+      "title": "Your factories",
+      "desc": "An overview of your factories. You can edit or delete them and also copy the current values for a new factory. To see more details about each factory including a shopping list, just click their respective card.",
+      "desc1": "You can also group them together by clicking the Create Group button below. This will allow you to see those factories in one place and manage them as a group. Helpful if you use a central warehouse to provide ingredients for multiple factories. Depending on the pallet shelves you set on the factory, it will suggest a delivery plan for each factory.",
+      "noFactories": "There are no factories in your playthrough. Create one to get started!"
     },
     "playthroughForm": {
       "title": "Create a new playthrough",
@@ -445,6 +452,20 @@
       "empire": {
         "title": "Your empire",
         "desc": "Get a quick overview of your empire!"
+      }
+    },
+    "factoryGroups": {
+      "buttonDesc": "Create group",
+      "title": "Factory groups",
+      "deliveries": {
+        "buttonDesc": "Deliveries",
+        "title": "Delivery plan",
+        "descNeeded": "Delivery plans for each factory in this group. You will need {amount} pallet shelves to supply all factories.",
+        "descEnough": "All factories have enough shelves to hold all needed ingredients."
+      },
+      "shoppingList": {
+        "title": "Group shopping list",
+        "desc": "These are all ingredients that are needed to supply those factories without enough pallet shelves inside this group. It calculates based on the amount of shelves available in the factories so you can order the rest to a separate warehouse.<br></br>Shelves needed in warehouse: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
