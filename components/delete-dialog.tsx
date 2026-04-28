@@ -39,6 +39,7 @@ const DeleteDialog = ({
           size={buttonText ? "default" : "icon-lg"}
           variant="destructive"
           className={cn(className)}
+          aria-label={t("delete")}
         >
           <Trash2 className="size-5" />
           {buttonText && buttonText}
