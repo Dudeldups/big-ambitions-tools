@@ -29,7 +29,7 @@ const FormWrapper = ({ form, onSubmit, onCancel }: FormWrapperProps) => {
   const watchedValues = useWatch({ control }) as FactoryFormValues;
 
   return (
-    <div className="max-w-page @container/form-wrapper mx-auto grid gap-8 xl:grid-cols-2">
+    <div className="@container/form-wrapper grid gap-8 xl:grid-cols-2">
       <CreateFactoryForm form={form} onSubmit={onSubmit} onCancel={onCancel} />
       <FactoryOverview values={watchedValues} />
     </div>

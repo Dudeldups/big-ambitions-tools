@@ -1,5 +1,6 @@
 "use client";
 
+import SectionWrapper from "@/components/deco/section-wrapper";
 import FormWrapper from "@/components/tools/form-wrapper";
 import { useRouter } from "@/i18n/navigation";
 import { getEmployeeSalary } from "@/lib/calculations/math";
@@ -109,7 +110,13 @@ const CreateFactoryPage = () => {
 
   // TODO add skeletons
 
-  return <FormWrapper form={form} onSubmit={onSubmit} onCancel={onCancel} />;
+  return (
+    <>
+      <SectionWrapper size="noTopPadding" className="block">
+        <FormWrapper form={form} onSubmit={onSubmit} onCancel={onCancel} />
+      </SectionWrapper>
+    </>
+  );
 };
 
 export default CreateFactoryPage;

@@ -1,5 +1,6 @@
 "use client";
 
+import SectionWrapper from "@/components/deco/section-wrapper";
 import FormWrapper from "@/components/tools/form-wrapper";
 import { useRouter } from "@/i18n/navigation";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
@@ -54,7 +55,13 @@ const EditFactoryPage = () => {
   // TODO add skeletons
   if (!activeFactory || !activePlaythrough) return null;
 
-  return <FormWrapper form={form} onSubmit={onSubmit} onCancel={onCancel} />;
+  return (
+    <>
+      <SectionWrapper size="noTopPadding" className="block">
+        <FormWrapper form={form} onSubmit={onSubmit} onCancel={onCancel} />
+      </SectionWrapper>
+    </>
+  );
 };
 
 export default EditFactoryPage;
