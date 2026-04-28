@@ -1,6 +1,5 @@
 "use client";
 
-import ImporterTable from "@/components/tables/importer-table";
 import { Link, useRouter } from "@/i18n/navigation";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
@@ -17,15 +16,16 @@ import {
   deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
-import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 import OneTimeCostDialog from "@/components/tools/one-time-cost-dialog";
-import { Separator } from "@/components/ui/separator";
 import DeleteDialog from "@/components/delete-dialog";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { toast } from "sonner";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import SectionWrapper from "@/components/deco/section-wrapper";
+import ImporterTable from "@/components/tables/importer-table";
+import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
+import { Separator } from "@/components/ui/separator";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -95,7 +95,10 @@ const FactoryIdPage = () => {
   };
 
   return (
-    <SectionWrapper size="noTopPadding" className="xl:grid xl:grid-cols-2">
+    <SectionWrapper
+      size="noTopPadding"
+      className="block space-y-6 xl:grid xl:grid-cols-2"
+    >
       <div className="px-4 py-8">
         <div className="@container flex w-full flex-col gap-10">
           <div className="flex w-full justify-between gap-6 max-md:flex-col">
@@ -108,8 +111,8 @@ const FactoryIdPage = () => {
               )}
             </hgroup>
 
+            {/* CRUD buttons */}
             <div className="flex gap-3 max-md:w-full max-md:flex-col max-md:*:w-full @max-2xl:self-end">
-              {/* CRUD buttons */}
               <OneTimeCostDialog rows={oneTimeCostRowData} />
 
               <Button variant="outline" asChild>
@@ -129,8 +132,8 @@ const FactoryIdPage = () => {
             </div>
           </div>
 
+          {/* Factory stats */}
           <ul className="grid gap-3 *:flex *:gap-2 @xl:flex">
-            {/* Factory stats */}
             <li>
               <Clock className="size-6" />
               {activeFactory.openingHours}h
@@ -153,26 +156,26 @@ const FactoryIdPage = () => {
           </ul>
         </div>
 
-        <div className="mt-14">
+        {/* Shopping list */}
+        <div className="mt-14 min-w-0 overflow-x-auto">
           <hgroup className="max-w-2xl space-y-4">
-            {/* Shopping list */}
             <h2 className="text-xl font-semibold">
               {t("tools.factoryDetail.shoppingList.title")}
             </h2>
             <p>{t("tools.factoryDetail.shoppingList.desc")}</p>
           </hgroup>
 
-          <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
+          <div className="mt-10 flex w-full min-w-0 flex-col gap-4 space-y-6">
             {shoppingListData.map((group) => (
               <ImporterTable key={group.importer} data={group} t={t} />
             ))}
           </div>
         </div>
 
+        {/* Split shopping list */}
         {externalList.length > 0 && (
           <div className="mt-14">
-            <hgroup className="max-w-2xl space-y-4 pr-10">
-              {/* Split shopping list */}
+            <hgroup className="max-w-2xl space-y-4">
               <h2 className="text-xl font-semibold">
                 {t("tools.factoryDetail.splitShoppingList.title")}
               </h2>
@@ -185,7 +188,7 @@ const FactoryIdPage = () => {
               <p>{t("tools.factoryDetail.splitShoppingList.desc1")}</p>
             </hgroup>
 
-            <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
+            <div className="mt-10 flex w-full flex-col gap-4 space-y-6 overflow-x-auto">
               {factoryList.map((group) => (
                 <ImporterTable key={group.importer} data={group} t={t} />
               ))}
@@ -194,6 +197,7 @@ const FactoryIdPage = () => {
         )}
       </div>
 
+      {/* Summary */}
       <div className="space-y-10 overflow-x-auto px-4 py-8">
         <OverviewTableWrapper
           title="weekly revenue"
