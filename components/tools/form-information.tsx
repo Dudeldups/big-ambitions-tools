@@ -33,8 +33,8 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
   const setCalculationPeriod = useAppStore((s) => s.setCalculationPeriod);
 
   return (
-    <FieldSet className="@container/field-set grid px-4 @[38rem]:grid-cols-2">
-      <FieldLegend className="col-span-full text-lg underline">
+    <FieldSet className="@container/field-set grid @[38rem]:grid-cols-2">
+      <FieldLegend className="col-span-full underline">
         Factory Information
       </FieldLegend>
 

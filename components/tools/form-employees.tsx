@@ -34,10 +34,10 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
   const toggleOptimalWorker = useUiStore((s) => s.toggleOptimalWorker);
 
   return (
-    <FieldSet className="@container/field-set px-4">
+    <FieldSet className="@container/field-set">
       <div className="flex flex-wrap justify-between gap-4">
         <div>
-          <FieldLegend>Employees</FieldLegend>
+          <FieldLegend className="underline">Employees</FieldLegend>
           <FieldDescription className="text-muted-foreground">
             Enter the salary for each employee.
           </FieldDescription>

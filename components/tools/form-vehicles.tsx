@@ -21,8 +21,10 @@ const FormVehicles = ({ control, t }: FormVehicleProps) => {
   });
 
   return (
-    <FieldSet className="@container/field-set px-4">
-      <FieldLegend>{t("database.table.vehicles.title")}</FieldLegend>
+    <FieldSet className="@container/field-set">
+      <FieldLegend className="underline">
+        {t("database.table.vehicles.title")}
+      </FieldLegend>
 
       <FieldGroup className="gap-3 @md:flex-row @md:*:flex-1">
         {vehicleFields.map((field, index) => (
