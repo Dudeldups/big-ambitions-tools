@@ -63,13 +63,13 @@ const PlaythroughOverview = () => {
   };
 
   return (
-    <div className="">
+    <div className="w-full">
       {!playthroughs ? (
         <CenteredSpinner />
       ) : playthroughs.length === 0 ? (
         <NoDataFound text={t("tools.playthroughs.noPlaythroughs")} />
       ) : (
-        <ul className="grid grid-cols-1 gap-5 md:grid-cols-[repeat(auto-fill,minmax(340px,1fr))]">
+        <ul className="mx-auto grid grid-cols-1 gap-5 max-md:max-w-md md:grid-cols-[repeat(auto-fill,minmax(340px,1fr))]">
           {playthroughs.map((pt) => (
             <li key={pt.id} className="flex">
               {editingPlaythroughId === pt.id ? (
