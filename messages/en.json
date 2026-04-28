@@ -528,6 +528,9 @@
         "optimalWorkers": "Use optimal factory worker amount",
         "optimalTooltip": "Automatically calculate the optimal number of workers based on workstations and opening hours. Will add a small buffer for smooth auto-schedule ingame."
       },
+      "vehicles": {
+        "addBtn": "Add vehicle"
+      },
       "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",
       "estimatedSales": "Estimated weekly sales",

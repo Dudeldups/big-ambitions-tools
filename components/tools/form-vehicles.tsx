@@ -43,7 +43,7 @@ const FormVehicles = ({ control, t }: FormVehicleProps) => {
             className="px-0"
             onClick={() => appendVehicle({ name: "FreightTruckT1" })}
           >
-            Add vehicle
+            {t("tools.factoryPlanner.vehicles.addBtn")}
           </Button>
         )}
       </FieldGroup>
