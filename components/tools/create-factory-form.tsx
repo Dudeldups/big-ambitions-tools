@@ -12,6 +12,8 @@ import FormVehicles from "./form-vehicles";
 import FormWorkstations from "./form-workstations";
 import { useUiStore } from "@/lib/stores/uiStore";
 import { useEffect } from "react";
+import DefaultHgroup from "../deco/default-hgroup";
+import { Separator } from "../ui/separator";
 
 type CreateFactoryFormProps = {
   form: UseFormReturn<FactoryFormValues>;
@@ -43,36 +45,45 @@ const CreateFactoryForm = ({
   }, [setIsOptimalWorkerChecked]);
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit, onError)}
-      className="@container/form space-y-10"
-    >
-      <FormInformation form={form} openingHours={openingHours} t={t} />
+    <div className="space-y-8">
+      <DefaultHgroup
+        title={t("tools.factoryPlanner.title")}
+        caption={t("tools.factoryPlanner.desc")}
+      />
 
-      <FormEmployees register={register} t={t} />
+      <Separator />
 
-      <FormVehicles control={control} t={t} />
+      <form
+        onSubmit={handleSubmit(onSubmit, onError)}
+        className="@container/form space-y-10"
+      >
+        <FormInformation form={form} openingHours={openingHours} t={t} />
 
-      <FormWorkstations form={form} t={t} />
+        <FormEmployees register={register} t={t} />
 
-      <div className="bg-card mx-4 rounded-md">
-        <div className="flex w-full max-w-xl flex-wrap gap-4 p-4 *:flex-1">
-          <Button type="submit">{t("general.confirm")}</Button>
-          <CancelConfirmModal
-            buttonText={t("general.cancel")}
-            modalText={t("modals.discardChanges")}
-            modalDescription={t("modals.discardDesc")}
-            onModalSubmit={onCancel}
-          />
-          <CancelConfirmModal
-            buttonText={t("general.reset")}
-            modalText={t("modals.resetForm")}
-            modalDescription={t("modals.resetDesc")}
-            onModalSubmit={reset}
-          />
+        <FormVehicles control={control} t={t} />
+
+        <FormWorkstations form={form} t={t} />
+
+        <div className="bg-card rounded-md">
+          <div className="flex w-full max-w-xl flex-wrap gap-4 p-4 *:flex-1">
+            <Button type="submit">{t("general.confirm")}</Button>
+            <CancelConfirmModal
+              buttonText={t("general.cancel")}
+              modalText={t("modals.discardChanges")}
+              modalDescription={t("modals.discardDesc")}
+              onModalSubmit={onCancel}
+            />
+            <CancelConfirmModal
+              buttonText={t("general.reset")}
+              modalText={t("modals.resetForm")}
+              modalDescription={t("modals.resetDesc")}
+              onModalSubmit={reset}
+            />
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

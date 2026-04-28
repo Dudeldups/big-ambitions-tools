@@ -482,12 +482,6 @@
       "netProfitPerWeek": "Net profit / week",
       "ordersPerWeek": "Orders / week"
     },
-    "overview": {
-      "empire": {
-        "title": "Your empire",
-        "desc": "Get a quick overview of your empire!"
-      }
-    },
     "factoryGroups": {
       "buttonDesc": "Create group",
       "title": "Factory groups",
@@ -508,7 +502,7 @@
     },
     "factoryPlanner": {
       "title": "Factory Planner",
-      "desc": "The factory planner helps you calculate the required ingredients, machines, and workstations for your production lines. Just select the products you want to produce and the planner will do the rest.",
+      "desc": "Calculate the required ingredients, machines, and workers for your production lines. Just select the products you want to produce and the planner will do the rest.",
       "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",
       "estimatedSales": "Estimated weekly sales",
