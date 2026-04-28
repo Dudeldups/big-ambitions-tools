@@ -92,7 +92,7 @@ export function DataTable<TData, TValue>({
         >
           <TableHeader
             className={cn(
-              "bg-background transition-colors duration-300",
+              "bg-transparent transition-colors duration-300",
               !isOverflowing && "sticky top-0 z-10",
               !isOverflowing && isSticky && "bg-accent-foreground",
             )}
