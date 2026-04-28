@@ -101,7 +101,7 @@ const PriceIndicesDialog = () => {
 
         <DialogFooter className="bg-accent rounded-b-xl">
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">{tGeneral("cancel")}</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
