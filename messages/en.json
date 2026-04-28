@@ -243,6 +243,9 @@
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
     "oneTimeCosts": "One-time costs",
+    "recurringCosts": "Recurring costs",
+    "weeklyRevenue": "Weekly revenue",
+    "weeklyExpenses": "Weekly expenses",
     "logisticsManager": "Logistics Manager",
     "deliveryDriver": "Delivery Driver",
     "difficultyOptions": {

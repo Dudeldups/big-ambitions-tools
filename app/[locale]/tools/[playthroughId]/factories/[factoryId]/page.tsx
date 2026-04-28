@@ -200,7 +200,7 @@ const FactoryIdPage = () => {
       {/* Summary */}
       <div className="space-y-10 overflow-x-auto px-4 py-8">
         <OverviewTableWrapper
-          title="weekly revenue"
+          title={t("general.weeklyRevenue")}
           label="itemName"
           rowData={sortedProductData}
         />
@@ -210,7 +210,7 @@ const FactoryIdPage = () => {
             <Separator />
 
             <OverviewTableWrapper
-              title="weekly expenses"
+              title={t("general.weeklyExpenses")}
               label="description"
               rowData={recurringRowData}
             />
