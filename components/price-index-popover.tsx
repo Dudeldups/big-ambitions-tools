@@ -118,22 +118,16 @@ const PriceIndexPopover = ({
             </div>
           </Field>
 
-          <dl className="flex justify-between gap-2">
+          <dl className="grid grid-cols-2 justify-between gap-2">
             <dt>{t("general.exportPrice")}</dt>
             <dd className="amount">{formatToUSD(exportPrice)}</dd>
-          </dl>
 
-          <dl className="flex justify-between gap-2">
             <dt>{t("general.taxes")}</dt>
             <dd className="amount">-{formatToUSD(taxAmount)}</dd>
-          </dl>
 
-          <dl className="flex justify-between gap-2">
             <dt>{t("general.manufacturingCostsShort")}</dt>
             <dd className="amount">-{formatToUSD(manufacturePrice)}</dd>
-          </dl>
 
-          <dl className="flex justify-between gap-2">
             <dt>{t("general.netProfit")}</dt>
             <dd
               className={cn(
