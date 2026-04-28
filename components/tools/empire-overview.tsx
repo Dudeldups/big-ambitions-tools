@@ -17,6 +17,7 @@ import { useTranslations } from "next-intl";
 import { Translator } from "@/lib/types";
 import { DataTable } from "../tables/data-table";
 import { cn } from "@/lib/utils";
+import NoDataFound from "../no-data-found";
 
 type ProductRow = {
   itemName: string;
@@ -79,12 +80,14 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
         {t("tools.playthroughDetail.productionOverview")}
       </h3>
 
-      {profitRowData.length > 0 && (
+      {profitRowData.length > 0 ? (
         <DataTable
           className="max-w-lg"
           columns={tableColumns(t)}
           data={profitRowData}
         />
+      ) : (
+        <NoDataFound text={t("tools.playthroughDetail.noProductionData")} />
       )}
     </div>
   );
