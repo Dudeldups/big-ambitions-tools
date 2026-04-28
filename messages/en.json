@@ -242,6 +242,7 @@
     "taxes": "Taxes",
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
+    "oneTimeCosts": "One-time costs",
     "logisticsManager": "Logistics Manager",
     "deliveryDriver": "Delivery Driver",
     "difficultyOptions": {
@@ -266,6 +267,9 @@
       "daily": "daily",
       "weekly": "weekly"
     }
+  },
+  "counts": {
+    "palletShelf": "{count, plural, one {# pallet shelf} other {# pallet shelves}}"
   },
   "tableColumns": {
     "itemName": "Item name",
@@ -441,6 +445,18 @@
         "title": "Factory not found",
         "desc": "This factory doesn't exist or has been deleted.",
         "link": "Back to factory overview"
+      }
+    },
+    "factoryDetail": {
+      "editBtn": "Edit factory",
+      "shoppingList": {
+        "title": "Shopping list",
+        "desc": "This is what your factory needs weekly to run at full capacity."
+      },
+      "splitShoppingList": {
+        "title": "Split shopping list",
+        "desc": "Order these ingredients to your factory to split the order. This is the maximum amount your {shelfAmount} pallet shelves can hold. It also accounts for the number of boxes you are producing. You would need {requiredAmount} shelves to store all ingredients for a whole week of production.",
+        "desc1": "The rest must be ordered to a warehouse by one or more separate purchasing agents. Go back to the factory overview and create a group to see a full list of what to order to that warehouse. It will also show you the delivery plan to each factory."
       }
     },
     "playthroughForm": {

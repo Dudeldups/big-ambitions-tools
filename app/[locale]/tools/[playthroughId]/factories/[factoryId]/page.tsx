@@ -99,7 +99,7 @@ const FactoryIdPage = () => {
         <div className="@container flex w-full flex-col gap-10">
           <div className="flex w-full justify-between gap-6 @max-2xl:flex-col">
             <hgroup className="">
-              <h2 className="mb-4">{activeFactory.name}</h2>
+              <h2 className="text-h3 mb-4">{activeFactory.name}</h2>
               {activeFactory.description && (
                 <p className="text-muted-foreground max-w-md">
                   {activeFactory.description}
@@ -108,6 +108,7 @@ const FactoryIdPage = () => {
             </hgroup>
 
             <div className="flex gap-3 @max-2xl:self-end @max-lg:w-full @max-lg:flex-col @max-lg:*:w-full">
+              {/* CRUD buttons */}
               <OneTimeCostDialog rows={oneTimeCostRowData} />
 
               <Button variant="outline" asChild>
@@ -115,7 +116,7 @@ const FactoryIdPage = () => {
                   href={`/tools/${activePlaythrough.id}/factories/${activeFactory.id}/edit`}
                 >
                   <Edit className="size-5" />
-                  Edit factory
+                  {t("tools.factoryDetail.editBtn")}
                 </Link>
               </Button>
 
@@ -128,31 +129,36 @@ const FactoryIdPage = () => {
           </div>
 
           <ul className="grid gap-3 *:flex *:gap-2 @xl:flex">
+            {/* Factory stats */}
             <li>
               <Clock className="size-6" />
               {activeFactory.openingHours}h
             </li>
             <li>
               <ShelvingUnit className="size-6" />
-              {activeFactory.shelfAmount} pallet shelves
+              {t("counts.palletShelf", { count: activeFactory.shelfAmount })}
             </li>
             <li>
               <Hammer className="size-6" />
-              {workstationAmount} workstations
+              {workstationAmount} {t("general.workstations")}
             </li>
             <li>
               <Truck className="size-6" />
-              {activeFactory.vehicles.length} vehicle
+              {activeFactory.vehicles.length}{" "}
+              {activeFactory.vehicles.length === 1
+                ? t("general.vehicle")
+                : t("general.vehicles")}
             </li>
           </ul>
         </div>
 
         <div className="mt-14">
           <hgroup className="space-y-4">
-            <h2 className="text-xl font-semibold">Shopping list</h2>
-            <p>
-              This is what your factory needs weekly to run at full capacity.
-            </p>
+            {/* Shopping list */}
+            <h2 className="text-xl font-semibold">
+              {t("tools.factoryDetail.shoppingList.title")}
+            </h2>
+            <p>{t("tools.factoryDetail.shoppingList.desc")}</p>
           </hgroup>
 
           <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
@@ -165,19 +171,17 @@ const FactoryIdPage = () => {
         {externalList.length > 0 && (
           <div className="mt-14">
             <hgroup className="space-y-4 pr-10">
-              <h2 className="text-xl font-semibold">Split shopping list</h2>
+              {/* Split shopping list */}
+              <h2 className="text-xl font-semibold">
+                {t("tools.factoryDetail.splitShoppingList.title")}
+              </h2>
               <p>
-                Order these ingredients to your factory to split the order. This
-                is the maximum amount your {activeFactory.shelfAmount} pallet
-                shelves can hold. You would need {requiredShelves} shelves to
-                store all ingredients.
+                {t("tools.factoryDetail.splitShoppingList.desc", {
+                  shelfAmount: activeFactory.shelfAmount,
+                  requiredAmount: requiredShelves,
+                })}
               </p>
-              <p>
-                The rest must be ordered to a warehouse by one or more separate
-                purchasing agents. Go back to the factory overview and create a
-                group to see a full list of what to order to that warehouse. It
-                will also show you the delivery plan to each factory.
-              </p>
+              <p>{t("tools.factoryDetail.splitShoppingList.desc1")}</p>
             </hgroup>
 
             <div className="mt-10 flex w-full flex-col gap-4 space-y-6">
