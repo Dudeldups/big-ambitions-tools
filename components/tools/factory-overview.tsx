@@ -18,12 +18,15 @@ import { cn } from "@/lib/utils";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import { TAX_RATE } from "@/lib/constants";
 import OverviewTableWrapper from "./overview-table-wrapper";
+import { useTranslations } from "next-intl";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
 };
 
 const FactoryOverview = ({ values }: FactoryOverviewProps) => {
+  const tGeneral = useTranslations("general");
+  const tCounts = useTranslations("counts");
   const { activePlaythrough } = useActivePlaythrough();
   const difficulty = activePlaythrough?.difficulty;
   const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
@@ -74,7 +77,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   return (
     <div className="space-y-10 overflow-x-hidden px-4">
       <OverviewTableWrapper
-        title="One-time costs"
+        title={tGeneral("oneTimeCosts")}
         label="itemName"
         rowData={oneTimeCostRowData}
       />
@@ -84,7 +87,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           <Separator />
 
           <OverviewTableWrapper
-            title="Recurring costs"
+            title={`${tGeneral("recurringCosts")} (${tGeneral(`calculationPeriodOptions.${calculationPeriod}`)})`}
             label="description"
             rowData={recurringCostRowData}
           />
@@ -96,7 +99,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
           <Separator />
 
           <OverviewTableWrapper
-            title={`${calculationPeriod} Revenue`}
+            title={`${tGeneral("revenue")} (${tGeneral(`calculationPeriodOptions.${calculationPeriod}`)})`}
             label="itemName"
             rowData={profitRowData}
           />
@@ -105,26 +108,28 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
       <Separator />
       <div className="mx-auto max-w-3xl space-y-3 rounded-lg border p-4">
-        <h2 className="text-center">Summary</h2>
+        <h2 className="text-center text-xl md:text-2xl">
+          {tGeneral("summary")}
+        </h2>
 
         <Separator />
 
         <div className="flex justify-between">
-          <span className="text-muted-foreground">Revenue</span>
+          <span className="text-muted-foreground">{tGeneral("revenue")}</span>
           <span className="amount text-success">
             {formatToUSD(totalIncome)}
           </span>
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">
-            Taxes ({taxRate * 100}%)
+            {tGeneral("taxes")} ({taxRate * 100}%)
           </span>
           <span className="amount text-destructive">
             {formatToUSD(totalTaxes)}
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted-foreground">Expenses</span>
+          <span className="text-muted-foreground">{tGeneral("expenses")}</span>
           <span className="amount text-destructive">
             {formatToUSD(totalRecurringCost)}
           </span>
@@ -133,7 +138,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         <Separator />
 
         <div className="flex justify-between">
-          <span className="font-semibold">Profit</span>
+          <span className="font-semibold">{tGeneral("netProfit")}</span>
           <span
             className={cn(
               "amount",
@@ -147,11 +152,13 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         <Separator />
 
         <div className="flex justify-between">
-          <span className="text-muted-foreground">Amortization</span>
+          <span className="text-muted-foreground">
+            {tGeneral("amortization")}
+          </span>
           {amortizationDays > 0 ? (
-            <span>{amortizationDays} Days</span>
+            <span>{tCounts("day", { count: amortizationDays })}</span>
           ) : (
-            <span className="text-destructive">Never</span>
+            <span className="text-destructive">{tGeneral("never")}</span>
           )}
         </div>
       </div>

@@ -210,6 +210,9 @@
     "save": "Save",
     "amount": "Amount",
     "summedUpAmount": "Total",
+    "summary": "Summary",
+    "amortization": "Amortization",
+    "never": "Never",
     "noValue": "None",
     "noResultsFound": "No results found.",
     "columnsDescription": "Columns",
@@ -245,6 +248,7 @@
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
     "oneTimeCosts": "One-time costs",
+    "recurringCosts": "Recurring costs",
     "logisticsManager": "Logistics Manager",
     "deliveryDriver": "Delivery Driver",
     "difficultyOptions": {
@@ -271,7 +275,8 @@
     }
   },
   "counts": {
-    "palletShelf": "{count, plural, one {# pallet shelf} other {# pallet shelves}}"
+    "palletShelf": "{count, plural, one {# pallet shelf} other {# pallet shelves}}",
+    "day": "{count, plural, one {# day} other {# days}}"
   },
   "tableColumns": {
     "itemName": "Item name",
