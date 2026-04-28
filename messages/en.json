@@ -405,6 +405,11 @@
     },
     "updates": {
       "title": "Latest updates"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "desc": "Looks like this page took a day off.",
+      "link": "Back to home"
     }
   },
   "updateHistory": {
