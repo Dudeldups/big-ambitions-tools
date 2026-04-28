@@ -18,7 +18,9 @@ type FactoryCardOverviewProps = {
 };
 
 const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
-  const t = useTranslations();
+  const t = useTranslations("tools");
+  const tModals = useTranslations("modals");
+  const tGeneral = useTranslations("general");
   const [draggedFactoryId, setDraggedFactoryId] = useState<string | null>(null);
   const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
   const addFactoryToGroup = usePlaythroughStore((s) => s.addFactoryToGroup);
@@ -48,9 +50,9 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
   };
 
   return (
-    <section>
-      <div className="flex flex-wrap justify-between">
-        <h3 className="mb-6 font-semibold">Factory groups</h3>
+    <>
+      <div className="flex flex-col flex-wrap justify-between gap-4 md:flex-row">
+        <h3 className="mb-6 font-semibold">{t("factoryGroups.title")}</h3>
 
         <CreateGroupForm />
       </div>
@@ -92,8 +94,8 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                     onDelete={() =>
                       deleteFactoryGroup(playthrough.id, group.id)
                     }
-                    title={t("modals.deleteGroupTitle")}
-                    description={t("modals.deleteGroupDesc")}
+                    title={tModals("deleteGroupTitle")}
+                    description={tModals("deleteGroupDesc")}
                   />
                 </div>
               </div>
@@ -181,7 +183,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
           </li>
         )}
       </ul>
-    </section>
+    </>
   );
 };
 

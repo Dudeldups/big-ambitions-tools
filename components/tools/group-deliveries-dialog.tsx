@@ -60,27 +60,27 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className={cn(neededPalletShelvesTotal === 0 && "hidden")}>
+        <Button
+          variant="foreground"
+          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
+        >
           <Package className="size-5" />
-          Deliveries
+          {t("tools.factoryGroups.deliveries.buttonDesc")}
         </Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-3xl">
         <DialogHeader>
-          <DialogTitle>Delivery plan</DialogTitle>
+          <DialogTitle>{t("tools.factoryGroups.deliveries.title")}</DialogTitle>
           <DialogDescription>
             {neededPalletShelvesTotal > 0 ? (
               <>
-                Delivery plans for each factory in this group. You will need{" "}
-                {neededPalletShelvesTotal} pallet shelves to supply all
-                factories.
+                {t("tools.factoryGroups.deliveries.descNeeded", {
+                  amount: neededPalletShelvesTotal,
+                })}
               </>
             ) : (
-              <>
-                All factories have enough shelves to hold all needed
-                ingredients.
-              </>
+              <>{t("tools.factoryGroups.deliveries.descEnough")}</>
             )}
           </DialogDescription>
         </DialogHeader>
@@ -99,7 +99,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button>{t("general.close")}</Button>
+            <Button variant="outline">{t("general.close")}</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
