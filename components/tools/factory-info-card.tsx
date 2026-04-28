@@ -100,7 +100,7 @@ const FactoryInfoCard = ({
 
       <CardContent className="mt-auto flex flex-row items-end justify-between gap-2">
         <div className="w-full">
-          <ul className="mb-2">
+          <ul className="mb-2 text-left">
             {groupedWorkstations.map((workstation) => (
               <li key={workstation.name}>
                 <span>
