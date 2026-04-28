@@ -41,7 +41,7 @@ const CreateFactoryForm = ({
   };
 
   useEffect(() => {
-    setIsOptimalWorkerChecked(true);
+    setIsOptimalWorkerChecked(false);
   }, [setIsOptimalWorkerChecked]);
 
   return (
