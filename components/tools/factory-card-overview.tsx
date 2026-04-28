@@ -62,7 +62,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
             <div
               className={cn(
                 "@container/list-outer space-y-3 rounded-lg border-2 p-4 transition-colors",
-                hoveredGroup === group.id && "bg-accent/40",
+                hoveredGroup === group.id && "bg-accent/80",
               )}
               style={{
                 borderColor:
@@ -126,7 +126,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
             <div
               className={cn(
                 "border-muted rounded-lg border-2 p-4 transition-colors",
-                hoveredGroup === "ungrouped" && "bg-accent/40 border-white",
+                hoveredGroup === "ungrouped" && "bg-accent/80 border-white",
               )}
               onDragOver={(e) => {
                 e.preventDefault();
@@ -152,7 +152,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
                       key={factoryId}
                       className={cn(
                         "w-full max-w-96 transition-colors",
-                        hoveredGroup === "ungrouped" && "bg-accent/20",
+                        hoveredGroup === "ungrouped" && "bg-accent/80",
                       )}
                       draggable
                       onDragStart={() => setDraggedFactoryId(factoryId)}
