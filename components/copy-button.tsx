@@ -3,8 +3,10 @@
 import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const CopyButton = ({ value }: { value: number }) => {
+  const t = useTranslations("general");
   const [isClicked, setIsClicked] = useState(false);
 
   const handleCopy = async () => {
@@ -16,7 +18,12 @@ const CopyButton = ({ value }: { value: number }) => {
   };
 
   return (
-    <Button variant="outline" size="icon" onClick={handleCopy}>
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={handleCopy}
+      aria-label={t("copy")}
+    >
       {isClicked ? (
         <Check className="text-success size-4" />
       ) : (
