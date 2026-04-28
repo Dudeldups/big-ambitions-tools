@@ -140,6 +140,7 @@ const FactoryIdPage = () => {
             </li>
             <li>
               <ShelvingUnit className="size-6" />
+              {activeFactory.shelfAmount}{" "}
               {t("counts.palletShelf", { count: activeFactory.shelfAmount })}
             </li>
             <li>
