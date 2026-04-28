@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import EditPlaythroughForm from "./edit-playthrough-form";
 import PlaythroughInfoCard from "./playthrough-info-card";
 import CenteredSpinner from "../cemetery/centered-spinner";
+import NoDataFound from "../no-data-found";
 
 const PlaythroughOverview = () => {
   const t = useTranslations();
@@ -66,11 +67,7 @@ const PlaythroughOverview = () => {
       {!playthroughs ? (
         <CenteredSpinner />
       ) : playthroughs.length === 0 ? (
-        <div className="flex flex-col items-center gap-6 px-4 py-10">
-          <p className="text-muted-foreground">
-            {t("tools.playthroughs.noPlaythroughs")}
-          </p>
-        </div>
+        <NoDataFound text={t("tools.playthroughs.noPlaythroughs")} />
       ) : (
         <ul className="grid grid-cols-1 gap-5 md:grid-cols-[repeat(auto-fill,minmax(340px,1fr))]">
           {playthroughs.map((pt) => (
