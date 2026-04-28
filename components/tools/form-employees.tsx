@@ -37,7 +37,7 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
     <FieldSet className="@container/field-set">
       <div className="flex flex-wrap justify-between gap-4">
         <div>
-          <FieldLegend className="underline">Employees</FieldLegend>
+          <FieldLegend className="mb-3 underline">Employees</FieldLegend>
           <FieldDescription className="text-muted-foreground">
             Enter the salary for each employee.
           </FieldDescription>

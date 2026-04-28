@@ -54,7 +54,7 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
 
   return (
     <FieldSet>
-      <FieldLegend className="underline">Workstations</FieldLegend>
+      <FieldLegend className="mb-3 underline">Workstations</FieldLegend>
 
       <FieldGroup>
         {workstationFields.map((field, index) => (
