@@ -35,7 +35,7 @@ const PlaythroughInfoCard = ({
     const deleted = deletePlaythrough(pt.id);
     if (deleted) {
       toast.success(
-        tToasts("toasts.playthroughDeleteSuccess", {
+        tToasts("playthroughDeleteSuccess", {
           characterName: deleted.characterName,
         }),
         {
