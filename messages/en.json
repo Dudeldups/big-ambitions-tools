@@ -415,7 +415,7 @@
       "buttonDesc": "Select a category"
     },
     "products": {
-      "caption": "Infos about all products at a glance. Switch between manufacturing and import prices. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Want to see how it's calculated? Check out the <link>{tools}</link> section."
+      "caption": "All products at a glance. Switch between manufacturing and import prices. Retail price is the average across all districts. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Curious how it's calculated? Check out the <link>{tools}</link> section."
     },
     "ingredients": {
       "caption": "Overview of all factory ingredients including their properties. Select the difficulty to see the correct prices."
