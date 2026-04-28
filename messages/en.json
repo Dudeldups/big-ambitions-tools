@@ -512,9 +512,15 @@
         "legend": "Factory information",
         "name": "Factory name",
         "calcBasis": "Calculation basis",
-        "palletDesc": "Define how many {object} are available in this factory.",
+        "palletDesc": "Define how many pallet shelves are available in this factory.",
         "dailyAmount": "Daily delivery requires <strong>{count}</strong> {object}.",
-        "weeklyAmount": "Weekly delivery requires <strong>{count}</strong> {object}."
+        "weeklyAmount": "Weekly delivery requires <strong>{count}</strong> {object}.",
+        "shelfExplanation": "Add at least one workstation to see the required number of pallet shelves.",
+        "enoughWeekly": "Enough for weekly delivery.",
+        "enoughDaily": "Enough for daily delivery only. A warehouse is required for weekly logistics.",
+        "notEnough": "Not enough storage even for daily delivery.",
+        "overflowWarning": "Stocking faster than clearing!",
+        "overflowDesc": "Production outpaces ingredient consumption. Shelf count adjusted accordingly."
       },
       "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",

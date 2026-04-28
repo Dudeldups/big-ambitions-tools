@@ -4,8 +4,9 @@ import { Field, FieldDescription, FieldError, FieldLabel } from "../ui/field";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { cn } from "@/lib/utils";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
-import { useTranslations } from "next-intl";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
+import { Check, CircleX, TriangleAlert } from "lucide-react";
 
 type Props = {
   className?: string;
@@ -14,7 +15,7 @@ type Props = {
 };
 
 export function PalletShelfField({ className, control, errors }: Props) {
-  const t = useTranslations();
+  const { t, rich } = useRichDefaults();
   const [shelfAmount, workstations] = useWatch({
     control,
     name: ["shelfAmount", "workstations"],
@@ -26,6 +27,9 @@ export function PalletShelfField({ className, control, errors }: Props) {
   const hasWeekly = shelfAmount >= weekly;
   const hasDaily = shelfAmount >= daily;
 
+  const palletShelfStringDaily = t("counts.palletShelf", { count: daily });
+  const palletShelfStringWeekly = t("counts.palletShelf", { count: weekly });
+
   return (
     <Controller
       control={control}
@@ -33,9 +37,11 @@ export function PalletShelfField({ className, control, errors }: Props) {
       render={({ field }) => (
         <div className={cn("flex gap-8 *:flex-1 @max-2xl:flex-col", className)}>
           <Field>
-            <FieldLabel htmlFor="shelf-amount">Pallet Shelves</FieldLabel>
+            <FieldLabel htmlFor="shelf-amount">
+              {t("general.palletShelves")}
+            </FieldLabel>
             <FieldDescription>
-              Define how many pallet shelves are available in this factory.
+              {t("tools.factoryPlanner.information.palletDesc")}
             </FieldDescription>
 
             <Input
@@ -64,45 +70,50 @@ export function PalletShelfField({ className, control, errors }: Props) {
             {weekly > 0 ? (
               <>
                 <p>
-                  Daily delivery requires <strong>{daily}</strong> shelves.
+                  {rich("tools.factoryPlanner.information.dailyAmount", {
+                    count: daily,
+                    object: palletShelfStringDaily,
+                  })}
                 </p>
                 <p>
-                  Weekly delivery requires <strong>{weekly}</strong> shelves.
+                  {rich("tools.factoryPlanner.information.weeklyAmount", {
+                    count: weekly,
+                    object: palletShelfStringWeekly,
+                  })}
                 </p>
                 {isOverflowing && (
                   <Tooltip>
-                    <TooltipTrigger>
-                      <p className="text-yellow-600">
-                        ⚠ Stocking faster than clearing.
+                    <TooltipTrigger className="text-alert flex gap-2">
+                      <TriangleAlert />
+                      <p>
+                        {t("tools.factoryPlanner.information.overflowWarning")}
                       </p>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="">
-                        Production outpaces ingredient consumption. Shelf count
-                        adjusted.
-                      </p>
+                      {t("tools.factoryPlanner.information.overflowDesc")}
                     </TooltipContent>
                   </Tooltip>
                 )}
 
                 {hasWeekly ? (
-                  <p className="text-success">✓ Enough for weekly delivery.</p>
+                  <div className="text-success flex gap-2">
+                    <Check className="shrink-0" />
+                    <p>{t("tools.factoryPlanner.information.enoughWeekly")}</p>
+                  </div>
                 ) : hasDaily ? (
-                  <p className="text-yellow-600">
-                    ⚠ Enough for daily delivery only. A warehouse is required
-                    for weekly logistics.
-                  </p>
+                  <div className="text-alert flex gap-2">
+                    <TriangleAlert className="shrink-0" />
+                    <p>{t("tools.factoryPlanner.information.enoughDaily")}</p>
+                  </div>
                 ) : (
-                  <p className="text-destructive">
-                    ✕ Not enough storage even for daily delivery.
-                  </p>
+                  <div className="text-destructive flex gap-2">
+                    <CircleX className="shrink-0" />
+                    <p>{t("tools.factoryPlanner.information.notEnough")}</p>
+                  </div>
                 )}
               </>
             ) : (
-              <p>
-                Add at least one workstation to see the required number of
-                shelves.
-              </p>
+              <p>{t("tools.factoryPlanner.information.shelfExplanation")}</p>
             )}
           </div>
         </div>
