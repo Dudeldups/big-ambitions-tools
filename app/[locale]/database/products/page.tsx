@@ -12,8 +12,7 @@ import {
 } from "@/lib/calculations/math";
 import DefaultHgroup from "@/components/deco/default-hgroup";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
-import { SmartLink } from "@/components/smart-link";
-import { Button } from "@/components/ui/button";
+import { sLink } from "@/i18n/defaults";
 
 export default function ProductsPage() {
   const { t, rich } = useRichDefaults();
@@ -63,11 +62,7 @@ export default function ProductsPage() {
       <DefaultHgroup
         title={t("general.products")}
         caption={rich("database.products.caption", {
-          link: (chunks) => (
-            <Button asChild>
-              <SmartLink href="/tools">{chunks}</SmartLink>
-            </Button>
-          ),
+          link: sLink("/tools"),
         })}
       />
 
