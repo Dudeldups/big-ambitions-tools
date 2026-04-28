@@ -25,6 +25,7 @@ import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { toast } from "sonner";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
+import SectionWrapper from "@/components/deco/section-wrapper";
 
 const FactoryIdPage = () => {
   const t = useTranslations();
@@ -94,10 +95,10 @@ const FactoryIdPage = () => {
   };
 
   return (
-    <div className="max-w-page mx-auto grid xl:grid-cols-2">
-      <div className="overflow-x-auto px-4 py-8">
+    <SectionWrapper size="noTopPadding" className="xl:grid xl:grid-cols-2">
+      <div className="px-4 py-8">
         <div className="@container flex w-full flex-col gap-10">
-          <div className="flex w-full justify-between gap-6 @max-2xl:flex-col">
+          <div className="flex w-full justify-between gap-6 max-md:flex-col">
             <hgroup className="">
               <h2 className="text-h3 mb-4">{activeFactory.name}</h2>
               {activeFactory.description && (
@@ -107,7 +108,7 @@ const FactoryIdPage = () => {
               )}
             </hgroup>
 
-            <div className="flex gap-3 @max-2xl:self-end @max-lg:w-full @max-lg:flex-col @max-lg:*:w-full">
+            <div className="flex gap-3 max-md:w-full max-md:flex-col max-md:*:w-full @max-2xl:self-end">
               {/* CRUD buttons */}
               <OneTimeCostDialog rows={oneTimeCostRowData} />
 
@@ -153,7 +154,7 @@ const FactoryIdPage = () => {
         </div>
 
         <div className="mt-14">
-          <hgroup className="space-y-4">
+          <hgroup className="max-w-2xl space-y-4">
             {/* Shopping list */}
             <h2 className="text-xl font-semibold">
               {t("tools.factoryDetail.shoppingList.title")}
@@ -170,7 +171,7 @@ const FactoryIdPage = () => {
 
         {externalList.length > 0 && (
           <div className="mt-14">
-            <hgroup className="space-y-4 pr-10">
+            <hgroup className="max-w-2xl space-y-4 pr-10">
               {/* Split shopping list */}
               <h2 className="text-xl font-semibold">
                 {t("tools.factoryDetail.splitShoppingList.title")}
@@ -212,7 +213,7 @@ const FactoryIdPage = () => {
           </>
         )}
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 
