@@ -90,7 +90,7 @@ const FactoryInfoCard = ({
       />
 
       <CardHeader>
-        <h3 className="truncate font-semibold">{factory.name}</h3>
+        <h3 className="truncate text-lg font-semibold">{factory.name}</h3>
         {factory.description && (
           <p className="text-muted-foreground mt-2 truncate">
             {factory.description}
