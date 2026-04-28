@@ -532,7 +532,7 @@
       "employees": {
         "desc": "Enter the salary for each employee. Leave it empty if you don't want to include salary calculations.",
         "optimalWorkers": "Use optimal factory worker amount",
-        "optimalTooltip": "Automatically calculate the optimal number of workers based on workstations and opening hours. Will add a small buffer for smooth auto-schedule ingame."
+        "optimalTooltip": "Automatically calculate the optimal number of workers based on workstations and opening hours. Will add a small buffer for smooth auto-schedule in game."
       },
       "vehicles": {
         "addBtn": "Add vehicle"
