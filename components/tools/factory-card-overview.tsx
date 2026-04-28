@@ -50,8 +50,13 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
 
   return (
     <>
-      <div className="flex flex-col flex-wrap justify-between gap-4 md:flex-row">
-        <h3 className="mb-6 font-semibold">{t("factoryGroups.title")}</h3>
+      <div className="flex flex-col justify-between gap-4 max-md:items-center md:flex-row">
+        <div className="max-w-md md:max-w-2xl">
+          <h3 className="mb-6 font-semibold">{t("factoryGroups.title")}</h3>
+          <p className="text-muted-foreground mt-3">
+            {t("factoryGroups.desc")}
+          </p>
+        </div>
 
         <CreateGroupForm />
       </div>

@@ -457,6 +457,7 @@
     "factoryGroups": {
       "buttonDesc": "Create group",
       "title": "Factory groups",
+      "desc": "You can group factories together for a better overview per product category. If the grouped factories do not have enough pallet shelves assigned, the shopping list will tell you what you need to order to each factory and also to the warehouse to supply the rest. The deliveries dialog will also show you what to send to each factory.",
       "groupEmpty": "No factories in this group. Drag a factory card here to add it.",
       "ungroupedTitle": "Ungrouped factories",
       "ungroupedEmpty": "No ungrouped factories. Drag a factory card here or add a new factory.",
