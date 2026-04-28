@@ -1,14 +1,18 @@
 "use client";
 
-import IntroTextWrapper from "@/components/deco/intro-text-wrapper";
+import DefaultHgroup from "@/components/deco/default-hgroup";
+import SectionSeparator from "@/components/deco/section-separator";
+import SectionWrapper from "@/components/deco/section-wrapper";
+import NoDataFound from "@/components/no-data-found";
 import FactoryCardOverview from "@/components/tools/factory-card-overview";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { Plus } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const FactoriesPage = () => {
-  // const t = useTranslations();
+  const t = useTranslations("tools");
   const { activePlaythrough } = useActivePlaythrough();
 
   const hasFactories = activePlaythrough?.factoryIds.length !== 0;
@@ -18,48 +22,37 @@ const FactoriesPage = () => {
     return null;
   }
 
+  const mainDescription = (
+    <>
+      <p>{t("factories.desc")}</p>
+      <p className="mt-3">{t("factories.desc1")}</p>
+    </>
+  );
+
   return (
-    <div className="max-w-page mx-auto">
-      <div className="my-8 flex flex-wrap gap-3 space-y-4">
-        <Button asChild>
-          <Link href="/tools">Playthroughs</Link>
-        </Button>
-      </div>
+    <SectionWrapper size="noTopPadding" className="gap-10 md:gap-14">
+      <DefaultHgroup
+        title={t("factories.title")}
+        caption={mainDescription}
+        captionAs="div"
+      />
 
-      <IntroTextWrapper>
-        <h2>Your factories</h2>
-
-        <p className="mt-6 mb-2">
-          An overview of your factories. You can edit or delete them and also
-          copy the current values for a new factory. To see more details about
-          each factory including a shopping list, just click their respective
-          card.
-        </p>
-
-        <p>
-          You can also group them together by clicking the Create Group button
-          below. This will allow you to see those factories in one place and
-          manage them as a group. Helpful if you use a central warehouse to
-          provide ingredients for multiple factories. Depending on the pallet
-          shelves you set on the factory, it will suggest a delivery plan for
-          each factory.
-        </p>
-      </IntroTextWrapper>
+      <SectionSeparator />
 
       {!hasFactories ? (
-        <>
-          <p>No factories yet. Create one here:</p>
-          <Button size="sm" className="gap-1.5" asChild>
+        <div className="grid place-items-center">
+          <NoDataFound text={t("factories.noFactories")} />
+          <Button className="gap-1.5" asChild>
             <Link href={`/tools/${activePlaythrough.id}/factories/create`}>
               <Plus className="size-5" />
-              New factory
+              {t("factoryPlanner.buttonDesc")}
             </Link>
           </Button>
-        </>
+        </div>
       ) : (
         <FactoryCardOverview playthrough={activePlaythrough} />
       )}
-    </div>
+    </SectionWrapper>
   );
 };
 
