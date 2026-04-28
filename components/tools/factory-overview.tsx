@@ -108,9 +108,9 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
       <Separator />
       <div className="mx-auto max-w-3xl space-y-3 rounded-lg border p-4">
-        <h2 className="text-center text-xl md:text-2xl">
+        <h3 className="text-center text-xl md:text-2xl">
           {tGeneral("summary")}
-        </h2>
+        </h3>
 
         <Separator />
 
