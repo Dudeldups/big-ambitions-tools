@@ -35,7 +35,7 @@ const NavContent = ({ onAction }: NavContentProps) => {
 
   return (
     <>
-      <nav className="max-md:w-full">
+      <nav className="max-md:w-full" aria-label="main navigation">
         <ul className="flex flex-col items-end gap-4 max-md:w-full md:flex-row md:items-center">
           {links.map((link) => (
             <li key={link.href} className="max-md:w-full">
