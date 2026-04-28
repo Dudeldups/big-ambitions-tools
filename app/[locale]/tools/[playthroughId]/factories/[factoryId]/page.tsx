@@ -4,7 +4,6 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { useActiveFactory } from "@/lib/hooks/useActiveFactory";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import { useTranslations } from "next-intl";
 import { Clock, Edit, Hammer, ShelvingUnit, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,9 +25,11 @@ import SectionWrapper from "@/components/deco/section-wrapper";
 import ImporterTable from "@/components/tables/importer-table";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 import { Separator } from "@/components/ui/separator";
+import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
+import { sLink } from "@/i18n/defaults";
 
 const FactoryIdPage = () => {
-  const t = useTranslations();
+  const { t, rich } = useRichDefaults();
   const router = useRouter();
   const { activePlaythrough } = useActivePlaythrough();
   const { activeFactory } = useActiveFactory();
@@ -186,7 +187,11 @@ const FactoryIdPage = () => {
                   requiredAmount: requiredShelves,
                 })}
               </p>
-              <p>{t("tools.factoryDetail.splitShoppingList.desc1")}</p>
+              <p>
+                {rich("tools.factoryDetail.splitShoppingList.desc1", {
+                  link: sLink(`/tools/${activePlaythrough.id}/factories`),
+                })}
+              </p>
             </hgroup>
 
             <div className="mt-10 flex w-full flex-col gap-4 space-y-6 overflow-x-auto">

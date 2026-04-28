@@ -470,7 +470,7 @@
       "splitShoppingList": {
         "title": "Split shopping list",
         "desc": "Order these ingredients to your factory to split the order. This is the maximum amount your {shelfAmount} pallet shelves can hold. It also accounts for the number of boxes you are producing. You would need {requiredAmount} shelves to store all ingredients for a whole week of production.",
-        "desc1": "The rest must be ordered to a warehouse by one or more separate purchasing agents. Go back to the factory overview and create a group to see a full list of what to order to that warehouse. It will also show you the delivery plan to each factory."
+        "desc1": "The rest must be ordered to a warehouse by one or more separate purchasing agents. Go back to the <link>factory overview</link> and create a group to see a full list of what to order to that warehouse. It will also show you the delivery plan to each factory."
       }
     },
     "playthroughForm": {
