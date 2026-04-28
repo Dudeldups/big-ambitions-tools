@@ -93,7 +93,11 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
                   value={
                     weeklyIngredientCosts !== null ? (
                       <CurrencyText
-                        value={weeklyIngredientCosts * -1}
+                        value={
+                          weeklyIngredientCosts === 0
+                            ? 0
+                            : weeklyIngredientCosts * -1
+                        }
                         hideCents
                       />
                     ) : (
