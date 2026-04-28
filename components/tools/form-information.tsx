@@ -34,13 +34,15 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
 
   return (
     <FieldSet className="@container/field-set grid @[38rem]:grid-cols-2">
-      <FieldLegend className="col-span-full underline">
-        Factory Information
+      <FieldLegend className="col-span-full mb-2 underline">
+        {t("tools.factoryPlanner.information.legend")}
       </FieldLegend>
 
       <FieldGroup>
         <Field>
-          <FieldLabel htmlFor="name">Factory Name</FieldLabel>
+          <FieldLabel htmlFor="name">
+            {t("tools.factoryPlanner.information.name")}
+          </FieldLabel>
           <Input
             id="name"
             autoComplete="off"
@@ -53,7 +55,9 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
         </Field>
 
         <Field className="-mt-2">
-          <FieldLabel htmlFor="description">Description</FieldLabel>
+          <FieldLabel htmlFor="description">
+            {t("general.description")}
+          </FieldLabel>
           <Textarea
             id="description"
             {...register("description")}
@@ -67,7 +71,7 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
 
       <FieldGroup className="@md:@max-xl:flex-row @md:@max-xl:*:flex-1">
         <Field>
-          <FieldLabel htmlFor="openingHours">Opening hours / day</FieldLabel>
+          <FieldLabel htmlFor="openingHours">{`${t("general.openingHours")} / ${t("general.day")}`}</FieldLabel>
           <div className="flex items-center gap-3">
             <Input
               className="max-w-20"
@@ -82,7 +86,6 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
                 onChange: (e) => {
                   const val = parseInt(e.target.value, 10);
                   if (val > 24) {
-                    // Setzt den Wert im Form-State hart auf 24
                     setValue("openingHours", 24);
                   }
                 },
@@ -92,13 +95,15 @@ const FormInformation = ({ form, openingHours, t }: FormInformationProps) => {
               }}
             />
             <span className="text-muted-foreground">
-              {openingHours * 7}h / week
+              {openingHours * 7}h / {t("general.week")}
             </span>
           </div>
         </Field>
 
         <FieldSet>
-          <FieldLegend>Calculation basis</FieldLegend>
+          <FieldLegend>
+            {t("tools.factoryPlanner.information.calcBasis")}
+          </FieldLegend>
           <RadioButtonGroup
             name="calculationPeriod"
             value={calculationPeriod}
