@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import {
   Select,
@@ -15,6 +15,7 @@ import { useIsMounted } from "@/lib/hooks/useIsMounted";
 import TextSkeleton from "./cemetery/text-skeleton";
 
 const LanguageSelect = () => {
+  const t = useTranslations("home");
   const isMounted = useIsMounted();
   const lang = useLocale();
   const router = useRouter();
@@ -26,7 +27,10 @@ const LanguageSelect = () => {
 
   return (
     <Select defaultValue={lang} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="bg-background border-border hover:bg-muted">
+      <SelectTrigger
+        className="bg-background border-border hover:bg-muted"
+        aria-label={t("selectLanguage")}
+      >
         {isMounted ? <SelectValue /> : <TextSkeleton className="w-14" />}
       </SelectTrigger>
       <SelectContent position="popper">
