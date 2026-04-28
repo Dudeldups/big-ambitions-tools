@@ -436,7 +436,12 @@
       "title": "Your factories",
       "desc": "An overview of your factories. You can edit or delete them and also copy the current values for a new factory. To see more details about each factory including a shopping list, just click their respective card.",
       "desc1": "You can also group them together by clicking the Create Group button below. This will allow you to see those factories in one place and manage them as a group. Helpful if you use a central warehouse to provide ingredients for multiple factories. Depending on the pallet shelves you set on the factory, it will suggest a delivery plan for each factory.",
-      "noFactories": "There are no factories in your playthrough. Create one to get started!"
+      "noFactories": "There are no factories in your playthrough. Create one to get started!",
+      "notFound": {
+        "title": "Factory not found",
+        "desc": "This factory doesn't exist or has been deleted.",
+        "link": "Back to factory overview"
+      }
     },
     "playthroughForm": {
       "title": "Create a new playthrough",
