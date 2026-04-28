@@ -42,7 +42,7 @@ const OneTimeCostDialog = ({ rows }: OneTimeCostDialogProps) => {
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button>{t("general.close")}</Button>
+            <Button variant="outline">{t("general.close")}</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
