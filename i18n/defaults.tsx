@@ -4,25 +4,6 @@ import { Translator } from "@/lib/types";
 import messages from "@/messages/en.json";
 import { RichTranslationValues } from "next-intl";
 
-type JsonMessages = { [key: string]: string | JsonMessages };
-
-const fillDefaults = (
-  obj: JsonMessages,
-  tGeneral: Translator,
-  defaults: RichTranslationValues,
-  prefix = "",
-) => {
-  Object.keys(obj).forEach((key) => {
-    const currentPath = prefix ? `${prefix}.${key}` : key;
-
-    if (typeof obj[key] === "object" && obj[key] !== null) {
-      fillDefaults(obj[key], tGeneral, defaults, currentPath);
-    } else {
-      defaults[key] = tGeneral(currentPath);
-    }
-  });
-};
-
 export const sLink = (href: string) => {
   return function LinkHandler(chunks: React.ReactNode) {
     return <SmartLink href={href}>{chunks}</SmartLink>;
@@ -40,7 +21,13 @@ export const getRichDefaults = (
     br: () => <br />,
   };
 
-  fillDefaults(messages.general, tGeneral, defaults);
+  Object.keys(messages.general).forEach((key) => {
+    const value = messages.general[key as keyof typeof messages.general];
+
+    if (typeof value === "string") {
+      defaults[key] = tGeneral(key);
+    }
+  });
 
   return defaults;
 };
