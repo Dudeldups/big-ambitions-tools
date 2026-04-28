@@ -36,6 +36,7 @@ export const getRichDefaults = (
     ...GLOSSARY,
     em: (chunks) => <em>{chunks}</em>,
     cite: (chunks) => <cite>{chunks}</cite>,
+    strong: (chunks) => <strong>{chunks}</strong>,
     br: () => <br />,
   };
 
