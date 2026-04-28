@@ -457,6 +457,9 @@
     "factoryGroups": {
       "buttonDesc": "Create group",
       "title": "Factory groups",
+      "groupEmpty": "No factories in this group. Drag a factory card here to add it.",
+      "ungroupedTitle": "Ungrouped factories",
+      "ungroupedEmpty": "No ungrouped factories. Drag a factory card here or add a new factory.",
       "deliveries": {
         "buttonDesc": "Deliveries",
         "title": "Delivery plan",

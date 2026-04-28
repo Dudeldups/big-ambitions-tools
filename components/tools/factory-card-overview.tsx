@@ -20,7 +20,6 @@ type FactoryCardOverviewProps = {
 const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
   const t = useTranslations("tools");
   const tModals = useTranslations("modals");
-  const tGeneral = useTranslations("general");
   const [draggedFactoryId, setDraggedFactoryId] = useState<string | null>(null);
   const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
   const addFactoryToGroup = usePlaythroughStore((s) => s.addFactoryToGroup);
@@ -114,10 +113,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
               ) : (
                 <div className="flex items-center justify-center">
                   <div className="bg-card rounded-md p-4">
-                    <span>
-                      No factories in this group. Drag a factory card here to
-                      add it.
-                    </span>
+                    <p>{t("factoryGroups.groupEmpty")}</p>
                   </div>
                 </div>
               )}
@@ -146,7 +142,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
               }}
             >
               <span className="mb-6 inline-block font-semibold">
-                Ungrouped factories
+                {t("factoryGroups.ungroupedTitle")}
               </span>
 
               {ungroupedFactoryIds.length > 0 ? (
@@ -172,10 +168,7 @@ const FactoryCardOverview = ({ playthrough }: FactoryCardOverviewProps) => {
               ) : (
                 <div className="flex items-center justify-center">
                   <div className="bg-card rounded-md p-4">
-                    <span>
-                      No ungrouped factories. Drag a factory card here or add a
-                      new factory.
-                    </span>
+                    <span>{t("factoryGroups.ungroupedEmpty")}</span>
                   </div>
                 </div>
               )}
