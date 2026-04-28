@@ -46,27 +46,27 @@ const FormEmployees = ({ register, t }: FormEmployeesProps) => {
           </FieldDescription>
         </div>
 
-        <Field
-          orientation="horizontal"
-          className="w-auto items-start self-start"
-        >
-          <Checkbox
-            id="factory-worker-check"
-            checked={isOptimalWorkerChecked}
-            onCheckedChange={() => toggleOptimalWorker()}
-            className="mt-0.5"
-          />
-          <Tooltip>
-            <TooltipTrigger>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Field
+              orientation="horizontal"
+              className="w-auto items-start self-start"
+            >
+              <Checkbox
+                id="factory-worker-check"
+                checked={isOptimalWorkerChecked}
+                onCheckedChange={() => toggleOptimalWorker()}
+                className="mt-0.5"
+              />
               <FieldLabel htmlFor="factory-worker-check">
                 {t("tools.factoryPlanner.employees.optimalWorkers")}
               </FieldLabel>
-            </TooltipTrigger>
-            <TooltipContent>
-              {t("tools.factoryPlanner.employees.optimalTooltip")}
-            </TooltipContent>
-          </Tooltip>
-        </Field>
+              <TooltipContent>
+                {t("tools.factoryPlanner.employees.optimalTooltip")}
+              </TooltipContent>
+            </Field>
+          </TooltipTrigger>
+        </Tooltip>
       </div>
 
       <FieldGroup className="grid grid-cols-(--grid-cols-form) gap-6 px-4">
