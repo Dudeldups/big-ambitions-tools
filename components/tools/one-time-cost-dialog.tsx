@@ -26,14 +26,14 @@ const OneTimeCostDialog = ({ rows }: OneTimeCostDialogProps) => {
       <DialogTrigger asChild>
         <Button variant="outline">
           <ClipboardCheck className="size-5" />
-          One-time costs
+          {t("general.oneTimeCosts")}
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-3xl">
+      <DialogContent className="bg-background sm:max-w-3xl">
         <DialogHeader>
-          <DialogTitle>One-time costs</DialogTitle>
-          <DialogDescription>One-time costs for the factory</DialogDescription>
+          <DialogTitle>{t("general.oneTimeCosts")}</DialogTitle>
+          <DialogDescription>{t("modals.oneTimeCostDesc")}</DialogDescription>
         </DialogHeader>
 
         <div className="no-scrollbar max-h-[60vh] overflow-auto">
