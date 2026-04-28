@@ -20,6 +20,7 @@ export const getOptimalPalletShelfAmount = (
   if (workstations.length === 0)
     return { daily: 0, weekly: 0, external: 0, isOverflowing: false };
 
+  const { storageCapacity } = shelves.palletShelf;
   const ingredientTotals = calculateIngredientTotals(workstations);
   const productTotals = calculateProductTotals(workstations);
 
@@ -43,17 +44,16 @@ export const getOptimalPalletShelfAmount = (
     0,
     (totalProdBoxesPerHour - totalIngBoxesPerHour) * 24,
   );
+  const overflowFromMonToTue = (dailyOverflow / 24) * 18; // Mon 8 a.m. - Tue 2 a.m.
 
   const netDailyBoxes = dailyIngBoxes + dailyOverflow;
 
-  const dailyPalletShelfAmount = Math.ceil(
-    netDailyBoxes / shelves.palletShelf.storageCapacity,
-  );
+  const dailyPalletShelfAmount = Math.ceil(netDailyBoxes / storageCapacity);
   const weeklyPalletShelfAmount = Math.ceil(
-    (dailyIngBoxes * 7 + dailyOverflow) / shelves.palletShelf.storageCapacity,
+    (dailyIngBoxes * 7 + overflowFromMonToTue) / storageCapacity,
   );
   const externalPalletShelfAmount = Math.ceil(
-    (dailyIngBoxes * 7) / shelves.palletShelf.storageCapacity,
+    (dailyIngBoxes * 7) / storageCapacity,
   );
 
   return {
