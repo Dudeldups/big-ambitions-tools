@@ -161,9 +161,9 @@ const FactoryIdPage = () => {
         {/* Shopping list */}
         <div className="mt-14 min-w-0 overflow-x-auto">
           <hgroup className="max-w-2xl space-y-4">
-            <h2 className="text-xl font-semibold">
+            <h3 className="text-xl font-semibold">
               {t("tools.factoryDetail.shoppingList.title")}
-            </h2>
+            </h3>
             <p>{t("tools.factoryDetail.shoppingList.desc")}</p>
           </hgroup>
 
@@ -178,9 +178,9 @@ const FactoryIdPage = () => {
         {externalList.length > 0 && (
           <div className="mt-14">
             <hgroup className="max-w-2xl space-y-4">
-              <h2 className="text-xl font-semibold">
+              <h3 className="text-xl font-semibold">
                 {t("tools.factoryDetail.splitShoppingList.title")}
-              </h2>
+              </h3>
               <p>
                 {t("tools.factoryDetail.splitShoppingList.desc", {
                   shelfAmount: activeFactory.shelfAmount,
