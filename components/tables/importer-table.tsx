@@ -28,9 +28,9 @@ const ImporterTable = ({ data, t }: ImporterTableProps) => {
 
   return (
     <div ref={overflowRef} className={cn("mx-auto w-full max-w-2xl space-y-2")}>
-      <h3 className="mb-4 text-lg font-semibold">
+      <span className="mb-4 block text-lg font-semibold">
         {t(`importers.${importer}`)}
-      </h3>
+      </span>
 
       <div
         className={cn("rounded-md border", isOverflowing && "overflow-x-auto")}
