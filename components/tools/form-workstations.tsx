@@ -91,7 +91,7 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
               })
             }
           >
-            Add workstation
+            {t("tools.factoryPlanner.workstations.addBtn")}
           </Button>
 
           <WorkstationPresetDialog append={appendWs} />

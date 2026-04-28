@@ -537,6 +537,9 @@
       "vehicles": {
         "addBtn": "Add vehicle"
       },
+      "workstations": {
+        "addBtn": "Add workstation"
+      },
       "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",
       "estimatedSales": "Estimated weekly sales",
