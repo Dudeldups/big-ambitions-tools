@@ -86,7 +86,7 @@ const EditGroupForm = ({ groupId }: EditGroupFormProps) => {
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline">
+        <Button variant="outline" aria-label={t("general.edit")}>
           <Edit className="size-5" />
         </Button>
       </DialogTrigger>
