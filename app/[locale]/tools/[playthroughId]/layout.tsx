@@ -55,11 +55,15 @@ const PlaythroughIdLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">
               {/* Playthrough name */}
-              <div className="bg-background text-foreground self-start rounded-md px-2.5 py-0.5 max-md:mx-auto max-md:w-full">
+              <div className="bg-background text-foreground self-start rounded-md max-md:mx-auto max-md:w-full">
                 {activePlaythrough ? (
-                  <h1 className="truncate text-xl font-bold">
-                    {activePlaythrough.characterName}
-                  </h1>
+                  <Button variant="ghost" asChild>
+                    <Link href={`/tools/${activePlaythrough.id}`}>
+                      <h1 className="truncate text-xl font-bold">
+                        {activePlaythrough.characterName}
+                      </h1>
+                    </Link>
+                  </Button>
                 ) : (
                   <TextSkeleton className="w-24" />
                 )}
