@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -20,6 +19,7 @@ import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPallet
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
 import { cn } from "@/lib/utils";
+import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 
 type GroupShoppingListDialogProps = {
   factoryIds: string[];
@@ -28,7 +28,7 @@ type GroupShoppingListDialogProps = {
 const GroupShoppingListDialog = ({
   factoryIds,
 }: GroupShoppingListDialogProps) => {
-  const t = useTranslations();
+  const { t, rich } = useRichDefaults();
   const { activePlaythrough } = useActivePlaythrough();
   const getFactoryById = usePlaythroughStore((s) => s.getFactoryById);
 
@@ -53,23 +53,24 @@ const GroupShoppingListDialog = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className={cn(neededPalletShelvesTotal === 0 && "hidden")}>
+        <Button
+          variant="foreground"
+          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
+        >
           <ClipboardCheck className="size-5" />
-          Group shopping list
+          {t("tools.factoryGroups.shoppingList.title")}
         </Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-3xl">
         <DialogHeader>
-          <DialogTitle>Group shopping list</DialogTitle>
+          <DialogTitle>
+            {t("tools.factoryGroups.shoppingList.title")}
+          </DialogTitle>
           <DialogDescription>
-            These are all ingredients that are needed to supply those factories
-            without enough pallet shelves inside this group. It calculates based
-            on the amount of shelves available in the factories so you can order
-            the rest to a separate warehouse.
-            <br />
-            Shelves needed in this warehouse:{" "}
-            <strong>{neededPalletShelvesTotal}</strong>
+            {rich("tools.factoryGroups.shoppingList.desc", {
+              amount: neededPalletShelvesTotal,
+            })}
           </DialogDescription>
         </DialogHeader>
 
@@ -81,7 +82,7 @@ const GroupShoppingListDialog = ({
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button>{t("general.close")}</Button>
+            <Button variant="outline">{t("general.close")}</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
