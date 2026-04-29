@@ -48,7 +48,11 @@ const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
       if (!hasHydrated) break;
       label = getFactoryById(segment)?.name;
     } else {
-      label = t.has(segment) ? t(segment) : segment;
+      if (t.has(segment)) {
+        label = t(segment);
+      } else {
+        label = segment.charAt(0).toUpperCase() + segment.slice(1);
+      }
     }
 
     if (
