@@ -363,20 +363,19 @@
     "oneTimeCostDesc": "One-time installation costs for the factory."
   },
   "errors": {
-    "invalidPriceIndex": "It looks like the math did not math - please check your inputs and try again. If you think this is an error, please reach out to us so we can fix it!",
     "playthrough": {
       "notFound": "This resource does not exist.",
-      "nameRequired": "Character name is required.",
+      "nameRequired": "Your character should have a name.",
       "nameTooLong": "Character name must be at most 30 characters.",
       "difficultyRequired": "Please select a difficulty.",
       "workstationProductRequired": "Please select a product for each workstation."
     },
     "factory": {
       "nameTooLong": "Factory name must be at most 50 characters.",
-      "descriptionTooLong": "Factory description must be at most 150 characters.",
+      "descriptionTooLong": "Stop writing a novel in here. 150 characters max!",
       "workstationsRequired": "Please add at least one workstation.",
-      "atLeastOneVehicle": "At least one vehicle is required for the factory.",
-      "maxTwoVehicles": "At most two vehicles are allowed for the factory.",
+      "atLeastOneVehicle": "At least one vehicle is required per factory.",
+      "maxTwoVehicles": "At most two vehicles are allowed per factory.",
       "shelfAmountTooLow": "You have to prodive shelves for the factory to work."
     },
     "factoryGroup": {
@@ -423,7 +422,7 @@
       "caption": "All products at a glance. Switch between manufacturing and import prices. Retail price is the average across all districts. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Curious how it's calculated? Check out the <link>{toolsSection}</link> section."
     },
     "ingredients": {
-      "caption": "Overview of all factory ingredients including their properties. Select the difficulty to see the correct prices."
+      "caption": "Overview of all raw ingredients including their properties. Select the difficulty to see the correct prices."
     },
     "machines": {
       "caption": "All machines used in production. Combine one primary machine with one or two secondary machines to form a workstation."
@@ -458,7 +457,7 @@
     "factories": {
       "title": "Your factories",
       "desc": "An overview of your factories. You can edit or delete them and also copy the current values for a new factory. To see more details about each factory including a shopping list, just click their respective card.",
-      "desc1": "You can also group them together by clicking the Create Group button below. This will allow you to see those factories in one place and manage them as a group. Helpful if you use a central warehouse to provide ingredients for multiple factories. Depending on the pallet shelves you set on the factory, it will suggest a delivery plan for each factory.",
+      "desc1": "You can also group them together by clicking the Create Group button below. This will allow you to see those factories in one place and manage them as a group. Helpful if you use a central warehouse to provide ingredients for multiple factories. Based on the number of pallet shelves you've added, it will suggest a delivery plan for each factory.",
       "noFactories": "There are no factories in your playthrough. Create one to get started!",
       "notFound": {
         "title": "Factory not found",
@@ -483,7 +482,7 @@
       "desc": "Enter a name for your playthrough and select the difficulty so the tools can calculate the correct prices. You can edit or delete your playthroughs at any time.",
       "placeholder": "e.g. John Manhattan",
       "deleteTitle": "Delete playthrough",
-      "deleteDesc": "Are you sure you want to delete this playthrough? This action cannot be undone."
+      "deleteDesc": "Are you sure you want to delete this playthrough? This action can't be undone."
     },
     "factoryForm": {
       "deleteTitle": "Delete factory",
@@ -508,7 +507,7 @@
       },
       "shoppingList": {
         "title": "Group shopping list",
-        "desc": "These are all ingredients that are needed to supply those factories without enough pallet shelves inside this group. It calculates based on the amount of shelves available in the factories so you can order the rest to a separate warehouse.<br></br>Shelves needed in warehouse: <strong>{amount}</strong>"
+        "desc": "These are all ingredients needed to supply factories that don't have enough pallet shelves inside this group. It calculates based on the amount of shelves available in the factories so you can order the rest to a separate warehouse.<br></br>Shelves needed in warehouse: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
@@ -525,7 +524,7 @@
         "enoughWeekly": "Enough for weekly delivery.",
         "enoughDaily": "Enough for daily delivery only. A warehouse is required for weekly logistics.",
         "notEnough": "Not enough storage even for daily delivery.",
-        "overflowWarning": "Stocking faster than clearing!",
+        "overflowWarning": "Stock piling up!",
         "overflowDesc": "Production outpaces ingredient consumption. Shelf count adjusted accordingly."
       },
       "employees": {
@@ -546,10 +545,6 @@
       "priceIndexButton": "Set price index",
       "priceIndexDesc": "Select the current ingame price index for this product to calculate the correct income. (Export price is more accurate.)"
     }
-  },
-  "about": {
-    "title": "FAQ",
-    "desc": "This page contains answers to frequently asked questions. If you still have a question, feel free to ask in the Discord server."
   },
   "footer": {
     "assets": "All game images, trademarks, and assets belong to their respective owners.",
