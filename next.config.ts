@@ -3,7 +3,6 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   experimental: {
-    globalNotFound: true,
     viewTransition: true,
   },
 };
