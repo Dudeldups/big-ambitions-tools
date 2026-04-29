@@ -47,7 +47,6 @@
     "salad": "Insalata",
     "energyDrink": "Bevanda energetica",
     "cupOfTea": "Tazza di tè",
-    "cupOfCoffee": "Tazza di caffè",
     "whisky": "Whisky",
     "slushie": "Granita",
     "sodaCan": "Lattina di soda",
@@ -71,7 +70,8 @@
     "classicExpensiveMaleClothing": "Abbigliamento (classico costoso uomo)",
     "classicExpensiveFemaleClothing": "Abbigliamento (classico costoso donna)",
     "modernExpensiveMaleClothing": "Abbigliamento (moderno costoso uomo)",
-    "modernExpensiveFemaleClothing": "Abbigliamento (moderno costoso donna)"
+    "modernExpensiveFemaleClothing": "Abbigliamento (moderno costoso donna)",
+    "cupOfCoffee": "Tazza di caffè"
   },
   "ingredients": {
     "battery": "Batteria",
@@ -161,7 +161,6 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "Scooter elettrico",
-    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -172,7 +171,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Camion merci T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Bima320": "BIMA 320"
   },
   "inventory": {
     "palletShelf": "Scaffale per pallet",
@@ -202,72 +202,57 @@
     "confirm": "Conferma",
     "cancel": "Annulla",
     "reset": "Reimposta",
-    "copy": "Copia",
     "close": "Chiudi",
     "delete": "Elimina",
+    "save": "Salva",
     "amount": "Quantità",
     "summedUpAmount": "Totale",
+    "never": "Mai",
     "noValue": "Nessuno",
-    "noResultsFound": "Nessun risultato trovato.",
-    "columnsDescription": "Colonne",
-    "filterResults": "Filtra i risultati...",
-    "characterName": "Nome personaggio",
-    "workstation": "Stazione di lavoro",
+    "home": "Home",
+    "ingredients": "Ingredienti",
+    "inventory": "Inventario",
+    "workstations": "Postazioni di lavoro",
     "product": "Prodotto",
+    "products": "Prodotti",
+    "factory": "Fabbrica",
     "factories": "Fabbriche",
     "vehicle": "Veicolo",
-    "difficulty": "Difficoltà",
-    "priceIndex": "Indice dei prezzi",
-    "exportPrice": "Prezzo di esportazione",
+    "vehicles": "Veicoli",
+    "revenue": "Ricavi",
     "profit": "Profitto",
-    "manufacturingCosts": "Costi di produzione",
+    "taxes": "Tasse",
+    "salary": "Stipendio",
+    "logisticsManager": "Responsabile logistico",
+    "deliveryDriver": "Autista addetto alle consegne",
+    "openingHours": "Orari di apertura",
     "difficultyOptions": {
       "easy": "Facile",
       "normal": "Normale",
       "hard": "Difficile"
-    },
-    "displayPriceOptions": {
-      "manufacture": "Produrre",
-      "import": "Importare",
-      "export": "Esportazione",
-      "retail": "Commerciale"
-    },
-    "calculationPeriodOptions": {
-      "hourly": "Orario",
-      "daily": "Giornaliero",
-      "weekly": "Settimanale"
     }
   },
   "tableColumns": {
-    "itemName": "Nome articolo",
     "purchasePrice": "Prezzo",
-    "retailPrice": "Prezzo vendita",
-    "manufacturePrice": "Costo produzione",
-    "storageCapacity": "Capacità stoccaggio",
-    "workstation": "Postazione lavoro",
-    "neededMachines": "Macchine necessarie",
-    "usedForProducts": "Usato per prodotti",
-    "importPrice": "Prezzo importazione",
-    "exportPrice": "Prezzo di esportazione",
-    "profitMargin": "Margine di profitto",
-    "profitPerHour": "Guadagno/ora",
     "amount": "Quantità",
-    "amountPerBox": "Quantità/scatola",
-    "usedInProducts": "Usato nei prodotti",
-    "importers": "Importatori",
     "ingredients": "Ingredienti",
-    "productionRate": "Produzione/ora",
-    "vehicleName": "Nome veicolo",
-    "maxFuel": "Capacità serbatoio",
-    "maxCargoCapacity": "Capacità di carico",
-    "maxSpeed": "Velocità massima",
-    "enginePower": "Potenza motore",
-    "autoParkSupported": "Parcheggio automatico",
-    "taxDeductible": "Deducibile",
-    "requiredDeliveryDriverSkillValue": "Skill autista richiesta",
-    "destinationsThatCanDeliver": "Destinazioni raggiungibili",
-    "destinationsFull": "A pieno carico",
     "employees": "Dipendenti",
-    "description": "Descrizione"
+    "export": "Esportazione",
+    "retail": "Commerciale",
+    "deliverUpTo": "Consegna fino a"
+  },
+  "modals": {
+    "groupLabelName": "Nome",
+    "groupLabelColor": "Colore"
+  },
+  "home": {
+    "selectLanguage": "Seleziona lingua"
+  },
+  "tools": {
+    "factoryGroups": {
+      "deliveries": {
+        "buttonDesc": "Consegne"
+      }
+    }
   }
 }
