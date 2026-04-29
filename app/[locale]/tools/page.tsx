@@ -3,6 +3,7 @@ import SectionSeparator from "@/components/deco/section-separator";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import CreatePlaythroughForm from "@/components/tools/create-playthrough-form";
 import PlaythroughOverview from "@/components/tools/playthrough-overview";
+import { GLOSSARY } from "@/i18n/glossary";
 import { TriangleAlert } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -14,7 +15,7 @@ const Tools = () => {
     <div className="main-wrapper">
       <SectionWrapper variant="primary" centerMobile>
         <hgroup className="grid items-end gap-14 md:grid-cols-[2fr_3fr] lg:gap-24">
-          <h1>{tGeneral("tools")}</h1>
+          <h1>{GLOSSARY.toolsSection}</h1>
 
           <div className="max-w-lg">
             <p className="text-h5">{t("intro.desc")}</p>
