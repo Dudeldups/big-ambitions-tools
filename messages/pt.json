@@ -230,6 +230,53 @@
       "easy": "Fácil",
       "normal": "Normal",
       "hard": "Difícil"
+    },
+    "copy": "Copiar",
+    "create": "Criar",
+    "edit": "Editar",
+    "summary": "Resumo",
+    "amortization": "Amortização",
+    "noResultsFound": "Nenhum resultado encontrado.",
+    "columnsDescription": "Colunas",
+    "filterResults": "Filtrar resultados...",
+    "characterName": "Nome do personagem",
+    "about": "Sobre",
+    "contact": "Contato",
+    "machines": "Máquinas",
+    "workstation": "Estação de Trabalho de Roupas",
+    "database": "Banco de dados",
+    "playthrough": "Partida",
+    "playthroughs": "Partidas",
+    "palletShelves": "Estante para Paletes",
+    "difficulty": "Dificuldade",
+    "priceIndex": "Índice de preços",
+    "priceIndices": "Índices de preços",
+    "exportPrice": "Preço de exportação",
+    "expenses": "Despesas",
+    "netProfit": "Lucro líquido",
+    "manufacturingCosts": "Custos de produção",
+    "manufacturingCostsShort": "Custos prod.",
+    "oneTimeCosts": "Custos únicos",
+    "recurringCosts": "Custos recorrentes",
+    "description": "Descrição",
+    "day": "dia",
+    "week": "semana",
+    "themes": {
+      "buttonDesc": "Alternar temas",
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    },
+    "displayPriceOptions": {
+      "manufacture": "Produção",
+      "import": "Importação",
+      "export": "Exportação",
+      "retail": "Varejo"
+    },
+    "calculationPeriodOptions": {
+      "hourly": "Por hora",
+      "daily": "Diário",
+      "weekly": "Semanal"
     }
   },
   "tableColumns": {
@@ -239,20 +286,268 @@
     "employees": "Funcionários",
     "export": "Exportação",
     "retail": "Varejo",
-    "deliverUpTo": "Entregar até"
+    "deliverUpTo": "Entregar até",
+    "itemName": "Nome do item",
+    "retailPrice": "Preço de venda",
+    "manufacturePrice": "Preço de fab.",
+    "storageCapacity": "Capacidade de armazenamento",
+    "workstation": "Estação de Trabalho de Roupas",
+    "neededMachines": "Máquinas",
+    "usedForProducts": "Para produtos",
+    "importPrice": "Preço de importação",
+    "exportPrice": "Preço de exportação",
+    "profitMargin": "Margem de lucro",
+    "profitPerHour": "Lucro/h.",
+    "amountPerBox": "Qtd./Caixa",
+    "usedInProducts": "Em produtos",
+    "importers": "Importadores",
+    "productionRate": "Prod./h.",
+    "vehicleName": "Nome do veículo",
+    "maxFuel": "Capacidade do tanque",
+    "maxCargoCapacity": "Capacidade de carga",
+    "maxSpeed": "Velocidade máx.",
+    "enginePower": "Aceleração",
+    "autoParkSupported": "Estacionamento automático",
+    "taxDeductible": "Dedutível",
+    "requiredDeliveryDriverSkillValue": "Skill do motorista",
+    "destinationsThatCanDeliver": "Destinos base",
+    "destinationsFull": "Max. destinos",
+    "description": "Descrição"
   },
   "modals": {
     "groupLabelName": "Nome",
-    "groupLabelColor": "Cor"
+    "groupLabelColor": "Cor",
+    "discardChanges": "Descartar alterações não salvas",
+    "discardDesc": "Tem alterações não salvas. Tem certeza que deseja descartá-las?",
+    "resetForm": "Reiniciar formulário",
+    "resetDesc": "Tem certeza que deseja reiniciar os valores do formulário para as configurações padrão?",
+    "wsPresetBtn": "Adicionar pré-definição",
+    "wsPresetTitle": "Selecionar pré-definição",
+    "wsPresetDesc": "Escolha uma pré-definição da lista para adicioná-la à sua fábrica.",
+    "priceIndicesDesc": "Selecione os índices de preço atuais para cada item para cálculos precisos.",
+    "groupBtn": "Criar grupo",
+    "groupTitle": "Criar novo grupo de fábrica",
+    "groupDesc": "Agrupe fábricas para ter uma visão geral de todos os ingredientes necessários.",
+    "editGroupTitle": "Editar grupo de fábrica",
+    "editGroupDesc": "Selecione os novos valores.",
+    "deleteGroupTitle": "Excluir grupo",
+    "deleteGroupDesc": "Tem certeza que deseja excluir este grupo? Se houver fábricas atribuídas, elas serão reatribuídas ao grupo padrão.",
+    "oneTimeCostDesc": "Custos de instalação únicos para a fábrica."
   },
   "home": {
-    "selectLanguage": "Selecionar idioma"
+    "selectLanguage": "Selecionar idioma",
+    "intro": {
+      "desc": "Aqui você encontra infos e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para te ajudar a otimizar seu jogo. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
+    },
+    "cta": {
+      "title": "Vamos começar!",
+      "desc": "Quer só dar uma olhada em algo ou brincar um pouco com números? <em>Mhmm, números deliciosos!</em> Então dá uma olhada na <link>{database}</link> e comece a explorar.",
+      "desc2": "Da planejar a sua primeira fábrica até gerenciar as taxas de produção de todo o seu império, você encontrará tudo na seção <link>{toolsSection}</link>.",
+      "errorDesc": "Encontrou um erro ou falta alguma informação? Ou tem sugestões para melhorar o site? Sinta-se à vontade para <contact>falar com a gente</contact>!"
+    },
+    "game": {
+      "title": "Ainda não conhece o jogo?",
+      "subtitle": "Que pena!",
+      "desc": "{gameName} é uma revolucionária simulação de negócios de RPG. Vá de zero ao maior empresário de Nova York abrindo pequenos negócios ou construindo lentamente um grande império corporativo da maneira que quiser.",
+      "hovgaard": "Confira o site oficial de <website>{companyName}</website>",
+      "steam": "Visite o jogo diretamente no <link>{steam}</link>"
+    },
+    "updates": {
+      "title": "Últimas atualizações"
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "desc": "Parece que essa página tirou um dia de folga.",
+      "link": "Voltar ao início"
+    }
   },
   "tools": {
     "factoryGroups": {
       "deliveries": {
-        "buttonDesc": "Entregas"
+        "buttonDesc": "Entregas",
+        "title": "Plano de entregas",
+        "descNeeded": "Planos de entrega para cada fábrica neste grupo. Você precisará de {amount} estantes para paletes para abastecer todas as fábricas.",
+        "descEnough": "Todas as fábricas têm prateleiras suficientes para armazenar todos os ingredientes necessários."
+      },
+      "buttonDesc": "Criar grupo",
+      "title": "Grupos de fábricas",
+      "desc": "Você pode agrupar fábricas para ter uma melhor visão por categoria de produto. Se as fábricas agrupadas não tiverem suficientes estantes para paletes atribuídas, a lista de compras dirá o que você precisa pedir para cada fábrica e também para o armazém para abastecer o resto. O diálogo de entregas também mostrará o que enviar para cada fábrica.",
+      "groupEmpty": "Nenhuma fábrica neste grupo. Arraste um cartão de fábrica aqui para adicioná-lo.",
+      "ungroupedTitle": "Fábricas não agrupadas",
+      "ungroupedEmpty": "Nenhuma fábrica não agrupada. Arraste um cartão de fábrica aqui ou crie uma nova fábrica.",
+      "shoppingList": {
+        "title": "Lista de compras do grupo",
+        "desc": "Aqui você vê todos os ingredientes necessários para abastecer as fábricas deste grupo que não têm estantes para paletes suficientes no local. A ferramenta calcula tudo com base nas estantes disponíveis nas fábricas, para que você possa encomendar o resto para um armazém separado.<br></br>Estantes necessárias no armazém: <strong>{amount}</strong>"
       }
+    },
+    "intro": {
+      "desc": "Aqui você pode mergulhar fundo nos números e estatísticas do jogo. Planeie suas fábricas e gerencie a logística de todo o seu império!"
+    },
+    "playthroughs": {
+      "desc": "Abaixo, você pode criar e gerenciar suas partidas. Uma partida representa uma única execução do jogo. Você pode criar múltiplas partidas para comparar diferentes partidas, experimentar outras dificuldades ou apenas acompanhar seu progresso.",
+      "warning": "Importante: Seu progresso é salvo no seu navegador. Se você limpar os dados do navegador ou usar o modo privado/incógnito, tudo pode ser perdido.",
+      "createButtonDesc": "Nova partida",
+      "noPlaythroughs": "Ainda sem partidas. Crie uma para começar!",
+      "notFound": {
+        "title": "Partida não encontrada",
+        "desc": "Esta partida não existe ou foi excluída.",
+        "link": "Voltar para a visão geral das partidas"
+      }
+    },
+    "playthroughDetail": {
+      "desc": "Aqui você pode ver as estatísticas de produção do seu império. Vá para a página de fábricas para ver um resumo das suas fábricas, acompanhar os itens que precisam ser pedidos para suas linhas de produção e mais. O planejador de fábrica mostrará todos os detalhes sobre estatísticas de produção, quantidades de pedido e mais.",
+      "productionOverview": "Visão geral semanal de produção",
+      "noProductionData": "Ainda sem dados disponíveis. Crie fábricas e você verá suas estatísticas de produção aqui."
+    },
+    "factories": {
+      "title": "Suas fábricas",
+      "desc": "Uma visão geral das suas fábricas. Você pode editá-las ou excluí-las e também copiar os valores atuais para uma nova fábrica. Para ver mais detalhes sobre cada fábrica, incluindo uma lista de compras, basta clicar no respectivo cartão.",
+      "desc1": "Você também pode agrupá-los clicando no botão Criar Grupo abaixo. Assim você vê todas as fábricas em um só lugar e gerencia-as como grupo. Prático se usar um armazém central para fornecer ingredientes a várias fábricas. Com base nas estantes para paletes adicionadas, ele sugerirá um plano de entrega para cada fábrica.",
+      "noFactories": "Ainda não há fábricas no seu jogo. Crie uma para começar!",
+      "notFound": {
+        "title": "Fábrica não encontrada",
+        "desc": "Esta fábrica não existe ou foi excluída.",
+        "link": "Voltar para a visão geral da fábrica"
+      }
+    },
+    "factoryDetail": {
+      "editBtn": "Editar fábrica",
+      "shoppingList": {
+        "title": "Lista de compras",
+        "desc": "Isso é o que sua fábrica precisa semanalmente para operar com capacidade total."
+      },
+      "splitShoppingList": {
+        "title": "Lista de compras dividida",
+        "desc": "Encomende esses ingredientes diretamente na sua fábrica para dividir o pedido. Isso é a quantidade máxima que suas {shelfAmount} estantes para paletes podem armazenar. Também considera a quantidade de caixas que você está produzindo. Você precisaria de {requiredAmount} estantes para armazenar todos os ingredientes para uma semana inteira de produção.",
+        "desc1": "O restante deve ser encomendado a um armazém por um ou mais agentes de compras separados. Volte para a <link>visão geral da fábrica</link> e crie um grupo para ver a lista completa do que encomendar ao armazém. Ele também mostrará o plano de entrega para cada fábrica."
+      }
+    },
+    "playthroughForm": {
+      "title": "Criar novo jogo",
+      "desc": "Digite um nome para sua partida e escolha a dificuldade para que as ferramentas possam calcular os preços corretos. Você pode editar ou excluir suas partidas a qualquer momento.",
+      "placeholder": "ex. John Manhattan",
+      "deleteTitle": "Excluir partida",
+      "deleteDesc": "Tem certeza de que deseja excluir esta partida? Esta ação não pode ser desfeita."
+    },
+    "factoryForm": {
+      "deleteTitle": "Excluir fábrica",
+      "deleteDesc": "Tem certeza de que deseja excluir esta fábrica? Esta ação não pode ser desfeita."
+    },
+    "stats": {
+      "netProfitPerWeek": "Lucro líquido / semana",
+      "ordersPerWeek": "Pedidos / semana"
+    },
+    "factoryPlanner": {
+      "title": "Planejador de Fábrica",
+      "desc": "Calcule os ingredientes, máquinas e operários de fábrica necessários para suas linhas de produção. Basta selecionar os produtos que deseja produzir e o planejador fará o resto.",
+      "information": {
+        "legend": "Informações da Fábrica",
+        "name": "Nome da Fábrica",
+        "calcBasis": "Base de Cálculo",
+        "palletDesc": "Defina quantas estantes para paletes estão disponíveis nesta fábrica.",
+        "dailyAmount": "Para a entrega diária você precisa de <strong>{count}</strong> {object}.",
+        "weeklyAmount": "Para a entrega semanal você precisa de <strong>{count}</strong> {object}.",
+        "shelfExplanation": "Adicione pelo menos uma estação de trabalho de roupas para ver o número necessário de estantes para paletes.",
+        "enoughWeekly": "Suficiente para entrega semanal.",
+        "enoughDaily": "Suficiente apenas para entrega diária. Para logística semanal, você precisa de um armazém.",
+        "notEnough": "Armazenamento insuficiente, mesmo para entrega diária.",
+        "overflowWarning": "Estoque transbordando!",
+        "overflowDesc": "Você produz mais rápido do que consome ingredientes. O número de estantes foi ajustado conforme necessário."
+      },
+      "employees": {
+        "desc": "Digite o salário de cada operário de fábrica. Deixe em branco se não quiser incluir cálculos salariais.",
+        "optimalWorkers": "Usar quantidade ótima de operários de fábrica",
+        "optimalTooltip": "Calcula automaticamente o número ótimo de operários de fábrica baseado nas estações de trabalho e horário de funcionamento. Adiciona um pequeno buffer para agendamento automático suave no jogo."
+      },
+      "vehicles": {
+        "addBtn": "Adicionar veículo"
+      },
+      "workstations": {
+        "addBtn": "Adicionar Estação de Trabalho de Roupas"
+      },
+      "buttonDesc": "Nova fábrica",
+      "genericFactoryName": "{productName} fábrica",
+      "estimatedSales": "Vendas semanais estimadas",
+      "estimatedSalesTooltip": "Digite o valor esperado de vendas por produto nas suas lojas.",
+      "priceIndexButton": "Definir índice de preço",
+      "priceIndexDesc": "Escolha o índice de preço atual do jogo para este produto para calcular a receita correta. (O preço de exportação é mais preciso.)"
     }
+  },
+  "counts": {
+    "palletShelf": "{count, plural, one {Estante para Paletes} other {Estantes para Paletes}}",
+    "day": "{count, plural, one {# dia} other {# dias}}"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Roupas baratas",
+    "expensiveClothing": "Roupas caras",
+    "electronics": "Eletrônicos",
+    "jewelry": "Joias",
+    "gifts": "Presentes",
+    "books": "Livros",
+    "bottledGoods": "Produtos em garrafa",
+    "food": "Comida",
+    "gardenProducts": "Produtos de jardim"
+  },
+  "toasts": {
+    "genericError": "Ocorreu um erro. Por favor, verifica as tuas entradas e tenta novamente. Se o problema persistir, recarrega a página.",
+    "playthroughSaveSuccess": "Partida \"{characterName}\" criada!",
+    "playthroughEditSuccess": "Partida \"{characterName}\" atualizada!",
+    "playthroughDeleteSuccess": "Partida \"{characterName}\" excluída!",
+    "workstationCopyError": "Por favor, selecione primeiro uma Estação de Trabalho de Roupas e um produto.",
+    "factorySaveSuccess": "\"{factoryName}\" criado e adicionado à partida!",
+    "factoryEditSuccess": "\"{factoryName}\" atualizada!",
+    "factoryDeleteSuccess": "\"{factoryName}\" excluída!",
+    "groupSaveSuccess": "Grupo \"{groupName}\" criado!",
+    "groupEditSuccess": "Grupo \"{groupName}\" atualizado!",
+    "groupDeleteSuccess": "Grupo \"{groupName}\" excluído!"
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Este recurso não existe infelizmente.",
+      "nameRequired": "Seu personagem precisa ter um nome.",
+      "nameTooLong": "O nome deve ter no máximo 30 caracteres.",
+      "difficultyRequired": "Por favor, escolha uma dificuldade.",
+      "workstationProductRequired": "Por favor, escolha um produto para cada Estação de Trabalho de Roupas."
+    },
+    "factory": {
+      "nameTooLong": "O nome da fábrica deve ter no máximo 50 caracteres.",
+      "descriptionTooLong": "Pare de escrever um romance aqui. 150 caracteres são o suficiente!",
+      "workstationsRequired": "Por favor, adicione pelo menos uma Estação de Trabalho de Roupas.",
+      "atLeastOneVehicle": "Você precisa de pelo menos um veículo para a fábrica.",
+      "maxTwoVehicles": "A fábrica pode ter no máximo dois veículos.",
+      "shelfAmountTooLow": "Você precisa adicionar prateleiras para a fábrica funcionar."
+    },
+    "factoryGroup": {
+      "nameTooLong": "O nome do grupo deve ter no máximo 30 caracteres.",
+      "nameRequired": "Por favor, informe um nome de grupo."
+    }
+  },
+  "updateHistory": {
+    "launch": "site lançado"
+  },
+  "database": {
+    "intro": {
+      "desc": "Confere dados detalhados do jogo sobre produtos, máquinas, veículos e muito mais. Usa a busca e os filtros de categoria para achar rápido o que precisas.",
+      "buttonDesc": "Escolhe uma categoria"
+    },
+    "products": {
+      "caption": "Todos os produtos de uma só vez. Troca facilmente entre preços de fabricação e importação. O preço de varejo é a média em todos os distritos. Os lucros são valores líquidos – incluindo ingredientes, salários dos funcionários e impostos baseados na dificuldade selecionada. <br></br>Curioso como é calculado? Confere a seção <link>{toolsSection}</link>."
+    },
+    "ingredients": {
+      "caption": "Visão geral de todos os ingredientes brutos incluindo suas propriedades. Escolhe a dificuldade para ver os preços corretos."
+    },
+    "machines": {
+      "caption": "São todas as máquinas usadas na produção. Combina uma máquina principal com uma ou duas secundárias para formar uma Estação de Trabalho de Roupas."
+    },
+    "inventory": {
+      "caption": "Um pequeno resumo das suas... opções de armazenamento. Por enquanto. Mais por vir!"
+    },
+    "vehicles": {
+      "caption": "Procuras por carga máxima ou só o passeio mais rápido? Aqui vais encontrar. A habilidade do motorista refere-se ao teu {deliveryDriver}, e para o máximo de destinos precisas de um {logisticsManager} com 100 % de habilidade."
+    }
+  },
+  "footer": {
+    "assets": "Todas as imagens, marcas e assets do jogo pertencem aos seus respectivos proprietários.",
+    "fanMade": " Este é um site feito por fãs e não tem ligação com os desenvolvedores do jogo. Podes ver o código fonte no <link>GitHub</link>."
   }
 }

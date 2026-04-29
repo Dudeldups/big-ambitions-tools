@@ -385,7 +385,7 @@
     },
     "playthroughs": {
       "desc": "En dessous, tu peux créer et gérer tes parties. Une partie représente un seul passage du jeu. Tu peux en créer plusieurs pour comparer différentes parties, tester d'autres difficultés ou simplement suivre tes progrès.",
-      "warning": "Important: Tes progrès sont stockés dans ton navigateur. Si tu effaces les données du navigateur ou utilises le mode privé/incognito, tout pourrait disparaître.",
+      "warning": "Important : Ton progrès est sauvegardé dans ton navigateur. Si tu vides les données du navigateur ou utilises le mode privé/incognito, tout pourrait disparaître.",
       "createButtonDesc": "Nouvelle partie",
       "noPlaythroughs": "Aucune partie pour l'instant. En crée une pour commencer !",
       "notFound": {
@@ -418,7 +418,7 @@
       },
       "splitShoppingList": {
         "title": "Liste de courses divisée",
-        "desc": "Commande ces ingrédients directement vers ton usine pour diviser la commande. C'est le maximum que tes {shelfAmount} étagères à palettes peuvent contenir. Cela prend aussi en compte le nombre de caisses que tu produis. Il te faudrait {requiredAmount} étagères pour stocker tous les ingrédients d'une semaine entière de production.",
+        "desc": "Commande ces ingrédients à ta usine pour diviser la commande. C'est la quantité maximale que tes {shelfAmount} étagères de palette peuvent contenir. Cela prend aussi en compte le nombre de caisses que tu produis. Tu aurais besoin de {requiredAmount} étagères pour stocker tous les ingrédients d'une semaine entière de production.",
         "desc1": "Le reste doit être commandé vers un entrepôt par un ou plusieurs agents d'achat séparés. Retourne à la <link>vue des usines</link> et crée un groupe pour voir la liste complète de ce qu'il faut commander vers cet entrepôt. Il te montrera aussi le plan de livraison pour chaque usine."
       }
     },
@@ -427,11 +427,11 @@
       "desc": "Donne un nom à ta partie et choisis la difficulté pour que les outils puissent calculer les bons prix. Tu peux modifier ou supprimer tes parties à tout moment.",
       "placeholder": "ex. John Manhattan",
       "deleteTitle": "Supprimer la partie",
-      "deleteDesc": "Tu es sûr de vouloir supprimer cette partie ? Cette action ne peut pas être annulée."
+      "deleteDesc": "Es-tu sûr de vouloir supprimer cette partie ? Cette action ne peut pas être annulée."
     },
     "factoryForm": {
       "deleteTitle": "Supprimer l'usine",
-      "deleteDesc": "Tu es sûr de vouloir supprimer cette usine ? Cette action ne peut pas être annulée."
+      "deleteDesc": "Es-tu sûr de vouloir supprimer cette usine ? Cette action ne peut pas être annulée."
     },
     "stats": {
       "netProfitPerWeek": "Bénéfice net / semaine",
@@ -447,7 +447,7 @@
         "palletDesc": "Indique combien d'étagères à palettes sont disponibles dans cette usine.",
         "dailyAmount": "Pour la livraison quotidienne, tu as besoin de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pour la livraison hebdomadaire, tu as besoin de <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Ajoute au moins une station de travail pour voir le nombre d'étagères à palettes requises.",
+        "shelfExplanation": "Ajoute au moins un poste de travail pour voir le nombre d'étagères de palette requis.",
         "enoughWeekly": "Assez pour la livraison hebdomadaire.",
         "enoughDaily": "Assez seulement pour la livraison quotidienne. Pour la logistique hebdomadaire, tu as besoin d'un entrepôt.",
         "notEnough": "Pas assez de place de stockage, même pour une livraison quotidienne.",
@@ -519,7 +519,7 @@
     },
     "factoryGroup": {
       "nameTooLong": "Le nom du groupe doit faire au maximum 30 caractères.",
-      "nameRequired": "Donne un nom de groupe."
+      "nameRequired": "Veuillez indiquer un nom de groupe."
     }
   },
   "updateHistory": {
