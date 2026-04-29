@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import ImageCircleBg from "@/components/deco/image-circle-bg";
 import { cn } from "@/lib/utils";
 import SectionSeparator from "@/components/deco/section-separator";
+import { GLOSSARY } from "@/i18n/glossary";
 
 const heroIcons = [
   { Icon: Calculator, id: "calc" },
@@ -51,7 +52,7 @@ export default function Home() {
       >
         {/* Main hero section */}
         <hgroup className="grid items-start gap-14 max-md:max-w-lg md:grid-cols-[3fr_2fr] md:gap-y-24 xl:grid-cols-2">
-          <h1 className="home-h1">Big Ambitions Tools</h1>
+          <h1 className="home-h1">{GLOSSARY.siteName}</h1>
 
           <div className="hero-icon-container relative flex items-center justify-center gap-3 self-stretch sm:gap-10 md:row-span-2 md:flex-col @sm:gap-6">
             {heroIcons.map(({ Icon, id }) => (
