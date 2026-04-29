@@ -1,7 +1,8 @@
-import { useTranslations } from "next-intl";
+import { GLOSSARY } from "@/i18n/glossary";
 import LanguageSelect from "./language-select";
 import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
+import { useTranslations } from "next-intl";
 
 type NavContentProps = {
   onAction?: () => void;
@@ -20,7 +21,7 @@ const NavContent = ({ onAction }: NavContentProps) => {
       href: "/database",
     },
     {
-      name: tGeneral("tools"),
+      name: GLOSSARY.toolsSection,
       href: "/tools",
     },
     {
