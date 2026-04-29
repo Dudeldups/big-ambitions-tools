@@ -229,7 +229,6 @@
     "product": "Product",
     "products": "Products",
     "database": "Database",
-    "tools": "Tools",
     "playthrough": "Playthrough",
     "playthroughs": "Playthroughs",
     "factory": "Factory",
@@ -393,7 +392,7 @@
     "cta": {
       "title": "Let's get started!",
       "desc": "Just want to look something up and do some number crunching? <em>Mhmm, tasty numbers!</em> Head over to the <link>{database}</link> and start exploring.",
-      "desc2": "From planning your first factory to managing production rates of your whole empire, you'll find everything in the <link>{tools}</link> section.",
+      "desc2": "From planning your first factory to managing production rates of your whole empire, you'll find everything in the <link>{toolsSection}</link> section.",
       "errorDesc": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!"
     },
     "game": {
@@ -421,7 +420,7 @@
       "buttonDesc": "Select a category"
     },
     "products": {
-      "caption": "All products at a glance. Switch between manufacturing and import prices. Retail price is the average across all districts. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Curious how it's calculated? Check out the <link>{tools}</link> section."
+      "caption": "All products at a glance. Switch between manufacturing and import prices. Retail price is the average across all districts. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Curious how it's calculated? Check out the <link>{toolsSection}</link> section."
     },
     "ingredients": {
       "caption": "Overview of all factory ingredients including their properties. Select the difficulty to see the correct prices."
