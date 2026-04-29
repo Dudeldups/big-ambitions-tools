@@ -24,6 +24,8 @@ import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import { assertPriceIndex } from "@/lib/utils/assertPriceIndex";
 import { ProductName } from "@/lib/game/productNames";
 import { Separator } from "../ui/separator";
+import { toast } from "sonner";
+import { safeLog } from "@/lib/utils/safeLog";
 
 const productNames = Object.keys(products) as ProductName[];
 
@@ -31,18 +33,28 @@ const PriceIndicesDialog = () => {
   const tGeneral = useTranslations("general");
   const tModals = useTranslations("modals");
   const tProducts = useTranslations("products");
+  const tToasts = useTranslations("toasts");
+
   const { activePlaythrough } = useActivePlaythrough();
   const setPriceIndex = usePlaythroughStore((state) => state.setPriceIndex);
   const currentPriceIndices = usePriceIndices();
 
   const onIndexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!activePlaythrough || !currentPriceIndices) return;
+
     const value = parseFloat(e.target.value);
-    assertPriceIndex(value);
-    if (isNaN(value)) return;
     const productName = e.target.name as ProductName;
 
-    setPriceIndex(activePlaythrough.id, productName, value);
+    try {
+      assertPriceIndex(value);
+
+      if (isNaN(value)) return;
+
+      setPriceIndex(activePlaythrough.id, productName, value);
+    } catch (error) {
+      toast.error(tToasts("genericError"));
+      safeLog(error, "Error updating price index with value: ", value);
+    }
   };
 
   if (!activePlaythrough || !currentPriceIndices) return null;
