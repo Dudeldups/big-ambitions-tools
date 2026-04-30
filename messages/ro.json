@@ -230,6 +230,53 @@
       "easy": "Ușoară",
       "normal": "Normală",
       "hard": "Grea"
+    },
+    "copy": "Copiază",
+    "create": "Creează",
+    "edit": "Editează",
+    "summary": "Rezumat",
+    "amortization": "Amortizare",
+    "noResultsFound": "Nu s-au găsit rezultate.",
+    "columnsDescription": "Coloane",
+    "filterResults": "Filtrează rezultatele...",
+    "characterName": "Nume personaj",
+    "about": "Despre noi",
+    "contact": "Contact",
+    "machines": "Mașini",
+    "workstation": "Stație de lucru pentru îmbrăcăminte",
+    "database": "Bază de date",
+    "playthrough": "Partida",
+    "playthroughs": "Partide",
+    "palletShelves": "Rafte pentru paleți",
+    "difficulty": "Dificultate",
+    "priceIndex": "Indice prețuri",
+    "priceIndices": "Indici prețuri",
+    "exportPrice": "Preț export",
+    "expenses": "Cheltuieli",
+    "netProfit": "Profit net",
+    "manufacturingCosts": "Costuri de producție",
+    "manufacturingCostsShort": "Costuri prod.",
+    "oneTimeCosts": "Costuri ocazionale",
+    "recurringCosts": "Costuri recurente",
+    "description": "Descriere",
+    "day": "Zi",
+    "week": "Săptămână",
+    "themes": {
+      "buttonDesc": "Comută teme",
+      "light": "Luminos",
+      "dark": "Întunecat",
+      "system": "Sistem"
+    },
+    "displayPriceOptions": {
+      "manufacture": "Producție",
+      "import": "Import",
+      "export": "Export",
+      "retail": "Retail"
+    },
+    "calculationPeriodOptions": {
+      "hourly": "Pe oră",
+      "daily": "Zilnic",
+      "weekly": "Săptămânal"
     }
   },
   "tableColumns": {
@@ -239,20 +286,268 @@
     "employees": "Angajați",
     "export": "Export",
     "retail": "Comerț",
-    "deliverUpTo": "Livrează până la"
+    "deliverUpTo": "Livrează până la",
+    "itemName": "Nume articol",
+    "retailPrice": "Preț de vânzare",
+    "manufacturePrice": "Preț fabr.",
+    "storageCapacity": "Capacitate stocare",
+    "workstation": "Stație de lucru pentru îmbrăcăminte",
+    "neededMachines": "Mașini",
+    "usedForProducts": "Pentru produse",
+    "importPrice": "Preț import",
+    "exportPrice": "Preț export",
+    "profitMargin": "Margine profit",
+    "profitPerHour": "Profit/Oră",
+    "amountPerBox": "Cant./Cutie",
+    "usedInProducts": "În produse",
+    "importers": "Importatori",
+    "productionRate": "Prod./Oră",
+    "vehicleName": "Nume vehicul",
+    "maxFuel": "Capacitate combustibil",
+    "maxCargoCapacity": "Capacitate marfă",
+    "maxSpeed": "Viteză max.",
+    "enginePower": "Accelerare",
+    "autoParkSupported": "Parcare automată",
+    "taxDeductible": "Deducibil",
+    "requiredDeliveryDriverSkillValue": "Skill șofer",
+    "destinationsThatCanDeliver": "Destinații de bază",
+    "destinationsFull": "Dest. max.",
+    "description": "Descriere"
   },
   "modals": {
     "groupLabelName": "Nume",
-    "groupLabelColor": "Culoare"
+    "groupLabelColor": "Culoare",
+    "discardChanges": "Anulează modificările nesalvate",
+    "discardDesc": "Ai modificări nesalvate. Ești sigur că vrei să le anulezi?",
+    "resetForm": "Resetează valorile formularului",
+    "resetDesc": "Ești sigur că vrei să resetezi valorile formularului la setările implicite?",
+    "wsPresetBtn": "Adaugă predefiniție",
+    "wsPresetTitle": "Alege predefiniția",
+    "wsPresetDesc": "Alege o predefiniție din listă pentru a o adăuga la fabrica ta.",
+    "priceIndicesDesc": "Alege indicii de preț actuale pentru fiecare produs pentru calcule precise.",
+    "groupBtn": "Creează grup",
+    "groupTitle": "Creează un nou grup de fabrici",
+    "groupDesc": "Grupează fabricile pentru a obține o privire de ansamblu asupra tuturor ingredientelor necesare.",
+    "editGroupTitle": "Editează grupul de fabrici",
+    "editGroupDesc": "Alege noile valori.",
+    "deleteGroupTitle": "Șterge grupul",
+    "deleteGroupDesc": "Ești sigur că vrei să ștergi acest grup? Dacă există fabrici atribuite, acestea vor fi reatribuite grupului implicit.",
+    "oneTimeCostDesc": "Costuri de instalare o singură dată pentru fabrică."
   },
   "home": {
-    "selectLanguage": "Selectează limba"
+    "selectLanguage": "Selectează limba",
+    "intro": {
+      "desc": "Aici găsești info-uri și unelte pentru <em>{gameName}</em> de la {companyName}. Pe acest site fan, ne concentrăm acum pe mecanica fabricilor, ca să te ajutăm să optimizezi jocul. Calculațiile se bazează pe versiunea {gameVersion} și pot fi schimbate cu actualizările viitoare."
+    },
+    "cta": {
+      "title": "Hai să începem!",
+      "desc": "Vrei doar să verifici ceva sau să te joci puțin cu cifrele? <em>Mhmm, cifre gustoase!</em> Intră pe <link>{database}</link> și începe să explorezi.",
+      "desc2": "De la planificarea primei tale fabrici până la gestionarea ratelor de producție ale întregului tău imperiu, găsești totul în secțiunea <link>{toolsSection}</link>.",
+      "errorDesc": "Ai găsit o eroare sau lipsește informații? Sau ai sugestii pentru a îmbunătăți site-ul? Nu ezita să <contact>ne contactezi</contact>!"
+    },
+    "game": {
+      "title": "Nu știi încă jocul?",
+      "subtitle": "Ce păcat!",
+      "desc": "{gameName} este o simulare de business de rol revoluționară. Transformă-te din nimic în cel mai mare antreprenor din New York, deschizând mici afaceri sau construind treptat un imperiu corporativ uriaș – exact cum vrei tu.",
+      "hovgaard": "Vezi site-ul oficial de la <website>{companyName}</website>",
+      "steam": "Vizitează jocul direct pe <link>{steam}</link>"
+    },
+    "updates": {
+      "title": "Ultimile actualizări"
+    },
+    "notFound": {
+      "title": "Pagina nu a fost găsită",
+      "desc": "Se pare că această pagină și-a luat o zi liberă.",
+      "link": "Înapoi la pagina principală"
+    }
   },
   "tools": {
     "factoryGroups": {
       "deliveries": {
-        "buttonDesc": "Livrări"
+        "buttonDesc": "Livrări",
+        "title": "Plan de livrare",
+        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Ai nevoie de {amount} rafturi pentru paleți pentru a aproviziona toate fabricile.",
+        "descEnough": "Toate fabricile au suficiente rafturi pentru paleți pentru a stoca toate ingredientele necesare."
+      },
+      "buttonDesc": "Creează grup",
+      "title": "Grupuri de fabrici",
+      "desc": "Poți grupa fabricile împreună pentru o mai bună vedere pe categorie de produs. Dacă fabricile grupate nu au suficiente rafturi pentru paleți asignate, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și chiar pentru depozit pentru a livra restul. Dialogul de livrări îți va arăta totuși ce se trimite la fiecare fabrică.",
+      "groupEmpty": "Nicio fabrică în acest grup. Trage o carte de fabrică aici pentru a o adăuga.",
+      "ungroupedTitle": "Fabrici ne-grupate",
+      "ungroupedEmpty": "Nicio fabrică ne-grupată aici. Trage o carte de fabrică aici sau adaugă o fabrică nouă.",
+      "shoppingList": {
+        "title": "Lista de cumpărături grupată",
+        "desc": "Aici vezi toate ingredientele necesare pentru a aproviziona fabricile din această grupă, care nu au suficient spațiu de rafturi pentru paleți. Acesta calculează totul pe baza rafturilor pentru paleți disponibile în fabrici, astfel încât să poți comanda restul într-un depozit separat.<br></br>Rafturi necesare în depozit: <strong>{amount}</strong>"
       }
+    },
+    "intro": {
+      "desc": "Aici poți să te scufunzi adânc în cifrele și statisticile jocului. Planifică-ți fabricile și gestionează logistica pentru întregul tău imperiu!"
+    },
+    "playthroughs": {
+      "desc": "Mai jos poți crea și gestiona sesiunile tale de joc. O sesiune reprezintă o singură rundă a jocului. Poți crea mai multe sesiuni pentru a compara diferite runde, a experimenta alte dificultăți sau doar să îți ții evidența progresului.",
+      "warning": "Important: Progresul tău este stocat în browser. Dacă ștergi datele din browser sau folosești modul privat/incognito, totul ar putea dispărea.",
+      "createButtonDesc": "Nouă sesiune de joc",
+      "noPlaythroughs": "Nu ai încă sesiuni de joc. Creează una și începe!",
+      "notFound": {
+        "title": "Sesiunea nu a fost găsită",
+        "desc": "Această sesiune nu există sau a fost ștearsă.",
+        "link": "Înapoi la lista de sesiuni"
+      }
+    },
+    "playthroughDetail": {
+      "desc": "Aici vezi statisticile de producție ale imperiului tău. Mergi la pagina \"Fabrici\" pentru un rezumat al fabricilor, să ții evidența articolelor necesare comenzii pentru liniile de producție și mai mult. Planificatorul de fabrici îți arată toate detaliile despre cifrele de producție, cantitățile de comandat și mai mult.",
+      "productionOverview": "Rezumat săptămânal al producției",
+      "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici."
+    },
+    "factories": {
+      "title": "Fabricile tale",
+      "desc": "Aici ai un rezumat al fabricilor tale. Poți edita sau șterge-le și poți copia valorile actuale pentru o nouă fabrică. Pentru a vedea mai multe detalii despre fiecare fabrică, inclusiv lista de cumpărături, apasă pur și simplu pe cardul corespunzător.",
+      "desc1": "Poți să le grupezi și prin apăsarea butonului 'Creează grup' de mai jos. Astfel vei putea vedea toate fabricile într-un singur loc și le poți gestiona ca un grup. Util dacă folosești un depozit central pentru a furniza ingrediente pentru mai multe fabrici. În funcție de numărul de rafturi pentru paleți adăugate, va sugera un plan de livrare pentru fiecare fabrică.",
+      "noFactories": "Nu există încă fabrici în sesiunea ta de joc. Creează una pentru a începe!",
+      "notFound": {
+        "title": "Fabrică nu găsită",
+        "desc": "Această fabrică nu există sau a fost ștersă.",
+        "link": "Înapoi la vizualizarea fabricilor"
+      }
+    },
+    "factoryDetail": {
+      "editBtn": "Editează fabrica",
+      "shoppingList": {
+        "title": "Listă de cumpărături",
+        "desc": "Acesta este ceea ce fabrica ta are nevoie săptămânal pentru a funcționa la capacitate maximă."
+      },
+      "splitShoppingList": {
+        "title": "Listă de cumpărături împărțită",
+        "desc": "Comandă aceste ingrediente direct la fabrica ta pentru a împărți comanda. Aceasta este cantitatea maximă pe care {shelfAmount} rafturi pentru paleți le pot reține. Se ia în considerare și numărul de cutii pe care le produci. Ai nevoie de {requiredAmount} rafturi pentru a stoca toate ingredientele pentru o săptămână întreagă de producție.",
+        "desc1": "Restul trebuie comandat la un depozit de către unul sau mai mulți agenți de achiziții separați. Întoarce-te la <link>vizualizarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Va afișa, de asemenea, planul de livrare către fiecare fabrică."
+      }
+    },
+    "playthroughForm": {
+      "title": "Creează o nouă sesiune de joc",
+      "desc": "Introdu un nume pentru sesiunea ta și selectează dificultatea, ca Tools-urile să poată calcula prețurile corecte. Poți edita sau șterge sesiunile oricând.",
+      "placeholder": "ex. John Manhattan",
+      "deleteTitle": "Șterge sesiunea",
+      "deleteDesc": "Ești sigur că vrei să ștergi această sesiune? Această acțiune nu poate fi anulată."
+    },
+    "factoryForm": {
+      "deleteTitle": "Șterge fabrica",
+      "deleteDesc": "Ești sigur că vrei să ștergi această fabrică? Această acțiune nu poate fi anulată."
+    },
+    "stats": {
+      "netProfitPerWeek": "Profit net / săptămână",
+      "ordersPerWeek": "Comenzi / săptămână"
+    },
+    "factoryPlanner": {
+      "title": "Planer de fabrică",
+      "desc": "Calculează ingredientele necesare, mașinile și muncitorii din fabrică pentru liniile tale de producție. Alege doar produsele pe care vrei să le produci, iar planerul se ocupă de rest.",
+      "information": {
+        "legend": "Informații fabrică",
+        "name": "Numele fabricii",
+        "calcBasis": "Baza de calcul",
+        "palletDesc": "Defineste câte rafturi pentru paleți sunt disponibile în această fabrică.",
+        "dailyAmount": "Pentru livrarea zilnică ai nevoie de <strong>{count}</strong> {object}.",
+        "weeklyAmount": "Pentru livrarea săptămânală ai nevoie de <strong>{count}</strong> {object}.",
+        "shelfExplanation": "Adaugă cel puțin o stație de lucru pentru îmbrăcăminte pentru a vedea numărul necesar de rafturi pentru paleți.",
+        "enoughWeekly": "Suficient pentru livrarea săptămânală.",
+        "enoughDaily": "Suficient doar pentru livrarea zilnică. Pentru logistică săptămânală ai nevoie de un depozit.",
+        "notEnough": "Nu e suficient spațiu de stocare, nici măcar pentru livrarea zilnică.",
+        "overflowWarning": "Stocul depășește!",
+        "overflowDesc": "Tu produci mai repede decât consumi ingrediente. Numărul de rafturi a fost ajustat corespunzător."
+      },
+      "employees": {
+        "desc": "Introdu salariul pentru fiecare angajat. Lasă gol dacă nu vrei să incluzi calculele de salariu.",
+        "optimalWorkers": "Folosește numărul optim de muncitori din fabrică",
+        "optimalTooltip": "Calculează automat numărul optim de muncitori bazat pe stațiile de lucru pentru îmbrăcăminte și orele de deschidere. Va adăuga un mic buffer pentru programare automată fluidă în joc."
+      },
+      "vehicles": {
+        "addBtn": "Adaugă vehicul"
+      },
+      "workstations": {
+        "addBtn": "Adaugă stație de lucru pentru îmbrăcăminte"
+      },
+      "buttonDesc": "Fabrică nouă",
+      "genericFactoryName": "{productName} fabrică",
+      "estimatedSales": "Vânzări săptămânale estimate",
+      "estimatedSalesTooltip": "Introdu vânzările așteptate pentru fiecare produs în magazinele tale.",
+      "priceIndexButton": "Setează indicele de preț",
+      "priceIndexDesc": "Selectează indicele de preț actual din joc pentru acest produs pentru a calcula venitul corect. (Prețul de export este mai precis.)"
     }
+  },
+  "counts": {
+    "palletShelf": "{count, plural, one {Raft pentru paleți} other {Rafte pentru paleți}}",
+    "day": "{count, plural, one {# zi} other {# zile}}"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Haine ieftine",
+    "expensiveClothing": "Haine scumpe",
+    "electronics": "Electronice",
+    "jewelry": "Bijuterii",
+    "gifts": "Cadouri",
+    "books": "Cărți",
+    "bottledGoods": "Produse în sticlă",
+    "food": "Mâncare",
+    "gardenProducts": "Produse de grădină"
+  },
+  "toasts": {
+    "genericError": "A apărut o eroare. Verifică datele introduse și încearcă din nou. Dacă problema persistă, reîncarcă pagina.",
+    "playthroughSaveSuccess": "Salvare \"{characterName}\" creată!",
+    "playthroughEditSuccess": "Salvare \"{characterName}\" actualizată!",
+    "playthroughDeleteSuccess": "Salvare \"{characterName}\" ștearsă!",
+    "workstationCopyError": "Selectează mai întâi o stație de lucru pentru îmbrăcăminte și un produs.",
+    "factorySaveSuccess": "\"{factoryName}\" creată și adăugată la salvare!",
+    "factoryEditSuccess": "\"{factoryName}\" actualizată!",
+    "factoryDeleteSuccess": "\"{factoryName}\" ștearsă!",
+    "groupSaveSuccess": "Grup \"{groupName}\" creat!",
+    "groupEditSuccess": "Grup \"{groupName}\" actualizat!",
+    "groupDeleteSuccess": "Grup \"{groupName}\" șters!"
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Această resursă nu există.",
+      "nameRequired": "Personajul tău ar trebui să aibă un nume.",
+      "nameTooLong": "Numele trebuie să aibă maxim 30 caractere.",
+      "difficultyRequired": "Alege o dificultate.",
+      "workstationProductRequired": "Selectează un produs pentru fiecare stație de lucru pentru îmbrăcăminte."
+    },
+    "factory": {
+      "nameTooLong": "Numele fabricii trebuie să aibă maxim 50 caractere.",
+      "descriptionTooLong": "Nu scrie aici un roman. Maxim 150 de caractere!",
+      "workstationsRequired": "Adaugă cel puțin o stație de lucru pentru îmbrăcăminte.",
+      "atLeastOneVehicle": "Ai nevoie de cel puțin un vehicul pentru fabrică.",
+      "maxTwoVehicles": "Pentru fabrică sunt permise max. două vehicule.",
+      "shelfAmountTooLow": "Trebuie să adaugi rafturi pentru ca fabrica să funcționeze."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Numele grupului trebuie să aibă maxim 30 caractere.",
+      "nameRequired": "Trebuie să introduci un nume de grup."
+    }
+  },
+  "updateHistory": {
+    "launch": "Site-ul lansat"
+  },
+  "database": {
+    "intro": {
+      "desc": "Poți explora date detaliate ale jocului despre produse, mașini, vehicule și multe altele. Folosește căutarea sau filtrele de categorie pentru a găsi rapid ce ai nevoie.",
+      "buttonDesc": "Alege o categorie"
+    },
+    "products": {
+      "caption": "Toate produsele pe o privire de ansamblu. Poți să treci ușor între prețurile de producție și import. Prețul de retail este media peste toate districtele. Profiturile sunt afișate ca valori nete – adică inclusiv costurile ingredientelor, salariile lucrătorilor și taxele bazate pe dificultatea selectată. <br></br>Curios cum se calculează? Aruncă o privire la secțiunea <link>{toolsSection}</link>."
+    },
+    "ingredients": {
+      "caption": "O privire de ansamblu asupra tuturor ingredientelor brute, inclusiv proprietățile lor. Alege dificultatea pentru a vedea prețurile corecte."
+    },
+    "machines": {
+      "caption": "Acestea sunt toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două secundare pentru a construi o stație de lucru pentru îmbrăcăminte."
+    },
+    "inventory": {
+      "caption": "O mică privire de ansamblu asupra... opțiunilor tale de depozitare. Până acum doar asta. Va mai urma!"
+    },
+    "vehicles": {
+      "caption": "Cauti încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru destinațiile maxime ai nevoie de un {logisticsManager} cu 100% skill."
+    }
+  },
+  "footer": {
+    "assets": "Toate imaginile, mărcile și activele din joc sunt proprietatea deținătorilor lor respectivi.",
+    "fanMade": " Acest site este un proiect fan și nu are legătură cu dezvoltatorii jocului. Codul sursă îl poți găsi pe <link>GitHub</link>."
   }
 }

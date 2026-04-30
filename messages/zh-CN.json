@@ -230,6 +230,53 @@
       "easy": "简单",
       "normal": "普通",
       "hard": "困难"
+    },
+    "copy": "复制",
+    "create": "创建",
+    "edit": "编辑",
+    "summary": "摘要",
+    "amortization": "摊销",
+    "noResultsFound": "未找到结果。",
+    "columnsDescription": "列",
+    "filterResults": "筛选结果...",
+    "characterName": "角色名",
+    "about": "关于我们",
+    "contact": "联系",
+    "machines": "机器",
+    "workstation": "服装工作台",
+    "database": "数据库",
+    "playthrough": "存档",
+    "playthroughs": "存档",
+    "palletShelves": "托盘货架",
+    "difficulty": "难度",
+    "priceIndex": "价格指数",
+    "priceIndices": "价格指数",
+    "exportPrice": "出口价格",
+    "expenses": "费用",
+    "netProfit": "净利润",
+    "manufacturingCosts": "制造成本",
+    "manufacturingCostsShort": "制本",
+    "oneTimeCosts": "一次性成本",
+    "recurringCosts": "经常性成本",
+    "description": "描述",
+    "day": "天",
+    "week": "周",
+    "themes": {
+      "buttonDesc": "切换主题",
+      "light": "浅色",
+      "dark": "深色",
+      "system": "系统"
+    },
+    "displayPriceOptions": {
+      "manufacture": "制造",
+      "import": "进口",
+      "export": "出口",
+      "retail": "零售"
+    },
+    "calculationPeriodOptions": {
+      "hourly": "每小时",
+      "daily": "每日",
+      "weekly": "每周"
     }
   },
   "tableColumns": {
@@ -239,20 +286,268 @@
     "employees": "员工",
     "export": "出口",
     "retail": "零售",
-    "deliverUpTo": "配送上限"
+    "deliverUpTo": "配送上限",
+    "itemName": "物品名称",
+    "retailPrice": "零售价",
+    "manufacturePrice": "制造价",
+    "storageCapacity": "存储容量",
+    "workstation": "服装工作台",
+    "neededMachines": "所需机器",
+    "usedForProducts": "用于产品",
+    "importPrice": "进口价",
+    "exportPrice": "出口价",
+    "profitMargin": "利润率",
+    "profitPerHour": "利润/小时",
+    "amountPerBox": "数量/箱",
+    "usedInProducts": "内含于产品",
+    "importers": "进口商",
+    "productionRate": "生产/小时",
+    "vehicleName": "车辆名称",
+    "maxFuel": "油箱容量",
+    "maxCargoCapacity": "载货容量",
+    "maxSpeed": "最高时速",
+    "enginePower": "加速度",
+    "autoParkSupported": "自动泊车",
+    "taxDeductible": "可抵扣",
+    "requiredDeliveryDriverSkillValue": "所需司机技能",
+    "destinationsThatCanDeliver": "基地目的地",
+    "destinationsFull": "最大目的地",
+    "description": "描述"
   },
   "modals": {
     "groupLabelName": "名称",
-    "groupLabelColor": "颜色"
+    "groupLabelColor": "颜色",
+    "discardChanges": "放弃未保存的更改",
+    "discardDesc": "你有未保存的更改。确定要放弃它们吗？",
+    "resetForm": "重置表单",
+    "resetDesc": "你确定要将表单值重置为默认设置吗？",
+    "wsPresetBtn": "添加预设",
+    "wsPresetTitle": "选择预设",
+    "wsPresetDesc": "从列表中选择预设，将其添加到你的工厂。",
+    "priceIndicesDesc": "为每个物品选择当前价格指数，以便进行准确计算。",
+    "groupBtn": "创建组",
+    "groupTitle": "创建新工厂组",
+    "groupDesc": "将工厂分组，以查看所有所需原料的概览。",
+    "editGroupTitle": "编辑工厂组",
+    "editGroupDesc": "选择新值。",
+    "deleteGroupTitle": "删除组",
+    "deleteGroupDesc": "确定要删除此组吗？如果已分配工厂，它们将被重新分配到默认组。",
+    "oneTimeCostDesc": "工厂的一次性安装成本。"
   },
   "home": {
-    "selectLanguage": "选择语言"
+    "selectLanguage": "选择语言",
+    "intro": {
+      "desc": "这里是 <em>{gameName}</em>（由 {companyName} 制作）的游戏信息和工具集合。本粉丝站目前专注于工厂机制，助你优化游戏体验。计算基于游戏版本 {gameVersion}，未来更新可能会有所变动。"
+    },
+    "cta": {
+      "title": "让我们开始吧！",
+      "desc": "只是想查点东西或者算算数字？<em>嗯，好棒的数字！</em> 去 <link>{database}</link> 逛逛吧。",
+      "desc2": "从规划你的第一家工厂到管理整个帝国的生产速率，所有东西都在 <link>{toolsSection}</link> 板块里。",
+      "errorDesc": "发现错误或缺失信息？或者想提点改进建议？随时 <contact>联系我们</contact>！"
+    },
+    "game": {
+      "title": "还没了解这个游戏？",
+      "subtitle": "真可惜！",
+      "desc": "{gameName} 是一款革命性的角色扮演经营模拟游戏。通过开设小店或逐步建立庞大的企业帝国，你可以从零开始，成为纽约最大的企业家——完全由你决定。",
+      "hovgaard": "访问 <website>{companyName}</website> 的官方网站",
+      "steam": "直接在 <link>{steam}</link> 访问游戏"
+    },
+    "updates": {
+      "title": "最新更新"
+    },
+    "notFound": {
+      "title": "页面未找到",
+      "desc": "看来这页面今天突然请了假。",
+      "link": "返回首页"
+    }
   },
   "tools": {
     "factoryGroups": {
       "deliveries": {
-        "buttonDesc": "配送"
+        "buttonDesc": "配送",
+        "title": "交付计划",
+        "descNeeded": "此分组中每个工厂的交付计划。你需要 {amount} 个托盘货架来供应所有工厂。",
+        "descEnough": "所有工厂都有足够的托盘货架来存放所有所需的原料。"
+      },
+      "buttonDesc": "创建分组",
+      "title": "工厂分组",
+      "desc": "你可以把工厂分组起来，方便按产品类别查看。如果分组的工厂没有分配足够的托盘货架，购物清单会告诉你需要给每个工厂和仓库订购什么来补足剩余部分。交付对话框也会显示要发送给每个工厂的内容。",
+      "groupEmpty": "此分组中没有工厂。拖拽工厂卡片到这里添加它。",
+      "ungroupedTitle": "未分组的工厂",
+      "ungroupedEmpty": "这里没有未分组的工厂。拖拽工厂卡片到这里，或者添加一个新工厂。",
+      "shoppingList": {
+        "title": "分组购物清单",
+        "desc": "这里列出了本组内托盘货架不足的工厂所需的所有原料。工具会根据工厂现有托盘货架数量计算，以便你可以向单独仓库订购剩余部分。<br></br>仓库所需托盘货架：<strong>{amount}</strong>"
       }
+    },
+    "intro": {
+      "desc": "在这里，你可以深入了解游戏的数字和统计。规划你的工厂，管理整个帝国的物流！"
+    },
+    "playthroughs": {
+      "desc": "下面你可以创建和管理你的游戏进度。一个游戏进度代表一次游戏运行。你可以创建多个游戏进度来对比不同运行，尝试其他难度，或者简单追踪进度。",
+      "warning": "注意：你的进度保存在浏览器中。如果你清除浏览器数据或使用隐私/无痕模式，可能会丢失。",
+      "createButtonDesc": "新建游戏进度",
+      "noPlaythroughs": "还没有游戏进度。创建一个，开始吧！",
+      "notFound": {
+        "title": "游戏进度未找到",
+        "desc": "这个游戏进度不存在或已被删除。",
+        "link": "返回游戏进度概览"
+      }
+    },
+    "playthroughDetail": {
+      "desc": "这里你可以查看帝国的生产统计数据。访问“工厂”页面，可以查看工厂概览、追踪生产线所需订购的物品等更多信息。工厂规划器将展示所有关于生产数据、订单数量等的详细信息。",
+      "productionOverview": "每周生产概览",
+      "noProductionData": "暂无数据。创建工厂后，你可以在这里看到生产统计数据。"
+    },
+    "factories": {
+      "title": "你的工厂",
+      "desc": "这里你可以查看工厂概览。你可以编辑或删除它们，也可以复制当前值用于新工厂。要查看每个工厂的更多详情（包括购物清单），只需点击相应的卡片。",
+      "desc1": "你也可以点击下方“创建分组”按钮将它们分组。这样你可以在一个地方查看所有工厂，并将它们作为一组进行管理。如果你使用中央仓库为多个工厂提供原料，这很有帮助。根据你添加的托盘货架数量，它将建议每个工厂的配送计划。",
+      "noFactories": "你的游玩记录中还没有任何工厂。创建一个就开始吧！",
+      "notFound": {
+        "title": "未找到工厂",
+        "desc": "该工厂不存在或已被删除。",
+        "link": "返回工厂概览"
+      }
+    },
+    "factoryDetail": {
+      "editBtn": "编辑工厂",
+      "shoppingList": {
+        "title": "购物清单",
+        "desc": "这是你的工厂每周以满负荷运行所需的原料。"
+      },
+      "splitShoppingList": {
+        "title": "拆分购物清单",
+        "desc": "将这些原料直接订购到你的工厂，以拆分订单。这是你的 {shelfAmount} 托盘货架能容纳的最大数量。这也考虑了你正在生产的箱子数量。你需要 {requiredAmount} 个托盘货架来存储一整周生产所需的所有原料。",
+        "desc1": "其余部分必须由一个或多个单独的采购代理订购到仓库。返回 <link>工厂概览</link> 并创建分组，以查看需要订购到该仓库的完整清单。它还会向你显示每个工厂的配送计划。"
+      }
+    },
+    "playthroughForm": {
+      "title": "创建新游玩记录",
+      "desc": "给你的游戏进度起个名字，选个难度，这样工具就能算出正确价格了。随时都能编辑或删除你的游戏进度。",
+      "placeholder": "例如 John Manhattan",
+      "deleteTitle": "删除游戏进度",
+      "deleteDesc": "你确定要删除这个游戏进度吗？此操作无法撤销。"
+    },
+    "factoryForm": {
+      "deleteTitle": "删除工厂",
+      "deleteDesc": "你确定要删除这个工厂吗？此操作无法撤销。"
+    },
+    "stats": {
+      "netProfitPerWeek": "净利润 / 周",
+      "ordersPerWeek": "订单 / 周"
+    },
+    "factoryPlanner": {
+      "title": "工厂规划器",
+      "desc": "计算生产线所需的原料、机器和工人。只需选择你想生产的产品，规划器会处理其余部分。",
+      "information": {
+        "legend": "工厂信息",
+        "name": "工厂名称",
+        "calcBasis": "计算基准",
+        "palletDesc": "定义此工厂可用的托盘货架数量。",
+        "dailyAmount": "每日配送需要 <strong>{count}</strong> {object}。",
+        "weeklyAmount": "每周配送需要 <strong>{count}</strong> {object}。",
+        "shelfExplanation": "添加至少一个服装工作台以查看所需的托盘货架数量。",
+        "enoughWeekly": "足够支持每周配送。",
+        "enoughDaily": "仅足够每日配送。每周物流需要仓库。",
+        "notEnough": "即使每日配送也不够存储。",
+        "overflowWarning": "库存积压！",
+        "overflowDesc": "生产速度快于原料消耗。已相应调整托盘货架数量。"
+      },
+      "employees": {
+        "desc": "输入每位员工的薪资。若不包含薪资计算，请留空。",
+        "optimalWorkers": "使用最优工厂工人数量",
+        "optimalTooltip": "根据服装工作台和营业时间自动计算最优工人数量。会添加一个小缓冲以确保游戏内自动排程顺畅。"
+      },
+      "vehicles": {
+        "addBtn": "添加车辆"
+      },
+      "workstations": {
+        "addBtn": "添加服装工作台"
+      },
+      "buttonDesc": "新建工厂",
+      "genericFactoryName": "{productName} 工厂",
+      "estimatedSales": "预估周销售额",
+      "estimatedSalesTooltip": "在商店中输入每个产品的预期销量。",
+      "priceIndexButton": "选择价格指数",
+      "priceIndexDesc": "选择此产品的当前游戏内价格指数以计算正确收入。(出口价格更准确。)"
     }
+  },
+  "counts": {
+    "palletShelf": "{count, plural, one {托盘货架} other {托盘货架}}",
+    "day": "{count, plural, one {# 天} other {# 天}}"
+  },
+  "workstationPresets": {
+    "cheapClothing": "廉价服装",
+    "expensiveClothing": "昂贵服装",
+    "electronics": "电子产品",
+    "jewelry": "珠宝",
+    "gifts": "礼物",
+    "books": "书籍",
+    "bottledGoods": "瓶装商品",
+    "food": "食物",
+    "gardenProducts": "园艺产品"
+  },
+  "toasts": {
+    "genericError": "出错了。请检查输入并重试。如果问题仍然存在，请刷新页面。",
+    "playthroughSaveSuccess": "存档 \"{characterName}\" 已创建！",
+    "playthroughEditSuccess": "存档 \"{characterName}\" 已更新！",
+    "playthroughDeleteSuccess": "存档 \"{characterName}\" 已删除！",
+    "workstationCopyError": "请先选择一个服装工作台和一个产品。",
+    "factorySaveSuccess": "工厂 \"{factoryName}\" 创建并加入存档！",
+    "factoryEditSuccess": "工厂 \"{factoryName}\" 已更新！",
+    "factoryDeleteSuccess": "工厂 \"{factoryName}\" 已删除！",
+    "groupSaveSuccess": "群组 \"{groupName}\" 已创建！",
+    "groupEditSuccess": "群组 \"{groupName}\" 已更新！",
+    "groupDeleteSuccess": "群组 \"{groupName}\" 已删除！"
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "此资源不存在。",
+      "nameRequired": "角色应该有个名字。",
+      "nameTooLong": "角色名最多 30 个字符。",
+      "difficultyRequired": "请选择难度。",
+      "workstationProductRequired": "请为每个服装工作台选择产品。"
+    },
+    "factory": {
+      "nameTooLong": "工厂名最多 50 个字符。",
+      "descriptionTooLong": "别在这儿写小说了。最多 150 个字符！",
+      "workstationsRequired": "请至少添加一个服装工作台。",
+      "atLeastOneVehicle": "每座工厂至少需要一辆车。",
+      "maxTwoVehicles": "每座工厂最多两辆车。",
+      "shelfAmountTooLow": "你得加些货架，工厂才能运作。"
+    },
+    "factoryGroup": {
+      "nameTooLong": "组名最多 30 个字符。",
+      "nameRequired": "请提供组名。"
+    }
+  },
+  "updateHistory": {
+    "launch": "网站上线"
+  },
+  "database": {
+    "intro": {
+      "desc": "深入查看产品、机器、车辆等游戏数据。用搜索和分类筛选，快速找到你想要的。",
+      "buttonDesc": "选个分类"
+    },
+    "products": {
+      "caption": "所有产品一目了然。轻松切换制造价和进口价。零售价是所有区域的平均值。利润显示为净收益，包含原料、工资和税费（基于所选难度）。<br></br>好奇怎么算的？去 <link>{toolsSection}</link> 看看。"
+    },
+    "ingredients": {
+      "caption": "所有原料一览，含属性。选个难度看对应价格。"
+    },
+    "machines": {
+      "caption": "生产用的所有机器。把一台主机器和一到两台副机器组合起来，就能建成一个服装工作台。"
+    },
+    "inventory": {
+      "caption": "你的...存储选项一览。先这样了。后面还有更多！"
+    },
+    "vehicles": {
+      "caption": "想要大载货还是极速体验？这儿都能找到。司机技能指的是你的 {deliveryDriver}，而跑满目的地则需要 {logisticsManager} 拥有 100% 技能。"
+    }
+  },
+  "footer": {
+    "assets": "游戏中的图片、商标和资源均归各自所有者所有。",
+    "fanMade": " 这是一个纯粉丝项目，与游戏开发者没有任何关系。你可以在 <link>GitHub</link> 找到源代码。"
   }
 }

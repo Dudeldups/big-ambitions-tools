@@ -47,6 +47,7 @@
     "salad": "Salade",
     "energyDrink": "Boisson énergisante",
     "cupOfTea": "Tasse de thé",
+    "cupOfCoffee": "Tasse de café",
     "whisky": "Whisky",
     "slushie": "Slushie",
     "sodaCan": "Canette de soda",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "Vêtements (classique, homme, chers)",
     "classicExpensiveFemaleClothing": "Vêtements (classique, femme, chers)",
     "modernExpensiveMaleClothing": "Vêtements (moderne, homme, chers)",
-    "modernExpensiveFemaleClothing": "Vêtements (moderne, femme, chers)",
-    "cupOfCoffee": "Tasse de café"
+    "modernExpensiveFemaleClothing": "Vêtements (moderne, femme, chers)"
   },
   "ingredients": {
     "battery": "Batterie",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "Trottinette électrique",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Camion de fret T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "Rayonnage à palettes",
@@ -202,65 +202,65 @@
     "confirm": "Confirmer",
     "cancel": "Annuler",
     "reset": "Réinitialiser",
+    "copy": "Copier",
     "close": "Fermer",
+    "create": "Créer",
+    "edit": "Modifier",
     "delete": "Supprimer",
     "save": "Enregistrer",
     "amount": "Montant",
     "summedUpAmount": "Total",
-    "never": "Jamais",
-    "noValue": "Aucun",
-    "home": "Accueil",
-    "ingredients": "Ingrédients",
-    "inventory": "Stock",
-    "workstations": "Postes de travail",
-    "product": "Produit",
-    "products": "Produits",
-    "factory": "Usine",
-    "factories": "Usines",
-    "vehicle": "Véhicule",
-    "vehicles": "Véhicules",
-    "revenue": "Revenu",
-    "profit": "Bénéfice",
-    "taxes": "Impôts",
-    "salary": "Salaire",
-    "logisticsManager": "Responsable logistique",
-    "deliveryDriver": "Livreur",
-    "openingHours": "Heures d’ouverture",
-    "difficultyOptions": {
-      "easy": "Facile",
-      "normal": "Normal",
-      "hard": "Difficile"
-    },
-    "copy": "Copier",
-    "create": "Créer",
-    "edit": "Modifier",
     "summary": "Résumé",
     "amortization": "Amortissement",
+    "never": "Jamais",
+    "noValue": "Aucun",
     "noResultsFound": "Aucun résultat trouvé.",
     "columnsDescription": "Colonnes",
     "filterResults": "Filtrer les résultats...",
     "characterName": "Nom du personnage",
+    "home": "Accueil",
     "about": "À propos",
     "contact": "Contact",
+    "ingredients": "Ingrédients",
     "machines": "Machines",
+    "inventory": "Stock",
     "workstation": "Station de travail",
+    "workstations": "Postes de travail",
+    "product": "Produit",
+    "products": "Produits",
     "database": "Base de données",
     "playthrough": "Partie",
     "playthroughs": "Parties",
+    "factory": "Usine",
+    "factories": "Usines",
+    "vehicle": "Véhicule",
+    "vehicles": "Véhicules",
     "palletShelves": "Étagères de palettes",
     "difficulty": "Difficulté",
     "priceIndex": "Indice des prix",
     "priceIndices": "Indices des prix",
     "exportPrice": "Prix export",
+    "revenue": "Revenu",
     "expenses": "Dépenses",
+    "profit": "Bénéfice",
     "netProfit": "Bénéfice net",
+    "taxes": "Impôts",
+    "salary": "Salaire",
     "manufacturingCosts": "Coûts de fabrication",
     "manufacturingCostsShort": "Coût fab.",
     "oneTimeCosts": "Coûts ponctuels",
     "recurringCosts": "Coûts récurrents",
+    "logisticsManager": "Responsable logistique",
+    "deliveryDriver": "Livreur",
+    "openingHours": "Heures d’ouverture",
     "description": "Description",
     "day": "jour",
     "week": "semaine",
+    "difficultyOptions": {
+      "easy": "Facile",
+      "normal": "Normal",
+      "hard": "Difficile"
+    },
     "themes": {
       "buttonDesc": "Changer le thème",
       "light": "Clair",
@@ -279,15 +279,13 @@
       "weekly": "Par semaine"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {Étagère de palette} other {Étagères de palettes}}",
+    "day": "{count, plural, one {# Jour} other {# Jours}}"
+  },
   "tableColumns": {
-    "purchasePrice": "Prix",
-    "amount": "Montant",
-    "ingredients": "Ingrédients",
-    "employees": "Employés",
-    "export": "Exportation",
-    "retail": "Commercial",
-    "deliverUpTo": "Livrer jusqu'à",
     "itemName": "Nom de l'article",
+    "purchasePrice": "Prix",
     "retailPrice": "Prix de vente",
     "manufacturePrice": "Prix de fab.",
     "storageCapacity": "Capacité de stockage",
@@ -298,9 +296,11 @@
     "exportPrice": "Prix d'exportation",
     "profitMargin": "Marge",
     "profitPerHour": "Bénéfice/h.",
+    "amount": "Montant",
     "amountPerBox": "Qté/carton",
     "usedInProducts": "Utilisé dans produits",
     "importers": "Importateurs",
+    "ingredients": "Ingrédients",
     "productionRate": "Prod./h.",
     "vehicleName": "Nom du véhicule",
     "maxFuel": "Capacité du réservoir",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "Compétence chauffeur",
     "destinationsThatCanDeliver": "Dest. de base",
     "destinationsFull": "Max. destinations",
-    "description": "Description"
+    "employees": "Employés",
+    "description": "Description",
+    "export": "Exportation",
+    "retail": "Commercial",
+    "deliverUpTo": "Livrer jusqu'à"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Vêtements pas chers",
+    "expensiveClothing": "Vêtements chers",
+    "electronics": "Électronique",
+    "jewelry": "Bijoux",
+    "gifts": "Cadeaux",
+    "books": "Livres",
+    "bottledGoods": "Produits en bouteille",
+    "food": "Nourriture",
+    "gardenProducts": "Produits de jardin"
+  },
+  "toasts": {
+    "genericError": "Une erreur est survenue. Vérifie tes entrées et réessaie. Si le problème persiste, rafraîchis la page.",
+    "playthroughSaveSuccess": "Sauvegarde \"{characterName}\" créée !",
+    "playthroughEditSuccess": "Sauvegarde \"{characterName}\" mise à jour !",
+    "playthroughDeleteSuccess": "Sauvegarde \"{characterName}\" supprimée !",
+    "workstationCopyError": "Sélectionne d'abord un poste de travail et un produit.",
+    "factorySaveSuccess": "\"{factoryName}\" créé et ajouté à la sauvegarde !",
+    "factoryEditSuccess": "\"{factoryName}\" mis à jour !",
+    "factoryDeleteSuccess": "\"{factoryName}\" supprimé !",
+    "groupSaveSuccess": "Groupe \"{groupName}\" créée !",
+    "groupEditSuccess": "Groupe \"{groupName}\" mise à jour !",
+    "groupDeleteSuccess": "Groupe \"{groupName}\" supprimée !"
   },
   "modals": {
-    "groupLabelName": "Nom",
-    "groupLabelColor": "Couleur",
     "discardChanges": "Abandonner les modifications non enregistrées",
     "discardDesc": "Tu as des modifications non enregistrées. Veux-tu vraiment les abandonner ?",
     "resetForm": "Réinitialiser le formulaire",
@@ -330,9 +356,32 @@
     "groupDesc": "Regroupe les usines pour avoir un aperçu de tous les ingrédients nécessaires.",
     "editGroupTitle": "Modifier le groupe d'usines",
     "editGroupDesc": "Choisis les nouvelles valeurs.",
+    "groupLabelName": "Nom",
+    "groupLabelColor": "Couleur",
     "deleteGroupTitle": "Supprimer le groupe",
     "deleteGroupDesc": "Veux-tu vraiment supprimer ce groupe ? Si des usines y sont assignées, elles seront réassignées au groupe par défaut.",
     "oneTimeCostDesc": "Coûts d'installation uniques pour l'usine."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Cette ressource n'existe malheureusement pas.",
+      "nameRequired": "Ton personnage devrait avoir un nom.",
+      "nameTooLong": "Le nom doit faire au maximum 30 caractères.",
+      "difficultyRequired": "Choisis une difficulté.",
+      "workstationProductRequired": "Choisis un produit pour chaque station de travail."
+    },
+    "factory": {
+      "nameTooLong": "Le nom d'usine doit faire au maximum 50 caractères.",
+      "descriptionTooLong": "Arrête d'écrire un roman ici. 150 caractères, c'est tout !",
+      "workstationsRequired": "Veuillez ajouter au moins une station de travail.",
+      "atLeastOneVehicle": "Tu as besoin d'au moins un véhicule pour l'usine.",
+      "maxTwoVehicles": "Max. deux véhicules autorisés par usine.",
+      "shelfAmountTooLow": "Tu dois ajouter des étagères pour que l'usine fonctionne."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Le nom du groupe doit faire au maximum 30 caractères.",
+      "nameRequired": "Veuillez indiquer un nom de groupe."
+    }
   },
   "home": {
     "selectLanguage": "Sélectionner la langue",
@@ -361,25 +410,31 @@
       "link": "Retour à l'accueil"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "Livraisons",
-        "title": "Plan de livraison",
-        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Tu auras besoin de {amount} étagères de palettes pour approvisionner toutes les usines.",
-        "descEnough": "Toutes les usines ont assez d'étagères de palettes pour stocker tous les ingrédients nécessaires."
-      },
-      "buttonDesc": "Créer un groupe",
-      "title": "Groupes d'usines",
-      "desc": "Tu peux regrouper les usines pour avoir un meilleur aperçu par catégorie de produit. Si les usines regroupées n'ont pas assez d'étagères de palettes attribuées, la liste d'achat te dira ce qu'il faut commander pour chaque usine et aussi pour l'entrepôt pour approvisionner le reste. Le dialogue de livraison te montrera aussi ce qui doit être envoyé à chaque usine.",
-      "groupEmpty": "Aucune usine dans ce groupe. Glisse une carte d'usine ici pour l'ajouter.",
-      "ungroupedTitle": "Usines non regroupées",
-      "ungroupedEmpty": "Pas d'usine non regroupée ici. Glisse une carte d'usine ici ou ajoute-en une nouvelle.",
-      "shoppingList": {
-        "title": "Liste d'achat du groupe",
-        "desc": "Voici tous les ingrédients dont tu as besoin pour approvisionner les usines de ce groupe qui n'ont pas assez d'étagères sur place. L'outil calcule tout en fonction des étagères disponibles dans les usines, pour que tu puisses commander le reste vers un entrepôt séparé.<br></br>Étagères nécessaires dans l'entrepôt : <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "Site web lancé"
+  },
+  "database": {
+    "intro": {
+      "desc": "Plonge dans les données détaillées du jeu : produits, machines, véhicules et plus encore. Utilise la recherche et les filtres par catégorie pour trouver rapidement ce dont tu as besoin.",
+      "buttonDesc": "Choisis une catégorie"
     },
+    "products": {
+      "caption": "Tous les produits d'un coup d'œil. Tu peux basculer facilement entre les prix de fabrication et d'importation. Le prix de détail est la moyenne sur tous les quartiers. Les profits sont affichés en valeur nette, y compris les coûts des ingrédients, les salaires des employés et les taxes selon la difficulté sélectionnée. <br></br>Tu te demandes comment ça se calcule ? Regarde la section <link>{toolsSection}</link>."
+    },
+    "ingredients": {
+      "caption": "Vue d'ensemble de tous les ingrédients bruts, y compris leurs propriétés. Choisis la difficulté pour voir les bons prix."
+    },
+    "machines": {
+      "caption": "Toutes les machines utilisées en production. Combine une machine principale avec une ou deux machines secondaires pour former un poste de travail."
+    },
+    "inventory": {
+      "caption": "Un aperçu de toutes tes... options de stockage. Pour le moment. Il y en aura plus !"
+    },
+    "vehicles": {
+      "caption": "Tu cherches un chargement max ou juste le plus rapide ? Tu trouveras ça ici. Le skill du chauffeur concerne ton {deliveryDriver}, et pour le maximum de destinations, tu as besoin d'un {logisticsManager} avec 100 % de skill."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "C'est ici que tu peux plonger dans les chiffres et statistiques du jeu. Planifie tes usines et gère la logistique pour tout ton empire !"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "Bénéfice net / semaine",
       "ordersPerWeek": "Commandes / semaine"
     },
+    "factoryGroups": {
+      "buttonDesc": "Créer un groupe",
+      "title": "Groupes d'usines",
+      "desc": "Tu peux regrouper les usines pour avoir un meilleur aperçu par catégorie de produit. Si les usines regroupées n'ont pas assez d'étagères de palettes attribuées, la liste d'achat te dira ce qu'il faut commander pour chaque usine et aussi pour l'entrepôt pour approvisionner le reste. Le dialogue de livraison te montrera aussi ce qui doit être envoyé à chaque usine.",
+      "groupEmpty": "Aucune usine dans ce groupe. Glisse une carte d'usine ici pour l'ajouter.",
+      "ungroupedTitle": "Usines non regroupées",
+      "ungroupedEmpty": "Pas d'usine non regroupée ici. Glisse une carte d'usine ici ou ajoute-en une nouvelle.",
+      "deliveries": {
+        "buttonDesc": "Livraisons",
+        "title": "Plan de livraison",
+        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Tu auras besoin de {amount} étagères de palettes pour approvisionner toutes les usines.",
+        "descEnough": "Toutes les usines ont assez d'étagères de palettes pour stocker tous les ingrédients nécessaires."
+      },
+      "shoppingList": {
+        "title": "Liste d'achat du groupe",
+        "desc": "Voici tous les ingrédients dont tu as besoin pour approvisionner les usines de ce groupe qui n'ont pas assez d'étagères sur place. L'outil calcule tout en fonction des étagères disponibles dans les usines, pour que tu puisses commander le reste vers un entrepôt séparé.<br></br>Étagères nécessaires dans l'entrepôt : <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "Planificateur d'usine",
       "desc": "Calcule les ingrédients, machines et ouvriers nécessaires pour tes lignes de production. Choisis simplement les produits que tu veux produire et le planificateur s'occupera du reste.",
@@ -473,81 +546,8 @@
       "priceIndexDesc": "Choisis l'indice de prix actuel du jeu pour ce produit pour calculer le bon revenu. (Le prix d'export est plus précis.)"
     }
   },
-  "counts": {
-    "palletShelf": "{count, plural, one {Étagère de palette} other {Étagères de palettes}}",
-    "day": "{count, plural, one {# Jour} other {# Jours}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "Vêtements pas chers",
-    "expensiveClothing": "Vêtements chers",
-    "electronics": "Électronique",
-    "jewelry": "Bijoux",
-    "gifts": "Cadeaux",
-    "books": "Livres",
-    "bottledGoods": "Produits en bouteille",
-    "food": "Nourriture",
-    "gardenProducts": "Produits de jardin"
-  },
-  "toasts": {
-    "genericError": "Une erreur est survenue. Vérifie tes entrées et réessaie. Si le problème persiste, rafraîchis la page.",
-    "playthroughSaveSuccess": "Sauvegarde \"{characterName}\" créée !",
-    "playthroughEditSuccess": "Sauvegarde \"{characterName}\" mise à jour !",
-    "playthroughDeleteSuccess": "Sauvegarde \"{characterName}\" supprimée !",
-    "workstationCopyError": "Sélectionne d'abord un poste de travail et un produit.",
-    "factorySaveSuccess": "\"{factoryName}\" créé et ajouté à la sauvegarde !",
-    "factoryEditSuccess": "\"{factoryName}\" mis à jour !",
-    "factoryDeleteSuccess": "\"{factoryName}\" supprimé !",
-    "groupSaveSuccess": "Groupe \"{groupName}\" créée !",
-    "groupEditSuccess": "Groupe \"{groupName}\" mise à jour !",
-    "groupDeleteSuccess": "Groupe \"{groupName}\" supprimée !"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "Cette ressource n'existe malheureusement pas.",
-      "nameRequired": "Ton personnage devrait avoir un nom.",
-      "nameTooLong": "Le nom doit faire au maximum 30 caractères.",
-      "difficultyRequired": "Choisis une difficulté.",
-      "workstationProductRequired": "Choisis un produit pour chaque station de travail."
-    },
-    "factory": {
-      "nameTooLong": "Le nom d'usine doit faire au maximum 50 caractères.",
-      "descriptionTooLong": "Arrête d'écrire un roman ici. 150 caractères, c'est tout !",
-      "workstationsRequired": "Veuillez ajouter au moins une station de travail.",
-      "atLeastOneVehicle": "Tu as besoin d'au moins un véhicule pour l'usine.",
-      "maxTwoVehicles": "Max. deux véhicules autorisés par usine.",
-      "shelfAmountTooLow": "Tu dois ajouter des étagères pour que l'usine fonctionne."
-    },
-    "factoryGroup": {
-      "nameTooLong": "Le nom du groupe doit faire au maximum 30 caractères.",
-      "nameRequired": "Veuillez indiquer un nom de groupe."
-    }
-  },
-  "updateHistory": {
-    "launch": "Site web lancé"
-  },
-  "database": {
-    "intro": {
-      "desc": "Plonge dans les données détaillées du jeu : produits, machines, véhicules et plus encore. Utilise la recherche et les filtres par catégorie pour trouver rapidement ce dont tu as besoin.",
-      "buttonDesc": "Choisis une catégorie"
-    },
-    "products": {
-      "caption": "Tous les produits d'un coup d'œil. Tu peux basculer facilement entre les prix de fabrication et d'importation. Le prix de détail est la moyenne sur tous les quartiers. Les bénéfices sont affichés en valeur nette, y compris le coût des ingrédients, les salaires des employés et les taxes selon la difficulté choisie. <br></br>Curieux comment c'est calculé ? Jette un coup d'œil à la section <link>{toolsSection}</link>."
-    },
-    "ingredients": {
-      "caption": "Vue d'ensemble de tous les ingrédients bruts, y compris leurs propriétés. Choisis la difficulté pour voir les bons prix."
-    },
-    "machines": {
-      "caption": "Toutes les machines utilisées en production. Combine une machine principale avec une ou deux machines secondaires pour former un poste de travail."
-    },
-    "inventory": {
-      "caption": "Un aperçu de toutes tes... options de stockage. Pour le moment. Il y en aura plus !"
-    },
-    "vehicles": {
-      "caption": "Tu cherches un maximum de cargaison ou juste la plus rapide des balades ? Tu trouveras ça ici. La compétence du conducteur se réfère à ton {deliveryDriver}, et pour le max de destinations, il te faut un {logisticsManager} avec 100 % de skill."
-    }
-  },
   "footer": {
     "assets": "Toutes les images, marques et assets du jeu appartiennent à leurs propriétaires respectifs.",
-    "fanMade": " Ce site est un pur projet de fans et n'a aucun lien avec les développeurs du jeu. Tu peux trouver le code source sur <link>GitHub</link>."
+    "fanMade": "C'est un site de fans et n'a rien à voir avec les développeurs du jeu. Tu peux trouver le code source sur <link>GitHub</link>."
   }
 }

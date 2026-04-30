@@ -243,11 +243,11 @@
     "about": "Sobre",
     "contact": "Contato",
     "machines": "Máquinas",
-    "workstation": "Estação de Trabalho de Roupas",
+    "workstation": "Estação de Trabalho",
     "database": "Banco de dados",
     "playthrough": "Partida",
     "playthroughs": "Partidas",
-    "palletShelves": "Estante para Paletes",
+    "palletShelves": "Estantes para Paletes",
     "difficulty": "Dificuldade",
     "priceIndex": "Índice de preços",
     "priceIndices": "Índices de preços",
@@ -291,7 +291,7 @@
     "retailPrice": "Preço de venda",
     "manufacturePrice": "Preço de fab.",
     "storageCapacity": "Capacidade de armazenamento",
-    "workstation": "Estação de Trabalho de Roupas",
+    "workstation": "Estação de Trabalho",
     "neededMachines": "Máquinas",
     "usedForProducts": "Para produtos",
     "importPrice": "Preço de importação",
@@ -309,9 +309,9 @@
     "enginePower": "Aceleração",
     "autoParkSupported": "Estacionamento automático",
     "taxDeductible": "Dedutível",
-    "requiredDeliveryDriverSkillValue": "Skill do motorista",
+    "requiredDeliveryDriverSkillValue": "Habilidade do motorista",
     "destinationsThatCanDeliver": "Destinos base",
-    "destinationsFull": "Max. destinos",
+    "destinationsFull": "Máx. destinos",
     "description": "Descrição"
   },
   "modals": {
@@ -319,30 +319,30 @@
     "groupLabelColor": "Cor",
     "discardChanges": "Descartar alterações não salvas",
     "discardDesc": "Tem alterações não salvas. Tem certeza que deseja descartá-las?",
-    "resetForm": "Reiniciar formulário",
-    "resetDesc": "Tem certeza que deseja reiniciar os valores do formulário para as configurações padrão?",
-    "wsPresetBtn": "Adicionar pré-definição",
-    "wsPresetTitle": "Selecionar pré-definição",
+    "resetForm": "Redefinir valores do formulário",
+    "resetDesc": "Tem certeza que deseja redefinir os valores do formulário para as configurações padrão?",
+    "wsPresetBtn": "Adicionar predefinição",
+    "wsPresetTitle": "Selecionar predefinição",
     "wsPresetDesc": "Escolha uma pré-definição da lista para adicioná-la à sua fábrica.",
     "priceIndicesDesc": "Selecione os índices de preço atuais para cada item para cálculos precisos.",
     "groupBtn": "Criar grupo",
     "groupTitle": "Criar novo grupo de fábrica",
-    "groupDesc": "Agrupe fábricas para ter uma visão geral de todos os ingredientes necessários.",
+    "groupDesc": "Agrupar fábricas para obter uma visão geral de todos os ingredientes necessários.",
     "editGroupTitle": "Editar grupo de fábrica",
     "editGroupDesc": "Selecione os novos valores.",
     "deleteGroupTitle": "Excluir grupo",
     "deleteGroupDesc": "Tem certeza que deseja excluir este grupo? Se houver fábricas atribuídas, elas serão reatribuídas ao grupo padrão.",
-    "oneTimeCostDesc": "Custos de instalação únicos para a fábrica."
+    "oneTimeCostDesc": "Custos únicos de instalação da fábrica."
   },
   "home": {
     "selectLanguage": "Selecionar idioma",
     "intro": {
-      "desc": "Aqui você encontra infos e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para te ajudar a otimizar seu jogo. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
+      "desc": "Aqui você encontra informações e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para te ajudar a otimizar seu jogo. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
     },
     "cta": {
       "title": "Vamos começar!",
       "desc": "Quer só dar uma olhada em algo ou brincar um pouco com números? <em>Mhmm, números deliciosos!</em> Então dá uma olhada na <link>{database}</link> e comece a explorar.",
-      "desc2": "Da planejar a sua primeira fábrica até gerenciar as taxas de produção de todo o seu império, você encontrará tudo na seção <link>{toolsSection}</link>.",
+      "desc2": "Do planejamento de sua primeira fábrica até gerenciar as taxas de produção de todo o seu império, você encontrará tudo na seção <link>{toolsSection}</link>.",
       "errorDesc": "Encontrou um erro ou falta alguma informação? Ou tem sugestões para melhorar o site? Sinta-se à vontade para <contact>falar com a gente</contact>!"
     },
     "game": {
@@ -367,7 +367,7 @@
         "buttonDesc": "Entregas",
         "title": "Plano de entregas",
         "descNeeded": "Planos de entrega para cada fábrica neste grupo. Você precisará de {amount} estantes para paletes para abastecer todas as fábricas.",
-        "descEnough": "Todas as fábricas têm prateleiras suficientes para armazenar todos os ingredientes necessários."
+        "descEnough": "Use 'estantes para paletes' to maintain consistency with the established terminology and Entry 2."
       },
       "buttonDesc": "Criar grupo",
       "title": "Grupos de fábricas",
@@ -384,7 +384,7 @@
       "desc": "Aqui você pode mergulhar fundo nos números e estatísticas do jogo. Planeie suas fábricas e gerencie a logística de todo o seu império!"
     },
     "playthroughs": {
-      "desc": "Abaixo, você pode criar e gerenciar suas partidas. Uma partida representa uma única execução do jogo. Você pode criar múltiplas partidas para comparar diferentes partidas, experimentar outras dificuldades ou apenas acompanhar seu progresso.",
+      "desc": "Abaixo, você pode criar e gerenciar suas partidas. Uma partida representa uma única execução do jogo. Você pode criar múltiplas partidas para comparar diferentes tentativas, experimentar outras dificuldades ou apenas acompanhar seu progresso.",
       "warning": "Importante: Seu progresso é salvo no seu navegador. Se você limpar os dados do navegador ou usar o modo privado/incógnito, tudo pode ser perdido.",
       "createButtonDesc": "Nova partida",
       "noPlaythroughs": "Ainda sem partidas. Crie uma para começar!",
@@ -402,7 +402,7 @@
     "factories": {
       "title": "Suas fábricas",
       "desc": "Uma visão geral das suas fábricas. Você pode editá-las ou excluí-las e também copiar os valores atuais para uma nova fábrica. Para ver mais detalhes sobre cada fábrica, incluindo uma lista de compras, basta clicar no respectivo cartão.",
-      "desc1": "Você também pode agrupá-los clicando no botão Criar Grupo abaixo. Assim você vê todas as fábricas em um só lugar e gerencia-as como grupo. Prático se usar um armazém central para fornecer ingredientes a várias fábricas. Com base nas estantes para paletes adicionadas, ele sugerirá um plano de entrega para cada fábrica.",
+      "desc1": "Change to 'Com base no número de estantes para paletes adicionadas'.",
       "noFactories": "Ainda não há fábricas no seu jogo. Crie uma para começar!",
       "notFound": {
         "title": "Fábrica não encontrada",
@@ -423,9 +423,9 @@
       }
     },
     "playthroughForm": {
-      "title": "Criar novo jogo",
+      "title": "Criar nova partida",
       "desc": "Digite um nome para sua partida e escolha a dificuldade para que as ferramentas possam calcular os preços corretos. Você pode editar ou excluir suas partidas a qualquer momento.",
-      "placeholder": "ex. John Manhattan",
+      "placeholder": "p.ex. John Manhattan",
       "deleteTitle": "Excluir partida",
       "deleteDesc": "Tem certeza de que deseja excluir esta partida? Esta ação não pode ser desfeita."
     },
@@ -447,7 +447,7 @@
         "palletDesc": "Defina quantas estantes para paletes estão disponíveis nesta fábrica.",
         "dailyAmount": "Para a entrega diária você precisa de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para a entrega semanal você precisa de <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Adicione pelo menos uma estação de trabalho de roupas para ver o número necessário de estantes para paletes.",
+        "shelfExplanation": "Adicione pelo menos uma estação de trabalho para ver o número necessário de estantes para paletes.",
         "enoughWeekly": "Suficiente para entrega semanal.",
         "enoughDaily": "Suficiente apenas para entrega diária. Para logística semanal, você precisa de um armazém.",
         "notEnough": "Armazenamento insuficiente, mesmo para entrega diária.",
