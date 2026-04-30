@@ -47,6 +47,7 @@
     "salad": "Salat",
     "energyDrink": "Energidrik",
     "cupOfTea": "Kop te",
+    "cupOfCoffee": "Kop kaffe",
     "whisky": "Whisky",
     "slushie": "Slushice",
     "sodaCan": "Sodavandsdåse",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "Klassisk dyrt herretøj",
     "classicExpensiveFemaleClothing": "Klassisk dyrt dametøj",
     "modernExpensiveMaleClothing": "Moderne dyrt herretøj",
-    "modernExpensiveFemaleClothing": "Moderne Dyrt Dametøj",
-    "cupOfCoffee": "Kop kaffe"
+    "modernExpensiveFemaleClothing": "Moderne Dyrt Dametøj"
   },
   "ingredients": {
     "battery": "Batteri",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "El-løbehjul",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Freight Truck T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "Pallehylde",
@@ -202,65 +202,65 @@
     "confirm": "Bekræft",
     "cancel": "Annuller",
     "reset": "Nulstil",
+    "copy": "Kopier",
     "close": "Luk",
+    "create": "Opret",
+    "edit": "Rediger",
     "delete": "Slet",
     "save": "Gem",
     "amount": "Beløb",
     "summedUpAmount": "I alt",
-    "never": "Aldrig",
-    "noValue": "Ingen",
-    "home": "Hjem",
-    "ingredients": "Ingredienser",
-    "inventory": "Lager",
-    "workstations": "Arbejdsstationer",
-    "product": "Produkt",
-    "products": "Produkter",
-    "factory": "Fabrik",
-    "factories": "Fabrikker",
-    "vehicle": "Køretøj",
-    "vehicles": "Køretøjer",
-    "revenue": "Indtægt",
-    "profit": "Profit",
-    "taxes": "Skatter",
-    "salary": "Løn",
-    "logisticsManager": "Logistikchef",
-    "deliveryDriver": "Chauffør",
-    "openingHours": "Åbningstider",
-    "difficultyOptions": {
-      "easy": "Let",
-      "normal": "Normal",
-      "hard": "Svær"
-    },
-    "copy": "Kopier",
-    "create": "Opret",
-    "edit": "Rediger",
     "summary": "Oversigt",
     "amortization": "Amortisation",
+    "never": "Aldrig",
+    "noValue": "Ingen",
     "noResultsFound": "Ingen resultater fundet.",
     "columnsDescription": "Kolonner",
     "filterResults": "Filtrer resultater...",
     "characterName": "Karakternavn",
+    "home": "Hjem",
     "about": "Om os",
     "contact": "Kontakt",
+    "ingredients": "Ingredienser",
     "machines": "Maskiner",
+    "inventory": "Lager",
     "workstation": "Arbejdsstation til tøj",
+    "workstations": "Arbejdsstationer",
+    "product": "Produkt",
+    "products": "Produkter",
     "database": "Database",
     "playthrough": "Spilstand",
     "playthroughs": "Spilstande",
+    "factory": "Fabrik",
+    "factories": "Fabrikker",
+    "vehicle": "Køretøj",
+    "vehicles": "Køretøjer",
     "palletShelves": "Pallehylder",
     "difficulty": "Sværhedsgrad",
     "priceIndex": "Prisindeks",
     "priceIndices": "Prisindekser",
     "exportPrice": "Exportpris",
+    "revenue": "Indtægt",
     "expenses": "Udgifter",
+    "profit": "Profit",
     "netProfit": "Nettoverskud",
+    "taxes": "Skatter",
+    "salary": "Løn",
     "manufacturingCosts": "Produktionsomkostninger",
     "manufacturingCostsShort": "Prod. omk.",
     "oneTimeCosts": "Engangskostnader",
     "recurringCosts": "Løbende omkostninger",
+    "logisticsManager": "Logistikchef",
+    "deliveryDriver": "Chauffør",
+    "openingHours": "Åbningstider",
     "description": "Beskrivelse",
     "day": "Dag",
     "week": "Uge",
+    "difficultyOptions": {
+      "easy": "Let",
+      "normal": "Normal",
+      "hard": "Svær"
+    },
     "themes": {
       "buttonDesc": "Skift design",
       "light": "Lys",
@@ -279,15 +279,13 @@
       "weekly": "Ugentligt"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {Pallehylde} other {Pallehylder}}",
+    "day": "{count, plural, one {# dag} other {# dage}}"
+  },
   "tableColumns": {
-    "purchasePrice": "Pris",
-    "amount": "Beløb",
-    "ingredients": "Ingredienser",
-    "employees": "Medarbejdere",
-    "export": "Eksport",
-    "retail": "Detail",
-    "deliverUpTo": "Lever op til",
     "itemName": "Artikelnavn",
+    "purchasePrice": "Pris",
     "retailPrice": "Salgspris",
     "manufacturePrice": "Hvst.-pris",
     "storageCapacity": "Lagerkapacitet",
@@ -298,9 +296,11 @@
     "exportPrice": "Exportpris",
     "profitMargin": "Gevindmarge",
     "profitPerHour": "Gevind/t.",
+    "amount": "Beløb",
     "amountPerBox": "Mængde/karton",
     "usedInProducts": "I produkter",
     "importers": "Importører",
+    "ingredients": "Ingredienser",
     "productionRate": "Prod./t.",
     "vehicleName": "Køretøjnavn",
     "maxFuel": "Tankindhold",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "Kører-skill",
     "destinationsThatCanDeliver": "Basis-dest.",
     "destinationsFull": "Max. dest.",
-    "description": "Beskrivelse"
+    "employees": "Medarbejdere",
+    "description": "Beskrivelse",
+    "export": "Eksport",
+    "retail": "Detail",
+    "deliverUpTo": "Lever op til"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Billigtøj",
+    "expensiveClothing": "Dyrtøj",
+    "electronics": "Elektronik",
+    "jewelry": "Smykker",
+    "gifts": "Gaver",
+    "books": "Bøger",
+    "bottledGoods": "Drikkevarer",
+    "food": "Mad",
+    "gardenProducts": "Gartenprodukter"
+  },
+  "toasts": {
+    "genericError": "Der opstod en fejl. Tjek dine input og prøv igen. Hvis problemet fortsætter, så lad siden genindlæse.",
+    "playthroughSaveSuccess": "Spilstand \"{characterName}\" oprettet!",
+    "playthroughEditSuccess": "Spilstand \"{characterName}\" opdateret!",
+    "playthroughDeleteSuccess": "Spilstand \"{characterName}\" slettet!",
+    "workstationCopyError": "Vælg først en arbejdsstation til tøj og et produkt.",
+    "factorySaveSuccess": "\"{factoryName}\" oprettet og tilføjet til spilstanden!",
+    "factoryEditSuccess": "\"{factoryName}\" opdateret!",
+    "factoryDeleteSuccess": "\"{factoryName}\" slettet!",
+    "groupSaveSuccess": "Gruppe \"{groupName}\" oprettet!",
+    "groupEditSuccess": "Gruppe \"{groupName}\" opdateret!",
+    "groupDeleteSuccess": "Gruppe \"{groupName}\" slettet!"
   },
   "modals": {
-    "groupLabelName": "Navn",
-    "groupLabelColor": "Farve",
     "discardChanges": "Kassér ublagrede ændringer",
     "discardDesc": "Du har ublagrede ændringer. Er du sikker på, at du vil kaste dem væk?",
     "resetForm": "Nulstil formularværdier",
@@ -330,9 +356,32 @@
     "groupDesc": "Grupper fabriker for at få et overblik over alle nødvendige ingredienser.",
     "editGroupTitle": "Redigér fabrikgruppe",
     "editGroupDesc": "Vælg de nye værdier.",
+    "groupLabelName": "Navn",
+    "groupLabelColor": "Farve",
     "deleteGroupTitle": "Slet gruppe",
     "deleteGroupDesc": "Er du sikker på, at du vil slette denne gruppe? Hvis der er fabriker tilknyttet, vil de blive omallokeret til standardgruppen.",
     "oneTimeCostDesc": "Engangsinstallationsomkostninger for fabrikken."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Denne ressource findes desværre ikke.",
+      "nameRequired": "Din karakter bør have et navn.",
+      "nameTooLong": "Navnet må højst være 30 tegn langt.",
+      "difficultyRequired": "Vælg venligst en sværhedsgrad.",
+      "workstationProductRequired": "Vælg venligst et produkt til hver Arbejdsstation til tøj."
+    },
+    "factory": {
+      "nameTooLong": "Fabriksnavnet må højst være 50 tegn langt.",
+      "descriptionTooLong": "Hør op med at skrive en roman her. 150 tegn er nok!",
+      "workstationsRequired": "Tilføj venligst mindst én Arbejdsstation til tøj.",
+      "atLeastOneVehicle": "Du skal have mindst et køretøj til fabrikken.",
+      "maxTwoVehicles": "Fabrikken må højst have to køretøjer tildelt.",
+      "shelfAmountTooLow": "Du skal tilføje hylder for at fabrikken kan fungere."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Gruppenavnet må højst være 30 tegn langt.",
+      "nameRequired": "Angiv venligst et gruppenavn."
+    }
   },
   "home": {
     "selectLanguage": "Vælg sprog",
@@ -361,25 +410,31 @@
       "link": "Tilbage til startside"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "Leverancer",
-        "title": "Leveringsplan",
-        "descNeeded": "Leveringsplaner for hver fabrik i denne gruppe. Du skal bruge {amount} pallehylder til at forsyne alle fabrikker.",
-        "descEnough": "Alle fabrikker har nok pallehylder til at opbevare alle nødvendige ingredienser."
-      },
-      "buttonDesc": "Opret gruppe",
-      "title": "Fabrikgrupper",
-      "desc": "Du kan gruppere fabrikker sammen for en bedre oversigt pr. produktkategori. Hvis de grupperede fabrikker ikke har nok pallehylder tildelt, vil indkøbslisten fortælle dig, hvad du skal bestille til hver fabrik og også til lagerhuset for at levere resten. Leveringsdialogen viser også, hvad der skal sendes til hver fabrik.",
-      "groupEmpty": "Ingen fabrikker i denne gruppe. Træk en fabrikkort herhen for at tilføje den.",
-      "ungroupedTitle": "Ikke-grupperede fabrikker",
-      "ungroupedEmpty": "Ingen ikke-grupperede fabrikker. Træk en fabrikkort herhen eller opret en ny fabrik.",
-      "shoppingList": {
-        "title": "Gruppenindkøbsliste",
-        "desc": "Her ser du alle ingredienser, som du skal bruge til at forsyne fabriker, der ikke har nok pallehylder inde i denne gruppe. Det beregner baseret på antallet af hylder, der er tilgængelige i fabrikerne, så du kan bestille resten til et separat lagerhus.<br></br>Pallehylder nødvendige i lagerhus: <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "Websiden lanceret"
+  },
+  "database": {
+    "intro": {
+      "desc": "Her kan du dykke ned i detaljerede spildata om produkter, maskiner, køretøjer og meget mere. Brug søgefunktionen og kategorifiltre til hurtigt at finde det, du har brug for.",
+      "buttonDesc": "Vælg en kategori"
     },
+    "products": {
+      "caption": "Alle produkter på et blik. Du kan nemt skifte mellem produktions- og importpriser. Detailhandelsprisen er gennemsnittet over alle distrikter. Gevinster vises som netto-værdier – altså inklusive ingredienser, lønninger og skatter baseret på den valgte sværhedsgrad. <br></br>Nysgerrig på hvordan det beregnes? Kig på <link>{toolsSection}</link> siden."
+    },
+    "ingredients": {
+      "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
+    },
+    "machines": {
+      "caption": "Det er alle maskiner, du kan bruge til produktionen. Kombiner en hovedmaskine med én eller to undermaskiner for at bygge en Arbejdsstation til tøj."
+    },
+    "inventory": {
+      "caption": "Et lille overblik over dine... lagermuligheder. Så for nu. Mere kommer!"
+    },
+    "vehicles": {
+      "caption": "Søger du efter maksimalt lastkapacitet eller bare den hurtigste tur? Du finder det her. Kørefærdighed henviser til din {deliveryDriver}, og for maksimale destinationer kræves en {logisticsManager} med 100 % færdighed."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "Her kan du dykke ned i spillets tal og statistikker. Planlæg dine fabrikker og styr logistikken for dit hele imperium!"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "Nettoverskud / uge",
       "ordersPerWeek": "Bestillinger / uge"
     },
+    "factoryGroups": {
+      "buttonDesc": "Opret gruppe",
+      "title": "Fabrikgrupper",
+      "desc": "Du kan gruppere fabrikker sammen for en bedre oversigt pr. produktkategori. Hvis de grupperede fabrikker ikke har nok pallehylder tildelt, vil indkøbslisten fortælle dig, hvad du skal bestille til hver fabrik og også til lagerhuset for at levere resten. Leveringsdialogen viser også, hvad der skal sendes til hver fabrik.",
+      "groupEmpty": "Ingen fabrikker i denne gruppe. Træk en fabrikkort herhen for at tilføje den.",
+      "ungroupedTitle": "Ikke-grupperede fabrikker",
+      "ungroupedEmpty": "Ingen ikke-grupperede fabrikker. Træk en fabrikkort herhen eller opret en ny fabrik.",
+      "deliveries": {
+        "buttonDesc": "Leverancer",
+        "title": "Leveringsplan",
+        "descNeeded": "Leveringsplaner for hver fabrik i denne gruppe. Du skal bruge {amount} pallehylder til at forsyne alle fabrikker.",
+        "descEnough": "Alle fabrikker har nok pallehylder til at opbevare alle nødvendige ingredienser."
+      },
+      "shoppingList": {
+        "title": "Gruppenindkøbsliste",
+        "desc": "Her ser du alle ingredienser, som du skal bruge til at forsyne fabriker, der ikke har nok pallehylder inde i denne gruppe. Det beregner baseret på antallet af hylder, der er tilgængelige i fabrikerne, så du kan bestille resten til et separat lagerhus.<br></br>Pallehylder nødvendige i lagerhus: <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "Fabrikplaner",
       "desc": "Beregn de nødvendige ingredienser, maskiner og fabriksarbejdere til dine produktionslinjer. Vælg blot produkterne, du vil producere, og planeren tager resten.",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "Indtast det forventede salg pr. produkt i dine butikker.",
       "priceIndexButton": "Vælg prisindeks",
       "priceIndexDesc": "Vælg det aktuelle spilprisindeks for dette produkt til at beregne den korrekte indtægt. (Exportprisen er mere præcis.)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {Pallehylde} other {Pallehylder}}",
-    "day": "{count, plural, one {# dag} other {# dage}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "Billigtøj",
-    "expensiveClothing": "Dyrtøj",
-    "electronics": "Elektronik",
-    "jewelry": "Smykker",
-    "gifts": "Gaver",
-    "books": "Bøger",
-    "bottledGoods": "Drikkevarer",
-    "food": "Mad",
-    "gardenProducts": "Gartenprodukter"
-  },
-  "toasts": {
-    "genericError": "Der opstod en fejl. Tjek dine input og prøv igen. Hvis problemet fortsætter, så lad siden genindlæse.",
-    "playthroughSaveSuccess": "Spilstand \"{characterName}\" oprettet!",
-    "playthroughEditSuccess": "Spilstand \"{characterName}\" opdateret!",
-    "playthroughDeleteSuccess": "Spilstand \"{characterName}\" slettet!",
-    "workstationCopyError": "Vælg først en arbejdsstation til tøj og et produkt.",
-    "factorySaveSuccess": "\"{factoryName}\" oprettet og tilføjet til spilstanden!",
-    "factoryEditSuccess": "\"{factoryName}\" opdateret!",
-    "factoryDeleteSuccess": "\"{factoryName}\" slettet!",
-    "groupSaveSuccess": "Gruppe \"{groupName}\" oprettet!",
-    "groupEditSuccess": "Gruppe \"{groupName}\" opdateret!",
-    "groupDeleteSuccess": "Gruppe \"{groupName}\" slettet!"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "Denne ressource findes desværre ikke.",
-      "nameRequired": "Din karakter bør have et navn.",
-      "nameTooLong": "Navnet må højst være 30 tegn langt.",
-      "difficultyRequired": "Vælg venligst en sværhedsgrad.",
-      "workstationProductRequired": "Vælg venligst et produkt til hver Arbejdsstation til tøj."
-    },
-    "factory": {
-      "nameTooLong": "Fabriksnavnet må højst være 50 tegn langt.",
-      "descriptionTooLong": "Hør op med at skrive en roman her. 150 tegn er nok!",
-      "workstationsRequired": "Tilføj venligst mindst én Arbejdsstation til tøj.",
-      "atLeastOneVehicle": "Du skal have mindst et køretøj til fabrikken.",
-      "maxTwoVehicles": "Fabrikken må højst have to køretøjer tildelt.",
-      "shelfAmountTooLow": "Du skal tilføje hylder for at fabrikken kan fungere."
-    },
-    "factoryGroup": {
-      "nameTooLong": "Gruppenavnet må højst være 30 tegn langt.",
-      "nameRequired": "Angiv venligst et gruppenavn."
-    }
-  },
-  "updateHistory": {
-    "launch": "Websiden lanceret"
-  },
-  "database": {
-    "intro": {
-      "desc": "Her kan du dykke ned i detaljerede spildata om produkter, maskiner, køretøjer og meget mere. Brug søgefunktionen og kategorifiltre til hurtigt at finde det, du har brug for.",
-      "buttonDesc": "Vælg en kategori"
-    },
-    "products": {
-      "caption": "Alle produkter på et blik. Du kan nemt skifte mellem produktions- og importpriser. Detailhandelsprisen er gennemsnittet over alle distrikter. Gevinster vises som netto-værdier – altså inklusive ingredienser, lønninger og skatter baseret på den valgte sværhedsgrad. <br></br>Nysgerrig på hvordan det beregnes? Kig på <link>{toolsSection}</link> siden."
-    },
-    "ingredients": {
-      "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
-    },
-    "machines": {
-      "caption": "Det er alle maskiner, du kan bruge til produktionen. Kombiner en hovedmaskine med én eller to undermaskiner for at bygge en Arbejdsstation til tøj."
-    },
-    "inventory": {
-      "caption": "Et lille overblik over dine... lagermuligheder. Så for nu. Mere kommer!"
-    },
-    "vehicles": {
-      "caption": "Søger du efter maksimalt lastkapacitet eller bare den hurtigste tur? Du finder det her. Kørefærdighed henviser til din {deliveryDriver}, og for maksimale destinationer kræves en {logisticsManager} med 100 % færdighed."
     }
   },
   "footer": {

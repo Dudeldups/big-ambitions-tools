@@ -47,6 +47,7 @@
     "salad": "Salade",
     "energyDrink": "Energiedrank",
     "cupOfTea": "Kopje thee",
+    "cupOfCoffee": "Kop koffie",
     "whisky": "Whisky",
     "slushie": "Slushie",
     "sodaCan": "Blik Frisdrank",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "Klassieke dure mannenkleding",
     "classicExpensiveFemaleClothing": "Klassieke dure dameskleding",
     "modernExpensiveMaleClothing": "Moderne dure mannenkleding",
-    "modernExpensiveFemaleClothing": "Moderne dure dameskleding",
-    "cupOfCoffee": "Kop koffie"
+    "modernExpensiveFemaleClothing": "Moderne dure dameskleding"
   },
   "ingredients": {
     "battery": "Batterij",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "Elektrische Scooter",
+    "Bima320": "VERZEKERING 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Vrachtwagen T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "VERZEKERING 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "Palletplank",
@@ -202,65 +202,65 @@
     "confirm": "Bevestig",
     "cancel": "Annuleer",
     "reset": "Reset",
+    "copy": "Kopiëren",
     "close": "Afsluiten",
+    "create": "Aanmaken",
+    "edit": "Bewerken",
     "delete": "Verwijderen",
     "save": "Opslaan",
     "amount": "Bedrag",
     "summedUpAmount": "Totaal",
-    "never": "Nooit",
-    "noValue": "geen",
-    "home": "Home",
-    "ingredients": "Ingrediënten",
-    "inventory": "Inventaris",
-    "workstations": "Werkplekken",
-    "product": "Product",
-    "products": "Producten",
-    "factory": "Fabriek",
-    "factories": "Fabrieken",
-    "vehicle": "Voertuig",
-    "vehicles": "[b]Big Ambitions[/b] is een revolutionaire business simulator. Ga van niets naar iets en wordt de grootste ondernemen in New York door het openen van een klein bedrijf of het langzaam opbouwen van grote ketens zoals jij ze wil hebben.",
-    "revenue": "Winst",
-    "profit": "Winst",
-    "taxes": "Belastingen",
-    "salary": "Salaris",
-    "logisticsManager": "Manager logistiek",
-    "deliveryDriver": "Bezorger",
-    "openingHours": "Openingstijden",
-    "difficultyOptions": {
-      "easy": "Makkelijk",
-      "normal": "Normaal",
-      "hard": "Moeilijk"
-    },
-    "copy": "Kopiëren",
-    "create": "Aanmaken",
-    "edit": "Bewerken",
     "summary": "Samenvatting",
     "amortization": "Amortisatie",
+    "never": "Nooit",
+    "noValue": "geen",
     "noResultsFound": "Geen resultaten gevonden.",
     "columnsDescription": "Kolommen",
     "filterResults": "Resultaten filteren...",
     "characterName": "Karakternaam",
+    "home": "Home",
     "about": "Over ons",
     "contact": "Contact",
+    "ingredients": "Ingrediënten",
     "machines": "Machines",
+    "inventory": "Inventaris",
     "workstation": "Kledingwerkstation",
+    "workstations": "Werkplekken",
+    "product": "Product",
+    "products": "Producten",
     "database": "Database",
     "playthrough": "Speelstand",
     "playthroughs": "Speelstanden",
+    "factory": "Fabriek",
+    "factories": "Fabrieken",
+    "vehicle": "Voertuig",
+    "vehicles": "[b]Big Ambitions[/b] is een revolutionaire business simulator. Ga van niets naar iets en wordt de grootste ondernemen in New York door het openen van een klein bedrijf of het langzaam opbouwen van grote ketens zoals jij ze wil hebben.",
     "palletShelves": "Palletplanken",
     "difficulty": "Moeilijkheid",
     "priceIndex": "Prijsindex",
     "priceIndices": "Prijsindizes",
     "exportPrice": "Exportprijs",
+    "revenue": "Winst",
     "expenses": "Uitgaven",
+    "profit": "Winst",
     "netProfit": "Nettowinst",
+    "taxes": "Belastingen",
+    "salary": "Salaris",
     "manufacturingCosts": "Productiekosten",
     "manufacturingCostsShort": "Prod.kosten",
     "oneTimeCosts": "Eenmalige kosten",
     "recurringCosts": "Lopende kosten",
+    "logisticsManager": "Manager logistiek",
+    "deliveryDriver": "Bezorger",
+    "openingHours": "Openingstijden",
     "description": "Beschrijving",
     "day": "Dag",
     "week": "Week",
+    "difficultyOptions": {
+      "easy": "Makkelijk",
+      "normal": "Normaal",
+      "hard": "Moeilijk"
+    },
     "themes": {
       "buttonDesc": "Design wisselen",
       "light": "Licht",
@@ -279,15 +279,13 @@
       "weekly": "Wekelijks"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {Palletplank} other {Palletplanken}}",
+    "day": "{count, plural, one {# dag} other {# dagen}}"
+  },
   "tableColumns": {
-    "purchasePrice": "Prijs",
-    "amount": "Bedrag",
-    "ingredients": "Ingrediënten",
-    "employees": "Medewerkers",
-    "export": "Export",
-    "retail": "Winkel",
-    "deliverUpTo": "Lever tot maximaal",
     "itemName": "Artikelnaam",
+    "purchasePrice": "Prijs",
     "retailPrice": "Verkoopprijs",
     "manufacturePrice": "Herk.-Prijs",
     "storageCapacity": "Opslagcapaciteit",
@@ -298,9 +296,11 @@
     "exportPrice": "Exportprijs",
     "profitMargin": "Winstmarge",
     "profitPerHour": "Winst/u.",
+    "amount": "Bedrag",
     "amountPerBox": "Aantal/karton",
     "usedInProducts": "In producten",
     "importers": "Importeurs",
+    "ingredients": "Ingrediënten",
     "productionRate": "Prod./u.",
     "vehicleName": "Voertuignaam",
     "maxFuel": "Tankinhoud",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "Rijders-skill",
     "destinationsThatCanDeliver": "Basis-destinaties",
     "destinationsFull": "Max. bestemmingen",
-    "description": "Beschrijving"
+    "employees": "Medewerkers",
+    "description": "Beschrijving",
+    "export": "Export",
+    "retail": "Winkel",
+    "deliverUpTo": "Lever tot maximaal"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Goedkope kleding",
+    "expensiveClothing": "Dure kleding",
+    "electronics": "Elektronica",
+    "jewelry": "Sieraden",
+    "gifts": "Cadeaus",
+    "books": "Boeken",
+    "bottledGoods": "Flessenwaren",
+    "food": "Eten",
+    "gardenProducts": "Tuinproducten"
+  },
+  "toasts": {
+    "genericError": "Er is een fout opgetreden. Controleer je invoer en probeer het opnieuw. Als het probleem blijft, laad de pagina opnieuw.",
+    "playthroughSaveSuccess": "Speelstand \"{characterName}\" aangemaakt!",
+    "playthroughEditSuccess": "Speelstand \"{characterName}\" bijgewerkt!",
+    "playthroughDeleteSuccess": "Speelstand \"{characterName}\" verwijderd!",
+    "workstationCopyError": "Selecteer eerst een Kledingwerkstation en een product.",
+    "factorySaveSuccess": "\"{factoryName}\" aangemaakt en toegevoegd aan de speelstand!",
+    "factoryEditSuccess": "\"{factoryName}\" bijgewerkt!",
+    "factoryDeleteSuccess": "\"{factoryName}\" verwijderd!",
+    "groupSaveSuccess": "Groep \"{groupName}\" aangemaakt!",
+    "groupEditSuccess": "Groep \"{groupName}\" bijgewerkt!",
+    "groupDeleteSuccess": "Groep \"{groupName}\" verwijderd!"
   },
   "modals": {
-    "groupLabelName": "Naam",
-    "groupLabelColor": "Kleur",
     "discardChanges": "Ongespaarde wijzigingen verwerpen",
     "discardDesc": "Je hebt ongespaarde wijzigingen. Ben je zeker dat je ze wilt verwerpen?",
     "resetForm": "Formulier resetten",
@@ -330,9 +356,32 @@
     "groupDesc": "Groepeer fabrieken om een overzicht te krijgen van alle benodigde ingrediënten.",
     "editGroupTitle": "Fabrieksgroep bewerken",
     "editGroupDesc": "Kies de nieuwe waarden uit.",
+    "groupLabelName": "Naam",
+    "groupLabelColor": "Kleur",
     "deleteGroupTitle": "Groep verwijderen",
     "deleteGroupDesc": "Ben je zeker dat je deze groep wilt verwijderen? Als er fabrieken zijn toegewezen, worden ze aan de standaardgroep toegewezen.",
     "oneTimeCostDesc": "Eénmalige installatiekosten voor de fabriek."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Deze resource bestaat helaas niet.",
+      "nameRequired": "Je karakter moet een naam hebben.",
+      "nameTooLong": "De naam mag maximaal 30 tekens lang zijn.",
+      "difficultyRequired": "Kies een moeilijkheidsgraad uit.",
+      "workstationProductRequired": "Kies voor elk Kledingwerkstation een product uit."
+    },
+    "factory": {
+      "nameTooLong": "De fabrieknaam mag maximaal 50 tekens lang zijn.",
+      "descriptionTooLong": "Houd op met een roman te schrijven. 150 tekens zijn genoeg!",
+      "workstationsRequired": "Voeg minimaal één Kledingwerkstation toe.",
+      "atLeastOneVehicle": "Je hebt minimaal één voertuig nodig voor de fabriek.",
+      "maxTwoVehicles": "Per fabriek mag max. twee voertuigen worden toegewezen.",
+      "shelfAmountTooLow": "Je moet rekken toevoegen zodat de fabriek werkt."
+    },
+    "factoryGroup": {
+      "nameTooLong": "De groepsnaam mag maximaal 30 tekens lang zijn.",
+      "nameRequired": "Geef een groepsnaam op."
+    }
   },
   "home": {
     "selectLanguage": "Kies een taal",
@@ -361,25 +410,31 @@
       "link": "Terug naar de startpagina"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "Leveringen",
-        "title": "Leveringsplan",
-        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletplanken nodig om alle fabrieken te voorzien.",
-        "descEnough": "Alle fabrieken hebben genoeg palletplanken om alle benodigde ingrediënten op te slaan."
-      },
-      "buttonDesc": "Groep aanmaken",
-      "title": "Fabrieksgroepen",
-      "desc": "Je kunt fabriken groeperen voor een beter overzicht per productcategorie. Als de gegroepeerde fabrieken niet genoeg palletplanken hebben toegewezen, vertelt de boodschappenlijst wat je voor elke fabriek en ook voor het magazijn moet bestellen om de rest te leveren. De leveringsdialoog toont je ook wat naar elke fabriek gestuurd moet worden.",
-      "groupEmpty": "Geen fabrieken in deze groep. Sleep een fabriekkaart hierheen om deze toe te voegen.",
-      "ungroupedTitle": "Niet gegroepeerde fabrieken",
-      "ungroupedEmpty": "Geen ongegroeperde fabrieken. Sleep een fabriekkaart hierheen of voeg een nieuwe fabriek toe.",
-      "shoppingList": {
-        "title": "Groepsboodschappenlijst",
-        "desc": "Hier zie je alle ingrediënten die je nodig hebt om fabrieken te voorzien die niet genoeg palletplanken hebben binnen deze groep. Het berekent dit op basis van de beschikbare palletplanken in de fabrieken zodat je de rest eenvoudig naar een apart magazijn kunt bestellen.<br></br>Benodigde palletplanken in magazijn: <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "Website gestart"
+  },
+  "database": {
+    "intro": {
+      "desc": "Hier kun je diep duiken in de speldetails van producten, machines, voertuigen en nog veel meer. Pak de zoekfunctie of filters, zodat je snel vindt wat je nodig hebt.",
+      "buttonDesc": "Kies een categorie"
     },
+    "products": {
+      "caption": "Alle producten op een oogopslag. Schakel eenvoudig tussen productie- en importprijzen. De detailhandelsprijs is het gemiddelde over alle wijken. Winsten worden weergegeven als nettowarden, inclusief ingrediëntenkosten, loonkosten en belastingen gebaseerd op de geselecteerde moeilijkheidsgraad. <br></br>Benieuwd hoe dit wordt berekend? Kijk dan eens naar het <link>{toolsSection}</link> gedeelte."
+    },
+    "ingredients": {
+      "caption": "Overzicht van alle ruwe ingrediënten inclusief hun eigenschappen. Kies de moeilijkheidsgraad om de juiste prijzen te zien."
+    },
+    "machines": {
+      "caption": "Dit zijn alle machines die je voor de productie kunt gebruiken. Combineer één hoofdmachine met een of twee secundaire machines om een Kledingwerkstation te bouwen."
+    },
+    "inventory": {
+      "caption": "Een overzicht van al je... opslagopties. Voor nu. Meer komt nog!"
+    },
+    "vehicles": {
+      "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. De vaardigheid van de bestuurder verwijst naar je {deliveryDriver}, en voor maximaal aantal bestemmingen heb je een {logisticsManager} nodig met 100% vaardigheid."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "Hier duik je diep in de cijfers en statistieken van het spel. Plan je fabrieken en beheer de logistiek voor je hele imperium!"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "Nettowinst / week",
       "ordersPerWeek": "Bestellingen / week"
     },
+    "factoryGroups": {
+      "buttonDesc": "Groep aanmaken",
+      "title": "Fabrieksgroepen",
+      "desc": "Je kunt fabriken groeperen voor een beter overzicht per productcategorie. Als de gegroepeerde fabrieken niet genoeg palletplanken hebben toegewezen, vertelt de boodschappenlijst wat je voor elke fabriek en ook voor het magazijn moet bestellen om de rest te leveren. De leveringsdialoog toont je ook wat naar elke fabriek gestuurd moet worden.",
+      "groupEmpty": "Geen fabrieken in deze groep. Sleep een fabriekkaart hierheen om deze toe te voegen.",
+      "ungroupedTitle": "Niet gegroepeerde fabrieken",
+      "ungroupedEmpty": "Geen ongegroeperde fabrieken. Sleep een fabriekkaart hierheen of voeg een nieuwe fabriek toe.",
+      "deliveries": {
+        "buttonDesc": "Leveringen",
+        "title": "Leveringsplan",
+        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletplanken nodig om alle fabrieken te voorzien.",
+        "descEnough": "Alle fabrieken hebben genoeg palletplanken om alle benodigde ingrediënten op te slaan."
+      },
+      "shoppingList": {
+        "title": "Groepsboodschappenlijst",
+        "desc": "Hier zie je alle ingrediënten die je nodig hebt om fabrieken te voorzien die niet genoeg palletplanken hebben binnen deze groep. Het berekent dit op basis van de beschikbare palletplanken in de fabrieken zodat je de rest eenvoudig naar een apart magazijn kunt bestellen.<br></br>Benodigde palletplanken in magazijn: <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "Fabriekplanner",
       "desc": "Bereken de benodigde ingrediënten, machines en fabrieksarbeiders voor je productielijnen. Kies gewoon de producten die je wilt produceren en de planner doet de rest.",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "Vul de verwachte omzet per product in je winkels in.",
       "priceIndexButton": "Prijsindex kiezen",
       "priceIndexDesc": "Kies de huidige spel-prijsindex voor dit product om het juiste inkomen te berekenen. (De exportprijs is nauwkeuriger.)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {Palletplank} other {Palletplanken}}",
-    "day": "{count, plural, one {# dag} other {# dagen}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "Goedkope kleding",
-    "expensiveClothing": "Dure kleding",
-    "electronics": "Elektronica",
-    "jewelry": "Sieraden",
-    "gifts": "Cadeaus",
-    "books": "Boeken",
-    "bottledGoods": "Flessenwaren",
-    "food": "Eten",
-    "gardenProducts": "Tuinproducten"
-  },
-  "toasts": {
-    "genericError": "Er is een fout opgetreden. Controleer je invoer en probeer het opnieuw. Als het probleem blijft, laad de pagina opnieuw.",
-    "playthroughSaveSuccess": "Speelstand \"{characterName}\" aangemaakt!",
-    "playthroughEditSuccess": "Speelstand \"{characterName}\" bijgewerkt!",
-    "playthroughDeleteSuccess": "Speelstand \"{characterName}\" verwijderd!",
-    "workstationCopyError": "Selecteer eerst een Kledingwerkstation en een product.",
-    "factorySaveSuccess": "\"{factoryName}\" aangemaakt en toegevoegd aan de speelstand!",
-    "factoryEditSuccess": "\"{factoryName}\" bijgewerkt!",
-    "factoryDeleteSuccess": "\"{factoryName}\" verwijderd!",
-    "groupSaveSuccess": "Groep \"{groupName}\" aangemaakt!",
-    "groupEditSuccess": "Groep \"{groupName}\" bijgewerkt!",
-    "groupDeleteSuccess": "Groep \"{groupName}\" verwijderd!"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "Deze resource bestaat helaas niet.",
-      "nameRequired": "Je karakter moet een naam hebben.",
-      "nameTooLong": "De naam mag maximaal 30 tekens lang zijn.",
-      "difficultyRequired": "Kies een moeilijkheidsgraad uit.",
-      "workstationProductRequired": "Kies voor elk Kledingwerkstation een product uit."
-    },
-    "factory": {
-      "nameTooLong": "De fabrieknaam mag maximaal 50 tekens lang zijn.",
-      "descriptionTooLong": "Houd op met een roman te schrijven. 150 tekens zijn genoeg!",
-      "workstationsRequired": "Voeg minimaal één Kledingwerkstation toe.",
-      "atLeastOneVehicle": "Je hebt minimaal één voertuig nodig voor de fabriek.",
-      "maxTwoVehicles": "Per fabriek mag max. twee voertuigen worden toegewezen.",
-      "shelfAmountTooLow": "Je moet rekken toevoegen zodat de fabriek werkt."
-    },
-    "factoryGroup": {
-      "nameTooLong": "De groepsnaam mag maximaal 30 tekens lang zijn.",
-      "nameRequired": "Geef een groepsnaam op."
-    }
-  },
-  "updateHistory": {
-    "launch": "Website gestart"
-  },
-  "database": {
-    "intro": {
-      "desc": "Hier kun je diep duiken in de speldetails van producten, machines, voertuigen en nog veel meer. Pak de zoekfunctie of filters, zodat je snel vindt wat je nodig hebt.",
-      "buttonDesc": "Kies een categorie"
-    },
-    "products": {
-      "caption": "Alle producten op een oogopslag. Schakel eenvoudig tussen productie- en importprijzen. De detailhandelsprijs is het gemiddelde over alle wijken. Winsten worden weergegeven als nettowarden, inclusief ingrediëntenkosten, loonkosten en belastingen gebaseerd op de geselecteerde moeilijkheidsgraad. <br></br>Benieuwd hoe dit wordt berekend? Kijk dan eens naar het <link>{toolsSection}</link> gedeelte."
-    },
-    "ingredients": {
-      "caption": "Overzicht van alle ruwe ingrediënten inclusief hun eigenschappen. Kies de moeilijkheidsgraad om de juiste prijzen te zien."
-    },
-    "machines": {
-      "caption": "Dit zijn alle machines die je voor de productie kunt gebruiken. Combineer één hoofdmachine met een of twee secundaire machines om een Kledingwerkstation te bouwen."
-    },
-    "inventory": {
-      "caption": "Een overzicht van al je... opslagopties. Voor nu. Meer komt nog!"
-    },
-    "vehicles": {
-      "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. De vaardigheid van de bestuurder verwijst naar je {deliveryDriver}, en voor maximaal aantal bestemmingen heb je een {logisticsManager} nodig met 100% vaardigheid."
     }
   },
   "footer": {

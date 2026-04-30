@@ -47,6 +47,7 @@
     "salad": "沙拉",
     "energyDrink": "能量饮料",
     "cupOfTea": "一杯茶",
+    "cupOfCoffee": "一杯咖啡",
     "whisky": "威士忌",
     "slushie": "冰沙",
     "sodaCan": "汽水罐",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "服装（经典 男式 昂贵）",
     "classicExpensiveFemaleClothing": "服装（经典 女式 昂贵）",
     "modernExpensiveMaleClothing": "服装（现代 男式 昂贵）",
-    "modernExpensiveFemaleClothing": "服装（现代 女式 昂贵）",
-    "cupOfCoffee": "一杯咖啡"
+    "modernExpensiveFemaleClothing": "服装（现代 女式 昂贵）"
   },
   "ingredients": {
     "battery": "电池",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "电动滑板车",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "货运卡车 T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "托盘货架",
@@ -202,65 +202,65 @@
     "confirm": "确认",
     "cancel": "取消",
     "reset": "重置",
+    "copy": "复制",
     "close": "关闭",
+    "create": "创建",
+    "edit": "编辑",
     "delete": "删除",
     "save": "保存",
     "amount": "数量",
     "summedUpAmount": "总计",
-    "never": "从不",
-    "noValue": "无",
-    "home": "主页",
-    "ingredients": "原料",
-    "inventory": "库存",
-    "workstations": "工作站",
-    "product": "产品",
-    "products": "产品",
-    "factory": "工厂",
-    "factories": "工厂",
-    "vehicle": "车辆",
-    "vehicles": "车辆",
-    "revenue": "收入",
-    "profit": "利润",
-    "taxes": "税款",
-    "salary": "工资收入",
-    "logisticsManager": "物流经理",
-    "deliveryDriver": "送货司机",
-    "openingHours": "营业时间",
-    "difficultyOptions": {
-      "easy": "简单",
-      "normal": "普通",
-      "hard": "困难"
-    },
-    "copy": "复制",
-    "create": "创建",
-    "edit": "编辑",
     "summary": "摘要",
     "amortization": "摊销",
+    "never": "从不",
+    "noValue": "无",
     "noResultsFound": "未找到结果。",
     "columnsDescription": "列",
     "filterResults": "筛选结果...",
     "characterName": "角色名",
+    "home": "主页",
     "about": "关于我们",
     "contact": "联系",
+    "ingredients": "原料",
     "machines": "机器",
+    "inventory": "库存",
     "workstation": "服装工作台",
+    "workstations": "工作站",
+    "product": "产品",
+    "products": "产品",
     "database": "数据库",
     "playthrough": "存档",
     "playthroughs": "存档",
+    "factory": "工厂",
+    "factories": "工厂",
+    "vehicle": "车辆",
+    "vehicles": "车辆",
     "palletShelves": "托盘货架",
     "difficulty": "难度",
     "priceIndex": "价格指数",
     "priceIndices": "价格指数",
     "exportPrice": "出口价格",
+    "revenue": "收入",
     "expenses": "费用",
+    "profit": "利润",
     "netProfit": "净利润",
+    "taxes": "税款",
+    "salary": "工资收入",
     "manufacturingCosts": "制造成本",
     "manufacturingCostsShort": "制本",
     "oneTimeCosts": "一次性成本",
     "recurringCosts": "经常性成本",
+    "logisticsManager": "物流经理",
+    "deliveryDriver": "送货司机",
+    "openingHours": "营业时间",
     "description": "描述",
     "day": "天",
     "week": "周",
+    "difficultyOptions": {
+      "easy": "简单",
+      "normal": "普通",
+      "hard": "困难"
+    },
     "themes": {
       "buttonDesc": "切换主题",
       "light": "浅色",
@@ -279,15 +279,13 @@
       "weekly": "每周"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {托盘货架} other {托盘货架}}",
+    "day": "{count, plural, one {# 天} other {# 天}}"
+  },
   "tableColumns": {
-    "purchasePrice": "价格",
-    "amount": "数量",
-    "ingredients": "原料",
-    "employees": "员工",
-    "export": "出口",
-    "retail": "零售",
-    "deliverUpTo": "配送上限",
     "itemName": "物品名称",
+    "purchasePrice": "价格",
     "retailPrice": "零售价",
     "manufacturePrice": "制造价",
     "storageCapacity": "存储容量",
@@ -298,9 +296,11 @@
     "exportPrice": "出口价",
     "profitMargin": "利润率",
     "profitPerHour": "利润/小时",
+    "amount": "数量",
     "amountPerBox": "数量/箱",
     "usedInProducts": "内含于产品",
     "importers": "进口商",
+    "ingredients": "原料",
     "productionRate": "生产/小时",
     "vehicleName": "车辆名称",
     "maxFuel": "油箱容量",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "所需司机技能",
     "destinationsThatCanDeliver": "基地目的地",
     "destinationsFull": "最大目的地",
-    "description": "描述"
+    "employees": "员工",
+    "description": "描述",
+    "export": "出口",
+    "retail": "零售",
+    "deliverUpTo": "配送上限"
+  },
+  "workstationPresets": {
+    "cheapClothing": "廉价服装",
+    "expensiveClothing": "昂贵服装",
+    "electronics": "电子产品",
+    "jewelry": "珠宝",
+    "gifts": "礼物",
+    "books": "书籍",
+    "bottledGoods": "瓶装商品",
+    "food": "食物",
+    "gardenProducts": "园艺产品"
+  },
+  "toasts": {
+    "genericError": "出错了。请检查输入并重试。如果问题仍然存在，请刷新页面。",
+    "playthroughSaveSuccess": "存档 \"{characterName}\" 已创建！",
+    "playthroughEditSuccess": "存档 \"{characterName}\" 已更新！",
+    "playthroughDeleteSuccess": "存档 \"{characterName}\" 已删除！",
+    "workstationCopyError": "请先选择一个服装工作台和一个产品。",
+    "factorySaveSuccess": "工厂 \"{factoryName}\" 创建并加入存档！",
+    "factoryEditSuccess": "工厂 \"{factoryName}\" 已更新！",
+    "factoryDeleteSuccess": "工厂 \"{factoryName}\" 已删除！",
+    "groupSaveSuccess": "群组 \"{groupName}\" 已创建！",
+    "groupEditSuccess": "群组 \"{groupName}\" 已更新！",
+    "groupDeleteSuccess": "群组 \"{groupName}\" 已删除！"
   },
   "modals": {
-    "groupLabelName": "名称",
-    "groupLabelColor": "颜色",
     "discardChanges": "放弃未保存的更改",
     "discardDesc": "你有未保存的更改。确定要放弃它们吗？",
     "resetForm": "重置表单",
@@ -330,9 +356,32 @@
     "groupDesc": "将工厂分组，以查看所有所需原料的概览。",
     "editGroupTitle": "编辑工厂组",
     "editGroupDesc": "选择新值。",
+    "groupLabelName": "名称",
+    "groupLabelColor": "颜色",
     "deleteGroupTitle": "删除组",
     "deleteGroupDesc": "确定要删除此组吗？如果已分配工厂，它们将被重新分配到默认组。",
     "oneTimeCostDesc": "工厂的一次性安装成本。"
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "此资源不存在。",
+      "nameRequired": "角色应该有个名字。",
+      "nameTooLong": "角色名最多 30 个字符。",
+      "difficultyRequired": "请选择难度。",
+      "workstationProductRequired": "请为每个服装工作台选择产品。"
+    },
+    "factory": {
+      "nameTooLong": "工厂名最多 50 个字符。",
+      "descriptionTooLong": "别在这儿写小说了。最多 150 个字符！",
+      "workstationsRequired": "请至少添加一个服装工作台。",
+      "atLeastOneVehicle": "每座工厂至少需要一辆车。",
+      "maxTwoVehicles": "每座工厂最多两辆车。",
+      "shelfAmountTooLow": "你得加些货架，工厂才能运作。"
+    },
+    "factoryGroup": {
+      "nameTooLong": "组名最多 30 个字符。",
+      "nameRequired": "请提供组名。"
+    }
   },
   "home": {
     "selectLanguage": "选择语言",
@@ -361,25 +410,31 @@
       "link": "返回首页"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "配送",
-        "title": "交付计划",
-        "descNeeded": "此分组中每个工厂的交付计划。你需要 {amount} 个托盘货架来供应所有工厂。",
-        "descEnough": "所有工厂都有足够的托盘货架来存放所有所需的原料。"
-      },
-      "buttonDesc": "创建分组",
-      "title": "工厂分组",
-      "desc": "你可以把工厂分组起来，方便按产品类别查看。如果分组的工厂没有分配足够的托盘货架，购物清单会告诉你需要给每个工厂和仓库订购什么来补足剩余部分。交付对话框也会显示要发送给每个工厂的内容。",
-      "groupEmpty": "此分组中没有工厂。拖拽工厂卡片到这里添加它。",
-      "ungroupedTitle": "未分组的工厂",
-      "ungroupedEmpty": "这里没有未分组的工厂。拖拽工厂卡片到这里，或者添加一个新工厂。",
-      "shoppingList": {
-        "title": "分组购物清单",
-        "desc": "这里列出了本组内托盘货架不足的工厂所需的所有原料。工具会根据工厂现有托盘货架数量计算，以便你可以向单独仓库订购剩余部分。<br></br>仓库所需托盘货架：<strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "网站上线"
+  },
+  "database": {
+    "intro": {
+      "desc": "深入查看产品、机器、车辆等游戏数据。用搜索和分类筛选，快速找到你想要的。",
+      "buttonDesc": "选个分类"
     },
+    "products": {
+      "caption": "所有产品一目了然。轻松切换制造价和进口价。零售价是所有区域的平均值。利润显示为净收益，包含原料、工资和税费（基于所选难度）。<br></br>好奇怎么算的？去 <link>{toolsSection}</link> 看看。"
+    },
+    "ingredients": {
+      "caption": "所有原料一览，含属性。选个难度看对应价格。"
+    },
+    "machines": {
+      "caption": "生产用的所有机器。把一台主机器和一到两台副机器组合起来，就能建成一个服装工作台。"
+    },
+    "inventory": {
+      "caption": "你的...存储选项一览。先这样了。后面还有更多！"
+    },
+    "vehicles": {
+      "caption": "想要大载货还是极速体验？这儿都能找到。司机技能指的是你的 {deliveryDriver}，而跑满目的地则需要 {logisticsManager} 拥有 100% 技能。"
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "在这里，你可以深入了解游戏的数字和统计。规划你的工厂，管理整个帝国的物流！"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "净利润 / 周",
       "ordersPerWeek": "订单 / 周"
     },
+    "factoryGroups": {
+      "buttonDesc": "创建分组",
+      "title": "工厂分组",
+      "desc": "你可以把工厂分组起来，方便按产品类别查看。如果分组的工厂没有分配足够的托盘货架，购物清单会告诉你需要给每个工厂和仓库订购什么来补足剩余部分。交付对话框也会显示要发送给每个工厂的内容。",
+      "groupEmpty": "此分组中没有工厂。拖拽工厂卡片到这里添加它。",
+      "ungroupedTitle": "未分组的工厂",
+      "ungroupedEmpty": "这里没有未分组的工厂。拖拽工厂卡片到这里，或者添加一个新工厂。",
+      "deliveries": {
+        "buttonDesc": "配送",
+        "title": "交付计划",
+        "descNeeded": "此分组中每个工厂的交付计划。你需要 {amount} 个托盘货架来供应所有工厂。",
+        "descEnough": "所有工厂都有足够的托盘货架来存放所有所需的原料。"
+      },
+      "shoppingList": {
+        "title": "分组购物清单",
+        "desc": "这里列出了本组内托盘货架不足的工厂所需的所有原料。工具会根据工厂现有托盘货架数量计算，以便你可以向单独仓库订购剩余部分。<br></br>仓库所需托盘货架：<strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "工厂规划器",
       "desc": "计算生产线所需的原料、机器和工人。只需选择你想生产的产品，规划器会处理其余部分。",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "在商店中输入每个产品的预期销量。",
       "priceIndexButton": "选择价格指数",
       "priceIndexDesc": "选择此产品的当前游戏内价格指数以计算正确收入。(出口价格更准确。)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {托盘货架} other {托盘货架}}",
-    "day": "{count, plural, one {# 天} other {# 天}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "廉价服装",
-    "expensiveClothing": "昂贵服装",
-    "electronics": "电子产品",
-    "jewelry": "珠宝",
-    "gifts": "礼物",
-    "books": "书籍",
-    "bottledGoods": "瓶装商品",
-    "food": "食物",
-    "gardenProducts": "园艺产品"
-  },
-  "toasts": {
-    "genericError": "出错了。请检查输入并重试。如果问题仍然存在，请刷新页面。",
-    "playthroughSaveSuccess": "存档 \"{characterName}\" 已创建！",
-    "playthroughEditSuccess": "存档 \"{characterName}\" 已更新！",
-    "playthroughDeleteSuccess": "存档 \"{characterName}\" 已删除！",
-    "workstationCopyError": "请先选择一个服装工作台和一个产品。",
-    "factorySaveSuccess": "工厂 \"{factoryName}\" 创建并加入存档！",
-    "factoryEditSuccess": "工厂 \"{factoryName}\" 已更新！",
-    "factoryDeleteSuccess": "工厂 \"{factoryName}\" 已删除！",
-    "groupSaveSuccess": "群组 \"{groupName}\" 已创建！",
-    "groupEditSuccess": "群组 \"{groupName}\" 已更新！",
-    "groupDeleteSuccess": "群组 \"{groupName}\" 已删除！"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "此资源不存在。",
-      "nameRequired": "角色应该有个名字。",
-      "nameTooLong": "角色名最多 30 个字符。",
-      "difficultyRequired": "请选择难度。",
-      "workstationProductRequired": "请为每个服装工作台选择产品。"
-    },
-    "factory": {
-      "nameTooLong": "工厂名最多 50 个字符。",
-      "descriptionTooLong": "别在这儿写小说了。最多 150 个字符！",
-      "workstationsRequired": "请至少添加一个服装工作台。",
-      "atLeastOneVehicle": "每座工厂至少需要一辆车。",
-      "maxTwoVehicles": "每座工厂最多两辆车。",
-      "shelfAmountTooLow": "你得加些货架，工厂才能运作。"
-    },
-    "factoryGroup": {
-      "nameTooLong": "组名最多 30 个字符。",
-      "nameRequired": "请提供组名。"
-    }
-  },
-  "updateHistory": {
-    "launch": "网站上线"
-  },
-  "database": {
-    "intro": {
-      "desc": "深入查看产品、机器、车辆等游戏数据。用搜索和分类筛选，快速找到你想要的。",
-      "buttonDesc": "选个分类"
-    },
-    "products": {
-      "caption": "所有产品一目了然。轻松切换制造价和进口价。零售价是所有区域的平均值。利润显示为净收益，包含原料、工资和税费（基于所选难度）。<br></br>好奇怎么算的？去 <link>{toolsSection}</link> 看看。"
-    },
-    "ingredients": {
-      "caption": "所有原料一览，含属性。选个难度看对应价格。"
-    },
-    "machines": {
-      "caption": "生产用的所有机器。把一台主机器和一到两台副机器组合起来，就能建成一个服装工作台。"
-    },
-    "inventory": {
-      "caption": "你的...存储选项一览。先这样了。后面还有更多！"
-    },
-    "vehicles": {
-      "caption": "想要大载货还是极速体验？这儿都能找到。司机技能指的是你的 {deliveryDriver}，而跑满目的地则需要 {logisticsManager} 拥有 100% 技能。"
     }
   },
   "footer": {

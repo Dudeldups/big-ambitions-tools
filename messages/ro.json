@@ -47,6 +47,7 @@
     "salad": "Salată",
     "energyDrink": "Băutură energizantă",
     "cupOfTea": "Ceașcă de ceai",
+    "cupOfCoffee": "Ceașcă de cafea",
     "whisky": "Whisky",
     "slushie": "Slushie",
     "sodaCan": "Doză de suc",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "Îmbrăcăminte (Clasică Scumpă Bărbați)",
     "classicExpensiveFemaleClothing": "Îmbrăcăminte (Clasică Scumpă Femei)",
     "modernExpensiveMaleClothing": "Îmbrăcăminte (Modernă Scumpă Bărbați)",
-    "modernExpensiveFemaleClothing": "Îmbrăcăminte (Modernă Scumpă Femei)",
-    "cupOfCoffee": "Ceașcă de cafea"
+    "modernExpensiveFemaleClothing": "Îmbrăcăminte (Modernă Scumpă Femei)"
   },
   "ingredients": {
     "battery": "Baterie",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "Trotinetă electrică",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Camion de marfă T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "Raft pentru paleți",
@@ -202,65 +202,65 @@
     "confirm": "Confirmă",
     "cancel": "Anulează",
     "reset": "Resetează",
+    "copy": "Copiază",
     "close": "Închide",
+    "create": "Creează",
+    "edit": "Editează",
     "delete": "Șterge",
     "save": "Salvează",
     "amount": "Suma",
     "summedUpAmount": "Total",
-    "never": "Niciodată",
-    "noValue": "Oprit",
-    "home": "Acasă",
-    "ingredients": "Ingrediente",
-    "inventory": "Inventar",
-    "workstations": "Posturi de lucru",
-    "product": "Produs",
-    "products": "Produse",
-    "factory": "Fabrică",
-    "factories": "Fabrici",
-    "vehicle": "Vehicul",
-    "vehicles": "Vehicule",
-    "revenue": "Venit",
-    "profit": "Profit",
-    "taxes": "Taxe",
-    "salary": "Salariu",
-    "logisticsManager": "Manager Logistică",
-    "deliveryDriver": "Curier",
-    "openingHours": "Oră deschidere",
-    "difficultyOptions": {
-      "easy": "Ușoară",
-      "normal": "Normală",
-      "hard": "Grea"
-    },
-    "copy": "Copiază",
-    "create": "Creează",
-    "edit": "Editează",
     "summary": "Rezumat",
     "amortization": "Amortizare",
+    "never": "Niciodată",
+    "noValue": "Oprit",
     "noResultsFound": "Nu s-au găsit rezultate.",
     "columnsDescription": "Coloane",
     "filterResults": "Filtrează rezultatele...",
     "characterName": "Nume personaj",
+    "home": "Acasă",
     "about": "Despre noi",
     "contact": "Contact",
+    "ingredients": "Ingrediente",
     "machines": "Mașini",
+    "inventory": "Inventar",
     "workstation": "Stație de lucru pentru îmbrăcăminte",
+    "workstations": "Posturi de lucru",
+    "product": "Produs",
+    "products": "Produse",
     "database": "Bază de date",
     "playthrough": "Partida",
     "playthroughs": "Partide",
+    "factory": "Fabrică",
+    "factories": "Fabrici",
+    "vehicle": "Vehicul",
+    "vehicles": "Vehicule",
     "palletShelves": "Rafte pentru paleți",
     "difficulty": "Dificultate",
     "priceIndex": "Indice prețuri",
     "priceIndices": "Indici prețuri",
     "exportPrice": "Preț export",
+    "revenue": "Venit",
     "expenses": "Cheltuieli",
+    "profit": "Profit",
     "netProfit": "Profit net",
+    "taxes": "Taxe",
+    "salary": "Salariu",
     "manufacturingCosts": "Costuri de producție",
     "manufacturingCostsShort": "Costuri prod.",
     "oneTimeCosts": "Costuri ocazionale",
     "recurringCosts": "Costuri recurente",
+    "logisticsManager": "Manager Logistică",
+    "deliveryDriver": "Curier",
+    "openingHours": "Oră deschidere",
     "description": "Descriere",
     "day": "Zi",
     "week": "Săptămână",
+    "difficultyOptions": {
+      "easy": "Ușoară",
+      "normal": "Normală",
+      "hard": "Grea"
+    },
     "themes": {
       "buttonDesc": "Comută teme",
       "light": "Luminos",
@@ -279,15 +279,13 @@
       "weekly": "Săptămânal"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {Raft pentru paleți} other {Rafte pentru paleți}}",
+    "day": "{count, plural, one {# zi} other {# zile}}"
+  },
   "tableColumns": {
-    "purchasePrice": "Preț",
-    "amount": "Suma",
-    "ingredients": "Ingrediente",
-    "employees": "Angajați",
-    "export": "Export",
-    "retail": "Comerț",
-    "deliverUpTo": "Livrează până la",
     "itemName": "Nume articol",
+    "purchasePrice": "Preț",
     "retailPrice": "Preț de vânzare",
     "manufacturePrice": "Preț fabr.",
     "storageCapacity": "Capacitate stocare",
@@ -298,9 +296,11 @@
     "exportPrice": "Preț export",
     "profitMargin": "Margine profit",
     "profitPerHour": "Profit/Oră",
+    "amount": "Suma",
     "amountPerBox": "Cant./Cutie",
     "usedInProducts": "În produse",
     "importers": "Importatori",
+    "ingredients": "Ingrediente",
     "productionRate": "Prod./Oră",
     "vehicleName": "Nume vehicul",
     "maxFuel": "Capacitate combustibil",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "Skill șofer",
     "destinationsThatCanDeliver": "Destinații de bază",
     "destinationsFull": "Dest. max.",
-    "description": "Descriere"
+    "employees": "Angajați",
+    "description": "Descriere",
+    "export": "Export",
+    "retail": "Comerț",
+    "deliverUpTo": "Livrează până la"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Haine ieftine",
+    "expensiveClothing": "Haine scumpe",
+    "electronics": "Electronice",
+    "jewelry": "Bijuterii",
+    "gifts": "Cadouri",
+    "books": "Cărți",
+    "bottledGoods": "Produse în sticlă",
+    "food": "Mâncare",
+    "gardenProducts": "Produse de grădină"
+  },
+  "toasts": {
+    "genericError": "A apărut o eroare. Verifică datele introduse și încearcă din nou. Dacă problema persistă, reîncarcă pagina.",
+    "playthroughSaveSuccess": "Salvare \"{characterName}\" creată!",
+    "playthroughEditSuccess": "Salvare \"{characterName}\" actualizată!",
+    "playthroughDeleteSuccess": "Salvare \"{characterName}\" ștearsă!",
+    "workstationCopyError": "Selectează mai întâi o stație de lucru pentru îmbrăcăminte și un produs.",
+    "factorySaveSuccess": "\"{factoryName}\" creată și adăugată la salvare!",
+    "factoryEditSuccess": "\"{factoryName}\" actualizată!",
+    "factoryDeleteSuccess": "\"{factoryName}\" ștearsă!",
+    "groupSaveSuccess": "Grup \"{groupName}\" creat!",
+    "groupEditSuccess": "Grup \"{groupName}\" actualizat!",
+    "groupDeleteSuccess": "Grup \"{groupName}\" șters!"
   },
   "modals": {
-    "groupLabelName": "Nume",
-    "groupLabelColor": "Culoare",
     "discardChanges": "Anulează modificările nesalvate",
     "discardDesc": "Ai modificări nesalvate. Ești sigur că vrei să le anulezi?",
     "resetForm": "Resetează valorile formularului",
@@ -330,9 +356,32 @@
     "groupDesc": "Grupează fabricile pentru a obține o privire de ansamblu asupra tuturor ingredientelor necesare.",
     "editGroupTitle": "Editează grupul de fabrici",
     "editGroupDesc": "Alege noile valori.",
+    "groupLabelName": "Nume",
+    "groupLabelColor": "Culoare",
     "deleteGroupTitle": "Șterge grupul",
     "deleteGroupDesc": "Ești sigur că vrei să ștergi acest grup? Dacă există fabrici atribuite, acestea vor fi reatribuite grupului implicit.",
     "oneTimeCostDesc": "Costuri de instalare o singură dată pentru fabrică."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Această resursă nu există.",
+      "nameRequired": "Personajul tău ar trebui să aibă un nume.",
+      "nameTooLong": "Numele trebuie să aibă maxim 30 caractere.",
+      "difficultyRequired": "Alege o dificultate.",
+      "workstationProductRequired": "Selectează un produs pentru fiecare stație de lucru pentru îmbrăcăminte."
+    },
+    "factory": {
+      "nameTooLong": "Numele fabricii trebuie să aibă maxim 50 caractere.",
+      "descriptionTooLong": "Nu scrie aici un roman. Maxim 150 de caractere!",
+      "workstationsRequired": "Adaugă cel puțin o stație de lucru pentru îmbrăcăminte.",
+      "atLeastOneVehicle": "Ai nevoie de cel puțin un vehicul pentru fabrică.",
+      "maxTwoVehicles": "Pentru fabrică sunt permise max. două vehicule.",
+      "shelfAmountTooLow": "Trebuie să adaugi rafturi pentru ca fabrica să funcționeze."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Numele grupului trebuie să aibă maxim 30 caractere.",
+      "nameRequired": "Trebuie să introduci un nume de grup."
+    }
   },
   "home": {
     "selectLanguage": "Selectează limba",
@@ -361,25 +410,31 @@
       "link": "Înapoi la pagina principală"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "Livrări",
-        "title": "Plan de livrare",
-        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Ai nevoie de {amount} rafturi pentru paleți pentru a aproviziona toate fabricile.",
-        "descEnough": "Toate fabricile au suficiente rafturi pentru paleți pentru a stoca toate ingredientele necesare."
-      },
-      "buttonDesc": "Creează grup",
-      "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile împreună pentru o mai bună vedere pe categorie de produs. Dacă fabricile grupate nu au suficiente rafturi pentru paleți asignate, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și chiar pentru depozit pentru a livra restul. Dialogul de livrări îți va arăta totuși ce se trimite la fiecare fabrică.",
-      "groupEmpty": "Nicio fabrică în acest grup. Trage o carte de fabrică aici pentru a o adăuga.",
-      "ungroupedTitle": "Fabrici ne-grupate",
-      "ungroupedEmpty": "Nicio fabrică ne-grupată aici. Trage o carte de fabrică aici sau adaugă o fabrică nouă.",
-      "shoppingList": {
-        "title": "Lista de cumpărături grupată",
-        "desc": "Aici vezi toate ingredientele necesare pentru a aproviziona fabricile din această grupă, care nu au suficient spațiu de rafturi pentru paleți. Acesta calculează totul pe baza rafturilor pentru paleți disponibile în fabrici, astfel încât să poți comanda restul într-un depozit separat.<br></br>Rafturi necesare în depozit: <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "Site-ul lansat"
+  },
+  "database": {
+    "intro": {
+      "desc": "Poți explora date detaliate ale jocului despre produse, mașini, vehicule și multe altele. Folosește căutarea sau filtrele de categorie pentru a găsi rapid ce ai nevoie.",
+      "buttonDesc": "Alege o categorie"
     },
+    "products": {
+      "caption": "Toate produsele pe o privire de ansamblu. Poți să treci ușor între prețurile de producție și import. Prețul de retail este media peste toate districtele. Profiturile sunt afișate ca valori nete – adică inclusiv costurile ingredientelor, salariile lucrătorilor și taxele bazate pe dificultatea selectată. <br></br>Curios cum se calculează? Aruncă o privire la secțiunea <link>{toolsSection}</link>."
+    },
+    "ingredients": {
+      "caption": "O privire de ansamblu asupra tuturor ingredientelor brute, inclusiv proprietățile lor. Alege dificultatea pentru a vedea prețurile corecte."
+    },
+    "machines": {
+      "caption": "Acestea sunt toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două secundare pentru a construi o stație de lucru pentru îmbrăcăminte."
+    },
+    "inventory": {
+      "caption": "O mică privire de ansamblu asupra... opțiunilor tale de depozitare. Până acum doar asta. Va mai urma!"
+    },
+    "vehicles": {
+      "caption": "Cauti încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru destinațiile maxime ai nevoie de un {logisticsManager} cu 100% skill."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "Aici poți să te scufunzi adânc în cifrele și statisticile jocului. Planifică-ți fabricile și gestionează logistica pentru întregul tău imperiu!"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "Profit net / săptămână",
       "ordersPerWeek": "Comenzi / săptămână"
     },
+    "factoryGroups": {
+      "buttonDesc": "Creează grup",
+      "title": "Grupuri de fabrici",
+      "desc": "Poți grupa fabricile împreună pentru o mai bună vedere pe categorie de produs. Dacă fabricile grupate nu au suficiente rafturi pentru paleți asignate, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și chiar pentru depozit pentru a livra restul. Dialogul de livrări îți va arăta totuși ce se trimite la fiecare fabrică.",
+      "groupEmpty": "Nicio fabrică în acest grup. Trage o carte de fabrică aici pentru a o adăuga.",
+      "ungroupedTitle": "Fabrici ne-grupate",
+      "ungroupedEmpty": "Nicio fabrică ne-grupată aici. Trage o carte de fabrică aici sau adaugă o fabrică nouă.",
+      "deliveries": {
+        "buttonDesc": "Livrări",
+        "title": "Plan de livrare",
+        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Ai nevoie de {amount} rafturi pentru paleți pentru a aproviziona toate fabricile.",
+        "descEnough": "Toate fabricile au suficiente rafturi pentru paleți pentru a stoca toate ingredientele necesare."
+      },
+      "shoppingList": {
+        "title": "Lista de cumpărături grupată",
+        "desc": "Aici vezi toate ingredientele necesare pentru a aproviziona fabricile din această grupă, care nu au suficient spațiu de rafturi pentru paleți. Acesta calculează totul pe baza rafturilor pentru paleți disponibile în fabrici, astfel încât să poți comanda restul într-un depozit separat.<br></br>Rafturi necesare în depozit: <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "Planer de fabrică",
       "desc": "Calculează ingredientele necesare, mașinile și muncitorii din fabrică pentru liniile tale de producție. Alege doar produsele pe care vrei să le produci, iar planerul se ocupă de rest.",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "Introdu vânzările așteptate pentru fiecare produs în magazinele tale.",
       "priceIndexButton": "Setează indicele de preț",
       "priceIndexDesc": "Selectează indicele de preț actual din joc pentru acest produs pentru a calcula venitul corect. (Prețul de export este mai precis.)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {Raft pentru paleți} other {Rafte pentru paleți}}",
-    "day": "{count, plural, one {# zi} other {# zile}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "Haine ieftine",
-    "expensiveClothing": "Haine scumpe",
-    "electronics": "Electronice",
-    "jewelry": "Bijuterii",
-    "gifts": "Cadouri",
-    "books": "Cărți",
-    "bottledGoods": "Produse în sticlă",
-    "food": "Mâncare",
-    "gardenProducts": "Produse de grădină"
-  },
-  "toasts": {
-    "genericError": "A apărut o eroare. Verifică datele introduse și încearcă din nou. Dacă problema persistă, reîncarcă pagina.",
-    "playthroughSaveSuccess": "Salvare \"{characterName}\" creată!",
-    "playthroughEditSuccess": "Salvare \"{characterName}\" actualizată!",
-    "playthroughDeleteSuccess": "Salvare \"{characterName}\" ștearsă!",
-    "workstationCopyError": "Selectează mai întâi o stație de lucru pentru îmbrăcăminte și un produs.",
-    "factorySaveSuccess": "\"{factoryName}\" creată și adăugată la salvare!",
-    "factoryEditSuccess": "\"{factoryName}\" actualizată!",
-    "factoryDeleteSuccess": "\"{factoryName}\" ștearsă!",
-    "groupSaveSuccess": "Grup \"{groupName}\" creat!",
-    "groupEditSuccess": "Grup \"{groupName}\" actualizat!",
-    "groupDeleteSuccess": "Grup \"{groupName}\" șters!"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "Această resursă nu există.",
-      "nameRequired": "Personajul tău ar trebui să aibă un nume.",
-      "nameTooLong": "Numele trebuie să aibă maxim 30 caractere.",
-      "difficultyRequired": "Alege o dificultate.",
-      "workstationProductRequired": "Selectează un produs pentru fiecare stație de lucru pentru îmbrăcăminte."
-    },
-    "factory": {
-      "nameTooLong": "Numele fabricii trebuie să aibă maxim 50 caractere.",
-      "descriptionTooLong": "Nu scrie aici un roman. Maxim 150 de caractere!",
-      "workstationsRequired": "Adaugă cel puțin o stație de lucru pentru îmbrăcăminte.",
-      "atLeastOneVehicle": "Ai nevoie de cel puțin un vehicul pentru fabrică.",
-      "maxTwoVehicles": "Pentru fabrică sunt permise max. două vehicule.",
-      "shelfAmountTooLow": "Trebuie să adaugi rafturi pentru ca fabrica să funcționeze."
-    },
-    "factoryGroup": {
-      "nameTooLong": "Numele grupului trebuie să aibă maxim 30 caractere.",
-      "nameRequired": "Trebuie să introduci un nume de grup."
-    }
-  },
-  "updateHistory": {
-    "launch": "Site-ul lansat"
-  },
-  "database": {
-    "intro": {
-      "desc": "Poți explora date detaliate ale jocului despre produse, mașini, vehicule și multe altele. Folosește căutarea sau filtrele de categorie pentru a găsi rapid ce ai nevoie.",
-      "buttonDesc": "Alege o categorie"
-    },
-    "products": {
-      "caption": "Toate produsele pe o privire de ansamblu. Poți să treci ușor între prețurile de producție și import. Prețul de retail este media peste toate districtele. Profiturile sunt afișate ca valori nete – adică inclusiv costurile ingredientelor, salariile lucrătorilor și taxele bazate pe dificultatea selectată. <br></br>Curios cum se calculează? Aruncă o privire la secțiunea <link>{toolsSection}</link>."
-    },
-    "ingredients": {
-      "caption": "O privire de ansamblu asupra tuturor ingredientelor brute, inclusiv proprietățile lor. Alege dificultatea pentru a vedea prețurile corecte."
-    },
-    "machines": {
-      "caption": "Acestea sunt toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două secundare pentru a construi o stație de lucru pentru îmbrăcăminte."
-    },
-    "inventory": {
-      "caption": "O mică privire de ansamblu asupra... opțiunilor tale de depozitare. Până acum doar asta. Va mai urma!"
-    },
-    "vehicles": {
-      "caption": "Cauti încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru destinațiile maxime ai nevoie de un {logisticsManager} cu 100% skill."
     }
   },
   "footer": {

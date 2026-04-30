@@ -47,6 +47,7 @@
     "salad": "샐러드",
     "energyDrink": "에너지 드링크",
     "cupOfTea": "차 한 잔",
+    "cupOfCoffee": "커피 한 잔",
     "whisky": "위스키",
     "slushie": "슬러시",
     "sodaCan": "소다 캔",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "의류(클래식 고가 남성)",
     "classicExpensiveFemaleClothing": "의류(클래식 고가 여성)",
     "modernExpensiveMaleClothing": "의류(모던 고가 남성)",
-    "modernExpensiveFemaleClothing": "의류(모던 고가 여성)",
-    "cupOfCoffee": "커피 한 잔"
+    "modernExpensiveFemaleClothing": "의류(모던 고가 여성)"
   },
   "ingredients": {
     "battery": "배터리",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "전동 스쿠터",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "화물 트럭 T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "팔레트 선반",
@@ -202,65 +202,65 @@
     "confirm": "확인",
     "cancel": "취소",
     "reset": "초기화",
+    "copy": "복사",
     "close": "닫기",
+    "create": "생성",
+    "edit": "수정",
     "delete": "삭제",
     "save": "저장",
     "amount": "수량",
     "summedUpAmount": "합계",
-    "never": "안 떨어짐",
-    "noValue": "없음",
-    "home": "홈",
-    "ingredients": "재료",
-    "inventory": "재고",
-    "workstations": "작업대",
-    "product": "제품",
-    "products": "제품",
-    "factory": "공장",
-    "factories": "공장",
-    "vehicle": "차량",
-    "vehicles": "차량",
-    "revenue": "수익",
-    "profit": "이익",
-    "taxes": "세금",
-    "salary": "급여",
-    "logisticsManager": "물류 관리자",
-    "deliveryDriver": "배송 기사",
-    "openingHours": "영업시간",
-    "difficultyOptions": {
-      "easy": "쉬움",
-      "normal": "보통",
-      "hard": "어려움"
-    },
-    "copy": "복사",
-    "create": "생성",
-    "edit": "수정",
     "summary": "요약",
     "amortization": "원금회수",
+    "never": "안 떨어짐",
+    "noValue": "없음",
     "noResultsFound": "결과를 찾을 수 없습니다.",
     "columnsDescription": "열",
     "filterResults": "결과 필터링...",
     "characterName": "캐릭터 이름",
+    "home": "홈",
     "about": "소개",
     "contact": "연락처",
+    "ingredients": "재료",
     "machines": "기계",
+    "inventory": "재고",
     "workstation": "의류 작업대",
+    "workstations": "작업대",
+    "product": "제품",
+    "products": "제품",
     "database": "데이터베이스",
     "playthrough": "게임 기록",
     "playthroughs": "게임 기록들",
+    "factory": "공장",
+    "factories": "공장",
+    "vehicle": "차량",
+    "vehicles": "차량",
     "palletShelves": "팔레트 선반",
     "difficulty": "난이도",
     "priceIndex": "가격 지수",
     "priceIndices": "가격 지수들",
     "exportPrice": "수출 가격",
+    "revenue": "수익",
     "expenses": "비용",
+    "profit": "이익",
     "netProfit": "순이익",
+    "taxes": "세금",
+    "salary": "급여",
     "manufacturingCosts": "제조 비용",
     "manufacturingCostsShort": "제조비",
     "oneTimeCosts": "일회성 비용",
     "recurringCosts": "반복 비용",
+    "logisticsManager": "물류 관리자",
+    "deliveryDriver": "배송 기사",
+    "openingHours": "영업시간",
     "description": "설명",
     "day": "일",
     "week": "주",
+    "difficultyOptions": {
+      "easy": "쉬움",
+      "normal": "보통",
+      "hard": "어려움"
+    },
     "themes": {
       "buttonDesc": "테마 전환",
       "light": "밝은",
@@ -279,15 +279,13 @@
       "weekly": "주별"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {팔레트 선반} other {팔레트 선반들}}",
+    "day": "{count, plural, one {# 일} other {# 일들}}"
+  },
   "tableColumns": {
-    "purchasePrice": "가격순",
-    "amount": "수량",
-    "ingredients": "재료",
-    "employees": "직원",
-    "export": "수출",
-    "retail": "소매",
-    "deliverUpTo": "최대치까지 배송",
     "itemName": "아이템명",
+    "purchasePrice": "가격순",
     "retailPrice": "판매가격",
     "manufacturePrice": "제조가",
     "storageCapacity": "저장용량",
@@ -298,9 +296,11 @@
     "exportPrice": "출고가",
     "profitMargin": "이익률",
     "profitPerHour": "이익/시간",
+    "amount": "수량",
     "amountPerBox": "수량/박스",
     "usedInProducts": "제품에 사용됨",
     "importers": "입수처",
+    "ingredients": "재료",
     "productionRate": "생산/시간",
     "vehicleName": "차량명",
     "maxFuel": "연료용량",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "배송기사 스킬",
     "destinationsThatCanDeliver": "기본 목적지",
     "destinationsFull": "최대 목적지",
-    "description": "설명"
+    "employees": "직원",
+    "description": "설명",
+    "export": "수출",
+    "retail": "소매",
+    "deliverUpTo": "최대치까지 배송"
+  },
+  "workstationPresets": {
+    "cheapClothing": "저렴한 옷",
+    "expensiveClothing": "비싼 옷",
+    "electronics": "전자제품",
+    "jewelry": "주얼리",
+    "gifts": "선물",
+    "books": "책",
+    "bottledGoods": "음료",
+    "food": "음식",
+    "gardenProducts": "정원용품"
+  },
+  "toasts": {
+    "genericError": "오류가 발생했습니다. 입력값을 확인하고 다시 시도해 주세요. 문제가 지속되면 페이지를 새로고침해 보세요.",
+    "playthroughSaveSuccess": "플레이스루 \"{characterName}\" 생성됨!",
+    "playthroughEditSuccess": "플레이스루 \"{characterName}\" 업데이트됨!",
+    "playthroughDeleteSuccess": "플레이스루 \"{characterName}\" 삭제됨!",
+    "workstationCopyError": "먼저 의류 작업대와 제품을 선택해 주세요.",
+    "factorySaveSuccess": "\"{factoryName}\" 생성 및 플레이스루에 추가됨!",
+    "factoryEditSuccess": "\"{factoryName}\" 업데이트됨!",
+    "factoryDeleteSuccess": "\"{factoryName}\" 삭제됨!",
+    "groupSaveSuccess": "그룹 \"{groupName}\" 생성됨!",
+    "groupEditSuccess": "그룹 \"{groupName}\" 업데이트됨!",
+    "groupDeleteSuccess": "그룹 \"{groupName}\" 삭제됨!"
   },
   "modals": {
-    "groupLabelName": "이름",
-    "groupLabelColor": "색상",
     "discardChanges": "저장되지 않은 변경사항 버리기",
     "discardDesc": "저장되지 않은 변경사항이 있어요. 버릴까요?",
     "resetForm": "폼 값 초기화",
@@ -330,9 +356,32 @@
     "groupDesc": "공장을 그룹으로 묶어 필요한 모든 재료를 한눈에 파악해요.",
     "editGroupTitle": "공장 그룹 수정",
     "editGroupDesc": "새로운 값들을 선택해요.",
+    "groupLabelName": "이름",
+    "groupLabelColor": "색상",
     "deleteGroupTitle": "그룹 삭제",
     "deleteGroupDesc": "이 그룹을 삭제할까요? 공장이 할당되어 있으면 기본 그룹으로 옮겨져요.",
     "oneTimeCostDesc": "공장의 일회성 설치 비용."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "이 리소스는 존재하지 않습니다.",
+      "nameRequired": "캐릭터에 이름을 지어주세요.",
+      "nameTooLong": "이름은 최대 30 자까지 가능합니다.",
+      "difficultyRequired": "난이도를 선택해주세요.",
+      "workstationProductRequired": "각 작업대마다 제품을 선택해주세요."
+    },
+    "factory": {
+      "nameTooLong": "공장 이름은 최대 50 자까지 가능합니다.",
+      "descriptionTooLong": "여기서 소설 쓰지 마세요. 최대 150 자까지입니다!",
+      "workstationsRequired": "최소 하나의 작업대를 추가해주세요.",
+      "atLeastOneVehicle": "공장에는 최소 한 대의 차량이 필요합니다.",
+      "maxTwoVehicles": "공장당 최대 두 대의 차량만 가능합니다.",
+      "shelfAmountTooLow": "공장이 작동하려면 선반을 추가해주세요."
+    },
+    "factoryGroup": {
+      "nameTooLong": "그룹 이름은 최대 30 자까지 가능합니다.",
+      "nameRequired": "그룹 이름을 입력해주세요."
+    }
   },
   "home": {
     "selectLanguage": "언어 선택",
@@ -361,25 +410,31 @@
       "link": "홈으로 돌아가기"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "배송",
-        "title": "배송 계획",
-        "descNeeded": "이 그룹의 각 공장별 배송 계획입니다. 모든 공장을 공급하려면 {amount} 개의 팔레트 선반이 필요합니다.",
-        "descEnough": "모든 공장이 필요한 재료를 보관할 만큼 충분한 팔레트 선반을 가지고 있습니다."
-      },
-      "buttonDesc": "그룹 생성",
-      "title": "공장 그룹",
-      "desc": "제품 카테고리별 더 나은 개요를 위해 공장을 그룹화할 수 있어요. 그룹화된 공장들이 팔레트 선반을 충분히 할당받지 못하면, 구매 목록에서 각 공장 및 창고에 주문해야 할 물품을 알려줍니다. 배송 대화상자에서는 각 공장별로 보내야 할 물품도 표시됩니다.",
-      "groupEmpty": "이 그룹에 공장이 없습니다. 추가하려면 공장 카드를 여기에 드래그하세요.",
-      "ungroupedTitle": "그룹화되지 않은 공장",
-      "ungroupedEmpty": "여기에 그룹화되지 않은 공장이 없어요. 공장 카드를 여기에 드래그하거나 새 공장을 추가하세요.",
-      "shoppingList": {
-        "title": "그룹 구매 목록",
-        "desc": "이 그룹 내 공장들이 부족한 팔레트 선반으로 인해 필요한 모든 재료를 보여줍니다. 공장 내의 선반 수량을 기준으로 계산되어, 나머지 재료를 별도의 창고로 주문할 수 있습니다.<br></br>창고에서 필요한 팔레트 선반: <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "웹사이트 오픈"
+  },
+  "database": {
+    "intro": {
+      "desc": "제품, 기계, 차량 등 다양한 게임 데이터를 자세히 확인해보세요. 검색과 필터로 필요한 정보를 빠르게 찾을 수 있어요.",
+      "buttonDesc": "카테고리 선택"
     },
+    "products": {
+      "caption": "제품 한눈에 보기. 제조가와 수입가 전환이 쉽죠. 소매가는 모든 지구 평균입니다. 순이익은 재료비, 인건비, 세금까지 포함된 순수익으로 표시됩니다 (선택한 난이도 기준). <br></br>계산 방법 궁금해요? <link>{toolsSection}</link> 섹션 확인해보세요."
+    },
+    "ingredients": {
+      "caption": "모든 원료와 속성을 한눈에 보세요. 올바른 가격을 보려면 난이도를 선택하세요."
+    },
+    "machines": {
+      "caption": "생산에 쓰이는 모든 기계입니다. 하나의 메인 기계와 하나 또는 두 개의 서브 기계를 조합하여 의류 작업대를 만드세요."
+    },
+    "inventory": {
+      "caption": "모든 보관 옵션에 대한 간단한 소개입니다. 지금은 여기까지고요. 더 추가될 예정입니다!"
+    },
+    "vehicles": {
+      "caption": "최대 화물량이나 가장 빠른 차량이 필요하신가요? 여기에서 찾으실 수 있어요. 운전자 스킬은 {deliveryDriver}를 의미하며, 최대 목적지 도달을 위해서는 {logisticsManager}가 100% 스킬이어야 합니다."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "여기서 게임의 숫자와 통계를 깊이 파고들 수 있어요. 공장을 계획하고 제국 전체 물류를 관리하세요!"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "순이익 / 주",
       "ordersPerWeek": "주문 수 / 주"
     },
+    "factoryGroups": {
+      "buttonDesc": "그룹 생성",
+      "title": "공장 그룹",
+      "desc": "제품 카테고리별 더 나은 개요를 위해 공장을 그룹화할 수 있어요. 그룹화된 공장들이 팔레트 선반을 충분히 할당받지 못하면, 구매 목록에서 각 공장 및 창고에 주문해야 할 물품을 알려줍니다. 배송 대화상자에서는 각 공장별로 보내야 할 물품도 표시됩니다.",
+      "groupEmpty": "이 그룹에 공장이 없습니다. 추가하려면 공장 카드를 여기에 드래그하세요.",
+      "ungroupedTitle": "그룹화되지 않은 공장",
+      "ungroupedEmpty": "여기에 그룹화되지 않은 공장이 없어요. 공장 카드를 여기에 드래그하거나 새 공장을 추가하세요.",
+      "deliveries": {
+        "buttonDesc": "배송",
+        "title": "배송 계획",
+        "descNeeded": "이 그룹의 각 공장별 배송 계획입니다. 모든 공장을 공급하려면 {amount} 개의 팔레트 선반이 필요합니다.",
+        "descEnough": "모든 공장이 필요한 재료를 보관할 만큼 충분한 팔레트 선반을 가지고 있습니다."
+      },
+      "shoppingList": {
+        "title": "그룹 구매 목록",
+        "desc": "이 그룹 내 공장들이 부족한 팔레트 선반으로 인해 필요한 모든 재료를 보여줍니다. 공장 내의 선반 수량을 기준으로 계산되어, 나머지 재료를 별도의 창고로 주문할 수 있습니다.<br></br>창고에서 필요한 팔레트 선반: <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "공장 플래너",
       "desc": "생산 라인에 필요한 재료, 기계, 그리고 공장 작업자를 계산하세요. 만들고 싶은 제품만 선택하면 플래너가 나머지를 처리해 줍니다.",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "각 제품별 예상 판매량 입력하세요.",
       "priceIndexButton": "가격 지수 선택",
       "priceIndexDesc": "이 제품용 현재 게임 내 가격 지수 선택해 올바른 수익 계산하세요. (출구 가격이 더 정확해요.)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {팔레트 선반} other {팔레트 선반들}}",
-    "day": "{count, plural, one {# 일} other {# 일들}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "저렴한 옷",
-    "expensiveClothing": "비싼 옷",
-    "electronics": "전자제품",
-    "jewelry": "주얼리",
-    "gifts": "선물",
-    "books": "책",
-    "bottledGoods": "음료",
-    "food": "음식",
-    "gardenProducts": "정원용품"
-  },
-  "toasts": {
-    "genericError": "오류가 발생했습니다. 입력값을 확인하고 다시 시도해 주세요. 문제가 지속되면 페이지를 새로고침해 보세요.",
-    "playthroughSaveSuccess": "플레이스루 \"{characterName}\" 생성됨!",
-    "playthroughEditSuccess": "플레이스루 \"{characterName}\" 업데이트됨!",
-    "playthroughDeleteSuccess": "플레이스루 \"{characterName}\" 삭제됨!",
-    "workstationCopyError": "먼저 의류 작업대와 제품을 선택해 주세요.",
-    "factorySaveSuccess": "\"{factoryName}\" 생성 및 플레이스루에 추가됨!",
-    "factoryEditSuccess": "\"{factoryName}\" 업데이트됨!",
-    "factoryDeleteSuccess": "\"{factoryName}\" 삭제됨!",
-    "groupSaveSuccess": "그룹 \"{groupName}\" 생성됨!",
-    "groupEditSuccess": "그룹 \"{groupName}\" 업데이트됨!",
-    "groupDeleteSuccess": "그룹 \"{groupName}\" 삭제됨!"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "이 리소스는 존재하지 않습니다.",
-      "nameRequired": "캐릭터에 이름을 지어주세요.",
-      "nameTooLong": "이름은 최대 30 자까지 가능합니다.",
-      "difficultyRequired": "난이도를 선택해주세요.",
-      "workstationProductRequired": "각 작업대마다 제품을 선택해주세요."
-    },
-    "factory": {
-      "nameTooLong": "공장 이름은 최대 50 자까지 가능합니다.",
-      "descriptionTooLong": "여기서 소설 쓰지 마세요. 최대 150 자까지입니다!",
-      "workstationsRequired": "최소 하나의 작업대를 추가해주세요.",
-      "atLeastOneVehicle": "공장에는 최소 한 대의 차량이 필요합니다.",
-      "maxTwoVehicles": "공장당 최대 두 대의 차량만 가능합니다.",
-      "shelfAmountTooLow": "공장이 작동하려면 선반을 추가해주세요."
-    },
-    "factoryGroup": {
-      "nameTooLong": "그룹 이름은 최대 30 자까지 가능합니다.",
-      "nameRequired": "그룹 이름을 입력해주세요."
-    }
-  },
-  "updateHistory": {
-    "launch": "웹사이트 오픈"
-  },
-  "database": {
-    "intro": {
-      "desc": "제품, 기계, 차량 등 다양한 게임 데이터를 자세히 확인해보세요. 검색과 필터로 필요한 정보를 빠르게 찾을 수 있어요.",
-      "buttonDesc": "카테고리 선택"
-    },
-    "products": {
-      "caption": "제품 한눈에 보기. 제조가와 수입가 전환이 쉽죠. 소매가는 모든 지구 평균입니다. 순이익은 재료비, 인건비, 세금까지 포함된 순수익으로 표시됩니다 (선택한 난이도 기준). <br></br>계산 방법 궁금해요? <link>{toolsSection}</link> 섹션 확인해보세요."
-    },
-    "ingredients": {
-      "caption": "모든 원료와 속성을 한눈에 보세요. 올바른 가격을 보려면 난이도를 선택하세요."
-    },
-    "machines": {
-      "caption": "생산에 쓰이는 모든 기계입니다. 하나의 메인 기계와 하나 또는 두 개의 서브 기계를 조합하여 의류 작업대를 만드세요."
-    },
-    "inventory": {
-      "caption": "모든 보관 옵션에 대한 간단한 소개입니다. 지금은 여기까지고요. 더 추가될 예정입니다!"
-    },
-    "vehicles": {
-      "caption": "최대 화물량이나 가장 빠른 차량이 필요하신가요? 여기에서 찾으실 수 있어요. 운전자 스킬은 {deliveryDriver}를 의미하며, 최대 목적지 도달을 위해서는 {logisticsManager}가 100% 스킬이어야 합니다."
     }
   },
   "footer": {

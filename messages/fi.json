@@ -47,6 +47,7 @@
     "salad": "Salaatti",
     "energyDrink": "Energiajuoma",
     "cupOfTea": "Kuppi teetä",
+    "cupOfCoffee": "Kuppi kahvia",
     "whisky": "Viski",
     "slushie": "Slush",
     "sodaCan": "Sooda tölkki",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "Kalliit miestenvaatteet (klassinen)",
     "classicExpensiveFemaleClothing": "Kalliit naistenvaatteet (klassinen)",
     "modernExpensiveMaleClothing": "Kalliit miestenvaatteet (nykyaikainen)",
-    "modernExpensiveFemaleClothing": "Kalliit naistenvaatteet (nykyaikainen)",
-    "cupOfCoffee": "Kuppi kahvia"
+    "modernExpensiveFemaleClothing": "Kalliit naistenvaatteet (nykyaikainen)"
   },
   "ingredients": {
     "battery": "Akku",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "Sähköpotkulauta",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Kuorma-auto T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "Lavahylly",
@@ -202,65 +202,65 @@
     "confirm": "Vahvista",
     "cancel": "Peruuta",
     "reset": "Nollaa",
+    "copy": "Kopioi",
     "close": "Sulje",
+    "create": "Luo",
+    "edit": "Muokkaa",
     "delete": "Poista",
     "save": "Tallenna",
     "amount": "Määrä",
     "summedUpAmount": "Yhteensä",
-    "never": "Ei koskaan",
-    "noValue": "Ei mitään",
-    "home": "Koti",
-    "ingredients": "Ainesosat",
-    "inventory": "Inventaario",
-    "workstations": "Työpisteet",
-    "product": "Tuote",
-    "products": "Tuotteet",
-    "factory": "Tehdas",
-    "factories": "Tehtaat",
-    "vehicle": "ajoneuvo",
-    "vehicles": "Ajoneuvot",
-    "revenue": "Tulot",
-    "profit": "Voitto",
-    "taxes": "Verot",
-    "salary": "Palkka",
-    "logisticsManager": "Logistiikkapäällikkö",
-    "deliveryDriver": "Toimituskuljettaja",
-    "openingHours": "Aukioloajat",
-    "difficultyOptions": {
-      "easy": "Helppo",
-      "normal": "Normaali",
-      "hard": "Vaikea"
-    },
-    "copy": "Kopioi",
-    "create": "Luo",
-    "edit": "Muokkaa",
     "summary": "Yhteenveto",
     "amortization": "Amortisaatio",
+    "never": "Ei koskaan",
+    "noValue": "Ei mitään",
     "noResultsFound": "Ei tuloksia löytynyt.",
     "columnsDescription": "Sarakkeet",
     "filterResults": "Suodata tulokset...",
     "characterName": "Hahmon nimi",
+    "home": "Koti",
     "about": "Meistä",
     "contact": "Yhteystiedot",
+    "ingredients": "Ainesosat",
     "machines": "Koneet",
+    "inventory": "Inventaario",
     "workstation": "Vaatetyöpiste",
+    "workstations": "Työpisteet",
+    "product": "Tuote",
+    "products": "Tuotteet",
     "database": "Tietokanta",
     "playthrough": "Pelin läpikäynti",
     "playthroughs": "Pelin läpikäynnit",
+    "factory": "Tehdas",
+    "factories": "Tehtaat",
+    "vehicle": "ajoneuvo",
+    "vehicles": "Ajoneuvot",
     "palletShelves": "Lavahyllyt",
     "difficulty": "Vaikeusaste",
     "priceIndex": "Hintaindeksi",
     "priceIndices": "Hintaindeksit",
     "exportPrice": "Vientihinta",
+    "revenue": "Tulot",
     "expenses": "Menot",
+    "profit": "Voitto",
     "netProfit": "Nettovoitto",
+    "taxes": "Verot",
+    "salary": "Palkka",
     "manufacturingCosts": "Valmistuskulut",
     "manufacturingCostsShort": "Valm.kulut",
     "oneTimeCosts": "Kertakulut",
     "recurringCosts": "Jatkuvat kulut",
+    "logisticsManager": "Logistiikkapäällikkö",
+    "deliveryDriver": "Toimituskuljettaja",
+    "openingHours": "Aukioloajat",
     "description": "Kuvaus",
     "day": "Päivä",
     "week": "Viikko",
+    "difficultyOptions": {
+      "easy": "Helppo",
+      "normal": "Normaali",
+      "hard": "Vaikea"
+    },
     "themes": {
       "buttonDesc": "Vaihda teemaa",
       "light": "Vaalea",
@@ -279,15 +279,13 @@
       "weekly": "Viikoittain"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {Lavahylly} other {Lavahyllyt}}",
+    "day": "{count, plural, one {# päivä} other {# päiviä}}"
+  },
   "tableColumns": {
-    "purchasePrice": "Hinta",
-    "amount": "Määrä",
-    "ingredients": "Ainesosat",
-    "employees": "Työntekijät",
-    "export": "Vienti",
-    "retail": "Vähittäiskauppa",
-    "deliverUpTo": "Toimita enintään",
     "itemName": "Tuotteenimi",
+    "purchasePrice": "Hinta",
     "retailPrice": "Myyntihinta",
     "manufacturePrice": "Valm.-hinta",
     "storageCapacity": "Varastokapasiteetti",
@@ -298,9 +296,11 @@
     "exportPrice": "Vientihinta",
     "profitMargin": "Voittomarginaali",
     "profitPerHour": "Voitto/tunti",
+    "amount": "Määrä",
     "amountPerBox": "Määrä./kartonki",
     "usedInProducts": "Tuotteissa",
     "importers": "Tuontijat",
+    "ingredients": "Ainesosat",
     "productionRate": "Tuotanto/tunti",
     "vehicleName": "Ajoneuvonimi",
     "maxFuel": "Tankin tilavuus",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "Vaat. ajajan taito",
     "destinationsThatCanDeliver": "Perustavoitteet.",
     "destinationsFull": "Maks. kohteet.",
-    "description": "Kuvaus"
+    "employees": "Työntekijät",
+    "description": "Kuvaus",
+    "export": "Vienti",
+    "retail": "Vähittäiskauppa",
+    "deliverUpTo": "Toimita enintään"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Halvat vaatteet",
+    "expensiveClothing": "Kalliit vaatteet",
+    "electronics": "Elektroniikka",
+    "jewelry": "Korut",
+    "gifts": "Lahjat",
+    "books": "Kirjat",
+    "bottledGoods": "Pullotavarat",
+    "food": "Ruoka",
+    "gardenProducts": "Puutarhatuotteet"
+  },
+  "toasts": {
+    "genericError": "Virhe syntyi. Tarkista syöttämäsi tiedot ja yritä uudelleen. Jos ongelma jatkuu, päivitä sivu.",
+    "playthroughSaveSuccess": "Pelitilanne \"{characterName}\" luotu!",
+    "playthroughEditSuccess": "Pelitilanne \"{characterName}\" päivitetty!",
+    "playthroughDeleteSuccess": "Pelitilanne \"{characterName}\" poistettu!",
+    "workstationCopyError": "Valitse ensin vaatetyöpiste ja tuote.",
+    "factorySaveSuccess": "\"{factoryName}\" luotu ja lisätty pelitilanteeseen!",
+    "factoryEditSuccess": "\"{factoryName}\" päivitetty!",
+    "factoryDeleteSuccess": "\"{factoryName}\" poistettu!",
+    "groupSaveSuccess": "Ryhmä \"{groupName}\" luotu!",
+    "groupEditSuccess": "Ryhmä \"{groupName}\" päivitetty!",
+    "groupDeleteSuccess": "Ryhmä \"{groupName}\" poistettu!"
   },
   "modals": {
-    "groupLabelName": "Nimi",
-    "groupLabelColor": "Väri",
     "discardChanges": "Hylkää tallentamattomat muutokset",
     "discardDesc": "Sinulla on tallentamattomia muutoksia. Oletko varma, että haluat hylätä ne?",
     "resetForm": "Palauta lomakkeen arvot",
@@ -330,9 +356,32 @@
     "groupDesc": "Ryhmittele tehtaat saadaksesi yleiskatsauksen kaikista tarvittavista raaka-aineista.",
     "editGroupTitle": "Muokkaa tehtaaryhmää",
     "editGroupDesc": "Valitse uudet arvot.",
+    "groupLabelName": "Nimi",
+    "groupLabelColor": "Väri",
     "deleteGroupTitle": "Poista ryhmä",
     "deleteGroupDesc": "Oletko varma, että haluat poistaa tämän ryhmän? Jos tehtaat on määritetty, ne siirretään oletusryhmään.",
     "oneTimeCostDesc": "Tehtaan kerta-asennuskulut."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Tämä resurssi ei valitettavasti ole olemassa.",
+      "nameRequired": "Hahmosi pitäisi saada nimi.",
+      "nameTooLong": "Hahmon nimen tulee olla enintään 30 merkkiä.",
+      "difficultyRequired": "Valitse vaikeustaso.",
+      "workstationProductRequired": "Valitse tuote jokaiselle vaatetyöpisteelle."
+    },
+    "factory": {
+      "nameTooLong": "Tehtaan nimi saa olla enintään 50 merkkiä.",
+      "descriptionTooLong": "Älä kirjoita romania tähän. 150 merkkiä riittää!",
+      "workstationsRequired": "Lisää vähintään yksi vaatetyöpiste.",
+      "atLeastOneVehicle": "Tehtaalle tarvitaan vähintään yksi ajoneuvo.",
+      "maxTwoVehicles": "Tehtaan käyttöön saa olla enintään kaksi ajoneuvoa.",
+      "shelfAmountTooLow": "Lisää hyllyjä, jotta tehtas toimii."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Ryhmän nimi saa olla enintään 30 merkkiä.",
+      "nameRequired": "Anna ryhmälle nimi."
+    }
   },
   "home": {
     "selectLanguage": "Valitse kieli",
@@ -361,25 +410,31 @@
       "link": "Takaisin kotisivulle"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "Toimitukset",
-        "title": "Toimitussuunnitelma",
-        "descNeeded": "Tämän ryhmän jokaisen tehtaan toimitussuunnitelma. Tarvitset {amount} Lavahyllyä kaikkien tehtaiden varustamiseen.",
-        "descEnough": "Kaikilla tehtailla on tarpeeksi Lavahyllyä tarvittavien ainesosien säilyttämiseen."
-      },
-      "buttonDesc": "Luo ryhmä",
-      "title": "Tehtaanryhmät",
-      "desc": "Voit ryhmitellä tehtaat tuotekategorian mukaan parempaan yleiskuvaan. Jos ryhmitellyille tehtailla ei ole tarpeeksi Lavahyllyjä, ostoslista kertoo, mitä sinun on tilattava jokaiseen tehtaaseen ja myös varastoon jotta loput voidaan toimittaa. Toimitusvalikko näyttää myös, mitä jokaiseen tehtaaseen tulee lähettää.",
-      "groupEmpty": "Tässä ryhmässä ei ole tehtaita. Vedä tehdas-kortti tänne lisätäksesi sen.",
-      "ungroupedTitle": "Ryhmittämättömät tehtaat",
-      "ungroupedEmpty": "Tässä ei ole ryhmittämättömiä tehtaita. Vedä tehdas-kortti tänne tai luo uusi tehdas.",
-      "shoppingList": {
-        "title": "Ryhmän ostoslista",
-        "desc": "Tässä näet kaikki raaka-aineet, joita tarvitset ryhmän tehtaille, joissa ei ole tarpeeksi lavahyllyjä paikallaan. Työkalu laskee tämän perustuen tehtaiden hyllyihin, jotta voit tilata loput erilliseen varastoon.<br></br>Varastoon tarvittavat lavahyllyt: <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "Sivusto käynnistetty"
+  },
+  "database": {
+    "intro": {
+      "desc": "Tutustu yksityiskohtaisiin pelitietoihin tuotteista, koneista, ajoneuvoista ja muusta. Käytä hakua ja kategorioita löytääksesi nopeasti tarvitsemasi.",
+      "buttonDesc": "Valitse kategoria"
     },
+    "products": {
+      "caption": "Kaikki tuotteet yhdellä silmäyksellä. Voit vaihtaa helposti valmistus- ja tuontihintojen välillä. Myyntihinta on keskiarvo kaikista kaupunginosista. Voittotiedot ovat nettomäärät, mukaan lukien raaka-aineiden kustannukset, työntekijöiden palkat ja verot valitun vaikeustason perusteella. <br></br>Haluatko tietää, miten lasketaan? Katso <link>{toolsSection}</link> -osio."
+    },
+    "ingredients": {
+      "caption": "Kaikkien raaka-aineiden yleiskatsaus, mukaan lukien niiden ominaisuudet. Valitse vaikeustaso nähdäksesi oikeat hinnat."
+    },
+    "machines": {
+      "caption": "Kaikki tuotantoon käytettävät koneet. Yhdistä yksi pääkone yhden tai kahden apukoneen kanssa muodostaaksesi vaatetyöpisteen."
+    },
+    "inventory": {
+      "caption": "Pieni yleiskatsaus kaikkiin... tallennusvaihtoehtoihin. Tällä hetkellä vain. Pian lisää!"
+    },
+    "vehicles": {
+      "caption": "Etsitkö suurinta kuormaa vai vain nopeintaa ajelua? Löydät sen täältä. Ajajan taito viittaa {deliveryDriver}:n taitoon, ja maksimikohteet vaativat {logisticsManager}:n 100 % taidolla."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "Tässä voit sukeltaa syvälle pelin lukuun ja tilastoihin. Suunnittele omat tehtaatasi ja hallitse logistiikkaa koko imperiumillesi!"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "Nettovoitto / viikko",
       "ordersPerWeek": "Tilaukset / viikko"
     },
+    "factoryGroups": {
+      "buttonDesc": "Luo ryhmä",
+      "title": "Tehtaanryhmät",
+      "desc": "Voit ryhmitellä tehtaat tuotekategorian mukaan parempaan yleiskuvaan. Jos ryhmitellyille tehtailla ei ole tarpeeksi Lavahyllyjä, ostoslista kertoo, mitä sinun on tilattava jokaiseen tehtaaseen ja myös varastoon jotta loput voidaan toimittaa. Toimitusvalikko näyttää myös, mitä jokaiseen tehtaaseen tulee lähettää.",
+      "groupEmpty": "Tässä ryhmässä ei ole tehtaita. Vedä tehdas-kortti tänne lisätäksesi sen.",
+      "ungroupedTitle": "Ryhmittämättömät tehtaat",
+      "ungroupedEmpty": "Tässä ei ole ryhmittämättömiä tehtaita. Vedä tehdas-kortti tänne tai luo uusi tehdas.",
+      "deliveries": {
+        "buttonDesc": "Toimitukset",
+        "title": "Toimitussuunnitelma",
+        "descNeeded": "Tämän ryhmän jokaisen tehtaan toimitussuunnitelma. Tarvitset {amount} Lavahyllyä kaikkien tehtaiden varustamiseen.",
+        "descEnough": "Kaikilla tehtailla on tarpeeksi Lavahyllyä tarvittavien ainesosien säilyttämiseen."
+      },
+      "shoppingList": {
+        "title": "Ryhmän ostoslista",
+        "desc": "Tässä näet kaikki raaka-aineet, joita tarvitset ryhmän tehtaille, joissa ei ole tarpeeksi lavahyllyjä paikallaan. Työkalu laskee tämän perustuen tehtaiden hyllyihin, jotta voit tilata loput erilliseen varastoon.<br></br>Varastoon tarvittavat lavahyllyt: <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "Tehtaan suunnittelija",
       "desc": "Laske tarvittavat raaka-aineet, koneet ja tehdastyöntekijät tuotantolinjoillesi. Valitse vain tuotteet, jotka haluat valmistaa, ja suunnittelija hoitaa loput.",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "Syötä odotetut myynnit jokaiselle tuotteelle kauppojesi.",
       "priceIndexButton": "Valitse hintaindeksi",
       "priceIndexDesc": "Valitse tämän tuotteen nykyinen pelihintaindeksi oikean tulon laskemiseksi. (Vientihinta on tarkempi.)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {Lavahylly} other {Lavahyllyt}}",
-    "day": "{count, plural, one {# päivä} other {# päiviä}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "Halvat vaatteet",
-    "expensiveClothing": "Kalliit vaatteet",
-    "electronics": "Elektroniikka",
-    "jewelry": "Korut",
-    "gifts": "Lahjat",
-    "books": "Kirjat",
-    "bottledGoods": "Pullotavarat",
-    "food": "Ruoka",
-    "gardenProducts": "Puutarhatuotteet"
-  },
-  "toasts": {
-    "genericError": "Virhe syntyi. Tarkista syöttämäsi tiedot ja yritä uudelleen. Jos ongelma jatkuu, päivitä sivu.",
-    "playthroughSaveSuccess": "Pelitilanne \"{characterName}\" luotu!",
-    "playthroughEditSuccess": "Pelitilanne \"{characterName}\" päivitetty!",
-    "playthroughDeleteSuccess": "Pelitilanne \"{characterName}\" poistettu!",
-    "workstationCopyError": "Valitse ensin vaatetyöpiste ja tuote.",
-    "factorySaveSuccess": "\"{factoryName}\" luotu ja lisätty pelitilanteeseen!",
-    "factoryEditSuccess": "\"{factoryName}\" päivitetty!",
-    "factoryDeleteSuccess": "\"{factoryName}\" poistettu!",
-    "groupSaveSuccess": "Ryhmä \"{groupName}\" luotu!",
-    "groupEditSuccess": "Ryhmä \"{groupName}\" päivitetty!",
-    "groupDeleteSuccess": "Ryhmä \"{groupName}\" poistettu!"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "Tämä resurssi ei valitettavasti ole olemassa.",
-      "nameRequired": "Hahmosi pitäisi saada nimi.",
-      "nameTooLong": "Hahmon nimen tulee olla enintään 30 merkkiä.",
-      "difficultyRequired": "Valitse vaikeustaso.",
-      "workstationProductRequired": "Valitse tuote jokaiselle vaatetyöpisteelle."
-    },
-    "factory": {
-      "nameTooLong": "Tehtaan nimi saa olla enintään 50 merkkiä.",
-      "descriptionTooLong": "Älä kirjoita romania tähän. 150 merkkiä riittää!",
-      "workstationsRequired": "Lisää vähintään yksi vaatetyöpiste.",
-      "atLeastOneVehicle": "Tehtaalle tarvitaan vähintään yksi ajoneuvo.",
-      "maxTwoVehicles": "Tehtaan käyttöön saa olla enintään kaksi ajoneuvoa.",
-      "shelfAmountTooLow": "Lisää hyllyjä, jotta tehtas toimii."
-    },
-    "factoryGroup": {
-      "nameTooLong": "Ryhmän nimi saa olla enintään 30 merkkiä.",
-      "nameRequired": "Anna ryhmälle nimi."
-    }
-  },
-  "updateHistory": {
-    "launch": "Sivusto käynnistetty"
-  },
-  "database": {
-    "intro": {
-      "desc": "Tutustu yksityiskohtaisiin pelitietoihin tuotteista, koneista, ajoneuvoista ja muusta. Käytä hakua ja kategorioita löytääksesi nopeasti tarvitsemasi.",
-      "buttonDesc": "Valitse kategoria"
-    },
-    "products": {
-      "caption": "Kaikki tuotteet yhdellä silmäyksellä. Voit vaihtaa helposti valmistus- ja tuontihintojen välillä. Myyntihinta on keskiarvo kaikista kaupunginosista. Voittotiedot ovat nettomäärät, mukaan lukien raaka-aineiden kustannukset, työntekijöiden palkat ja verot valitun vaikeustason perusteella. <br></br>Haluatko tietää, miten lasketaan? Katso <link>{toolsSection}</link> -osio."
-    },
-    "ingredients": {
-      "caption": "Kaikkien raaka-aineiden yleiskatsaus, mukaan lukien niiden ominaisuudet. Valitse vaikeustaso nähdäksesi oikeat hinnat."
-    },
-    "machines": {
-      "caption": "Kaikki tuotantoon käytettävät koneet. Yhdistä yksi pääkone yhden tai kahden apukoneen kanssa muodostaaksesi vaatetyöpisteen."
-    },
-    "inventory": {
-      "caption": "Pieni yleiskatsaus kaikkiin... tallennusvaihtoehtoihin. Tällä hetkellä vain. Pian lisää!"
-    },
-    "vehicles": {
-      "caption": "Etsitkö suurinta kuormaa vai vain nopeintaa ajelua? Löydät sen täältä. Ajajan taito viittaa {deliveryDriver}:n taitoon, ja maksimikohteet vaativat {logisticsManager}:n 100 % taidolla."
     }
   },
   "footer": {

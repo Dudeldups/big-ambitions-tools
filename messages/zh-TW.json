@@ -47,6 +47,7 @@
     "salad": "沙拉",
     "energyDrink": "能量飲料",
     "cupOfTea": "一杯茶",
+    "cupOfCoffee": "一杯咖啡",
     "whisky": "威士忌",
     "slushie": "冰沙",
     "sodaCan": "汽水罐",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "服裝（經典 昂貴 男款）",
     "classicExpensiveFemaleClothing": "服裝（經典 昂貴 女款）",
     "modernExpensiveMaleClothing": "服裝（現代 昂貴 男款）",
-    "modernExpensiveFemaleClothing": "服裝（現代 昂貴 女款）",
-    "cupOfCoffee": "一杯咖啡"
+    "modernExpensiveFemaleClothing": "服裝（現代 昂貴 女款）"
   },
   "ingredients": {
     "battery": "電池",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "電動滑板車",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "貨運卡車 T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "棧板架",
@@ -202,65 +202,65 @@
     "confirm": "確認",
     "cancel": "取消",
     "reset": "重設",
+    "copy": "複製",
     "close": "關閉",
+    "create": "建立",
+    "edit": "編輯",
     "delete": "刪除",
     "save": "儲存",
     "amount": "數量",
     "summedUpAmount": "總計",
-    "never": "永不",
-    "noValue": "無",
-    "home": "首頁",
-    "ingredients": "原料",
-    "inventory": "庫存",
-    "workstations": "工作站",
-    "product": "產品",
-    "products": "產品",
-    "factory": "工廠",
-    "factories": "工廠",
-    "vehicle": "車輛",
-    "vehicles": "車輛",
-    "revenue": "營收",
-    "profit": "利潤",
-    "taxes": "稅款",
-    "salary": "薪資",
-    "logisticsManager": "物流經理",
-    "deliveryDriver": "送貨司機",
-    "openingHours": "營業時間",
-    "difficultyOptions": {
-      "easy": "簡單",
-      "normal": "普通",
-      "hard": "困難"
-    },
-    "copy": "複製",
-    "create": "建立",
-    "edit": "編輯",
     "summary": "摘要",
     "amortization": "攤銷",
+    "never": "永不",
+    "noValue": "無",
     "noResultsFound": "未找到結果。",
     "columnsDescription": "欄位",
     "filterResults": "篩選結果...",
     "characterName": "角色名稱",
+    "home": "首頁",
     "about": "關於我們",
     "contact": "聯絡",
+    "ingredients": "原料",
     "machines": "機器",
+    "inventory": "庫存",
     "workstation": "服裝工作站",
+    "workstations": "工作站",
+    "product": "產品",
+    "products": "產品",
     "database": "資料庫",
     "playthrough": "遊戲進度",
     "playthroughs": "遊戲紀錄",
+    "factory": "工廠",
+    "factories": "工廠",
+    "vehicle": "車輛",
+    "vehicles": "車輛",
     "palletShelves": "棧板架",
     "difficulty": "難度",
     "priceIndex": "價格指數",
     "priceIndices": "價格指數",
     "exportPrice": "出口價格",
+    "revenue": "營收",
     "expenses": "支出",
+    "profit": "利潤",
     "netProfit": "淨利潤",
+    "taxes": "稅款",
+    "salary": "薪資",
     "manufacturingCosts": "製造成本",
     "manufacturingCostsShort": "製成成本",
     "oneTimeCosts": "一次性成本",
     "recurringCosts": "經常性成本",
+    "logisticsManager": "物流經理",
+    "deliveryDriver": "送貨司機",
+    "openingHours": "營業時間",
     "description": "描述",
     "day": "天",
     "week": "週",
+    "difficultyOptions": {
+      "easy": "簡單",
+      "normal": "普通",
+      "hard": "困難"
+    },
     "themes": {
       "buttonDesc": "切換主題",
       "light": "亮色",
@@ -279,15 +279,13 @@
       "weekly": "每週"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
+    "day": "{count, plural, one {# 天} other {# 天}}"
+  },
   "tableColumns": {
-    "purchasePrice": "價格",
-    "amount": "數量",
-    "ingredients": "原料",
-    "employees": "員工",
-    "export": "出口",
-    "retail": "零售",
-    "deliverUpTo": "配送上限",
     "itemName": "物品名稱",
+    "purchasePrice": "價格",
     "retailPrice": "零售價",
     "manufacturePrice": "製造價",
     "storageCapacity": "儲存容量",
@@ -298,9 +296,11 @@
     "exportPrice": "出口價",
     "profitMargin": "利潤率",
     "profitPerHour": "利潤/小時",
+    "amount": "數量",
     "amountPerBox": "數量/箱",
     "usedInProducts": "內含產品",
     "importers": "進口商",
+    "ingredients": "原料",
     "productionRate": "產量/小時",
     "vehicleName": "車輛名稱",
     "maxFuel": "燃料容量",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "司機技能",
     "destinationsThatCanDeliver": "基地目的地",
     "destinationsFull": "最大目的地",
-    "description": "說明"
+    "employees": "員工",
+    "description": "說明",
+    "export": "出口",
+    "retail": "零售",
+    "deliverUpTo": "配送上限"
+  },
+  "workstationPresets": {
+    "cheapClothing": "便宜衣服",
+    "expensiveClothing": "昂貴衣服",
+    "electronics": "電子產品",
+    "jewelry": "珠寶",
+    "gifts": "禮物",
+    "books": "書籍",
+    "bottledGoods": "瓶裝商品",
+    "food": "食物",
+    "gardenProducts": "園藝產品"
+  },
+  "toasts": {
+    "genericError": "發生錯誤了。請檢查輸入並重試。如果問題仍然存在，請重新整理頁面。",
+    "playthroughSaveSuccess": "遊戲進度 \"{characterName}\" 已建立！",
+    "playthroughEditSuccess": "遊戲進度 \"{characterName}\" 已更新！",
+    "playthroughDeleteSuccess": "遊戲進度 \"{characterName}\" 已刪除！",
+    "workstationCopyError": "請先選擇一個服裝工作站和一個產品。",
+    "factorySaveSuccess": "已建立 \"{factoryName}\" 並加入遊戲進度！",
+    "factoryEditSuccess": "已更新 \"{factoryName}\"！",
+    "factoryDeleteSuccess": "已刪除 \"{factoryName}\"！",
+    "groupSaveSuccess": "群組 \"{groupName}\" 已建立！",
+    "groupEditSuccess": "群組 \"{groupName}\" 已更新！",
+    "groupDeleteSuccess": "群組 \"{groupName}\" 已刪除！"
   },
   "modals": {
-    "groupLabelName": "名稱",
-    "groupLabelColor": "顏色",
     "discardChanges": "放棄未儲存變更",
     "discardDesc": "你有未儲存變更。確定要放棄它們嗎？",
     "resetForm": "重置表單設定",
@@ -330,9 +356,32 @@
     "groupDesc": "將工廠分組以查看所有所需原料的概況。",
     "editGroupTitle": "編輯工廠群組",
     "editGroupDesc": "選擇新的設定。",
+    "groupLabelName": "名稱",
+    "groupLabelColor": "顏色",
     "deleteGroupTitle": "刪除群組",
     "deleteGroupDesc": "確定要刪除這個群組嗎？如果已分配工廠，它們將被重新分配到預設群組。",
     "oneTimeCostDesc": "工廠的一次性安裝費用。"
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "這個資源不存在。",
+      "nameRequired": "你的角色應該要有名字。",
+      "nameTooLong": "名字最多只能有 30 個字。",
+      "difficultyRequired": "請選擇一個難度。",
+      "workstationProductRequired": "請為每個服裝工作站選擇一個產品。"
+    },
+    "factory": {
+      "nameTooLong": "工廠名稱最多只能有 50 個字。",
+      "descriptionTooLong": "別寫小說了。150 個字就夠了！",
+      "workstationsRequired": "請至少添加一個服裝工作站。",
+      "atLeastOneVehicle": "你得為工廠至少分配一個車輛。",
+      "maxTwoVehicles": "工廠最多只能分配兩輛車輛。",
+      "shelfAmountTooLow": "你得添加貨架，工廠才能運作。"
+    },
+    "factoryGroup": {
+      "nameTooLong": "群組名稱最多只能有 30 個字。",
+      "nameRequired": "請提供群組名稱。"
+    }
   },
   "home": {
     "selectLanguage": "選擇語言",
@@ -361,25 +410,31 @@
       "link": "返回首頁"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "配送",
-        "title": "配送計劃",
-        "descNeeded": "此群組中每個工廠的配送計劃。你需要 {amount} 個棧板架來供應所有工廠。",
-        "descEnough": "所有工廠都有足夠的棧板架來存放所有需要的原料。"
-      },
-      "buttonDesc": "建立群組",
-      "title": "工廠群組",
-      "desc": "你可以將工廠分組，以便按產品類別獲得更好的概覽。如果分組的工廠沒有分配足夠的棧板架，購物清單會告訴你需為每個工廠及倉庫訂購多少以供應剩餘部分。配送對話框也會顯示應發送給每個工廠的物品。",
-      "groupEmpty": "此群組中沒有工廠。拖曳工廠卡片至此以新增它。",
-      "ungroupedTitle": "未分組的工廠",
-      "ungroupedEmpty": "這裡沒有未分組的工廠。拖曳工廠卡片至此，或新增一家新工廠。",
-      "shoppingList": {
-        "title": "群組購物清單",
-        "desc": "這裡列出這組工廠所需的所有原料，針對內部棧板架不足的工廠。工具會根據工廠現有棧板架數量計算，讓你只需向獨立倉庫訂購剩餘部分。<br></br>倉庫所需棧板架：<strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "網站上線"
+  },
+  "database": {
+    "intro": {
+      "desc": "深入探索產品、機器、車輛等詳細遊戲數據。使用搜尋和分類篩選器，快速找到你需要的一切。",
+      "buttonDesc": "選擇一個類別"
     },
+    "products": {
+      "caption": "所有產品一目了然。隨時切換製造價與進口價。零售價是各街區的平均值。利潤顯示為淨值，包含原料成本、員工薪資及根據選定難度計算的稅金。<br></br>好奇怎麼算的？看看 <link>{toolsSection}</link> 部分吧。"
+    },
+    "ingredients": {
+      "caption": "所有原料概覽，包含屬性。選擇難度以查看正確價格。"
+    },
+    "machines": {
+      "caption": "所有用於生產的機器。將一台主機與一至兩台副機組合，建立一個服裝工作站。"
+    },
+    "inventory": {
+      "caption": "所有...儲存選項的概覽。暫時就這些。之後還有更多！"
+    },
+    "vehicles": {
+      "caption": "想要最大載貨量還是只要最快？這裡都能找到。駕駛技能指你的 {deliveryDriver}，而想跑更多目的地，需要 {logisticsManager} 達到 100% 技能。"
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "這裡可以深入探索遊戲的數字與統計數據。規劃你的工廠，並管理整個帝國的物流！"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "淨利潤 / 週",
       "ordersPerWeek": "訂單 / 週"
     },
+    "factoryGroups": {
+      "buttonDesc": "建立群組",
+      "title": "工廠群組",
+      "desc": "你可以將工廠分組，以便按產品類別獲得更好的概覽。如果分組的工廠沒有分配足夠的棧板架，購物清單會告訴你需為每個工廠及倉庫訂購多少以供應剩餘部分。配送對話框也會顯示應發送給每個工廠的物品。",
+      "groupEmpty": "此群組中沒有工廠。拖曳工廠卡片至此以新增它。",
+      "ungroupedTitle": "未分組的工廠",
+      "ungroupedEmpty": "這裡沒有未分組的工廠。拖曳工廠卡片至此，或新增一家新工廠。",
+      "deliveries": {
+        "buttonDesc": "配送",
+        "title": "配送計劃",
+        "descNeeded": "此群組中每個工廠的配送計劃。你需要 {amount} 個棧板架來供應所有工廠。",
+        "descEnough": "所有工廠都有足夠的棧板架來存放所有需要的原料。"
+      },
+      "shoppingList": {
+        "title": "群組購物清單",
+        "desc": "這裡列出這組工廠所需的所有原料，針對內部棧板架不足的工廠。工具會根據工廠現有棧板架數量計算，讓你只需向獨立倉庫訂購剩餘部分。<br></br>倉庫所需棧板架：<strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "工廠規劃器",
       "desc": "計算生產線所需的原料、機器和工廠員工。只需選擇你想生產的產品，規劃器會處理其餘部分。",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "在商店中輸入每個產品的預估銷量。",
       "priceIndexButton": "設定價格指數",
       "priceIndexDesc": "選擇此產品的當前遊戲價格指數，以計算正確收益。(出口價格更準確。)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
-    "day": "{count, plural, one {# 天} other {# 天}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "便宜衣服",
-    "expensiveClothing": "昂貴衣服",
-    "electronics": "電子產品",
-    "jewelry": "珠寶",
-    "gifts": "禮物",
-    "books": "書籍",
-    "bottledGoods": "瓶裝商品",
-    "food": "食物",
-    "gardenProducts": "園藝產品"
-  },
-  "toasts": {
-    "genericError": "發生錯誤了。請檢查輸入並重試。如果問題仍然存在，請重新整理頁面。",
-    "playthroughSaveSuccess": "遊戲進度 \"{characterName}\" 已建立！",
-    "playthroughEditSuccess": "遊戲進度 \"{characterName}\" 已更新！",
-    "playthroughDeleteSuccess": "遊戲進度 \"{characterName}\" 已刪除！",
-    "workstationCopyError": "請先選擇一個服裝工作站和一個產品。",
-    "factorySaveSuccess": "已建立 \"{factoryName}\" 並加入遊戲進度！",
-    "factoryEditSuccess": "已更新 \"{factoryName}\"！",
-    "factoryDeleteSuccess": "已刪除 \"{factoryName}\"！",
-    "groupSaveSuccess": "群組 \"{groupName}\" 已建立！",
-    "groupEditSuccess": "群組 \"{groupName}\" 已更新！",
-    "groupDeleteSuccess": "群組 \"{groupName}\" 已刪除！"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "這個資源不存在。",
-      "nameRequired": "你的角色應該要有名字。",
-      "nameTooLong": "名字最多只能有 30 個字。",
-      "difficultyRequired": "請選擇一個難度。",
-      "workstationProductRequired": "請為每個服裝工作站選擇一個產品。"
-    },
-    "factory": {
-      "nameTooLong": "工廠名稱最多只能有 50 個字。",
-      "descriptionTooLong": "別寫小說了。150 個字就夠了！",
-      "workstationsRequired": "請至少添加一個服裝工作站。",
-      "atLeastOneVehicle": "你得為工廠至少分配一個車輛。",
-      "maxTwoVehicles": "工廠最多只能分配兩輛車輛。",
-      "shelfAmountTooLow": "你得添加貨架，工廠才能運作。"
-    },
-    "factoryGroup": {
-      "nameTooLong": "群組名稱最多只能有 30 個字。",
-      "nameRequired": "請提供群組名稱。"
-    }
-  },
-  "updateHistory": {
-    "launch": "網站上線"
-  },
-  "database": {
-    "intro": {
-      "desc": "深入探索產品、機器、車輛等詳細遊戲數據。使用搜尋和分類篩選器，快速找到你需要的一切。",
-      "buttonDesc": "選擇一個類別"
-    },
-    "products": {
-      "caption": "所有產品一目了然。隨時切換製造價與進口價。零售價是各街區的平均值。利潤顯示為淨值，包含原料成本、員工薪資及根據選定難度計算的稅金。<br></br>好奇怎麼算的？看看 <link>{toolsSection}</link> 部分吧。"
-    },
-    "ingredients": {
-      "caption": "所有原料概覽，包含屬性。選擇難度以查看正確價格。"
-    },
-    "machines": {
-      "caption": "所有用於生產的機器。將一台主機與一至兩台副機組合，建立一個服裝工作站。"
-    },
-    "inventory": {
-      "caption": "所有...儲存選項的概覽。暫時就這些。之後還有更多！"
-    },
-    "vehicles": {
-      "caption": "想要最大載貨量還是只要最快？這裡都能找到。駕駛技能指你的 {deliveryDriver}，而想跑更多目的地，需要 {logisticsManager} 達到 100% 技能。"
     }
   },
   "footer": {

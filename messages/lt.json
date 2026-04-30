@@ -47,6 +47,7 @@
     "salad": "Salotos",
     "energyDrink": "Energini̇s gėrimas",
     "cupOfTea": "Puodelis arbatos",
+    "cupOfCoffee": "Puodelis kavos",
     "whisky": "Viskis",
     "slushie": "Šaldytas gėrimas",
     "sodaCan": "Limonado skardinė",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "Klasikiniai brangūs vyriški drabužiai",
     "classicExpensiveFemaleClothing": "Klasikiniai brangūs moteriški drabužiai",
     "modernExpensiveMaleClothing": "Šiuolaikiški brangūs vyriški drabužiai",
-    "modernExpensiveFemaleClothing": "Šiuolaikiški brangūs moteriški drabužiai",
-    "cupOfCoffee": "Puodelis kavos"
+    "modernExpensiveFemaleClothing": "Šiuolaikiški brangūs moteriški drabužiai"
   },
   "ingredients": {
     "battery": "Baterija",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "Elektrinis paspirtukas",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Krovininis sunkvežimis T1",
-    "MersaidiDash": "Mersaidi Dash",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "Mersaidi Dash"
   },
   "inventory": {
     "palletShelf": "Palečių lentyna",
@@ -202,65 +202,65 @@
     "confirm": "Patvirtinti",
     "cancel": "Atšaukti",
     "reset": "Atstatyti",
+    "copy": "Kopijuoti",
     "close": "Uždaryti",
+    "create": "Sukurti",
+    "edit": "Redaguoti",
     "delete": "Ištrinti",
     "save": "Išsaugoti",
     "amount": "Suma",
     "summedUpAmount": "Iš viso",
-    "never": "Niekada",
-    "noValue": "Nėra",
-    "home": "Pradžia",
-    "ingredients": "Ingredientai",
-    "inventory": "Inventorius",
-    "workstations": "Darbo vietos",
-    "product": "Prekė",
-    "products": "Produktai",
-    "factory": "Gamykla",
-    "factories": "Gamyklos",
-    "vehicle": "Transporto priemonė",
-    "vehicles": "Transporto priemonės",
-    "revenue": "Pajamos",
-    "profit": "Pelnas",
-    "taxes": "Mokesčiai",
-    "salary": "Atlyginimas",
-    "logisticsManager": "Logistikos vadovas",
-    "deliveryDriver": "Pristatymo vairuotojas",
-    "openingHours": "Darbo laikas",
-    "difficultyOptions": {
-      "easy": "Lengva",
-      "normal": "Normali",
-      "hard": "Sunki"
-    },
-    "copy": "Kopijuoti",
-    "create": "Sukurti",
-    "edit": "Redaguoti",
     "summary": "Santrauka",
     "amortization": "Amortizacija",
+    "never": "Niekada",
+    "noValue": "Nėra",
     "noResultsFound": "Nėra rastų rezultatų.",
     "columnsDescription": "Stulpeliai",
     "filterResults": "Filtruoti rezultatus...",
     "characterName": "Karakterio vardas",
+    "home": "Pradžia",
     "about": "Apie mus",
     "contact": "Kontaktas",
+    "ingredients": "Ingredientai",
     "machines": "Mašinos",
+    "inventory": "Inventorius",
     "workstation": "Drabužių darbo stotis",
+    "workstations": "Darbo vietos",
+    "product": "Prekė",
+    "products": "Produktai",
     "database": "Duomenų bazė",
     "playthrough": "Žaidimo būsena",
     "playthroughs": "Žaidimo būsenos",
+    "factory": "Gamykla",
+    "factories": "Gamyklos",
+    "vehicle": "Transporto priemonė",
+    "vehicles": "Transporto priemonės",
     "palletShelves": "Palečių lentynos",
     "difficulty": "Sunkumas",
     "priceIndex": "Kainų indeksas",
     "priceIndices": "Kainų indeksai",
     "exportPrice": "Eksporto kaina",
+    "revenue": "Pajamos",
     "expenses": "Išlaidos",
+    "profit": "Pelnas",
     "netProfit": "Neto pelnas",
+    "taxes": "Mokesčiai",
+    "salary": "Atlyginimas",
     "manufacturingCosts": "Gamybos kaštai",
     "manufacturingCostsShort": "Gam. kaštai",
     "oneTimeCosts": "Vienkartinės išlaidos",
     "recurringCosts": "Nuolatinės išlaidos",
+    "logisticsManager": "Logistikos vadovas",
+    "deliveryDriver": "Pristatymo vairuotojas",
+    "openingHours": "Darbo laikas",
     "description": "Aprašymas",
     "day": "Diena",
     "week": "Savaitė",
+    "difficultyOptions": {
+      "easy": "Lengva",
+      "normal": "Normali",
+      "hard": "Sunki"
+    },
     "themes": {
       "buttonDesc": "Keisti dizainą",
       "light": "Šviesus",
@@ -279,15 +279,13 @@
       "weekly": "Savaitinis"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {Palečių lentyna} other {Palečių lentynos}}",
+    "day": "{count, plural, one {# diena} other {# dienos}}"
+  },
   "tableColumns": {
-    "purchasePrice": "Kaina",
-    "amount": "Suma",
-    "ingredients": "Ingredientai",
-    "employees": "Darbuotojai",
-    "export": "Eksportas",
-    "retail": "Mažmena",
-    "deliverUpTo": "Pristatyti iki",
     "itemName": "Pavadinimas",
+    "purchasePrice": "Kaina",
     "retailPrice": "Pardavimo kaina",
     "manufacturePrice": "Gamybos kaina",
     "storageCapacity": "Sandėlio talpa",
@@ -298,9 +296,11 @@
     "exportPrice": "Eksporto kaina",
     "profitMargin": "Pelno marža",
     "profitPerHour": "Pelno/val.",
+    "amount": "Suma",
     "amountPerBox": "Kiekis/kartonas",
     "usedInProducts": "Produktuose",
     "importers": "Importuotojai",
+    "ingredients": "Ingredientai",
     "productionRate": "Gamyba/val.",
     "vehicleName": "Transporto pavadinimas",
     "maxFuel": "Kuro talpa",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "Reik. vairuotojo įgūdžiai",
     "destinationsThatCanDeliver": "Bazės tikslai",
     "destinationsFull": "Maks. tikslai",
-    "description": "Aprašymas"
+    "employees": "Darbuotojai",
+    "description": "Aprašymas",
+    "export": "Eksportas",
+    "retail": "Mažmena",
+    "deliverUpTo": "Pristatyti iki"
+  },
+  "workstationPresets": {
+    "cheapClothing": "Pigūs drabužiai",
+    "expensiveClothing": "Brangūs drabužiai",
+    "electronics": "Elektronika",
+    "jewelry": "Papuošalai",
+    "gifts": "Dovanos",
+    "books": "Knygos",
+    "bottledGoods": "Butelinės prekės",
+    "food": "Maistas",
+    "gardenProducts": "Sodo produktai"
+  },
+  "toasts": {
+    "genericError": "Įvyko klaida. Patikrink savo įvestį ir pabandyk dar kartą. Jei problema išlieka, atnaujink puslapį.",
+    "playthroughSaveSuccess": "Žaidimo būsena \"{characterName}\" sukurta!",
+    "playthroughEditSuccess": "Žaidimo būsena \"{characterName}\" atnaujinta!",
+    "playthroughDeleteSuccess": "Žaidimo būsena \"{characterName}\" ištrinta!",
+    "workstationCopyError": "Pirmiausia pasirink Drabužių darbo stotį ir produktą.",
+    "factorySaveSuccess": "\"{factoryName}\" sukurta ir pridėta prie žaidimo būsenos!",
+    "factoryEditSuccess": "\"{factoryName}\" atnaujinta!",
+    "factoryDeleteSuccess": "\"{factoryName}\" ištrinta!",
+    "groupSaveSuccess": "Grupė \"{groupName}\" sukurta!",
+    "groupEditSuccess": "Grupė \"{groupName}\" atnaujinta!",
+    "groupDeleteSuccess": "Grupė \"{groupName}\" ištrinta!"
   },
   "modals": {
-    "groupLabelName": "vardas",
-    "groupLabelColor": "Spalva",
     "discardChanges": "Atmesti neįrašytus pokyčius",
     "discardDesc": "Turi neįrašytų pokyčių. Ar tikrai nori juos atmesti?",
     "resetForm": "Atstatyti formos reikšmes",
@@ -330,9 +356,32 @@
     "groupDesc": "Sugrupuok gamyklas, kad gautum visų reikalingų ingredientų apžvalgą.",
     "editGroupTitle": "Redaguoti gamyklos grupę",
     "editGroupDesc": "Pasirink naujas reikšmes.",
+    "groupLabelName": "vardas",
+    "groupLabelColor": "Spalva",
     "deleteGroupTitle": "Ištrinti grupę",
     "deleteGroupDesc": "Ar tikrai nori ištrinti šią grupę? Jei yra priskirtų gamyklų, jos bus perkeltos į numatytąją grupę.",
     "oneTimeCostDesc": "Vienkartinės gamyklos įrengimo išlaidos."
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "Šis išteklius deja neegzistuoja.",
+      "nameRequired": "Tavo personažas turi turėti vardą.",
+      "nameTooLong": "Personažo vardas negali būti ilgesnis nei 30 simbolių.",
+      "difficultyRequired": "Pasirink sunkumą.",
+      "workstationProductRequired": "Pasirink produktą kiekvienai darbo stotei."
+    },
+    "factory": {
+      "nameTooLong": "Fabrikos pavadinimas negali būti ilgesnis nei 50 simbolių.",
+      "descriptionTooLong": "Nustok rašyti romaną čia. 150 simbolių yra pakankamai!",
+      "workstationsRequired": "Pridėk bent vieną darbo stotį.",
+      "atLeastOneVehicle": "Fabrikoje reikia bent vieno transporto priemonės.",
+      "maxTwoVehicles": "Fabrikoje gali būti priskirta daugiausia du transporto priemonės.",
+      "shelfAmountTooLow": "Pridėk lentynų, kad fabrika veiktų."
+    },
+    "factoryGroup": {
+      "nameTooLong": "Grupės pavadinimas negali būti ilgesnis nei 30 simbolių.",
+      "nameRequired": "Reikalingas grupės pavadinimas."
+    }
   },
   "home": {
     "selectLanguage": "Pasirinkite kalbą",
@@ -361,25 +410,31 @@
       "link": "Atgal į pagrindinį puslapį"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "Pristatymai",
-        "title": "Tiekimo planas",
-        "descNeeded": "Tiekimo planai kiekvienai šios grupės fabrikai. Jums reikės {amount} palečių lentynų, kad būtų aprūpintos visos fabrikos.",
-        "descEnough": "Visos fabrikos turi pakankamai palečių lentynų laikyti visas reikalingas ingredientus."
-      },
-      "buttonDesc": "Sukurti grupę",
-      "title": "Fabrikų grupės",
-      "desc": "Gali sugrupuoti fabrikas, kad turėtumėte geresnį apžvalgą pagal produktų kategorijas. Jei sugrupuotosioms fabrikoms priskirta nepakankamai palečių lentynų, pirkimo sąrašas jums pasakys, ką reikia užsakyti kiekvienai fabrikai ir taip pat į sandėlį, kad būtų tiekiamas likutis. Tiekimo dialogas taip pat parodys, kas turi būti siunčiama kiekvienai fabrikai.",
-      "groupEmpty": "Šioje grupėje nėra fabrikų. Nukelkite fabriko kortelę čia, kad pridėtumėte ją.",
-      "ungroupedTitle": "Nesugrupuotos fabrikos",
-      "ungroupedEmpty": "Nėra nesugrupuotų fabrikų. Nukelkite fabriko kortelę čia arba sukurkite naują fabriką.",
-      "shoppingList": {
-        "title": "Grupės pirkimo sąrašas",
-        "desc": "Čia matysi visas sudedamąsias dalis, reikalingas gamykloms šioje grupėje, kuriose nėra pakankamai Palečių lentynų. Tai skaičiuojama pagal lentynų kiekį gamyklose, kad galėtumėte užsisakyti likutį į atskirą sandėlį.<br></br>Palečių lentynų reikia sandėlyje: <strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "Svetainė paleista"
+  },
+  "database": {
+    "intro": {
+      "desc": "Čia gali gilintis į išsamią žaidimo informaciją apie produktus, mašinas, transportą ir daugiau. Naudok paiešką ir kategorijų filtrus, kad greitai rastum tai, ko tau reikia.",
+      "buttonDesc": "Pasirink kategorią"
     },
+    "products": {
+      "caption": "Visi produktai viename žvilgsnyje. Perjungk gamybos ir importo kainas. Parduodamoji kaina yra vidurkis per visus rajonus. Pelningumas rodomas kaip grynieji vertės – įskaitant žaliavų, darbuotojų atlyginimų ir mokesčių kainas pagal pasirinktą sunkumą. <br></br>Nori žinoti, kaip tai skaičiuojama? Pažiūrėk <link>{toolsSection}</link> skyrių."
+    },
+    "ingredients": {
+      "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
+    },
+    "machines": {
+      "caption": "Visos mašinos gamybai. Sukombinuok vieną pagrindinę mašiną su viena ar dviem antrinėmis, kad sukurtumėte Drabužių darbo stotį."
+    },
+    "inventory": {
+      "caption": "Visų... saugyklos parinkčių apžvalga. Šiuo metu. Daugiau ateis!"
+    },
+    "vehicles": {
+      "caption": "Ieškai maksimalios krovos ar tiesiog greičiausios kelionės? Čia rasi. Vairuotojo įgūdžiai reiškia tavo {deliveryDriver}, o maksimalių paskirties vietų reikia su {logisticsManager} 100% įgūdžiais."
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "Čia galėsi gilintis į žaidimo skaičius ir statistikas. Planuok savo fabrikus ir valdyk logistiką visam imperijui!"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "Grynasis pelnas / savaitė",
       "ordersPerWeek": "Užsakymai / savaitė"
     },
+    "factoryGroups": {
+      "buttonDesc": "Sukurti grupę",
+      "title": "Fabrikų grupės",
+      "desc": "Gali sugrupuoti fabrikas, kad turėtumėte geresnį apžvalgą pagal produktų kategorijas. Jei sugrupuotosioms fabrikoms priskirta nepakankamai palečių lentynų, pirkimo sąrašas jums pasakys, ką reikia užsakyti kiekvienai fabrikai ir taip pat į sandėlį, kad būtų tiekiamas likutis. Tiekimo dialogas taip pat parodys, kas turi būti siunčiama kiekvienai fabrikai.",
+      "groupEmpty": "Šioje grupėje nėra fabrikų. Nukelkite fabriko kortelę čia, kad pridėtumėte ją.",
+      "ungroupedTitle": "Nesugrupuotos fabrikos",
+      "ungroupedEmpty": "Nėra nesugrupuotų fabrikų. Nukelkite fabriko kortelę čia arba sukurkite naują fabriką.",
+      "deliveries": {
+        "buttonDesc": "Pristatymai",
+        "title": "Tiekimo planas",
+        "descNeeded": "Tiekimo planai kiekvienai šios grupės fabrikai. Jums reikės {amount} palečių lentynų, kad būtų aprūpintos visos fabrikos.",
+        "descEnough": "Visos fabrikos turi pakankamai palečių lentynų laikyti visas reikalingas ingredientus."
+      },
+      "shoppingList": {
+        "title": "Grupės pirkimo sąrašas",
+        "desc": "Čia matysi visas sudedamąsias dalis, reikalingas gamykloms šioje grupėje, kuriose nėra pakankamai Palečių lentynų. Tai skaičiuojama pagal lentynų kiekį gamyklose, kad galėtumėte užsisakyti likutį į atskirą sandėlį.<br></br>Palečių lentynų reikia sandėlyje: <strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "Gamyklos planuotojas",
       "desc": "Apskaičiuok reikalingus ingredientus, mašinas ir Gamyklos darbuotojus savo gamybos linijoms. Tiesiog pasirinkite produktus, kuriuos norite gaminti, ir planuotojas padės likusį darbą.",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "Įvesk numatomus pardavimus kiekvienam produktui savo parduotuvėse.",
       "priceIndexButton": "Pasirink kainų indeksą",
       "priceIndexDesc": "Pasirink dabartinį žaidimo kainų indeksą šiam produktui, norint apskaičiuoti teisingą pajamą. (Ekporto kaina yra tikslesnė.)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {Palečių lentyna} other {Palečių lentynos}}",
-    "day": "{count, plural, one {# diena} other {# dienos}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "Pigūs drabužiai",
-    "expensiveClothing": "Brangūs drabužiai",
-    "electronics": "Elektronika",
-    "jewelry": "Papuošalai",
-    "gifts": "Dovanos",
-    "books": "Knygos",
-    "bottledGoods": "Butelinės prekės",
-    "food": "Maistas",
-    "gardenProducts": "Sodo produktai"
-  },
-  "toasts": {
-    "genericError": "Įvyko klaida. Patikrink savo įvestį ir pabandyk dar kartą. Jei problema išlieka, atnaujink puslapį.",
-    "playthroughSaveSuccess": "Žaidimo būsena \"{characterName}\" sukurta!",
-    "playthroughEditSuccess": "Žaidimo būsena \"{characterName}\" atnaujinta!",
-    "playthroughDeleteSuccess": "Žaidimo būsena \"{characterName}\" ištrinta!",
-    "workstationCopyError": "Pirmiausia pasirink Drabužių darbo stotį ir produktą.",
-    "factorySaveSuccess": "\"{factoryName}\" sukurta ir pridėta prie žaidimo būsenos!",
-    "factoryEditSuccess": "\"{factoryName}\" atnaujinta!",
-    "factoryDeleteSuccess": "\"{factoryName}\" ištrinta!",
-    "groupSaveSuccess": "Grupė \"{groupName}\" sukurta!",
-    "groupEditSuccess": "Grupė \"{groupName}\" atnaujinta!",
-    "groupDeleteSuccess": "Grupė \"{groupName}\" ištrinta!"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "Šis išteklius deja neegzistuoja.",
-      "nameRequired": "Tavo personažas turi turėti vardą.",
-      "nameTooLong": "Personažo vardas negali būti ilgesnis nei 30 simbolių.",
-      "difficultyRequired": "Pasirink sunkumą.",
-      "workstationProductRequired": "Pasirink produktą kiekvienai darbo stotei."
-    },
-    "factory": {
-      "nameTooLong": "Fabrikos pavadinimas negali būti ilgesnis nei 50 simbolių.",
-      "descriptionTooLong": "Nustok rašyti romaną čia. 150 simbolių yra pakankamai!",
-      "workstationsRequired": "Pridėk bent vieną darbo stotį.",
-      "atLeastOneVehicle": "Fabrikoje reikia bent vieno transporto priemonės.",
-      "maxTwoVehicles": "Fabrikoje gali būti priskirta daugiausia du transporto priemonės.",
-      "shelfAmountTooLow": "Pridėk lentynų, kad fabrika veiktų."
-    },
-    "factoryGroup": {
-      "nameTooLong": "Grupės pavadinimas negali būti ilgesnis nei 30 simbolių.",
-      "nameRequired": "Reikalingas grupės pavadinimas."
-    }
-  },
-  "updateHistory": {
-    "launch": "Svetainė paleista"
-  },
-  "database": {
-    "intro": {
-      "desc": "Čia gali gilintis į išsamią žaidimo informaciją apie produktus, mašinas, transportą ir daugiau. Naudok paiešką ir kategorijų filtrus, kad greitai rastum tai, ko tau reikia.",
-      "buttonDesc": "Pasirink kategorią"
-    },
-    "products": {
-      "caption": "Visi produktai viename žvilgsnyje. Perjungk gamybos ir importo kainas. Parduodamoji kaina yra vidurkis per visus rajonus. Pelningumas rodomas kaip grynieji vertės – įskaitant žaliavų, darbuotojų atlyginimų ir mokesčių kainas pagal pasirinktą sunkumą. <br></br>Nori žinoti, kaip tai skaičiuojama? Pažiūrėk <link>{toolsSection}</link> skyrių."
-    },
-    "ingredients": {
-      "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
-    },
-    "machines": {
-      "caption": "Visos mašinos gamybai. Sukombinuok vieną pagrindinę mašiną su viena ar dviem antrinėmis, kad sukurtumėte Drabužių darbo stotį."
-    },
-    "inventory": {
-      "caption": "Visų... saugyklos parinkčių apžvalga. Šiuo metu. Daugiau ateis!"
-    },
-    "vehicles": {
-      "caption": "Ieškai maksimalios krovos ar tiesiog greičiausios kelionės? Čia rasi. Vairuotojo įgūdžiai reiškia tavo {deliveryDriver}, o maksimalių paskirties vietų reikia su {logisticsManager} 100% įgūdžiais."
     }
   },
   "footer": {

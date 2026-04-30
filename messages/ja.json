@@ -47,6 +47,7 @@
     "salad": "サラダ",
     "energyDrink": "エナジードリンク",
     "cupOfTea": "紅茶",
+    "cupOfCoffee": "コーヒー",
     "whisky": "ウィスキー",
     "slushie": "スラッシー",
     "sodaCan": "炭酸飲料",
@@ -70,8 +71,7 @@
     "classicExpensiveMaleClothing": "高価な男性用衣料品（古典的）",
     "classicExpensiveFemaleClothing": "高価な女性用衣料品（古典的）",
     "modernExpensiveMaleClothing": "高価な男性用衣料品（現代的）",
-    "modernExpensiveFemaleClothing": "高価な女性用衣料品（現代的）",
-    "cupOfCoffee": "コーヒー"
+    "modernExpensiveFemaleClothing": "高価な女性用衣料品（現代的）"
   },
   "ingredients": {
     "battery": "電池",
@@ -161,6 +161,7 @@
     "AnselmoAF90": "Anselmo AF90",
     "VordPony": "Vord Pony",
     "ElectricScooter": "電気スクーター",
+    "Bima320": "BIMA 320",
     "PetrollsFanton": "Petrolls Fanton",
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
@@ -171,8 +172,7 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "貨物トラックT1",
-    "MersaidiDash": "メルサイディ・ダッシュ",
-    "Bima320": "BIMA 320"
+    "MersaidiDash": "メルサイディ・ダッシュ"
   },
   "inventory": {
     "palletShelf": "パレット棚",
@@ -202,65 +202,65 @@
     "confirm": "確認",
     "cancel": "キャンセル",
     "reset": "リセット",
+    "copy": "コピー",
     "close": "閉じる",
+    "create": "作成",
+    "edit": "編集",
     "delete": "削除する",
     "save": "セーブする",
     "amount": "金額",
     "summedUpAmount": "合計",
-    "never": "不滅",
-    "noValue": "なし",
-    "home": "ホーム",
-    "ingredients": "原料",
-    "inventory": "在庫",
-    "workstations": "ワークステーション",
-    "product": "商品",
-    "products": "商品",
-    "factory": "工場",
-    "factories": "工場",
-    "vehicle": "車両",
-    "vehicles": "車両",
-    "revenue": "収益",
-    "profit": "利益",
-    "taxes": "税金",
-    "salary": "給料",
-    "logisticsManager": "物流担当者",
-    "deliveryDriver": "配送ドライバー",
-    "openingHours": "営業時間",
-    "difficultyOptions": {
-      "easy": "Easy",
-      "normal": "Normal",
-      "hard": "Hard"
-    },
-    "copy": "コピー",
-    "create": "作成",
-    "edit": "編集",
     "summary": "概要",
     "amortization": "償却",
+    "never": "不滅",
+    "noValue": "なし",
     "noResultsFound": "結果が見つかりません。",
     "columnsDescription": "列",
     "filterResults": "結果をフィルタリング...",
     "characterName": "キャラクター名",
+    "home": "ホーム",
     "about": "私たちについて",
     "contact": "連絡先",
+    "ingredients": "原料",
     "machines": "機械",
+    "inventory": "在庫",
     "workstation": "衣料品ワークステーション",
+    "workstations": "ワークステーション",
+    "product": "商品",
+    "products": "商品",
     "database": "データベース",
     "playthrough": "プレイスルー",
     "playthroughs": "プレイスルー一覧",
+    "factory": "工場",
+    "factories": "工場",
+    "vehicle": "車両",
+    "vehicles": "車両",
     "palletShelves": "パレット棚",
     "difficulty": "難易度",
     "priceIndex": "価格指数",
     "priceIndices": "価格指数",
     "exportPrice": "輸出価格",
+    "revenue": "収益",
     "expenses": "経費",
+    "profit": "利益",
     "netProfit": "純利益",
+    "taxes": "税金",
+    "salary": "給料",
     "manufacturingCosts": "製造コスト",
     "manufacturingCostsShort": "製造費",
     "oneTimeCosts": "単発費用",
     "recurringCosts": "ランニングコスト",
+    "logisticsManager": "物流担当者",
+    "deliveryDriver": "配送ドライバー",
+    "openingHours": "営業時間",
     "description": "説明",
     "day": "日",
     "week": "週",
+    "difficultyOptions": {
+      "easy": "Easy",
+      "normal": "Normal",
+      "hard": "Hard"
+    },
     "themes": {
       "buttonDesc": "テーマ切り替え",
       "light": "ライト",
@@ -279,15 +279,13 @@
       "weekly": "週ごと"
     }
   },
+  "counts": {
+    "palletShelf": "{count, plural, one {パレット棚} other {パレット棚}}",
+    "day": "{count, plural, one {# 日} other {# 日}}"
+  },
   "tableColumns": {
-    "purchasePrice": "価格",
-    "amount": "金額",
-    "ingredients": "原料",
-    "employees": "従業員",
-    "export": "輸出",
-    "retail": "小売店",
-    "deliverUpTo": "最大配送数量",
     "itemName": "アイテム名",
+    "purchasePrice": "価格",
     "retailPrice": "小売価格",
     "manufacturePrice": "製造価格",
     "storageCapacity": "保管容量",
@@ -298,9 +296,11 @@
     "exportPrice": "輸出価格",
     "profitMargin": "利益率",
     "profitPerHour": "利益/時間",
+    "amount": "金額",
     "amountPerBox": "数量/箱",
     "usedInProducts": "製品内",
     "importers": "輸入業者",
+    "ingredients": "原料",
     "productionRate": "生産/時間",
     "vehicleName": "車両名",
     "maxFuel": "タンク容量",
@@ -312,11 +312,37 @@
     "requiredDeliveryDriverSkillValue": "配送ドライバースキル",
     "destinationsThatCanDeliver": "拠点配送先",
     "destinationsFull": "最大拠点",
-    "description": "説明"
+    "employees": "従業員",
+    "description": "説明",
+    "export": "輸出",
+    "retail": "小売店",
+    "deliverUpTo": "最大配送数量"
+  },
+  "workstationPresets": {
+    "cheapClothing": "安い服",
+    "expensiveClothing": "高い服",
+    "electronics": "電子機器",
+    "jewelry": "ジュエリー",
+    "gifts": "プレゼント",
+    "books": "本",
+    "bottledGoods": "瓶詰め品",
+    "food": "食べ物",
+    "gardenProducts": "園芸用品"
+  },
+  "toasts": {
+    "genericError": "エラーが発生しました。入力を確認して、もう一度お試しください。問題が解決しない場合は、ページをリロードしてください。",
+    "playthroughSaveSuccess": "プレイスルー「{characterName}」を作成しました！",
+    "playthroughEditSuccess": "プレイスルー「{characterName}」を更新しました！",
+    "playthroughDeleteSuccess": "プレイスルー「{characterName}」を削除しました！",
+    "workstationCopyError": "まず、衣料品ワークステーションと製品を選択してください。",
+    "factorySaveSuccess": "「{factoryName}」を作成し、プレイスルーに追加しました！",
+    "factoryEditSuccess": "「{factoryName}」を更新しました！",
+    "factoryDeleteSuccess": "「{factoryName}」を削除しました！",
+    "groupSaveSuccess": "グループ「{groupName}」を作成しました！",
+    "groupEditSuccess": "グループ「{groupName}」を更新しました！",
+    "groupDeleteSuccess": "グループ「{groupName}」を削除しました！"
   },
   "modals": {
-    "groupLabelName": "名前",
-    "groupLabelColor": "色",
     "discardChanges": "未保存の変更を破棄",
     "discardDesc": "未保存の変更があります。破棄してもよろしいですか？",
     "resetForm": "フォームをリセット",
@@ -330,9 +356,32 @@
     "groupDesc": "工場をグループ化して、必要なすべての材料の概要を取得します。",
     "editGroupTitle": "工場グループを編集",
     "editGroupDesc": "新しい値を選択してください。",
+    "groupLabelName": "名前",
+    "groupLabelColor": "色",
     "deleteGroupTitle": "グループを削除",
     "deleteGroupDesc": "このグループを削除してもよろしいですか？工場が割り当てられている場合、デフォルトのグループに再割り当てされます。",
     "oneTimeCostDesc": "工場の一回限りの設置費用です。"
+  },
+  "errors": {
+    "playthrough": {
+      "notFound": "このリソースは存在しません。",
+      "nameRequired": "キャラクターには名前が必要です。",
+      "nameTooLong": "名前は最大 30 文字までです。",
+      "difficultyRequired": "難易度を選んでください。",
+      "workstationProductRequired": "各ワークステーションの製品を選んでください。"
+    },
+    "factory": {
+      "nameTooLong": "工場名は最大 50 文字までです。",
+      "descriptionTooLong": "ここで小説を書くのはやめて。150 文字で十分！",
+      "workstationsRequired": "少なくとも 1 つのワークステーションを追加してください。",
+      "atLeastOneVehicle": "工場には少なくとも 1 つの車両が必要です。",
+      "maxTwoVehicles": "工場には最大 2 台の車両までです。",
+      "shelfAmountTooLow": "工場を動かすには、棚を追加する必要があります。"
+    },
+    "factoryGroup": {
+      "nameTooLong": "グループ名は最大 30 文字までです。",
+      "nameRequired": "グループ名が必要です。"
+    }
   },
   "home": {
     "selectLanguage": "言語を選択する",
@@ -361,25 +410,31 @@
       "link": "ホームに戻る"
     }
   },
-  "tools": {
-    "factoryGroups": {
-      "deliveries": {
-        "buttonDesc": "配達",
-        "title": "配送計画",
-        "descNeeded": "このグループの各工場への配送計画です。すべての工場を供給するには、{amount} のパレット棚が必要です。",
-        "descEnough": "すべての工場には、必要な材料を保管するのに十分なパレット棚があります。"
-      },
-      "buttonDesc": "グループ作成",
-      "title": "工場グループ",
-      "desc": "製品カテゴリーごとに工場をまとめ、より良い見通しを得ることができます。グループ化された工場にパレット棚が不足している場合、買い物リストでは各工場と倉庫への注文内容を教えてくれます。配送ダイアログでも各工場への配送内容が表示されます。",
-      "groupEmpty": "このグループには工場がありません。ここに工場カードをドラッグして追加してください。",
-      "ungroupedTitle": "グループ化されていない工場",
-      "ungroupedEmpty": "ここにはグループ化されていない工場がありません。ここに工場カードをドラッグするか、新しい工場を追加してください。",
-      "shoppingList": {
-        "title": "グループ買い物リスト",
-        "desc": "このグループ内の工場に不足しているパレット棚を補うために必要なすべての材料です。工場の利用可能な棚数に基づいて計算するため、残りを別の倉庫に注文できます。<br></br>倉庫に必要なパレット棚：<strong>{amount}</strong>"
-      }
+  "updateHistory": {
+    "launch": "サイト公開"
+  },
+  "database": {
+    "intro": {
+      "desc": "製品、機械、車両など、ゲームの詳細データを探ろう。検索機能やカテゴリフィルターを使って、すぐに必要なものを見つけよう。",
+      "buttonDesc": "カテゴリを選択"
     },
+    "products": {
+      "caption": "製品を一目で確認できます。製造価格と輸入価格を切り替えられます。小売価格は全地区の平均です。利益は原料費、人件費、税金込みの純値（選択した難易度）が表示されます。<br></br>計算方法が気になる？<link>{toolsSection}</link> をチェックしよう。"
+    },
+    "ingredients": {
+      "caption": "原料とその特性の一覧です。正しい価格を見るには、難易度を選んでね。"
+    },
+    "machines": {
+      "caption": "生産に使うすべての機械です。メインマシン 1 台と、サブマシン 1〜2 台を組み合わせて「衣料品ワークステーション」を作ります。"
+    },
+    "inventory": {
+      "caption": "すべての...保管オプションの概要です。今のところしかありません。あとでさらに追加します！"
+    },
+    "vehicles": {
+      "caption": "大量の荷物か、それとも最速の乗り物か？ここにあるよ。ドライバースキルは {deliveryDriver} のこと。最大目的地には、{logisticsManager} で 100% のスキルが必要だよ。"
+    }
+  },
+  "tools": {
     "intro": {
       "desc": "ゲームの数値や統計に深く掘り込めます。工場を計画し、帝国全体の物流も管理できますよ！"
     },
@@ -437,6 +492,24 @@
       "netProfitPerWeek": "純利益 / 週",
       "ordersPerWeek": "注文数 / 週"
     },
+    "factoryGroups": {
+      "buttonDesc": "グループ作成",
+      "title": "工場グループ",
+      "desc": "製品カテゴリーごとに工場をまとめ、より良い見通しを得ることができます。グループ化された工場にパレット棚が不足している場合、買い物リストでは各工場と倉庫への注文内容を教えてくれます。配送ダイアログでも各工場への配送内容が表示されます。",
+      "groupEmpty": "このグループには工場がありません。ここに工場カードをドラッグして追加してください。",
+      "ungroupedTitle": "グループ化されていない工場",
+      "ungroupedEmpty": "ここにはグループ化されていない工場がありません。ここに工場カードをドラッグするか、新しい工場を追加してください。",
+      "deliveries": {
+        "buttonDesc": "配達",
+        "title": "配送計画",
+        "descNeeded": "このグループの各工場への配送計画です。すべての工場を供給するには、{amount} のパレット棚が必要です。",
+        "descEnough": "すべての工場には、必要な材料を保管するのに十分なパレット棚があります。"
+      },
+      "shoppingList": {
+        "title": "グループ買い物リスト",
+        "desc": "このグループ内の工場に不足しているパレット棚を補うために必要なすべての材料です。工場の利用可能な棚数に基づいて計算するため、残りを別の倉庫に注文できます。<br></br>倉庫に必要なパレット棚：<strong>{amount}</strong>"
+      }
+    },
     "factoryPlanner": {
       "title": "工場プランナー",
       "desc": "生産ラインに必要な材料、機械、および工場労働者を計算します。生産したい製品を選ぶだけなら、プランナーが残りをやってくれます。",
@@ -471,79 +544,6 @@
       "estimatedSalesTooltip": "店舗での各製品の予想売上を入力。",
       "priceIndexButton": "価格指数選択",
       "priceIndexDesc": "この製品の現在のゲーム内価格指数を選択し、正しい収益を計算。(輸出価格はより正確です。)"
-    }
-  },
-  "counts": {
-    "palletShelf": "{count, plural, one {パレット棚} other {パレット棚}}",
-    "day": "{count, plural, one {# 日} other {# 日}}"
-  },
-  "workstationPresets": {
-    "cheapClothing": "安い服",
-    "expensiveClothing": "高い服",
-    "electronics": "電子機器",
-    "jewelry": "ジュエリー",
-    "gifts": "プレゼント",
-    "books": "本",
-    "bottledGoods": "瓶詰め品",
-    "food": "食べ物",
-    "gardenProducts": "園芸用品"
-  },
-  "toasts": {
-    "genericError": "エラーが発生しました。入力を確認して、もう一度お試しください。問題が解決しない場合は、ページをリロードしてください。",
-    "playthroughSaveSuccess": "プレイスルー「{characterName}」を作成しました！",
-    "playthroughEditSuccess": "プレイスルー「{characterName}」を更新しました！",
-    "playthroughDeleteSuccess": "プレイスルー「{characterName}」を削除しました！",
-    "workstationCopyError": "まず、衣料品ワークステーションと製品を選択してください。",
-    "factorySaveSuccess": "「{factoryName}」を作成し、プレイスルーに追加しました！",
-    "factoryEditSuccess": "「{factoryName}」を更新しました！",
-    "factoryDeleteSuccess": "「{factoryName}」を削除しました！",
-    "groupSaveSuccess": "グループ「{groupName}」を作成しました！",
-    "groupEditSuccess": "グループ「{groupName}」を更新しました！",
-    "groupDeleteSuccess": "グループ「{groupName}」を削除しました！"
-  },
-  "errors": {
-    "playthrough": {
-      "notFound": "このリソースは存在しません。",
-      "nameRequired": "キャラクターには名前が必要です。",
-      "nameTooLong": "名前は最大 30 文字までです。",
-      "difficultyRequired": "難易度を選んでください。",
-      "workstationProductRequired": "各ワークステーションの製品を選んでください。"
-    },
-    "factory": {
-      "nameTooLong": "工場名は最大 50 文字までです。",
-      "descriptionTooLong": "ここで小説を書くのはやめて。150 文字で十分！",
-      "workstationsRequired": "少なくとも 1 つのワークステーションを追加してください。",
-      "atLeastOneVehicle": "工場には少なくとも 1 つの車両が必要です。",
-      "maxTwoVehicles": "工場には最大 2 台の車両までです。",
-      "shelfAmountTooLow": "工場を動かすには、棚を追加する必要があります。"
-    },
-    "factoryGroup": {
-      "nameTooLong": "グループ名は最大 30 文字までです。",
-      "nameRequired": "グループ名が必要です。"
-    }
-  },
-  "updateHistory": {
-    "launch": "サイト公開"
-  },
-  "database": {
-    "intro": {
-      "desc": "製品、機械、車両など、ゲームの詳細データを探ろう。検索機能やカテゴリフィルターを使って、すぐに必要なものを見つけよう。",
-      "buttonDesc": "カテゴリを選択"
-    },
-    "products": {
-      "caption": "製品を一目で確認できます。製造価格と輸入価格を切り替えられます。小売価格は全地区の平均です。利益は原料費、人件費、税金込みの純値（選択した難易度）が表示されます。<br></br>計算方法が気になる？<link>{toolsSection}</link> をチェックしよう。"
-    },
-    "ingredients": {
-      "caption": "原料とその特性の一覧です。正しい価格を見るには、難易度を選んでね。"
-    },
-    "machines": {
-      "caption": "生産に使うすべての機械です。メインマシン 1 台と、サブマシン 1〜2 台を組み合わせて「衣料品ワークステーション」を作ります。"
-    },
-    "inventory": {
-      "caption": "すべての...保管オプションの概要です。今のところしかありません。あとでさらに追加します！"
-    },
-    "vehicles": {
-      "caption": "大量の荷物か、それとも最速の乗り物か？ここにあるよ。ドライバースキルは {deliveryDriver} のこと。最大目的地には、{logisticsManager} で 100% のスキルが必要だよ。"
     }
   },
   "footer": {
