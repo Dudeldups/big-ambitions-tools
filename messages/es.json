@@ -325,7 +325,7 @@
     "jewelry": "Joyas",
     "gifts": "Regalos",
     "books": "Libros",
-    "bottledGoods": "Productos en botella",
+    "bottledGoods": "Artículos Embotellados",
     "food": "Comida",
     "gardenProducts": "Productos de Jardín"
   },
@@ -334,7 +334,7 @@
     "playthroughSaveSuccess": "Partida \"{characterName}\" creada!",
     "playthroughEditSuccess": "Partida \"{characterName}\" actualizada!",
     "playthroughDeleteSuccess": "Partida \"{characterName}\" eliminada!",
-    "workstationCopyError": "Use \"Estación de trabajo de ropa\"",
+    "workstationCopyError": "Por favor, selecciona primero una estación de trabajo y un producto.",
     "factorySaveSuccess": "\"{factoryName}\" creada y añadida a la partida!",
     "factoryEditSuccess": "\"{factoryName}\" actualizada!",
     "factoryDeleteSuccess": "\"{factoryName}\" eliminada!",
@@ -348,7 +348,7 @@
     "resetForm": "Restablecer formulario",
     "resetDesc": "¿Estás seguro de que quieres restablecer los valores del formulario a la configuración predeterminada?",
     "wsPresetBtn": "Añadir preajuste",
-    "wsPresetTitle": "Seleccionar preajuste",
+    "wsPresetTitle": "Seleccionar configuración predefinida",
     "wsPresetDesc": "Elige un preajuste de la lista para añadirlo a tu fábrica.",
     "priceIndicesDesc": "Selecciona los índices de precio actuales para cada producto para cálculos precisos.",
     "groupBtn": "Crear grupo",
@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "¡Vamos a empezar!",
-      "desc": "¿Solo quieres buscar algo o jugar con los números? <em>¡Mhmm, números deliciosos!</em> Pasa por la <link>{database}</link> y empieza a explorar.",
+      "desc": "¿Solo quieres buscar algo y jugar con los números? <em>¡Mhmm, números deliciosos!</em> Pasa por la <link>{database}</link> y empieza a explorar.",
       "desc2": "Desde la planificación de tu primera fábrica hasta la gestión de las tasas de producción de todo tu imperio, encontrarás todo en la sección <link>{toolsSection}</link>.",
       "errorDesc": "¿Encontraste un error o te falta información? ¿O tienes sugerencias para mejorar la página? ¡No dudes en <contact>contáctanos</contact>!"
     },
@@ -422,7 +422,7 @@
       "caption": "Todos los productos de un vistazo. Puedes cambiar fácilmente entre precios de fabricación e importación. El precio minorista es el promedio de todos los distritos. Las ganancias se muestran como valores netos, incluyendo costos de ingredientes, salarios de trabajadores y impuestos basados en la dificultad seleccionada. <br></br>¿Te interesa cómo se calcula? Echa un vistazo a la sección <link>{toolsSection}</link>."
     },
     "ingredients": {
-      "caption": "Ensure consistency across database entries; use 'Vista general' or 'Visión general' uniformly."
+      "caption": "Vista general de todos los ingredientes crudos, incluidas sus propiedades. Selecciona la dificultad para ver los precios correctos."
     },
     "machines": {
       "caption": "Todas las máquinas que usas en la producción. Combina una máquina principal con una o dos secundarias para crear una estación de trabajo."
@@ -431,7 +431,7 @@
       "caption": "Remove 'pequeña' and 'tus' to align with the English source ('An overview of all...'), unless stylistic additions are approved."
     },
     "vehicles": {
-      "caption": "¿Buscas mucho espacio o simplemente el viaje más rápido? Aquí lo encontrarás. La habilidad del conductor se refiere a tu {deliveryDriver}, y para el máximo número de destinos necesitas un {logisticsManager} con 100 % de habilidad."
+      "caption": "¿Buscas capacidad de carga máxima o simplemente el viaje más rápido? Aquí lo encontrarás. La habilidad del conductor depende de tu {deliveryDriver}, y para el máximo número de destinos necesitas un {logisticsManager} con un nivel de habilidad al 100%."
     }
   },
   "tools": {
