@@ -287,7 +287,7 @@
     "itemName": "Nome do item",
     "purchasePrice": "Preço",
     "retailPrice": "Preço de venda",
-    "manufacturePrice": "Preço de fab.",
+    "manufacturePrice": "Preço de fábrica",
     "storageCapacity": "Capacidade de armazenamento",
     "workstation": "Estação de Trabalho",
     "neededMachines": "Máquinas",
@@ -309,8 +309,8 @@
     "enginePower": "Aceleração",
     "autoParkSupported": "Estacionamento automático",
     "taxDeductible": "Dedutível",
-    "requiredDeliveryDriverSkillValue": "Habilidade do motorista",
-    "destinationsThatCanDeliver": "Destinos base",
+    "requiredDeliveryDriverSkillValue": "Habilidade requerida do motorista",
+    "destinationsThatCanDeliver": "Destinos de base",
     "destinationsFull": "Máx. destinos",
     "employees": "Funcionários",
     "description": "Descrição",
@@ -325,7 +325,7 @@
     "jewelry": "Joias",
     "gifts": "Presentes",
     "books": "Livros",
-    "bottledGoods": "Produtos em garrafa",
+    "bottledGoods": "Produtos engarrafados",
     "food": "Comida",
     "gardenProducts": "Produtos de jardim"
   },
@@ -334,7 +334,7 @@
     "playthroughSaveSuccess": "Partida \"{characterName}\" criada!",
     "playthroughEditSuccess": "Partida \"{characterName}\" atualizada!",
     "playthroughDeleteSuccess": "Partida \"{characterName}\" excluída!",
-    "workstationCopyError": "Por favor, selecione primeiro uma Estação de Trabalho de Roupas e um produto.",
+    "workstationCopyError": "Por favor, selecione primeiro uma Estação de Trabalho e um produto.",
     "factorySaveSuccess": "\"{factoryName}\" criado e adicionado à partida!",
     "factoryEditSuccess": "\"{factoryName}\" atualizada!",
     "factoryDeleteSuccess": "\"{factoryName}\" excluída!",
@@ -364,16 +364,16 @@
   },
   "errors": {
     "playthrough": {
-      "notFound": "Este recurso não existe infelizmente.",
+      "notFound": "Este recurso não existe.",
       "nameRequired": "Seu personagem precisa ter um nome.",
       "nameTooLong": "O nome deve ter no máximo 30 caracteres.",
       "difficultyRequired": "Por favor, escolha uma dificuldade.",
-      "workstationProductRequired": "Por favor, escolha um produto para cada Estação de Trabalho de Roupas."
+      "workstationProductRequired": "Por favor, escolha um produto para cada Estação de Trabalho."
     },
     "factory": {
       "nameTooLong": "O nome da fábrica deve ter no máximo 50 caracteres.",
-      "descriptionTooLong": "Pare de escrever um romance aqui. 150 caracteres são o suficiente!",
-      "workstationsRequired": "Por favor, adicione pelo menos uma Estação de Trabalho de Roupas.",
+      "descriptionTooLong": "Pare de escrever um romance aqui. Máximo de 150 caracteres!",
+      "workstationsRequired": "Por favor, adicione pelo menos uma Estação de Trabalho.",
       "atLeastOneVehicle": "Você precisa de pelo menos um veículo para a fábrica.",
       "maxTwoVehicles": "A fábrica pode ter no máximo dois veículos.",
       "shelfAmountTooLow": "Você precisa adicionar prateleiras para a fábrica funcionar."
@@ -386,16 +386,16 @@
   "home": {
     "selectLanguage": "Selecionar idioma",
     "intro": {
-      "desc": "Aqui você encontra informações e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para te ajudar a otimizar seu jogo. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
+      "desc": "Aqui você encontra informações e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para ajudar você a otimizar sua produção e seu negócio. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
     },
     "cta": {
       "title": "Vamos começar!",
       "desc": "Quer só dar uma olhada em algo ou brincar um pouco com números? <em>Mhmm, números deliciosos!</em> Então dá uma olhada na <link>{database}</link> e comece a explorar.",
-      "desc2": "Do planejamento de sua primeira fábrica até gerenciar as taxas de produção de todo o seu império, você encontrará tudo na seção <link>{toolsSection}</link>.",
+      "desc2": "Do planejamento de sua primeira fábrica ao gerenciamento das taxas de produção de todo o seu império, você encontrará tudo na seção <link>{toolsSection}</link>.",
       "errorDesc": "Encontrou um erro ou falta alguma informação? Ou tem sugestões para melhorar o site? Sinta-se à vontade para <contact>falar com a gente</contact>!"
     },
     "game": {
-      "title": "Ainda não conhece o jogo?",
+      "title": "Ainda não conheces o jogo?",
       "subtitle": "Que pena!",
       "desc": "{gameName} é uma revolucionária simulação de negócios de RPG. Vá de zero ao maior empresário de Nova York abrindo pequenos negócios ou construindo lentamente um grande império corporativo da maneira que quiser.",
       "hovgaard": "Confira o site oficial de <website>{companyName}</website>",
@@ -411,12 +411,12 @@
     }
   },
   "updateHistory": {
-    "launch": "site lançado"
+    "launch": "Site Lançado"
   },
   "database": {
     "intro": {
-      "desc": "Confere dados detalhados do jogo sobre produtos, máquinas, veículos e muito mais. Usa a busca e os filtros de categoria para achar rápido o que precisas.",
-      "buttonDesc": "Escolhe uma categoria"
+      "desc": "Explore dados detalhados do jogo sobre produtos, máquinas, veículos e muito mais. Utilize a busca e os filtros de categoria para encontrar rapidamente o que precisa.",
+      "buttonDesc": "Selecionar uma categoria"
     },
     "products": {
       "caption": "Todos os produtos de uma só vez. Troca facilmente entre preços de fabricação e importação. O preço de varejo é a média em todos os distritos. Os lucros são valores líquidos – incluindo ingredientes, salários dos funcionários e impostos baseados na dificuldade selecionada. <br></br>Curioso como é calculado? Confere a seção <link>{toolsSection}</link>."
@@ -425,7 +425,7 @@
       "caption": "Visão geral de todos os ingredientes brutos incluindo suas propriedades. Escolhe a dificuldade para ver os preços corretos."
     },
     "machines": {
-      "caption": "São todas as máquinas usadas na produção. Combina uma máquina principal com uma ou duas secundárias para formar uma Estação de Trabalho de Roupas."
+      "caption": "São todas as máquinas usadas na produção. Combina uma máquina principal com uma ou duas secundárias para formar uma Estação de Trabalho."
     },
     "inventory": {
       "caption": "Um pequeno resumo das suas... opções de armazenamento. Por enquanto. Mais por vir!"
@@ -473,14 +473,14 @@
       },
       "splitShoppingList": {
         "title": "Lista de compras dividida",
-        "desc": "Encomende esses ingredientes diretamente na sua fábrica para dividir o pedido. Isso é a quantidade máxima que suas {shelfAmount} estantes para paletes podem armazenar. Também considera a quantidade de caixas que você está produzindo. Você precisaria de {requiredAmount} estantes para armazenar todos os ingredientes para uma semana inteira de produção.",
+        "desc": "Encomende esses ingredientes diretamente na sua fábrica para dividir o pedido. Isso é a quantidade máxima que suas {shelfAmount} estantes para paletes podem armazenar. Também considera a quantidade de caixas que você está produzindo. Você precisaria de {requiredAmount} estantes para armazenar todos os ingredientes necessários para uma semana completa de produção.",
         "desc1": "O restante deve ser encomendado a um armazém por um ou mais agentes de compras separados. Volte para a <link>visão geral da fábrica</link> e crie um grupo para ver a lista completa do que encomendar ao armazém. Ele também mostrará o plano de entrega para cada fábrica."
       }
     },
     "playthroughForm": {
       "title": "Criar nova partida",
       "desc": "Digite um nome para sua partida e escolha a dificuldade para que as ferramentas possam calcular os preços corretos. Você pode editar ou excluir suas partidas a qualquer momento.",
-      "placeholder": "p.ex. John Manhattan",
+      "placeholder": "Ex: John Manhattan",
       "deleteTitle": "Excluir partida",
       "deleteDesc": "Tem certeza de que deseja excluir esta partida? Esta ação não pode ser desfeita."
     },
@@ -503,7 +503,7 @@
         "buttonDesc": "Entregas",
         "title": "Plano de entregas",
         "descNeeded": "Planos de entrega para cada fábrica neste grupo. Você precisará de {amount} estantes para paletes para abastecer todas as fábricas.",
-        "descEnough": "Use 'estantes para paletes' to maintain consistency with the established terminology and Entry 2."
+        "descEnough": "Todas as fábricas têm estantes para paletes suficientes para guardar todos os ingredientes necessários."
       },
       "shoppingList": {
         "title": "Lista de compras do grupo",
@@ -525,7 +525,7 @@
         "enoughDaily": "Suficiente apenas para entrega diária. Para logística semanal, você precisa de um armazém.",
         "notEnough": "Armazenamento insuficiente, mesmo para entrega diária.",
         "overflowWarning": "Estoque transbordando!",
-        "overflowDesc": "Você produz mais rápido do que consome ingredientes. O número de estantes foi ajustado conforme necessário."
+        "overflowDesc": "Você produz mais rápido do que consome ingredientes. O número de estantes foi ajustado de acordo."
       },
       "employees": {
         "desc": "Digite o salário de cada operário de fábrica. Deixe em branco se não quiser incluir cálculos salariais.",
@@ -536,7 +536,7 @@
         "addBtn": "Adicionar veículo"
       },
       "workstations": {
-        "addBtn": "Adicionar Estação de Trabalho de Roupas"
+        "addBtn": "Adicionar Estação de Trabalho"
       },
       "buttonDesc": "Nova fábrica",
       "genericFactoryName": "{productName} fábrica",

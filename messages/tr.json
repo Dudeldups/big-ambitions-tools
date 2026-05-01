@@ -280,14 +280,14 @@
     }
   },
   "counts": {
-    "palletShelf": "{count, plural, one {Palet Rafı} other {Palet Rafları}}",
+    "palletShelf": "{count, plural, one {palet rafı} other {palet rafı}}",
     "day": "{count, plural, one {# gün} other {# günler}}"
   },
   "tableColumns": {
     "itemName": "Ürün adı",
     "purchasePrice": "Fiyat",
     "retailPrice": "Satış fiyatı",
-    "manufacturePrice": "Üret./Fiyat",
+    "manufacturePrice": "Üretim fiyatı",
     "storageCapacity": "Depo kapasitesi",
     "workstation": "Giyim İş İstasyonu",
     "neededMachines": "Makineler",
@@ -323,7 +323,7 @@
     "expensiveClothing": "Pahalı Giyim",
     "electronics": "Elektronik",
     "jewelry": "Takı",
-    "gifts": "Hediye",
+    "gifts": "Hediyeler",
     "books": "Kitap",
     "bottledGoods": "Şişe Ürünleri",
     "food": "Yemek",
@@ -334,7 +334,7 @@
     "playthroughSaveSuccess": "Oyun Durumu \"{characterName}\" oluşturuldu!",
     "playthroughEditSuccess": "Oyun Durumu \"{characterName}\" güncellendi!",
     "playthroughDeleteSuccess": "Oyun Durumu \"{characterName}\" silindi!",
-    "workstationCopyError": "Lütfen önce bir Giyim İş İstasyonu ve bir ürün seç.",
+    "workstationCopyError": "Önce bir Giyim İş İstasyonu ve bir ürün seç.",
     "factorySaveSuccess": "\"{factoryName}\" oluşturuldu ve oyun durumuna eklendi!",
     "factoryEditSuccess": "\"{factoryName}\" güncellendi!",
     "factoryDeleteSuccess": "\"{factoryName}\" silindi!",
@@ -343,17 +343,17 @@
     "groupDeleteSuccess": "Grup \"{groupName}\" silindi!"
   },
   "modals": {
-    "discardChanges": "Kaydedilmeyen değişiklikleri iptal et",
-    "discardDesc": "Kaydedilmeyen değişikliklerin var. Onları iptal etmek istediğine emin misin?",
+    "discardChanges": "Kaydedilmemiş değişiklikleri iptal et",
+    "discardDesc": "Kaydedilmemiş değişikliklerin var. Bunları iptal etmek istediğine emin misin?",
     "resetForm": "Formu sıfırla",
     "resetDesc": "Form değerlerini varsayılan ayarlara sıfırlamak istediğine emin misin?",
     "wsPresetBtn": "Ön ayar ekle",
     "wsPresetTitle": "Ön ayarı seç",
-    "wsPresetDesc": "Listeden bir ön ayar seçip fabrikana ekle.",
-    "priceIndicesDesc": "Doğru hesaplamalar için her ürünün güncel fiyat endeksini seç.",
+    "wsPresetDesc": "Fabrikana eklemek için listeden bir ön ayar seç.",
+    "priceIndicesDesc": "Doğru hesaplamalar için her ürünün güncel fiyat endekslerini seç.",
     "groupBtn": "Grup oluştur",
     "groupTitle": "Yeni fabrika grubu oluştur",
-    "groupDesc": "Fabrikaları gruplandırarak tüm gerekli malzemeleri gör.",
+    "groupDesc": "Gerekli tüm malzemeleri görmek için fabrikaları grupla.",
     "editGroupTitle": "Fabrika grubunu düzenle",
     "editGroupDesc": "Yeni değerleri seç.",
     "groupLabelName": "Ad",
@@ -379,14 +379,14 @@
       "shelfAmountTooLow": "Fabriğin çalışması için rafları ekle."
     },
     "factoryGroup": {
-      "nameTooLong": "Grup ismi en fazla 30 karakter olabilir.",
+      "nameTooLong": "Grup adı en fazla 30 karakter olmalı.",
       "nameRequired": "Lütfen bir grup ismi girin."
     }
   },
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{gameName} oyunu için <em>{gameName}</em> ve {companyName} tarafından hazırlanan bilgiler ve araçlar burada. Bu fan sitesi şu anda fabrika mekaniklerine odaklanıyor, böylece oyununu optimize edebilirsin. Hesaplamalar {gameVersion} versiyonuna dayanır ve gelecekteki güncellemelerle değişebilir."
+      "desc": "{companyName} imzalı <em>{gameName}</em> için bilgi ve araçlar burada! Bu fan sitesi şu an oyuncuların oyunlarını geliştirmesi için fabrika mekaniklerine odaklanıyor. Hesaplamalar {gameVersion} sürümüne göredir ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",
@@ -397,16 +397,16 @@
     "game": {
       "title": "Oyunu henüz tanımıyorsun mu?",
       "subtitle": "Ne yazık!",
-      "desc": "{gameName}, devrimci bir iş rol yapma simülasyonu. Küçük dükkanlar açarak ya da istediğin gibi yavaş yavaş devasa şirketler kurarak, New York'un en büyük girişimcisi olmaya sıfırdan başla.",
-      "hovgaard": "<website>{companyName}</website>'deki resmi web sitesini gezin",
-      "steam": "<link>{steam}</link>'de oyunu doğrudan ziyaret et"
+      "desc": "{gameName}, devrim niteliğinde bir iş rol yapma simülasyonu. Küçük dükkanlar açarak veya yavaş yavaş devasa şirketler kurarak, istediğin gibi sıfırdan New York'un en büyük girişimcisi olabilirsin.",
+      "hovgaard": "<website>{companyName}</website> resmi web sitesine göz at!",
+      "steam": "Oyuna doğrudan <link>{steam}</link> üzerinden ulaş!"
     },
     "updates": {
       "title": "Son güncellemeler"
     },
     "notFound": {
       "title": "Sayfa bulunamadı",
-      "desc": "Bu sayfanın bugün mola verdiğini görüyor gibi.",
+      "desc": "Bu sayfa bugün mola vermiş görünüyor.",
       "link": "Ana sayfaya dön"
     }
   },
@@ -415,14 +415,14 @@
   },
   "database": {
     "intro": {
-      "desc": "Ürünler, makineler, araçlar ve daha fazlası hakkında detaylı oyun verilerini keşfet. Aradığını hızlıca bulmak için arama ve kategori filtrelerini kullan.",
+      "desc": "Ürünler, makineler, araçlar ve daha fazlası için detaylı oyun verilerini keşfet. Aradığını hızlıca bulmak için arama ve kategori filtrelerini kullan.",
       "buttonDesc": "Bir kategori seç"
     },
     "products": {
       "caption": "Tüm ürünler tek bakışta. Üretim ve ithal fiyatları arasında kolayca geçiş yapabilirsin. Perakende fiyatı tüm ilçeler üzerinden ortalama değerdir. Karlar, seçilen zorluk seviyesine göre malzeme maliyetleri, çalışan maaşları ve vergileri dahil olan net değerler olarak gösterilir. <br></br>Nasıl hesaplandığına meraklı mısın? <link>{toolsSection}</link> bölümünü kontrol et."
     },
     "ingredients": {
-      "caption": "Tüm ham malzemelerin özellikleriyle birlikte genel bakış. Doğru fiyatları görmek için zorluk seviyesini seç."
+      "caption": "Tüm hammaddelerin özelliklerine genel bir bakış. Doğru fiyatları görmek için zorluk seviyesini seç."
     },
     "machines": {
       "caption": "İşte üretimde kullanabileceğin tüm makineler. Bir ana makine ile bir veya iki yan makineyi birleştirerek Giyim İş İstasyonu oluştur."
@@ -439,24 +439,24 @@
       "desc": "Burada oyunun sayısal verileri ve istatistiklerine derinlemesine dalabilirsin. Fabrikalarını planla ve tüm İmparatorluğun lojistiğini yönet!"
     },
     "playthroughs": {
-      "desc": "Aşağıda Oyun Döngülerini oluşturabilir ve yönetebilirsin. Bir Oyun Döngüsü oyunun tek bir seferidir. Birden fazla Oyun Döngüsü oluşturarak farklı seferleri karşılaştırabilir, zorlukları deneyebilir veya sadece ilerlemeni takip edebilirsin.",
+      "desc": "Aşağıda oyun kayıtlarını oluşturabilir ve yönetebilirsin. Her bir kayıt, oyunun tek bir turunu ifade eder. Farklı turları karşılaştırmak, farklı zorlukları denemek veya sadece ilerlemeni takip etmek için birden fazla kayıt oluşturabilirsin.",
       "warning": "Önemli: İlerlemen tarayıcında saklanır. Tarayıcı verilerini silersen veya Gizli/İnkognito Mod kullanırsan, her şey kaybolabilir.",
-      "createButtonDesc": "Yeni Oyun Döngüsü",
-      "noPlaythroughs": "Henüz hiç Oyun Döngüsü yok. Başlamak için bir tane oluştur!",
+      "createButtonDesc": "Yeni Kayıt",
+      "noPlaythroughs": "Henüz kayıt yok. Başlamak için bir tane oluştur!",
       "notFound": {
-        "title": "Oyun Döngüsü bulunamadı",
-        "desc": "Bu Oyun Döngüsü mevcut değil veya silindi.",
-        "link": "Oyun Döngüleri Genel Bakışına Dön"
+        "title": "Kayıt bulunamadı",
+        "desc": "Bu kayıt mevcut değil veya silinmiş.",
+        "link": "Kayıt listesine dön"
       }
     },
     "playthroughDetail": {
-      "desc": "Burada İmparatorluğun üretim istatistiklerini görebilirsin. Fabrikalar sayfasına giderek genel bakış elde edebilir, sipariş edilmesi gereken ürünleri takip edebilir ve daha fazlasını yapabilirsin. Fabrik Planlayıcı tüm üretim detayları, sipariş miktarları ve daha fazlası hakkında bilgileri gösterir.",
+      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasına giderek fabrikalarına genel bir bakış atabilir, üretim hatların için sipariş etmen gereken ürünleri takip edebilir ve çok daha fazlasını yapabilirsin. Fabrika planlayıcı; üretim istatistikleri, sipariş miktarları ve daha fazlası gibi tüm detayları gösterir.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
       "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
     },
     "factories": {
-      "title": "Fabrikalar",
-      "desc": "Burada Fabrikaların genel bakışını bulabilirsin. Onları düzenleyebilir veya silebilirsin ve yeni bir fabrika için mevcut değerleri de kopyalayabilirsin. Her fabrikanın detaylarını, alışveriş listesini dahil olmak üzere görmek için ilgili kartına tıkla.",
+      "title": "Fabrikaların",
+      "desc": "Fabrikalarına buradan göz atabilirsin. Düzenleyebilir, silebilir veya yeni bir fabrika için mevcut değerleri kopyalayabilirsin. Alışveriş listesi de dahil olmak üzere daha fazla detay için ilgili karta tıklaman yeterli.",
       "desc1": "Aşağıdaki 'Grup Oluştur' butonuna tıklayarak onları da gruplandırabilirsin. Böylece tüm fabrikaları tek bir yerde görebilir ve grup olarak yönetebilirsin. Birden fazla fabrikanın malzemesini sağlamak için merkezi bir depo kullanıyorsan işe yarar. Eklediğin palet raf sayısına göre her fabrikanın için bir teslimat planı önerecek.",
       "noFactories": "Oyununda henüz hiç fabrika yok. Başlamak için bir tane oluştur!",
       "notFound": {
@@ -473,12 +473,12 @@
       },
       "splitShoppingList": {
         "title": "Bölünmüş Satın Alma Listesi",
-        "desc": "Bu malzemeleri fabrikana sipariş ederek siparişi bölüştür. Bu, {shelfAmount} Palet Rafı'nın tutabileceği maksimum miktar. Ürettiğin kutu sayısını da dikkate alır. Tüm üretim haftası için gereken tüm malzemeyi depolamak için {requiredAmount} Palet Rafı gerekir.",
-        "desc1": "Kalan kısım, bir veya daha fazla ayrı Satın Alma Görevlisi tarafından depoya sipariş edilmelidir. <link>Fabrika Genel Bakışı</link> adresine dön ve tam listeyi görmek için bir grup oluştur. Bu, depoya sipariş edilmesi gerekenlerin tam listesini de gösterecek. Ayrıca her fabrikanın teslimat planını da gösterir."
+        "desc": "Siparişi bölmek için bu malzemeleri doğrudan fabrikana sipariş et. Bu, {shelfAmount} palet rafının alabileceği maksimum miktardır. Ürettiğin kutu sayısını da hesaba katar. Bir haftalık üretimin tüm malzemelerini depolamak için {requiredAmount} rafa ihtiyacın olacak.",
+        "desc1": "Kalan kısım, bir veya daha fazla satın alma görevlisi tarafından depoya sipariş edilecek. Tam listeyi görmek için <link>fabrika genel görünümüne</link> geri dön ve bir grup oluştur; böylece o depoya ne sipariş edileceğini ve her fabrikanın teslimat planını görebilirsin."
       }
     },
     "playthroughForm": {
-      "title": "Yeni bir oyun oluştur",
+      "title": "Yeni oynanış oluştur",
       "desc": "Oyun seansına bir isim gir ve zorluk seviyesini seç, böylece araçlar doğru fiyatları hesaplayabilir. Oyun seanslarını istediğin zaman düzenleyebilir veya silebilirsin.",
       "placeholder": "Örn. John Manhattan",
       "deleteTitle": "Oyun seansı sil",
@@ -490,7 +490,7 @@
     },
     "stats": {
       "netProfitPerWeek": "Net Kâr / Hafta",
-      "ordersPerWeek": "Sipariş / Hafta"
+      "ordersPerWeek": "Siparişler / Hafta"
     },
     "factoryGroups": {
       "buttonDesc": "Grup oluştur",
@@ -502,17 +502,17 @@
       "deliveries": {
         "buttonDesc": "Teslimatlar",
         "title": "Teslimat Planı",
-        "descNeeded": "Bu gruptaki her fabrika için teslimat planları. Tüm fabrikaları beslemek için {amount} Palet Rafına ihtiyacın olacak.",
+        "descNeeded": "Bu gruptaki her fabrika için teslimat planları. Tüm fabrikaları tedarik etmek için {amount} Palet Rafına ihtiyacın olacak.",
         "descEnough": "Tüm fabrikalar, tüm gerekli malzemeleri saklamak için yeterli Palet Rafına sahip."
       },
       "shoppingList": {
         "title": "Grup Alışveriş Listesi",
-        "desc": "Bu grup içindeki fabrikaların yeterli Palet Rafı'na sahip olmadığı tüm malzemeleri gösterir. Fabrikalarda mevcut raf miktarına göre hesaplar, böylece kalan kısmı ayrı bir depoya sipariş edebilirsin.<br></br>Depoda gereken Palet Rafı: <strong>{amount}</strong>"
+        "desc": "Bu grupta yeterli rafı olmayan fabrikalar için gereken tüm malzemeler burada. Fabrikalardaki mevcut raflara göre hesaplama yapar, böylece kalan kısmı ayrı bir depoya sipariş edebilirsin.<br></br>Depoda gereken raf sayısı: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
-      "title": "Fabrik Planlayıcı",
-      "desc": "Üretim hatların için gereken malzemeleri, makineleri ve Fabrika İşçilerini hesapla. Üretmek istediğin ürünleri seç ve planlayıcı geri kalanı halledecek.",
+      "title": "Fabrika Planlayıcı",
+      "desc": "Üretim hatların için gereken malzemeleri, makineleri ve iş gücünü hesapla. Üretmek istediğin ürünleri seç, planlayıcı gerisini halleder.",
       "information": {
         "legend": "Fabrik Bilgileri",
         "name": "Fabrik Adı",
@@ -520,15 +520,15 @@
         "palletDesc": "Bu fabrikada mevcut Palet Rafı sayısını tanımla.",
         "dailyAmount": "Günlük teslimat için <strong>{count}</strong> {object} gerekiyor.",
         "weeklyAmount": "Haftalık teslimat için <strong>{count}</strong> {object} gerekiyor.",
-        "shelfExplanation": "Gerekli Palet Rafı sayısını görmek için en az bir Giyim İş İstasyonu ekleyin.",
+        "shelfExplanation": "Gerekli palet rafı sayısını görmek için en az bir Giyim İş İstasyonu ekle.",
         "enoughWeekly": "Haftalık teslimat için yeterli.",
-        "enoughDaily": "Sadece günlük teslimat için yeterli. Haftalık lojistik için bir depo gerekli.",
+        "enoughDaily": "Sadece günlük teslimat için yeterli. Haftalık lojistik için bir depoya ihtiyacın var.",
         "notEnough": "Günlük teslimat için bile yetersiz depolama alanı.",
-        "overflowWarning": "Stok birikiyor!",
-        "overflowDesc": "Üretim, malzeme tüketiminden daha hızlı. Raf sayısı buna göre ayarlandı."
+        "overflowWarning": "Depo doluyor!",
+        "overflowDesc": "Üretim, malzeme tüketimini geride bırakıyor. Raf sayısı buna göre ayarlandı."
       },
       "employees": {
-        "desc": "Her Fabrika İşçisi için maaşı girin. Maaş hesaplaması istemiyorsanız boş bırakın.",
+        "desc": "Her çalışanın maaşını gir. Maaş hesaplaması istemiyorsan boş bırak.",
         "optimalWorkers": "Optimal Fabrika İşçisi sayısını kullan",
         "optimalTooltip": "Giyim İş İstasyonları ve çalışma saatlerine göre optimal Fabrika İşçisi sayısını otomatik hesaplar. Oyun içinde akıcı otomatik programlama için küçük bir tampon ekler."
       },
@@ -539,11 +539,11 @@
         "addBtn": "Giyim İş İstasyonu ekle"
       },
       "buttonDesc": "Yeni Fabrika",
-      "genericFactoryName": "{productName} Fabrikası",
+      "genericFactoryName": "{productName} fabrikası",
       "estimatedSales": "Tahmini haftalık satışlar",
       "estimatedSalesTooltip": "Mağazalarındaki her ürün için beklenen satışları gir.",
       "priceIndexButton": "Fiyat endeksi seç",
-      "priceIndexDesc": "Bu ürün için geçerli oyun içi fiyat endeksin seçerek doğru geliri hesapla. (İhracat fiyatı daha doğrudur.)"
+      "priceIndexDesc": "Doğru geliri hesaplamak için bu ürünün güncel oyun içi fiyat endeksini seç. (İhracat fiyatı daha kesin sonuç verir.)"
     }
   },
   "footer": {

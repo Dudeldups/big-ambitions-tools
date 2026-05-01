@@ -204,7 +204,7 @@
     "reset": "Reset",
     "copy": "Kopiëren",
     "close": "Afsluiten",
-    "create": "Aanmaken",
+    "create": "Maken",
     "edit": "Bewerken",
     "delete": "Verwijderen",
     "save": "Opslaan",
@@ -235,7 +235,7 @@
     "factories": "Fabrieken",
     "vehicle": "Voertuig",
     "vehicles": "[b]Big Ambitions[/b] is een revolutionaire business simulator. Ga van niets naar iets en wordt de grootste ondernemen in New York door het openen van een klein bedrijf of het langzaam opbouwen van grote ketens zoals jij ze wil hebben.",
-    "palletShelves": "Palletplanken",
+    "palletShelves": "Palletstellingen",
     "difficulty": "Moeilijkheid",
     "priceIndex": "Prijsindex",
     "priceIndices": "Prijsindizes",
@@ -262,7 +262,7 @@
       "hard": "Moeilijk"
     },
     "themes": {
-      "buttonDesc": "Design wisselen",
+      "buttonDesc": "Thema wijzigen",
       "light": "Licht",
       "dark": "Donker",
       "system": "Systeem"
@@ -287,7 +287,7 @@
     "itemName": "Artikelnaam",
     "purchasePrice": "Prijs",
     "retailPrice": "Verkoopprijs",
-    "manufacturePrice": "Herk.-Prijs",
+    "manufacturePrice": "Productieprijs",
     "storageCapacity": "Opslagcapaciteit",
     "workstation": "Kledingwerkstation",
     "neededMachines": "Machines",
@@ -307,10 +307,10 @@
     "maxCargoCapacity": "Laadcapaciteit",
     "maxSpeed": "Max. snelheid",
     "enginePower": "Versnelling",
-    "autoParkSupported": "Auto-parken",
+    "autoParkSupported": "Parkhulp",
     "taxDeductible": "Aftrekbaar",
-    "requiredDeliveryDriverSkillValue": "Rijders-skill",
-    "destinationsThatCanDeliver": "Basis-destinaties",
+    "requiredDeliveryDriverSkillValue": "Rijvaardigheid vereist",
+    "destinationsThatCanDeliver": "Basis-bestemmingen",
     "destinationsFull": "Max. bestemmingen",
     "employees": "Medewerkers",
     "description": "Beschrijving",
@@ -325,8 +325,8 @@
     "jewelry": "Sieraden",
     "gifts": "Cadeaus",
     "books": "Boeken",
-    "bottledGoods": "Flessenwaren",
-    "food": "Eten",
+    "bottledGoods": "flesproducten",
+    "food": "eten",
     "gardenProducts": "Tuinproducten"
   },
   "toasts": {
@@ -389,14 +389,14 @@
       "desc": "Hier vind je info en tools rondom <em>{gameName}</em> van {companyName}. Op deze fansite draait alles momenteel om fabriekmechanica, zodat je het beste uit je business kunt halen. De berekeningen zijn gebaseerd op versie {gameVersion} en kunnen veranderen met toekomstige updates."
     },
     "cta": {
-      "title": "Laten we beginnen!",
+      "title": "Aan de slag!",
       "desc": "Wil je alleen even wat opzoeken of een beetje met de cijfers knoeien? <em>Hmmm, lekkere cijfers!</em> Dan kijk je even in de <link>{database}</link> en blader je een rondje.",
       "desc2": "Van het plannen van je eerste fabriek tot aan het beheren van de productieraten van je hele imperium, vind je alles in het gedeelte <link>{toolsSection}</link>.",
       "errorDesc": "Sto je op een foutje gestoten of mis je info? Of heb je suggesties om de site te verbeteren? Dan <contact>meld je maar even</contact>!"
     },
     "game": {
       "title": "Ken je het spel nog niet?",
-      "subtitle": "Wat een zonde!",
+      "subtitle": "Wat jammer!",
       "desc": "{gameName} is een revolutionaire business-rollensimulatie. Werk je van niks naar de grootste ondernemer van New York toe door kleine winkels te openen of langzaam een enorm bedrijfsemporium op te bouwen – precies zoals jij wilt.",
       "hovgaard": "Bekijk de officiële website van <website>{companyName}</website>",
       "steam": "Bezoek het spel direct op <link>{steam}</link>"
@@ -406,16 +406,16 @@
     },
     "notFound": {
       "title": "Pagina niet gevonden",
-      "desc": "Ziet eruit alsof deze pagina vandaag even vrij heeft genomen.",
+      "desc": "Deze pagina heeft even een vrije dag.",
       "link": "Terug naar de startpagina"
     }
   },
   "updateHistory": {
-    "launch": "Website gestart"
+    "launch": "Website live"
   },
   "database": {
     "intro": {
-      "desc": "Hier kun je diep duiken in de speldetails van producten, machines, voertuigen en nog veel meer. Pak de zoekfunctie of filters, zodat je snel vindt wat je nodig hebt.",
+      "desc": "Hier kun je in de gedetailleerde spelgegevens van producten, machines, voertuigen en nog veel meer duiken. Gebruik de zoekfunctie of categoriefilters om snel te vinden wat je nodig hebt.",
       "buttonDesc": "Kies een categorie"
     },
     "products": {
@@ -431,7 +431,7 @@
       "caption": "Een overzicht van al je... opslagopties. Voor nu. Meer komt nog!"
     },
     "vehicles": {
-      "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. De vaardigheid van de bestuurder verwijst naar je {deliveryDriver}, en voor maximaal aantal bestemmingen heb je een {logisticsManager} nodig met 100% vaardigheid."
+      "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. Driver skill hoort bij je {deliveryDriver}, en voor het maximale aantal bestemmingen heb je een {logisticsManager} met 100% skill nodig."
     }
   },
   "tools": {
@@ -451,7 +451,7 @@
     },
     "playthroughDetail": {
       "desc": "Hier zie je de productiestatistieken van je imperium. Ga naar de pagina 'Fabrieken' om een overzicht te krijgen, artikelen te tracken die besteld moeten worden, en meer. De fabriekplanner toont je alle details over productiestatistieken, bestelhoeveelheden en meer.",
-      "productionOverview": "Wekelijks productievezicht",
+      "productionOverview": "Wekelijks productieoverzicht",
       "noProductionData": "Nog geen gegevens beschikbaar. Maak fabrieken aan en je ziet je productiestatistieken hier."
     },
     "factories": {
@@ -468,13 +468,13 @@
     "factoryDetail": {
       "editBtn": "Fabriek bewerken",
       "shoppingList": {
-        "title": "Einkoopslijst",
+        "title": "Boodschappenlijstje",
         "desc": "Dit is wat je fabriek wekelijks nodig heeft om met volle capaciteit te draaien."
       },
       "splitShoppingList": {
-        "title": "Gesplitste einkoopslijst",
+        "title": "Gesplitste boodschappenlijst",
         "desc": "Bestel deze ingrediënten direct naar je fabriek om de bestelling op te splitsen. Dit is het maximale aantal dat je {shelfAmount} palletplanken kunnen bevatten. Het houdt ook rekening met het aantal dozen dat je produceert. Je zou {requiredAmount} palletplanken nodig hebben om alle ingrediënten voor een hele week productie op te slaan.",
-        "desc1": "De rest moet worden besteld bij een magazijn door één of meerdere aparte inkopers. Ga terug naar de <link>fabrieksoverzicht</link> en maak een groep aan om de volledige lijst te zien wat voor dat magazijn moet worden besteld. Het toont je ook het leveringsplan naar elke fabriek."
+        "desc1": "De rest moet door één of meer aparte inkoopagenten naar een magazijn worden besteld. Ga terug naar het <link>fabrieksoverzicht</link> en maak een groep aan om de volledige lijst te zien van wat er voor dat magazijn besteld moet worden. Je ziet daar ook het leveringsplan voor elke fabriek."
       }
     },
     "playthroughForm": {
@@ -497,17 +497,17 @@
       "title": "Fabrieksgroepen",
       "desc": "Je kunt fabriken groeperen voor een beter overzicht per productcategorie. Als de gegroepeerde fabrieken niet genoeg palletplanken hebben toegewezen, vertelt de boodschappenlijst wat je voor elke fabriek en ook voor het magazijn moet bestellen om de rest te leveren. De leveringsdialoog toont je ook wat naar elke fabriek gestuurd moet worden.",
       "groupEmpty": "Geen fabrieken in deze groep. Sleep een fabriekkaart hierheen om deze toe te voegen.",
-      "ungroupedTitle": "Niet gegroepeerde fabrieken",
-      "ungroupedEmpty": "Geen ongegroeperde fabrieken. Sleep een fabriekkaart hierheen of voeg een nieuwe fabriek toe.",
+      "ungroupedTitle": "Ongegroepeerde fabrieken",
+      "ungroupedEmpty": "Nog geen fabrieken in een groep. Sleep een kaart hierheen of voeg een nieuwe fabriek toe.",
       "deliveries": {
         "buttonDesc": "Leveringen",
         "title": "Leveringsplan",
-        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletplanken nodig om alle fabrieken te voorzien.",
-        "descEnough": "Alle fabrieken hebben genoeg palletplanken om alle benodigde ingrediënten op te slaan."
+        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletstellingen nodig om alle fabrieken te bevoorraden.",
+        "descEnough": "Alle fabrieken hebben genoeg palletstellingen voor alle benodigde ingrediënten."
       },
       "shoppingList": {
-        "title": "Groepsboodschappenlijst",
-        "desc": "Hier zie je alle ingrediënten die je nodig hebt om fabrieken te voorzien die niet genoeg palletplanken hebben binnen deze groep. Het berekent dit op basis van de beschikbare palletplanken in de fabrieken zodat je de rest eenvoudig naar een apart magazijn kunt bestellen.<br></br>Benodigde palletplanken in magazijn: <strong>{amount}</strong>"
+        "title": "Boodschappenlijst groep",
+        "desc": "Hier zie je alle ingrediënten die nodig zijn om de fabrieken in deze groep te voorzien van palletplanken waarvoor er niet genoeg beschikbaar is. Het berekent dit op basis van de beschikbare stellingen in de fabrieken, zodat je de rest naar een apart magazijn kunt bestellen.<br></br>Benodigde stellingen in het magazijn: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
@@ -517,20 +517,20 @@
         "legend": "Fabrikinformatie",
         "name": "Fabrieknaam",
         "calcBasis": "Berekeningsbasis",
-        "palletDesc": "Definieer hoeveel palletplanken beschikbaar zijn in deze fabriek.",
-        "dailyAmount": "Voor de dagelijkse levering ben je <strong>{count}</strong> {object} nodig.",
-        "weeklyAmount": "Voor de wekelijkse levering ben je <strong>{count}</strong> {object} nodig.",
-        "shelfExplanation": "Voeg minimaal één kledingwerkstation toe om het benodigde aantal palletplanken te zien.",
+        "palletDesc": "Definieer hoeveel palletstellingen beschikbaar zijn in deze fabriek.",
+        "dailyAmount": "Voor de dagelijkse levering heb je <strong>{count}</strong> {object} nodig.",
+        "weeklyAmount": "Voor de wekelijkse levering heb je <strong>{count}</strong> {object} nodig.",
+        "shelfExplanation": "Voeg minimaal één kledingwerkstation toe om het benodigde aantal palletstellingen te zien.",
         "enoughWeekly": "Genoeg voor de wekelijkse levering.",
-        "enoughDaily": "Genoeg alleen voor de dagelijkse levering. Voor weeklogistiek heb je een magazijn nodig.",
+        "enoughDaily": "Alleen genoeg voor de dagelijkse levering. Voor weeklogistiek heb je een magazijn nodig.",
         "notEnough": "Te weinig opslagruimte, zelfs voor een dagelijkse levering.",
         "overflowWarning": "Voorraad loopt over!",
         "overflowDesc": "Je produceert sneller dan je ingrediënten verbruikt. Het aantal palletplanken is aangepast."
       },
       "employees": {
-        "desc": "Voer het loon per fabrieksarbeider in. Laat het leeg als je geen loonberekening wilt.",
-        "optimalWorkers": "Gebruik optimale hoeveelheid fabrieksarbeiders",
-        "optimalTooltip": "Berekent automatisch het optimale aantal fabrieksarbeiders op basis van kledingwerkstations en openingstijden. Voegt een kleine buffer toe voor soepel autoscheduleren in het spel."
+        "desc": "Voer het loon per medewerker in. Laat het leeg als je geen loonberekening wilt.",
+        "optimalWorkers": "Gebruik het optimale aantal fabrieksarbeiders",
+        "optimalTooltip": "Berekent automatisch het optimale aantal arbeiders op basis van kledingwerkstations en openingstijden. Voegt een kleine buffer toe voor een soepele auto-scheduling in het spel."
       },
       "vehicles": {
         "addBtn": "Voertuig toevoegen"
@@ -539,15 +539,15 @@
         "addBtn": "Kledingwerkstation toevoegen"
       },
       "buttonDesc": "Nieuwe fabriek",
-      "genericFactoryName": "{productName} fabriek",
+      "genericFactoryName": "{productName}-fabriek",
       "estimatedSales": "Geschatte wekelijkse verkopen",
       "estimatedSalesTooltip": "Vul de verwachte omzet per product in je winkels in.",
       "priceIndexButton": "Prijsindex kiezen",
-      "priceIndexDesc": "Kies de huidige spel-prijsindex voor dit product om het juiste inkomen te berekenen. (De exportprijs is nauwkeuriger.)"
+      "priceIndexDesc": "Kies de huidige game-prijsindex voor dit product om het juiste inkomen te berekenen. (De exportprijs is nauwkeuriger.)"
     }
   },
   "footer": {
-    "assets": "Alle spelbeelden, merken en assets zijn eigendom van de respectieve eigenaars.",
-    "fanMade": " Dit is een puur fan-project en staat niet in verband met de ontwikkelaars van het spel. De broncode vind je op <link>GitHub</link>."
+    "assets": "Alle afbeeldingen, merken en assets uit het spel zijn eigendom van de eigenaren.",
+    "fanMade": "Dit is een fan-project en heeft niets te maken met de ontwikkelaars van het spel. De broncode vind je op <link>GitHub</link>."
   }
 }

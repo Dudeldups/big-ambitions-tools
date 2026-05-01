@@ -220,7 +220,7 @@
     "characterName": "캐릭터 이름",
     "home": "홈",
     "about": "소개",
-    "contact": "연락처",
+    "contact": "문의",
     "ingredients": "재료",
     "machines": "기계",
     "inventory": "재고",
@@ -229,8 +229,8 @@
     "product": "제품",
     "products": "제품",
     "database": "데이터베이스",
-    "playthrough": "게임 기록",
-    "playthroughs": "게임 기록들",
+    "playthrough": "플레이 기록",
+    "playthroughs": "플레이 내역",
     "factory": "공장",
     "factories": "공장",
     "vehicle": "차량",
@@ -249,7 +249,7 @@
     "manufacturingCosts": "제조 비용",
     "manufacturingCostsShort": "제조비",
     "oneTimeCosts": "일회성 비용",
-    "recurringCosts": "반복 비용",
+    "recurringCosts": "정기 비용",
     "logisticsManager": "물류 관리자",
     "deliveryDriver": "배송 기사",
     "openingHours": "영업시간",
@@ -289,7 +289,7 @@
     "retailPrice": "판매가격",
     "manufacturePrice": "제조가",
     "storageCapacity": "저장용량",
-    "workstation": "작업대",
+    "workstation": "의류 작업대",
     "neededMachines": "기계",
     "usedForProducts": "제품용",
     "importPrice": "입고가",
@@ -308,8 +308,8 @@
     "maxSpeed": "최고속도",
     "enginePower": "가속력",
     "autoParkSupported": "자동주차",
-    "taxDeductible": "공제가능",
-    "requiredDeliveryDriverSkillValue": "배송기사 스킬",
+    "taxDeductible": "공제 가능",
+    "requiredDeliveryDriverSkillValue": "운전 숙련도",
     "destinationsThatCanDeliver": "기본 목적지",
     "destinationsFull": "최대 목적지",
     "employees": "직원",
@@ -325,7 +325,7 @@
     "jewelry": "주얼리",
     "gifts": "선물",
     "books": "책",
-    "bottledGoods": "음료",
+    "bottledGoods": "병 제품",
     "food": "음식",
     "gardenProducts": "정원용품"
   },
@@ -379,25 +379,25 @@
       "shelfAmountTooLow": "공장이 작동하려면 선반을 추가해주세요."
     },
     "factoryGroup": {
-      "nameTooLong": "그룹 이름은 최대 30 자까지 가능합니다.",
+      "nameTooLong": "그룹 이름은 30자까지만 가능해요",
       "nameRequired": "그룹 이름을 입력해주세요."
     }
   },
   "home": {
     "selectLanguage": "언어 선택",
     "intro": {
-      "desc": "<em>{gameName}</em> 게임의 정보와 도구를 모은 곳이에요. {companyName} 에서 만든 이 팬 사이트는 현재 공장 시스템에 집중해서 플레이어들이 게임을 더 잘할 수 있도록 도와줍니다. 계산은 게임 버전 {gameVersion} 기준이며, 향후 업데이트로 변경될 수 있어요."
+      "desc": "{companyName}의 <em>{gameName}</em> 정보와 툴을 모아둔 곳이야. 지금은 플레이어들이 더 효율적으로 플레이할 수 있게 공장 메커니즘 위주로 다루고 있어. 계산 방식은 {gameVersion} 버전 기준이라, 앞으로 업데이트에 따라 바뀔 수도 있어."
     },
     "cta": {
       "title": "시작해볼까요!",
-      "desc": "단순히 정보를 찾거나 숫자 놀이를 하고 싶으신가요? <em>음, 맛있는 숫자네요!</em> <link>{database}</link> 로 이동해서 둘러보세요.",
+      "desc": "그냥 정보 좀 찾아보고 숫자 계산이나 해볼까? <em>음, 맛있는 숫자들!</em> 그럼 <link>{database}</link>로 가서 구경해 봐!",
       "desc2": "첫 공장 계획부터 제국 전체의 생산율 관리까지, 모든 것은 <link>{toolsSection}</link> 섹션에 있어요.",
       "errorDesc": "오류나 누락된 정보를 발견하셨나요? 아니면 사이트를 개선할 제안이 있으신가요? <contact>편하게 연락해주세요</contact>!"
     },
     "game": {
       "title": "아직 게임을 모르고 계세요?",
       "subtitle": "정말 아쉽네요!",
-      "desc": "{gameName} 은 혁명적인 비즈니스 롤플레잉 시뮬레이션이에요. 작은 가게를 여거나 원하는 대로 거대한 회사를 차근차근 만들어가며 뉴욕 최고의 기업가로 성장하세요.",
+      "desc": "{gameName}은 혁명적인 비즈니스 RPG 시뮬레이션이에요! 작은 가게부터 시작해 거대 기업을 일구며 뉴욕 최고의 사업가로 성장해 보세요. 당신이 원하는 방식대로요!",
       "hovgaard": "<website>{companyName}</website> 의 공식 웹사이트를 확인해보세요",
       "steam": "<link>{steam}</link> 에서 게임을 직접 방문하세요"
     },
@@ -428,10 +428,10 @@
       "caption": "생산에 쓰이는 모든 기계입니다. 하나의 메인 기계와 하나 또는 두 개의 서브 기계를 조합하여 의류 작업대를 만드세요."
     },
     "inventory": {
-      "caption": "모든 보관 옵션에 대한 간단한 소개입니다. 지금은 여기까지고요. 더 추가될 예정입니다!"
+      "caption": "지금까지의... 보관 옵션들을 모아봤어. 일단은 여기까지! 앞으로 더 늘어날 거야!"
     },
     "vehicles": {
-      "caption": "최대 화물량이나 가장 빠른 차량이 필요하신가요? 여기에서 찾으실 수 있어요. 운전자 스킬은 {deliveryDriver}를 의미하며, 최대 목적지 도달을 위해서는 {logisticsManager}가 100% 스킬이어야 합니다."
+      "caption": "짐을 가득 채우고 싶어, 아니면 그냥 제일 빠른 차를 원해? 여기서 다 찾을 수 있어. 운전자 스킬은 {deliveryDriver}를 말하고, 목적지를 최대로 찍으려면 {logisticsManager} 스킬이 100%여야 해."
     }
   },
   "tools": {
@@ -439,7 +439,7 @@
       "desc": "여기서 게임의 숫자와 통계를 깊이 파고들 수 있어요. 공장을 계획하고 제국 전체 물류를 관리하세요!"
     },
     "playthroughs": {
-      "desc": "아래에서 게임 세션을 만들고 관리할 수 있어요. 세션은 게임의 한 번의 플레이를 의미해요. 다른 세션을 비교하거나 난이도를 바꿔보거나, 그냥 진행 상황을 기록하고 싶다면 여러 세션을 만들면 돼요.",
+      "desc": "아래에서 플레이스루를 만들고 관리할 수 있어요. 플레이스루는 게임의 한 번의 플레이를 의미해요. 여러 플레이스ру를 만들어 다른 플레이와 비교하거나, 다양한 난이도로 시도해 보거나, 단순히 진행 상황을 기록할 수도 있어요.",
       "warning": "중요: 진행 상황은 브라우저에 저장돼요. 브라우저 데이터를 지우거나 프라이빗/인코그니토 모드를 쓰면 사라질 수 있어요.",
       "createButtonDesc": "새 게임 세션",
       "noPlaythroughs": "아직 게임 세션이 없어요. 시작하려면 하나 만드세요!",
@@ -457,7 +457,7 @@
     "factories": {
       "title": "내 공장",
       "desc": "여기서 공장 목록을 확인할 수 있어요. 공장을 편집하거나 삭제하고, 새 공장을 위해 현재 값을 복사할 수도 있어요. 공장별 상세 정보와 구매 목록 등을 보려면 해당 카드를 클릭하세요.",
-      "desc1": "아래 '그룹 생성' 버튼을 누르면 그룹으로 묶을 수 있어요. 이렇게 하면 모든 공장을 한곳에서 보고 그룹으로 관리할 수 있죠. 중앙 창고를 쓰면 특히 유용해요. 추가한 팔레트 선반 수량에 따라 각 공장별 배송 계획을 제안해 줍니다.",
+      "desc1": "아래 '그룹 생성' 버튼을 눌러 공장들을 하나로 묶어보세요. 한눈에 모아보고 그룹으로 관리할 수 있어 정말 편해요. 중앙 창고를 통해 여러 공장에 재료를 공급한다면 특히 유용하죠. 추가한 팔레트 선반 수에 따라 각 공장별 배송 계획도 추천해 드려요.",
       "noFactories": "현재 플레이에는 공장이 없어요. 시작하려면 하나를 만들어보세요!",
       "notFound": {
         "title": "공장을 찾을 수 없어요",
@@ -473,20 +473,20 @@
       },
       "splitShoppingList": {
         "title": "분할 장보기 목록",
-        "desc": "주문 분할을 위해 이 재료를 공장 직접 주문하세요. 당신의 {shelfAmount} 팔레트 선반이 담을 수 있는 최대량입니다. 생산하는 박스 수도 고려됩니다. 전체 주 생산분의 재료를 보관하려면 {requiredAmount} 개의 팔레트 선반이 필요합니다.",
+        "desc": "주문을 나누려면 이 재료들을 공장으로 바로 주문해봐. {shelfAmount}개의 팔레트 선반에 담을 수 있는 최대 양이야. 생산하는 박스 수도 계산되어 있어. 일주일치 생산량을 다 보관하려면 {requiredAmount}개의 선반이 필요할 거야.",
         "desc1": "나머지는 하나 이상의 별도 구매 담당자를 통해 창고로 주문해야 합니다. <link>공장 목록</link>으로 돌아가 그룹을 만들어 해당 창고에 주문할 항목의 전체 목록을 확인하세요. 각 공장별 배송 계획도 표시됩니다."
       }
     },
     "playthroughForm": {
-      "title": "새로운 플레이 생성",
-      "desc": "진행 기록에 이름을 입력하고 난이도를 선택하세요. 도구가 올바른 가격을 계산할 수 있도록 합니다. 언제든지 진행 기록을 수정하거나 삭제할 수 있어요.",
+      "title": "새 게임 만들기",
+      "desc": "진행 기록 이름이랑 난이도를 정해줘. 그래야 정확한 가격을 계산할 수 있거든. 언제든 수정하거나 삭제도 가능해.",
       "placeholder": "예를 들어 John Manhattan",
       "deleteTitle": "진행 기록 삭제",
-      "deleteDesc": "진행 기록을 삭제하시겠습니까? 이 작업은 되돌릴 수 없어요."
+      "deleteDesc": "정말 진행 기록을 삭제할 거야? 취소는 안 돼!"
     },
     "factoryForm": {
       "deleteTitle": "공장 삭제",
-      "deleteDesc": "공장을 삭제하시겠습니까? 이 작업은 되돌릴 수 없어요."
+      "deleteDesc": "정말 공장을 삭제할 거야? 취소는 안 돼!"
     },
     "stats": {
       "netProfitPerWeek": "순이익 / 주",
@@ -495,8 +495,8 @@
     "factoryGroups": {
       "buttonDesc": "그룹 생성",
       "title": "공장 그룹",
-      "desc": "제품 카테고리별 더 나은 개요를 위해 공장을 그룹화할 수 있어요. 그룹화된 공장들이 팔레트 선반을 충분히 할당받지 못하면, 구매 목록에서 각 공장 및 창고에 주문해야 할 물품을 알려줍니다. 배송 대화상자에서는 각 공장별로 보내야 할 물품도 표시됩니다.",
-      "groupEmpty": "이 그룹에 공장이 없습니다. 추가하려면 공장 카드를 여기에 드래그하세요.",
+      "desc": "제품 카테고리별로 공장을 그룹화해서 한눈에 확인할 수 있어요. 그룹화된 공장에 팔레트 선반이 부족하면, 쇼핑 리스트에서 각 공장과 창고에 무엇을 더 주문해야 하는지 알려줄 거예요. 배송 대화상자에서도 각 공장으로 보낼 물품을 바로 확인할 수 있어요.",
+      "groupEmpty": "이 그룹에는 공장이 없어요. 공장 카드를 여기로 끌어다 놓아 추가해 보세요.",
       "ungroupedTitle": "그룹화되지 않은 공장",
       "ungroupedEmpty": "여기에 그룹화되지 않은 공장이 없어요. 공장 카드를 여기에 드래그하거나 새 공장을 추가하세요.",
       "deliveries": {
@@ -507,7 +507,7 @@
       },
       "shoppingList": {
         "title": "그룹 구매 목록",
-        "desc": "이 그룹 내 공장들이 부족한 팔레트 선반으로 인해 필요한 모든 재료를 보여줍니다. 공장 내의 선반 수량을 기준으로 계산되어, 나머지 재료를 별도의 창고로 주문할 수 있습니다.<br></br>창고에서 필요한 팔레트 선반: <strong>{amount}</strong>"
+        "desc": "이 그룹 내 선반이 부족한 공장에 필요한 모든 재료를 확인할 수 있어요. 공장의 현재 선반 수량을 기준으로 계산해서, 나머지는 별도 창고로 바로 주문할 수 있게 도와줘요.<br></br>창고에 필요한 선반: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
@@ -517,7 +517,7 @@
         "legend": "공장 정보",
         "name": "공장 이름",
         "calcBasis": "계산 기준",
-        "palletDesc": "이 공장 내의 팔레트 선반 수량을 정의하세요.",
+        "palletDesc": "이 공장의 팔레트 선반 개수를 설정해 주세요.",
         "dailyAmount": "일일 배송에는 <strong>{count}</strong> {object} 가 필요합니다.",
         "weeklyAmount": "주간 배송에는 <strong>{count}</strong> {object} 가 필요합니다.",
         "shelfExplanation": "필요한 팔레트 선반 수량을 보려면 최소 하나의 의류 작업대를 추가하세요.",
@@ -541,13 +541,13 @@
       "buttonDesc": "새 공장",
       "genericFactoryName": "{productName} 공장",
       "estimatedSales": "예상 주간 매출",
-      "estimatedSalesTooltip": "각 제품별 예상 판매량 입력하세요.",
+      "estimatedSalesTooltip": "각 제품별 예상 매출을 입력하세요.",
       "priceIndexButton": "가격 지수 선택",
-      "priceIndexDesc": "이 제품용 현재 게임 내 가격 지수 선택해 올바른 수익 계산하세요. (출구 가격이 더 정확해요.)"
+      "priceIndexDesc": "정확한 수익 계산을 위해 이 제품의 현재 게임 내 가격 지수를 선택해 보세요. (수출 가격이 더 정확해요!)"
     }
   },
   "footer": {
-    "assets": "게임 내 모든 이미지, 상표 및 자산은 각각의 소유자의 것이에요.",
-    "fanMade": " 이 사이트는 팬이 만든 곳이라 게임 개발자와는 관련이 없어요. 소스 코드는 <link>GitHub</link> 에서 확인해 보세요."
+    "assets": "게임 내 모든 이미지, 상표 및 에셋의 권리는 각 소유자에게 있습니다.",
+    "fanMade": "이 사이트는 팬이 만든 사이트고, 게임 개발사와는 아무 관련이 없어요. 소스 코드는 <link>GitHub</link>에서 볼 수 있어요."
   }
 }
