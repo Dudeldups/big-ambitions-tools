@@ -230,7 +230,7 @@
     "products": "Produkter",
     "database": "Database",
     "playthrough": "Spilstand",
-    "playthroughs": "Spil",
+    "playthroughs": "Gennemspilninger",
     "factory": "Fabrik",
     "factories": "Fabrikker",
     "vehicle": "Køretøj",
@@ -274,7 +274,7 @@
       "retail": "Detailhandel"
     },
     "calculationPeriodOptions": {
-      "hourly": "Timevis",
+      "hourly": "I timen",
       "daily": "Dagligt",
       "weekly": "Ugentligt"
     }
@@ -309,9 +309,9 @@
     "enginePower": "Acceleration",
     "autoParkSupported": "Indparkeringshjælp",
     "taxDeductible": "Fradrag",
-    "requiredDeliveryDriverSkillValue": "Fører-skill",
-    "destinationsThatCanDeliver": "Base-mål",
-    "destinationsFull": "Max. mål",
+    "requiredDeliveryDriverSkillValue": "Chauffør-skills",
+    "destinationsThatCanDeliver": "Basis-dest.",
+    "destinationsFull": "Maks. dest.",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
     "export": "Eksport",
@@ -330,7 +330,7 @@
     "gardenProducts": "Haveprodukter"
   },
   "toasts": {
-    "genericError": "Der opstod en fejl. Tjek dine indtastninger og prøv igen. Hvis problemet fortsætter, så prøv at genindlæse siden.",
+    "genericError": "Der skete en fejl. Tjek dine oplysninger og prøv igen. Hvis fejlen bliver ved, så genindlæs siden.",
     "playthroughSaveSuccess": "Spilstand \"{characterName}\" oprettet!",
     "playthroughEditSuccess": "Spilstand \"{characterName}\" opdateret!",
     "playthroughDeleteSuccess": "Spilstand \"{characterName}\" slettet!",
@@ -349,7 +349,7 @@
     "resetDesc": "Er du sikker på, at du vil nulstille formularværdierne til standardindstillingerne?",
     "wsPresetBtn": "Tilføj forindstilling",
     "wsPresetTitle": "Vælg forindstilling",
-    "wsPresetDesc": "Vælg en forindstilling fra listen, som skal tilføjes til din fabrik.",
+    "wsPresetDesc": "Vælg en forindstilling fra listen og tilføj den til din fabrik.",
     "priceIndicesDesc": "Vælg de aktuelle prisindeks for hvert produkt til præcise beregninger.",
     "groupBtn": "Opret gruppe",
     "groupTitle": "Opret ny fabrikgruppe",
@@ -368,7 +368,7 @@
       "nameRequired": "Din karakter bør have et navn.",
       "nameTooLong": "Navnet må højst være 30 tegn langt.",
       "difficultyRequired": "Vælg en sværhedsgrad.",
-      "workstationProductRequired": "Vælg et produkt til hver arbejdsstation til tøj."
+      "workstationProductRequired": "Hver arbejdsstation til tøj skal have et produkt."
     },
     "factory": {
       "nameTooLong": "Fabriksnavnet må højst være 50 tegn langt.",
@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Lad os komme i gang!",
-      "desc": "Vil du bare lige slå noget op eller lege lidt med tal? <em>Mhmm, lækre tal!</em> Så kig forbi <link>{database}</link> og gå på opdagelse.",
+      "desc": "Vil du bare lige slå noget op eller lege lidt med tallene? <em>Fedt, matematik!</em> Så smut forbi <link>{database}</link> og gå på opdagelse.",
       "desc2": "Fra planlægning af din første fabrik til styring af produktionsraterne i hele dit imperium – du finder det hele i <link>{toolsSection}</link>.",
       "errorDesc": "Har du fundet en fejl eller mangler der noget info? Eller har du forslag til at gøre siden bedre? Så <contact>ræk endelig ud</contact>!"
     },

@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Zaczynamy!",
-      "desc": "Chcesz tylko szybko coś sprawdzić lub pogrzebać w liczbach? <em>Mhmm, pyszne liczby!</em> Wpadnij na <link>{database}</link> i zacznij odkrywać.",
+      "desc": "Chcesz coś tylko sprawdzić albo pobawić się w liczby? <em>No i git, matma!</em> Wpadnij do <link>{database}</link> i zacznij odkrywać.",
       "desc2": "Od planowania pierwszej fabryki po zarządzanie tempem produkcji całego imperium znajdziesz wszystko w sekcji <link>{toolsSection}</link>.",
       "errorDesc": "Znalazłeś błąd lub brakuje Ci informacji? Masz pomysły na ulepszenie strony? <contact>Daj nam znać!</contact>"
     },

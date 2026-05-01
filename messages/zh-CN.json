@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "让我们开始吧！",
-      "desc": "只是想查点东西或者算算数字？<em>嗯，好棒的数字！</em> 去 <link>{database}</link> 逛逛吧。",
+      "desc": "想查点东西或者算算账？<em>数学万岁！</em> 快去 <link>{database}</link> 逛逛吧。",
       "desc2": "从规划你的第一家工厂到管理整个帝国的生产速率，所有东西都在 <link>{toolsSection}</link> 板块里。",
       "errorDesc": "发现错误或缺失信息？或者想提点改进建议？随时 <contact>联系我们</contact>！"
     },

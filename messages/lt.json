@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Pradėkime!",
-      "desc": "Norai trumpai pasiklausyti ar su skaičiais pabandyti? <em>Mm, skanūs skaičiai!</em> Tada apsilankyk <link>{database}</link> ir pradėk tyrinėti.",
+      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Matematika – tai jėga!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
       "desc2": "Nuo pirmosios gamyklos planavimo iki visos imperijos gamybos valdymo, rasi viską <link>{toolsSection}</link> skyriuje.",
       "errorDesc": "Susidūrė su klaida ar trūksta informacijos? Ar turi pasiūlymų, kaip pagerinti svetainę? Tada <contact>susisiek</contact> su mumis!"
     },

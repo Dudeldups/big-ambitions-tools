@@ -343,8 +343,8 @@
     "groupDeleteSuccess": "Grup \"{groupName}\" silindi!"
   },
   "modals": {
-    "discardChanges": "Kaydedilmemiş değişiklikleri iptal et",
-    "discardDesc": "Kaydedilmemiş değişikliklerin var. Bunları iptal etmek istediğine emin misin?",
+    "discardChanges": "Değişiklikleri iptal et",
+    "discardDesc": "Kaydedilmemiş değişikliklerin var. İptal etmek istediğine emin misin?",
     "resetForm": "Formu sıfırla",
     "resetDesc": "Form değerlerini varsayılan ayarlara sıfırlamak istediğine emin misin?",
     "wsPresetBtn": "Ön ayar ekle",
@@ -386,18 +386,18 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName} imzalı <em>{gameName}</em> için bilgi ve araçlar burada! Bu fan sitesi şu an oyuncuların oyunlarını geliştirmesi için fabrika mekaniklerine odaklanıyor. Hesaplamalar {gameVersion} sürümüne göredir ve güncellemelerle değişebilir."
+      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümüne dayanıyor ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",
-      "desc": "Sadece bir şeyi hızlıca bulmak veya sayılarla biraz oynamak mı istiyorsun? <em>Mhmm, lezzetli sayılar!</em> O zaman <link>{database}</link>'e göz at ve biraz gezin.",
+      "desc": "Sadece bir şeylere hızlıca bakıp biraz hesap kitap yapmak mı istiyorsun? <em>Ooo, matematik!</em> Hadi <link>{database}</link> kısmına bir göz at ve keşfetmeye başla.",
       "desc2": "İlk fabrikandan tüm imparatorluğun üretim hızlarını yönetene kadar her şeyi <link>{toolsSection}</link> bölümünde bulabilirsin.",
       "errorDesc": "Bir hata mı buldun veya eksik bilgi mi var? Ya da siteyi iyileştirmek için önerin mi var? <contact>bize ulaşmaktan çekinme</contact>!"
     },
     "game": {
       "title": "Oyunu henüz tanımıyorsun mu?",
-      "subtitle": "Ne yazık!",
-      "desc": "{gameName}, devrim niteliğinde bir iş rol yapma simülasyonu. Küçük dükkanlar açarak veya yavaş yavaş devasa şirketler kurarak, istediğin gibi sıfırdan New York'un en büyük girişimcisi olabilirsin.",
+      "subtitle": "Tüh!",
+      "desc": "{gameName}, çığır açan bir işletme RPG simülasyonu. Küçük dükkanlar açarak veya yavaş yavaş devasa şirketler kurarak, istediğin gibi sıfırdan New York'un en büyük girişimcisi olabilirsin.",
       "hovgaard": "<website>{companyName}</website> resmi web sitesine göz at!",
       "steam": "Oyuna doğrudan <link>{steam}</link> üzerinden ulaş!"
     },
@@ -415,14 +415,14 @@
   },
   "database": {
     "intro": {
-      "desc": "Ürünler, makineler, araçlar ve daha fazlası için detaylı oyun verilerini keşfet. Aradığını hızlıca bulmak için arama ve kategori filtrelerini kullan.",
+      "desc": "Ürünler, makineler, araçlar ve çok daha fazlasına dair oyun verilerini keşfet. Arama ve kategori filtreleriyle aradığını hemen bul.",
       "buttonDesc": "Bir kategori seç"
     },
     "products": {
       "caption": "Tüm ürünler tek bakışta. Üretim ve ithal fiyatları arasında kolayca geçiş yapabilirsin. Perakende fiyatı tüm ilçeler üzerinden ortalama değerdir. Karlar, seçilen zorluk seviyesine göre malzeme maliyetleri, çalışan maaşları ve vergileri dahil olan net değerler olarak gösterilir. <br></br>Nasıl hesaplandığına meraklı mısın? <link>{toolsSection}</link> bölümünü kontrol et."
     },
     "ingredients": {
-      "caption": "Tüm hammaddelerin özelliklerine genel bir bakış. Doğru fiyatları görmek için zorluk seviyesini seç."
+      "caption": "Tüm hammaddeler ve özellikleri. Doğru fiyatları görmek için zorluk seviyesini seç."
     },
     "machines": {
       "caption": "İşte üretimde kullanabileceğin tüm makineler. Bir ana makine ile bir veya iki yan makineyi birleştirerek Giyim İş İstasyonu oluştur."
@@ -439,7 +439,7 @@
       "desc": "Burada oyunun sayısal verileri ve istatistiklerine derinlemesine dalabilirsin. Fabrikalarını planla ve tüm İmparatorluğun lojistiğini yönet!"
     },
     "playthroughs": {
-      "desc": "Aşağıda oyun kayıtlarını oluşturabilir ve yönetebilirsin. Her bir kayıt, oyunun tek bir turunu ifade eder. Farklı turları karşılaştırmak, farklı zorlukları denemek veya sadece ilerlemeni takip etmek için birden fazla kayıt oluşturabilirsin.",
+      "desc": "Aşağıda oyun kayıtlarını oluşturabilir ve yönetebilirsin. Her bir kayıt, oyunun tek bir turudur. Farklı turları karşılaştırmak, farklı zorlukları denemek veya sadece ilerlemeni takip etmek için birden fazla kayıt oluşturabilirsin.",
       "warning": "Önemli: İlerlemen tarayıcında saklanır. Tarayıcı verilerini silersen veya Gizli/İnkognito Mod kullanırsan, her şey kaybolabilir.",
       "createButtonDesc": "Yeni Kayıt",
       "noPlaythroughs": "Henüz kayıt yok. Başlamak için bir tane oluştur!",
@@ -450,7 +450,7 @@
       }
     },
     "playthroughDetail": {
-      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasına giderek fabrikalarına genel bir bakış atabilir, üretim hatların için sipariş etmen gereken ürünleri takip edebilir ve çok daha fazlasını yapabilirsin. Fabrika planlayıcı; üretim istatistikleri, sipariş miktarları ve daha fazlası gibi tüm detayları gösterir.",
+      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasından fabrikalarına göz atabilir, sipariş etmen gereken ürünleri takip edebilir ve daha fazlasını keşfedebilirsin. Fabrika planlayıcı; üretim istatistikleri, sipariş miktarları ve çok daha fazlası hakkında tüm detayları gösterir.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
       "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
     },
@@ -473,12 +473,12 @@
       },
       "splitShoppingList": {
         "title": "Bölünmüş Satın Alma Listesi",
-        "desc": "Siparişi bölmek için bu malzemeleri doğrudan fabrikana sipariş et. Bu, {shelfAmount} palet rafının alabileceği maksimum miktardır. Ürettiğin kutu sayısını da hesaba katar. Bir haftalık üretimin tüm malzemelerini depolamak için {requiredAmount} rafa ihtiyacın olacak.",
+        "desc": "Siparişi bölmek için bu malzemeleri doğrudan fabrikana sipariş et. Bu, {shelfAmount} palet rafının alabileceği maksimum miktar. Ürettiğin kutu sayısını da hesaba katıyor. Bir haftalık üretimin tüm malzemelerini depolamak için {requiredAmount} rafa ihtiyacın olacak.",
         "desc1": "Kalan kısım, bir veya daha fazla satın alma görevlisi tarafından depoya sipariş edilecek. Tam listeyi görmek için <link>fabrika genel görünümüne</link> geri dön ve bir grup oluştur; böylece o depoya ne sipariş edileceğini ve her fabrikanın teslimat planını görebilirsin."
       }
     },
     "playthroughForm": {
-      "title": "Yeni oynanış oluştur",
+      "title": "Yeni oyun durumu oluştur",
       "desc": "Oyun seansına bir isim gir ve zorluk seviyesini seç, böylece araçlar doğru fiyatları hesaplayabilir. Oyun seanslarını istediğin zaman düzenleyebilir veya silebilirsin.",
       "placeholder": "Örn. John Manhattan",
       "deleteTitle": "Oyun seansı sil",
@@ -511,7 +511,7 @@
       }
     },
     "factoryPlanner": {
-      "title": "Fabrika Planlayıcı",
+      "title": "Fabrika Planlayıcısı",
       "desc": "Üretim hatların için gereken malzemeleri, makineleri ve iş gücünü hesapla. Üretmek istediğin ürünleri seç, planlayıcı gerisini halleder.",
       "information": {
         "legend": "Fabrik Bilgileri",
@@ -543,7 +543,7 @@
       "estimatedSales": "Tahmini haftalık satışlar",
       "estimatedSalesTooltip": "Mağazalarındaki her ürün için beklenen satışları gir.",
       "priceIndexButton": "Fiyat endeksi seç",
-      "priceIndexDesc": "Doğru geliri hesaplamak için bu ürünün güncel oyun içi fiyat endeksini seç. (İhracat fiyatı daha kesin sonuç verir.)"
+      "priceIndexDesc": "Doğru geliri hesaplamak için bu ürünün güncel oyun içi fiyat endeksini seç. (İhracat fiyatı daha doğru.)"
     }
   },
   "footer": {

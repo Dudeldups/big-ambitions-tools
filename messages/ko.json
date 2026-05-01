@@ -229,7 +229,7 @@
     "product": "제품",
     "products": "제품",
     "database": "데이터베이스",
-    "playthrough": "플레이 기록",
+    "playthrough": "저장 데이터",
     "playthroughs": "플레이 내역",
     "factory": "공장",
     "factories": "공장",
@@ -249,7 +249,7 @@
     "manufacturingCosts": "제조 비용",
     "manufacturingCostsShort": "제조비",
     "oneTimeCosts": "일회성 비용",
-    "recurringCosts": "정기 비용",
+    "recurringCosts": "정기 결제",
     "logisticsManager": "물류 관리자",
     "deliveryDriver": "배송 기사",
     "openingHours": "영업시간",
@@ -309,7 +309,7 @@
     "enginePower": "가속력",
     "autoParkSupported": "자동주차",
     "taxDeductible": "공제 가능",
-    "requiredDeliveryDriverSkillValue": "운전 숙련도",
+    "requiredDeliveryDriverSkillValue": "운전 스킬",
     "destinationsThatCanDeliver": "기본 목적지",
     "destinationsFull": "최대 목적지",
     "employees": "직원",
@@ -379,7 +379,7 @@
       "shelfAmountTooLow": "공장이 작동하려면 선반을 추가해주세요."
     },
     "factoryGroup": {
-      "nameTooLong": "그룹 이름은 30자까지만 가능해요",
+      "nameTooLong": "그룹 이름은 최대 30자예요",
       "nameRequired": "그룹 이름을 입력해주세요."
     }
   },
@@ -390,14 +390,14 @@
     },
     "cta": {
       "title": "시작해볼까요!",
-      "desc": "그냥 정보 좀 찾아보고 숫자 계산이나 해볼까? <em>음, 맛있는 숫자들!</em> 그럼 <link>{database}</link>로 가서 구경해 봐!",
+      "desc": "그냥 뭐 좀 찾아보고 숫자 계산이나 좀 해볼까? <em>좋아, 수학 가자!</em> <link>{database}</link>에 가서 한번 둘러봐.",
       "desc2": "첫 공장 계획부터 제국 전체의 생산율 관리까지, 모든 것은 <link>{toolsSection}</link> 섹션에 있어요.",
       "errorDesc": "오류나 누락된 정보를 발견하셨나요? 아니면 사이트를 개선할 제안이 있으신가요? <contact>편하게 연락해주세요</contact>!"
     },
     "game": {
       "title": "아직 게임을 모르고 계세요?",
       "subtitle": "정말 아쉽네요!",
-      "desc": "{gameName}은 혁명적인 비즈니스 RPG 시뮬레이션이에요! 작은 가게부터 시작해 거대 기업을 일구며 뉴욕 최고의 사업가로 성장해 보세요. 당신이 원하는 방식대로요!",
+      "desc": "{gameName}은 혁명적인 비즈니스 RPG 시뮬레이션이에요! 아무것도 없는 상태에서 작은 가게를 시작해 거대 기업을 일구며, 뉴욕 최고의 사업가로 성장해 보세요. 여러분이 원하는 방식 그대로 말이죠!",
       "hovgaard": "<website>{companyName}</website> 의 공식 웹사이트를 확인해보세요",
       "steam": "<link>{steam}</link> 에서 게임을 직접 방문하세요"
     },
@@ -495,7 +495,7 @@
     "factoryGroups": {
       "buttonDesc": "그룹 생성",
       "title": "공장 그룹",
-      "desc": "제품 카테고리별로 공장을 그룹화해서 한눈에 확인할 수 있어요. 그룹화된 공장에 팔레트 선반이 부족하면, 쇼핑 리스트에서 각 공장과 창고에 무엇을 더 주문해야 하는지 알려줄 거예요. 배송 대화상자에서도 각 공장으로 보낼 물품을 바로 확인할 수 있어요.",
+      "desc": "제품 카테고리별로 공장을 그룹화해서 한눈에 확인할 수 있어요. 그룹화된 공장에 팔레트 선반이 부족하면, 주문 목록에서 나머지를 채우기 위해 각 공장과 창고에 무엇을 더 주문해야 하는지 알려줄 거예요. 배송 창에서도 각 공장으로 보낼 물품을 바로 확인할 수 있어요.",
       "groupEmpty": "이 그룹에는 공장이 없어요. 공장 카드를 여기로 끌어다 놓아 추가해 보세요.",
       "ungroupedTitle": "그룹화되지 않은 공장",
       "ungroupedEmpty": "여기에 그룹화되지 않은 공장이 없어요. 공장 카드를 여기에 드래그하거나 새 공장을 추가하세요.",
@@ -543,11 +543,11 @@
       "estimatedSales": "예상 주간 매출",
       "estimatedSalesTooltip": "각 제품별 예상 매출을 입력하세요.",
       "priceIndexButton": "가격 지수 선택",
-      "priceIndexDesc": "정확한 수익 계산을 위해 이 제품의 현재 게임 내 가격 지수를 선택해 보세요. (수출 가격이 더 정확해요!)"
+      "priceIndexDesc": "수익을 정확히 계산하려면 이 제품의 인게임 가격 지수를 골라봐! (수출 가격이 더 정확해.)"
     }
   },
   "footer": {
-    "assets": "게임 내 모든 이미지, 상표 및 에셋의 권리는 각 소유자에게 있습니다.",
+    "assets": "게임 내 모든 이미지, 상표, 에셋은 각각의 소유자 거예요.",
     "fanMade": "이 사이트는 팬이 만든 사이트고, 게임 개발사와는 아무 관련이 없어요. 소스 코드는 <link>GitHub</link>에서 볼 수 있어요."
   }
 }

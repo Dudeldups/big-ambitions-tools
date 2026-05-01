@@ -229,8 +229,8 @@
     "product": "Tuote",
     "products": "Tuotteet",
     "database": "Tietokanta",
-    "playthrough": "Läpipeluu",
-    "playthroughs": "Läpipelut",
+    "playthrough": "Tallennus",
+    "playthroughs": "Tallennukset",
     "factory": "Tehdas",
     "factories": "Tehtaat",
     "vehicle": "ajoneuvo",
@@ -390,14 +390,14 @@
     },
     "cta": {
       "title": "Aloitetaan!",
-      "desc": "Haluatko vain tarkistaa jotain tai pyöritellä numeroita? <em>Mhmm, herkullisia lukuja!</em> Kurkkaa <link>{database}</link> ja ala tutustumaan.",
+      "desc": "Haluatko vaan nopeasti tarkistaa jotain tai pähkäillä lukuja? <em>Jee, matikkaa!</em> Kurkkaa <link>{database}</link> ja ala tutkia.",
       "desc2": "Ensimmäisen tehtaan suunnittelusta koko imperiumisi tuotannonopeuksien hallintaan asti löydät kaiken <link>{toolsSection}</link> -osiossa.",
-      "errorDesc": "Löysitkö virheen tai puuttuuko tietoja? Onko sinulla ehdotuksia sivun parantamiseksi? <contact>Ota rohkeasti yhteyttä</contact>!"
+      "errorDesc": "Löysitkö virheen tai puuttuuko tietoja? Onko sinulla ehdotuksia sivun parantamiseksi? <contact>Laita viestiä!</contact>"
     },
     "game": {
       "title": "Etkö tunne peliä vielä?",
       "subtitle": "Harmi!",
-      "desc": "{gameName} on vallankumouksellinen bisnes-roolipelisimulaatio. Nouse nollasta New Yorkin suurimmaksi yrittäjäksi avaamalla pieniä liikkeitä tai rakentamalla suuria yrityksiä hitaasti – juuri niin kuin haluat.",
+      "desc": "{gameName} on vallankumouksellinen bisnes-roolipeli. Nouse nollasta New Yorkin suurimmaksi yrittäjäksi avaamalla pieniä liikkeitä tai rakentamalla hitaasti valtavia yrityskonserneja – ihan miten itse haluat.",
       "hovgaard": "Tsekkaa <website>{companyName}</website> viralliset nettisivut",
       "steam": "Löydät pelin suoraan osoitteesta <link>{steam}</link>"
     },
@@ -422,16 +422,16 @@
       "caption": "Kaikki tuotteet yhdellä silmäyksellä. Voit vaihtaa helposti valmistus- ja tuontihintojen välillä. Myyntihinta on keskiarvo kaikista kaupunginosista. Voittotiedot ovat nettomäärät, mukaan lukien raaka-aineiden kustannukset, työntekijöiden palkat ja verot valitun vaikeustason perusteella. <br></br>Haluatko tietää, miten lasketaan? Katso <link>{toolsSection}</link> -osio."
     },
     "ingredients": {
-      "caption": "Yleiskatsaus kaikista raaka-aineista ja niiden ominaisuuksista. Valitse vaikeustaso nähdäksesi oikeat hinnat."
+      "caption": "Yleiskatsaus kaikista raaka-aineista ja niiden ominaisuuksista. Valitse vaikeustaso, niin näet oikeat hinnat."
     },
     "machines": {
       "caption": "Kaikki tuotantoon käytettävät koneet. Yhdistä yksi pääkone ja yksi tai kaksi apukonetta, niin saat vaatetyöpisteen."
     },
     "inventory": {
-      "caption": "Pieni yleiskatsaus kaikkiin... säilytysvaihtoehtoihin. Tällä hetkellä vain. Pian lisää!"
+      "caption": "Pieni yleiskatsaus kaikista... säilytysvaihtoehdoista. Toistaiseksi vain nämä. Pian lisää!"
     },
     "vehicles": {
-      "caption": "Etsitkö maksimaalista kuormaa vai vain nopeinta ajelua? Löydät sen täältä. Ajajan taito liittyy hahmoon {deliveryDriver}, ja maksimikohteet vaativat {logisticsManager}:n 100 % taidon."
+      "caption": "Etsitkö paljon tavaraa vai vain nopeinta menoa? Löydät ne täältä. Kuljettajan taitotaso riippuu {deliveryDriver}-hahmostasi, ja enimmäismäärä kohteita vaatii {logisticsManager}:n 100 % taidon."
     }
   },
   "tools": {
@@ -439,20 +439,20 @@
       "desc": "Tässä voit sukeltaa syvälle pelin numeroihin ja tilastoihin. Suunnittele tehtaasi ja hallitse koko imperiumisi logistiikkaa!"
     },
     "playthroughs": {
-      "desc": "Alapuolelta voit luoda ja hallita pelikierroksiasi. Yksi pelikierros on yksi pelin läpivienti. Voit luoda useita kierroksia vertaillaksesi eri suorituksia, kokeillaksesi uusia vaikeustasoja tai vain seurataksesi edistymistäsi.",
+      "desc": "Alhaalta voit luoda ja hallita pelikierroksiasi. Yksi pelikierros vastaa yhtä pelin läpivientiä. Voit luoda useita kierroksia vertaillaksesi eri suorituksia, kokeillaksesi muita vaikeustasoja tai vain seurataksesi edistymistäsi.",
       "warning": "Huom: Edistymisesi tallentuu selaimeen. Jos tyhjennät selaimen tiedot tai käytät incognito-tilaa, kaikki voi kadota.",
-      "createButtonDesc": "Uusi tallenne",
-      "noPlaythroughs": "Ei vielä tallenteita. Luo uusi aloittaaksesi!",
+      "createButtonDesc": "Uusi pelikerta",
+      "noPlaythroughs": "Ei vielä pelikertoja. Luo uusi aloittaaksesi!",
       "notFound": {
         "title": "Tallennusta ei löytynyt",
-        "desc": "Tämä tallenne ei ole olemassa tai se on poistettu.",
+        "desc": "Tallennus ei ole olemassa tai se on poistettu.",
         "link": "Takaisin tallenteiden listaan"
       }
     },
     "playthroughDetail": {
       "desc": "Tässä näet imperiumisi tuotantotilastot. Käy \"Tehtaat\"-sivulla katsomassa tehtaasi, seuraamassa tilattavia osia ja paljon muuta. Tehtaan suunnittelija näyttää tarkat tiedot tuotantomääristä, tilauksista ja niin edelleen.",
       "productionOverview": "Viikoittainen tuotantoyleiskatsaus",
-      "noProductionData": "Ei vielä mitään tietoja. Luo tehtaat, niin näet tuotantotilastosi tässä."
+      "noProductionData": "Ei vielä tietoja. Luo tehtaat, niin näet tuotantotilastosi tässä."
     },
     "factories": {
       "title": "Omat tehtaat",
@@ -469,24 +469,24 @@
       "editBtn": "Muokkaa tehtaata",
       "shoppingList": {
         "title": "Ostolista",
-        "desc": "Tässä on lista tehtaasi viikoittaisista tarvikkeista täydellä kapasiteetilla toimimiseen."
+        "desc": "Nämä ovat tehtaasi viikoittaiset tarvikkeet täydellä kapasiteetilla toimimiseen."
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
-        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, joka {shelfAmount} lavahyllyysi mahtuu. Se huomioi myös valmistettavien laatikoiden määrän. Tarvitset {requiredAmount} hyllyä varastoidaksesi kaikki raaka-aineet koko viikon tuotantoon.",
-        "desc1": "Loput täytyy tilata varastoon yksi tai useampi ostaja. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
+        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, joka {shelfAmount} lavahyllylle mahtuu. Se huomioi myös valmistettavien laatikoiden määrän. Koko viikon tuotannon raaka-aineisiin tarvitset {requiredAmount} hyllyä.",
+        "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
       }
     },
     "playthroughForm": {
       "title": "Luo uusi pelikerta",
-      "desc": "Anna pelikerrallesi nimi ja valitse vaikeusaste, jotta työkalut laskevat oikeat hinnat. Voit muokata tai poistaa pelikerrat milloin tahansa.",
+      "desc": "Nimeä pelisi ja valitse vaikeusaste, jotta työkalut laskevat oikeat hinnat. Voit muokata tai poistaa pelisi milloin tahansa.",
       "placeholder": "esim. John Manhattan",
       "deleteTitle": "Poista pelikerta",
-      "deleteDesc": "Oletko varma, että haluat poistaa tämän pelikerran? Toimintoa ei voi peruuttaa."
+      "deleteDesc": "Oletko varma, että haluat poistaa tämän pelin? Tätä ei voi perua."
     },
     "factoryForm": {
       "deleteTitle": "Poista tehdas",
-      "deleteDesc": "Oletko varma, että haluat poistaa tämän tehtaan? Toimintoa ei voi peruuttaa."
+      "deleteDesc": "Oletko varma, että haluat poistaa tämän tehtaan? Tätä ei voi perua."
     },
     "stats": {
       "netProfitPerWeek": "Nettovoitto / viikko",
@@ -495,15 +495,15 @@
     "factoryGroups": {
       "buttonDesc": "Luo ryhmä",
       "title": "Tehtaanryhmät",
-      "desc": "Voit ryhmitellä tehtaat tuotekategorioittain saadaksesi paremman yleiskuvan. Jos ryhmitellyillä tehtailla ei ole tarpeeksi lavahyllyjä, ostoslista kertoo, mitä sinun on tilattava jokaiseen tehtaaseen ja varastoon lopun kattamiseksi. Toimitusvalikko näyttää myös, mitä kuhunkin tehtaaseen tulee lähettää.",
+      "desc": "Voit ryhmitellä tehtaat tuotekategorioittain saadaksesi paremman yleiskuvan. Jos ryhmitellyillä tehtailla ei ole tarpeeksi lavahyllyjä, ostoslista kertoo, mitä sinun on tilattava kuhunkin tehtaaseen ja myös varastoon, jotta loppuosa saadaan katettua. Toimitusvalikko näyttää myös, mitä kuhunkin tehtaaseen tulee lähettää.",
       "groupEmpty": "Tässä ryhmässä ei ole tehtaita. Vedä tehdaskortti tänne lisätäksesi sen.",
       "ungroupedTitle": "Ryhmittämättömät tehtaat",
-      "ungroupedEmpty": "Ei vielä ryhmittämättömiä tehtaita. Vedä tehdas kortti tänne tai luo uusi tehdas.",
+      "ungroupedEmpty": "Täällä ei ole vielä mitään ryhmittämättömiä tehtaita. Vedä tehdaskortti tänne tai luo uusi tehdas.",
       "deliveries": {
         "buttonDesc": "Toimitukset",
         "title": "Toimitussuunnitelma",
         "descNeeded": "Toimitussuunnitelmat tämän ryhmän tehtaille. Tarvitset {amount} lavahyllyä kaikkien tehtaiden varustamiseen.",
-        "descEnough": "Kaikilla tehtailla on tarpeeksi lavahyljyjä tarvittavien ainesosien säilyttämiseen."
+        "descEnough": "Kaikilla tehtailla on tarpeeksi lavahyllyjä kaikkien ainesosien säilytykseen."
       },
       "shoppingList": {
         "title": "Ryhmän ostoslista",
@@ -541,13 +541,13 @@
       "buttonDesc": "Uusi tehdas",
       "genericFactoryName": "{productName} tehdas",
       "estimatedSales": "Arvioidut viikoittaiset myynnit",
-      "estimatedSalesTooltip": "Syötä kauppojesi tuotteiden odotetut myynnit.",
+      "estimatedSalesTooltip": "Syötä kauppojesi tuotteiden arvioitu myynti.",
       "priceIndexButton": "Valitse hintaindeksi",
       "priceIndexDesc": "Valitse tämän tuotteen nykyinen pelihintaindeksi oikean tulon laskemiseksi. (Vientihinta on tarkempi.)"
     }
   },
   "footer": {
     "assets": "Kaikki pelin kuvat, tavaramerkit ja assetit kuuluvat omistajilleen.",
-    "fanMade": "Tämä on fanien tekemä sivusto, eikä se liity pelin kehittäjiin. Lähdekoodi löytyy <link>GitHubista</link>."
+    "fanMade": "Tämä on fanien tekemä sivusto, eikä se ole yhteydessä pelinkehittäjiin. Lähdekoodi löytyy <link>GitHubista</link>."
   }
 }

@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Commençons !",
-      "desc": "Tu veux juste chercher quelque chose ou jouer un peu avec les chiffres ? <em>Mhmm, de bons petits chiffres !</em> Passe sur la <link>{database}</link> et commence à explorer.",
+      "desc": "T'as juste envie de checker un truc ou de jouer avec les chiffres ? <em>Trop bien, les maths !</em> Direction la <link>{database}</link> pour aller fouiller un peu.",
       "desc2": "De la planification de ta première usine à la gestion des taux de production de tout ton empire, tu trouveras tout dans la section <link>{toolsSection}</link>.",
       "errorDesc": "Tu as trouvé une erreur ou des infos manquantes ? Ou tu as des suggestions pour améliorer le site ? N'hésite pas à <contact>nous contacter</contact> !"
     },

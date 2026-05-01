@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "來開始吧！",
-      "desc": "只想查點資料或玩點數字？<em>Mhmm, 數字真香！</em> 去 <link>{database}</link> 逛逛吧。",
+      "desc": "只是想隨便查點資料，或是算一下數字嗎？<em>太棒了，數學萬歲！</em> 快到 <link>{database}</link> 逛逛吧。",
       "desc2": "從規劃你的第一家工廠，到管理整個帝國的生产率，一切都在 <link>{toolsSection}</link> 裡。",
       "errorDesc": "發現錯誤或資訊遺漏？或有建議想改善網站？隨時 <contact>聯絡我們</contact> 吧！"
     },

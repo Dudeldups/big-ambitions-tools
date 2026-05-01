@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Tak jdeme do toho!",
-      "desc": "Chceš si jen něco rychle najít a trochu si pohrát s čísly? <em>Mmm, lahodná čísla!</em> Mrkni do <link>{database}</link> a začni prozkoumávat.",
+      "desc": "Chceš se jen tak něco vyhledat a trochu pokrouhat s čísly? <em>To jo, matika!</em> Zajeď do <link>{database}</link> a začni prozkoumávat.",
       "desc2": "Od plánování první továrny až po řízení výrobních temp celého impéria najdeš všechno v sekci <link>{toolsSection}</link>.",
       "errorDesc": "Našel jsi chybu nebo ti chybí nějaké informace? Nebo máš návrh, jak web vylepšit? Klidně se <contact>ozvi</contact>!"
     },

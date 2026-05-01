@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Iniziamo!",
-      "desc": "Vuoi solo cercare qualcosa o fare un po' di calcoli? <em>Mhmm, numeri deliziosi!</em> Dai un'occhiata alla <link>{database}</link> e inizia a esplorare.",
+      "desc": "Vuoi solo controllare qualcosa o fare due calcoli? <em>Sì, cavolo, i numeri!</em> Fai un salto nel <link>{database}</link> e inizia a curiosare.",
       "desc2": "Dalla pianificazione della tua prima fabbrica alla gestione dei tassi di produzione del tuo intero impero, troverai tutto nella sezione <link>{toolsSection}</link>.",
       "errorDesc": "Hai trovato un errore o mancano delle info? O hai suggerimenti per migliorare il sito? Sentiti libero di <contact>contattaci</contact>!"
     },

@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Let's get started!",
-      "desc": "Just want to look something up and do some number crunching? <em>Mhmm, tasty numbers!</em> Head over to the <link>{database}</link> and start exploring.",
+      "desc": "Just want to look something up and do some number crunching? <em>Hell yeah, math!</em> Head over to the <link>{database}</link> and start exploring.",
       "desc2": "From planning your first factory to managing production rates of your whole empire, you'll find everything in the <link>{toolsSection}</link> section.",
       "errorDesc": "Found an error or missing information? Or do you have suggestions to improve the site? Feel free to <contact>reach out</contact>!"
     },
@@ -549,5 +549,10 @@
   "footer": {
     "assets": "All game images, trademarks, and assets belong to their respective owners.",
     "fanMade": "This is a fan-made site and is not affiliated with the game's developers. Source code available on <link>GitHub</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Fan-made tools for Big Ambitions. Plan factories, calculate production stats, manage delivery plans, and browse game data."
+    }
   }
 }
