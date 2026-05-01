@@ -9,14 +9,12 @@ export type TranslatedMetadataProps = {
 
 type GenerateTranslatedMetadataOptions = {
   locale: string;
-
   titleNamespace?: string;
   titleKey?: string;
   fallbackTitle?: string;
-
   descriptionNamespace?: string;
   descriptionKey?: string;
-
+  descriptionValues?: Record<string, string | number | Date>;
   path?: string;
 };
 
@@ -55,6 +53,7 @@ export async function generateTranslatedMetadata({
   fallbackTitle = GLOSSARY.siteName,
   descriptionNamespace,
   descriptionKey = "description",
+  descriptionValues,
   path = "/",
 }: GenerateTranslatedMetadataOptions): Promise<Metadata> {
   let title = fallbackTitle;
@@ -75,7 +74,7 @@ export async function generateTranslatedMetadata({
       namespace: descriptionNamespace,
     });
 
-    description = t(descriptionKey);
+    description = t(descriptionKey, descriptionValues);
   }
 
   return {
