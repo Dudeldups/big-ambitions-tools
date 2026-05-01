@@ -16,6 +16,7 @@ type GenerateTranslatedMetadataOptions = {
   descriptionKey?: string;
   descriptionValues?: Record<string, string | number | Date>;
   path?: string;
+  noIndex?: boolean;
 };
 
 const BASE_URL = "https://big-ambitions-tools.com";
@@ -54,6 +55,7 @@ export async function generateTranslatedMetadata({
   descriptionNamespace,
   descriptionKey = "description",
   descriptionValues,
+  noIndex = false,
   path = "/",
 }: GenerateTranslatedMetadataOptions): Promise<Metadata> {
   let title = fallbackTitle;
@@ -82,6 +84,12 @@ export async function generateTranslatedMetadata({
     title,
     description,
     alternates: buildAlternates(path, locale),
+    robots: noIndex
+      ? {
+          index: false,
+          follow: false,
+        }
+      : undefined,
     openGraph: {
       title,
       description,
