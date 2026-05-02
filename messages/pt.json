@@ -277,7 +277,8 @@
       "hourly": "Por hora",
       "daily": "Diário",
       "weekly": "Semanal"
-    }
+    },
+    "navigation": "Navegação"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Estante para Paletes} other {Estantes para Paletes}}",
@@ -552,13 +553,22 @@
   },
   "metadata": {
     "root": {
-      "description": "Ferramentas de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
+      "description": "Ferramentas feitas por fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
     },
     "database": {
       "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."
     },
     "tools": {
       "description": "Domine a economia de {gameName}. Do planejamento avançado de fábricas à gestão logística complexa — consiga os dados que você precisa para expandir seu império."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Nome"
+        }
+      }
     }
   }
 }

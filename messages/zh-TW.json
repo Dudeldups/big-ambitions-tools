@@ -277,7 +277,8 @@
       "hourly": "每小時",
       "daily": "每日",
       "weekly": "每週"
-    }
+    },
+    "navigation": "導航"
   },
   "counts": {
     "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
@@ -298,7 +299,7 @@
     "profitPerHour": "利潤/小時",
     "amount": "數量",
     "amountPerBox": "數量/箱",
-    "usedInProducts": "包含於產品",
+    "usedInProducts": "應用產品",
     "importers": "進口商",
     "ingredients": "原料",
     "productionRate": "產量/小時",
@@ -319,8 +320,8 @@
     "deliverUpTo": "配送上限"
   },
   "workstationPresets": {
-    "cheapClothing": "便宜服裝",
-    "expensiveClothing": "昂貴服裝",
+    "cheapClothing": "服裝（便宜）",
+    "expensiveClothing": "服裝（昂貴）",
     "electronics": "電子產品",
     "jewelry": "珠寶",
     "gifts": "禮物",
@@ -334,7 +335,7 @@
     "playthroughSaveSuccess": "遊戲進度 \"{characterName}\" 已建立！",
     "playthroughEditSuccess": "遊戲進度 \"{characterName}\" 已更新！",
     "playthroughDeleteSuccess": "遊戲進度 \"{characterName}\" 已刪除！",
-    "workstationCopyError": "請先選擇服裝工作站與產品。",
+    "workstationCopyError": "請先選擇工作站與產品。",
     "factorySaveSuccess": "\"{factoryName}\" 已建立並加入遊戲進度！",
     "factoryEditSuccess": "\"{factoryName}\" 已更新！",
     "factoryDeleteSuccess": "\"\"{factoryName}\" 已刪除！\"",
@@ -343,8 +344,8 @@
     "groupDeleteSuccess": "群組 \"{groupName}\" 已刪除！"
   },
   "modals": {
-    "discardChanges": "捨棄未儲存的變更",
-    "discardDesc": "你有未儲存的變更。確定要捨棄嗎？",
+    "discardChanges": "不儲存變更",
+    "discardDesc": "還有沒存檔的變更喔，確定要捨棄嗎？",
     "resetForm": "重置表單設定",
     "resetDesc": "確定要將表單設定還原為預設設定嗎？",
     "wsPresetBtn": "新增預設設定",
@@ -359,7 +360,7 @@
     "groupLabelName": "名稱",
     "groupLabelColor": "顏色",
     "deleteGroupTitle": "刪除群組",
-    "deleteGroupDesc": "確定要刪除此群組嗎？若有已分配的工廠，會重新分配到預設群組。",
+    "deleteGroupDesc": "確定要刪除這個群組嗎？如果有工廠被分配在裡面，會重新分配到預設群組。",
     "oneTimeCostDesc": "工廠的一次性安裝費用。"
   },
   "errors": {
@@ -390,8 +391,8 @@
     },
     "cta": {
       "title": "來開始吧！",
-      "desc": "只是想隨便查點資料，或是算一下數字嗎？<em>喔耶，就是愛算數學！</em> 快到 <link>{database}</link> 逛逛吧。",
-      "desc2": "從規劃你的第一家工廠，到管理整個帝國的生產率，一切都在 <link>{toolsSection}</link> 裡。",
+      "desc": "只想隨手查查資料、算算數字嗎？<em>太棒了，算數學！</em> 快來 <link>{database}</link> 逛逛吧。",
+      "desc2": "<link>{toolsSection}</link> 區塊應有盡有，從規劃第一間工廠到管理整個帝國的生產率通通搞定。",
       "errorDesc": "發現錯誤或資訊遺漏？或有建議想改善網站？隨時 <contact>聯絡我們</contact> 吧！"
     },
     "game": {
@@ -425,7 +426,7 @@
       "caption": "查看所有原料及其屬性。選擇難度以查看正確價格。"
     },
     "machines": {
-      "caption": "所有用於生產的機器。將一台主要機器與一到兩台次要機器組合，打造出一個服裝工作站。"
+      "caption": "所有用於生產的機器。將一台主要機器與一到兩台次要機器組合，打造出一個工作站。"
     },
     "inventory": {
       "caption": "所有...儲存選項的概覽。暫時就這些。之後還有更多！"
@@ -439,13 +440,13 @@
       "desc": "這裡可以深入探索遊戲的數字與統計數據。規劃你的工廠，並管理整個帝國的物流！"
     },
     "playthroughs": {
-      "desc": "下方可以建立與管理你的遊戲進度。每個進度都代表一次單獨的遊玩紀錄。你可以建立多個進度來比較不同的紀錄、嘗試不同難度，或單純追蹤進度。",
+      "desc": "你可以在下方建立和管理遊戲進度。每個進度都代表一次單獨的遊玩紀錄。你可以透過建立多個進度來比較不同的紀錄、嘗試不同難度，或是單純追蹤你的進度。",
       "warning": "重要：你的進度儲存在瀏覽器中。如果你清除瀏覽器資料或使用隱私/無痕模式，可能會遺失。",
       "createButtonDesc": "新進度",
       "noPlaythroughs": "目前還沒有任何遊戲進度。快來建立一個吧！",
       "notFound": {
         "title": "找不到遊戲進度",
-        "desc": "這個遊戲進度不存在，或是已經被刪除了。",
+        "desc": "此遊戲進度不存在或已被刪除。",
         "link": "返回遊戲進度總覽"
       }
     },
@@ -456,12 +457,12 @@
     },
     "factories": {
       "title": "你的工廠",
-      "desc": "工廠概覽。你可以編輯、刪除，或複製現有數值來建立新工廠。點擊卡片即可查看包含採購清單在內的詳細資訊。",
-      "desc1": "你也可以點擊下方的「建立群組」按鈕來進行分組，方便在同一個地方管理所有工廠。如果你的工廠都由中央倉庫供料，這個功能非常實用。系統也會根據你新增的棧板架數量，為各個工廠建議配送計畫。",
+      "desc": "這裡可以看你的工廠概況。你可以編輯、刪除，或是直接複製現有數值來開新工廠。想看更多細節（包含採購清單）？點一下卡片就好。",
+      "desc1": "你也可以按下方的「建立群組」把工廠分組，方便一次管理所有工廠。如果你是用中央倉庫來供料給多間工廠，這功能超好用！系統也會根據你新增的棧板架數量，幫每個工廠建議配送計畫。",
       "noFactories": "你的遊戲進度裡還沒有任何工廠，快來建立一個吧！",
       "notFound": {
         "title": "找不到工廠",
-        "desc": "這間工廠不存在，或者已經被刪除了。",
+        "desc": "找不到這間工廠，或是它已被刪除。",
         "link": "返回工廠總覽"
       }
     },
@@ -520,12 +521,12 @@
         "palletDesc": "設定此工廠可用的棧板架數量。",
         "dailyAmount": "每日配送需要 <strong>{count}</strong> {object}。",
         "weeklyAmount": "每週配送需要 <strong>{count}</strong> {object}。",
-        "shelfExplanation": "新增至少一個服裝工作站，就能看到需要的棧板架數量。",
+        "shelfExplanation": "新增至少一個工作站，就能看到需要的棧板架數量。",
         "enoughWeekly": "足以應付每週配送。",
-        "enoughDaily": "只夠每日配送，若要進行每週物流則需要倉庫。",
+        "enoughDaily": "只夠每天配送。如果要跑每週物流，得準備個倉庫。",
         "notEnough": "即使每日配送也不夠儲存空間。",
         "overflowWarning": "庫存快塞爆了！",
-        "overflowDesc": "生產速度快於原料消耗。已相應調整貨架數量。"
+        "overflowDesc": "產量比原料消耗還快，所以調整了貨架數量。"
       },
       "employees": {
         "desc": "輸入每位員工的薪資。若不包含薪資計算，請留空。",
@@ -547,8 +548,8 @@
     }
   },
   "footer": {
-    "assets": "遊戲中的圖片、商標與素材，版權皆歸原創作者所有。",
-    "fanMade": "這是一個粉絲製作的網站，與遊戲開發者無關。原始碼可以在 <link>GitHub</link> 找到。"
+    "assets": "遊戲裡的圖片、商標和素材，版權都屬於各自的持有者。",
+    "fanMade": "本站為粉絲自製，並非由遊戲開發團隊所營運。你可以在 <link>GitHub</link> 看到原始碼。"
   },
   "metadata": {
     "root": {
@@ -559,6 +560,15 @@
     },
     "tools": {
       "description": "掌控 {gameName} 的經濟命脈。從進階工廠規劃到複雜的物流管理——獲取擴張帝國所需的一切數據。"
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "名稱"
+        }
+      }
     }
   }
 }

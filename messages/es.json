@@ -277,7 +277,8 @@
       "hourly": "Por hora",
       "daily": "Diario",
       "weekly": "Semanal"
-    }
+    },
+    "navigation": "Navegación"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Estante de palets} other {Estantes de palets}}",
@@ -559,6 +560,15 @@
     },
     "tools": {
       "description": "Domina la economía de {gameName}. Desde la planificación avanzada de fábricas hasta la gestión logística compleja: consigue los datos que necesitas para expandir tu imperio."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Nombre"
+        }
+      }
     }
   }
 }

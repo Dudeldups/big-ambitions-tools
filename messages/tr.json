@@ -277,7 +277,8 @@
       "hourly": "Saatlik",
       "daily": "Günlük",
       "weekly": "Haftalık"
-    }
+    },
+    "navigation": "Gezinme"
   },
   "counts": {
     "palletShelf": "{count, plural, one {palet rafı} other {palet rafı}}",
@@ -386,7 +387,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
+      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümüne dayanıyor ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",
@@ -450,7 +451,7 @@
       }
     },
     "playthroughDetail": {
-      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasından fabrikalarına göz atabilir, sipariş etmen gereken ürünleri takip edebilir ve çok daha fazlasını keşfedebilirsin. Fabrika planlayıcısı ise sana üretim istatistikleri, sipariş miktarları ve çok daha fazlası hakkında tüm detayları sunar.",
+      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasından fabrikalarına göz atabilir, üretim hatların için sipariş etmen gereken ürünleri takip edebilir ve çok daha fazlasını bulabilirsin. Fabrika planlayıcısı; üretim istatistikleri, sipariş miktarları ve daha fazlası hakkındaki tüm detayları gösterir.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
       "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
     },
@@ -559,6 +560,15 @@
     },
     "tools": {
       "description": "{gameName} ekonomisinde ustalaş. İleri düzey fabrika planlamasından karmaşık lojistik yönetimine kadar—imparatorluğunu büyütmek için ihtiyacın olan tüm veriler burada."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Ad"
+        }
+      }
     }
   }
 }

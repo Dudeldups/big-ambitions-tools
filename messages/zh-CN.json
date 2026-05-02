@@ -277,7 +277,8 @@
       "hourly": "每小时",
       "daily": "每日",
       "weekly": "每周"
-    }
+    },
+    "navigation": "导航"
   },
   "counts": {
     "palletShelf": "{count, plural, one {托盘货架} other {托盘货架}}",
@@ -310,8 +311,8 @@
     "autoParkSupported": "自动泊车",
     "taxDeductible": "可抵扣",
     "requiredDeliveryDriverSkillValue": "司机技能",
-    "destinationsThatCanDeliver": "基础目的地",
-    "destinationsFull": "最多目的地",
+    "destinationsThatCanDeliver": "起始地",
+    "destinationsFull": "最大目的地",
     "employees": "员工",
     "description": "描述",
     "export": "出口",
@@ -334,7 +335,7 @@
     "playthroughSaveSuccess": "存档 \"{characterName}\" 已创建！",
     "playthroughEditSuccess": "存档 \"{characterName}\" 已更新！",
     "playthroughDeleteSuccess": "存档 \"{characterName}\" 已删除！",
-    "workstationCopyError": "请先选择服装工作台和产品。",
+    "workstationCopyError": "请先选择工作站和产品。",
     "factorySaveSuccess": "工厂 \"{factoryName}\" 创建并加入存档！",
     "factoryEditSuccess": "工厂 \"{factoryName}\" 已更新！",
     "factoryDeleteSuccess": "工厂 \"{factoryName}\" 已删除！",
@@ -364,7 +365,7 @@
   },
   "errors": {
     "playthrough": {
-      "notFound": "找不到这个资源。",
+      "notFound": "哎呀，找不着这个资源。",
       "nameRequired": "角色应该有个名字。",
       "nameTooLong": "角色名最多 30 个字符。",
       "difficultyRequired": "请选择难度。",
@@ -380,7 +381,7 @@
     },
     "factoryGroup": {
       "nameTooLong": "组名最多 30 个字符。",
-      "nameRequired": "记得填个组名"
+      "nameRequired": "记得填个组名。"
     }
   },
   "home": {
@@ -391,7 +392,7 @@
     "cta": {
       "title": "走起！",
       "desc": "想查点东西或者算算账？<em>数学，真香！</em> 快去 <link>{database}</link> 逛逛吧。",
-      "desc2": "从规划你的第一家工厂到管理整个帝国的生产速率，你都能在 <link>{toolsSection}</link> 板块中找到。",
+      "desc2": "从规划你的首座工厂到掌控整个帝国的产能，<link>{toolsSection}</link> 板块应有尽有。",
       "errorDesc": "发现错误或缺失信息？或者想提点改进建议？随时 <contact>联系我们</contact>！"
     },
     "game": {
@@ -436,7 +437,7 @@
   },
   "tools": {
     "intro": {
-      "desc": "在这里，你可以深入研究游戏中的各项数据与统计信息。规划你的工厂，管理整个帝国的物流！"
+      "desc": "深入探索游戏的各项数据与统计信息。规划你的工厂，管理整个帝国的物流！"
     },
     "playthroughs": {
       "desc": "你可以在下方创建和管理你的存档。每个存档都代表一次游玩记录。你可以创建多个存档，用来对比不同的游玩情况、尝试不同难度，或者单纯记录你的进度。",
@@ -445,19 +446,19 @@
       "noPlaythroughs": "还没有存档。快来创建一个吧！",
       "notFound": {
         "title": "找不到存档",
-        "desc": "该存档不存在或已被删除。",
+        "desc": "这个存档不存在，或者已经被删除了。",
         "link": "返回存档概览"
       }
     },
     "playthroughDetail": {
-      "desc": "在这里可以查看帝国的生产统计数据。访问“工厂”页面来查看工厂概览、追踪生产线所需订购的物品等。工厂规划器会为你展示生产统计、订单量等详细信息。",
+      "desc": "你可以在这里查看帝国的生产统计数据。去“工厂”页面看看工厂概览，追踪生产线所需的订购物品等等。工厂规划器会为你展示生产统计、订单量等所有细节。",
       "productionOverview": "每周生产概览",
       "noProductionData": "暂无数据。创建工厂后，你可以在这里看到生产统计数据。"
     },
     "factories": {
       "title": "你的工厂",
       "desc": "这里你可以查看工厂概览。你可以编辑或删除它们，也可以复制当前值用于新工厂。要查看每个工厂的更多详情（包括购物清单），只需点击相应的卡片。",
-      "desc1": "点击下方的“创建分组”按钮，你还可以将它们归类。这样就能在一个地方查看并统一管理这些工厂。如果你使用中央仓库为多个工厂供料，这会非常方便。系统还会根据你添加的托盘货架数量，为每个工厂建议配送计划。",
+      "desc1": "你还可以通过点击下方的“创建分组”按钮来将它们归类，这样就能在一个地方查看并统一管理这些工厂。如果你使用中央仓库为多个工厂供料，这会非常方便。系统还会根据你添加的托盘货架数量，为每个工厂提供配送计划建议。",
       "noFactories": "你的存档里还没有工厂，快创建一个开始吧！",
       "notFound": {
         "title": "未找到工厂",
@@ -473,7 +474,7 @@
       },
       "splitShoppingList": {
         "title": "拆分购物清单",
-        "desc": "通过把这些原料订到工厂里来拆分订单。这是你的 {shelfAmount} 个托盘货架能容纳的最大量，同时也考虑了你正在生产的箱子数量。若要存储一整周所需的全部原料，你需要 {requiredAmount} 个货架。",
+        "desc": "将这些原料直接订向你的工厂以拆分订单。这是你的 {shelfAmount} 个托盘货架能容纳的最大量，同时也考虑了你正在生产的箱子数量。若要存储一整周所需的全部原料，你需要 {requiredAmount} 个货架。",
         "desc1": "剩下的订单需要由一名或多名采购员分别下单到仓库。回到 <link>工厂概览</link> 并创建一个组，就能看到该仓库完整的订货清单了。这里还会显示发往每个工厂的配送计划。"
       }
     },
@@ -525,7 +526,7 @@
         "enoughDaily": "仅够满足每日配送。每周物流还需要仓库。",
         "notEnough": "即使每日配送也不够存储。",
         "overflowWarning": "库存积压！",
-        "overflowDesc": "产量超过了原料消耗，货架数量已相应调整。"
+        "overflowDesc": "生产速度快于原料消耗，货架数已随之调整。"
       },
       "employees": {
         "desc": "输入每位员工的薪资。如果不想要计算薪资，可以留空。",
@@ -552,13 +553,22 @@
   },
   "metadata": {
     "root": {
-      "description": "{gameName} 玩家工具集。规划工厂、计算生产统计、管理配送计划，轻松查阅游戏数据。"
+      "description": "{gameName} 粉丝自制工具。规划工厂、查看产量统计、管理配送计划，并轻松查阅游戏数据。"
     },
     "database": {
-      "description": "涵盖产品、机器、车辆、利润计算等详细的 {gameName} 游戏数据。"
+      "description": "浏览 {gameName} 的详细游戏数据，包括产品、机器、车辆、利润计算等内容。"
     },
     "tools": {
       "description": "掌控 {gameName} 的经济命脉。从进阶工厂规划到复杂的物流管理——获取扩张帝国所需的一切数据。"
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "名称"
+        }
+      }
     }
   }
 }

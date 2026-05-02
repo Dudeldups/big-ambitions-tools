@@ -277,7 +277,8 @@
       "hourly": "Tunnittain",
       "daily": "Päivittäin",
       "weekly": "Viikoittain"
-    }
+    },
+    "navigation": "Navigointi"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Lavahylly} other {Lavahyllyt}}",
@@ -439,7 +440,7 @@
       "desc": "Tässä voit sukeltaa syvälle pelin numeroihin ja tilastoihin. Suunnittele tehtaasi ja hallitse koko imperiumisi logistiikkaa!"
     },
     "playthroughs": {
-      "desc": "Täältä voit luoda ja hallita tallennuksiasi. Yksi tallennus on yksi pelikerta. Voit luoda useita tallennuksia vertaillaksesi eri suorituksia, kokeillaksesi muita vaikeustasoja tai vain seurataksesi edistymistäsi.",
+      "desc": "Alhaalta voit luoda ja hallita tallennuksiasi. Jokainen tallennus on oma pelikertansa. Voit tehdä useita tallennuksia vertaillaksesi eri pelikertoja, kokeilla muita vaikeustasoja tai vain seurata edistymistäsi.",
       "warning": "Huom: Edistymisesi tallentuu selaimeen. Jos tyhjennät selaimen tiedot tai käytät incognito-tilaa, kaikki voi kadota.",
       "createButtonDesc": "Uusi tallennus",
       "noPlaythroughs": "Ei vielä tallennuksia. Luo uusi ja pääset alkuun!",
@@ -469,11 +470,11 @@
       "editBtn": "Muokkaa tehtaata",
       "shoppingList": {
         "title": "Ostolista",
-        "desc": "Tässä on se, mitä tehdas tarvitsee viikoittain toimiakseen täydellä kapasiteetilla."
+        "desc": "Tehtaasi tarvitsee näitä viikoittain toimiakseen täydellä teholla."
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
-        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi sisältää. Se huomioi myös valmistettavien laatikoiden määrän. Tarvitset {requiredAmount} hyllyä koko viikon tuotannon raaka-aineiden säilytykseen.",
+        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, joka mahtuu {shelfAmount} lavahyllylle. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
         "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet koko listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
       }
     },
@@ -552,13 +553,22 @@
   },
   "metadata": {
     "root": {
-      "description": "{gameName}-fanien työkalut. Suunnittele tehtaat, laske tuotantotilastot, hallitse toimitussuunnitelmia ja selaa pelidataa."
+      "description": "Fanien tekemät työkalut {gameName}-peliin. Suunnittele tehtaat, laske tuotantotilastot, hallitse toimitussuunnitelmia ja selaa pelidataa."
     },
     "database": {
-      "description": "Selaa yksityiskohtaista pelidataa tuotteista, koneista, ajoneuvoista, tulolaskelmista ja muusta {gameName}-pelistä."
+      "description": "Selaa {gameName}-pelin yksityiskohtaista pelidataa: tuotteet, koneet, ajoneuvot, tulolaskelmat ja paljon muuta."
     },
     "tools": {
       "description": "Ota haltuun {gameName}-talous. Edistyneestä tehdassuunnittelusta monimutkaiseen logistiikkaan – tässä on kaikki data, jota tarvitset imperiumisi kasvattamiseen."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Nimi"
+        }
+      }
     }
   }
 }

@@ -239,7 +239,7 @@
     "difficulty": "Nehézség",
     "priceIndex": "Árindex",
     "priceIndices": "Árindexek",
-    "exportPrice": "Export ára",
+    "exportPrice": "Export ár",
     "revenue": "Bevétel",
     "expenses": "Költségek",
     "profit": "Nyereség",
@@ -277,7 +277,8 @@
       "hourly": "Óránként",
       "daily": "Naponta",
       "weekly": "Heti"
-    }
+    },
+    "navigation": "Navigáció"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raklappolc} other {Raklappolcok}}",
@@ -332,10 +333,10 @@
   "toasts": {
     "genericError": "Hiba történt. Kérlek ellenőrizd az adatokat és próbáld újra. Ha a probléma fennáll, frissítsd az oldalt.",
     "playthroughSaveSuccess": "\"{characterName}\" játékállatapot létrehozva!",
-    "playthroughEditSuccess": "\"{characterName}\" játékállapot frissítve!",
-    "playthroughDeleteSuccess": "{characterName} játékállapot törölve!",
+    "playthroughEditSuccess": "A \"{characterName}\" játékállapot frissítve!",
+    "playthroughDeleteSuccess": "A \"{characterName}\" játékállapot törölve!",
     "workstationCopyError": "Kérlek válassz először egy ruházati munkállomást és egy terméket.",
-    "factorySaveSuccess": "\"{factoryName}\" létrehozva és hozzáadva a játékállapothoz!",
+    "factorySaveSuccess": "A \"{factoryName}\" létrejött és hozzákerült a játékállapothoz!",
     "factoryEditSuccess": "\"{factoryName}\" frissítve!",
     "factoryDeleteSuccess": "\"{factoryName}\" törölve!",
     "groupSaveSuccess": "Csoport \"{groupName}\" létrehozva!",
@@ -345,7 +346,7 @@
   "modals": {
     "discardChanges": "Nem mentett változtatások elvetése",
     "discardDesc": "A változtatások nincsenek mentve. Biztos, hogy el akarod dobni őket?",
-    "resetForm": "Űrlap nullázása",
+    "resetForm": "Űrlap törlése",
     "resetDesc": "Biztos vagy, hogy az űrlap értékeit az alapbeállításokra vissza akarod állítani?",
     "wsPresetBtn": "Előbeállítás hozzáadása",
     "wsPresetTitle": "Előbeállítás kiválasztása",
@@ -419,13 +420,13 @@
       "buttonDesc": "Válassz egy kategóriát"
     },
     "products": {
-      "caption": "Minden termék egy pillantásra. Válts könnyedén a gyártási és az import árak között. A kiskeri ár minden kerület átlaga. A profit nettó érték, ami tartalmazza az összetevők költségeit, a munkabért és a nehézségnél meghatározott adókat. <br></br>Kíváncsi vagy, hogyan számolják ki? Nézd meg a <link>{toolsSection}</link> részt."
+      "caption": "Összes termék egy pillantásra. Válts könnyedén a gyártási és az import árak között. A kiskeri ár minden kerület átlaga. A profitot nettó értékként mutatjuk, beleértve az összetevők költségeit, a munkabért és a nehézségi szinten alapuló adókat. <br></br>Kíváncsi vagy, hogyan számolják ki? Nézd meg a <link>{toolsSection}</link> részt."
     },
     "ingredients": {
       "caption": "Minden nyersanyag áttekintése, beleértve tulajdonságaikat is. Válaszd a nehézséget, hogy lásd a helyes árakat."
     },
     "machines": {
-      "caption": "Az összes gép, amit a gyártáshoz használhatsz. Kombinálj egy főgépet egy vagy két melléggéppel Ruházati munkállomás létrehozásához."
+      "caption": "Az összes gép, amit a gyártáshoz használhatsz. Kombinálj egy főgépet egy vagy két melléggéppel, hogy Ruházati munkállomást építs."
     },
     "inventory": {
       "caption": "Egy kis áttekintés a... tárolási lehetőségeidről. Most csak ennyi. Jön még több!"
@@ -439,14 +440,14 @@
       "desc": "Itt merülhetsz el a játék számaiban és statisztikáiban. Tervezd meg a gyáraidat, és irányítsd az egész birodalmod logisztikáját!"
     },
     "playthroughs": {
-      "desc": "Az alábbiakban létrehozhatsz és kezelhetsz játékállapodásokat. Egy játékállapot egyetlen menetet jelent. Több játékállapot létrehozásával összehasonlíthatod a különböző próbálkozásokat, tesztelheted más nehézségi szinteket, vagy egyszerűen nyomon követheted a haladásodat.",
+      "desc": "Alul létrehozhatsz és kezelhetsz játékállapodásaidat. Egy játékállapot egyetlen futást jelent. Több is lehet, hogy összehasonlítsd a különböző próbálkozásokat, teszteld más nehézségi szinteket, vagy csak nyomon kövesd a haladásodat.",
       "warning": "Fontos: A haladásod a böngésződben tárolódik. Ha törölöd a böngészőadatokat vagy privát/incognito módot használsz, elveszítheted az egészet.",
       "createButtonDesc": "Új játékállapot",
       "noPlaythroughs": "Még nincs játékállapodás. Hozz létre egyet a kezdéshez!",
       "notFound": {
         "title": "Játékmenet nem található",
         "desc": "Ez a játékmenet nem létezik vagy törölve lett.",
-        "link": "Vissza a játékállapodások listájához"
+        "link": "Vissza a játékállapodások áttekintéséhez"
       }
     },
     "playthroughDetail": {
@@ -473,7 +474,7 @@
       },
       "splitShoppingList": {
         "title": "Felosztott vásárlólista",
-        "desc": "Rendeld ezeket az alapanyagokat közvetlenül a gyárba, hogy felosztsd a rendelést. Ez a maximális mennyiség, amit a {shelfAmount} raklappolcaid tárolni tud. Figyelembe veszi a gyártott dobozok számát is. Egy teljes heti gyártáshoz összesen {requiredAmount} raklappolcra lenne szükséged.",
+        "desc": "Rendeld ezeket az alapanyagokat közvetlenül a gyárba, hogy felosztsd a rendelést. Ez a maximális mennyiség, amit a {shelfAmount} darab raklappolca tárolni tud. Figyelembe veszi a gyártott dobozok számát is. Egy teljes heti gyártáshoz összesen {requiredAmount} raklappolcra lenne szükséged.",
         "desc1": "A maradékot egy vagy több különálló beszerzőnek kell raktárhoz rendelnie. Menj vissza a <link>gyári áttekintéshez</link>, és hozz létre egy csoportot, hogy lásd a teljes rendelési listát. Ez a gyárakonkénti szállítási tervet is mutatja."
       }
     },
@@ -482,7 +483,7 @@
       "desc": "Adj nevet a játékmenetednek és válaszd ki a nehézségi szintet, hogy a szerszámok kiszámíthassák a helyes árakat. Bármikor szerkesztheted vagy törölheted a játékmeneteidet.",
       "placeholder": "pl. John Manhattan",
       "deleteTitle": "Játékmenet törlése",
-      "deleteDesc": "Biztosan törölni szeretnéd ezt a játékállapotot? Ezt nem tudod majd visszavonni."
+      "deleteDesc": "Biztos akarod törölni ezt a játékállapotot? Nem tudod majd visszavonni."
     },
     "factoryForm": {
       "deleteTitle": "Gyár törlése",
@@ -495,7 +496,7 @@
     "factoryGroups": {
       "buttonDesc": "Csoport létrehozása",
       "title": "Gyárcsoportok",
-      "desc": "Csoportosíthatod a gyárakat a jobb áttekinthetőség érdekében. Ha a csoportosított gyárakon nincs elég raklapos polc, a vásárlólista megmondja, mit kell rendelned az egyes gyárakba és a raktárba is a maradék lefoglalásához. A szállítási ablak is mutatja, mit küldj minden gyárba.",
+      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakon nincs elég raklapos polc, a vásárlólista megmondja, mit kell rendelned az egyes gyárakba és a raktárba is a maradék pótolásához. A szállítási ablak is mutatja, mit küldj minden gyárba.",
       "groupEmpty": "Ebben a csoportban nincs gyár. Húzz egy gyárkártyát ide, hogy hozzáadhassad.",
       "ungroupedTitle": "Nem csoportosított gyárak",
       "ungroupedEmpty": "Semmi nincs itt egyelőre. Húzz ide egy kártyát, vagy hozz létre egy új gyárat.",
@@ -552,13 +553,22 @@
   },
   "metadata": {
     "root": {
-      "description": "Fan-szerszámok a {gameName}-hez. Terveelj gyárakat, számold ki a termelési adatokat, kezeld a szállítási terveket és böngéssz a játékadatokban."
+      "description": "Rajongói eszközök a {gameName}-hez. Terveelj gyárakat, számold ki a termelési adatokat, kezeld a szállítási terveket és böngéssz a játékadatokban."
     },
     "database": {
-      "description": "Részletes játékadatok termékekről, gépekről, járművekről, profitszámításokról és még több a {gameName}-hez."
+      "description": "Böngéssz a {gameName} részletes játékadatai között: termékek, gépek, járművek, profitszámítások és sok más."
     },
     "tools": {
-      "description": "Mestereld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg az adataidat, és építsd fel a birodalmadat."
+      "description": "Mestereld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg a szükséges adatokat a birodalmad bővítéséhez."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Név"
+        }
+      }
     }
   }
 }

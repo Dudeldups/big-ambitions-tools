@@ -265,7 +265,7 @@
       "buttonDesc": "Přepnout motiv",
       "light": "světlý",
       "dark": "tmavý",
-      "system": "System"
+      "system": "Systém"
     },
     "displayPriceOptions": {
       "manufacture": "Výroba",
@@ -277,7 +277,8 @@
       "hourly": "hodinově",
       "daily": "denně",
       "weekly": "týdně"
-    }
+    },
+    "navigation": "Ovládání"
   },
   "counts": {
     "palletShelf": "{count, plural, one {paletový regál} few {paletové regály} other {paletových regálů}}",
@@ -347,7 +348,7 @@
     "discardDesc": "Máš neuložené změny. Opravdu je chceš zahodit?",
     "resetForm": "Resetovat hodnoty formuláře",
     "resetDesc": "Opravdu chceš vrátit hodnoty formuláře na výchozí nastavení?",
-    "wsPresetBtn": "Přidat předvolbu",
+    "wsPresetBtn": "Přidej předvolbu",
     "wsPresetTitle": "Vyber předvolbu",
     "wsPresetDesc": "Vyber si ze seznamu předvoleb a přidej ji do své továrny.",
     "priceIndicesDesc": "Pro správné výpočty vyber aktuální cenové indexy pro každou položku.",
@@ -390,7 +391,7 @@
     },
     "cta": {
       "title": "Tak jdeme do toho!",
-      "desc": "Chceš se jen tak něco vyhledat a trochu pokrouhat s čísly? <em>Jo, matika!</em> Zajeď do <link>{database}</link> a začni prozkoumávat.",
+      "desc": "Chceš se jen tak něco vyhledat a trochu pokrouhat s čísly? <em>Mňam, matika!</em> Zajeď do <link>{database}</link> a začni prozkoumávat.",
       "desc2": "Od plánování první továrny až po řízení výrobních temp celého impéria najdeš všechno v sekci <link>{toolsSection}</link>.",
       "errorDesc": "Našel jsi chybu nebo ti chybí nějaké informace? Nebo máš návrh, jak web vylepšit? Klidně se <contact>ozvi</contact>!"
     },
@@ -415,11 +416,11 @@
   },
   "database": {
     "intro": {
-      "desc": "Prozkoumej podrobné herní údaje o produktech, strojích, vozidlech a dalších. Pomocí vyhledávání nebo filtrů podle kategorií rychle najdeš to, co potřebuješ.",
+      "desc": "Ponoř se do detailních herních dat o produktech, strojích, vozidlech a další. S vyhledáváním nebo filtry kategorií rychle najdeš vše, co potřebuješ.",
       "buttonDesc": "Vyber kategorii"
     },
     "products": {
-      "caption": "Všechny produkty na první pohled. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměr všech čtvrtí. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
+      "caption": "Přehled všech produktů. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměrná napříč všemi čtvrtěmi. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
     },
     "ingredients": {
       "caption": "Přehled všech surovin včetně jejich vlastností. Vyber obtížnost, aby se zobrazily správné ceny."
@@ -439,7 +440,7 @@
       "desc": "Tady se můžeš naplno ponořit do čísel a statistik hry. Plánuj své továrny a řiď logistiku celého impéria!"
     },
     "playthroughs": {
-      "desc": "Níže si můžeš vytvářet a spravovat své průběhy hry. Každý průběh je jeden tvůj pokus o hraní. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo si prostě držet přehled o svém postupu.",
+      "desc": "Níže si můžeš vytvářet a spravovat své průběhy hry. Každý průběh představuje jeden konkrétní průchod hrou. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo se prostě jen sledovat svůj postup.",
       "warning": "Důležité: Tvůj postup se ukládá v prohlížeči. Pokud smažeš data prohlížeče nebo používáš soukromý/anonymní režim, můžeš o něj přijít.",
       "createButtonDesc": "Nový průběh",
       "noPlaythroughs": "Zatím žádný průběh. Vytvoř si ho a začni!",
@@ -474,15 +475,15 @@
       "splitShoppingList": {
         "title": "Rozdělený nákupní seznam",
         "desc": "Objednej tyto suroviny přímo do své továrny, abys objednávku rozdělil/a. Tohle je maximální množství, které tvoje {shelfAmount} paletové regály pojmou. Zohledňuje se i počet krabic, které vyrábíš. Pro uložení všech surovin na celý týden výroby bys potřeboval/a {requiredAmount} regálů.",
-        "desc1": "Jeden nebo více samostatných nákupčích musí zbytek objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
+        "desc1": "Zbytek musí jeden nebo více samostatných nákupčích objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Také uvidíš plán dodávek pro každou továrnu."
       }
     },
     "playthroughForm": {
       "title": "Vytvořit nový průběh hry",
-      "desc": "Zadej název svého průběhu hry a vyber obtížnost, aby nástroje mohly vypočítat správné ceny. Průběhy hry můžeš kdykoli upravit nebo smazat.",
+      "desc": "Dej svému průběhu hry název a vyber obtížnost, aby nástroje mohly vypočítat správné ceny. Průběhy můžeš kdykoli upravit nebo smazat.",
       "placeholder": "např. John Manhattan",
       "deleteTitle": "Smazat průběh hry",
-      "deleteDesc": "Opravdu chceš smazat tento průběh hry? Tuhle akci už nebudeš moct vzít zpět."
+      "deleteDesc": "Opravdu chceš smazat tento průběh hry? Tuhle akci už nejde vrátit."
     },
     "factoryForm": {
       "deleteTitle": "Smazat továrnu",
@@ -495,7 +496,7 @@
     "factoryGroups": {
       "buttonDesc": "Vytvořit skupinu",
       "title": "Skupiny továren",
-      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají přiřazeno dostatečné množství paletových regálů, nákupní seznam ti řekne, co musíš objednat pro jednotlivé továrny i do skladu, aby se doplnil zbytek potřeby. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
+      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají přiřazeno dostatečné množství paletových regálů, nákupní seznam ti řekne, co musíš objednat pro jednotlivé továrny i do skladu, aby bylo doplněno to, co chybí. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
       "groupEmpty": "V této skupině nejsou žádné továrny. Přetáhni sem kartu továrny a přidej ji.",
       "ungroupedTitle": "Továrny bez skupiny",
       "ungroupedEmpty": "Tady je prázdno. Přetáhni sem kartu nebo vytvoř novou továrnu.",
@@ -552,13 +553,22 @@
   },
   "metadata": {
     "root": {
-      "description": "Fanouškovské nástroje pro {gameName}. Plánuj továrny, vypočítej statistiky výroby, spravuj plány dodávek a procházej si herní data."
+      "description": "Nástroje od fanoušků pro {gameName}. Plánuj továrny, vypočítávej statistiky výroby, spravuj plány dodávek a procházej si herní data."
     },
     "database": {
-      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a dalších pro {gameName}."
+      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a mnoho dalšího pro {gameName}."
     },
     "tools": {
       "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "název"
+        }
+      }
     }
   }
 }

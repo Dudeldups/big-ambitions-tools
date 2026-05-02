@@ -218,6 +218,7 @@
     "columnsDescription": "Colonnes",
     "filterResults": "Filtrer les résultats...",
     "characterName": "Nom du personnage",
+    "navigation": "Navigation",
     "home": "Accueil",
     "about": "À propos",
     "contact": "Contact",
@@ -544,6 +545,15 @@
       "estimatedSalesTooltip": "Indique les ventes attendues pour chaque produit dans tes boutiques.",
       "priceIndexButton": "Définir l'indice de prix",
       "priceIndexDesc": "Choisis l'indice de prix actuel du jeu pour ce produit afin de calculer le revenu correct. (Le prix à l'export est plus précis.)"
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Nom"
+        }
+      }
     }
   },
   "footer": {

@@ -277,7 +277,8 @@
       "hourly": "Orario",
       "daily": "Giornaliero",
       "weekly": "Settimanale"
-    }
+    },
+    "navigation": "Navigazione"
   },
   "counts": {
     "palletShelf": "{count, plural, one {scaffale pallet} other {scaffali pallet}}",
@@ -559,6 +560,15 @@
     },
     "tools": {
       "description": "Domina l'economia di {gameName}. Dalla pianificazione avanzata delle fabbriche alla gestione logistica complessa: ottieni i dati necessari per espandere il tuo impero."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Nome"
+        }
+      }
     }
   }
 }

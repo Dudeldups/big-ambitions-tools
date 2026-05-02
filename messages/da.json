@@ -277,7 +277,8 @@
       "hourly": "Hver time",
       "daily": "Dagligt",
       "weekly": "Ugentligt"
-    }
+    },
+    "navigation": "Navigation"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Pallehylde} other {Pallehylder}}",
@@ -310,8 +311,8 @@
     "autoParkSupported": "Indparkeringshjælp",
     "taxDeductible": "Fradrag",
     "requiredDeliveryDriverSkillValue": "Chauffør-skills",
-    "destinationsThatCanDeliver": "Basismål",
-    "destinationsFull": "Max. mål",
+    "destinationsThatCanDeliver": "Basis-dest.",
+    "destinationsFull": "Max. dest.",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
     "export": "Eksport",
@@ -368,7 +369,7 @@
       "nameRequired": "Din karakter bør have et navn.",
       "nameTooLong": "Navnet må højst være 30 tegn langt.",
       "difficultyRequired": "Vælg en sværhedsgrad.",
-      "workstationProductRequired": "Vælg et produkt til hver arbejdsstation til tøj"
+      "workstationProductRequired": "Vælg et produkt for hver arbejdsstation til tøj."
     },
     "factory": {
       "nameTooLong": "Fabriksnavnet må højst være 50 tegn langt.",
@@ -392,7 +393,7 @@
       "title": "Lad os komme i gang!",
       "desc": "Vil du bare lige slå noget op eller lege lidt med tallene? <em>Fedt, matematik!</em> Så smut forbi <link>{database}</link> og gå på opdagelse.",
       "desc2": "Fra planlægning af din første fabrik til styring af produktionsraterne i hele dit imperium – du finder det hele i <link>{toolsSection}</link>.",
-      "errorDesc": "Har du fundet en fejl eller mangler der noget info? Eller har du forslag til at gøre siden bedre? Så <contact>skriv endelig til os</contact>!"
+      "errorDesc": "Har du opdaget en fejl eller mangler der info? Eller har du forslag til at gøre siden bedre? Så <contact>skriv endelig til os</contact>!"
     },
     "game": {
       "title": "Kender du ikke spillet endnu?",
@@ -411,7 +412,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Websitet er gået live"
+    "launch": "Webside lanceret"
   },
   "database": {
     "intro": {
@@ -425,13 +426,13 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Her er alle maskinerne til produktionen. Kombiner en hovedmaskine med én eller to sekundære maskiner, og lav din egen Arbejdsstation til tøj."
+      "caption": "Alle maskiner til produktion. Kombiner en hovedmaskine med én eller to hjælpe-maskiner for at lave en Arbejdsstation til tøj."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
     },
     "vehicles": {
-      "caption": "Skal du bruge masser af plads eller bare den hurtigste vogn? Du finder det her. Fører-skill er knyttet til din {deliveryDriver}, og for at nå maks antal destinationer skal du bruge en {logisticsManager} med 100 % skill."
+      "caption": "Skal du bruge masser af plads eller bare den hurtigste vogn? Det finder du her. Fører-skill er knyttet til din {deliveryDriver}, og for at nå maks antal destinationer skal du bruge en {logisticsManager} med 100 % skill."
     }
   },
   "tools": {
@@ -439,14 +440,14 @@
       "desc": "Her kan du dykke ned i spillets tal og statistikker. Planlæg dine fabrikker og styr logistikken for dit hele imperium!"
     },
     "playthroughs": {
-      "desc": "Nedenfor kan du oprette og administrere dine spilstande. En spilstand svarer til én gennemspilning af spillet. Du kan oprette flere spilstande for at sammenligne forskellige runs, prøve andre sværhedsgrader eller bare holde styr på din fremdrift.",
+      "desc": "Nedenfor kan du oprette og administrere dine spilstande. En spilstand svarer til én gennemspilning af spillet. Du kan oprette flere spilstande for at sammenligne forskellige runs, prøve andre sværhedsgrader eller bare holde styr på dine fremskridt.",
       "warning": "Vigtigt: Dit fremskridt gemmes i din browser. Sletter du browserdata eller bruger privat-/inkognito-tilstand, kan det gå tabt.",
       "createButtonDesc": "Ny spilstand",
       "noPlaythroughs": "Ingen spilstande endnu. Opret en for at komme i gang!",
       "notFound": {
         "title": "Spilstand ikke fundet",
         "desc": "Denne spilstand findes ikke eller er blevet slettet.",
-        "link": "Tilbage til oversigt over spilstande"
+        "link": "Tilbage til spilstandsoversigt"
       }
     },
     "playthroughDetail": {
@@ -472,7 +473,7 @@
         "desc": "Det er, hvad din fabrik har brug for hver uge for at køre med fuld kapacitet."
       },
       "splitShoppingList": {
-        "title": "Del indkøbsliste",
+        "title": "Opdelt indkøbsliste",
         "desc": "Bestil disse ingredienser direkte til din fabrik for at opdele bestillingen. Dette er den maksimale mængde, dine {shelfAmount} pallereoler kan rumme. Det tager også højde for antallet af kasser, du producerer. Du skal bruge {requiredAmount} reoler til at lagre alle ingredienser til en hel uges produktion.",
         "desc1": "Resten skal bestilles til et lager af én eller flere indkøbere. Gå tilbage til <link>fabriksoversigten</link> og opret en gruppe for at se den fulde liste over, hvad der skal bestilles til lageret. Du kan også se leveringsplanen for hver fabrik."
       }
@@ -498,7 +499,7 @@
       "desc": "Du kan gruppere fabrikker sammen for en bedre oversigt pr. produktkategori. Hvis de grupperede fabrikker ikke har nok pallehylder tildelt, vil indkøbslisten fortælle dig, hvad du skal bestille til hver fabrik og også til lagerhuset for at levere resten. Leveringsdialogen viser også, hvad der skal sendes til hver fabrik.",
       "groupEmpty": "Ingen fabrikker i denne gruppe. Træk et fabrikskort hertil for at tilføje det.",
       "ungroupedTitle": "Ikke-grupperede fabrikker",
-      "ungroupedEmpty": "Der er ingen fabrikker uden gruppe. Træk et fabrikskort hertil eller opret en ny fabrik.",
+      "ungroupedEmpty": "Her er tomt. Træk et fabrikskort herind eller opret en ny fabrik.",
       "deliveries": {
         "buttonDesc": "Leverancer",
         "title": "Leveringsplan",
@@ -507,7 +508,7 @@
       },
       "shoppingList": {
         "title": "Gruppens indkøbsliste",
-        "desc": "Her ser du alle ingredienser, der er nødvendige for at forsyne fabrikker i denne gruppe, som mangler pallehylder. Det beregner behovet ud fra antallet af ledige hylder på fabrikkerne, så du kan bestille resten til et separat lager.<br></br>Hylder til lageret: <strong>{amount}</strong>"
+        "desc": "Her ser du alle de ingredienser, du skal bruge til fabrikkerne i denne gruppe, som mangler pallehylder. Den beregner det ud fra antallet af ledige hylder på fabrikkerne, så du kan bestille resten til et separat lager.<br></br>Hylder der skal bruges på lageret: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
@@ -525,7 +526,7 @@
         "enoughDaily": "Kun nok til daglig levering. Du skal bruge et lager til ugentlig logistik.",
         "notEnough": "For lidt lagerplads, selv til daglig levering.",
         "overflowWarning": "Lager løber over!",
-        "overflowDesc": "Du producerer hurtigere, end du bruger ingredienser. Antal hylder er justeret tilsvarende."
+        "overflowDesc": "Du producerer hurtigere end du bruger ingredienser. Antallet af hylder er blevet justeret derefter."
       },
       "employees": {
         "desc": "Indtast løn for hver medarbejder. Lad det stå tomt, hvis du ikke vil inkludere lønberegning.",
@@ -552,13 +553,22 @@
   },
   "metadata": {
     "root": {
-      "description": "Fan-værktøjer til {gameName}. Planlæg fabrikker, beregn produktionsstatistik, styr leveringsplaner og gennemse spildata."
+      "description": "Fan-værktøjer til {gameName}. Planlæg fabrikker, beregn produktionsstatistikker, styr leveringsplaner og gennemse spildata."
     },
     "database": {
       "description": "Få detaljerede spildata om produkter, maskiner, køretøjer, profitberegninger og meget mere til {gameName}."
     },
     "tools": {
       "description": "Bliv mester i økonomien i {gameName}. Fra avanceret fabrikplanlægning til kompleks logistik – få de data, du skal bruge til at udvide dit imperium."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Navn"
+        }
+      }
     }
   }
 }

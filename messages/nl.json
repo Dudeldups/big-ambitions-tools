@@ -277,7 +277,8 @@
       "hourly": "Uurlijk",
       "daily": "Dagelijks",
       "weekly": "Wekelijks"
-    }
+    },
+    "navigation": "Navigatie"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palletplank} other {Palletplanken}}",
@@ -555,10 +556,19 @@
       "description": "Fan-tools voor {gameName}. Plan fabrieken, bereken productiestatistieken, beheer leveringsschema's en ontdek alle game-data."
     },
     "database": {
-      "description": "Gedetailleerde game-data over producten, machines, voertuigen, winstberekeningen en meer voor {gameName}."
+      "description": "Bekijk gedetailleerde spelgegevens van producten, machines, voertuigen, winstberekeningen en meer voor {gameName}."
     },
     "tools": {
       "description": "Beheers de economie van {gameName}. Van geavanceerde fabrieksplanning tot complexe logistiek — krijg de data die je nodig hebt om je imperium uit te breiden."
+    }
+  },
+  "privacy": {
+    "cookies": {
+      "details": {
+        "name": {
+          "title": "Naam"
+        }
+      }
     }
   }
 }
