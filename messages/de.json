@@ -546,6 +546,15 @@
       "priceIndexDesc": "Wähle den aktuellen Spiel-Preisindex für dieses Produkt aus, um das korrekte Einkommen zu berechnen. (Der Exportpreis ist genauer.)"
     }
   },
+  "legal": {
+    "title": "Impressum",
+    "subtitle": "Inhalte gemäß §5 DDG",
+    "link": "Impressum"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "link": "Datenschutzerklärung"
+  },
   "footer": {
     "assets": "Alle Bilder, Marken und Assets aus dem Spiel sind Eigentum der jeweiligen Besitzer.",
     "fanMade": "Diese Seite ist ein reines Fan-Projekt und steht in keiner Verbindung zu den Entwicklern des Spiels. Den Quellcode dazu findest du auf <link>GitHub</link>."
