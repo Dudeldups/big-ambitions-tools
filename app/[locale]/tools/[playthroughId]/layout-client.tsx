@@ -17,6 +17,8 @@ import PriceIndicesDialog from "@/components/tools/price-indices-dialog";
 import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import { StatBadge } from "@/components/deco/stat-badge";
+import { useEffect } from "react";
+import { GLOSSARY } from "@/i18n/glossary";
 
 const PlaythroughIdLayoutClient = ({
   children,
@@ -40,6 +42,12 @@ const PlaythroughIdLayoutClient = ({
       );
     }),
   );
+
+  useEffect(() => {
+    if (activePlaythrough?.characterName) {
+      document.title = `${activePlaythrough.characterName} | ${GLOSSARY.siteName}`;
+    }
+  }, [activePlaythrough?.characterName]);
 
   if (isInvalid && !isLoading) return <PlaythroughNotFound />;
 

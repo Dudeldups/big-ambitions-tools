@@ -8,14 +8,14 @@ import PlaythroughIdLayoutClient from "./layout-client";
 export async function generateMetadata({
   params,
 }: TranslatedMetadataProps): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale, playthroughId } = await params;
 
   return generateTranslatedMetadata({
     locale,
     titleNamespace: "general",
     titleKey: "playthroughs",
     descriptionNamespace: "metadata.playthroughs",
-    path: "/tools/???",
+    path: `/tools/${playthroughId}`,
     noIndex: true,
   });
 }
