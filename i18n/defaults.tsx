@@ -6,7 +6,11 @@ import { RichTranslationValues } from "next-intl";
 
 export const sLink = (href: string) => {
   return function LinkHandler(chunks: React.ReactNode) {
-    return <SmartLink href={href}>{chunks}</SmartLink>;
+    return (
+      <SmartLink href={href} className="font-semibold">
+        {chunks}
+      </SmartLink>
+    );
   };
 };
 
