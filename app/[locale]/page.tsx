@@ -146,7 +146,7 @@ export default function Home() {
 
         {/* Official links */}
         <div className="flex flex-col items-center gap-14 *:flex-1">
-          <div className="flex flex-col items-center gap-6 rounded-xl">
+          <div className="border-accent-foreground flex w-full max-w-88 flex-col items-center gap-6 rounded-xl border-2 p-4 text-center">
             <Image
               src="/assets/logos/logo_steam.webp"
               alt="steam logo"
@@ -157,11 +157,7 @@ export default function Home() {
             <p className="flex flex-col items-center gap-3">
               {rich("game.steam", {
                 link: (chunks) => (
-                  <Button
-                    asChild
-                    variant="foreground"
-                    className="font-semibold"
-                  >
+                  <Button asChild variant="secondary" className="font-semibold">
                     <SmartLink href="https://store.steampowered.com/app/1331550/Big_Ambitions/">
                       {chunks}
                       <ExternalLink />
@@ -180,7 +176,7 @@ export default function Home() {
               className="mx-auto aspect-[2.013]"
             />
           </div>
-          <div className="flex flex-col items-center gap-6 rounded-xl">
+          <div className="border-accent-foreground flex w-full max-w-88 flex-col items-center gap-6 rounded-xl border-2 p-4 text-center">
             <Image
               src="/assets/logos/logo_hovgaard_windmill.webp"
               alt="hovgaard logo"
@@ -191,11 +187,7 @@ export default function Home() {
             <p className="flex flex-col items-center gap-3">
               {rich("game.hovgaard", {
                 website: (chunks) => (
-                  <Button
-                    asChild
-                    variant="foreground"
-                    className="font-semibold"
-                  >
+                  <Button asChild variant="secondary" className="font-semibold">
                     <SmartLink href="https://www.bigambitionsgame.com/">
                       {chunks}
                       <ExternalLink />
