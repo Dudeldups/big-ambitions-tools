@@ -213,13 +213,13 @@
     "summary": "Zusammenfassung",
     "amortization": "Amortisation",
     "never": "Nie",
-    "noValue": "Ohne",
+    "noValue": "Keine",
     "noResultsFound": "Keine Ergebnisse gefunden.",
     "columnsDescription": "Spalten",
     "filterResults": "Ergebnisse filtern...",
     "characterName": "Charaktername",
     "navigation": "Navigation",
-    "home": "Home",
+    "home": "Startseite",
     "about": "Über uns",
     "contact": "Kontakt",
     "ingredients": "Zutaten",
@@ -549,12 +549,62 @@
   },
   "legal": {
     "title": "Impressum",
-    "subtitle": "Inhalte gemäß §5 DDG",
     "link": "Impressum"
   },
   "privacy": {
     "title": "Datenschutzerklärung",
-    "link": "Datenschutzerklärung"
+    "link": "Datenschutzerklärung",
+    "generalInfo": {
+      "title": "Allgemeine Hinweise",
+      "intro": "Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Bestimmungen (DSGVO).",
+      "responsiblePerson": "Verantwortlicher im Sinne der DSGVO:"
+    },
+    "serverLogs": {
+      "title": "Zugriffsdaten (Server-Logs)",
+      "intro": "Beim Aufrufen dieser Website werden automatisch Informationen durch den Server erfasst:",
+      "purpose": "Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.",
+      "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO"
+    },
+    "analytics": {
+      "title": "Verwendung von {umamiAnalytics}",
+      "intro": "Diese Website nutzt <em>{umamiAnalytics}</em>, ein datenschutzfreundliches Analyse-Tool. Umami wird auf einem eigenen Server betrieben und verarbeitet keine personenbezogenen Daten im klassischen Sinne.",
+      "capturedData": {
+        "title": "Erfasste Daten:"
+      },
+      "privacyGuarantees": {
+        "title": "Sicherheit & Datenschutz:"
+      },
+      "summary": "Die Verarbeitung erfolgt anonymisiert.",
+      "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Analyse der Website-Nutzung)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Diese Website verwendet ein technisch notwendiges Cookie zur Speicherung der Spracheinstellung.",
+      "details": {
+        "name": {
+          "title": "Name"
+        },
+        "purpose": {
+          "title": "Zweck",
+          "desc": "Speicherung der gewählten Sprache"
+        },
+        "duration": {
+          "title": "Speicherdauer",
+          "desc": "bis zu 30 Tage oder bis zur manuellen Löschung durch den Nutzer"
+        }
+      },
+      "summary": "Dieses Cookie ist für die Funktion der Website erforderlich und bedarf keiner Einwilligung.",
+      "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO"
+    },
+    "userRights": {
+      "title": "Rechte der betroffenen Personen",
+      "intro": "Du hast jederzeit das Recht auf:",
+      "contact": "Hierzu genügt eine formlose Mitteilung per E-Mail."
+    },
+    "changes": {
+      "title": "Änderungen",
+      "intro": "Diese Datenschutzerklärung kann angepasst werden, um rechtliche Anforderungen zu erfüllen oder Änderungen der Website umzusetzen."
+    }
   },
   "footer": {
     "assets": "Alle Bilder, Marken und Assets aus dem Spiel sind Eigentum der jeweiligen Besitzer.",

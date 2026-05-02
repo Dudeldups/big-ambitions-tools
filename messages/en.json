@@ -553,7 +553,83 @@
   },
   "privacy": {
     "title": "Privacy notice",
-    "link": "Privacy"
+    "link": "Privacy",
+    "generalInfo": {
+      "title": "General Information",
+      "intro": "This website processes personal data exclusively in accordance with legal regulations (GDPR).",
+      "responsiblePerson": "Controller within the meaning of the GDPR:"
+    },
+    "serverLogs": {
+      "title": "Access Data (Server Logs)",
+      "intro": "When you visit this website, the server automatically collects the following information:",
+      "items": [
+        "IP address (truncated or anonymized)",
+        "Date and time of the request",
+        "Accessed page",
+        "Browser type and version",
+        "Operating system"
+      ],
+      "purpose": "This data is used exclusively for the technical provision and security of the website.",
+      "legalBasis": "Legal basis: Art. 6 (1) lit. f GDPR"
+    },
+    "analytics": {
+      "title": "Use of {umamiAnalytics}",
+      "intro": "This website uses <em>{umamiAnalytics}</em>, a privacy-friendly analytics tool. Umami is hosted on our own server and does not process personal data in the traditional sense.",
+      "capturedData": {
+        "title": "Data collected:",
+        "items": [
+          "Pages visited",
+          "Referrer (origin of visitors)",
+          "Browser and device type used",
+          "Approximate geographic origin (without precise location data)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Security & Privacy:",
+        "items": [
+          "No cookies are set for analytical purposes",
+          "No personal profiles are created",
+          "No data is shared with third parties"
+        ]
+      },
+      "summary": "Processing is carried out anonymously.",
+      "legalBasis": "Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in analyzing website usage)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "This website uses a technically necessary cookie to store your language settings.",
+      "details": {
+        "name": {
+          "title": "Name"
+        },
+        "purpose": {
+          "title": "Purpose",
+          "desc": "Storing the selected language"
+        },
+        "duration": {
+          "title": "Duration",
+          "desc": "up to 30 days or until manually deleted by the user"
+        }
+      },
+      "summary": "This cookie is required for the website to function and does not require consent.",
+      "legalBasis": "Legal basis: Art. 6 (1) lit. f GDPR"
+    },
+    "userRights": {
+      "title": "Data Subject Rights",
+      "intro": "You have the right to request the following at any time:",
+      "items": [
+        "Information about your stored data",
+        "Correction of inaccurate data",
+        "Deletion of your data",
+        "Restriction of processing",
+        "Objection to processing"
+      ],
+      "contact": "An informal message via email is sufficient for this purpose."
+    },
+    "changes": {
+      "title": "Changes",
+      "intro": "This privacy policy may be updated to reflect legal requirements or changes to the website."
+    }
   },
   "footer": {
     "assets": "All game images, trademarks, and assets belong to their respective owners.",
