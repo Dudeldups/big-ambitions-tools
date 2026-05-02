@@ -77,6 +77,8 @@ export async function generateTranslatedMetadata({
     description = t(descriptionKey, descriptionValues);
   }
 
+  if (path !== "/") title = title + ` | ${GLOSSARY.siteName}`;
+
   return {
     metadataBase: new URL(BASE_URL),
     title,
