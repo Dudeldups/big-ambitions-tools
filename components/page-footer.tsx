@@ -27,7 +27,7 @@ const PageFooter = () => {
             href="/privacy"
             className="hover:underline sm:justify-self-end"
           >
-            {t("legal.link")}
+            {t("privacy.link")}
           </SmartLink>
 
           <Separator
@@ -39,7 +39,7 @@ const PageFooter = () => {
             href="/legal"
             className="hover:underline sm:justify-self-start"
           >
-            {t("privacy.link")}
+            {t("legal.link")}
           </SmartLink>
         </div>
 
