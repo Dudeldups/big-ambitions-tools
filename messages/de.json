@@ -548,6 +548,14 @@
       "priceIndexDesc": "Wähle den aktuellen Spiel-Preisindex für dieses Produkt aus, um das korrekte Einkommen zu berechnen. (Der Exportpreis ist genauer.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Ideen? Fragen? Kurze Nachricht genügt.",
+    "intro": "Wenn du Ideen für neue Funktionen hast, Daten vermisst oder mir einfach Feedback geben willst, meld dich gerne! Ich freue mich über jede Nachricht, die mir hilft, die Seite so gut wie möglich zu machen.",
+    "form": {
+      "title": "Sag einfach Hallo!",
+      "agreement": ""
+    }
+  },
   "legal": {
     "title": "Impressum",
     "link": "Impressum"

@@ -548,6 +548,14 @@
       "priceIndexDesc": "Select the current ingame price index for this product to calculate the correct income. (Export price is more accurate.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Ideas? Questions? Drop me a line.",
+    "intro": "If you have ideas for new functions, notice missing data, or just want to give some feedback, feel free to reach out! I appreciate every message that helps me make this site even more useful for the community.",
+    "form": {
+      "title": "Just say hi!",
+      "agreement": ""
+    }
+  },
   "legal": {
     "title": "Legal information",
     "link": "Legal"
