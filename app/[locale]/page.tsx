@@ -59,7 +59,7 @@ export default function Home() {
               <ImageCircleBg
                 key={id}
                 size="md"
-                className="border-hero-foreground border-2 bg-transparent lg:p-5 lg:*:size-12"
+                className="border-2 border-black bg-transparent lg:p-5 lg:*:size-12"
               >
                 <Icon className="text-hero-foreground" />
               </ImageCircleBg>
@@ -137,8 +137,8 @@ export default function Home() {
             </em>
           </hgroup>
 
-          <div className="bg-card border-ring p-clamp-x card--quote max-w-xl overflow-visible rounded-xl border md:mx-6">
-            <blockquote className="text-h5 text-card-foreground leading-relaxed text-pretty max-lg:text-center">
+          <div className="via-muted-foreground p-clamp-x card--quote from-muted-foreground/85 to-muted-foreground/85 ring-muted-foreground max-w-xl rounded-xl bg-linear-170 md:mx-6">
+            <blockquote className="text-h5 text-card leading-relaxed text-pretty max-lg:text-center">
               {rich("game.desc")}
             </blockquote>
           </div>
@@ -146,7 +146,7 @@ export default function Home() {
 
         {/* Official links */}
         <div className="flex flex-col items-center gap-14 *:flex-1">
-          <div className="border-accent-foreground flex w-full max-w-88 flex-col items-center gap-6 rounded-xl border-2 p-4 text-center">
+          <div className="border-border dark:bg-popover/40 bg-popover shadow-accent flex w-full max-w-88 flex-col items-center gap-6 rounded-xl border-2 p-4 text-center shadow-sm">
             <Image
               src="/assets/logos/logo_steam.webp"
               alt="steam logo"
@@ -176,7 +176,7 @@ export default function Home() {
               className="mx-auto aspect-[2.013]"
             />
           </div>
-          <div className="border-accent-foreground flex w-full max-w-88 flex-col items-center gap-6 rounded-xl border-2 p-4 text-center">
+          <div className="border-border dark:bg-popover/40 bg-popover shadow-accent flex w-full max-w-88 flex-col items-center gap-6 rounded-xl border-2 p-4 text-center shadow-sm">
             <Image
               src="/assets/logos/logo_hovgaard_windmill.webp"
               alt="hovgaard logo"

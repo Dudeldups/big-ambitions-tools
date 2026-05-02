@@ -97,7 +97,7 @@
       color: var(--color-brand-secondary-light);
       font-style: italic;
       font-weight: bold;
-      opacity: 0.4;
+      opacity: 0.6;
       pointer-events: none;
     }
 
