@@ -47,7 +47,7 @@ const PlaythroughIdLayoutClient = ({
     if (activePlaythrough?.characterName) {
       document.title = `${activePlaythrough.characterName} | ${GLOSSARY.siteName}`;
     }
-  }, [activePlaythrough?.characterName]);
+  }, [activePlaythrough?.characterName, pathname]);
 
   if (isInvalid && !isLoading) return <PlaythroughNotFound />;
 
