@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { BASE_URL, DEFAULT_LOCALE } from "./siteConstants";
 
 export type TranslatedMetadataProps = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string; playthroughId: string; factoryId: string }>;
 };
 
 type GenerateTranslatedMetadataOptions = {
