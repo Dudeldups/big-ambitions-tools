@@ -15,6 +15,7 @@ import {
 } from "@/lib/generateTranslatedMetadata";
 import { Metadata } from "next";
 import { GLOSSARY } from "@/i18n/glossary";
+import { getStructuredData } from "@/lib/structuredData";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -57,6 +58,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const structuredData = getStructuredData();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -66,6 +68,12 @@ export default async function RootLayout({
         data-website-id="9201b0ca-c66d-46fc-b24a-adf44dc44b16"
         data-domains="big-ambitions-tools.com,www.big-ambitions-tools.com"
         strategy="afterInteractive"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
       />
 
       <body
