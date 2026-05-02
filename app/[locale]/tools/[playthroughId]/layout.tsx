@@ -4,6 +4,7 @@ import {
 } from "@/lib/generateTranslatedMetadata";
 import { Metadata } from "next";
 import PlaythroughIdLayoutClient from "./layout-client";
+import { GLOSSARY } from "@/i18n/glossary";
 
 export async function generateMetadata({
   params,
@@ -15,6 +16,9 @@ export async function generateMetadata({
     titleNamespace: "general",
     titleKey: "playthroughs",
     descriptionNamespace: "metadata.playthroughs",
+    descriptionValues: {
+      gameName: GLOSSARY.gameName,
+    },
     path: `/tools/${playthroughId}`,
     noIndex: true,
   });
