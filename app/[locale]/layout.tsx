@@ -62,20 +62,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <Script
-        defer
-        src="https://analytics.big-ambitions-tools.com/script.js"
-        data-website-id="9201b0ca-c66d-46fc-b24a-adf44dc44b16"
-        data-domains="big-ambitions-tools.com,www.big-ambitions-tools.com"
-        strategy="afterInteractive"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
-      />
-
       <body
         className={cn(
           "flex min-h-screen flex-col antialiased",
@@ -84,6 +70,19 @@ export default async function RootLayout({
           poppins.variable,
         )}
       >
+        <Script
+          src="https://analytics.big-ambitions-tools.com/script.js"
+          data-website-id="9201b0ca-c66d-46fc-b24a-adf44dc44b16"
+          data-domains="big-ambitions-tools.com,www.big-ambitions-tools.com"
+          strategy="afterInteractive"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+
         <StoreHydration />
         <ThemeProvider
           attribute="class"
