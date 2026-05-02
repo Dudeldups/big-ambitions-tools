@@ -17,7 +17,7 @@ const PrivacyPage = () => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <ol className="marker:text-h3 list-decimal space-y-8 ps-6 marker:font-bold">
+        <ol className="marker:text-h3 list-decimal space-y-8 ps-6 marker:font-bold max-md:list-inside">
           {/* General info */}
           <PrivacyItemWrapper title={t("generalInfo.title")}>
             <p>{t("generalInfo.intro")}</p>
@@ -59,7 +59,7 @@ const PrivacyPage = () => {
           <PrivacyItemWrapper title={t("cookies.title")}>
             <p>{rich("cookies.intro")}</p>
 
-            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+            <dl className="grid gap-x-4 gap-y-2 sm:grid-cols-[auto_1fr]">
               <dt className="font-semibold">{tGeneral("name")}</dt>
               <dd>
                 <code>{GLOSSARY.cookieNext}</code>
