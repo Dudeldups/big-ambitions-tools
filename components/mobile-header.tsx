@@ -3,19 +3,15 @@
 import { cn } from "@/lib/utils";
 import Breadcrumbs from "./breadcrumbs";
 import NavContent from "./nav-content";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetTitle,
-  SheetTrigger,
-} from "./ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const MobileHeader = () => {
+  const t = useTranslations("general");
   const { scrollY } = useScroll();
   const [isHidden, setIsHidden] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -81,8 +77,10 @@ const MobileHeader = () => {
             "from-popover via-muted-foreground/20 dark:via-sidebar-accent/20 to-popover bg-linear-to-b data-[side=right]:w-10/12",
           )}
         >
-          <SheetTitle className="text-left text-2xl">Navigation</SheetTitle>
-          <SheetDescription className="sr-only">Navigation</SheetDescription>
+          <SheetTitle className="text-left text-2xl">
+            {t("navigation")}
+          </SheetTitle>
+
           <div className="mt-4 flex w-full flex-1 flex-col items-end justify-between gap-8">
             <NavContent onAction={() => setIsOpen(false)} />
           </div>
