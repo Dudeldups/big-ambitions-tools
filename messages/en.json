@@ -209,6 +209,7 @@
     "delete": "Delete",
     "save": "Save",
     "amount": "Amount",
+    "name": "Name",
     "summedUpAmount": "Total",
     "summary": "Summary",
     "amortization": "Amortization",
@@ -599,9 +600,6 @@
       "title": "Cookies",
       "intro": "This website uses a technically necessary cookie to store your language settings.",
       "details": {
-        "name": {
-          "title": "Name"
-        },
         "purpose": {
           "title": "Purpose",
           "desc": "Storing the selected language"

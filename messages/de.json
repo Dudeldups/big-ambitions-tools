@@ -209,6 +209,7 @@
     "delete": "Löschen",
     "save": "Speichern",
     "amount": "Menge",
+    "name": "Name",
     "summedUpAmount": "Gesamt",
     "summary": "Zusammenfassung",
     "amortization": "Amortisation",
@@ -562,6 +563,13 @@
     "serverLogs": {
       "title": "Zugriffsdaten (Server-Logs)",
       "intro": "Beim Aufrufen dieser Website werden automatisch Informationen durch den Server erfasst:",
+      "items": [
+        "IP-Adresse (gekürzt oder anonymisiert)",
+        "Datum und Uhrzeit der Anfrage",
+        "aufgerufene Seite",
+        "Browsertyp und Version",
+        "Betriebssystem"
+      ],
       "purpose": "Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.",
       "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO"
     },
@@ -569,10 +577,21 @@
       "title": "Verwendung von {umamiAnalytics}",
       "intro": "Diese Website nutzt <em>{umamiAnalytics}</em>, ein datenschutzfreundliches Analyse-Tool. Umami wird auf einem eigenen Server betrieben und verarbeitet keine personenbezogenen Daten im klassischen Sinne.",
       "capturedData": {
-        "title": "Erfasste Daten:"
+        "title": "Erfasste Daten:",
+        "items": [
+          "aufgerufene Seiten",
+          "Referrer (Herkunft der Besucher)",
+          "verwendeter Browser und Gerätetyp",
+          "ungefähre geografische Herkunft (ohne genaue Standortdaten)"
+        ]
       },
       "privacyGuarantees": {
-        "title": "Sicherheit & Datenschutz:"
+        "title": "Sicherheit & Datenschutz:",
+        "items": [
+          "keine Cookies zu Analysezwecken gesetzt",
+          "keine personenbezogenen Profile erstellt",
+          "keine Daten an Dritte weitergegeben"
+        ]
       },
       "summary": "Die Verarbeitung erfolgt anonymisiert.",
       "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Analyse der Website-Nutzung)"
@@ -581,9 +600,6 @@
       "title": "Cookies",
       "intro": "Diese Website verwendet ein technisch notwendiges Cookie zur Speicherung der Spracheinstellung.",
       "details": {
-        "name": {
-          "title": "Name"
-        },
         "purpose": {
           "title": "Zweck",
           "desc": "Speicherung der gewählten Sprache"
@@ -599,6 +615,13 @@
     "userRights": {
       "title": "Rechte der betroffenen Personen",
       "intro": "Du hast jederzeit das Recht auf:",
+      "items": [
+        "Auskunft über deine gespeicherten Daten",
+        "Berichtigung unrichtiger Daten",
+        "Löschung deiner Daten",
+        "Einschränkung der Verarbeitung",
+        "Widerspruch gegen die Verarbeitung"
+      ],
       "contact": "Hierzu genügt eine formlose Mitteilung per E-Mail."
     },
     "changes": {
