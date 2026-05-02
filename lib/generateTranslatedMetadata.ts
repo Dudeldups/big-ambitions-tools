@@ -2,6 +2,7 @@ import { GLOSSARY } from "@/i18n/glossary";
 import { LOCALE_NAMES } from "@/i18n/localeNames";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { BASE_URL, DEFAULT_LOCALE } from "./siteConstants";
 
 export type TranslatedMetadataProps = {
   params: Promise<{ locale: string }>;
@@ -18,9 +19,6 @@ type GenerateTranslatedMetadataOptions = {
   path?: string;
   noIndex?: boolean;
 };
-
-const BASE_URL = "https://big-ambitions-tools.com";
-const DEFAULT_LOCALE = "en";
 
 function localizedPath(locale: string, path = "/") {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
