@@ -3,7 +3,6 @@ export const DEFAULT_LOCALE = "en";
 
 export const ROUTES = [
   "",
-  "/about",
   "/database",
   "/database/ingredients",
   "/database/inventory",
