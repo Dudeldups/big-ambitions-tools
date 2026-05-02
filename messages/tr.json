@@ -386,7 +386,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümüne dayanıyor ve güncellemelerle değişebilir."
+      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",
@@ -450,7 +450,7 @@
       }
     },
     "playthroughDetail": {
-      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasından fabrikalarına göz atabilir, sipariş etmen gereken ürünleri takip edebilir ve daha fazlasını keşfedebilirsin. Fabrika planlayıcı; üretim istatistikleri, sipariş miktarları ve çok daha fazlası hakkında tüm detayları gösterir.",
+      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasından fabrikalarına göz atabilir, sipariş etmen gereken ürünleri takip edebilir ve çok daha fazlasını keşfedebilirsin. Fabrika planlayıcısı ise sana üretim istatistikleri, sipariş miktarları ve çok daha fazlası hakkında tüm detayları sunar.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
       "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
     },
@@ -549,5 +549,16 @@
   "footer": {
     "assets": "Oyunun tüm görselleri, markaları ve varlıkları ilgili sahiplerine aittir.",
     "fanMade": " Bu site bir fan projesidir ve oyunun geliştiricileriyle hiçbir bağlantısı yoktur. Kaynak kodu <link>GitHub</link>'de bulabilirsin."
+  },
+  "metadata": {
+    "root": {
+      "description": "{gameName} için fan araçları. Fabrikaları planla, üretim istatistiklerini hesapla, teslimat planlarını yönet ve oyun verilerine göz at."
+    },
+    "database": {
+      "description": "{gameName} için ürünler, makineler, araçlar, kâr hesaplamaları ve çok daha fazlasına dair detaylı oyun verileri."
+    },
+    "tools": {
+      "description": "{gameName} ekonomisinde ustalaş. İleri düzey fabrika planlamasından karmaşık lojistik yönetimine kadar—imparatorluğunu büyütmek için ihtiyacın olan tüm veriler burada."
+    }
   }
 }

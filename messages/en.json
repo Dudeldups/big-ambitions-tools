@@ -552,7 +552,13 @@
   },
   "metadata": {
     "root": {
-      "description": "Fan-made tools for Big Ambitions. Plan factories, calculate production stats, manage delivery plans, and browse game data."
+      "description": "Fan-made tools for {gameName}. Plan factories, calculate production stats, manage delivery plans, and browse game data."
+    },
+    "database": {
+      "description": "Browse detailed game data across products, machines, vehicles, profit calculations, and more for {gameName}."
+    },
+    "tools": {
+      "description": "Master the economy of {gameName}. From advanced factory planning to complex logistics management—get the data you need to scale your empire."
     }
   }
 }

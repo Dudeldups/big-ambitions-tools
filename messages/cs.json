@@ -265,7 +265,7 @@
       "buttonDesc": "Přepnout motiv",
       "light": "světlý",
       "dark": "tmavý",
-      "system": "systém"
+      "system": "System"
     },
     "displayPriceOptions": {
       "manufacture": "Výroba",
@@ -335,7 +335,7 @@
     "playthroughEditSuccess": "Průběh hry „{characterName}“ aktualizován!",
     "playthroughDeleteSuccess": "Průběh hry „{characterName}“ smazán!",
     "workstationCopyError": "Nejprve prosím vyber pracoviště a produkt.",
-    "factorySaveSuccess": "„{factoryName}“ vytvořena a přidána do průběhu hry!",
+    "factorySaveSuccess": "\"{factoryName}\" vytvořena a přidána do průběhu hry!",
     "factoryEditSuccess": "„{factoryName}“ aktualizována!",
     "factoryDeleteSuccess": "„{factoryName}“ smazána!",
     "groupSaveSuccess": "Skupina „{groupName}“ vytvořena!",
@@ -347,12 +347,12 @@
     "discardDesc": "Máš neuložené změny. Opravdu je chceš zahodit?",
     "resetForm": "Resetovat hodnoty formuláře",
     "resetDesc": "Opravdu chceš vrátit hodnoty formuláře na výchozí nastavení?",
-    "wsPresetBtn": "Přidat šablonu",
-    "wsPresetTitle": "Vybrat šablonu",
-    "wsPresetDesc": "Vyber ze seznamu šablon a přidej ji do své továrny.",
+    "wsPresetBtn": "Přidat předvolbu",
+    "wsPresetTitle": "Vyber předvolbu",
+    "wsPresetDesc": "Vyber si ze seznamu předvoleb a přidej ji do své továrny.",
     "priceIndicesDesc": "Pro správné výpočty vyber aktuální cenové indexy pro každou položku.",
     "groupBtn": "Vytvořit skupinu",
-    "groupTitle": "Vytvořit novou tovární skupinu",
+    "groupTitle": "Vytvoř novou skupinu továren",
     "groupDesc": "Seskup továrny a získej přehled o všech potřebných surovinách.",
     "editGroupTitle": "Upravit skupinu továren",
     "editGroupDesc": "Vyber nové hodnoty.",
@@ -380,7 +380,7 @@
     },
     "factoryGroup": {
       "nameTooLong": "Název skupiny může mít maximálně 30 znaků.",
-      "nameRequired": "Zadej název skupiny"
+      "nameRequired": "Zadej prosím název skupiny"
     }
   },
   "home": {
@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Tak jdeme do toho!",
-      "desc": "Chceš se jen tak něco vyhledat a trochu pokrouhat s čísly? <em>To jo, matika!</em> Zajeď do <link>{database}</link> a začni prozkoumávat.",
+      "desc": "Chceš se jen tak něco vyhledat a trochu pokrouhat s čísly? <em>Jo, matika!</em> Zajeď do <link>{database}</link> a začni prozkoumávat.",
       "desc2": "Od plánování první továrny až po řízení výrobních temp celého impéria najdeš všechno v sekci <link>{toolsSection}</link>.",
       "errorDesc": "Našel jsi chybu nebo ti chybí nějaké informace? Nebo máš návrh, jak web vylepšit? Klidně se <contact>ozvi</contact>!"
     },
@@ -399,7 +399,7 @@
       "subtitle": "To je škoda!",
       "desc": "{gameName} je revoluční podnikatelský RPG simulátor. Vypracuj se od nuly až na největšího podnikatele v New Yorku – otevírej malé obchody nebo postupně buduj obří korporace, přesně jak chceš.",
       "hovgaard": "Podívej se na oficiální web <website>{companyName}</website>",
-      "steam": "Hra je k dispozici přímo na <link>{steam}</link>"
+      "steam": "Navštiv hru přímo na <link>{steam}</link>"
     },
     "updates": {
       "title": "Nejnovější aktualizace"
@@ -415,11 +415,11 @@
   },
   "database": {
     "intro": {
-      "desc": "Prozkoumej podrobné herní údaje o produktech, strojích, vozidlech a další. Pomocí vyhledávání nebo filtrů kategorií rychle najdeš, co potřebuješ.",
+      "desc": "Prozkoumej podrobné herní údaje o produktech, strojích, vozidlech a dalších. Pomocí vyhledávání nebo filtrů podle kategorií rychle najdeš to, co potřebuješ.",
       "buttonDesc": "Vyber kategorii"
     },
     "products": {
-      "caption": "Všechny produkty na první pohled. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměr ze všech čtvrtí. Zisky jsou v čisté hodnotě – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
+      "caption": "Všechny produkty na první pohled. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměr všech čtvrtí. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
     },
     "ingredients": {
       "caption": "Přehled všech surovin včetně jejich vlastností. Vyber obtížnost, aby se zobrazily správné ceny."
@@ -431,7 +431,7 @@
       "caption": "Přehled všech... skladovacích možností. Zatím. Brzy se přidají další!"
     },
     "vehicles": {
-      "caption": "Hledáš největší kapacitu nákladu, nebo prostě nejrychlejší svezení? Najdeš to tady. Skill řidiče závisí na tvém {deliveryDriver} a pro maximální počet cílů potřebuješ {logisticsManager} se skillem 100 %."
+      "caption": "Hledáš hodně místa pro náklad, nebo prostě nejrychlejší svezení? Najdeš to tady. Skill řidiče závisí na tvém {deliveryDriver} a pro maximální počet cílů potřebuješ {logisticsManager} se 100% skillem."
     }
   },
   "tools": {
@@ -439,7 +439,7 @@
       "desc": "Tady se můžeš naplno ponořit do čísel a statistik hry. Plánuj své továrny a řiď logistiku celého impéria!"
     },
     "playthroughs": {
-      "desc": "Tady dole si můžeš vytvářet a spravovat své herní průběhy. Každý průběh představuje jeden samostatný pokus o hraní. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo si prostě držet přehled o svém postupu.",
+      "desc": "Níže si můžeš vytvářet a spravovat své průběhy hry. Každý průběh je jeden tvůj pokus o hraní. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo si prostě držet přehled o svém postupu.",
       "warning": "Důležité: Tvůj postup se ukládá v prohlížeči. Pokud smažeš data prohlížeče nebo používáš soukromý/anonymní režim, můžeš o něj přijít.",
       "createButtonDesc": "Nový průběh",
       "noPlaythroughs": "Zatím žádný průběh. Vytvoř si ho a začni!",
@@ -450,7 +450,7 @@
       }
     },
     "playthroughDetail": {
-      "desc": "Tady uvidíš výrobní statistiky svého impéria. Na stránce továren najdeš jejich přehled, můžeš sledovat položky k objednání pro své výrobní linky a mnoho dalšího. Plánovač továren ti ukáže všechny detaily o výrobních statistikách, objednávkách a mnohem více.",
+      "desc": "Tady uvidíš výrobní statistiky svého impéria. Na stránce „Továrny“ najdeš přehled továren, můžeš sledovat položky k objednání pro své výrobní linky a mnoho dalšího. Plánovač továren ti ukáže vše podrobně – od statistik až po množství objednávek.",
       "productionOverview": "Týdenní přehled výroby",
       "noProductionData": "Zatím nejsou dostupná žádná data. Vytvoř továrny a tady uvidíš své výrobní statistiky."
     },
@@ -474,15 +474,15 @@
       "splitShoppingList": {
         "title": "Rozdělený nákupní seznam",
         "desc": "Objednej tyto suroviny přímo do své továrny, abys objednávku rozdělil/a. Tohle je maximální množství, které tvoje {shelfAmount} paletové regály pojmou. Zohledňuje se i počet krabic, které vyrábíš. Pro uložení všech surovin na celý týden výroby bys potřeboval/a {requiredAmount} regálů.",
-        "desc1": "Zbytek musí do skladu objednat jeden nebo více samostatných nákupčích. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
+        "desc1": "Jeden nebo více samostatných nákupčích musí zbytek objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
       }
     },
     "playthroughForm": {
-      "title": "Vytvořit nový průběh",
-      "desc": "Zadej název svého postupu a vyber obtížnost, aby nástroje mohly vypočítat správné ceny. Postupy můžeš kdykoli upravit nebo smazat.",
+      "title": "Vytvořit nový průběh hry",
+      "desc": "Zadej název svého průběhu hry a vyber obtížnost, aby nástroje mohly vypočítat správné ceny. Průběhy hry můžeš kdykoli upravit nebo smazat.",
       "placeholder": "např. John Manhattan",
-      "deleteTitle": "Smazat postup",
-      "deleteDesc": "Opravdu chceš tento postup smazat? Tuto akci nelze vrátit zpět."
+      "deleteTitle": "Smazat průběh hry",
+      "deleteDesc": "Opravdu chceš smazat tento průběh hry? Tuhle akci už nebudeš moct vzít zpět."
     },
     "factoryForm": {
       "deleteTitle": "Smazat továrnu",
@@ -495,7 +495,7 @@
     "factoryGroups": {
       "buttonDesc": "Vytvořit skupinu",
       "title": "Skupiny továren",
-      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají přiřazeno dostatečné množství paletových regálů, nákupní seznam ti řekne, co musíš objednat pro jednotlivé továrny i do skladu, aby se pokryla zbytek potřeby. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
+      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají přiřazeno dostatečné množství paletových regálů, nákupní seznam ti řekne, co musíš objednat pro jednotlivé továrny i do skladu, aby se doplnil zbytek potřeby. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
       "groupEmpty": "V této skupině nejsou žádné továrny. Přetáhni sem kartu továrny a přidej ji.",
       "ungroupedTitle": "Továrny bez skupiny",
       "ungroupedEmpty": "Tady je prázdno. Přetáhni sem kartu nebo vytvoř novou továrnu.",
@@ -549,5 +549,16 @@
   "footer": {
     "assets": "Všechny herní obrázky, ochranné známky a assety patří jejich příslušným vlastníkům.",
     "fanMade": "Tohle je jen fanouškovský projekt, který není spojen s vývojáři hry. Kód najdeš na <link>GitHubu</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Fanouškovské nástroje pro {gameName}. Plánuj továrny, vypočítej statistiky výroby, spravuj plány dodávek a procházej si herní data."
+    },
+    "database": {
+      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a dalších pro {gameName}."
+    },
+    "tools": {
+      "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."
+    }
   }
 }

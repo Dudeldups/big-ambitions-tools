@@ -549,5 +549,16 @@
   "footer": {
     "assets": "Todas las imágenes, marcas y activos del juego pertenecen a sus respectivos dueños.",
     "fanMade": " Este es un proyecto de fans y no tiene relación con los desarrolladores del juego. El código fuente lo encuentras en <link>GitHub</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Herramientas de fans para {gameName}. Planifica fábricas, calcula estadísticas de producción, gestiona planes de entrega y explora los datos del juego."
+    },
+    "database": {
+      "description": "Explora datos detallados sobre productos, máquinas, vehículos, cálculos de beneficios y mucho más para {gameName}."
+    },
+    "tools": {
+      "description": "Domina la economía de {gameName}. Desde la planificación avanzada de fábricas hasta la gestión logística compleja: consigue los datos que necesitas para expandir tu imperio."
+    }
   }
 }

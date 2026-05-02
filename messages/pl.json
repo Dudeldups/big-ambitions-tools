@@ -271,7 +271,7 @@
       "manufacture": "Produkcja",
       "import": "Import",
       "export": "Eksport",
-      "retail": "Detal"
+      "retail": "Handel detaliczny"
     },
     "calculationPeriodOptions": {
       "hourly": "Godzinowo",
@@ -310,8 +310,8 @@
     "autoParkSupported": "Asystent parkowania",
     "taxDeductible": "Do odliczenia",
     "requiredDeliveryDriverSkillValue": "Wymag. skill kierowcy",
-    "destinationsThatCanDeliver": "Bazowe cele",
-    "destinationsFull": "Maks. cele",
+    "destinationsThatCanDeliver": "Podst. punkty",
+    "destinationsFull": "Maks. punkty",
     "employees": "Pracownicy",
     "description": "Opis",
     "export": "Eksport",
@@ -335,7 +335,7 @@
     "playthroughEditSuccess": "Stan gry \"{characterName}\" zaktualizowany!",
     "playthroughDeleteSuccess": "Stan gry \"{characterName}\" usunięty!",
     "workstationCopyError": "Wybierz najpierw stanowisko produkcyjne i produkt.",
-    "factorySaveSuccess": "\"{factoryName}\" utworzona i dodana do stanu gry!\"",
+    "factorySaveSuccess": "\"\"{factoryName}\" utworzona i dodana do stanu gry!\"",
     "factoryEditSuccess": "\"{factoryName}\" zaktualizowana!",
     "factoryDeleteSuccess": "\"{factoryName} usunięta!\"",
     "groupSaveSuccess": "Grupa \"{groupName}\" utworzona!",
@@ -360,7 +360,7 @@
     "groupLabelColor": "Kolor",
     "deleteGroupTitle": "Usuń grupę",
     "deleteGroupDesc": "Czy na pewno chcesz usunąć tę grupę? Jeśli do grupy przypisano fabryki, zostaną przeniesione do grupy domyślnej.",
-    "oneTimeCostDesc": "Jednorazowe koszty instalacji fabryki."
+    "oneTimeCostDesc": "Jednorazowe koszty instalacji dla fabryki."
   },
   "errors": {
     "playthrough": {
@@ -390,7 +390,7 @@
     },
     "cta": {
       "title": "Zaczynamy!",
-      "desc": "Chcesz coś tylko sprawdzić albo pobawić się w liczby? <em>No i git, matma!</em> Wpadnij do <link>{database}</link> i zacznij odkrywać.",
+      "desc": "Chcesz tylko coś sprawdzić albo pobawić się liczbami? <em>No i git, matma!</em> Wpadnij do <link>{database}</link> i zacznij odkrywać.",
       "desc2": "Od planowania pierwszej fabryki po zarządzanie tempem produkcji całego imperium znajdziesz wszystko w sekcji <link>{toolsSection}</link>.",
       "errorDesc": "Znalazłeś błąd lub brakuje Ci informacji? Masz pomysły na ulepszenie strony? <contact>Daj nam znać!</contact>"
     },
@@ -415,7 +415,7 @@
   },
   "database": {
     "intro": {
-      "desc": "Odkryj szczegółowe dane gry dotyczące produktów, maszyn, pojazdów i nie tylko. Użyj wyszukiwarki oraz filtrów kategorii, żeby szybko znaleźć to, czego potrzebujesz.",
+      "desc": "Zanurz się w szczegółowych danych o produktach, maszynach, pojazdach i nie tylko. Użyj wyszukiwania i filtrów kategorii, żeby szybko znaleźć to, czego szukasz.",
       "buttonDesc": "Wybierz kategorię"
     },
     "products": {
@@ -431,7 +431,7 @@
       "caption": "Mały przegląd wszystkich... opcji magazynowych. Na razie tylko tyle. Wkrótce więcej!"
     },
     "vehicles": {
-      "caption": "Szukasz ogromnej ładowności czy po prostu najszybszego auta? Znajdziesz je tutaj. Skill kierowcy zależy od Twojego {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
+      "caption": "Szukasz ogromnej ładowności czy po prostu najszybszego auta? Znajdziesz to tutaj. Skill kierowcy dotyczy Twojego {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
     }
   },
   "tools": {
@@ -439,28 +439,28 @@
       "desc": "Tutaj możesz wgłębić się w liczby i statystyki gry. Planuj swoje fabryki i zarządzaj logistyką całego swojego imperium!"
     },
     "playthroughs": {
-      "desc": "Poniżej możesz tworzyć i zarządzać swoimi rozgrywkami. Każda z nich to osobny przebieg gry. Możesz tworzyć wiele sesji, aby porównywać wyniki, testować różne poziomy trudności lub po prostu śledzić postępy.",
+      "desc": "Poniżej możesz tworzyć i zarządzać swoimi stanami gry. Każdy stan gry to pojedynczy przebieg. Możesz tworzyć wiele stanów gry, aby porównywać różne sesje, testować inne poziomy trudności lub po prostu śledzić postępy.",
       "warning": "Ważne: Twój postęp jest zapisywany w przeglądarce. Jeśli wyczyścisz dane przeglądarki lub użyjesz trybu prywatnego/incognito, wszystko może zniknąć.",
-      "createButtonDesc": "Nowa rozgrywka",
-      "noPlaythroughs": "Brak rozgrywek. Stwórz jedną, aby zacząć!",
+      "createButtonDesc": "Nowy stan gry",
+      "noPlaythroughs": "Brak stanów gry. Stwórz jeden, aby zacząć!",
       "notFound": {
-        "title": "Nie znaleziono rozgrywki",
-        "desc": "Ta rozgrywka nie istnieje lub została usunięta.",
-        "link": "Powrót do listy rozgrywek"
+        "title": "Nie znaleziono stanu gry",
+        "desc": "Ten stan gry nie istnieje lub został usunięty.",
+        "link": "Powrót do listy stanów gry"
       }
     },
     "playthroughDetail": {
-      "desc": "Tutaj zobaczysz statystyki produkcji swojego imperium. Wejdź na stronę „Fabryki”, aby sprawdzić podsumowanie swoich fabryk, monitorować zamówienia dla linii produkcyjnych i wiele więcej. Planer fabryk pokaże Ci wszystkie szczegóły dotyczące statystyk produkcji oraz wielkości zamówień.",
+      "desc": "Tutaj zobaczysz statystyki produkcji swojego imperium. Wejdź na stronę „Fabryki”, aby sprawdzić podsumowanie swoich fabryk, śledzić przedmioty, które musisz zamówić dla swoich linii produkcyjnych i wiele więcej. Planer fabryk pokaże Ci wszystkie szczegóły dotyczące statystyk produkcji, wielkości zamówień i nie tylko.",
       "productionOverview": "Tygodniowy przegląd produkcji",
       "noProductionData": "Jeszcze nie ma danych. Utwórz fabryki, a zobaczysz tu swoje statystyki produkcji."
     },
     "factories": {
       "title": "Twoje fabryki",
-      "desc": "Oto przegląd Twoich fabryk. Możesz je edytować, usuwać lub kopiować ich wartości do nowej fabryki. Kliknij w kartę danej fabryki, aby zobaczyć szczegóły, w tym listę zakupów.",
+      "desc": "Zobacz swoje fabryki. Możesz je edytować, usuwać lub kopiować aktualne wartości do nowej fabryki. Kliknij w kartę, aby zobaczyć szczegóły i listę zakupów.",
       "desc1": "Możesz też je pogrupować, klikając przycisk 'Utwórz grupę' poniżej. Dzięki temu zobaczysz wszystkie fabryki w jednym miejscu i łatwiej nimi zarządzisz. To przydatne, jeśli używasz centralnego magazynu do dostarczania składników do wielu fabryk. Na podstawie liczby dodanych regałów paletowych system podpowie Ci plan dostaw dla każdej fabryki.",
-      "noFactories": "Nie masz jeszcze żadnych fabryk w swojej rozgrywce. Stwórz pierwszą i zacznij zabawę!",
+      "noFactories": "W Twoim stanie gry nie ma jeszcze żadnych fabryk. Stwórz jedną, aby zacząć zabawę!",
       "notFound": {
-        "title": "Nie znaleziono fabryki",
+        "title": "Nie ma tej fabryki",
         "desc": "Ta fabryka nie istnieje lub została usunięta.",
         "link": "Powrót do listy fabryk"
       }
@@ -473,16 +473,16 @@
       },
       "splitShoppingList": {
         "title": "Podział listy zakupów",
-        "desc": "Zamów te składniki prosto do swojej fabryki, żeby podzielić zamówienie. To maksymalna ilość, jaką mogą pomieścić Twoje {shelfAmount} regały paletowe. Uwzględnia to też liczbę produkowanych kartonów. Do przechowywania wszystkich składników na cały tydzień produkcji potrzebujesz {requiredAmount} regałów.",
-        "desc1": "Resztę musi zamówić jeden lub więcej oddzielnych agentów zakupowych. Wróć do <link>widoku fabryk</link> i utwórz grupę, aby zobaczyć pełną listę rzeczy do zamówienia dla tego magazynu. Zobaczysz tam również plan dostaw do każdej fabryki."
+        "desc": "Zamów te składniki prosto do swojej fabryki, żeby podzielić zamówienie. To maksymalna ilość, jaką mogą pomieścić Twoje {shelfAmount} regały paletowe. Uwzględnia to też liczbę kartonów, które produkujesz. Do przechowywania wszystkich składników na cały tydzień produkcji potrzebujesz {requiredAmount} regałów.",
+        "desc1": "Resztę musi zamówić jeden lub kilku oddzielnych agentów zakupowych. Wróć do <link>widoku fabryk</link> i utwórz grupę, aby zobaczyć pełną listę produktów do zamówienia dla tego magazynu. Zobaczysz tam również plan dostaw do każdej fabryki."
       }
     },
     "playthroughForm": {
-      "title": "Utwórz nową rozgrywkę",
-      "desc": "Nadaj swojej partii nazwę i wybierz poziom trudności, aby narzędzia mogły obliczyć poprawne ceny. Swoje partie możesz edytować lub usuwać w dowolnym momencie.",
+      "title": "Utwórz nowy stan gry",
+      "desc": "Podaj nazwę stanu gry i wybierz poziom trudności, żeby narzędzia mogły obliczyć poprawne ceny. Stany gry możesz edytować lub usuwać w dowolnym momencie.",
       "placeholder": "np. John Manhattan",
-      "deleteTitle": "Usuń partię",
-      "deleteDesc": "Na pewno chcesz usunąć tę partię? Nie da się tego cofnąć."
+      "deleteTitle": "Usuń stan gry",
+      "deleteDesc": "Na pewno chcesz usunąć ten stan gry? Nie można cofnąć tej operacji."
     },
     "factoryForm": {
       "deleteTitle": "Usuń fabrykę",
@@ -503,7 +503,7 @@
         "buttonDesc": "Dostawy",
         "title": "Plan dostaw",
         "descNeeded": "Plany dostaw dla każdej fabryki w tej grupie. Potrzebujesz {amount} regałów paletowych, aby zaopatrzyć wszystkie fabryki.",
-        "descEnough": "Wszystkie fabryki mają dość regałów na wszystkie potrzebne składniki."
+        "descEnough": "Wszystkie fabryki mają wystarczająco dużo półek, by pomieścić wszystkie potrzebne składniki."
       },
       "shoppingList": {
         "title": "Lista zakupów grupy",
@@ -525,10 +525,10 @@
         "enoughDaily": "Tylko na dostawy dzienne. Przy logistyce tygodniowej potrzebny jest magazyn.",
         "notEnough": "Za mało miejsca na magazynie, nawet na dostawę dzienną.",
         "overflowWarning": "Magazyn się przepełnia!",
-        "overflowDesc": "Produkcja idzie szybciej niż zużycie składników. Liczba regałów została skorygowana."
+        "overflowDesc": "Produkujesz szybciej niż zużywasz składniki. Liczba regałów została dostosowana."
       },
       "employees": {
-        "desc": "Wpisz pensję każdego pracownika. Zostaw puste, jeśli nie chcesz liczyć wynagrodzeń.",
+        "desc": "Wpisz pensję każdego pracownika. Zostaw puste, jeśli nie chcesz uwzględniać kosztów pracy.",
         "optimalWorkers": "Użyj optymalnej liczby pracowników fabryki",
         "optimalTooltip": "Automatycznie oblicza optymalną liczbę pracowników na podstawie stanowisk produkcyjnych i godzin otwarcia. Dodaje mały bufor dla płynnego autoschedulingu w grze."
       },
@@ -547,7 +547,18 @@
     }
   },
   "footer": {
-    "assets": "Wszystkie grafiki, marki i assets należą do ich właścicieli.",
+    "assets": "Wszystkie grafiki, znaki towarowe i assety należą do swoich właścicieli.",
     "fanMade": "To projekt fanowski, niezwiązany z twórcami gry. Kod źródłowy znajdziesz na <link>GitHub</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Fanowskie narzędzia do {gameName}. Planuj fabryki, obliczaj statystyki produkcji, zarządzaj planami dostaw i przeglądaj dane z gry."
+    },
+    "database": {
+      "description": "Szczegółowe dane o produktach, maszynach, pojazdach, obliczeniach zysku i wielu innych dla {gameName}."
+    },
+    "tools": {
+      "description": "Zdominuj ekonomię w {gameName}. Od zaawansowanego planowania fabryk po skomplikowaną logistykę – zgarnij dane potrzebne do budowy własnego imperium."
+    }
   }
 }

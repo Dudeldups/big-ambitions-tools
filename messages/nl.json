@@ -549,5 +549,16 @@
   "footer": {
     "assets": "Alle afbeeldingen, merken en assets uit het spel zijn eigendom van de eigenaren.",
     "fanMade": "Dit is een fan-project en heeft niets te maken met de ontwikkelaars van het spel. De broncode vind je op <link>GitHub</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Fan-tools voor {gameName}. Plan fabrieken, bereken productiestatistieken, beheer leveringsschema's en ontdek alle game-data."
+    },
+    "database": {
+      "description": "Gedetailleerde game-data over producten, machines, voertuigen, winstberekeningen en meer voor {gameName}."
+    },
+    "tools": {
+      "description": "Beheers de economie van {gameName}. Van geavanceerde fabrieksplanning tot complexe logistiek — krijg de data die je nodig hebt om je imperium uit te breiden."
+    }
   }
 }

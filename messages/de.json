@@ -549,5 +549,16 @@
   "footer": {
     "assets": "Alle Bilder, Marken und Assets aus dem Spiel sind Eigentum der jeweiligen Besitzer.",
     "fanMade": "Diese Seite ist ein reines Fan-Projekt und steht in keiner Verbindung zu den Entwicklern des Spiels. Den Quellcode dazu findest du auf <link>GitHub</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Fan-Tools für {gameName}. Plane Fabriken, berechne Produktionsstatistiken, verwalte Lieferpläne und stöbere in den Spieldaten."
+    },
+    "database": {
+      "description": "Detaillierte Spieldaten zu Produkten, Maschinen, Fahrzeugen, Gewinnberechnungen und mehr für {gameName}."
+    },
+    "tools": {
+      "description": "Meistere die Wirtschaft von {gameName}. Von fortgeschrittener Fabrikplanung bis hin zu komplexem Logistikmanagement – hol dir die Daten für dein Imperium."
+    }
   }
 }

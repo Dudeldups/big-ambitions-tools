@@ -311,7 +311,7 @@
     "taxDeductible": "税控除",
     "requiredDeliveryDriverSkillValue": "配送ドライバースキル",
     "destinationsThatCanDeliver": "拠点配送先",
-    "destinationsFull": "最大目的地",
+    "destinationsFull": "目的地 (最大)",
     "employees": "従業員",
     "description": "説明",
     "export": "輸出",
@@ -549,5 +549,16 @@
   "footer": {
     "assets": "ゲーム内の画像や商標、アセットの権利は各所有者のもの。",
     "fanMade": " これは純粋なファンプロジェクトで、ゲームの開発者とは一切関係ありません。ソースコードは <link>GitHub</link> にあります。"
+  },
+  "metadata": {
+    "root": {
+      "description": "{gameName}のファン向けツール。工場の計画、生産統計の計算、配送プランの管理、ゲームデータの閲覧に。"
+    },
+    "database": {
+      "description": "{gameName}の製品、機械、車両、利益計算など、詳細なゲームデータをチェックしよう。"
+    },
+    "tools": {
+      "description": "{gameName}の経済を攻略。高度な工場計画から複雑な物流管理まで、帝国拡大に必要なデータが手に入る。"
+    }
   }
 }

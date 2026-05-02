@@ -549,5 +549,16 @@
   "footer": {
     "assets": "Todas as imagens, marcas e assets do jogo pertencem aos seus respectivos proprietários.",
     "fanMade": " Este é um site feito por fãs e não tem ligação com os desenvolvedores do jogo. Podes ver o código fonte no <link>GitHub</link>."
+  },
+  "metadata": {
+    "root": {
+      "description": "Ferramentas de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
+    },
+    "database": {
+      "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."
+    },
+    "tools": {
+      "description": "Domine a economia de {gameName}. Do planejamento avançado de fábricas à gestão logística complexa — consiga os dados que você precisa para expandir seu império."
+    }
   }
 }
