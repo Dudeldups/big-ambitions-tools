@@ -278,7 +278,8 @@
       "daily": "Diario",
       "weekly": "Semanal"
     },
-    "navigation": "Navegación"
+    "navigation": "Navegación",
+    "name": "Nombre"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Estante de palets} other {Estantes de palets}}",

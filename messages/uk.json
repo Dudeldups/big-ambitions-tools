@@ -278,7 +278,8 @@
       "daily": "Добово",
       "weekly": "Щотижнево"
     },
-    "navigation": "Управління"
+    "navigation": "Управління",
+    "name": "Ім'я"
   },
   "counts": {
     "palletShelf": "{count, plural, one {палетний стелаж} other {палетні стелажі}}",

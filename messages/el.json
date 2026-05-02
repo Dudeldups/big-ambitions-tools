@@ -278,7 +278,8 @@
       "daily": "Ημερήσια",
       "weekly": "Εβδομαδιαία"
     },
-    "navigation": "Πλοήγηση"
+    "navigation": "Πλοήγηση",
+    "name": "Όνομα"
   },
   "counts": {
     "palletShelf": "{count, plural, one {παλετοθήκη} other {παλετοθήκες}}",

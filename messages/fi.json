@@ -278,7 +278,8 @@
       "daily": "Päivittäin",
       "weekly": "Viikoittain"
     },
-    "navigation": "Navigointi"
+    "navigation": "Navigointi",
+    "name": "Nimi"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Lavahylly} other {Lavahyllyt}}",

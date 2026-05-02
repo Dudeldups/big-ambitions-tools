@@ -278,7 +278,8 @@
       "daily": "Giornaliero",
       "weekly": "Settimanale"
     },
-    "navigation": "Navigazione"
+    "navigation": "Navigazione",
+    "name": "Nome"
   },
   "counts": {
     "palletShelf": "{count, plural, one {scaffale pallet} other {scaffali pallet}}",

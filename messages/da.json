@@ -278,7 +278,8 @@
       "daily": "Dagligt",
       "weekly": "Ugentligt"
     },
-    "navigation": "Navigation"
+    "navigation": "Navigation",
+    "name": "Navn"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Pallehylde} other {Pallehylder}}",

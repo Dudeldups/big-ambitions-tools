@@ -278,7 +278,8 @@
       "daily": "日ごと",
       "weekly": "週ごと"
     },
-    "navigation": "基本操作"
+    "navigation": "基本操作",
+    "name": "名前"
   },
   "counts": {
     "palletShelf": "{count, plural, one {パレット棚} other {パレット棚}}",

@@ -278,7 +278,8 @@
       "daily": "每日",
       "weekly": "每周"
     },
-    "navigation": "导航"
+    "navigation": "导航",
+    "name": "名称"
   },
   "counts": {
     "palletShelf": "{count, plural, one {托盘货架} other {托盘货架}}",

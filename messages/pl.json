@@ -278,7 +278,8 @@
       "daily": "Dziennie",
       "weekly": "Tygodniowo"
     },
-    "navigation": "Nawigacja"
+    "navigation": "Nawigacja",
+    "name": "Nazwa"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Regał paletowy} other {Regały paletowe}}",

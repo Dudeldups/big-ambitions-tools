@@ -278,7 +278,8 @@
       "daily": "일별",
       "weekly": "주별"
     },
-    "navigation": "탐색"
+    "navigation": "탐색",
+    "name": "이름"
   },
   "counts": {
     "palletShelf": "{count, plural, one {팔레트 선반} other {팔레트 선반들}}",

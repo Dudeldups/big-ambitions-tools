@@ -278,7 +278,8 @@
       "daily": "Kasdienis",
       "weekly": "Savaitinis"
     },
-    "navigation": "Navigacija"
+    "navigation": "Navigacija",
+    "name": "vardas"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palečių lentyna} other {Palečių lentynos}}",

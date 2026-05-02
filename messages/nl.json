@@ -278,7 +278,8 @@
       "daily": "Dagelijks",
       "weekly": "Wekelijks"
     },
-    "navigation": "Navigatie"
+    "navigation": "Navigatie",
+    "name": "Naam"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palletplank} other {Palletplanken}}",

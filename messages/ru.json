@@ -278,7 +278,8 @@
       "daily": "Ежедневный",
       "weekly": "Еженедельный"
     },
-    "navigation": "Навигация"
+    "navigation": "Навигация",
+    "name": "Название"
   },
   "counts": {
     "palletShelf": "{count, plural, one {паллетный стеллаж} other {паллетные стеллажи}}",

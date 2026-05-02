@@ -278,7 +278,8 @@
       "daily": "denně",
       "weekly": "týdně"
     },
-    "navigation": "Ovládání"
+    "navigation": "Ovládání",
+    "name": "název"
   },
   "counts": {
     "palletShelf": "{count, plural, one {paletový regál} few {paletové regály} other {paletových regálů}}",

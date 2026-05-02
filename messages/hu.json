@@ -278,7 +278,8 @@
       "daily": "Naponta",
       "weekly": "Heti"
     },
-    "navigation": "Navigáció"
+    "navigation": "Navigáció",
+    "name": "Név"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raklappolc} other {Raklappolcok}}",

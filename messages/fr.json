@@ -278,7 +278,8 @@
       "hourly": "Par heure",
       "daily": "Par jour",
       "weekly": "Par semaine"
-    }
+    },
+    "name": "Nom"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Rayonnage à palettes} other {Rayonnages à palettes}}",

@@ -278,7 +278,8 @@
       "daily": "Zilnic",
       "weekly": "Săptămânal"
     },
-    "navigation": "Navigare"
+    "navigation": "Navigare",
+    "name": "Nume"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raft pentru paleți} other {Rafte pentru paleți}}",

@@ -278,7 +278,8 @@
       "daily": "Günlük",
       "weekly": "Haftalık"
     },
-    "navigation": "Gezinme"
+    "navigation": "Gezinme",
+    "name": "Ad"
   },
   "counts": {
     "palletShelf": "{count, plural, one {palet rafı} other {palet rafı}}",

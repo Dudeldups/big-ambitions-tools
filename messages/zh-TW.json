@@ -278,7 +278,8 @@
       "daily": "每日",
       "weekly": "每週"
     },
-    "navigation": "導航"
+    "navigation": "導航",
+    "name": "名稱"
   },
   "counts": {
     "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
