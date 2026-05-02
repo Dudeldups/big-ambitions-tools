@@ -17,8 +17,7 @@ import PriceIndicesDialog from "@/components/tools/price-indices-dialog";
 import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import { StatBadge } from "@/components/deco/stat-badge";
-import { useEffect } from "react";
-import { GLOSSARY } from "@/i18n/glossary";
+import { usePlaythroughDocumentTitle } from "@/lib/hooks/usePlaythroughDocumentTitle";
 
 const PlaythroughIdLayoutClient = ({
   children,
@@ -29,6 +28,7 @@ const PlaythroughIdLayoutClient = ({
   const tGeneral = useTranslations("general");
   const { isLoading, isInvalid, activePlaythrough } = useActivePlaythrough();
   const pathname = usePathname();
+  usePlaythroughDocumentTitle(activePlaythrough?.characterName);
   const isNewFactoryDisabled =
     !activePlaythrough ||
     pathname.includes("/edit") ||
@@ -42,12 +42,6 @@ const PlaythroughIdLayoutClient = ({
       );
     }),
   );
-
-  useEffect(() => {
-    if (activePlaythrough?.characterName) {
-      document.title = `${activePlaythrough.characterName} | ${GLOSSARY.siteName}`;
-    }
-  }, [activePlaythrough?.characterName, pathname]);
 
   if (isInvalid && !isLoading) return <PlaythroughNotFound />;
 
