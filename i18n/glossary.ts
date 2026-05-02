@@ -4,6 +4,7 @@ export const GLOSSARY = {
   gameName: "Big\u00A0Ambitions",
   companyName: "Hovgaard\u00A0Games",
   umamiAnalytics: "Umami Analytics",
+  cookieNext: "NEXT_LOCALE",
   steam: "Steam",
   gameVersion: "0.10",
 } as const;
