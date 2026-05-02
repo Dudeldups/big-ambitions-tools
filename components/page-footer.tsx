@@ -25,7 +25,7 @@ const PageFooter = () => {
         <div className="mx-auto grid max-w-max gap-3 text-sm max-sm:mb-5 sm:grid-cols-[1fr_auto_1fr]">
           <SmartLink
             href="/privacy"
-            className="justify-self-end hover:underline"
+            className="hover:underline sm:justify-self-end"
           >
             {t("legal.link")}
           </SmartLink>
@@ -37,7 +37,7 @@ const PageFooter = () => {
 
           <SmartLink
             href="/legal"
-            className="justify-self-start hover:underline"
+            className="hover:underline sm:justify-self-start"
           >
             {t("privacy.link")}
           </SmartLink>
