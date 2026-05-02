@@ -6,8 +6,8 @@ type PrivacyItemWrapperProps = {
 const PrivacyItemWrapper = ({ children, title }: PrivacyItemWrapperProps) => {
   return (
     <li>
-      <div className="space-y-4 pb-8">
-        <h2 className="text-h3 mb-6">{title}</h2>
+      <div className="space-y-4 text-left">
+        <h2 className="text-h3 mb-6 max-md:text-center">{title}</h2>
 
         {children}
       </div>
