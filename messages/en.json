@@ -559,6 +559,9 @@
     },
     "tools": {
       "description": "Master the economy of {gameName}. From advanced factory planning to complex logistics management—get the data you need to scale your empire."
+    },
+    "playthroughs": {
+      "description": "Manage and compare your {gameName} playthroughs. Track your progress across different difficulties, analyze production stats, and optimize your business runs."
     }
   }
 }

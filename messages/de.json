@@ -559,6 +559,9 @@
     },
     "tools": {
       "description": "Meistere die Wirtschaft von {gameName}. Von fortgeschrittener Fabrikplanung bis hin zu komplexem Logistikmanagement – hol dir die Daten für dein Imperium."
+    },
+    "playthroughs": {
+      "description": "Verwalte und vergleiche deine {gameName} Spielstände. Behalte den Überblick über deinen Fortschritt, analysiere Statistiken und optimiere deine Strategie."
     }
   }
 }
