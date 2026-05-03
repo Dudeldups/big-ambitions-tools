@@ -137,7 +137,7 @@ export default function Home() {
             </em>
           </hgroup>
 
-          <div className="via-muted-foreground p-clamp-x card--quote from-muted-foreground/85 to-muted-foreground/85 ring-muted-foreground max-w-xl rounded-xl bg-linear-170 md:mx-6">
+          <div className="via-popover-foreground/90 p-clamp-x card--quote from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground max-w-xl rounded-xl bg-linear-170 md:mx-6">
             <blockquote className="text-h5 text-card leading-relaxed text-pretty max-lg:text-center">
               {rich("game.desc")}
             </blockquote>
