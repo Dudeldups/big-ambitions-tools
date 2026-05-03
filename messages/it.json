@@ -209,6 +209,7 @@
     "delete": "Elimina",
     "save": "Salva",
     "amount": "Quantità",
+    "name": "Nome",
     "summedUpAmount": "Totale",
     "summary": "Riassunto",
     "amortization": "Ammortamento",
@@ -218,6 +219,7 @@
     "columnsDescription": "Colonne",
     "filterResults": "Filtra risultati...",
     "characterName": "Nome personaggio",
+    "navigation": "Navigazione",
     "home": "Home",
     "about": "Chi siamo",
     "contact": "Contatti",
@@ -277,9 +279,7 @@
       "hourly": "Orario",
       "daily": "Giornaliero",
       "weekly": "Settimanale"
-    },
-    "navigation": "Navigazione",
-    "name": "Nome"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {scaffale pallet} other {scaffali pallet}}",
@@ -548,6 +548,91 @@
       "priceIndexDesc": "Scegli l'indice di prezzo attuale del gioco per questo prodotto per calcolare il guadagno corretto. (Il prezzo di esportazione è più preciso.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Idee? Domande? Scrivimi!",
+    "intro": "Se hai idee per nuove funzioni, ti accorgi che mancano dei dati o vuoi solo darmi un feedback, scrivimi pure! Apprezzo ogni messaggio che mi aiuta a rendere il sito ancora più utile per la community."
+  },
+  "legal": {
+    "title": "Info legali",
+    "link": "Info legali"
+  },
+  "privacy": {
+    "title": "Info sulla privacy",
+    "link": "Privacy",
+    "generalInfo": {
+      "title": "Informazioni generali",
+      "intro": "Su questo sito usiamo i tuoi dati solo come previsto dalla legge (GDPR).",
+      "responsiblePerson": "Chi gestisce i dati (secondo il GDPR):"
+    },
+    "serverLogs": {
+      "title": "Dati di accesso (Server Log)",
+      "intro": "Quando navighi sul sito, il server registra in automatico:",
+      "items": [
+        "Indirizzo IP (troncato o anonimizzato)",
+        "Data e ora della richiesta",
+        "Pagina visitata",
+        "Tipo e versione del browser",
+        "Sistema operativo"
+      ],
+      "purpose": "Questi dati servono solo per il funzionamento tecnico e la sicurezza del sito.",
+      "legalBasis": "Base giuridica: Art. 6 (1) lett. f GDPR"
+    },
+    "analytics": {
+      "title": "Uso di {umamiAnalytics}",
+      "intro": "Questo sito usa <em>{umamiAnalytics}</em>, uno strumento di analisi che rispetta la privacy. Umami è ospitato sul nostro server e non tratta dati personali in senso stretto.",
+      "capturedData": {
+        "title": "Dati raccolti:",
+        "items": [
+          "Pagine visitate",
+          "Referrer (provenienza dei visitatori)",
+          "Tipo di browser e dispositivo usato",
+          "Origine geografica approssimativa (senza dati sulla posizione esatta)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Sicurezza e Privacy:",
+        "items": [
+          "Nessun cookie viene usato per scopi analitici",
+          "Nessun profilo personale viene creato",
+          "Nessun dato viene condiviso con terze parti"
+        ]
+      },
+      "summary": "Trattamento anonimo",
+      "legalBasis": "Base giuridica: Art. 6 (1) lett. f GDPR (legittimo interesse all'analisi dell'uso del sito)"
+    },
+    "cookies": {
+      "title": "Cookie",
+      "intro": "Questo sito usa un cookie tecnico necessario per salvare la tua lingua.",
+      "details": {
+        "purpose": {
+          "title": "Scopo",
+          "desc": "Salvataggio della lingua scelta"
+        },
+        "duration": {
+          "title": "Durata",
+          "desc": "fino a 30 giorni o finché non la cancelli tu"
+        }
+      },
+      "summary": "Questo cookie è necessario per il funzionamento del sito e non richiede il tuo consenso.",
+      "legalBasis": "Base giuridica: Art. 6, par. 1, lett. f del GDPR"
+    },
+    "userRights": {
+      "title": "I tuoi diritti",
+      "intro": "In qualsiasi momento puoi richiedere:",
+      "items": [
+        "Informazioni sui tuoi dati salvati",
+        "Correzione dei dati errati",
+        "Cancellazione dei tuoi dati",
+        "Limitazione del trattamento",
+        "Opposizione al trattamento"
+      ],
+      "contact": "Ti basta mandare una semplice email."
+    },
+    "changes": {
+      "title": "Modifiche",
+      "intro": "Potremmo aggiornare la privacy policy per motivi legali o se cambia qualcosa sul sito."
+    }
+  },
   "footer": {
     "assets": "Tutte le immagini, i marchi e gli asset del gioco appartengono ai rispettivi proprietari.",
     "fanMade": "Questo è un sito realizzato dalla community e non è affiliato agli sviluppatori del gioco. Il codice sorgente è disponibile su <link>GitHub</link>."
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "Domina l'economia di {gameName}. Dalla pianificazione avanzata delle fabbriche alla gestione logistica complessa: ottieni i dati necessari per espandere il tuo impero."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Nome"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Gestisci e confronta le tue partite di {gameName}. Segui i progressi nelle diverse difficoltà, analizza le statistiche di produzione e ottimizza la tua strategia."
     }
   }
 }

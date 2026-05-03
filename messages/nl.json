@@ -209,6 +209,7 @@
     "delete": "Verwijderen",
     "save": "Opslaan",
     "amount": "Bedrag",
+    "name": "Naam",
     "summedUpAmount": "Totaal",
     "summary": "Samenvatting",
     "amortization": "Amortisatie",
@@ -218,6 +219,7 @@
     "columnsDescription": "Kolommen",
     "filterResults": "Resultaten filteren...",
     "characterName": "Karakternaam",
+    "navigation": "Navigatie",
     "home": "Home",
     "about": "Over ons",
     "contact": "Contact",
@@ -277,9 +279,7 @@
       "hourly": "Uurlijk",
       "daily": "Dagelijks",
       "weekly": "Wekelijks"
-    },
-    "navigation": "Navigatie",
-    "name": "Naam"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palletplank} other {Palletplanken}}",
@@ -392,7 +392,7 @@
     },
     "cta": {
       "title": "Aan de slag!",
-      "desc": "Wil je alleen even wat opzoeken of een beetje met de cijfers knoeien? <em>Hmmm, lekkere cijfers!</em> Dan kijk je even in de <link>{database}</link> en blader je een rondje.",
+      "desc": "Wil je gewoon even iets opzoeken of wat cijfers knallen? <em>Lekker, wiskunde!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
       "desc2": "Van het plannen van je eerste fabriek tot aan het beheren van de productieraten van je hele imperium, vind je alles in het gedeelte <link>{toolsSection}</link>.",
       "errorDesc": "Sto je op een foutje gestoten of mis je info? Of heb je suggesties om de site te verbeteren? Dan <contact>meld je maar even</contact>!"
     },
@@ -548,6 +548,91 @@
       "priceIndexDesc": "Kies de huidige game-prijsindex voor dit product om het juiste inkomen te berekenen. (De exportprijs is nauwkeuriger.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Ideeën? Vragen? Stuur gerust een berichtje.",
+    "intro": "Heb je ideeën voor nieuwe functies, mis je data of wil je gewoon wat feedback geven? Laat het me weten! Ik waardeer elk bericht dat me helpt om deze site nóg nuttiger te maken voor de community."
+  },
+  "legal": {
+    "title": "Juridische info",
+    "link": "Juridisch"
+  },
+  "privacy": {
+    "title": "Privacyverklaring",
+    "link": "Privacy",
+    "generalInfo": {
+      "title": "Algemene informatie",
+      "intro": "Deze website verwerkt persoonsgegevens uitsluitend volgens de wettelijke regels (AVG).",
+      "responsiblePerson": "De verantwoordelijke volgens de AVG:"
+    },
+    "serverLogs": {
+      "title": "Toegangsgegevens (serverlogs)",
+      "intro": "Bij het bezoeken van deze website verzamelt de server automatisch de volgende informatie:",
+      "items": [
+        "IP-adres (ingekort of geanonimiseerd)",
+        "Datum en tijd van het verzoek",
+        "bezochte pagina",
+        "browsertype en versie",
+        "besturingssysteem"
+      ],
+      "purpose": "Deze gegevens worden alleen gebruikt voor de technische werking en veiligheid van de website.",
+      "legalBasis": "Juridische grondslag: Art. 6 lid 1 sub f AVG"
+    },
+    "analytics": {
+      "title": "Gebruik van {umamiAnalytics}",
+      "intro": "Deze website gebruikt <em>{umamiAnalytics}</em>, een privacyvriendelijke analytics-tool. Umami draait op onze eigen server en verwerkt geen persoonlijke gegevens zoals je dat gewend bent.",
+      "capturedData": {
+        "title": "Verzamelde gegevens:",
+        "items": [
+          "bezochte pagina's",
+          "referrer (herkomst van bezoekers)",
+          "gebruikte browser en apparaattype",
+          "benaderde geografische herkomst (zonder exacte locatiegegevens)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Beveiliging & Privacy:",
+        "items": [
+          "geen cookies geplaatst voor analysedoeleinden",
+          "geen persoonlijke profielen aangemaakt",
+          "geen gegevens gedeeld met derden"
+        ]
+      },
+      "summary": "De verwerking gebeurt anoniem.",
+      "legalBasis": "Juridische grondslag: Art. 6 lid 1 sub f AVG (gerechtvaardigd belang bij het analyseren van websitegebruik)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Deze website gebruikt een technisch noodzakelijke cookie om je taalinstellingen op te slaan.",
+      "details": {
+        "purpose": {
+          "title": "Doel",
+          "desc": "Opslaan van de gekozen taal"
+        },
+        "duration": {
+          "title": "Duur",
+          "desc": "maximaal 30 dagen of tot je ze zelf verwijdert"
+        }
+      },
+      "summary": "Deze cookie is nodig om de website te laten werken en heeft geen toestemming nodig.",
+      "legalBasis": "Juridische grondslag: Art. 6 lid 1 sub f AVG"
+    },
+    "userRights": {
+      "title": "Jouw rechten",
+      "intro": "Je hebt altijd het recht op:",
+      "items": [
+        "Informatie over je opgeslagen gegevens",
+        "Correctie van onjuiste gegevens",
+        "Verwijdering van je gegevens",
+        "Beperking van de verwerking",
+        "Bezwaar tegen de verwerking"
+      ],
+      "contact": "Een informeel mailtje is hiervoor voldoende."
+    },
+    "changes": {
+      "title": "Wijzigingen",
+      "intro": "Ons privacybeleid kan veranderen door nieuwe wetgeving of updates aan de website."
+    }
+  },
   "footer": {
     "assets": "Alle afbeeldingen, merken en assets uit het spel zijn eigendom van de eigenaren.",
     "fanMade": "Dit is een fan-project en heeft niets te maken met de ontwikkelaars van het spel. De broncode vind je op <link>GitHub</link>."
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "Beheers de economie van {gameName}. Van geavanceerde fabrieksplanning tot complexe logistiek — krijg de data die je nodig hebt om je imperium uit te breiden."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Naam"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Beheer en vergelijk je {gameName} speelstanden. Houd je voortgang bij op verschillende moeilijkheidsniveaus, analyseer productiestatistieken en optimaliseer je strategie."
     }
   }
 }

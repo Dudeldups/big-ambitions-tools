@@ -209,6 +209,7 @@
     "delete": "Șterge",
     "save": "Salvează",
     "amount": "Suma",
+    "name": "Nume",
     "summedUpAmount": "Total",
     "summary": "Rezumat",
     "amortization": "Amortizare",
@@ -218,6 +219,7 @@
     "columnsDescription": "Coloane",
     "filterResults": "Filtrează rezultatele...",
     "characterName": "Nume personaj",
+    "navigation": "Navigare",
     "home": "Acasă",
     "about": "Despre noi",
     "contact": "Contact",
@@ -277,9 +279,7 @@
       "hourly": "Pe oră",
       "daily": "Zilnic",
       "weekly": "Săptămânal"
-    },
-    "navigation": "Navigare",
-    "name": "Nume"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raft pentru paleți} other {Rafte pentru paleți}}",
@@ -312,7 +312,7 @@
     "autoParkSupported": "Parcare automată",
     "taxDeductible": "Deducibil",
     "requiredDeliveryDriverSkillValue": "Skill șofer",
-    "destinationsThatCanDeliver": "Destinații",
+    "destinationsThatCanDeliver": "Destinații (bază)",
     "destinationsFull": "Dest. max.",
     "employees": "Angajați",
     "description": "Descriere",
@@ -327,7 +327,7 @@
     "jewelry": "Bijuterii",
     "gifts": "Cadouri",
     "books": "Cărți",
-    "bottledGoods": "Produse în sticle",
+    "bottledGoods": "Produse în sticlă",
     "food": "Mâncare",
     "gardenProducts": "Produse de grădină"
   },
@@ -362,7 +362,7 @@
     "groupLabelColor": "Culoare",
     "deleteGroupTitle": "Șterge grupul",
     "deleteGroupDesc": "Ești sigur că vrei să ștergi acest grup? Dacă există fabrici atribuite, ele vor fi mutate în grupul implicit.",
-    "oneTimeCostDesc": "Costuri de instalare unică pentru fabrică."
+    "oneTimeCostDesc": "Costuri de instalare pentru fabrică (o singură dată)."
   },
   "errors": {
     "playthrough": {
@@ -427,10 +427,10 @@
       "caption": "Toate ingredientele brute și proprietățile lor. Alege dificultatea pentru a vedea prețurile corecte."
     },
     "machines": {
-      "caption": "Toate mașinile folosite în producție. Combină o mașină principală cu una sau două mașini secundare pentru a crea un post de lucru."
+      "caption": "Toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două mașini secundare pentru a crea un post de lucru."
     },
     "inventory": {
-      "caption": "O scurtă privire asupra... opțiunilor de depozitare. Doar deocamdată. Mai urmează!"
+      "caption": "O listă scurtă cu... opțiunile de depozitare. Doar deocamdată! Mai urmează și altele!"
     },
     "vehicles": {
       "caption": "Cauți încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru un număr maxim de destinații ai nevoie de un {logisticsManager} cu 100% skill."
@@ -452,13 +452,13 @@
       }
     },
     "playthroughDetail": {
-      "desc": "Aici vezi statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” ca să vezi toate fabricile tale, să urmărești produsele necesare liniilor de producție și multe altele. Planificatorul îți arată toate detaliile despre statisticile de producție, cantități și multe altele.",
+      "desc": "Aici poți vedea statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” pentru o privire de ansamblu asupra fabricilor tale, ca să urmărești produsele de comandat pentru liniile de producție și multe altele. Planificatorul îți arată toate detaliile despre statisticile de producție, cantitățile comandate și multe altele.",
       "productionOverview": "Rezumat săptămânal al producției",
       "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici."
     },
     "factories": {
       "title": "Fabricile tale",
-      "desc": "Vezi aici toate fabricile tale. Le poți edita, șterge sau copia valorile actuale pentru o fabrică nouă. Click pe cardul fiecărei fabrici pentru detalii și lista de cumpărături.",
+      "desc": "Vezi aici toate fabricile tale. Le poți edita, șterge sau copia valorile actuale pentru o fabrică nouă. Apasă pur și simplu pe cardul fiecărei fabrici pentru detalii și lista de cumpărături.",
       "desc1": "Poți să le grupezi făcând clic pe butonul „Creează grup” de mai jos. Astfel le poți vedea într-un singur loc și le poți gestiona ca un grup. E util dacă folosești un depozit central care furnizează ingrediente pentru mai multe fabrici. În funcție de numărul de rafturi de paleți adăugate, sistemul va sugera un plan de livrare pentru fiecare fabrică.",
       "noFactories": "Nu există încă fabrici în partida ta. Creează una pentru a începe!",
       "notFound": {
@@ -476,15 +476,15 @@
       "splitShoppingList": {
         "title": "Listă de cumpărături împărțită",
         "desc": "Comandă aceste ingrediente direct la fabrica ta pentru a împărți comanda. Aceasta este cantitatea maximă pe care {shelfAmount} rafturi pentru paleți le pot reține. Se ia în considerare și numărul de cutii pe care le produci. Ai nevoie de {requiredAmount} rafturi pentru a stoca toate ingredientele pentru o săptămână întreagă de producție.",
-        "desc1": "Restul trebuie comandat la un depozit de unul sau mai mulți agenți de achiziții. Întoarce-te la <link>panoul fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare către fiecare fabrică."
+        "desc1": "Restul trebuie comandat la un depozit de către unul sau mai mulți agenți de achiziții. Întoarce-te la <link>prezentarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare către fiecare fabrică."
       }
     },
     "playthroughForm": {
       "title": "Creează o nouă partidă",
-      "desc": "Introdu un nume pentru partidă și selectează dificultatea, pentru ca instrumentele să calculeze prețurile corect. Poți edita sau șterge partidele oricând.",
+      "desc": "Introdu un nume pentru partida ta și selectează dificultatea, ca tool-urile să calculeze prețurile corect. Poți edita sau șterge partidele oricând.",
       "placeholder": "ex. John Manhattan",
       "deleteTitle": "Șterge partida",
-      "deleteDesc": "Ești sigur că vrei să ștergi partida asta? Nu mai poți reveni asupra deciziei."
+      "deleteDesc": "Ești sigur că vrei să ștergi partida asta? Această acțiune nu poate fi anulată."
     },
     "factoryForm": {
       "deleteTitle": "Șterge fabrica",
@@ -497,14 +497,14 @@
     "factoryGroups": {
       "buttonDesc": "Creează grup",
       "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe fiecare categorie de produs. Dacă fabricile grupate nu au suficiente rafturi de palete atribuite, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și pentru depozit pentru a acoperi restul necesarului. Dialogul de livrări îți va arăta, de asemenea, ce trebuie trimis către fiecare fabrică.",
-      "groupEmpty": "Nicio fabrică în acest grup. Trage cardul fabricii aici pentru a o adăuga.",
+      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe categorie de produse. Dacă fabricile grupate nu au suficiente rafturi de palete, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și depozit, ca să acoperi restul necesarului. Dialogul de livrări îți va arăta, de asemenea, ce trebuie trimis către fiecare fabrică.",
+      "groupEmpty": "Nicio fabrică în acest grup. Trage un card de fabrică aici ca să îl adaugi.",
       "ungroupedTitle": "Fabrici ne-grupate",
-      "ungroupedEmpty": "Nicio fabrică ne-grupată aici. Trage un card aici sau adaugă o fabrică nouă.",
+      "ungroupedEmpty": "Nicio fabrică ne-grupată. Trage un card aici sau adaugă o fabrică nouă.",
       "deliveries": {
         "buttonDesc": "Livrări",
         "title": "Plan de livrare",
-        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Ai nevoie de {amount} rafturi pentru paleți pentru a le aproviziona pe toate.",
+        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Ai nevoie de {amount} rafturi de paleți pentru toate fabricile.",
         "descEnough": "Toate fabricile au suficiente rafturi de paleți pentru toate ingredientele necesare."
       },
       "shoppingList": {
@@ -548,6 +548,91 @@
       "priceIndexDesc": "Alege indexul de preț actual din joc pentru acest produs ca să calculezi venitul corect. (Prețul de export e mai precis.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Idei? Întrebări? Lasă-mi un mesaj.",
+    "intro": "Dacă ai idei pentru funcții noi, observi că lipsesc date sau pur și simplu vrei să-mi dai un feedback, nu ezita să mă contactezi! Mă bucur de fiecare mesaj care mă ajută să fac site-ul și mai util pentru comunitate."
+  },
+  "legal": {
+    "title": "Info legale",
+    "link": "Legal"
+  },
+  "privacy": {
+    "title": "Confidențialitate",
+    "link": "Confidențialitate",
+    "generalInfo": {
+      "title": "Informații generale",
+      "intro": "Pe acest site, procesăm datele tale doar conform regulilor GDPR.",
+      "responsiblePerson": "Persoana responsabilă conform GDPR:"
+    },
+    "serverLogs": {
+      "title": "Date de acces (Server logs)",
+      "intro": "Când vizitezi acest site, serverul colectează automat următoarele informații:",
+      "items": [
+        "Adresă IP (scurtată sau anonimizată)",
+        "Data și ora solicitării",
+        "Pagina accesată",
+        "Tip de browser și versiune",
+        "Sistem de operare"
+      ],
+      "purpose": "Folosim aceste date doar pentru ca site-ul să funcționeze corect și în siguranță.",
+      "legalBasis": "Baza legală: Art. 6 (1) lit. f GDPR"
+    },
+    "analytics": {
+      "title": "Folosirea {umamiAnalytics}",
+      "intro": "Folosim <em>{umamiAnalytics}</em>, un tool de analiză care respectă confidențialitatea. Umami rulează pe propriul nostru server și nu procesează date cu caracter personal în sens tradițional.",
+      "capturedData": {
+        "title": "Date colectate:",
+        "items": [
+          "Pagini vizitate",
+          "Referrer (sursa vizitatorilor)",
+          "Tip de browser și dispozitiv utilizat",
+          "Origine geografică aproximativă (fără date exacte de locație)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Securitate și confidențialitate:",
+        "items": [
+          "Nu se folosesc cookie-uri pentru scopuri de analiză",
+          "Nu se creează profiluri personale",
+          "Datele nu sunt partajate cu terți"
+        ]
+      },
+      "summary": "Procesăm totul anonim.",
+      "legalBasis": "Baza legală: Art. 6 (1) lit. f GDPR (interes legitim în analiza utilizării site-ului)"
+    },
+    "cookies": {
+      "title": "Cookie-uri",
+      "intro": "Folosim un cookie tehnic ca să-ți salvăm setările de limbă.",
+      "details": {
+        "purpose": {
+          "title": "Scop",
+          "desc": "Salvarea limbii selectate"
+        },
+        "duration": {
+          "title": "Durată",
+          "desc": "până la 30 de zile sau până îl ștergi manual"
+        }
+      },
+      "summary": "Acest cookie e necesar ca site-ul să funcționeze și nu are nevoie de acord.",
+      "legalBasis": "Baza legală: Art. 6 (1) lit. f GDPR"
+    },
+    "userRights": {
+      "title": "Drepturile tale",
+      "intro": "Poți cere oricând următoarele:",
+      "items": [
+        "Informații despre datele tale stocate",
+        "Corectarea datelor incorecte",
+        "Ștergerea datelor tale",
+        "Limitarea procesării",
+        "Contestarea procesării"
+      ],
+      "contact": "Un simplu e-mail este suficient."
+    },
+    "changes": {
+      "title": "Schimbări",
+      "intro": "Putem actualiza politica de confidențialitate pentru a reflecta noile legi sau schimbările de pe site."
+    }
+  },
   "footer": {
     "assets": "Toate imaginile, mărcile și resursele din joc aparțin proprietarilor lor.",
     "fanMade": "Acest site este creat de fani și nu are nicio legătură cu dezvoltatorii jocului. Codul sursă îl poți găsi pe <link>GitHub</link>."
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "Stăpânește economia lui {gameName}. De la planificarea avansată a fabricilor până la gestionarea logistică complexă – obține datele necesare pentru a-ți extinde imperiul."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Nume"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Gestionează și compară partidele tale de {gameName}. Urmărește-ți progresul, analizează statisticile și optimizează-ți afacerea."
     }
   }
 }

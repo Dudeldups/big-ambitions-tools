@@ -209,6 +209,7 @@
     "delete": "Usuń",
     "save": "Zapisz",
     "amount": "Ilość",
+    "name": "Nazwa",
     "summedUpAmount": "Suma",
     "summary": "Podsumowanie",
     "amortization": "Amortyzacja",
@@ -218,6 +219,7 @@
     "columnsDescription": "Kolumny",
     "filterResults": "Filtruj wyniki...",
     "characterName": "Nazwa postaci",
+    "navigation": "Nawigacja",
     "home": "Strona główna",
     "about": "O nas",
     "contact": "Kontakt",
@@ -271,15 +273,13 @@
       "manufacture": "Produkcja",
       "import": "Import",
       "export": "Eksport",
-      "retail": "Detaliczny"
+      "retail": "Detal"
     },
     "calculationPeriodOptions": {
       "hourly": "Godzinowo",
       "daily": "Dziennie",
       "weekly": "Tygodniowo"
-    },
-    "navigation": "Nawigacja",
-    "name": "Nazwa"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Regał paletowy} other {Regały paletowe}}",
@@ -362,7 +362,7 @@
     "groupLabelColor": "Kolor",
     "deleteGroupTitle": "Usuń grupę",
     "deleteGroupDesc": "Czy na pewno chcesz usunąć tę grupę? Jeśli do grupy przypisano fabryki, zostaną przeniesione do grupy domyślnej.",
-    "oneTimeCostDesc": "Jednorazowe koszty instalacji w fabryce"
+    "oneTimeCostDesc": "Jednorazowe koszty instalacji fabryki."
   },
   "errors": {
     "playthrough": {
@@ -433,7 +433,7 @@
       "caption": "Mały przegląd wszystkich... opcji magazynowych. Na razie tylko tyle. Wkrótce więcej!"
     },
     "vehicles": {
-      "caption": "Szukasz ogromnej ładowności czy po prostu najszybszego auta? Znajdziesz to tutaj. Skill kierowcy to Twój {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
+      "caption": "Szukasz mnóstwa miejsca czy po prostu najszybszej bryki? Znajdziesz to tutaj. Skill kierowcy zależy od Twojego {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
     }
   },
   "tools": {
@@ -452,7 +452,7 @@
       }
     },
     "playthroughDetail": {
-      "desc": "Tutaj zobaczysz statystyki produkcji swojego imperium. Wejdź na stronę „Fabryki”, aby sprawdzić podsumowanie fabryk, śledzić przedmioty do zamówienia dla linii produkcyjnych i wiele więcej. Planer fabryk pokaże Ci szczegółowe dane o statystykach produkcji oraz wielkości zamówień.",
+      "desc": "Tutaj zobaczysz statystyki produkcji swojego imperium. Wejdź na stronę „Fabryki”, aby zobaczyć podsumowanie fabryk, śledzić produkty, które musisz zamówić dla swoich linii produkcyjnych i wiele więcej. Planer fabryk pokaże Ci wszystkie szczegóły dotyczące statystyk produkcji, wielkości zamówień i nie tylko.",
       "productionOverview": "Tygodniowy przegląd produkcji",
       "noProductionData": "Jeszcze nie ma danych. Utwórz fabryki, a zobaczysz tu swoje statystyki produkcji."
     },
@@ -530,7 +530,7 @@
         "overflowDesc": "Produkujesz szybciej niż zużywasz składniki. Liczba regałów została dostosowana."
       },
       "employees": {
-        "desc": "Wpisz pensję każdego pracownika. Zostaw pole puste, jeśli nie chcesz uwzględniać obliczeń płacowych.",
+        "desc": "Wpisz pensję każdego pracownika. Zostaw pole puste, jeśli nie chcesz wyliczać płac.",
         "optimalWorkers": "Użyj optymalnej liczby pracowników fabryki",
         "optimalTooltip": "Automatycznie oblicza optymalną liczbę pracowników na podstawie stanowisk produkcyjnych i godzin otwarcia. Dodaje mały bufor dla płynnego autoschedulingu w grze."
       },
@@ -548,8 +548,93 @@
       "priceIndexDesc": "Wybierz aktualny indeks cenowy w grze dla tego produktu, aby obliczyć poprawny dochód. (Cena eksportowa jest dokładniejsza.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Pomysły? Pytania? Wystarczy krótka wiadomość.",
+    "intro": "Masz pomysł na nową funkcję, zauważasz brak danych albo po prostu chcesz zostawić feedback? Śmiało pisz! Doceniam każdą wiadomość, która pomaga mi ulepszać tę stronę dla całej społeczności."
+  },
+  "legal": {
+    "title": "Info prawne",
+    "link": "Regulamin"
+  },
+  "privacy": {
+    "title": "Prywatność",
+    "link": "Prywatność",
+    "generalInfo": {
+      "title": "Informacje ogólne",
+      "intro": "Ta strona przetwarza dane osobowe wyłącznie zgodnie z przepisami prawa (RODO).",
+      "responsiblePerson": "Administrator danych w rozumieniu RODO:"
+    },
+    "serverLogs": {
+      "title": "Dane dostępu (logi serwera)",
+      "intro": "Odwiedzając tę stronę, serwer automatycznie zbiera następujące informacje:",
+      "items": [
+        "Adres IP (skrócony lub zanonimizowany)",
+        "Data i godzina zapytania",
+        "Odwiedzona strona",
+        "Typ i wersja przeglądarki",
+        "System operacyjny"
+      ],
+      "purpose": "Te dane służą wyłącznie zapewnieniu technicznej dostępności i bezpieczeństwa strony.",
+      "legalBasis": "Podstawa prawna: Art. 6 ust. 1 lit. f RODO"
+    },
+    "analytics": {
+      "title": "Użycie {umamiAnalytics}",
+      "intro": "Ta strona korzysta z <em>{umamiAnalytics}</em>, czyli narzędzia analitycznego dbającego o prywatność. Umami działa na naszym własnym serwerze i nie przetwarza danych osobowych w tradycyjnym sensie.",
+      "capturedData": {
+        "title": "Zbierane dane:",
+        "items": [
+          "Odwiedzone strony",
+          "Referrer (źródło odwiedzających)",
+          "Używana przeglądarka i typ urządzenia",
+          "Przybliżone pochodzenie geograficzne (bez dokładnych danych lokalizacyjnych)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Bezpieczeństwo i prywatność:",
+        "items": [
+          "Brak plików cookies do celów analitycznych",
+          "Brak tworzenia profili osobowych",
+          "Dane nie są udostępniane podmiotom trzecim"
+        ]
+      },
+      "summary": "Wszystko jest anonimowe",
+      "legalBasis": "Podstawa prawna: Art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes w analizowaniu korzystania ze strony)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Ta strona używa niezbędnego ciasteczka, żeby zapamiętać Twoje ustawienia języka.",
+      "details": {
+        "purpose": {
+          "title": "Cel",
+          "desc": "Zapamiętywanie wybranego języka"
+        },
+        "duration": {
+          "title": "Czas trwania",
+          "desc": "do 30 dni lub do momentu ręcznego usunięcia przez Ciebie"
+        }
+      },
+      "summary": "To ciasteczko jest niezbędne do działania strony i nie wymaga Twojej zgody.",
+      "legalBasis": "Podstawa prawna: Art. 6 ust. 1 lit. f RODO"
+    },
+    "userRights": {
+      "title": "Twoje prawa",
+      "intro": "W każdej chwili możesz poprosić o:",
+      "items": [
+        "Informacje o Twoich danych",
+        "Poprawienie błędnych danych",
+        "Usunięcie Twoich danych",
+        "Ograniczenie przetwarzania",
+        "Sprzeciw wobec przetwarzania"
+      ],
+      "contact": "Wystarczy zwykły e-mail."
+    },
+    "changes": {
+      "title": "Zmiany",
+      "intro": "Ta polityka prywatności może się zmieniać wraz z nowymi przepisami lub zmianami na stronie."
+    }
+  },
   "footer": {
-    "assets": "Grafiki, znaki towarowe i assety należą do ich właścicieli.",
+    "assets": "Wszystkie grafiki, marki i assety należą do swoich właścicieli.",
     "fanMade": "To projekt fanowski, niezwiązany z twórcami gry. Kod źródłowy znajdziesz na <link>GitHub</link>."
   },
   "metadata": {
@@ -557,19 +642,13 @@
       "description": "Fanowskie narzędzia do {gameName}. Planuj fabryki, obliczaj statystyki produkcji, zarządzaj planami dostaw i przeglądaj dane z gry."
     },
     "database": {
-      "description": "Szczegółowe dane gry: produkty, maszyny, pojazdy, kalkulacje zysków i wiele więcej w {gameName}."
+      "description": "Szczegółowe dane o produktach, maszynach, pojazdach, wyliczeniach zysków i wielu innych dla {gameName}."
     },
     "tools": {
       "description": "Zdominuj ekonomię w {gameName}. Od zaawansowanego planowania fabryk po skomplikowaną logistykę – zgarnij dane potrzebne do budowy własnego imperium."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Nazwa"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Zarządzaj i porównuj swoje stany gry w {gameName}. Śledź postępy, analizuj statystyki i optymalizuj swoją strategię."
     }
   }
 }

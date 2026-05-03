@@ -209,6 +209,7 @@
     "delete": "Excluir",
     "save": "Salvar",
     "amount": "Quantidade",
+    "name": "Nome",
     "summedUpAmount": "Total",
     "summary": "Resumo",
     "amortization": "Amortização",
@@ -218,6 +219,7 @@
     "columnsDescription": "Colunas",
     "filterResults": "Filtrar resultados...",
     "characterName": "Nome do personagem",
+    "navigation": "Navegação",
     "home": "Início",
     "about": "Sobre",
     "contact": "Contato",
@@ -277,9 +279,7 @@
       "hourly": "Por hora",
       "daily": "Diário",
       "weekly": "Semanal"
-    },
-    "navigation": "Navegação",
-    "name": "Nome"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Estante para Paletes} other {Estantes para Paletes}}",
@@ -548,28 +548,107 @@
       "priceIndexDesc": "Escolha o índice de preço atual do jogo para este produto para calcular a receita correta. (O preço de exportação é mais preciso.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Ideias? Dúvidas? Manda uma mensagem.",
+    "intro": "Se tiver ideias para novas funções, notar a falta de dados ou apenas querer dar um feedback, é só me chamar! Fico feliz com cada mensagem que ajuda a tornar o site ainda mais útil para a comunidade."
+  },
+  "legal": {
+    "title": "Informações legais",
+    "link": "Avisos"
+  },
+  "privacy": {
+    "title": "Aviso de Privacidade",
+    "link": "Privacidade",
+    "generalInfo": {
+      "title": "Informações Gerais",
+      "intro": "Neste site, tratamos seus dados seguindo as regras do RGPD.",
+      "responsiblePerson": "Responsável pelo tratamento de dados (RGPD):"
+    },
+    "serverLogs": {
+      "title": "Dados de Acesso (Server Logs)",
+      "intro": "Ao visitar este site, o servidor recolhe automaticamente as seguintes informações:",
+      "items": [
+        "Endereço IP (truncado ou anonimizado)",
+        "Data e hora da requisição",
+        "página acedida",
+        "Tipo e versão do navegador",
+        "Sistema operativo"
+      ],
+      "purpose": "Estes dados servem apenas para o funcionamento técnico e segurança do site.",
+      "legalBasis": "Base legal: Art. 6 (1) alínea f do RGPD"
+    },
+    "analytics": {
+      "title": "Uso de {umamiAnalytics}",
+      "intro": "Este site utiliza <em>{umamiAnalytics}</em>, uma ferramenta de análise focada na privacidade. O Umami é hospedado em nosso próprio servidor e não processa dados pessoais no sentido tradicional.",
+      "capturedData": {
+        "title": "Dados recolhidos:",
+        "items": [
+          "páginas visitadas",
+          "Referenciador (origem dos visitantes)",
+          "tipo de navegador e dispositivo utilizado",
+          "origem geográfica aproximada (sem dados de localização exata)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Segurança e Privacidade:",
+        "items": [
+          "sem cookies para fins analíticos",
+          "sem criação de perfis pessoais",
+          "sem partilha de dados com terceiros"
+        ]
+      },
+      "summary": "Tudo é tratado anonimamente.",
+      "legalBasis": "Base legal: Art. 6 (1) alínea f do RGPD (interesse legítimo na análise de utilização do site)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Este site usa um cookie essencial para guardar o teu idioma.",
+      "details": {
+        "purpose": {
+          "title": "Objetivo",
+          "desc": "Guardar o idioma escolhido"
+        },
+        "duration": {
+          "title": "Duração",
+          "desc": "até 30 dias ou até você apagar manualmente"
+        }
+      },
+      "summary": "Este cookie é necessário para o site funcionar e não precisa de consentimento.",
+      "legalBasis": "Base legal: Art. 6 (1) alínea f do RGPD"
+    },
+    "userRights": {
+      "title": "Os teus direitos",
+      "intro": "Podes pedir o seguinte a qualquer momento:",
+      "items": [
+        "Informação sobre os teus dados guardados",
+        "Correção de dados incorretos",
+        "Apagar os teus dados",
+        "Limitar o processamento",
+        "Opor-te ao processamento"
+      ],
+      "contact": "Basta enviares um e-mail simples para isso."
+    },
+    "changes": {
+      "title": "Alterações",
+      "intro": "Podemos atualizar esta política para refletir novas leis ou mudanças no site."
+    }
+  },
   "footer": {
     "assets": "Todas as imagens, marcas e assets do jogo pertencem aos seus respectivos proprietários.",
     "fanMade": " Este é um site feito por fãs e não tem ligação com os desenvolvedores do jogo. Podes ver o código fonte no <link>GitHub</link>."
   },
   "metadata": {
     "root": {
-      "description": "Ferramentas feitas por fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
+      "description": "Ferramentas de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
     },
     "database": {
       "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."
     },
     "tools": {
       "description": "Domine a economia de {gameName}. Do planejamento avançado de fábricas à gestão logística complexa — consiga os dados que você precisa para expandir seu império."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Nome"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Gerencie e compare suas partidas de {gameName}. Acompanhe seu progresso, analise estatísticas e otimize sua estratégia."
     }
   }
 }

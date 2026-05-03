@@ -209,6 +209,7 @@
     "delete": "削除する",
     "save": "セーブする",
     "amount": "金額",
+    "name": "名前",
     "summedUpAmount": "合計",
     "summary": "概要",
     "amortization": "償却",
@@ -218,6 +219,7 @@
     "columnsDescription": "列",
     "filterResults": "結果をフィルタリング...",
     "characterName": "キャラクター名",
+    "navigation": "基本操作",
     "home": "ホーム",
     "about": "私たちについて",
     "contact": "連絡先",
@@ -277,9 +279,7 @@
       "hourly": "時間ごと",
       "daily": "日ごと",
       "weekly": "週ごと"
-    },
-    "navigation": "基本操作",
-    "name": "名前"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {パレット棚} other {パレット棚}}",
@@ -313,7 +313,7 @@
     "taxDeductible": "税控除",
     "requiredDeliveryDriverSkillValue": "配送ドライバースキル",
     "destinationsThatCanDeliver": "拠点配送先",
-    "destinationsFull": "目的地の上限",
+    "destinationsFull": "目的地 Max",
     "employees": "従業員",
     "description": "説明",
     "export": "輸出",
@@ -548,6 +548,91 @@
       "priceIndexDesc": "この製品の現在のゲーム内価格指数を選択し、正しい収益を計算。(輸出価格はより正確です。)"
     }
   },
+  "contact": {
+    "subheading": "フィードバック、アイデア、質問… 気軽にメッセージ送ってね！",
+    "intro": "新機能のアイデアやデータの修正、ちょっとしたフィードバックでも、いつでも送ってね！みんなにとってもっと使いやすいサイトにしたいから、メッセージをもらえるとすごく嬉しいです。"
+  },
+  "legal": {
+    "title": "サイトについて",
+    "link": "運営者"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "link": "プライバシー",
+    "generalInfo": {
+      "title": "基本情報",
+      "intro": "このサイトでは、GDPRなどの法律を守って個人情報を扱っているよ。",
+      "responsiblePerson": "GDPRの管理責任者："
+    },
+    "serverLogs": {
+      "title": "アクセスデータ（サーバーログ）",
+      "intro": "サイトにアクセスしたとき、サーバーが自動で集める情報はこちら：",
+      "items": [
+        "IPアドレス（短縮または匿名化済み）",
+        "リクエストの日時",
+        "アクセスしたページ",
+        "ブラウザの種類とバージョン",
+        "OS"
+      ],
+      "purpose": "このデータは、サイトを安全に運営するためだけに使うよ。",
+      "legalBasis": "法的根拠: GDPR 第6条第1項(f)"
+    },
+    "analytics": {
+      "title": "{umamiAnalytics} の使用について",
+      "intro": "このサイトでは、プライバシーに配慮した分析ツール <em>{umamiAnalytics}</em> を使っているよ。Umami は自社サーバーで運用しており、いわゆる個人データは扱っていないよ。",
+      "capturedData": {
+        "title": "収集されるデータ：",
+        "items": [
+          "閲覧したページ",
+          "リファラ（訪問者の流入元）",
+          "使用しているブラウザとデバイスの種類",
+          "おおよその地理的情報（詳細な位置データは含みません）"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "セキュリティとプライバシー：",
+        "items": [
+          "分析目的のクッキーは使用しません",
+          "個人プロファイルは作成しません",
+          "第三者へのデータ提供は行いません"
+        ]
+      },
+      "summary": "匿名で処理しているよ。",
+      "legalBasis": "法的根拠：GDPR 第6条(1)f項（ウェブサイト利用状況の分析という正当な利益）"
+    },
+    "cookies": {
+      "title": "クッキー",
+      "intro": "言語設定を保存するために、動作に必要なクッキーを使用しています。",
+      "details": {
+        "purpose": {
+          "title": "目的",
+          "desc": "選択した言語の保存"
+        },
+        "duration": {
+          "title": "保存期間",
+          "desc": "最大30日間、または手動で削除されるまで"
+        }
+      },
+      "summary": "このクッキーはサイトの動作に必要なので、同意は不要です。",
+      "legalBasis": "法的根拠: GDPR 第6条(1)(f)項"
+    },
+    "userRights": {
+      "title": "データに関するあなたの権利",
+      "intro": "以下の内容をいつでもリクエストできます：",
+      "items": [
+        "保存されたデータについての情報",
+        "不正確なデータの訂正",
+        "データの削除",
+        "処理の制限",
+        "処理への異議申し立て"
+      ],
+      "contact": "メールで気軽に連絡してくれれば大丈夫です。"
+    },
+    "changes": {
+      "title": "変更点",
+      "intro": "法律やサイトの変更に合わせて、プライバシーポリシーが更新されることもあるよ。"
+    }
+  },
   "footer": {
     "assets": "ゲーム内の画像や商標、アセットの権利は各所有者のもの。",
     "fanMade": " これは純粋なファンプロジェクトで、ゲームの開発者とは一切関係ありません。ソースコードは <link>GitHub</link> にあります。"
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "{gameName}の経済を攻略。高度な工場計画から複雑な物流管理まで、帝国拡大に必要なデータが手に入る。"
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "名前"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "{gameName}のプレイスルーを管理・比較しよう。難易度ごとの進捗をチェックして、生産統計を分析し、ビジネスを最適化しよう。"
     }
   }
 }

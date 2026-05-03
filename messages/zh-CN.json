@@ -209,6 +209,7 @@
     "delete": "删除",
     "save": "保存",
     "amount": "数量",
+    "name": "名称",
     "summedUpAmount": "总计",
     "summary": "概览",
     "amortization": "摊销",
@@ -218,6 +219,7 @@
     "columnsDescription": "列",
     "filterResults": "筛选结果...",
     "characterName": "角色名",
+    "navigation": "导航",
     "home": "主页",
     "about": "关于我们",
     "contact": "联系",
@@ -277,9 +279,7 @@
       "hourly": "每小时",
       "daily": "每日",
       "weekly": "每周"
-    },
-    "navigation": "导航",
-    "name": "名称"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {托盘货架} other {托盘货架}}",
@@ -312,7 +312,7 @@
     "autoParkSupported": "自动泊车",
     "taxDeductible": "可抵扣",
     "requiredDeliveryDriverSkillValue": "司机技能",
-    "destinationsThatCanDeliver": "起始地",
+    "destinationsThatCanDeliver": "基础目的地",
     "destinationsFull": "最大目的地",
     "employees": "员工",
     "description": "描述",
@@ -459,7 +459,7 @@
     "factories": {
       "title": "你的工厂",
       "desc": "这里你可以查看工厂概览。你可以编辑或删除它们，也可以复制当前值用于新工厂。要查看每个工厂的更多详情（包括购物清单），只需点击相应的卡片。",
-      "desc1": "你还可以通过点击下方的“创建分组”按钮来将它们归类，这样就能在一个地方查看并统一管理这些工厂。如果你使用中央仓库为多个工厂供料，这会非常方便。系统还会根据你添加的托盘货架数量，为每个工厂提供配送计划建议。",
+      "desc1": "也可以点下方的“创建分组”按钮把它们聚在一起，方便在一个地方统一管理。如果你用中央仓库给多个工厂供料，这会非常管用。系统还会根据你添加的托盘货架数量，为每个工厂建议配送计划。",
       "noFactories": "你的存档里还没有工厂，快创建一个开始吧！",
       "notFound": {
         "title": "未找到工厂",
@@ -475,7 +475,7 @@
       },
       "splitShoppingList": {
         "title": "拆分购物清单",
-        "desc": "将这些原料直接订向你的工厂以拆分订单。这是你的 {shelfAmount} 个托盘货架能容纳的最大量，同时也考虑了你正在生产的箱子数量。若要存储一整周所需的全部原料，你需要 {requiredAmount} 个货架。",
+        "desc": "把这些原料直接订送到工厂来拆分订单。这是你的 {shelfAmount} 个托盘架能装下的最大量，也考虑了你正在生产的箱数。若要存下整整一周所需的全部原料，你需要 {requiredAmount} 个货架。",
         "desc1": "剩下的订单需要由一名或多名采购员分别下单到仓库。回到 <link>工厂概览</link> 并创建一个组，就能看到该仓库完整的订货清单了。这里还会显示发往每个工厂的配送计划。"
       }
     },
@@ -548,28 +548,107 @@
       "priceIndexDesc": "选择该产品的当前游戏内价格指数，来计算准确收益（使用出口价会更准）。"
     }
   },
+  "contact": {
+    "subheading": "有反馈、想法或疑问？随时找我。",
+    "intro": "如果你对新功能有想法、发现数据缺失，或者只是想提点建议，尽管找我！每一条能帮我把网站做得更好的留言，我都非常开心。"
+  },
+  "legal": {
+    "title": "法律信息",
+    "link": "声明"
+  },
+  "privacy": {
+    "title": "隐私声明",
+    "link": "隐私",
+    "generalInfo": {
+      "title": "基本信息",
+      "intro": "我们会严格遵守 GDPR 等法律规定来处理你的个人信息。",
+      "responsiblePerson": "GDPR 项下的数据控制者："
+    },
+    "serverLogs": {
+      "title": "访问数据（服务器日志）",
+      "intro": "访问本网站时，服务器会自动收集以下信息：",
+      "items": [
+        "IP 地址（已截断或匿名化）",
+        "请求的日期和时间",
+        "访问的页面",
+        "浏览器类型及版本",
+        "操作系统"
+      ],
+      "purpose": "这些数据仅用于保障网站的正常运行与安全。",
+      "legalBasis": "法律依据：GDPR 第 6 (1) f 条"
+    },
+    "analytics": {
+      "title": "使用 {umamiAnalytics}",
+      "intro": "我们使用 <em>{umamiAnalytics}</em> 来做数据分析，它非常注重隐私保护。Umami 运行在我们自己的服务器上，不会收集传统意义上的个人信息。",
+      "capturedData": {
+        "title": "收集的数据：",
+        "items": [
+          "访问过的页面",
+          "来源页（访客来源）",
+          "使用的浏览器和设备类型",
+          "大致的地理来源（不含精确位置数据）"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "安全与隐私：",
+        "items": [
+          "不会为了分析目的设置 Cookie",
+          "不会创建个人画像",
+          "不会将数据共享给第三方"
+        ]
+      },
+      "summary": "所有数据处理都是匿名的。",
+      "legalBasis": "法律依据：GDPR 第 6 (1) f 条（分析网站使用的合法权益）"
+    },
+    "cookies": {
+      "title": "Cookie",
+      "intro": "本网站使用必要的 Cookie 来保存你的语言设置。",
+      "details": {
+        "purpose": {
+          "title": "目的",
+          "desc": "保存所选语言"
+        },
+        "duration": {
+          "title": "有效期",
+          "desc": "最长 30 天，或直到你手动删除"
+        }
+      },
+      "summary": "这个 Cookie 是网站运行必需的，不需要征得你的同意。",
+      "legalBasis": "法律依据：GDPR 第 6 (1) f 条"
+    },
+    "userRights": {
+      "title": "用户权利",
+      "intro": "你随时可以要求：",
+      "items": [
+        "查看已存储的数据信息",
+        "更正不准确的数据",
+        "删除你的数据",
+        "限制处理数据",
+        "反对处理数据"
+      ],
+      "contact": "直接发封邮件联系我们就行。"
+    },
+    "changes": {
+      "title": "更新",
+      "intro": "我们会根据法律要求或网站改动来更新隐私政策。"
+    }
+  },
   "footer": {
     "assets": "游戏里的图片、商标和素材都属于原作者。",
     "fanMade": "这个网站是粉丝自制的，与游戏官方无关。源码可以在 <link>GitHub</link> 找到。"
   },
   "metadata": {
     "root": {
-      "description": "{gameName} 粉丝自制工具。规划工厂、查看产量统计、管理配送计划，并轻松查阅游戏数据。"
+      "description": "{gameName} 粉丝自制工具！规划工厂、计算生产数据、管理配送计划，还能轻松查阅游戏数据。"
     },
     "database": {
       "description": "浏览 {gameName} 的详细游戏数据，包括产品、机器、车辆、利润计算等内容。"
     },
     "tools": {
       "description": "掌控 {gameName} 的经济命脉。从进阶工厂规划到复杂的物流管理——获取扩张帝国所需的一切数据。"
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "名称"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "管理并对比你的 {gameName} 存档。追踪不同难度的进度，分析生产数据，优化经营策略。"
     }
   }
 }

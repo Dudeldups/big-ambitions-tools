@@ -209,6 +209,7 @@
     "delete": "Eliminar",
     "save": "Guardar",
     "amount": "Cantidad",
+    "name": "Nombre",
     "summedUpAmount": "Total",
     "summary": "Resumen",
     "amortization": "Amortización",
@@ -218,6 +219,7 @@
     "columnsDescription": "Columnas",
     "filterResults": "Filtrar resultados...",
     "characterName": "Nombre del personaje",
+    "navigation": "Navegación",
     "home": "Inicio",
     "about": "Sobre nosotros",
     "contact": "Contacto",
@@ -277,9 +279,7 @@
       "hourly": "Por hora",
       "daily": "Diario",
       "weekly": "Semanal"
-    },
-    "navigation": "Navegación",
-    "name": "Nombre"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Estante de palets} other {Estantes de palets}}",
@@ -459,7 +459,6 @@
     "factories": {
       "title": "Tus fábricas",
       "desc": "Aquí tienes un resumen de tus fábricas. Puedes editarlas o eliminarlas y también copiar los valores actuales para una nueva fábrica. Para ver más detalles sobre cada fábrica, incluida una lista de compras, simplemente haz clic en su tarjeta correspondiente.",
-      "desc1": "Use \"Estantería para palés\"",
       "noFactories": "Aún no hay fábricas en tu partida. Crea una para empezar.",
       "notFound": {
         "title": "Fábrica no encontrada",
@@ -497,7 +496,6 @@
     "factoryGroups": {
       "buttonDesc": "Crear grupo",
       "title": "Grupos de fábricas",
-      "desc": "Use \"Estantería para palés\"",
       "groupEmpty": "No hay fábricas en este grupo. Arrastra una tarjeta de fábrica aquí para añadirla.",
       "ungroupedTitle": "Fábricas sin agrupar",
       "ungroupedEmpty": "No hay fábricas sin agrupar. Arrastra una tarjeta de fábrica aquí o añade una nueva.",
@@ -519,7 +517,6 @@
         "legend": "Información de la fábrica",
         "name": "Nombre de la fábrica",
         "calcBasis": "Base del cálculo",
-        "palletDesc": "Use \"Estantería para palés\"",
         "dailyAmount": "Para la entrega diaria necesitas <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para la entrega semanal necesitas <strong>{count}</strong> {object}.",
         "shelfExplanation": "Añade al menos una estación de trabajo para ver el número necesario de estanterías de palets.",
@@ -531,7 +528,6 @@
       },
       "employees": {
         "desc": "Introduce el salario de cada empleado. Déjalo vacío si no quieres incluir cálculos salariales.",
-        "optimalWorkers": "Use \"Trabajador de fábrica\"",
         "optimalTooltip": "Calcula automáticamente el número óptimo de trabajadores basado en las estaciones de trabajo y los horarios de apertura. Añadirá un pequeño margen para un autoscheduling suave en el juego."
       },
       "vehicles": {
@@ -548,6 +544,91 @@
       "priceIndexDesc": "Elige el índice de precios actual del juego para este producto para calcular el ingreso correcto. (El precio de exportación es más preciso.)"
     }
   },
+  "contact": {
+    "subheading": "¿Feedback? ¿Ideas? ¿Preguntas? Escríbeme.",
+    "intro": "Si tienes ideas para nuevas funciones, notas que falta algún dato o simplemente quieres darme feedback, ¡no dudes en escribirme! Agradezco cada mensaje que me ayude a hacer esta web aún más útil para la comunidad."
+  },
+  "legal": {
+    "title": "Info legal",
+    "link": "Info legal"
+  },
+  "privacy": {
+    "title": "Aviso de privacidad",
+    "link": "Privacidad",
+    "generalInfo": {
+      "title": "Información general",
+      "intro": "En esta web, tratamos tus datos solo según lo que dice la ley (RGPD).",
+      "responsiblePerson": "Responsable según el RGPD:"
+    },
+    "serverLogs": {
+      "title": "Datos de acceso (logs del servidor)",
+      "intro": "Al visitar esta web, el servidor recopila automáticamente lo siguiente:",
+      "items": [
+        "Dirección IP (truncada o anonimizada)",
+        "Fecha y hora de la petición",
+        "página visitada",
+        "Tipo y versión del navegador",
+        "Sistema operativo"
+      ],
+      "purpose": "Usamos estos datos solo para el funcionamiento técnico y la seguridad de la web.",
+      "legalBasis": "Base legal: Art. 6 (1) lit. f del RGPD"
+    },
+    "analytics": {
+      "title": "Uso de {umamiAnalytics}",
+      "intro": "Esta web usa <em>{umamiAnalytics}</em>, una herramienta de analítica respetuosa con la privacidad. Umami se aloja en nuestro propio servidor y no procesa datos personales en el sentido tradicional.",
+      "capturedData": {
+        "title": "Datos recopilados:",
+        "items": [
+          "páginas visitadas",
+          "Referencia (origen de las visitas)",
+          "navegador y tipo de dispositivo usado",
+          "origen geográfico aproximado (sin datos de ubicación exacta)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Seguridad y privacidad:",
+        "items": [
+          "sin cookies con fines analíticos",
+          "sin creación de perfiles personales",
+          "sin compartir datos con terceros"
+        ]
+      },
+      "summary": "Se procesa de forma anónima.",
+      "legalBasis": "Base jurídica: Art. 6 (1) lit. f del RGPD (interés legítimo en analizar el uso de la web)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Esta web usa una cookie técnica necesaria para guardar tu configuración de idioma.",
+      "details": {
+        "purpose": {
+          "title": "Finalidad",
+          "desc": "Guardar el idioma seleccionado"
+        },
+        "duration": {
+          "title": "Duración",
+          "desc": "hasta 30 días o hasta que la borres manualmente"
+        }
+      },
+      "summary": "Esta cookie es necesaria para que la web funcione y no requiere consentimiento.",
+      "legalBasis": "Base legal: Art. 6 (1) lit. f RGPD"
+    },
+    "userRights": {
+      "title": "Tus derechos",
+      "intro": "Puedes solicitar lo siguiente en cualquier momento:",
+      "items": [
+        "Información sobre tus datos guardados",
+        "Corregir datos incorrectos",
+        "Borrar tus datos",
+        "Limitar el procesamiento",
+        "Oponerte al procesamiento"
+      ],
+      "contact": "Con un email sencillo basta."
+    },
+    "changes": {
+      "title": "Cambios",
+      "intro": "Podemos actualizar esta política si cambian las leyes o nuestra web."
+    }
+  },
   "footer": {
     "assets": "Todas las imágenes, marcas y activos del juego pertenecen a sus respectivos dueños.",
     "fanMade": " Este es un proyecto de fans y no tiene relación con los desarrolladores del juego. El código fuente lo encuentras en <link>GitHub</link>."
@@ -561,15 +642,9 @@
     },
     "tools": {
       "description": "Domina la economía de {gameName}. Desde la planificación avanzada de fábricas hasta la gestión logística compleja: consigue los datos que necesitas para expandir tu imperio."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Nombre"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Gestiona y compara tus partidas de {gameName}. Controla tu progreso, analiza estadísticas y optimiza tu estrategia."
     }
   }
 }

@@ -553,7 +553,12 @@
     "intro": "If you have ideas for new functions, notice missing data, or just want to give some feedback, feel free to reach out! I appreciate every message that helps me make this site even more useful for the community.",
     "form": {
       "title": "Just say hi!",
-      "agreement": ""
+      "fields": {
+        "name": "Your name",
+        "email": "Email",
+        "message": "Message"
+      },
+      "success": "Message was sent!"
     }
   },
   "legal": {

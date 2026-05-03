@@ -553,7 +553,12 @@
     "intro": "Wenn du Ideen für neue Funktionen hast, Daten vermisst oder mir einfach Feedback geben willst, meld dich gerne! Ich freue mich über jede Nachricht, die mir hilft, die Seite so gut wie möglich zu machen.",
     "form": {
       "title": "Sag einfach Hallo!",
-      "agreement": ""
+      "fields": {
+        "name": "Dein Name",
+        "email": "E-Mail",
+        "message": "Nachricht"
+      },
+      "success": "Nachricht wurde gesendet!"
     }
   },
   "legal": {

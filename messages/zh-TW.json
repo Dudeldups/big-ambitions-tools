@@ -209,6 +209,7 @@
     "delete": "刪除",
     "save": "儲存",
     "amount": "數量",
+    "name": "名稱",
     "summedUpAmount": "總計",
     "summary": "摘要",
     "amortization": "攤銷",
@@ -218,6 +219,7 @@
     "columnsDescription": "欄位",
     "filterResults": "篩選結果...",
     "characterName": "角色名稱",
+    "navigation": "導航",
     "home": "首頁",
     "about": "關於我們",
     "contact": "聯絡",
@@ -277,9 +279,7 @@
       "hourly": "每小時",
       "daily": "每日",
       "weekly": "每週"
-    },
-    "navigation": "導航",
-    "name": "名稱"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
@@ -300,7 +300,7 @@
     "profitPerHour": "利潤/小時",
     "amount": "數量",
     "amountPerBox": "數量/箱",
-    "usedInProducts": "應用產品",
+    "usedInProducts": "適用產品",
     "importers": "進口商",
     "ingredients": "原料",
     "productionRate": "產量/小時",
@@ -336,7 +336,7 @@
     "playthroughSaveSuccess": "遊戲進度 \"{characterName}\" 已建立！",
     "playthroughEditSuccess": "遊戲進度 \"{characterName}\" 已更新！",
     "playthroughDeleteSuccess": "遊戲進度 \"{characterName}\" 已刪除！",
-    "workstationCopyError": "請先選擇工作站與產品。",
+    "workstationCopyError": "請先選好工作站和產品。",
     "factorySaveSuccess": "\"{factoryName}\" 已建立並加入遊戲進度！",
     "factoryEditSuccess": "\"{factoryName}\" 已更新！",
     "factoryDeleteSuccess": "\"\"{factoryName}\" 已刪除！\"",
@@ -392,7 +392,7 @@
     },
     "cta": {
       "title": "來開始吧！",
-      "desc": "只想隨手查查資料、算算數字嗎？<em>太棒了，算數學！</em> 快來 <link>{database}</link> 逛逛吧。",
+      "desc": "只想隨手查查資料、算算數字嗎？<em>喔耶，算數學！</em> 快來 <link>{database}</link> 逛逛吧。",
       "desc2": "<link>{toolsSection}</link> 區塊應有盡有，從規劃第一間工廠到管理整個帝國的生產率通通搞定。",
       "errorDesc": "發現錯誤或資訊遺漏？或有建議想改善網站？隨時 <contact>聯絡我們</contact> 吧！"
     },
@@ -427,7 +427,7 @@
       "caption": "查看所有原料及其屬性。選擇難度以查看正確價格。"
     },
     "machines": {
-      "caption": "所有用於生產的機器。將一台主要機器與一到兩台次要機器組合，打造出一個工作站。"
+      "caption": "這裡有所有生產用的機器。把一台主要機器跟一到兩台次要機器組合起來，就能打造出工作站。"
     },
     "inventory": {
       "caption": "所有...儲存選項的概覽。暫時就這些。之後還有更多！"
@@ -441,13 +441,13 @@
       "desc": "這裡可以深入探索遊戲的數字與統計數據。規劃你的工廠，並管理整個帝國的物流！"
     },
     "playthroughs": {
-      "desc": "你可以在下方建立和管理遊戲進度。每個進度都代表一次單獨的遊玩紀錄。你可以透過建立多個進度來比較不同的紀錄、嘗試不同難度，或是單純追蹤你的進度。",
+      "desc": "你可以在下方建立和管理遊戲進度。每個進度都代表一次完整的遊玩紀錄。你可以透過建立多個進度來比較不同的紀錄、嘗試不同難度，或是單純追蹤自己的進度。",
       "warning": "重要：你的進度儲存在瀏覽器中。如果你清除瀏覽器資料或使用隱私/無痕模式，可能會遺失。",
       "createButtonDesc": "新進度",
       "noPlaythroughs": "目前還沒有任何遊戲進度。快來建立一個吧！",
       "notFound": {
         "title": "找不到遊戲進度",
-        "desc": "此遊戲進度不存在或已被刪除。",
+        "desc": "這個遊戲進度找不到了，或是已經被刪除了。",
         "link": "返回遊戲進度總覽"
       }
     },
@@ -548,9 +548,94 @@
       "priceIndexDesc": "選取這個產品目前的遊戲內價格指數，來計算正確的收益（用出口價格會更準）。"
     }
   },
+  "contact": {
+    "subheading": "意見、點子、提問？隨時找我聊聊！",
+    "intro": "如果你對新功能有什麼好點子、發現資料不全，或是單純想給點建議，隨時跟我說喔！每一則訊息都能幫我把網站做得更好，讓社群大家用得更順手，真的很感謝！"
+  },
+  "legal": {
+    "title": "法律資訊",
+    "link": "法律資訊"
+  },
+  "privacy": {
+    "title": "隱私權說明",
+    "link": "隱私權",
+    "generalInfo": {
+      "title": "一般資訊",
+      "intro": "我們會依照 GDPR 法律規定來處理你的個人資料。",
+      "responsiblePerson": "GDPR 定義下的資料控制者："
+    },
+    "serverLogs": {
+      "title": "存取數據 (伺服器日誌)",
+      "intro": "當你造訪本網站時，伺服器會自動收集以下資訊：",
+      "items": [
+        "IP 位址 (已縮減或匿名化)",
+        "請求的日期與時間",
+        "造訪的頁面",
+        "瀏覽器類型與版本",
+        "作業系統"
+      ],
+      "purpose": "這些資料只用在維持網站的技術運作與安全性。",
+      "legalBasis": "法律依據：GDPR 第 6 (1) f 條"
+    },
+    "analytics": {
+      "title": "使用 {umamiAnalytics}",
+      "intro": "本網站使用 <em>{umamiAnalytics}</em> 這款注重隱私的分析工具。Umami 運行在我們自己的伺服器上，不會處理傳統意義上的個人資料。",
+      "capturedData": {
+        "title": "收集的資料：",
+        "items": [
+          "造訪過的頁面",
+          "來源網址 (訪客來源)",
+          "使用的瀏覽器與裝置類型",
+          "大致的地理位置 (不含精確位置數據)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "安全與隱私：",
+        "items": [
+          "不會為了分析目的而設置 Cookie",
+          "不會建立個人檔案",
+          "不會將數據分享給第三方"
+        ]
+      },
+      "summary": "我們會進行匿名化處理。",
+      "legalBasis": "法律依據：GDPR 第 6 (1) f 條 (分析網站使用情況的正當利益)"
+    },
+    "cookies": {
+      "title": "Cookie",
+      "intro": "本網站會使用必要的 Cookie 來儲存你的語言設定。",
+      "details": {
+        "purpose": {
+          "title": "用途",
+          "desc": "儲存你選好的語言"
+        },
+        "duration": {
+          "title": "有效期限",
+          "desc": "最長 30 天，或是直到你手動刪除為止"
+        }
+      },
+      "summary": "這個 Cookie 對網站運作很重要，不需另外取得你的同意。",
+      "legalBasis": "法律依據：GDPR 第 6 (1) f 條"
+    },
+    "userRights": {
+      "title": "你的權利",
+      "intro": "你隨時可以要求以下事項：",
+      "items": [
+        "查看你儲存的資料",
+        "修正錯誤的資料",
+        "刪除你的資料",
+        "限制處理資料",
+        "反對處理資料"
+      ],
+      "contact": "直接寄封 Email 給我們就可以了。"
+    },
+    "changes": {
+      "title": "更新事項",
+      "intro": "為了符合法律規定或網站更新，這份隱私權政策可能會有所變動。"
+    }
+  },
   "footer": {
-    "assets": "遊戲裡的圖片、商標和素材，版權都屬於各自的持有者。",
-    "fanMade": "本站為粉絲自製，並非由遊戲開發團隊所營運。你可以在 <link>GitHub</link> 看到原始碼。"
+    "assets": "遊戲裡的圖片、商標和素材，版權都屬於原作者。",
+    "fanMade": "這是粉絲自製的小站，與遊戲官方無關。原始碼可以在 <link>GitHub</link> 找到。"
   },
   "metadata": {
     "root": {
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "掌控 {gameName} 的經濟命脈。從進階工廠規劃到複雜的物流管理——獲取擴張帝國所需的一切數據。"
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "名稱"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "管理並比較你的 {gameName} 遊戲進度。追蹤不同難度的表現、分析生產數據，並優化經營策略。"
     }
   }
 }

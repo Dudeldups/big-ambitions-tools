@@ -209,6 +209,7 @@
     "delete": "Slet",
     "save": "Gem",
     "amount": "Beløb",
+    "name": "Navn",
     "summedUpAmount": "I alt",
     "summary": "Oversigt",
     "amortization": "Amortisation",
@@ -218,6 +219,7 @@
     "columnsDescription": "Kolonner",
     "filterResults": "Filtrer resultater...",
     "characterName": "Karakternavn",
+    "navigation": "Navigation",
     "home": "Hjem",
     "about": "Om os",
     "contact": "Kontakt",
@@ -277,9 +279,7 @@
       "hourly": "Hver time",
       "daily": "Dagligt",
       "weekly": "Ugentligt"
-    },
-    "navigation": "Navigation",
-    "name": "Navn"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Pallehylde} other {Pallehylder}}",
@@ -312,8 +312,8 @@
     "autoParkSupported": "Indparkeringshjælp",
     "taxDeductible": "Fradrag",
     "requiredDeliveryDriverSkillValue": "Chauffør-skills",
-    "destinationsThatCanDeliver": "Basis-dest.",
-    "destinationsFull": "Max. dest.",
+    "destinationsThatCanDeliver": "Basis-stop",
+    "destinationsFull": "Maks. stop",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
     "export": "Eksport",
@@ -370,7 +370,7 @@
       "nameRequired": "Din karakter bør have et navn.",
       "nameTooLong": "Navnet må højst være 30 tegn langt.",
       "difficultyRequired": "Vælg en sværhedsgrad.",
-      "workstationProductRequired": "Vælg et produkt for hver arbejdsstation til tøj."
+      "workstationProductRequired": "Vælg et produkt til hver arbejdsstation til tøj."
     },
     "factory": {
       "nameTooLong": "Fabriksnavnet må højst være 50 tegn langt.",
@@ -394,7 +394,7 @@
       "title": "Lad os komme i gang!",
       "desc": "Vil du bare lige slå noget op eller lege lidt med tallene? <em>Fedt, matematik!</em> Så smut forbi <link>{database}</link> og gå på opdagelse.",
       "desc2": "Fra planlægning af din første fabrik til styring af produktionsraterne i hele dit imperium – du finder det hele i <link>{toolsSection}</link>.",
-      "errorDesc": "Har du opdaget en fejl eller mangler der info? Eller har du forslag til at gøre siden bedre? Så <contact>skriv endelig til os</contact>!"
+      "errorDesc": "Har du opdaget en fejl eller mangler noget info? Eller har du forslag til at gøre siden bedre? Så <contact>skriv endelig til os</contact>!"
     },
     "game": {
       "title": "Kender du ikke spillet endnu?",
@@ -413,7 +413,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Webside lanceret"
+    "launch": "Hjemmeside lanceret"
   },
   "database": {
     "intro": {
@@ -427,13 +427,13 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Alle maskiner til produktion. Kombiner en hovedmaskine med én eller to hjælpe-maskiner for at lave en Arbejdsstation til tøj."
+      "caption": "Alle maskiner du kan bruge til produktion. Kombiner en hovedmaskine med én eller to sekundære maskiner og skab en Arbejdsstation til tøj."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
     },
     "vehicles": {
-      "caption": "Skal du bruge masser af plads eller bare den hurtigste vogn? Det finder du her. Fører-skill er knyttet til din {deliveryDriver}, og for at nå maks antal destinationer skal du bruge en {logisticsManager} med 100 % skill."
+      "caption": "Leder du efter masser af lastplads eller bare den hurtigste vogn? Du finder det her. Din {deliveryDriver} bestemmer din skill, og for max destinationer skal du bruge en {logisticsManager} med 100 % skill."
     }
   },
   "tools": {
@@ -441,7 +441,7 @@
       "desc": "Her kan du dykke ned i spillets tal og statistikker. Planlæg dine fabrikker og styr logistikken for dit hele imperium!"
     },
     "playthroughs": {
-      "desc": "Nedenfor kan du oprette og administrere dine spilstande. En spilstand svarer til én gennemspilning af spillet. Du kan oprette flere spilstande for at sammenligne forskellige runs, prøve andre sværhedsgrader eller bare holde styr på dine fremskridt.",
+      "desc": "Her kan du oprette og styre dine spilstande. En spilstand er én gennemspilning af spillet. Du kan lave flere spilstande for at sammenligne forskellige runs, prøve andre sværhedsgrader eller bare holde styr på dine fremskridt.",
       "warning": "Vigtigt: Dit fremskridt gemmes i din browser. Sletter du browserdata eller bruger privat-/inkognito-tilstand, kan det gå tabt.",
       "createButtonDesc": "Ny spilstand",
       "noPlaythroughs": "Ingen spilstande endnu. Opret en for at komme i gang!",
@@ -500,7 +500,7 @@
       "desc": "Du kan gruppere fabrikker sammen for en bedre oversigt pr. produktkategori. Hvis de grupperede fabrikker ikke har nok pallehylder tildelt, vil indkøbslisten fortælle dig, hvad du skal bestille til hver fabrik og også til lagerhuset for at levere resten. Leveringsdialogen viser også, hvad der skal sendes til hver fabrik.",
       "groupEmpty": "Ingen fabrikker i denne gruppe. Træk et fabrikskort hertil for at tilføje det.",
       "ungroupedTitle": "Ikke-grupperede fabrikker",
-      "ungroupedEmpty": "Her er tomt. Træk et fabrikskort herind eller opret en ny fabrik.",
+      "ungroupedEmpty": "Der sker ikke noget her endnu. Træk et fabrikskort herind eller opret en ny fabrik.",
       "deliveries": {
         "buttonDesc": "Leverancer",
         "title": "Leveringsplan",
@@ -509,7 +509,7 @@
       },
       "shoppingList": {
         "title": "Gruppens indkøbsliste",
-        "desc": "Her ser du alle de ingredienser, du skal bruge til fabrikkerne i denne gruppe, som mangler pallehylder. Den beregner det ud fra antallet af ledige hylder på fabrikkerne, så du kan bestille resten til et separat lager.<br></br>Hylder der skal bruges på lageret: <strong>{amount}</strong>"
+        "desc": "Her ser du alle ingredienser, der skal bruges til fabrikkerne i denne gruppe, som ikke har nok pallehylder. Den beregner det ud fra antallet af ledige hylder på fabrikkerne, så du kan bestille resten til et separat lager.<br></br>Hylder til lageret: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
@@ -548,28 +548,107 @@
       "priceIndexDesc": "Vælg det aktuelle spilprisindeks for dette produkt til at beregne den korrekte indtægt. (Exportprisen er mere præcis.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Idéer? Spørgsmål? Skriv bare en hurtig besked.",
+    "intro": "Har du idéer til nye funktioner, opdager manglende data eller vil bare give lidt feedback? Så ræk endelig ud! Jeg sætter pris på alle beskeder, der hjælper mig med at gøre siden endnu bedre for communityet."
+  },
+  "legal": {
+    "title": "Juridisk info",
+    "link": "Juridisk info"
+  },
+  "privacy": {
+    "title": "Om dit privatliv",
+    "link": "Privatliv",
+    "generalInfo": {
+      "title": "Generel info",
+      "intro": "Vi passer på dine data og følger GDPR-reglerne.",
+      "responsiblePerson": "Ansvarlig for dine data (GDPR):"
+    },
+    "serverLogs": {
+      "title": "Adgangsdata (serverlogs)",
+      "intro": "Når du besøger denne hjemmeside, indsamler serveren automatisk følgende:",
+      "items": [
+        "IP-adresse (forkortet eller anonymiseret)",
+        "Dato og tidspunkt for anmodningen",
+        "Besøgt side",
+        "Browsertype og version",
+        "Operativsystem"
+      ],
+      "purpose": "Disse data bruges kun til teknisk levering og sikkerhed på siden.",
+      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR"
+    },
+    "analytics": {
+      "title": "Brug af {umamiAnalytics}",
+      "intro": "Denne hjemmeside bruger <em>{umamiAnalytics}</em>, et privatlivsvenligt analyseværktøj. Umami kører på vores egen server og behandler ikke personoplysninger i traditionel forstand.",
+      "capturedData": {
+        "title": "Indsamlede data:",
+        "items": [
+          "Besøgte sider",
+          "Referrer (besøgendes oprindelse)",
+          "Brugt browser og enhedstype",
+          "Omtrentlig geografisk oprindelse (uden præcise lokationsdata)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Sikkerhed & Privatliv:",
+        "items": [
+          "Ingen cookies til analyseformål",
+          "Ingen personlige profiler oprettes",
+          "Ingen data deles med tredjeparter"
+        ]
+      },
+      "summary": "Sker helt anonymt.",
+      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (berettiget interesse i at analysere brugen af hjemmesiden)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Denne hjemmeside bruger en teknisk nødvendig cookie til at gemme dine sprogindstillinger.",
+      "details": {
+        "purpose": {
+          "title": "Formål",
+          "desc": "Gemmer det valgte sprog"
+        },
+        "duration": {
+          "title": "Varighed",
+          "desc": "op til 30 dage, eller indtil du selv sletter dem"
+        }
+      },
+      "summary": "Denne cookie er nødvendig for, at siden fungerer, og kræver ikke samtykke.",
+      "legalBasis": "Lovgrundlag: Art. 6 (1) lit. f GDPR"
+    },
+    "userRights": {
+      "title": "Dine rettigheder",
+      "intro": "Du har altid ret til at bede om følgende:",
+      "items": [
+        "Oplysninger om dine gemte data",
+        "Rettelse af forkerte oplysninger",
+        "Sletning af dine data",
+        "Begrænsning af behandlingen",
+        "Indsigelse mod behandling"
+      ],
+      "contact": "En uformel e-mail er nok."
+    },
+    "changes": {
+      "title": "Ændringer",
+      "intro": "Vi opdaterer måske vores privatlivspolitik pga. nye lovkrav eller ændringer på siden."
+    }
+  },
   "footer": {
     "assets": "Alle billeder, varemærker og assets fra spillet tilhører deres respektive ejere.",
     "fanMade": " Dette er et rent fan-projekt og har ingen forbindelse til spillets udviklere. Kildekode kan du finde på <link>GitHub</link>."
   },
   "metadata": {
     "root": {
-      "description": "Fan-værktøjer til {gameName}. Planlæg fabrikker, beregn produktionsstatistikker, styr leveringsplaner og gennemse spildata."
+      "description": "Fan-værktøjer til {gameName}. Planlæg fabrikker, beregn produktionsstatistikker, hold styr på leveringsplaner og gennemse spildata."
     },
     "database": {
       "description": "Få detaljerede spildata om produkter, maskiner, køretøjer, profitberegninger og meget mere til {gameName}."
     },
     "tools": {
       "description": "Bliv mester i økonomien i {gameName}. Fra avanceret fabrikplanlægning til kompleks logistik – få de data, du skal bruge til at udvide dit imperium."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Navn"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Hold styr på og sammenlign dine {gameName} spilstande. Få overblik over din fremgang, analyser statistikker og optimer din strategi."
     }
   }
 }

@@ -209,6 +209,7 @@
     "delete": "Poista",
     "save": "Tallenna",
     "amount": "Määrä",
+    "name": "Nimi",
     "summedUpAmount": "Yhteensä",
     "summary": "Yhteenveto",
     "amortization": "Amortisaatio",
@@ -218,6 +219,7 @@
     "columnsDescription": "Sarakkeet",
     "filterResults": "Suodata tulokset...",
     "characterName": "Hahmon nimi",
+    "navigation": "Navigointi",
     "home": "Koti",
     "about": "Meistä",
     "contact": "Yhteystiedot",
@@ -277,9 +279,7 @@
       "hourly": "Tunnittain",
       "daily": "Päivittäin",
       "weekly": "Viikoittain"
-    },
-    "navigation": "Navigointi",
-    "name": "Nimi"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Lavahylly} other {Lavahyllyt}}",
@@ -475,7 +475,7 @@
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
-        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, joka mahtuu {shelfAmount} lavahyllylle. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
+        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi vetää. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
         "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet koko listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
       }
     },
@@ -548,28 +548,107 @@
       "priceIndexDesc": "Valitse tämän tuotteen nykyinen pelihintaindeksi oikean tulon laskemiseksi. (Vientihinta on tarkempi.)"
     }
   },
+  "contact": {
+    "subheading": "Palaute? Ideat? Kysymykset? Laita vaikka viesti.",
+    "intro": "Jos sulla on ideoita uusiin toimintoihin, huomaat puuttuvia tietoja tai haluat vain antaa palautetta, laita ihmeessä viestiä! Jokainen viesti auttaa tekemään tästä sivusta vielä paremman koko yhteisölle."
+  },
+  "legal": {
+    "title": "Oikeudellinen info",
+    "link": "Info"
+  },
+  "privacy": {
+    "title": "Tietosuoja",
+    "link": "Tietosuoja",
+    "generalInfo": {
+      "title": "Yleistä",
+      "intro": "Tällä sivustolla käsitellään henkilötietoja vain lainmukaisesti (GDPR).",
+      "responsiblePerson": "GDPR:n mukainen rekisterinpitäjä:"
+    },
+    "serverLogs": {
+      "title": "Lokitiedot (palvelinloki)",
+      "intro": "Kun vierailet tällä sivustolla, palvelin kerää automaattisesti seuraavat tiedot:",
+      "items": [
+        "IP-osoite (lyhennetty tai anonymisoitu)",
+        "Pyynnön päivämäärä ja kellonaika",
+        "Vierailtu sivu",
+        "Selaimen tyyppi ja versio",
+        "Käyttöjärjestelmä"
+      ],
+      "purpose": "Näitä tietoja käytetään vain sivuston tekniseen toimivuuteen ja turvallisuuteen.",
+      "legalBasis": "Oikeusperuste: GDPR:n art. 6 (1) kohta f"
+    },
+    "analytics": {
+      "title": "Käytössä {umamiAnalytics}",
+      "intro": "Sivusto käyttää tietosuojaystävällistä <em>{umamiAnalytics}</em>-analyysityökalua. Umami toimii omalla palvelimellamme, eikä se käsittele perinteisessä mielessä henkilötietoja.",
+      "capturedData": {
+        "title": "Kerätyt tiedot:",
+        "items": [
+          "Vierailut",
+          "Lähde (kävijöiden alkuperä)",
+          "Käytetty selain ja laitetyyppi",
+          "Suuntaa-antava maantieteellinen sijainti (ilman tarkkaa sijaintia)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Turvallisuus ja tietosuoja:",
+        "items": [
+          "Ei käytetä evästeitä analytiikkaan",
+          "Ei luoda henkilökohtaisia profiileja",
+          "Tietoja ei jaeta kolmansille osapuolille"
+        ]
+      },
+      "summary": "Käsittely tapahtuu anonyymisti.",
+      "legalBasis": "Oikeusperuste: GDPR art. 6 (1) kohta f (oikeutettu etu sivuston käytön analysoinnissa)"
+    },
+    "cookies": {
+      "title": "Evästeet",
+      "intro": "Sivusto käyttää teknisesti välttämätöntä evästettä kieliasetusten tallentamiseen.",
+      "details": {
+        "purpose": {
+          "title": "Tarkoitus",
+          "desc": "Valitun kielen tallentaminen"
+        },
+        "duration": {
+          "title": "Kesto",
+          "desc": "enintään 30 päivää tai kunnes poistat sen itse"
+        }
+      },
+      "summary": "Tämä eväste on välttämätön sivuston toiminnalle, eikä se vaadi lupaa.",
+      "legalBasis": "Oikeusperuste: Art. 6 (1) lit. f GDPR"
+    },
+    "userRights": {
+      "title": "Sinun oikeutesi",
+      "intro": "Voit pyytää seuraavia asioita milloin tahansa:",
+      "items": [
+        "Tietoja tallennetuista tiedoistasi",
+        "Virheellisten tietojen korjaaminen",
+        "Tietojesi poistaminen",
+        "Käsittelyn rajoittaminen",
+        "Käsittelyn vastustaminen"
+      ],
+      "contact": "Riittää, kun laitat vain lyhyen viestin sähköpostilla."
+    },
+    "changes": {
+      "title": "Muutokset",
+      "intro": "Tätä tietosuojaselostetta saatetaan päivittää lakimuutosten tai sivuston päivitysten myötä."
+    }
+  },
   "footer": {
     "assets": "Kaikki pelin kuvat, tavaramerkit ja assetit kuuluvat omistajilleen.",
     "fanMade": "Tämä on faniprojekti, eikä se liity pelin kehittäjiin. Lähdekoodi löytyy <link>GitHubista</link>."
   },
   "metadata": {
     "root": {
-      "description": "Fanien tekemät työkalut {gameName}-peliin. Suunnittele tehtaat, laske tuotantotilastot, hallitse toimitussuunnitelmia ja selaa pelidataa."
+      "description": "{gameName}-fanien työkaluja. Suunnittele tehtaat, laske tuotantotilastot, hallitse toimitussuunnitelmia ja selaa pelidataa."
     },
     "database": {
       "description": "Selaa {gameName}-pelin yksityiskohtaista pelidataa: tuotteet, koneet, ajoneuvot, tulolaskelmat ja paljon muuta."
     },
     "tools": {
       "description": "Ota haltuun {gameName}-talous. Edistyneestä tehdassuunnittelusta monimutkaiseen logistiikkaan – tässä on kaikki data, jota tarvitset imperiumisi kasvattamiseen."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Nimi"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Vertaile ja pidä kirjaa {gameName}-tallennuksistasi. Seuraa edistymistäsi, analysoi tilastoja ja optimoi bisnestäsi."
     }
   }
 }

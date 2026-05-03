@@ -209,6 +209,7 @@
     "delete": "Supprimer",
     "save": "Enregistrer",
     "amount": "Montant",
+    "name": "Nom",
     "summedUpAmount": "Total",
     "summary": "Résumé",
     "amortization": "Amortissement",
@@ -278,8 +279,7 @@
       "hourly": "Par heure",
       "daily": "Par jour",
       "weekly": "Par semaine"
-    },
-    "name": "Nom"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Rayonnage à palettes} other {Rayonnages à palettes}}",
@@ -548,13 +548,98 @@
       "priceIndexDesc": "Choisis l'indice de prix actuel du jeu pour ce produit afin de calculer le revenu correct. (Le prix à l'export est plus précis.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback ? Idées ? Questions ? Un petit message suffit.",
+    "intro": "Si tu as des idées de nouvelles fonctionnalités, que tu remarques des données manquantes ou que tu veux simplement me faire un retour, n'hésite pas à m'écrire ! Chaque message m'aide à rendre ce site encore plus utile pour la communauté.",
+    "form": {
+      "title": "Dis juste bonjour !",
+      "fields": {
+        "name": "Ton nom",
+        "email": "E-mail",
+        "message": "Message"
+      },
+      "success": "Message envoyé !"
+    }
+  },
+  "legal": {
+    "title": "Infos légales",
+    "link": "Légal"
+  },
   "privacy": {
+    "title": "Politique de confidentialité",
+    "link": "Confidentialité",
+    "generalInfo": {
+      "title": "Infos générales",
+      "intro": "Ce site traite les données personnelles uniquement dans le respect des règles légales (RGPD).",
+      "responsiblePerson": "Responsable du traitement au sens du RGPD :"
+    },
+    "serverLogs": {
+      "title": "Données d'accès (logs serveur)",
+      "intro": "Quand tu visites ce site, le serveur collecte automatiquement ces infos :",
+      "items": [
+        "Adresse IP (tronquée ou anonymisée)",
+        "Date et heure de la requête",
+        "Page consultée",
+        "Type et version du navigateur",
+        "Système d'exploitation"
+      ],
+      "purpose": "Ces données servent uniquement à la technique et à la sécurité du site.",
+      "legalBasis": "Base légale : Art. 6 (1) lit. f RGPD"
+    },
+    "analytics": {
+      "title": "Utilisation de {umamiAnalytics}",
+      "intro": "Ce site utilise <em>{umamiAnalytics}</em>, un outil d'analyse respectueux de la vie privée. Umami est hébergé sur notre propre serveur et ne traite pas de données personnelles au sens classique.",
+      "capturedData": {
+        "title": "Données collectées :",
+        "items": [
+          "Pages visitées",
+          "Référent (origine des visiteurs)",
+          "Navigateur et type d'appareil utilisé",
+          "Origine géographique approximative (sans données de localisation précise)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Sécurité & Confidentialité :",
+        "items": [
+          "Pas de cookies pour l'analyse",
+          "Aucun profil personnel créé",
+          "Aucune donnée partagée avec des tiers"
+        ]
+      },
+      "summary": "Le traitement est anonymisé.",
+      "legalBasis": "Base légale : Art. 6 (1) lit. f RGPD (intérêt légitime pour l'analyse de l'utilisation du site)"
+    },
     "cookies": {
+      "title": "Cookies",
+      "intro": "Ce site utilise un cookie technique pour enregistrer tes paramètres de langue.",
       "details": {
-        "name": {
-          "title": "Nom"
+        "purpose": {
+          "title": "But",
+          "desc": "Enregistrer la langue choisie"
+        },
+        "duration": {
+          "title": "Durée",
+          "desc": "jusqu'à 30 jours ou jusqu'à ce que tu le supprimes manuellement"
         }
-      }
+      },
+      "summary": "Ce cookie est indispensable au fonctionnement du site et ne nécessite pas de consentement.",
+      "legalBasis": "Base légale : Art. 6 (1) lit. f RGPD"
+    },
+    "userRights": {
+      "title": "Tes droits",
+      "intro": "Tu peux demander n'importe quand :",
+      "items": [
+        "Des infos sur tes données stockées",
+        "Corriger des données inexactes",
+        "Supprimer tes données",
+        "Limiter le traitement",
+        "T'opposer au traitement"
+      ],
+      "contact": "Un simple e-mail suffit pour ça."
+    },
+    "changes": {
+      "title": "Changements",
+      "intro": "Cette politique de confidentialité peut être mise à jour selon la loi ou les changements sur le site."
     }
   },
   "footer": {
@@ -570,6 +655,9 @@
     },
     "tools": {
       "description": "Domine l'économie de {gameName}. De la planification d'usines avancée à la gestion logistique complexe — récupère les données nécessaires pour bâtir ton empire."
+    },
+    "playthroughs": {
+      "description": "Gère et compare tes parties à {gameName}. Suis ta progression selon la difficulté, analyse tes stats de production et optimise ton business."
     }
   }
 }

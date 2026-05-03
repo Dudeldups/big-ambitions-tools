@@ -209,6 +209,7 @@
     "delete": "Töröl",
     "save": "Mentés",
     "amount": "Összeg",
+    "name": "Név",
     "summedUpAmount": "Összesen",
     "summary": "Összefoglaló",
     "amortization": "Amortizáció",
@@ -218,6 +219,7 @@
     "columnsDescription": "Oszlopok",
     "filterResults": "Eredmények szűrése...",
     "characterName": "Karakternév",
+    "navigation": "Navigáció",
     "home": "Kezdőlap",
     "about": "Rólunk",
     "contact": "Kapcsolat",
@@ -239,7 +241,7 @@
     "difficulty": "Nehézség",
     "priceIndex": "Árindex",
     "priceIndices": "Árindexek",
-    "exportPrice": "Export ár",
+    "exportPrice": "Exportár",
     "revenue": "Bevétel",
     "expenses": "Költségek",
     "profit": "Nyereség",
@@ -277,9 +279,7 @@
       "hourly": "Óránként",
       "daily": "Naponta",
       "weekly": "Heti"
-    },
-    "navigation": "Navigáció",
-    "name": "Név"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raklappolc} other {Raklappolcok}}",
@@ -334,10 +334,10 @@
   "toasts": {
     "genericError": "Hiba történt. Kérlek ellenőrizd az adatokat és próbáld újra. Ha a probléma fennáll, frissítsd az oldalt.",
     "playthroughSaveSuccess": "\"{characterName}\" játékállatapot létrehozva!",
-    "playthroughEditSuccess": "A \"{characterName}\" játékállapot frissítve!",
+    "playthroughEditSuccess": "{characterName} játékállapota frissítve!",
     "playthroughDeleteSuccess": "A \"{characterName}\" játékállapot törölve!",
     "workstationCopyError": "Kérlek válassz először egy ruházati munkállomást és egy terméket.",
-    "factorySaveSuccess": "A \"{factoryName}\" létrejött és hozzákerült a játékállapothoz!",
+    "factorySaveSuccess": "\"\"{factoryName}\" létrehozva és hozzáadva a játékállapothoz!\"",
     "factoryEditSuccess": "\"{factoryName}\" frissítve!",
     "factoryDeleteSuccess": "\"{factoryName}\" törölve!",
     "groupSaveSuccess": "Csoport \"{groupName}\" létrehozva!",
@@ -421,13 +421,13 @@
       "buttonDesc": "Válassz egy kategóriát"
     },
     "products": {
-      "caption": "Összes termék egy pillantásra. Válts könnyedén a gyártási és az import árak között. A kiskeri ár minden kerület átlaga. A profitot nettó értékként mutatjuk, beleértve az összetevők költségeit, a munkabért és a nehézségi szinten alapuló adókat. <br></br>Kíváncsi vagy, hogyan számolják ki? Nézd meg a <link>{toolsSection}</link> részt."
+      "caption": "Összes termék egy pillantásra. Válts könnyedén a gyártási és az importárak között. A kiskeri ár minden kerület átlaga. A profitot nettóként látod, beleértve az összetevők költségét, a munkabért és a nehézségtől függő adókat. <br></br>Kíváncsi vagy, hogyan számolják ki? Nézd meg a <link>{toolsSection}</link> részt."
     },
     "ingredients": {
       "caption": "Minden nyersanyag áttekintése, beleértve tulajdonságaikat is. Válaszd a nehézséget, hogy lásd a helyes árakat."
     },
     "machines": {
-      "caption": "Az összes gép, amit a gyártáshoz használhatsz. Kombinálj egy főgépet egy vagy két melléggéppel, hogy Ruházati munkállomást építs."
+      "caption": "Az összes gép, amit a gyártáshoz használhatsz. Egy főgép és egy-két melléggép kombinálásával ruházati munkállomást építhetsz."
     },
     "inventory": {
       "caption": "Egy kis áttekintés a... tárolási lehetőségeidről. Most csak ennyi. Jön még több!"
@@ -441,14 +441,14 @@
       "desc": "Itt merülhetsz el a játék számaiban és statisztikáiban. Tervezd meg a gyáraidat, és irányítsd az egész birodalmod logisztikáját!"
     },
     "playthroughs": {
-      "desc": "Alul létrehozhatsz és kezelhetsz játékállapodásaidat. Egy játékállapot egyetlen futást jelent. Több is lehet, hogy összehasonlítsd a különböző próbálkozásokat, teszteld más nehézségi szinteket, vagy csak nyomon kövesd a haladásodat.",
+      "desc": "Alul létrehozhatsz és kezelheted a játékállapotaidat. Egy játékállapot egyetlen menetet jelent. Létrehozhatsz többet is, hogy összehasonlítsd a különböző próbálkozásokat, teszteld más nehézségi szinteket, vagy csak nyomon kövesd a haladásodat.",
       "warning": "Fontos: A haladásod a böngésződben tárolódik. Ha törölöd a böngészőadatokat vagy privát/incognito módot használsz, elveszítheted az egészet.",
       "createButtonDesc": "Új játékállapot",
       "noPlaythroughs": "Még nincs játékállapodás. Hozz létre egyet a kezdéshez!",
       "notFound": {
         "title": "Játékmenet nem található",
         "desc": "Ez a játékmenet nem létezik vagy törölve lett.",
-        "link": "Vissza a játékállapodások áttekintéséhez"
+        "link": "Vissza a játékállapotok listájához"
       }
     },
     "playthroughDetail": {
@@ -475,7 +475,7 @@
       },
       "splitShoppingList": {
         "title": "Felosztott vásárlólista",
-        "desc": "Rendeld ezeket az alapanyagokat közvetlenül a gyárba, hogy felosztsd a rendelést. Ez a maximális mennyiség, amit a {shelfAmount} darab raklappolca tárolni tud. Figyelembe veszi a gyártott dobozok számát is. Egy teljes heti gyártáshoz összesen {requiredAmount} raklappolcra lenne szükséged.",
+        "desc": "Rendeld ezeket az alapanyagokat közvetlenül a gyárba, hogy felosztsd a rendelést. Ez a maximális mennyiség, amit a {shelfAmount} darab raklappolc tárolni tud. Figyelembe veszi a gyártott dobozok számát is. Egy teljes heti gyártáshoz összesen {requiredAmount} raklappolcra lenne szükséged.",
         "desc1": "A maradékot egy vagy több különálló beszerzőnek kell raktárhoz rendelnie. Menj vissza a <link>gyári áttekintéshez</link>, és hozz létre egy csoportot, hogy lásd a teljes rendelési listát. Ez a gyárakonkénti szállítási tervet is mutatja."
       }
     },
@@ -497,7 +497,7 @@
     "factoryGroups": {
       "buttonDesc": "Csoport létrehozása",
       "title": "Gyárcsoportok",
-      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakon nincs elég raklapos polc, a vásárlólista megmondja, mit kell rendelned az egyes gyárakba és a raktárba is a maradék pótolásához. A szállítási ablak is mutatja, mit küldj minden gyárba.",
+      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakhoz nem elég palettás polc van hozzárendelve, a vásárlólista megmondja, mit kell rendelned az egyes gyárakba és a raktárba is a hiányzó mennyiség pótolásához. A szállítási ablak is mutatja, mit küldj minden gyárba.",
       "groupEmpty": "Ebben a csoportban nincs gyár. Húzz egy gyárkártyát ide, hogy hozzáadhassad.",
       "ungroupedTitle": "Nem csoportosított gyárak",
       "ungroupedEmpty": "Semmi nincs itt egyelőre. Húzz ide egy kártyát, vagy hozz létre egy új gyárat.",
@@ -548,6 +548,91 @@
       "priceIndexDesc": "Válaszd ki a termék aktuális játékbeli árindexét a pontos bevételhez. (Az export ára pontosabb.)"
     }
   },
+  "contact": {
+    "subheading": "Feedback? Ötletek? Kérdések? Egy rövid üzenet elég!",
+    "intro": "Ha van ötleted új funkciókra, hiányzó adatokat észleltél, vagy csak visszajelzést szeretnél adni, írj bátran! Minden üzenet számít, ami segít abban, hogy az oldal még hasznosabb legyen a közösségnek."
+  },
+  "legal": {
+    "title": "Jogi infók",
+    "link": "Jogi infó"
+  },
+  "privacy": {
+    "title": "Adatvédelem",
+    "link": "Adatvédelem",
+    "generalInfo": {
+      "title": "Általános információk",
+      "intro": "Az adataidat csak a törvényeknek (GDPR) megfelelően kezeljük.",
+      "responsiblePerson": "Adatkezelő (GDPR szerint):"
+    },
+    "serverLogs": {
+      "title": "Hozzáférési adatok (szervernaplók)",
+      "intro": "Amikor meglátogatod ezt a weboldalt, a szerver automatikusan összegyűjti a következő adatokat:",
+      "items": [
+        "IP-cím (rövidített vagy anonimizált)",
+        "A kérés dátuma és időpontja",
+        "Megtekintett oldal",
+        "Browser típusa és verziója",
+        "Operációs rendszer"
+      ],
+      "purpose": "Ezeket az adatokat csak a weboldal működtetéséhez és biztonságához használjuk.",
+      "legalBasis": "Jogalap: GDPR 6. cikk (1) bekezdésének (f) pontja"
+    },
+    "analytics": {
+      "title": "{umamiAnalytics} használata",
+      "intro": "Ez a weboldal az <em>{umamiAnalytics}</em> nevű, adatvédelmi szempontból barátságos elemző eszközt használja. Az Umami a saját szerverünkön fut, és nem kezel személyes adatokat a klasszikus értelemben.",
+      "capturedData": {
+        "title": "Gyűjtött adatok:",
+        "items": [
+          "Megtekintett oldalak",
+          "Referer (a látogatók forrása)",
+          "Használt browser és eszköz típusa",
+          "Kb. földrajzi származás (pontos helyadatok nélkül)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Biztonság és adatvédelem:",
+        "items": [
+          "Nincsenek elemzési célú sütik beállítva",
+          "Nem készítünk személyes profilokat",
+          "Az adatok nem kerülnek megosztásra harmadik felekkel"
+        ]
+      },
+      "summary": "Anonim módon kezeljük az adataidat.",
+      "legalBasis": "Jogalap: A GDPR 6. cikk(1) f pontja (a weboldal használatának elemzéséből fakadó jogos érdek)"
+    },
+    "cookies": {
+      "title": "Cookie-k",
+      "intro": "Ez az oldal egy technikai sütit használ a nyelvi beállítások mentéséhez.",
+      "details": {
+        "purpose": {
+          "title": "Cél",
+          "desc": "A kiválasztott nyelv mentése"
+        },
+        "duration": {
+          "title": "Időtartam",
+          "desc": "legfeljebb 30 napig, vagy amíg te magad nem törlöd"
+        }
+      },
+      "summary": "Ez a süti a weboldal működéséhez szükséges, és nem igényel beleegyezést.",
+      "legalBasis": "Jogalap: a GDPR 6. cikk (1) bekezdésének (f) pontja"
+    },
+    "userRights": {
+      "title": "Adatvédelmi jogok",
+      "intro": "Bármikor kérheted a következőket:",
+      "items": [
+        "Tájékoztatás a mentett adataidról",
+        "A hibás adatok javítása",
+        "Az adataid törlése",
+        "A feldolgozás korlátozása",
+        "Tiltkozás a feldolgozás ellen"
+      ],
+      "contact": "Egy egyszerű e-mail is elég ehhez."
+    },
+    "changes": {
+      "title": "Változások",
+      "intro": "Ez az adatvédelmi nyilatkozat változhat a jogi követelmények vagy az oldal módosulásai miatt."
+    }
+  },
   "footer": {
     "assets": "A játék képei, védjegyei és assetjei a tulajdonosoké.",
     "fanMade": " Ez egy tiszta rajongói oldal, és nincs kapcsolata a játék fejlesztőivel. A forráskódot itt találod: <link>GitHub</link>."
@@ -557,19 +642,13 @@
       "description": "Rajongói eszközök a {gameName}-hez. Terveelj gyárakat, számold ki a termelési adatokat, kezeld a szállítási terveket és böngéssz a játékadatokban."
     },
     "database": {
-      "description": "Böngéssz a {gameName} részletes játékadatai között: termékek, gépek, járművek, profitszámítások és sok más."
+      "description": "Böngéssz a {gameName} részletes játékadatai között: termékek, gépek, járművek, profitszámítások és még több."
     },
     "tools": {
-      "description": "Mestereld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg a szükséges adatokat a birodalmad bővítéséhez."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Név"
-        }
-      }
+      "description": "Uráld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg az adatokat, amikkel bővítheted a birodalmadat."
+    },
+    "playthroughs": {
+      "description": "Keferd és hasonlítsd össze a {gameName} játékállapodáidat. Kövesd nyomon a fejlődésedet, elemezd a statisztikákat, és optimalizáld az üzleti folyamataidat."
     }
   }
 }

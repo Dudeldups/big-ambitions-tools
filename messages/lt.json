@@ -209,6 +209,7 @@
     "delete": "Ištrinti",
     "save": "Išsaugoti",
     "amount": "Suma",
+    "name": "vardas",
     "summedUpAmount": "Iš viso",
     "summary": "Santrauka",
     "amortization": "Amortizacija",
@@ -218,6 +219,7 @@
     "columnsDescription": "Stulpeliai",
     "filterResults": "Filtruoti rezultatus...",
     "characterName": "Karakterio vardas",
+    "navigation": "Navigacija",
     "home": "Pradžia",
     "about": "Apie mus",
     "contact": "Kontaktas",
@@ -277,9 +279,7 @@
       "hourly": "Valandinis",
       "daily": "Kasdienis",
       "weekly": "Savaitinis"
-    },
-    "navigation": "Navigacija",
-    "name": "vardas"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palečių lentyna} other {Palečių lentynos}}",
@@ -312,7 +312,7 @@
     "autoParkSupported": "Autoparkavimas",
     "taxDeductible": "Atskaitoma",
     "requiredDeliveryDriverSkillValue": "Reik. vairuotojo įgūdžiai",
-    "destinationsThatCanDeliver": "Bazinių taškų",
+    "destinationsThatCanDeliver": "Pagrindinės kryptys",
     "destinationsFull": "Maks. taškai",
     "employees": "Darbuotojai",
     "description": "Aprašymas",
@@ -329,7 +329,7 @@
     "books": "Knygos",
     "bottledGoods": "Buteliuotos prekės",
     "food": "Maistas",
-    "gardenProducts": "Sodo produktai"
+    "gardenProducts": "Sodo augalai"
   },
   "toasts": {
     "genericError": "Įvyko klaida. Patikrink duomenis ir bandyk vėl. Jei vis tiek kils klaida, atnaujink puslapį.",
@@ -355,7 +355,7 @@
     "priceIndicesDesc": "Pasirink dabartinius kainų indeksus kiekvienam produktui tiksliems skaičiavimams.",
     "groupBtn": "Sukurti grupę",
     "groupTitle": "Sukurti naują gamyklos grupę",
-    "groupDesc": "Sugrupuoti gamyklas, kad matytum visus reikalingus ingredientus.",
+    "groupDesc": "Sugrupuoti gamyklas, kad pamatytum visus reikalingus ingredientus.",
     "editGroupTitle": "Redaguoti gamyklų grupę",
     "editGroupDesc": "Pasirink naujas reikšmes.",
     "groupLabelName": "vardas",
@@ -377,7 +377,7 @@
       "descriptionTooLong": "Nereikia čia romano rašyti. Maksimaliai 150 simbolių!",
       "workstationsRequired": "Pridėk bent vieną darbo stotį.",
       "atLeastOneVehicle": "Fabrikoje reikia bent vienos transporto priemonės.",
-      "maxTwoVehicles": "Maksimaliai du transporto priemonės fabrikui.",
+      "maxTwoVehicles": "Maksimaliai dvi transporto priemonės fabrikui.",
       "shelfAmountTooLow": "Pridėk lentynų, kad gamykla veiktų."
     },
     "factoryGroup": {
@@ -388,11 +388,11 @@
   "home": {
     "selectLanguage": "Pasirinkite kalbą",
     "intro": {
-      "desc": "Čia rasi informaciją ir įrankius apie <em>{gameName}</em>, kurį sukūrė {companyName}. Ši fanų svetainė šiuo metu skirta gamyklos mechanikai, kad padėtų žaidėjams optimizuoti procesus. Skaičiavimai pagrįsti {gameVersion} versija ir gali pasikeisti ateities atnaujinimais."
+      "desc": "Čia rasi informaciją ir įrankius <em>{gameName}</em> žaidimui nuo {companyName}. Šiuo metu ši fanų svetainė susitelkusi į gamyklos mechanikas, kad padėtų žaidėjams optimizuoti procesus. Skaičiavimai remiasi {gameVersion} versija ir gali keistis dėl būsimų atnaujinimų."
     },
     "cta": {
       "title": "Pradėkime!",
-      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Matematika – tai viskas!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
+      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Visiškas matematika!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
       "desc2": "Nuo savo pirmosios gamyklos planavimo iki visos imperijos gamybos rodiklių valdymo – viską rasai <link>{toolsSection}</link> skiltyje.",
       "errorDesc": "Radai klaidą ar trūkumą? Ar turi pasiūlymų, kaip pagerinti svetainę? Tiesiog <contact>susisiek</contact> su mumis!"
     },
@@ -401,7 +401,7 @@
       "subtitle": "Kaip gaila!",
       "desc": "{gameName} yra revoliucinė verslo simuliacija su vaidmenų elementais. Pradėk nuo nieko ir tapk didžiausiu New Yorko verslininku, kurdamas mažas įmones ar milžiniškas korporacijas – kaip tik nori!",
       "hovgaard": "Aplankyk oficialią svetainę <website>{companyName}</website>",
-      "steam": "Eik tiesiog į <link>{steam}</link>"
+      "steam": "Peržiūrėk žaidimą <link>{steam}</link>"
     },
     "updates": {
       "title": "Naujausi atnaujinimai"
@@ -421,7 +421,7 @@
       "buttonDesc": "Pasirink kategorią"
     },
     "products": {
-      "caption": "Visi produktai – viename žvilgsnyje. Perjunk gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelningumas rodomas kaip grynoji vertė – įskaitant žaliavų, darbuotojų atlyginimų ir mokesčių išlaidas, priklausomai nuo pasirinkto sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
+      "caption": "Visi produktai – viename žvilgsnyje. Galite lengvai perjungti gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelningumas rodomas kaip grynoji vertė – įskaitant žaliavų, darbuotojų atlyginimų ir mokesčių išlaidas, priklausomai nuo pasirinkto sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
     },
     "ingredients": {
       "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
@@ -433,7 +433,7 @@
       "caption": "Visų... saugyklos parinkčių apžvalga. Kol kad tik tiek. Dar bus daugiau!"
     },
     "vehicles": {
-      "caption": "Ieškai didžiausios krovos ar tiesiog greičiausio važiavimo? Čia rasi. Vairuotojo įgūdžiai – tai tavo {deliveryDriver}, o maksimaliam paskirties vietų skaičiui reikia {logisticsManager} su 100% įgūdžiais."
+      "caption": "Ieškai didelės krovos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai – tai tavo {deliveryDriver}, o maksimaliam destinacijų skaičiui reikia {logisticsManager} su 100 % įgūdžiais."
     }
   },
   "tools": {
@@ -441,25 +441,25 @@
       "desc": "Čia gali gilintis į žaidimo skaičius ir statistiką. Planuok savo fabrikus ir valdyk logistiką visam imperijui!"
     },
     "playthroughs": {
-      "desc": "Žemiau gali sukurti ir valdyti savo žaidimo būsenas. Viena būsena – tai vienas žaidimo etapas. Galėsi sukurti kelias būsenas, kad palygintum skirtingus rezultatus, išbandytum kitus sunkumo lygius ar tiesiog stebėtum savo pažangą.",
+      "desc": "Žemiau gali sukurti ir valdyti savo žaidimo būsenas. Viena būsena – tai vienas žaidimo ciklas. Galėsi sukurti kelias būsenas, kad palygintum skirtingas žaidimo būsenas, išbandytum kitus sunkumo lygius ar tiesiog stebėtum savo pažangą.",
       "warning": "Svarbu: Pažanga saugoma naršyklėje. Jei ištrinsi duomenis arba naudosi privačiu režimu, viskas gali išnykti.",
       "createButtonDesc": "Nauja žaidimo būsena",
       "noPlaythroughs": "Dar nėra žaidimo būsenų. Sukur pirmąją ir pradėk!",
       "notFound": {
         "title": "Žaidimo būsena nerasta",
         "desc": "Ši žaidimo būsena neegzistuoja arba buvo ištrinta.",
-        "link": "Atgal į žaidimų būsenų apžvalgą"
+        "link": "Atgal į apžvalgą"
       }
     },
     "playthroughDetail": {
-      "desc": "Čia gali matyti savo imperijos gamybos statistiką. Eik į „Gamyklų“ puslapį, kad pamatytum apžvalgą, stebėtum gamybos linijoms reikiamas prekes ir daugiau. Gamyklų planuotojas parodys tau visus detales apie gamybos statistiką, užsakymų kiekius ir daugiau.",
+      "desc": "Čia pamatysi savo imperijos gamybos statistiką. Užsuk į „Gamyklos“ puslapį, kad peržiūrėtum gamyklas, stebėtum reikiamas prekes ir daugiau. Gamyklų planuotojas parodys visus duomenis apie gamybos statistiką, užsakymų kiekį ir daugiau.",
       "productionOverview": "Savaitinė gamybos apžvalga",
       "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką."
     },
     "factories": {
       "title": "Tavo gamyklos",
       "desc": "Štai tavo fabrikų apžvalga. Gali jas redaguoti, ištrinti arba nukopijuoti esamas reikšmes naujam fabrikui. Jei nori sužinoti daugiau apie kiekvieną fabriką (įskaitant pirkimo sąrašą), tiesiog paspausk ant atitinkamos kortelės.",
-      "desc1": "Taip pat gali jas sugrupuoti paspaudus mygtuką „Sukurti grupę“ žemiau. Taip matysi visas fabrikas vienoje vietoje ir galėsi jas valdyti kaip grupę. Tai naudinga, jei naudojiesi centru, kuris tiekia ingredientus kelioms fabrikoms. Prie kiekvienos fabrikos bus pasiūlytas pristatymo planas, atsižvelgiant į pridėtas palečių lentynas.",
+      "desc1": "Taip pat gali jas sugrupuoti paspaudus mygtuką „Sukurti grupę“ žemiau. Taip visos fabrikos bus vienoje vietoje ir galėsi jas valdyti kaip grupę. Tai naudinga, jei naudojiesi centraliniu sandėliu, iš kurio ingredientai tiekiami kelioms fabrikoms. Remiantis pridėtomis palečių lentynomis, kiekvienai fabrikai bus pasiūlytas pristatymo planas.",
       "noFactories": "Tavo žaidime dar nėra fabrikų. Sukurk vieną, kad pradėtum!",
       "notFound": {
         "title": "Fabrika nerasta",
@@ -497,10 +497,10 @@
     "factoryGroups": {
       "buttonDesc": "Sukurti grupę",
       "title": "Fabrikų grupės",
-      "desc": "Gali sugrupuoti fabrikus, kad lengviau matytumėte produktų kategorijų apžvalgą. Jei sugrupuotoms fabrikoms nebus paskirtų palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai fabrikai ir sandėliui, kad užtektų likusiems produktams. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną fabriką.",
+      "desc": "Gali sugrupuoti fabrikus, kad lengviau matytum produktų kategorijų apžvalgą. Jei sugrupuotoms fabrikoms nebus paskirtų palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai fabrikai ir sandėliui, kad užtektų likusiems produktams. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną fabriką.",
       "groupEmpty": "Šioje grupėje nėra fabrikų. Pertrauk kortelę čia, kad ją pridėtum.",
       "ungroupedTitle": "Nesugrupuotos fabrikos",
-      "ungroupedEmpty": "Čia kol nieko nėra. Pervilk kortelę čia arba sukurk naują fabriką.",
+      "ungroupedEmpty": "Čia kol nieko nėra. Persitrauk kortelę į šią vietą arba sukurk naują fabriką.",
       "deliveries": {
         "buttonDesc": "Pristatymai",
         "title": "Tiekimo planas",
@@ -525,14 +525,14 @@
         "shelfExplanation": "Pridėk bent vieną darbo vietą, kad pamatytum reikalingų palečių lentynų kiekį.",
         "enoughWeekly": "Užtenka savaitės pristatymui.",
         "enoughDaily": "Užtenka tik dieniniam pristatymui. Savaitinei logistikai reikia sandėlio.",
-        "notEnough": "Vietos nepakanka net dieniniam pristatymui.",
+        "notEnough": "Vietos nepakanka net kasdieniam pristatymui.",
         "overflowWarning": "Sandėlis perkrautas!",
         "overflowDesc": "Gaminiančioji produkcija viršija ingredientų sąnaudius. Lentynų skaičius atitinkamai koreguotas."
       },
       "employees": {
         "desc": "Įvesk atlyginimą kiekvienam darbuotojui. Palik tuščią, jei nenori apskaičiuoti atlyginimo.",
         "optimalWorkers": "Naudoti optimalų Gamyklos darbuotojų kiekį",
-        "optimalTooltip": "Automatiškai apskaičiuoja optimalų darbuotojų kiekį, remiantis darbo vietomis ir darbo valandomis. Pridedamas nedidelis buferis sklandžiam automatiniam grafikiui."
+        "optimalTooltip": "Suskaičiuos optimalų darbuotojų kiekį pagal darbo vietas ir darbo valandas. Pridės nedidelį buferį, kad auto-planavimas žaidime vyktų sklandžiai."
       },
       "vehicles": {
         "addBtn": "Pridėti transportą"
@@ -548,8 +548,93 @@
       "priceIndexDesc": "Pasirink dabartinį žaidimo kainų indeksą šiam produktui, norint apskaičiuoti teisingą pajamą. (Ekporto kaina yra tikslesnė.)"
     }
   },
+  "contact": {
+    "subheading": "Atsiliepimai? Idėjos? Klausimai? Tiesiog parašyk.",
+    "intro": "Jei turi idėjų naujoms funkcijoms, pastebi trūkumus duomenyse ar tiesiog nori pasidalinti nuomonėm – be vargo kreipkis! Vertinu kiekvieną žinutę, nes ji padeda man šią svetainę padaryti dar naudingesnę bendruomenei."
+  },
+  "legal": {
+    "title": "Teisinė info",
+    "link": "Teisinė info"
+  },
+  "privacy": {
+    "title": "Privatumo informacija",
+    "link": "Privatumas",
+    "generalInfo": {
+      "title": "Bendroji informacija",
+      "intro": "Ši svetainė tvarko asmens duomenis tik laikantis teisės aktų (BDAR).",
+      "responsiblePerson": "Duomenų tvarkytojas pagal BDAR:"
+    },
+    "serverLogs": {
+      "title": "Prisijungimo duomenys (Serverio logai)",
+      "intro": "Lankydamiesi šia svetainė, serveris automatiškai renka šią informaciją:",
+      "items": [
+        "IP adresas (trumpintamas arba anonimizuotas)",
+        "Paklausos data ir laikas",
+        "atidarytas puslapis",
+        "naršyklės tipas ir versija",
+        "operacinė sistema"
+      ],
+      "purpose": "Šie duomenys naudojami tik siekiant užtikrinti svetainės veikimą ir saugumą.",
+      "legalBasis": "Teisinis pagrindas: BDAR 6(1) f punktas"
+    },
+    "analytics": {
+      "title": "{umamiAnalytics} naudojimas",
+      "intro": "Šioje svetainėje naudojamas <em>{umamiAnalytics}</em>, privatumą gerbiantis analitikos įrankis. „Umami“ veikia mūsų serveryje ir neapdoroda asmens duomenų klasikinė prasme.",
+      "capturedData": {
+        "title": "Renkami duomenys:",
+        "items": [
+          "lankyti puslapiai",
+          "nuoroda (lankytojų kilmė)",
+          "naudojama naršyklė ir įrenginio tipas",
+          "aproksimuota geografinė kilmė (be tikslaus vietos nustatymo)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Saugumas ir privatumas:",
+        "items": [
+          "analitiniams tikslams slapukai neskaitomi",
+          "asmeninių profilių nesurišame",
+          "duomenų trečiosiems asmenims nesuteikiame"
+        ]
+      },
+      "summary": "Apdorojimas vyksta anonimiškai.",
+      "legalBasis": "Teisinis pagrindas: BDAR 6(1) f punktas (teisėtas interesas analizuojant svetainės naudojimą)"
+    },
+    "cookies": {
+      "title": "Slapukai",
+      "intro": "Šioje svetainėje naudojamas techniškai reikalingas slapukas kalbos nustatymams išsaugoti.",
+      "details": {
+        "purpose": {
+          "title": "Tikslas",
+          "desc": "Pasirinktos kalbos išsaugojimas"
+        },
+        "duration": {
+          "title": "Trukmė",
+          "desc": "iki 30 dienų arba kol jį ištrinsite"
+        }
+      },
+      "summary": "Šis slapukas yra būtinas svetainės veikimui, todėl sutikimo nereikia.",
+      "legalBasis": "Teisinis pagrindas: BDAR 6(1) f punktas"
+    },
+    "userRights": {
+      "title": "Tavo teisės",
+      "intro": "Bet kada gali paprašyti šių dalykų:",
+      "items": [
+        "Informacijos apie tavo duomenis",
+        "Netaisyngų duomenų taisymo",
+        "Tavo duomenų ištrylimo",
+        "Apdorojimo apribojimo",
+        "Prieštaravimo apdorojimui"
+      ],
+      "contact": "Užteks tiesiog parašyti el. laišką."
+    },
+    "changes": {
+      "title": "Keitimai",
+      "intro": "Ši privatumo politika gali būti atnaujinama dėl teisinių reikalavimų ar svetainės pakeitimų."
+    }
+  },
   "footer": {
-    "assets": "Visi žaidimo vaizdai, prekės ženklai ir elementai priklauso jų savininkams.",
+    "assets": "Visos žaidimo nuotraukos, prekės ženklai ir assets priklauso jų savininkams.",
     "fanMade": " Tai fanų svetainė ir nėra susijusi su žaidimo kūrėjais. Kodą rasi <link>GitHub</link>."
   },
   "metadata": {
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "Valdyk {gameName} ekonomiką. Nuo pažangaus gamyklų planavimo iki sudėtingos logistikos — gauk duomenis savo imperijai plėsti."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "vardas"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Valdyk ir lygink savo {gameName} žaidimo būsenas. Sek progresą, analizuok statistiką ir optimizuok savo verslą."
     }
   }
 }

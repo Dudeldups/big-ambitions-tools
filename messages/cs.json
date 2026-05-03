@@ -209,6 +209,7 @@
     "delete": "Vymazat",
     "save": "Uložit",
     "amount": "Množství",
+    "name": "název",
     "summedUpAmount": "Celkem",
     "summary": "Souhrn",
     "amortization": "Amortizace",
@@ -218,6 +219,7 @@
     "columnsDescription": "Sloupce",
     "filterResults": "Filtrovat výsledky...",
     "characterName": "Jméno postavy",
+    "navigation": "Ovládání",
     "home": "Domů",
     "about": "O nás",
     "contact": "Kontakt",
@@ -277,9 +279,7 @@
       "hourly": "hodinově",
       "daily": "denně",
       "weekly": "týdně"
-    },
-    "navigation": "Ovládání",
-    "name": "název"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {paletový regál} few {paletové regály} other {paletových regálů}}",
@@ -417,11 +417,11 @@
   },
   "database": {
     "intro": {
-      "desc": "Ponoř se do detailních herních dat o produktech, strojích, vozidlech a další. S vyhledáváním nebo filtry kategorií rychle najdeš vše, co potřebuješ.",
+      "desc": "Ponoř se do detailních herních dat o produktech, strojích, vozidlech a dalších. Pomocí vyhledávání a filtrů kategorií vše potřebné rychle najdeš.",
       "buttonDesc": "Vyber kategorii"
     },
     "products": {
-      "caption": "Přehled všech produktů. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměrná napříč všemi čtvrtěmi. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
+      "caption": "Přehled všech produktů. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměrem všech čtvrtí. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
     },
     "ingredients": {
       "caption": "Přehled všech surovin včetně jejich vlastností. Vyber obtížnost, aby se zobrazily správné ceny."
@@ -441,7 +441,7 @@
       "desc": "Tady se můžeš naplno ponořit do čísel a statistik hry. Plánuj své továrny a řiď logistiku celého impéria!"
     },
     "playthroughs": {
-      "desc": "Níže si můžeš vytvářet a spravovat své průběhy hry. Každý průběh představuje jeden konkrétní průchod hrou. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo se prostě jen sledovat svůj postup.",
+      "desc": "Níže si můžeš vytvářet a spravovat své průběhy hry. Každý z nich představuje jeden průchod hrou. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo prostě jen sledovat svůj postup.",
       "warning": "Důležité: Tvůj postup se ukládá v prohlížeči. Pokud smažeš data prohlížeče nebo používáš soukromý/anonymní režim, můžeš o něj přijít.",
       "createButtonDesc": "Nový průběh",
       "noPlaythroughs": "Zatím žádný průběh. Vytvoř si ho a začni!",
@@ -476,7 +476,7 @@
       "splitShoppingList": {
         "title": "Rozdělený nákupní seznam",
         "desc": "Objednej tyto suroviny přímo do své továrny, abys objednávku rozdělil/a. Tohle je maximální množství, které tvoje {shelfAmount} paletové regály pojmou. Zohledňuje se i počet krabic, které vyrábíš. Pro uložení všech surovin na celý týden výroby bys potřeboval/a {requiredAmount} regálů.",
-        "desc1": "Zbytek musí jeden nebo více samostatných nákupčích objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Také uvidíš plán dodávek pro každou továrnu."
+        "desc1": "Jeden nebo více nákupčích musí zbytek objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
       }
     },
     "playthroughForm": {
@@ -484,7 +484,7 @@
       "desc": "Dej svému průběhu hry název a vyber obtížnost, aby nástroje mohly vypočítat správné ceny. Průběhy můžeš kdykoli upravit nebo smazat.",
       "placeholder": "např. John Manhattan",
       "deleteTitle": "Smazat průběh hry",
-      "deleteDesc": "Opravdu chceš smazat tento průběh hry? Tuhle akci už nejde vrátit."
+      "deleteDesc": "Opravdu chceš smazat tento průběh hry? Tuto akci už nebudeš moct vzít zpět."
     },
     "factoryForm": {
       "deleteTitle": "Smazat továrnu",
@@ -497,7 +497,7 @@
     "factoryGroups": {
       "buttonDesc": "Vytvořit skupinu",
       "title": "Skupiny továren",
-      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají přiřazeno dostatečné množství paletových regálů, nákupní seznam ti řekne, co musíš objednat pro jednotlivé továrny i do skladu, aby bylo doplněno to, co chybí. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
+      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají dostatek paletových regálů, nákupní seznam ti řekne, co objednat pro jednotlivé továrny i do skladu, aby se vše doplnilo. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
       "groupEmpty": "V této skupině nejsou žádné továrny. Přetáhni sem kartu továrny a přidej ji.",
       "ungroupedTitle": "Továrny bez skupiny",
       "ungroupedEmpty": "Tady je prázdno. Přetáhni sem kartu nebo vytvoř novou továrnu.",
@@ -548,28 +548,107 @@
       "priceIndexDesc": "Vyber aktuální herní cenový index produktu pro výpočet správného příjmu. (Exportní cena je přesnější.)"
     }
   },
+  "contact": {
+    "subheading": "Zpětná vazba? Nápady? Otázky? Stačí krátká zpráva.",
+    "intro": "Pokud máš nápady na nové funkce, narazíš na chybějící data nebo chceš jen poslat zpětnou vazbu, klidně se ozvi! Každá zpráva, která mi pomůže udělat tuhle stránku ještě užitečnější pro komunitu, mě těší."
+  },
+  "legal": {
+    "title": "Právní info",
+    "link": "Právní info"
+  },
+  "privacy": {
+    "title": "Ochrana soukromí",
+    "link": "Soukromí",
+    "generalInfo": {
+      "title": "Obecné informace",
+      "intro": "Tento web zpracovává osobní údaje výhradně v souladu s právními předpisy (GDPR).",
+      "responsiblePerson": "Správce údajů ve smyslu GDPR:"
+    },
+    "serverLogs": {
+      "title": "Údaje o přístupu (serverové logy)",
+      "intro": "Při návštěvě tohoto webu server automaticky sbírá tyto informace:",
+      "items": [
+        "IP adresa (zkrácená nebo anonymizovaná)",
+        "Datum a čas požadavku",
+        "Navštívená stránka",
+        "Typ a verze prohlížeče",
+        "Operační systém"
+      ],
+      "purpose": "Tyto údaje slouží výhradně k technickému zajištění a bezpečnosti webu.",
+      "legalBasis": "Právní základ: Čl. 6 odst. 1 lit. f GDPR"
+    },
+    "analytics": {
+      "title": "Použití {umamiAnalytics}",
+      "intro": "Na webu používáme <em>{umamiAnalytics}</em>, analytický nástroj šetrný k soukromí. Umami běží na našem vlastním serveru a nezpracovává osobní údaje v klasickém smyslu.",
+      "capturedData": {
+        "title": "Co sbíráme:",
+        "items": [
+          "Navštívené stránky",
+          "Referer (původ návštěvníků)",
+          "Použitý prohlížeč a typ zařízení",
+          "Přibližná geografická poloha (bez přesných údajů o umístění)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Bezpečnost a soukromí:",
+        "items": [
+          "Žádné analytické cookies se nesetnávají",
+          "Nevytváříme žádné osobní profily",
+          "Data nesdílíme s třetími stranami"
+        ]
+      },
+      "summary": "Zpracování probíhá anonymně.",
+      "legalBasis": "Právní základ: Čl. 6 odst. 1 lit. f GDPR (oprávněný zájem o analýzu používání webu)"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "intro": "Tato stránka používá technicky nezbytné cookie k uložení tvého nastavení jazyka.",
+      "details": {
+        "purpose": {
+          "title": "Účel",
+          "desc": "Uložení zvoleného jazyka"
+        },
+        "duration": {
+          "title": "Doba uložení",
+          "desc": "až 30 dní, nebo dokud si ho sám nesmažeš"
+        }
+      },
+      "summary": "Toto cookie je nutné pro chod webu a nevyžaduje souhlas.",
+      "legalBasis": "Právní základ: Čl. 6 odst. 1 lit. f GDPR"
+    },
+    "userRights": {
+      "title": "Práva dotčených osob",
+      "intro": "Můžeš kdykoliv požádat o:",
+      "items": [
+        "Informace o tvých uložených datech",
+        "Opravu nepřesných údajů",
+        "Smazání tvých dat",
+        "Omezení zpracování",
+        "Námitku proti zpracování"
+      ],
+      "contact": "Stačí jen neformální zpráva e-mailem."
+    },
+    "changes": {
+      "title": "Změny",
+      "intro": "Tyto zásady ochrany osobních údajů se mohou aktualizovat kvůli právním požadavkům nebo změnám na webu."
+    }
+  },
   "footer": {
     "assets": "Všechny herní obrázky, ochranné známky a assety patří jejich příslušným vlastníkům.",
-    "fanMade": "Tohle je jen fanouškovský projekt, který není spojen s vývojáři hry. Kód najdeš na <link>GitHubu</link>."
+    "fanMade": "Tohle je jen fanprojekt, který nemá žádnou vazbu k vývojářům hry. Kód najdeš na <link>GitHubu</link>."
   },
   "metadata": {
     "root": {
       "description": "Nástroje od fanoušků pro {gameName}. Plánuj továrny, vypočítávej statistiky výroby, spravuj plány dodávek a procházej si herní data."
     },
     "database": {
-      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a mnoho dalšího pro {gameName}."
+      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a dalších pro {gameName}."
     },
     "tools": {
       "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "název"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "Spravuj a porovnávej své průběhy hry {gameName}. Sleduj svůj postup v různých obtížnostech, analyzuj statistiky výroby a optimalizuj své podnikání."
     }
   }
 }

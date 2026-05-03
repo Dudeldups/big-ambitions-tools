@@ -209,6 +209,7 @@
     "delete": "Sil",
     "save": "Kaydet",
     "amount": "Miktar",
+    "name": "Ad",
     "summedUpAmount": "Toplam",
     "summary": "Özet",
     "amortization": "Amortizasyon",
@@ -218,6 +219,7 @@
     "columnsDescription": "Sütunlar",
     "filterResults": "Sonuçları filtrele...",
     "characterName": "Karakter Adı",
+    "navigation": "Gezinme",
     "home": "Ana Sayfa",
     "about": "Hakkımızda",
     "contact": "İletişim",
@@ -277,9 +279,7 @@
       "hourly": "Saatlik",
       "daily": "Günlük",
       "weekly": "Haftalık"
-    },
-    "navigation": "Gezinme",
-    "name": "Ad"
+    }
   },
   "counts": {
     "palletShelf": "{count, plural, one {palet rafı} other {palet rafı}}",
@@ -388,7 +388,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümüne dayanıyor ve güncellemelerle değişebilir."
+      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",
@@ -452,7 +452,7 @@
       }
     },
     "playthroughDetail": {
-      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasından fabrikalarına göz atabilir, üretim hatların için sipariş etmen gereken ürünleri takip edebilir ve çok daha fazlasını bulabilirsin. Fabrika planlayıcısı; üretim istatistikleri, sipariş miktarları ve daha fazlası hakkındaki tüm detayları gösterir.",
+      "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasında fabrikalarına genel bir bakış atabilir, üretim hatların için gereken siparişleri takip edebilir ve çok daha fazlasını keşfedebilirsin. Fabrika planlayıcısı ise sana üretim istatistikleri, sipariş miktarları ve daha pek çok detay sunar.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
       "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
     },
@@ -548,6 +548,91 @@
       "priceIndexDesc": "Doğru geliri hesaplamak için bu ürünün güncel oyun içi fiyat endeksini seç. (İhracat fiyatı daha doğru.)"
     }
   },
+  "contact": {
+    "subheading": "Geri bildirim? Fikirler? Sorular? Bir mesaj atman yeter.",
+    "intro": "Yeni özellik fikirlerin varsa, eksik bir şeyler fark ettiysen ya da sadece geri bildirim vermek istersen çekinmeden yaz! Bu siteyi topluluk için daha kullanışlı hale getirmeme yardımcı olan her mesaj beni çok mutlu eder."
+  },
+  "legal": {
+    "title": "Yasal Bilgiler",
+    "link": "Künye"
+  },
+  "privacy": {
+    "title": "Gizlilik Bildirimi",
+    "link": "Gizlilik",
+    "generalInfo": {
+      "title": "Genel Bilgiler",
+      "intro": "Kişisel verilerini sadece yasal düzenlemeler (GDPR) çerçevesinde işliyoruz.",
+      "responsiblePerson": "GDPR kapsamında veri sorumlusu:"
+    },
+    "serverLogs": {
+      "title": "Erişim Verileri (Sunucu Logları)",
+      "intro": "Bu web sitesini ziyaret ettiğinizde, sunucu aşağıdaki bilgileri otomatik olarak toplar:",
+      "items": [
+        "IP adresi (kısaltılmış veya anonimleştirilmiş)",
+        "İstek tarihi ve saati",
+        "Erişilen sayfa",
+        "Tarayıcı türü ve sürümü",
+        "İşletim sistemi"
+      ],
+      "purpose": "Bu verileri sadece web sitesinin teknik işleyişi ve güvenliği için kullanıyoruz.",
+      "legalBasis": "Yasal dayanak: GDPR Madde 6 (1) f bendi"
+    },
+    "analytics": {
+      "title": "{umamiAnalytics} Kullanımı",
+      "intro": "<em>{umamiAnalytics}</em> gizlilik dostu bir analiz aracıdır ve bu sitede kullanılır. Umami kendi sunucumuzda barındırılır ve bildiğimiz anlamda kişisel veri işlemez.",
+      "capturedData": {
+        "title": "Toplanan veriler:",
+        "items": [
+          "Ziyaret edilen sayfalar",
+          "Yönlendiren (ziyaretçi kaynağı)",
+          "Kullanılan tarayıcı ve cihaz türü",
+          "Yaklaşık coğrafi konum (kesin konum verisi olmadan)"
+        ]
+      },
+      "privacyGuarantees": {
+        "title": "Güvenlik ve Gizlilik:",
+        "items": [
+          "Analiz amaçlı çerez kullanılmaz",
+          "Kişisel profiller oluşturulmaz",
+          "Veriler üçüncü taraflarla paylaşılmaz"
+        ]
+      },
+      "summary": "İşlemleri anonim olarak yapıyoruz.",
+      "legalBasis": "Yasal dayanak: GDPR Madde 6 (1) f bendi (web sitesi kullanımını analiz etmeye yönelik meşru menfaat)"
+    },
+    "cookies": {
+      "title": "Çerezler",
+      "intro": "Dil ayarlarınızı kaydetmek için teknik bir çerez kullanıyoruz.",
+      "details": {
+        "purpose": {
+          "title": "Amaç",
+          "desc": "Seçilen dili kaydetme"
+        },
+        "duration": {
+          "title": "Süre",
+          "desc": "En fazla 30 gün veya siz silene kadar"
+        }
+      },
+      "summary": "Bu çerez sitenin çalışması için gereklidir ve onay gerektirmez.",
+      "legalBasis": "Yasal dayanak: GDPR Madde 6 (1) f"
+    },
+    "userRights": {
+      "title": "Haklarınız",
+      "intro": "İstediğin zaman şunları talep etme hakkın var:",
+      "items": [
+        "Kaydedilen verilerin hakkında bilgi",
+        "Hatalı verilerin düzeltilmesi",
+        "Verilerinin silinmesi",
+        "İşlemenin kısıtlanması",
+        "İşlemeye itiraz"
+      ],
+      "contact": "Bunun için e-posta ile basit bir mesaj atman yeterli."
+    },
+    "changes": {
+      "title": "Değişiklikler",
+      "intro": "Bu gizlilik politikası, yasal gerekliliklere veya sitedeki değişikliklere göre güncellenebilir."
+    }
+  },
   "footer": {
     "assets": "Oyunun tüm görselleri, markaları ve varlıkları ilgili sahiplerine aittir.",
     "fanMade": " Bu site bir fan projesidir ve oyunun geliştiricileriyle hiçbir bağlantısı yoktur. Kaynak kodu <link>GitHub</link>'de bulabilirsin."
@@ -561,15 +646,9 @@
     },
     "tools": {
       "description": "{gameName} ekonomisinde ustalaş. İleri düzey fabrika planlamasından karmaşık lojistik yönetimine kadar—imparatorluğunu büyütmek için ihtiyacın olan tüm veriler burada."
-    }
-  },
-  "privacy": {
-    "cookies": {
-      "details": {
-        "name": {
-          "title": "Ad"
-        }
-      }
+    },
+    "playthroughs": {
+      "description": "{gameName} oyun durumlarını yönet ve karşılaştır. İlerlemeni takip et, üretim istatistiklerini analiz et ve stratejini optimize et."
     }
   }
 }
