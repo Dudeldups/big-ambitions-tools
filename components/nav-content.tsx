@@ -25,10 +25,6 @@ const NavContent = ({ onAction }: NavContentProps) => {
       href: "/tools",
     },
     {
-      name: tGeneral("about"),
-      href: "/about",
-    },
-    {
       name: tGeneral("contact"),
       href: "/contact",
     },
