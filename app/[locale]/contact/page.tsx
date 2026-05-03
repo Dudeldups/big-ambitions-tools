@@ -11,7 +11,7 @@ const ContactPage = () => {
         <p>{t("intro")}</p>
       </div>
 
-      <div className="mt-10 space-y-6">
+      <div className="mt-10 w-full space-y-6">
         <h2>{t("form.title")}</h2>
 
         <ContactForm />

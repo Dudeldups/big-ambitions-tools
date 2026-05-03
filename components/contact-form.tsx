@@ -67,7 +67,10 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-xl">
+    <form
+      onSubmit={form.handleSubmit(onSubmit)}
+      className="max-w-xl max-md:mx-auto"
+    >
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="name">{t("form.fields.name")}</FieldLabel>
