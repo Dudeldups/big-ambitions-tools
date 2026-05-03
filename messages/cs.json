@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Databáze a plánovač továren"
+    "launch": "Odstartováno: Databáze a plánovač továren"
   },
   "database": {
     "intro": {
@@ -651,14 +651,14 @@
   },
   "footer": {
     "assets": "Všechny herní obrázky, ochranné známky a assety patří jejich příslušným vlastníkům.",
-    "fanMade": "Tohle je jen fanprojekt a není spojen s vývojáři hry. Kód najdeš na <link>GitHubu</link>."
+    "fanMade": "Tohle je jen fanprojekt, který nemá nic společného s vývojáři hry. Kód najdeš na <link>GitHubu</link>."
   },
   "metadata": {
     "root": {
       "description": "Nástroje od fanoušků pro {gameName}. Plánuj továrny, vypočítávej statistiky výroby, spravuj plány dodávek a procházej si herní data."
     },
     "database": {
-      "description": "Detailní herní data k produktům, strojům, vozidlům, výpočtům zisku a mnoho dalšího pro {gameName}."
+      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a dalších pro {gameName}."
     },
     "tools": {
       "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."

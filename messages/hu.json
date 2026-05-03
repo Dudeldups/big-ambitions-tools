@@ -347,7 +347,7 @@
   "modals": {
     "discardChanges": "Nem mentett változtatások elvetése",
     "discardDesc": "A változtatások nincsenek mentve. Biztos, hogy el akarod dobni őket?",
-    "resetForm": "Üresítés",
+    "resetForm": "Törlés",
     "resetDesc": "Biztos vagy, hogy az űrlap értékeit az alapbeállításokra vissza akarod állítani?",
     "wsPresetBtn": "Előbeállítás hozzáadása",
     "wsPresetTitle": "Előbeállítás kiválasztása",
@@ -387,9 +387,9 @@
     "contactForm": {
       "nameTooLong": "Csak a keresztneved elég, tényleg.",
       "nameRequired": "Kérlek, add meg a nevedet.",
-      "invalidEmail": "Ez nem egy érvényes e-mail cím.",
+      "invalidEmail": "Nem érvényes e-mail cím.",
       "messageRequired": "Kérlek, írj egy üzenetet. Gondoltam, ez egyértelmű volt...",
-      "messageTooLong": "Wow! Próbálj talán egy kicsit rövidebbre!"
+      "messageTooLong": "Wow! Próbálj meg kicsit rövidebben írni!"
     }
   },
   "home": {
@@ -448,7 +448,7 @@
       "desc": "Itt merülhetsz el a játék számaiban és statisztikáiban. Tervezd meg a gyáraidat, és irányítsd az egész birodalmod logisztikáját!"
     },
     "playthroughs": {
-      "desc": "Itt létrehozhatsz és kezelhetsz játékállapotokat. Egy játékállapot egyetlen játékménestől szól. Létrehozhatsz több is, hogy összehasonlítsd a különböző meneteket, kipróbáld más nehézségi szinteket, vagy egyszerűen csak nyomon kövesd a haladásodat.",
+      "desc": "Alul létrehozhatsz és kezelhetsz játékállapotokat. Egy játékállapot egyetlen menetet jelent. Létrehozhatsz több is, hogy összehasonlítsd a különböző meneteket, kipróbáld más nehézségi szinteket, vagy egyszerűen csak nyomon kövesd a haladásodat.",
       "warning": "Fontos: A haladásod a böngésződben tárolódik. Ha törölöd a böngészőadatokat vagy privát/incognito módot használsz, elveszítheted az egészet.",
       "createButtonDesc": "Új játékállapot",
       "noPlaythroughs": "Még nincs játékállapodás. Hozz létre egyet a kezdéshez!",
@@ -569,7 +569,7 @@
     }
   },
   "legal": {
-    "title": "Jogi adatok",
+    "title": "Impresszum",
     "link": "Impresszum"
   },
   "privacy": {
@@ -614,7 +614,7 @@
         ]
       },
       "summary": "Anonim módon kezeljük az adataidat.",
-      "legalBasis": "Jogalap: A GDPR 6. cikk (1). bekezdés (f) pontja (a weboldal használatának elemzése miatti jogos érdek)"
+      "legalBasis": "Jogalap: GDPR 6. cikk (1) bekezdés (f) pontja (a weboldal használatának elemzéséhez kapcsolódó jogos érdek)"
     },
     "cookies": {
       "title": "Cookie-k",
@@ -664,7 +664,7 @@
       "description": "Uráld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg az adatokat, amikkel bővítheted a birodalmadat."
     },
     "playthroughs": {
-      "description": "Kezeld és hasonlítsd össze a {gameName} játékállapodáidat. Tartsd nyomon a fejlődésedet, elemezd a statisztikákat, és optimalizáld a stratégiádat."
+      "description": "Kezeld és hasonlítsd össze a {gameName} játékállapodáidat. Tartsd nyomon a fejlődésedet, elemezd a statisztikákat és optimalizáld a stratégiádat."
     }
   }
 }

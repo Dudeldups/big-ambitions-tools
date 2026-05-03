@@ -312,7 +312,7 @@
     "autoParkSupported": "Indparkeringshjælp",
     "taxDeductible": "Fradrag",
     "requiredDeliveryDriverSkillValue": "Chauffør-skills",
-    "destinationsThatCanDeliver": "Basale destinationer",
+    "destinationsThatCanDeliver": "Basis-destinationer",
     "destinationsFull": "Maks. stop",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Startskud: Database og Fabrikplanlægger"
+    "launch": "Startskud: Database og Fabriksplanlægger"
   },
   "database": {
     "intro": {
@@ -434,7 +434,7 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Her er alle maskinerne til produktionen. Kombiner en hovedmaskine med én eller to sekundære maskiner for at lave en arbejdsstation til tøj."
+      "caption": "Her er alle maskinerne, du kan bruge til produktionen. Kombiner en hovedmaskine med én eller to side-maskiner for at lave en arbejdsstation til tøj."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Juridisk info",
-    "link": "Juridisk"
+    "link": "Juridisk info"
   },
   "privacy": {
     "title": "Om dit privatliv",
@@ -614,7 +614,7 @@
         ]
       },
       "summary": "Sker helt anonymt.",
-      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (berettiget interesse i analyse af hjemmesidens brug)"
+      "legalBasis": "Retsgrundlag: Art. 6, stk. 1, litra f GDPR (berettiget interesse i at analysere brugen af hjemmesiden)"
     },
     "cookies": {
       "title": "Cookies",

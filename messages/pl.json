@@ -386,7 +386,7 @@
     },
     "contactForm": {
       "nameTooLong": "Wystarczy samo imię, naprawdę.",
-      "nameRequired": "Podaj swoje imię i nazwisko.",
+      "nameRequired": "Daj znać, jak się nazywasz.",
       "invalidEmail": "To nie jest poprawny adres e-mail.",
       "messageRequired": "Wpisz wiadomość. Myślałem, że to oczywiste...",
       "messageTooLong": "Wow! Spróbuj napisać nieco krócej."
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Baza danych i Planer Fabryk"
+    "launch": "Ruszamy: Baza danych i Planer fabryki"
   },
   "database": {
     "intro": {
@@ -581,7 +581,7 @@
       "responsiblePerson": "Administrator danych w rozumieniu RODO:"
     },
     "serverLogs": {
-      "title": "Dane o dostępie (logi serwera)",
+      "title": "Dane dostępu (logi serwera)",
       "intro": "Odwiedzając tę stronę, serwer automatycznie zbiera następujące informacje:",
       "items": [
         "Adres IP (skrócony lub zanonimizowany)",
@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Wszystkie grafiki, marki i assety w grze należą do ich właścicieli.",
+    "assets": "Wszystkie grafiki, marki i assety w grze należą do swoich właścicieli.",
     "fanMade": "To projekt fanowski, niezwiązany z twórcami gry. Kod źródłowy znajdziesz na <link>GitHub</link>."
   },
   "metadata": {
@@ -658,7 +658,7 @@
       "description": "Fanowskie narzędzia do {gameName}. Planuj fabryki, obliczaj statystyki produkcji, zarządzaj planami dostaw i przeglądaj dane z gry."
     },
     "database": {
-      "description": "Szczegółowe dane o grach: produkty, maszyny, pojazdy, wyliczenia zysku i nie tylko dla {gameName}."
+      "description": "Szczegółowe dane o grach dla {gameName}: produkty, maszyny, pojazdy, obliczenia zysków i wiele więcej."
     },
     "tools": {
       "description": "Zdominuj ekonomię w {gameName}. Od zaawansowanego planowania fabryk po skomplikowaną logistykę – zgarnij dane potrzebne do budowy własnego imperium."

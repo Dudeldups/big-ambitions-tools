@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Informações legais",
-    "link": "Aviso Legal"
+    "link": "Info legal"
   },
   "privacy": {
     "title": "Aviso de Privacidade",
@@ -655,7 +655,7 @@
   },
   "metadata": {
     "root": {
-      "description": "Ferramentas de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore dados do jogo."
+      "description": "Ferramentas feitas por fãs para {gameName}! Planeje suas fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
     },
     "database": {
       "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."

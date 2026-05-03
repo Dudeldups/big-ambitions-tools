@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Lähtölaukaus: Tietokanta ja tehassuunnittelija"
+    "launch": "Käynnistys: Tietokanta ja tehassuunnittelija"
   },
   "database": {
     "intro": {
@@ -482,7 +482,7 @@
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
-        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, joka {shelfAmount} lavahyllyyn mahtuu. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
+        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi vetää. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
         "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet koko listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
       }
     },

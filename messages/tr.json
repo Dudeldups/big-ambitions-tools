@@ -395,7 +395,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümüne dayanıyor ve güncellemelerle değişebilir."
+      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Başlangıç: Veritabanı ve Fabrika Planlayıcısı"
+    "launch": "Başlatıyoruz: Veritabanı ve Fabrika Planlayıcı"
   },
   "database": {
     "intro": {
