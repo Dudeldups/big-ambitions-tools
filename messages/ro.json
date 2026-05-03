@@ -250,7 +250,7 @@
     "salary": "Salariu",
     "manufacturingCosts": "Costuri de producție",
     "manufacturingCostsShort": "Costuri prod.",
-    "oneTimeCosts": "Costuri de o singură dată",
+    "oneTimeCosts": "Costuri unice",
     "recurringCosts": "Costuri recurente",
     "logisticsManager": "Manager Logistică",
     "deliveryDriver": "Curier",
@@ -312,7 +312,7 @@
     "autoParkSupported": "Parcare automată",
     "taxDeductible": "Deducibil",
     "requiredDeliveryDriverSkillValue": "Skill șofer",
-    "destinationsThatCanDeliver": "Destinații (bază)",
+    "destinationsThatCanDeliver": "Destinații de bază",
     "destinationsFull": "Dest. max.",
     "employees": "Angajați",
     "description": "Descriere",
@@ -327,7 +327,7 @@
     "jewelry": "Bijuterii",
     "gifts": "Cadouri",
     "books": "Cărți",
-    "bottledGoods": "Produse în sticlă",
+    "bottledGoods": "Produse îmbuteliate",
     "food": "Mâncare",
     "gardenProducts": "Produse de grădină"
   },
@@ -362,7 +362,7 @@
     "groupLabelColor": "Culoare",
     "deleteGroupTitle": "Șterge grupul",
     "deleteGroupDesc": "Ești sigur că vrei să ștergi acest grup? Dacă există fabrici atribuite, ele vor fi mutate în grupul implicit.",
-    "oneTimeCostDesc": "Costuri de instalare pentru fabrică (o singură dată)."
+    "oneTimeCostDesc": "Costuri unice de instalare pentru fabrică."
   },
   "errors": {
     "playthrough": {
@@ -385,11 +385,11 @@
       "nameRequired": "Trebuie să introduci un nume de grup."
     },
     "contactForm": {
-      "nameTooLong": "E de ajuns doar prenumele, serios.",
+      "nameTooLong": "Doar prenumele e ok, serios.",
       "nameRequired": "Te rog să-mi spui numele.",
       "invalidEmail": "Nu e o adresă de email validă.",
       "messageRequired": "Te rog să introduci un mesaj. Credeam că e clar...",
-      "messageTooLong": "Wow! Încearcă să o ții puțin mai scurtă."
+      "messageTooLong": "Wow! Încearcă să îl ții puțin mai scurt."
     }
   },
   "home": {
@@ -437,7 +437,7 @@
       "caption": "Toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două mașini secundare pentru a crea un post de lucru."
     },
     "inventory": {
-      "caption": "O listă scurtă cu... opțiunile de depozitare. Doar deocamdată! Mai urmează și altele!"
+      "caption": "O scurtă privire asupra... opțiunilor de depozitare. Doar deocamdată! Mai urmează și altele!"
     },
     "vehicles": {
       "caption": "Cauți încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru un număr maxim de destinații ai nevoie de un {logisticsManager} cu 100% skill."
@@ -483,12 +483,12 @@
       "splitShoppingList": {
         "title": "Listă de cumpărături împărțită",
         "desc": "Comandă aceste ingrediente direct la fabrica ta pentru a împărți comanda. Aceasta este cantitatea maximă pe care {shelfAmount} rafturi pentru paleți le pot reține. Se ia în considerare și numărul de cutii pe care le produci. Ai nevoie de {requiredAmount} rafturi pentru a stoca toate ingredientele pentru o săptămână întreagă de producție.",
-        "desc1": "Restul trebuie comandat la un depozit de către unul sau mai mulți agenți de achiziții. Întoarce-te la <link>prezentarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare către fiecare fabrică."
+        "desc1": "Restul trebuie comandat unui depozit de către unul sau mai mulți agenți de achiziții. Întoarce-te la <link>vizualizarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare către fiecare fabrică."
       }
     },
     "playthroughForm": {
       "title": "Creează o nouă partidă",
-      "desc": "Introdu un nume pentru partida ta și selectează dificultatea, ca tool-urile să calculeze prețurile corect. Poți edita sau șterge partidele oricând.",
+      "desc": "Pune un nume partidei tale și alege dificultatea, ca să poată tool-urile să calculeze prețurile corect. Poți edita sau șterge partidele oricând.",
       "placeholder": "ex. John Manhattan",
       "deleteTitle": "Șterge partida",
       "deleteDesc": "Ești sigur că vrei să ștergi partida asta? Această acțiune nu poate fi anulată."
@@ -504,10 +504,10 @@
     "factoryGroups": {
       "buttonDesc": "Creează grup",
       "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe categorie de produse. Dacă fabricile grupate nu au suficiente rafturi de palete, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și depozit, ca să acoperi restul necesarului. Dialogul de livrări îți va arăta, de asemenea, ce trebuie trimis către fiecare fabrică.",
+      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe categorie de produse. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și la depozit, ca să acoperi restul necesarului. Dialogul de livrări îți va arăta, de asemenea, ce trebuie trimis către fiecare fabrică.",
       "groupEmpty": "Nicio fabrică în acest grup. Trage un card de fabrică aici ca să îl adaugi.",
       "ungroupedTitle": "Fabrici ne-grupate",
-      "ungroupedEmpty": "Nicio fabrică ne-grupată. Trage un card aici sau adaugă o fabrică nouă.",
+      "ungroupedEmpty": "Nu ai nicio fabrică ne-grupată aici. Trage un card aici sau adaugă o fabrică nouă.",
       "deliveries": {
         "buttonDesc": "Livrări",
         "title": "Plan de livrare",
@@ -557,9 +557,9 @@
   },
   "contact": {
     "subheading": "Feedback? Idei? Întrebări? Lasă-mi un mesaj.",
-    "intro": "Dacă ai idei pentru funcții noi, observi că lipsesc date sau pur și simplu vrei să-mi dai un feedback, nu ezita să mă contactezi! Mă bucur de fiecare mesaj care mă ajută să fac site-ul și mai util pentru comunitate.",
+    "intro": "Dacă ai idei pentru funcții noi, observi că lipsesc date sau pur și simplu vrei să-mi dai un feedback, scrie-mi oricând! Mă bucur de fiecare mesaj care mă ajută să fac site-ul și mai util pentru comunitate.",
     "form": {
-      "title": "Spune doar Salut!",
+      "title": "Aruncă un 'Salut'!",
       "fields": {
         "name": "Numele tău",
         "email": "E-mail",
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Info legale",
-    "link": "Legal"
+    "link": "Note legale"
   },
   "privacy": {
     "title": "Confidențialitate",

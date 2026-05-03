@@ -241,7 +241,7 @@
     "difficulty": "Nehézség",
     "priceIndex": "Árindex",
     "priceIndices": "Árindexek",
-    "exportPrice": "Exportár",
+    "exportPrice": "Export ára",
     "revenue": "Bevétel",
     "expenses": "Költségek",
     "profit": "Nyereség",
@@ -334,7 +334,7 @@
   "toasts": {
     "genericError": "Hiba történt. Kérlek ellenőrizd az adatokat és próbáld újra. Ha a probléma fennáll, frissítsd az oldalt.",
     "playthroughSaveSuccess": "\"{characterName}\" játékállatapot létrehozva!",
-    "playthroughEditSuccess": "{characterName} játékállapota frissítve!",
+    "playthroughEditSuccess": "\"{characterName}\" játékállapota frissült!",
     "playthroughDeleteSuccess": "A \"{characterName}\" játékállapot törölve!",
     "workstationCopyError": "Kérlek válassz először egy ruházati munkállomást és egy terméket.",
     "factorySaveSuccess": "\"\"{factoryName}\" létrehozva és hozzáadva a játékállapothoz!\"",
@@ -347,7 +347,7 @@
   "modals": {
     "discardChanges": "Nem mentett változtatások elvetése",
     "discardDesc": "A változtatások nincsenek mentve. Biztos, hogy el akarod dobni őket?",
-    "resetForm": "Űrlap törlése",
+    "resetForm": "Űrlap alaphelyzetbe állítása",
     "resetDesc": "Biztos vagy, hogy az űrlap értékeit az alapbeállításokra vissza akarod állítani?",
     "wsPresetBtn": "Előbeállítás hozzáadása",
     "wsPresetTitle": "Előbeállítás kiválasztása",
@@ -387,9 +387,9 @@
     "contactForm": {
       "nameTooLong": "Csak a keresztneved elég, tényleg.",
       "nameRequired": "Kérlek, add meg a nevedet.",
-      "invalidEmail": "Ez nem egy érvényes e-mail cím.",
+      "invalidEmail": "Ez nem érvényes e-mail cím.",
       "messageRequired": "Kérlek, írj egy üzenetet. Gondoltam, ez egyértelmű volt...",
-      "messageTooLong": "Wow! Próbáld meg kicsit rövidebbre tartani."
+      "messageTooLong": "Wow! Talán lehetne kicsit rövidebb is."
     }
   },
   "home": {
@@ -448,7 +448,7 @@
       "desc": "Itt merülhetsz el a játék számaiban és statisztikáiban. Tervezd meg a gyáraidat, és irányítsd az egész birodalmod logisztikáját!"
     },
     "playthroughs": {
-      "desc": "Alul létrehozhatsz és kezelheted a játékállapotaidat. Egy játékállapot egyetlen menetet jelent. Létrehozhatsz többet is, hogy összehasonlítsd a különböző próbálkozásokat, teszteld más nehézségi szinteket, vagy csak nyomon kövesd a haladásodat.",
+      "desc": "Alul létrehozhatsz és kezelhetsz játékállapotokat. Egy játékállapot egyetlen játékménestől áll. Létrehozhatsz többet is, hogy összehasonlítsd a különböző meneteket, teszteld más nehézségi szinteket, vagy csak nyomon kövesd a haladásodat.",
       "warning": "Fontos: A haladásod a böngésződben tárolódik. Ha törölöd a böngészőadatokat vagy privát/incognito módot használsz, elveszítheted az egészet.",
       "createButtonDesc": "Új játékállapot",
       "noPlaythroughs": "Még nincs játékállapodás. Hozz létre egyet a kezdéshez!",
@@ -504,7 +504,7 @@
     "factoryGroups": {
       "buttonDesc": "Csoport létrehozása",
       "title": "Gyárcsoportok",
-      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakhoz nem elég palettás polc van hozzárendelve, a vásárlólista megmondja, mit kell rendelned az egyes gyárakba és a raktárba is a hiányzó mennyiség pótolásához. A szállítási ablak is mutatja, mit küldj minden gyárba.",
+      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakhoz nem elég palettás polc van hozzárendelve, a vásárlólista megmondja, mit kell megrendelned az egyes gyárakba és a raktárba is, hogy pótolni tudd a hiányt. A szállítási ablak is mutatja, mit küldj minden gyárba.",
       "groupEmpty": "Ebben a csoportban nincs gyár. Húzz egy gyárkártyát ide, hogy hozzáadhassad.",
       "ungroupedTitle": "Nem csoportosított gyárak",
       "ungroupedEmpty": "Semmi nincs itt egyelőre. Húzz ide egy kártyát, vagy hozz létre egy új gyárat.",
@@ -559,7 +559,7 @@
     "subheading": "Feedback? Ötletek? Kérdések? Egy rövid üzenet elég!",
     "intro": "Ha van ötleted új funkciókra, hiányzó adatokat észleltél, vagy csak visszajelzést szeretnél adni, írj bátran! Minden üzenet számít, ami segít abban, hogy az oldal még hasznosabb legyen a közösségnek.",
     "form": {
-      "title": "Csak szólj egy hello-t!",
+      "title": "Szólj egy hello-t!",
       "fields": {
         "name": "Neved",
         "email": "E-mail",
@@ -569,8 +569,8 @@
     }
   },
   "legal": {
-    "title": "Jogi infók",
-    "link": "Jogi infó"
+    "title": "Jogi adatok",
+    "link": "Jogi adatok"
   },
   "privacy": {
     "title": "Adatvédelem",
@@ -614,7 +614,7 @@
         ]
       },
       "summary": "Anonim módon kezeljük az adataidat.",
-      "legalBasis": "Jogalap: A GDPR 6. cikk(1) f pontja (a weboldal használatának elemzéséből fakadó jogos érdek)"
+      "legalBasis": "Jogalap: GDPR 6. cikk(1) f pont (a weboldal használatának elemzése miatti jogos érdek)"
     },
     "cookies": {
       "title": "Cookie-k",
@@ -664,7 +664,7 @@
       "description": "Uráld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg az adatokat, amikkel bővítheted a birodalmadat."
     },
     "playthroughs": {
-      "description": "Keferd és hasonlítsd össze a {gameName} játékállapodáidat. Kövesd nyomon a fejlődésedet, elemezd a statisztikákat, és optimalizáld az üzleti folyamataidat."
+      "description": "Kezeld és hasonlítsd össze a {gameName} játékállapodáidat. Kövesd nyomon a fejlődésedet különböző nehézségi szinteken, elemezd a termelési statisztikákat, és optimalizáld az üzleti meneteket."
     }
   }
 }

@@ -399,7 +399,7 @@
     },
     "cta": {
       "title": "Aan de slag!",
-      "desc": "Wil je gewoon even iets opzoeken of wat cijfers knallen? <em>Lekker, wiskunde!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
+      "desc": "Wil je gewoon even iets opzoeken of wat met cijfers aan de slag? <em>Wiskunde, ja!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
       "desc2": "Van het plannen van je eerste fabriek tot aan het beheren van de productieraten van je hele imperium, vind je alles in het gedeelte <link>{toolsSection}</link>.",
       "errorDesc": "Sto je op een foutje gestoten of mis je info? Of heb je suggesties om de site te verbeteren? Dan <contact>meld je maar even</contact>!"
     },
@@ -559,7 +559,7 @@
     "subheading": "Feedback? Ideeën? Vragen? Stuur gerust een berichtje.",
     "intro": "Heb je ideeën voor nieuwe functies, mis je data of wil je gewoon wat feedback geven? Laat het me weten! Ik waardeer elk bericht dat me helpt om deze site nóg nuttiger te maken voor de community.",
     "form": {
-      "title": "Zeg gewoon hallo!",
+      "title": "Zeg gewoon even hoi!",
       "fields": {
         "name": "Je naam",
         "email": "E-mail",
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Juridische info",
-    "link": "Juridisch"
+    "link": "Juridische info"
   },
   "privacy": {
     "title": "Privacyverklaring",

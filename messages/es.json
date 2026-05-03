@@ -385,7 +385,7 @@
       "nameRequired": "Por favor, indica un nombre del grupo."
     },
     "contactForm": {
-      "nameTooLong": "Con tu nombre basta, de verdad.",
+      "nameTooLong": "Solo con tu primer nombre basta, de verdad.",
       "nameRequired": "Dime tu nombre, porfa.",
       "invalidEmail": "Ese email no es válido.",
       "messageRequired": "Pon un mensaje. Pensaba que eso estaba claro...",
@@ -538,7 +538,7 @@
       },
       "employees": {
         "desc": "Introduce el salario de cada empleado. Déjalo vacío si no quieres incluir cálculos salariales.",
-        "optimalWorkers": "Usar cantidad óptima de trabajadores",
+        "optimalWorkers": "Usar cantidad óptima de trabajadores de fábrica",
         "optimalTooltip": "Calcula automáticamente el número óptimo de trabajadores basado en las estaciones de trabajo y los horarios de apertura. Añadirá un pequeño margen para un autoscheduling suave en el juego."
       },
       "vehicles": {
@@ -559,7 +559,7 @@
     "subheading": "¿Feedback? ¿Ideas? ¿Preguntas? Escríbeme.",
     "intro": "Si tienes ideas para nuevas funciones, notas que falta algún dato o simplemente quieres darme feedback, ¡no dudes en escribirme! Agradezco cada mensaje que me ayude a hacer esta web aún más útil para la comunidad.",
     "form": {
-      "title": "¡Dinos hola!",
+      "title": "¡Solo di hola!",
       "fields": {
         "name": "Tu nombre",
         "email": "Email",
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Info legal",
-    "link": "Legal"
+    "link": "Legales"
   },
   "privacy": {
     "title": "Aviso de privacidad",

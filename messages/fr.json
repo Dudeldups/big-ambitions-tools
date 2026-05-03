@@ -389,7 +389,7 @@
       "nameRequired": "Donne-moi ton nom, s'il te plaît.",
       "invalidEmail": "C'est pas une adresse email valide.",
       "messageRequired": "Écris un message, s'il te plaît. Je croyais que c'était évident...",
-      "messageTooLong": "Wow ! Essaie d'être un peu plus court."
+      "messageTooLong": "Wow ! Essaie de faire un peu plus court."
     }
   },
   "home": {

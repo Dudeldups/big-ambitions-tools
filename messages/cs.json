@@ -385,8 +385,8 @@
       "nameRequired": "Zadej prosím název skupiny"
     },
     "contactForm": {
-      "nameTooLong": "Stačí jen tvoje křestní jméno.",
-      "nameRequired": "Napiš mi prosím své jméno.",
+      "nameTooLong": "Stačí jen tvoje první jméno, opravdu.",
+      "nameRequired": "Napiš mi prosím svoje jméno.",
       "invalidEmail": "To není platná e-mailová adresa.",
       "messageRequired": "Napiš prosím zprávu. Myslel jsem, že to je jasný...",
       "messageTooLong": "Wow! Zkus to prosím trochu zkrátit."
@@ -424,7 +424,7 @@
   },
   "database": {
     "intro": {
-      "desc": "Ponoř se do detailních herních dat o produktech, strojích, vozidlech a dalších. Pomocí vyhledávání a filtrů kategorií vše potřebné rychle najdeš.",
+      "desc": "Ponoř se do detailních herních dat o produktech, strojích, vozidlech a dalších. S vyhledáváním a filtry kategorií vše rychle najdeš.",
       "buttonDesc": "Vyber kategorii"
     },
     "products": {
@@ -565,7 +565,7 @@
         "email": "E-mail",
         "message": "Zpráva"
       },
-      "success": "Zpráva byla odeslána!"
+      "success": "Zpráva odeslána!"
     }
   },
   "legal": {
@@ -633,7 +633,7 @@
       "legalBasis": "Právní základ: Čl. 6 odst. 1 lit. f GDPR"
     },
     "userRights": {
-      "title": "Práva dotčených osob",
+      "title": "Vaše práva",
       "intro": "Můžeš kdykoliv požádat o:",
       "items": [
         "Informace o tvých uložených datech",
@@ -651,14 +651,14 @@
   },
   "footer": {
     "assets": "Všechny herní obrázky, ochranné známky a assety patří jejich příslušným vlastníkům.",
-    "fanMade": "Tohle je jen fanprojekt, který nemá žádnou vazbu k vývojářům hry. Kód najdeš na <link>GitHubu</link>."
+    "fanMade": "Tohle je jen fanprojekt a není spojen s vývojáři hry. Kód najdeš na <link>GitHubu</link>."
   },
   "metadata": {
     "root": {
       "description": "Nástroje od fanoušků pro {gameName}. Plánuj továrny, vypočítávej statistiky výroby, spravuj plány dodávek a procházej si herní data."
     },
     "database": {
-      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a dalších pro {gameName}."
+      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a mnoha dalších pro {gameName}."
     },
     "tools": {
       "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."

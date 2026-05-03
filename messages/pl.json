@@ -386,9 +386,9 @@
     },
     "contactForm": {
       "nameTooLong": "Wystarczy samo imię, naprawdę.",
-      "nameRequired": "Podaj proszę swoje imię.",
+      "nameRequired": "Daj znać, jak masz na imię.",
       "invalidEmail": "To nie jest poprawny adres e-mail.",
-      "messageRequired": "Wpisz proszę wiadomość. Myślałem, że to oczywiste...",
+      "messageRequired": "Napisz coś... Myślałem, że nie trzeba o tym wspominać...",
       "messageTooLong": "Wow! Spróbuj napisać nieco krócej."
     }
   },
@@ -440,7 +440,7 @@
       "caption": "Mały przegląd wszystkich... opcji magazynowych. Na razie tylko tyle. Wkrótce więcej!"
     },
     "vehicles": {
-      "caption": "Szukasz mnóstwa miejsca czy po prostu najszybszej bryki? Znajdziesz to tutaj. Skill kierowcy zależy od Twojego {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
+      "caption": "Szukasz sporego ładunku czy po prostu najszybszej bryki? Znajdziesz to tutaj. Skill kierowcy to Twój {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
     }
   },
   "tools": {
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Info prawne",
-    "link": "Regulamin"
+    "link": "Nota prawna"
   },
   "privacy": {
     "title": "Prywatność",
@@ -581,7 +581,7 @@
       "responsiblePerson": "Administrator danych w rozumieniu RODO:"
     },
     "serverLogs": {
-      "title": "Dane dostępu (logi serwera)",
+      "title": "Dane o dostępie (logi serwera)",
       "intro": "Odwiedzając tę stronę, serwer automatycznie zbiera następujące informacje:",
       "items": [
         "Adres IP (skrócony lub zanonimizowany)",
@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Wszystkie grafiki, marki i assety należą do swoich właścicieli.",
+    "assets": "Wszystkie grafiki, marki i assety należą do ich właścicieli.",
     "fanMade": "To projekt fanowski, niezwiązany z twórcami gry. Kod źródłowy znajdziesz na <link>GitHub</link>."
   },
   "metadata": {
@@ -658,7 +658,7 @@
       "description": "Fanowskie narzędzia do {gameName}. Planuj fabryki, obliczaj statystyki produkcji, zarządzaj planami dostaw i przeglądaj dane z gry."
     },
     "database": {
-      "description": "Szczegółowe dane o produktach, maszynach, pojazdach, wyliczeniach zysków i wielu innych dla {gameName}."
+      "description": "Szczegółowe dane o grze: produkty, maszyny, pojazdy, obliczenia zysków i wiele więcej dla {gameName}."
     },
     "tools": {
       "description": "Zdominuj ekonomię w {gameName}. Od zaawansowanego planowania fabryk po skomplikowaną logistykę – zgarnij dane potrzebne do budowy własnego imperium."

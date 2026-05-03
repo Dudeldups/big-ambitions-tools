@@ -385,7 +385,7 @@
       "nameRequired": "Indica un nome per il gruppo."
     },
     "contactForm": {
-      "nameTooLong": "Basta solo il nome, davvero.",
+      "nameTooLong": "Basta il primo nome, davvero.",
       "nameRequired": "Dimmi pure il tuo nome.",
       "invalidEmail": "Questa non è un'email valida.",
       "messageRequired": "Scrivi un messaggio. Pensavo fosse ovvio...",

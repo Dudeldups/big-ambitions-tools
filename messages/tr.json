@@ -386,8 +386,8 @@
     },
     "contactForm": {
       "nameTooLong": "Sadece adın yeterli aslında.",
-      "nameRequired": "Lütfen ismini belirt.",
-      "invalidEmail": "Bu geçerli bir e-posta adresi değil.",
+      "nameRequired": "İsmini yazabilir misin?",
+      "invalidEmail": "E-posta adresi hatalı görünüyor.",
       "messageRequired": "Lütfen bir mesaj yaz. Bunun çok açık olduğunu sanıyordum...",
       "messageTooLong": "Vay! Belki biraz daha kısa tutabilirsin."
     }
@@ -395,7 +395,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
+      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümüne dayanıyor ve güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",

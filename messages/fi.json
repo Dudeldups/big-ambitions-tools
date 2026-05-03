@@ -386,10 +386,10 @@
     },
     "contactForm": {
       "nameTooLong": "Pelkkä etunimi riittää.",
-      "nameRequired": "Kerrothan nimesi.",
-      "invalidEmail": "Tuo ei ole oikea sähköpostiosoite.",
+      "nameRequired": "Kerro nimesi.",
+      "invalidEmail": "Ei oikea sähköpostiosoite.",
       "messageRequired": "Kirjoita viesti. Luulin, että se oli selvää...",
-      "messageTooLong": "Wau! Yritä ehkä pitää viesti vähän lyhyempänä."
+      "messageTooLong": "Vau! Lyhennä sitä vähän."
     }
   },
   "home": {
@@ -482,7 +482,7 @@
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
-        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi vetää. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
+        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, joka {shelfAmount} lavahyllyyn mahtuu. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
         "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet koko listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
       }
     },
@@ -559,7 +559,7 @@
     "subheading": "Palaute? Ideat? Kysymykset? Laita vaikka viesti.",
     "intro": "Jos sulla on ideoita uusiin toimintoihin, huomaat puuttuvia tietoja tai haluat vain antaa palautetta, laita ihmeessä viestiä! Jokainen viesti auttaa tekemään tästä sivusta vielä paremman koko yhteisölle.",
     "form": {
-      "title": "Laita vaan terve!",
+      "title": "Sano vain hei!",
       "fields": {
         "name": "Nimesi",
         "email": "Sähköposti",

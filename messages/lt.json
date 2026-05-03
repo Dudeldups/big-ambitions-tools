@@ -312,7 +312,7 @@
     "autoParkSupported": "Autoparkavimas",
     "taxDeductible": "Atskaitoma",
     "requiredDeliveryDriverSkillValue": "Reik. vairuotojo įgūdžiai",
-    "destinationsThatCanDeliver": "Pagrindinės kryptys",
+    "destinationsThatCanDeliver": "Pagr. tikslai",
     "destinationsFull": "Maks. taškai",
     "employees": "Darbuotojai",
     "description": "Aprašymas",
@@ -377,7 +377,7 @@
       "descriptionTooLong": "Nereikia čia romano rašyti. Maksimaliai 150 simbolių!",
       "workstationsRequired": "Pridėk bent vieną darbo stotį.",
       "atLeastOneVehicle": "Fabrikoje reikia bent vienos transporto priemonės.",
-      "maxTwoVehicles": "Maksimaliai dvi transporto priemonės fabrikui.",
+      "maxTwoVehicles": "Fabrike gali būti tik dvi transporto priemonės.",
       "shelfAmountTooLow": "Pridėk lentynų, kad gamykla veiktų."
     },
     "factoryGroup": {

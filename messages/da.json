@@ -312,7 +312,7 @@
     "autoParkSupported": "Indparkeringshjælp",
     "taxDeductible": "Fradrag",
     "requiredDeliveryDriverSkillValue": "Chauffør-skills",
-    "destinationsThatCanDeliver": "Basis-stop",
+    "destinationsThatCanDeliver": "Basale stop",
     "destinationsFull": "Maks. stop",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
@@ -386,9 +386,9 @@
     },
     "contactForm": {
       "nameTooLong": "Dit fornavn er egentlig nok.",
-      "nameRequired": "Skriv venligst dit navn.",
+      "nameRequired": "Husk lige dit navn.",
       "invalidEmail": "Det er ikke en gyldig mailadresse.",
-      "messageRequired": "Skriv venligst en besked. Jeg troede egentlig, det var ret indlysende...",
+      "messageRequired": "Skriv lige en besked. Jeg troede egentlig, det var ret indlysende...",
       "messageTooLong": "Wow! Prøv måske at holde den lidt kortere."
     }
   },
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Hjemmeside lanceret"
+    "launch": "Website lanceret"
   },
   "database": {
     "intro": {
@@ -434,13 +434,13 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Alle maskiner du kan bruge til produktion. Kombiner en hovedmaskine med én eller to sekundære maskiner og skab en Arbejdsstation til tøj."
+      "caption": "Her er alle maskiner til produktion. Kombiner en hovedmaskine med én eller to sekundære maskiner for at lave en Arbejdsstation til tøj."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
     },
     "vehicles": {
-      "caption": "Leder du efter masser af lastplads eller bare den hurtigste vogn? Du finder det her. Din {deliveryDriver} bestemmer din skill, og for max destinationer skal du bruge en {logisticsManager} med 100 % skill."
+      "caption": "Leder du efter masser af lastplads eller bare den hurtigste vogn? Det finder du her. Driver-skill er knyttet til din {deliveryDriver}, og for max destinationer skal du bruge en {logisticsManager} med 100 % skill."
     }
   },
   "tools": {
@@ -561,16 +561,16 @@
     "form": {
       "title": "Sig bare hej!",
       "fields": {
-        "name": "Dit navn",
+        "name": "Navn",
         "email": "E-mail",
         "message": "Besked"
       },
-      "success": "Beskeden er sendt!"
+      "success": "Besked sendt!"
     }
   },
   "legal": {
     "title": "Juridisk info",
-    "link": "Juridisk info"
+    "link": "Juridisk"
   },
   "privacy": {
     "title": "Om dit privatliv",
@@ -614,7 +614,7 @@
         ]
       },
       "summary": "Sker helt anonymt.",
-      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (berettiget interesse i at analysere brugen af hjemmesiden)"
+      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (berettiget interesse i analyse af website-brug)"
     },
     "cookies": {
       "title": "Cookies",

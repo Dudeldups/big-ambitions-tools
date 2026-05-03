@@ -313,7 +313,7 @@
     "taxDeductible": "税控除",
     "requiredDeliveryDriverSkillValue": "配送ドライバースキル",
     "destinationsThatCanDeliver": "拠点配送先",
-    "destinationsFull": "目的地 Max",
+    "destinationsFull": "目的地(最大)",
     "employees": "従業員",
     "description": "説明",
     "export": "輸出",
@@ -561,7 +561,7 @@
     "form": {
       "title": "気軽に話しかけてね！",
       "fields": {
-        "name": "お名前",
+        "name": "名前",
         "email": "メールアドレス",
         "message": "メッセージ"
       },
@@ -569,7 +569,7 @@
     }
   },
   "legal": {
-    "title": "サイトについて",
+    "title": "サイトのルール",
     "link": "運営者"
   },
   "privacy": {
