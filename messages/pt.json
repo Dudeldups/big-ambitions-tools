@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Release: Banco de Dados e Planejador de Fábrica"
+    "launch": "Novidade: Base de Dados e Planeador de Fábrica"
   },
   "database": {
     "intro": {
@@ -557,7 +557,7 @@
   },
   "contact": {
     "subheading": "Feedback? Ideias? Dúvidas? Manda uma mensagem.",
-    "intro": "Se tiver ideias para novas funções, notar a falta de dados ou apenas querer dar feedback, é só me chamar! Fico feliz com cada mensagem que ajuda a tornar o site ainda mais útil para a comunidade.",
+    "intro": "Se você tem ideias para novas funções, nota que faltam dados ou só quer dar um feedback, é só me chamar! Fico feliz com cada mensagem que ajuda a tornar o site ainda mais útil para a comunidade.",
     "form": {
       "title": "Dá um oi!",
       "fields": {
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Informações legais",
-    "link": "Aviso legal"
+    "link": "Aviso Legal"
   },
   "privacy": {
     "title": "Aviso de Privacidade",
@@ -655,7 +655,7 @@
   },
   "metadata": {
     "root": {
-      "description": "Tools de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
+      "description": "Ferramentas de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore dados do jogo."
     },
     "database": {
       "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."

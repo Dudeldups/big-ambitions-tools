@@ -312,7 +312,7 @@
     "autoParkSupported": "Autoparkavimas",
     "taxDeductible": "Atskaitoma",
     "requiredDeliveryDriverSkillValue": "Reik. vairuotojo įgūdžiai",
-    "destinationsThatCanDeliver": "Pagr. tikslai",
+    "destinationsThatCanDeliver": "Pagr. kryptys",
     "destinationsFull": "Maks. taškai",
     "employees": "Darbuotojai",
     "description": "Aprašymas",
@@ -377,7 +377,7 @@
       "descriptionTooLong": "Nereikia čia romano rašyti. Maksimaliai 150 simbolių!",
       "workstationsRequired": "Pridėk bent vieną darbo stotį.",
       "atLeastOneVehicle": "Fabrikoje reikia bent vienos transporto priemonės.",
-      "maxTwoVehicles": "Fabrike gali būti tik dvi transporto priemonės.",
+      "maxTwoVehicles": "Maksimaliai dvi transporto priemonės fabrikui.",
       "shelfAmountTooLow": "Pridėk lentynų, kad gamykla veiktų."
     },
     "factoryGroup": {
@@ -399,7 +399,7 @@
     },
     "cta": {
       "title": "Pradėkime!",
-      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Visiškas matematika!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
+      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Matematika yra jėga!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
       "desc2": "Nuo savo pirmosios gamyklos planavimo iki visos imperijos gamybos rodiklių valdymo – viską rasai <link>{toolsSection}</link> skiltyje.",
       "errorDesc": "Radai klaidą ar trūkumą? Ar turi pasiūlymų, kaip pagerinti svetainę? Tiesiog <contact>susisiek</contact> su mumis!"
     },
@@ -408,7 +408,7 @@
       "subtitle": "Kaip gaila!",
       "desc": "{gameName} yra revoliucinė verslo simuliacija su vaidmenų elementais. Pradėk nuo nieko ir tapk didžiausiu New Yorko verslininku, kurdamas mažas įmones ar milžiniškas korporacijas – kaip tik nori!",
       "hovgaard": "Aplankyk oficialią svetainę <website>{companyName}</website>",
-      "steam": "Peržiūrėk žaidimą <link>{steam}</link>"
+      "steam": "Žais tiesiogiai <link>{steam}</link>"
     },
     "updates": {
       "title": "Naujausi atnaujinimai"
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Išleidimas: duomenų bazė ir gamyklų planuotojas"
+    "launch": "Startas: Duomenų bazė ir gamyklų planuotojas"
   },
   "database": {
     "intro": {
@@ -428,7 +428,7 @@
       "buttonDesc": "Pasirink kategorią"
     },
     "products": {
-      "caption": "Visi produktai – viename žvilgsnyje. Galite lengvai perjungti gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelningumas rodomas kaip grynoji vertė – įskaitant žaliavų, darbuotojų atlyginimų ir mokesčių išlaidas, priklausomai nuo pasirinkto sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
+      "caption": "Visi produktai – viename žvilgsnyje. Lengvai perjungti gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelna rodoma kaip neto vertė – įskaitant žaliavas, darbuotojų atlyginimus ir mokesčius, priklausomai nuo pasirinkto sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
     },
     "ingredients": {
       "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
@@ -440,7 +440,7 @@
       "caption": "Visų... saugyklos parinkčių apžvalga. Kol kad tik tiek. Dar bus daugiau!"
     },
     "vehicles": {
-      "caption": "Ieškai didelės krovos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai – tai tavo {deliveryDriver}, o maksimaliam destinacijų skaičiui reikia {logisticsManager} su 100 % įgūdžiais."
+      "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai nurodo tavo {deliveryDriver}, o maksimaliam tikslų skaičiui reikia {logisticsManager} su 100 % įgūdžiais."
     }
   },
   "tools": {
@@ -448,14 +448,14 @@
       "desc": "Čia gali gilintis į žaidimo skaičius ir statistiką. Planuok savo fabrikus ir valdyk logistiką visam imperijui!"
     },
     "playthroughs": {
-      "desc": "Žemiau gali sukurti ir valdyti savo žaidimo būsenas. Viena būsena – tai vienas žaidimo ciklas. Galėsi sukurti kelias būsenas, kad palygintum skirtingas žaidimo būsenas, išbandytum kitus sunkumo lygius ar tiesiog stebėtum savo pažangą.",
+      "desc": "Žemiau gali sukurti ir valdyti savo žaidimo būsenas. Kiekviena iš jų yra atskiras žaidimo ciklas. Galėsi sukurti kelias būsenas, kad palygintum rezultatus, išbandytum kitus sunkumo lygius ar tiesiog stebėtum savo pažangą.",
       "warning": "Svarbu: Pažanga saugoma naršyklėje. Jei ištrinsi duomenis arba naudosi privačiu režimu, viskas gali išnykti.",
       "createButtonDesc": "Nauja žaidimo būsena",
       "noPlaythroughs": "Dar nėra žaidimo būsenų. Sukur pirmąją ir pradėk!",
       "notFound": {
         "title": "Žaidimo būsena nerasta",
         "desc": "Ši žaidimo būsena neegzistuoja arba buvo ištrinta.",
-        "link": "Atgal į apžvalgą"
+        "link": "Atgal į žaidimo būsenų sąrašą"
       }
     },
     "playthroughDetail": {
@@ -504,7 +504,7 @@
     "factoryGroups": {
       "buttonDesc": "Sukurti grupę",
       "title": "Fabrikų grupės",
-      "desc": "Gali sugrupuoti fabrikus, kad lengviau matytum produktų kategorijų apžvalgą. Jei sugrupuotoms fabrikoms nebus paskirtų palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai fabrikai ir sandėliui, kad užtektų likusiems produktams. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną fabriką.",
+      "desc": "Gali sugrupuoti fabrikus pagal produktų kategorijas, kad lengviau būtų viską apžvelgti. Jei sugrupuotoms fabrikoms nebus pakankamai palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai fabrikai ir sandėliui, kad užpildytum likusį poreikį. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną fabriką.",
       "groupEmpty": "Šioje grupėje nėra fabrikų. Pertrauk kortelę čia, kad ją pridėtum.",
       "ungroupedTitle": "Nesugrupuotos fabrikos",
       "ungroupedEmpty": "Čia kol nieko nėra. Persitrauk kortelę į šią vietą arba sukurk naują fabriką.",
@@ -539,7 +539,7 @@
       "employees": {
         "desc": "Įvesk atlyginimą kiekvienam darbuotojui. Palik tuščią, jei nenori apskaičiuoti atlyginimo.",
         "optimalWorkers": "Naudoti optimalų Gamyklos darbuotojų kiekį",
-        "optimalTooltip": "Suskaičiuos optimalų darbuotojų kiekį pagal darbo vietas ir darbo valandas. Pridės nedidelį buferį, kad auto-planavimas žaidime vyktų sklandžiai."
+        "optimalTooltip": "Automatiškai apskaičiuos optimalų darbuotojų kiekį pagal darbo vietas ir valandas. Pridedama nedidelė atsarga, kad auto-planavimas žaidime veiktų sklandžiai."
       },
       "vehicles": {
         "addBtn": "Pridėti transportą"
@@ -559,9 +559,9 @@
     "subheading": "Atsiliepimai? Idėjos? Klausimai? Tiesiog parašyk.",
     "intro": "Jei turi idėjų naujoms funkcijoms, pastebi trūkumus duomenyse ar tiesiog nori pasidalinti nuomonėm – be vargo kreipkis! Vertinu kiekvieną žinutę, nes ji padeda man šią svetainę padaryti dar naudingesnę bendruomenei.",
     "form": {
-      "title": "Tiesiog pasisveikink!",
+      "title": "Sakiu 'labas'!",
       "fields": {
-        "name": "Tavo vardas",
+        "name": "Vardas",
         "email": "El. paštas",
         "message": "Žinutė"
       },
@@ -569,8 +569,8 @@
     }
   },
   "legal": {
-    "title": "Teisinė info",
-    "link": "Teisinė info"
+    "title": "Teisinė informacija",
+    "link": "Teisinė informacija"
   },
   "privacy": {
     "title": "Privatumo informacija",
@@ -630,7 +630,7 @@
         }
       },
       "summary": "Šis slapukas yra būtinas svetainės veikimui, todėl sutikimo nereikia.",
-      "legalBasis": "Teisinis pagrindas: BDAR 6(1) f punktas"
+      "legalBasis": "Teisinis pagrindas: Art. 6 k.~1 f punktas BDAR"
     },
     "userRights": {
       "title": "Tavo teisės",
@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Visos žaidimo nuotraukos, prekės ženklai ir assets priklauso jų savininkams.",
+    "assets": "Visi žaidimo vaizdiniai, prekės ženklai ir assets priklauso savo savininkams.",
     "fanMade": " Tai fanų svetainė ir nėra susijusi su žaidimo kūrėjais. Kodą rasi <link>GitHub</link>."
   },
   "metadata": {

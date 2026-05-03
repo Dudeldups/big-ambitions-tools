@@ -386,9 +386,9 @@
     },
     "contactForm": {
       "nameTooLong": "Wystarczy samo imię, naprawdę.",
-      "nameRequired": "Daj znać, jak masz na imię.",
+      "nameRequired": "Podaj swoje imię i nazwisko.",
       "invalidEmail": "To nie jest poprawny adres e-mail.",
-      "messageRequired": "Napisz coś... Myślałem, że nie trzeba o tym wspominać...",
+      "messageRequired": "Wpisz wiadomość. Myślałem, że to oczywiste...",
       "messageTooLong": "Wow! Spróbuj napisać nieco krócej."
     }
   },
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Release: Baza danych i Planer fabryk"
+    "launch": "Start: Baza danych i Planer Fabryk"
   },
   "database": {
     "intro": {
@@ -440,7 +440,7 @@
       "caption": "Mały przegląd wszystkich... opcji magazynowych. Na razie tylko tyle. Wkrótce więcej!"
     },
     "vehicles": {
-      "caption": "Szukasz sporego ładunku czy po prostu najszybszej bryki? Znajdziesz to tutaj. Skill kierowcy to Twój {deliveryDriver}, a żeby osiągnąć max celów, potrzebujesz {logisticsManager} ze 100% skillem."
+      "caption": "Szukasz mnóstwa miejsca czy po prostu najszybszej bryki? Znajdziesz to tutaj. Skill kierowcy zależy od Twojego {deliveryDriver}, a dla maksymalnej liczby celów potrzebujesz {logisticsManager} ze 100% skillem."
     }
   },
   "tools": {
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Info prawne",
-    "link": "Nota prawna"
+    "link": "Info prawne"
   },
   "privacy": {
     "title": "Prywatność",
@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Wszystkie grafiki, marki i assety należą do ich właścicieli.",
+    "assets": "Wszystkie grafiki, marki i assety w grze należą do ich właścicieli.",
     "fanMade": "To projekt fanowski, niezwiązany z twórcami gry. Kod źródłowy znajdziesz na <link>GitHub</link>."
   },
   "metadata": {
@@ -658,7 +658,7 @@
       "description": "Fanowskie narzędzia do {gameName}. Planuj fabryki, obliczaj statystyki produkcji, zarządzaj planami dostaw i przeglądaj dane z gry."
     },
     "database": {
-      "description": "Szczegółowe dane o grze: produkty, maszyny, pojazdy, obliczenia zysków i wiele więcej dla {gameName}."
+      "description": "Szczegółowe dane o grach: produkty, maszyny, pojazdy, wyliczenia zysku i nie tylko dla {gameName}."
     },
     "tools": {
       "description": "Zdominuj ekonomię w {gameName}. Od zaawansowanego planowania fabryk po skomplikowaną logistykę – zgarnij dane potrzebne do budowy własnego imperium."

@@ -362,7 +362,7 @@
     "groupLabelColor": "Culoare",
     "deleteGroupTitle": "Șterge grupul",
     "deleteGroupDesc": "Ești sigur că vrei să ștergi acest grup? Dacă există fabrici atribuite, ele vor fi mutate în grupul implicit.",
-    "oneTimeCostDesc": "Costuri unice de instalare pentru fabrică."
+    "oneTimeCostDesc": "Costuri de instalare pentru fabrică (plată unică)."
   },
   "errors": {
     "playthrough": {
@@ -437,7 +437,7 @@
       "caption": "Toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două mașini secundare pentru a crea un post de lucru."
     },
     "inventory": {
-      "caption": "O scurtă privire asupra... opțiunilor de depozitare. Doar deocamdată! Mai urmează și altele!"
+      "caption": "O scurtă prezentare a... opțiunilor tale de depozitare. Doar deocamdată. Mai urmează și altele!"
     },
     "vehicles": {
       "caption": "Cauți încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru un număr maxim de destinații ai nevoie de un {logisticsManager} cu 100% skill."
@@ -483,12 +483,12 @@
       "splitShoppingList": {
         "title": "Listă de cumpărături împărțită",
         "desc": "Comandă aceste ingrediente direct la fabrica ta pentru a împărți comanda. Aceasta este cantitatea maximă pe care {shelfAmount} rafturi pentru paleți le pot reține. Se ia în considerare și numărul de cutii pe care le produci. Ai nevoie de {requiredAmount} rafturi pentru a stoca toate ingredientele pentru o săptămână întreagă de producție.",
-        "desc1": "Restul trebuie comandat unui depozit de către unul sau mai mulți agenți de achiziții. Întoarce-te la <link>vizualizarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare către fiecare fabrică."
+        "desc1": "Restul trebuie comandat la un depozit de către unul sau mai mulți agenți de achiziții. Întoarce-te la <link>panoul fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare pentru fiecare fabrică."
       }
     },
     "playthroughForm": {
       "title": "Creează o nouă partidă",
-      "desc": "Pune un nume partidei tale și alege dificultatea, ca să poată tool-urile să calculeze prețurile corect. Poți edita sau șterge partidele oricând.",
+      "desc": "Dă un nume partidei și alege dificultatea, ca tool-urile să calculeze prețurile corect. Poți edita sau șterge partidele oricând.",
       "placeholder": "ex. John Manhattan",
       "deleteTitle": "Șterge partida",
       "deleteDesc": "Ești sigur că vrei să ștergi partida asta? Această acțiune nu poate fi anulată."
@@ -504,10 +504,10 @@
     "factoryGroups": {
       "buttonDesc": "Creează grup",
       "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe categorie de produse. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și la depozit, ca să acoperi restul necesarului. Dialogul de livrări îți va arăta, de asemenea, ce trebuie trimis către fiecare fabrică.",
+      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe categorie de produse. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce trebuie să comanzi pentru fiecare fabrică și pentru depozit, ca să completezi restul necesarului. Dialogul de livrări îți va arăta, de asemenea, ce trebuie trimis către fiecare fabrică.",
       "groupEmpty": "Nicio fabrică în acest grup. Trage un card de fabrică aici ca să îl adaugi.",
       "ungroupedTitle": "Fabrici ne-grupate",
-      "ungroupedEmpty": "Nu ai nicio fabrică ne-grupată aici. Trage un card aici sau adaugă o fabrică nouă.",
+      "ungroupedEmpty": "Nu ai încă fabrici negrupate. Trage un card aici sau adaugă o fabrică nouă.",
       "deliveries": {
         "buttonDesc": "Livrări",
         "title": "Plan de livrare",
@@ -559,7 +559,7 @@
     "subheading": "Feedback? Idei? Întrebări? Lasă-mi un mesaj.",
     "intro": "Dacă ai idei pentru funcții noi, observi că lipsesc date sau pur și simplu vrei să-mi dai un feedback, scrie-mi oricând! Mă bucur de fiecare mesaj care mă ajută să fac site-ul și mai util pentru comunitate.",
     "form": {
-      "title": "Aruncă un 'Salut'!",
+      "title": "Aruncă-ne un Salut!",
       "fields": {
         "name": "Numele tău",
         "email": "E-mail",

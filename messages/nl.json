@@ -399,7 +399,7 @@
     },
     "cta": {
       "title": "Aan de slag!",
-      "desc": "Wil je gewoon even iets opzoeken of wat met cijfers aan de slag? <em>Wiskunde, ja!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
+      "desc": "Wil je gewoon even iets opzoeken of wat met cijfers aan de slag? <em>Lekker, wiskunde!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
       "desc2": "Van het plannen van je eerste fabriek tot aan het beheren van de productieraten van je hele imperium, vind je alles in het gedeelte <link>{toolsSection}</link>.",
       "errorDesc": "Sto je op een foutje gestoten of mis je info? Of heb je suggesties om de site te verbeteren? Dan <contact>meld je maar even</contact>!"
     },
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Release: Database en Fabrieksplanner"
+    "launch": "Startschuss: Database en Fabrieksplanner"
   },
   "database": {
     "intro": {

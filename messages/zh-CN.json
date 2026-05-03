@@ -313,7 +313,7 @@
     "taxDeductible": "可抵扣",
     "requiredDeliveryDriverSkillValue": "司机技能",
     "destinationsThatCanDeliver": "基础目的地",
-    "destinationsFull": "最大目的地",
+    "destinationsFull": "最多目的地",
     "employees": "员工",
     "description": "描述",
     "export": "出口",
@@ -386,9 +386,9 @@
     },
     "contactForm": {
       "nameTooLong": "只留个名字就行，真的。",
-      "nameRequired": "请告诉我你的名字。",
-      "invalidEmail": "这不是有效的邮箱地址。",
-      "messageRequired": "请输入消息。我还以为这很明显呢...",
+      "nameRequired": "记得写下你的名字呀。",
+      "invalidEmail": "这邮箱格式不对哦。",
+      "messageRequired": "记得留个言呀。我还以为这很明显呢...",
       "messageTooLong": "哇！尽量写得短一点吧。"
     }
   },
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "发布：数据库与工厂规划器"
+    "launch": "上线：数据库与工厂规划器"
   },
   "database": {
     "intro": {
@@ -561,15 +561,15 @@
     "form": {
       "title": "来打个招呼吧！",
       "fields": {
-        "name": "你的名字",
+        "name": "名字",
         "email": "邮箱",
         "message": "留言"
       },
-      "success": "消息已发送！"
+      "success": "留言已发送！"
     }
   },
   "legal": {
-    "title": "法律信息",
+    "title": "法律说明",
     "link": "声明"
   },
   "privacy": {

@@ -386,7 +386,7 @@
     },
     "contactForm": {
       "nameTooLong": "Sadece adın yeterli aslında.",
-      "nameRequired": "İsmini yazabilir misin?",
+      "nameRequired": "Adını yaz lütfen.",
       "invalidEmail": "E-posta adresi hatalı görünüyor.",
       "messageRequired": "Lütfen bir mesaj yaz. Bunun çok açık olduğunu sanıyordum...",
       "messageTooLong": "Vay! Belki biraz daha kısa tutabilirsin."
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Yayın: Veritabanı ve Fabrika Planlayıcısı"
+    "launch": "Başlangıç: Veritabanı ve Fabrika Planlayıcısı"
   },
   "database": {
     "intro": {

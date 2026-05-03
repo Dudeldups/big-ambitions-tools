@@ -313,7 +313,7 @@
     "taxDeductible": "税控除",
     "requiredDeliveryDriverSkillValue": "配送ドライバースキル",
     "destinationsThatCanDeliver": "拠点配送先",
-    "destinationsFull": "目的地(最大)",
+    "destinationsFull": "目的地 (最大)",
     "employees": "従業員",
     "description": "説明",
     "export": "輸出",
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "リリース：データベース & 工場プランナー"
+    "launch": "リリース：データベースと工場プランナー"
   },
   "database": {
     "intro": {
@@ -569,7 +569,7 @@
     }
   },
   "legal": {
-    "title": "サイトのルール",
+    "title": "運営について",
     "link": "運営者"
   },
   "privacy": {

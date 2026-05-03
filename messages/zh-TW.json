@@ -345,7 +345,7 @@
     "groupDeleteSuccess": "群組 \"{groupName}\" 已刪除！"
   },
   "modals": {
-    "discardChanges": "不儲存變更",
+    "discardChanges": "捨棄變更",
     "discardDesc": "還有沒存檔的變更喔，確定要捨棄嗎？",
     "resetForm": "重置表單設定",
     "resetDesc": "確定要將表單設定還原為預設設定嗎？",
@@ -385,9 +385,9 @@
       "nameRequired": "請輸入群組名稱"
     },
     "contactForm": {
-      "nameTooLong": "只要名字就好啦。",
+      "nameTooLong": "其實只要寫名就好啦。",
       "nameRequired": "請告訴我你的名字喔。",
-      "invalidEmail": "這不是有效的 Email 地址。",
+      "invalidEmail": "這個 Email 格式好像不太對喔。",
       "messageRequired": "請輸入訊息。我還以為這很明顯呢...",
       "messageTooLong": "哇！可以試著寫短一點嗎？"
     }
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "發佈：資料庫與工廠規劃器"
+    "launch": "正式登場：資料庫與工廠規劃器"
   },
   "database": {
     "intro": {
@@ -448,7 +448,7 @@
       "desc": "這裡可以深入探索遊戲的數字與統計數據。規劃你的工廠，並管理整個帝國的物流！"
     },
     "playthroughs": {
-      "desc": "你可以在下方建立和管理遊戲進度。每個進度都代表一次完整的遊玩紀錄。你可以透過建立多個進度來比較不同的紀錄、嘗試不同難度，或是單純追蹤自己的進度。",
+      "desc": "在下方，你可以建立與管理遊戲進度。每個進度代表一次單次的遊玩過程。你可以建立多個進度來比較不同的紀錄、嘗試不同難度，或是單純追蹤自己的進度。",
       "warning": "重要：你的進度儲存在瀏覽器中。如果你清除瀏覽器資料或使用隱私/無痕模式，可能會遺失。",
       "createButtonDesc": "新進度",
       "noPlaythroughs": "目前還沒有任何遊戲進度。快來建立一個吧！",
@@ -561,8 +561,8 @@
     "form": {
       "title": "來打個招呼吧！",
       "fields": {
-        "name": "你的姓名",
-        "email": "電子郵件",
+        "name": "你的名字",
+        "email": "Email",
         "message": "訊息"
       },
       "success": "訊息已成功送出！"
@@ -613,7 +613,7 @@
           "不會將數據分享給第三方"
         ]
       },
-      "summary": "我們會進行匿名化處理。",
+      "summary": "採匿名處理",
       "legalBasis": "法律依據：GDPR 第 6 (1) f 條 (分析網站使用情況的正當利益)"
     },
     "cookies": {
@@ -625,7 +625,7 @@
           "desc": "儲存你選好的語言"
         },
         "duration": {
-          "title": "有效期限",
+          "title": "保存時間",
           "desc": "最長 30 天，或是直到你手動刪除為止"
         }
       },

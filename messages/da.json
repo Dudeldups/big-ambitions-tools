@@ -312,7 +312,7 @@
     "autoParkSupported": "Indparkeringshjælp",
     "taxDeductible": "Fradrag",
     "requiredDeliveryDriverSkillValue": "Chauffør-skills",
-    "destinationsThatCanDeliver": "Basale stop",
+    "destinationsThatCanDeliver": "Basale destinationer",
     "destinationsFull": "Maks. stop",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Release: Database og Fabriksplanlægger"
+    "launch": "Startskud: Database og Fabrikplanlægger"
   },
   "database": {
     "intro": {
@@ -434,13 +434,13 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Her er alle maskiner til produktion. Kombiner en hovedmaskine med én eller to sekundære maskiner for at lave en Arbejdsstation til tøj."
+      "caption": "Her er alle maskinerne til produktionen. Kombiner en hovedmaskine med én eller to sekundære maskiner for at lave en arbejdsstation til tøj."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
     },
     "vehicles": {
-      "caption": "Leder du efter masser af lastplads eller bare den hurtigste vogn? Det finder du her. Driver-skill er knyttet til din {deliveryDriver}, og for max destinationer skal du bruge en {logisticsManager} med 100 % skill."
+      "caption": "Leder du efter masser af lastplads eller bare den hurtigste vogn? Det finder du her. Chaufførens skill er knyttet til din {deliveryDriver}, og for max destinationer skal du bruge en {logisticsManager} med 100 % skill."
     }
   },
   "tools": {
@@ -561,7 +561,7 @@
     "form": {
       "title": "Sig bare hej!",
       "fields": {
-        "name": "Navn",
+        "name": "Dit navn",
         "email": "E-mail",
         "message": "Besked"
       },
@@ -614,7 +614,7 @@
         ]
       },
       "summary": "Sker helt anonymt.",
-      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (berettiget interesse i analyse af website-brug)"
+      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (berettiget interesse i analyse af hjemmesidens brug)"
     },
     "cookies": {
       "title": "Cookies",

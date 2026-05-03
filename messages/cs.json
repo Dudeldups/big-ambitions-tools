@@ -385,7 +385,7 @@
       "nameRequired": "Zadej prosím název skupiny"
     },
     "contactForm": {
-      "nameTooLong": "Stačí jen tvoje první jméno, opravdu.",
+      "nameTooLong": "Stačí jen tvoje jméno, opravdu.",
       "nameRequired": "Napiš mi prosím svoje jméno.",
       "invalidEmail": "To není platná e-mailová adresa.",
       "messageRequired": "Napiš prosím zprávu. Myslel jsem, že to je jasný...",
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Release: Databáze a plánovač továren"
+    "launch": "Start: Databáze a plánovač továren"
   },
   "database": {
     "intro": {
@@ -658,7 +658,7 @@
       "description": "Nástroje od fanoušků pro {gameName}. Plánuj továrny, vypočítávej statistiky výroby, spravuj plány dodávek a procházej si herní data."
     },
     "database": {
-      "description": "Detailní herní data o produktech, strojích, vozidlech, výpočtech zisku a mnoha dalších pro {gameName}."
+      "description": "Detailní herní data k produktům, strojům, vozidlům, výpočtům zisku a mnoho dalšího pro {gameName}."
     },
     "tools": {
       "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."

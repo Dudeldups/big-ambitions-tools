@@ -385,7 +385,7 @@
       "nameRequired": "Por favor, indica un nombre del grupo."
     },
     "contactForm": {
-      "nameTooLong": "Solo con tu primer nombre basta, de verdad.",
+      "nameTooLong": "Con solo tu primer nombre basta, de verdad.",
       "nameRequired": "Dime tu nombre, porfa.",
       "invalidEmail": "Ese email no es válido.",
       "messageRequired": "Pon un mensaje. Pensaba que eso estaba claro...",
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Lanzamiento: Base de datos y Planificador de fábricas"
+    "launch": "¡Arrancamos!: Base de datos y Planificador de fábrica"
   },
   "database": {
     "intro": {
@@ -538,7 +538,7 @@
       },
       "employees": {
         "desc": "Introduce el salario de cada empleado. Déjalo vacío si no quieres incluir cálculos salariales.",
-        "optimalWorkers": "Usar cantidad óptima de trabajadores de fábrica",
+        "optimalWorkers": "Usar cantidad ideal de operarios",
         "optimalTooltip": "Calcula automáticamente el número óptimo de trabajadores basado en las estaciones de trabajo y los horarios de apertura. Añadirá un pequeño margen para un autoscheduling suave en el juego."
       },
       "vehicles": {
@@ -559,7 +559,7 @@
     "subheading": "¿Feedback? ¿Ideas? ¿Preguntas? Escríbeme.",
     "intro": "Si tienes ideas para nuevas funciones, notas que falta algún dato o simplemente quieres darme feedback, ¡no dudes en escribirme! Agradezco cada mensaje que me ayude a hacer esta web aún más útil para la comunidad.",
     "form": {
-      "title": "¡Solo di hola!",
+      "title": "¡Dinos hola!",
       "fields": {
         "name": "Tu nombre",
         "email": "Email",
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Info legal",
-    "link": "Legales"
+    "link": "Aviso legal"
   },
   "privacy": {
     "title": "Aviso de privacidad",
