@@ -45,6 +45,8 @@ function buildAlternates(path: string, locale: string): Metadata["alternates"] {
   };
 }
 
+const OG_IMAGE = "/opengraph-image.png";
+
 export async function generateTranslatedMetadata({
   locale,
   titleNamespace,
@@ -96,6 +98,20 @@ export async function generateTranslatedMetadata({
       siteName: GLOSSARY.siteName,
       url: absoluteUrl(locale, path),
       type: "website",
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: GLOSSARY.siteName,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE],
     },
   };
 }
