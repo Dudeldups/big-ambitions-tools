@@ -21,12 +21,15 @@ type GenerateTranslatedMetadataOptions = {
 };
 
 function localizedPath(locale: string, path = "/") {
-  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  const cleanPath =
+    path === "/" ? "" : path.startsWith("/") ? path : `/${path}`;
 
-  return locale === DEFAULT_LOCALE ? cleanPath : `/${locale}${cleanPath}`;
+  return locale === DEFAULT_LOCALE
+    ? cleanPath || "/"
+    : `/${locale}${cleanPath}`;
 }
 
-function absoluteUrl(locale: string, path = "/") {
+function localizedUrl(locale: string, path = "/") {
   return `${BASE_URL}${localizedPath(locale, path)}`;
 }
 
@@ -34,13 +37,13 @@ function buildAlternates(path: string, locale: string): Metadata["alternates"] {
   const languages: Record<string, string> = {};
 
   for (const localeKey of Object.keys(LOCALE_NAMES)) {
-    languages[localeKey] = localizedPath(localeKey, path);
+    languages[localeKey] = localizedUrl(localeKey, path);
   }
 
-  languages["x-default"] = localizedPath(DEFAULT_LOCALE, path);
+  languages["x-default"] = localizedUrl(DEFAULT_LOCALE, path);
 
   return {
-    canonical: localizedPath(locale, path),
+    canonical: localizedUrl(locale, path),
     languages,
   };
 }
@@ -96,7 +99,7 @@ export async function generateTranslatedMetadata({
       title,
       description,
       siteName: GLOSSARY.siteName,
-      url: absoluteUrl(locale, path),
+      url: localizedUrl(locale, path),
       type: "website",
       images: [
         {
