@@ -459,6 +459,7 @@
     "factories": {
       "title": "Tus fábricas",
       "desc": "Aquí tienes un resumen de tus fábricas. Puedes editarlas o eliminarlas y también copiar los valores actuales para una nueva fábrica. Para ver más detalles sobre cada fábrica, incluida una lista de compras, simplemente haz clic en su tarjeta correspondiente.",
+      "desc1": "También puedes agruparlas pulsando el botón 'Crear grupo' de abajo. Así las verás todas juntas y podrás gestionarlas como un grupo. Te viene genial si usas un almacén central para abastecer varias fábricas. Según la cantidad de estanterías para palés que añadas, te sugerirá un plan de entregas para cada fábrica.",
       "noFactories": "Aún no hay fábricas en tu partida. Crea una para empezar.",
       "notFound": {
         "title": "Fábrica no encontrada",
@@ -496,6 +497,7 @@
     "factoryGroups": {
       "buttonDesc": "Crear grupo",
       "title": "Grupos de fábricas",
+      "desc": "Puedes agrupar fábricas para tener una mejor visión por categoría de producto. Si las fábricas del grupo no tienen suficientes estanterías para palés asignadas, la lista de la compra te dirá qué pedir para cada fábrica y también al almacén para completar el resto. El diálogo de entregas también te mostrará qué enviar a cada fábrica.",
       "groupEmpty": "No hay fábricas en este grupo. Arrastra una tarjeta de fábrica aquí para añadirla.",
       "ungroupedTitle": "Fábricas sin agrupar",
       "ungroupedEmpty": "No hay fábricas sin agrupar. Arrastra una tarjeta de fábrica aquí o añade una nueva.",
@@ -517,6 +519,7 @@
         "legend": "Información de la fábrica",
         "name": "Nombre de la fábrica",
         "calcBasis": "Base del cálculo",
+        "palletDesc": "Define cuántas estanterías para palés hay disponibles en esta fábrica.",
         "dailyAmount": "Para la entrega diaria necesitas <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para la entrega semanal necesitas <strong>{count}</strong> {object}.",
         "shelfExplanation": "Añade al menos una estación de trabajo para ver el número necesario de estanterías de palets.",
@@ -528,6 +531,7 @@
       },
       "employees": {
         "desc": "Introduce el salario de cada empleado. Déjalo vacío si no quieres incluir cálculos salariales.",
+        "optimalWorkers": "Usar número óptimo de trabajadores de fábrica",
         "optimalTooltip": "Calcula automáticamente el número óptimo de trabajadores basado en las estaciones de trabajo y los horarios de apertura. Añadirá un pequeño margen para un autoscheduling suave en el juego."
       },
       "vehicles": {
