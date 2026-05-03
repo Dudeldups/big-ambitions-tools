@@ -3,9 +3,21 @@
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/schemas/contactForm";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+type ContactActionResult = {
+  success: boolean;
+};
 
-export async function sendContactMessage(formData: FormData) {
+const resend = new Resend(process.env.RESEND_API_KEY);
+const emailAddress = process.env.RESEND_EMAIL;
+
+export async function sendContactMessage(
+  formData: FormData,
+): Promise<ContactActionResult> {
+  if (!process.env.RESEND_API_KEY || !emailAddress) {
+    console.error("Missing email config");
+    return { success: false };
+  }
+
   const parsed = contactFormSchema.safeParse(Object.fromEntries(formData));
 
   if (!parsed.success) {
@@ -18,24 +30,25 @@ export async function sendContactMessage(formData: FormData) {
 
   const { name, email, message } = parsed.data;
 
-  try {
-    await resend.emails.send({
-      from: "Big Ambitions Tools <noreply@big-ambitions-tools.com>",
-      to: "info@big-ambitions-tools.com",
-      subject: `Contact form: ${name}`,
-      replyTo: email,
-      text: `
+  const { error } = await resend.emails.send({
+    from: "Big Ambitions Tools <noreply@big-ambitions-tools.com>",
+    to: emailAddress,
+    subject: `Contact form: ${name}`,
+    replyTo: email,
+    text: `New contact form message
+
 Name: ${name}
 Email: ${email}
 
 Message:
 ${message}
-      `,
-    });
+`,
+  });
 
-    return { success: true };
-  } catch (error) {
-    console.error(error);
+  if (error) {
+    console.error("Resend error:", error);
     return { success: false };
   }
+
+  return { success: true };
 }
