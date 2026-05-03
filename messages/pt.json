@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "O nome do grupo deve ter no máximo 30 caracteres.",
       "nameRequired": "Por favor, informe um nome de grupo."
+    },
+    "contactForm": {
+      "nameTooLong": "Só o teu primeiro nome chega, a sério.",
+      "nameRequired": "Diz-me o teu nome, por favor.",
+      "invalidEmail": "Esse e-mail não é válido.",
+      "messageRequired": "Escreve uma mensagem, por favor. Achei que isso era óbvio...",
+      "messageTooLong": "Uau! Tenta ser um pouco mais breve."
     }
   },
   "home": {
@@ -550,11 +557,20 @@
   },
   "contact": {
     "subheading": "Feedback? Ideias? Dúvidas? Manda uma mensagem.",
-    "intro": "Se tiver ideias para novas funções, notar a falta de dados ou apenas querer dar um feedback, é só me chamar! Fico feliz com cada mensagem que ajuda a tornar o site ainda mais útil para a comunidade."
+    "intro": "Se tiver ideias para novas funções, notar que faltam dados ou apenas quiser dar um feedback, é só me chamar! Fico feliz com cada mensagem que ajuda a tornar o site ainda mais útil para a comunidade.",
+    "form": {
+      "title": "Dá um oi!",
+      "fields": {
+        "name": "Seu nome",
+        "email": "E-mail",
+        "message": "Mensagem"
+      },
+      "success": "Mensagem enviada!"
+    }
   },
   "legal": {
     "title": "Informações legais",
-    "link": "Avisos"
+    "link": "Info legal"
   },
   "privacy": {
     "title": "Aviso de Privacidade",
@@ -639,7 +655,7 @@
   },
   "metadata": {
     "root": {
-      "description": "Ferramentas de fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
+      "description": "Ferramentas feitas por fãs para {gameName}. Planeje fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
     },
     "database": {
       "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."

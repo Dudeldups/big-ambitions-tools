@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "El nombre del grupo no puede tener más de 30 caracteres.",
       "nameRequired": "Por favor, indica un nombre del grupo."
+    },
+    "contactForm": {
+      "nameTooLong": "Con tu nombre basta, de verdad.",
+      "nameRequired": "Dime tu nombre, porfa.",
+      "invalidEmail": "Ese email no es válido.",
+      "messageRequired": "Pon un mensaje. Pensaba que eso estaba claro...",
+      "messageTooLong": "¡Guau! Intenta que sea un poco más corto."
     }
   },
   "home": {
@@ -459,7 +466,7 @@
     "factories": {
       "title": "Tus fábricas",
       "desc": "Aquí tienes un resumen de tus fábricas. Puedes editarlas o eliminarlas y también copiar los valores actuales para una nueva fábrica. Para ver más detalles sobre cada fábrica, incluida una lista de compras, simplemente haz clic en su tarjeta correspondiente.",
-      "desc1": "También puedes agruparlas pulsando el botón 'Crear grupo' de abajo. Así las verás todas juntas y podrás gestionarlas como un grupo. Te viene genial si usas un almacén central para abastecer varias fábricas. Según la cantidad de estanterías para palés que añadas, te sugerirá un plan de entregas para cada fábrica.",
+      "desc1": "También puedes agruparlas pulsando el botón 'Crear grupo' de abajo. Así las verás todas juntas y podrás gestionarlas como un grupo. Te viene genial si usas un almacén central para abastecer varias fábricas con ingredientes. Según la cantidad de estanterías para palés que añadas, te sugerirá un plan de entregas para cada fábrica.",
       "noFactories": "Aún no hay fábricas en tu partida. Crea una para empezar.",
       "notFound": {
         "title": "Fábrica no encontrada",
@@ -497,7 +504,7 @@
     "factoryGroups": {
       "buttonDesc": "Crear grupo",
       "title": "Grupos de fábricas",
-      "desc": "Puedes agrupar fábricas para tener una mejor visión por categoría de producto. Si las fábricas del grupo no tienen suficientes estanterías para palés asignadas, la lista de la compra te dirá qué pedir para cada fábrica y también al almacén para completar el resto. El diálogo de entregas también te mostrará qué enviar a cada fábrica.",
+      "desc": "Puedes agrupar fábricas para ver mejor cada categoría de producto. Si las fábricas del grupo no tienen suficientes estanterías para palés, la lista de pedidos te dirá qué pedir para cada fábrica y también para el almacén para completar el resto. El diálogo de entregas también te mostrará qué enviar a cada fábrica.",
       "groupEmpty": "No hay fábricas en este grupo. Arrastra una tarjeta de fábrica aquí para añadirla.",
       "ungroupedTitle": "Fábricas sin agrupar",
       "ungroupedEmpty": "No hay fábricas sin agrupar. Arrastra una tarjeta de fábrica aquí o añade una nueva.",
@@ -531,7 +538,7 @@
       },
       "employees": {
         "desc": "Introduce el salario de cada empleado. Déjalo vacío si no quieres incluir cálculos salariales.",
-        "optimalWorkers": "Usar número óptimo de trabajadores de fábrica",
+        "optimalWorkers": "Usar cantidad óptima de trabajadores",
         "optimalTooltip": "Calcula automáticamente el número óptimo de trabajadores basado en las estaciones de trabajo y los horarios de apertura. Añadirá un pequeño margen para un autoscheduling suave en el juego."
       },
       "vehicles": {
@@ -550,11 +557,20 @@
   },
   "contact": {
     "subheading": "¿Feedback? ¿Ideas? ¿Preguntas? Escríbeme.",
-    "intro": "Si tienes ideas para nuevas funciones, notas que falta algún dato o simplemente quieres darme feedback, ¡no dudes en escribirme! Agradezco cada mensaje que me ayude a hacer esta web aún más útil para la comunidad."
+    "intro": "Si tienes ideas para nuevas funciones, notas que falta algún dato o simplemente quieres darme feedback, ¡no dudes en escribirme! Agradezco cada mensaje que me ayude a hacer esta web aún más útil para la comunidad.",
+    "form": {
+      "title": "¡Dinos hola!",
+      "fields": {
+        "name": "Tu nombre",
+        "email": "Email",
+        "message": "Mensaje"
+      },
+      "success": "¡Mensaje enviado!"
+    }
   },
   "legal": {
     "title": "Info legal",
-    "link": "Info legal"
+    "link": "Legal"
   },
   "privacy": {
     "title": "Aviso de privacidad",

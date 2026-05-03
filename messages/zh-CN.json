@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "组名最多 30 个字符。",
       "nameRequired": "记得填个组名。"
+    },
+    "contactForm": {
+      "nameTooLong": "只留个名字就行，真的。",
+      "nameRequired": "请告诉我你的名字。",
+      "invalidEmail": "这不是有效的邮箱地址。",
+      "messageRequired": "请输入消息。我还以为这很明显呢...",
+      "messageTooLong": "哇！尽量写得短一点吧。"
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "有反馈、想法或疑问？随时找我。",
-    "intro": "如果你对新功能有想法、发现数据缺失，或者只是想提点建议，尽管找我！每一条能帮我把网站做得更好的留言，我都非常开心。"
+    "intro": "如果你对新功能有想法、发现数据缺失，或者只是想提点建议，尽管找我！每一条能帮我把网站做得更好的留言，我都非常开心。",
+    "form": {
+      "title": "来打个招呼吧！",
+      "fields": {
+        "name": "你的名字",
+        "email": "邮箱",
+        "message": "留言"
+      },
+      "success": "消息已发送！"
+    }
   },
   "legal": {
     "title": "法律信息",

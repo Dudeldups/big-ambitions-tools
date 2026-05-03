@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Group name must be at most 30 characters.",
       "nameRequired": "Group name is required."
+    },
+    "contactForm": {
+      "nameTooLong": "Just your first name is fine, really.",
+      "nameRequired": "Please let me know your name.",
+      "invalidEmail": "That's not a valid email address.",
+      "messageRequired": "Please enter a message. I thought that part was obvious...",
+      "messageTooLong": "Wow! Maybe try to keep it a bit shorter."
     }
   },
   "home": {

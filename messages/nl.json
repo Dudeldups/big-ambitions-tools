@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "De groepsnaam mag maximaal 30 tekens lang zijn.",
       "nameRequired": "Geef een groepsnaam op."
+    },
+    "contactForm": {
+      "nameTooLong": "Je voornaam is eigenlijk al genoeg.",
+      "nameRequired": "Laat me even weten hoe je heet.",
+      "invalidEmail": "Dat is geen geldig e-mailadres.",
+      "messageRequired": "Typ even een berichtje. Ik dacht dat dat wel duidelijk was...",
+      "messageTooLong": "Wow! Probeer het misschien wat korter te houden."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Feedback? Ideeën? Vragen? Stuur gerust een berichtje.",
-    "intro": "Heb je ideeën voor nieuwe functies, mis je data of wil je gewoon wat feedback geven? Laat het me weten! Ik waardeer elk bericht dat me helpt om deze site nóg nuttiger te maken voor de community."
+    "intro": "Heb je ideeën voor nieuwe functies, mis je data of wil je gewoon wat feedback geven? Laat het me weten! Ik waardeer elk bericht dat me helpt om deze site nóg nuttiger te maken voor de community.",
+    "form": {
+      "title": "Zeg gewoon hallo!",
+      "fields": {
+        "name": "Je naam",
+        "email": "E-mail",
+        "message": "Bericht"
+      },
+      "success": "Bericht is verzonden!"
+    }
   },
   "legal": {
     "title": "Juridische info",

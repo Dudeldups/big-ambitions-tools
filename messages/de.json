@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Der Gruppenname darf maximal 30 Zeichen lang sein.",
       "nameRequired": "Bitte gib einen Gruppennamen an."
+    },
+    "contactForm": {
+      "nameTooLong": "Dein Vorname reicht eigentlich.",
+      "nameRequired": "Gib bitte deinen Namen an.",
+      "invalidEmail": "Das ist keine gültige Mailadresse.",
+      "messageRequired": "Gib bitte eine Nachricht ein. Ich dachte eigentlich, das wäre klar...",
+      "messageTooLong": "Wow! Halte dich vielleicht ein bisschen kürzer."
     }
   },
   "home": {

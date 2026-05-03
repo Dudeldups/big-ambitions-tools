@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "群組名稱最多只能有 30 個字。",
       "nameRequired": "請輸入群組名稱"
+    },
+    "contactForm": {
+      "nameTooLong": "只要名字就好啦。",
+      "nameRequired": "請告訴我你的名字喔。",
+      "invalidEmail": "這不是有效的 Email 地址。",
+      "messageRequired": "請輸入訊息。我還以為這很明顯呢...",
+      "messageTooLong": "哇！可以試著寫短一點嗎？"
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "意見、點子、提問？隨時找我聊聊！",
-    "intro": "如果你對新功能有什麼好點子、發現資料不全，或是單純想給點建議，隨時跟我說喔！每一則訊息都能幫我把網站做得更好，讓社群大家用得更順手，真的很感謝！"
+    "intro": "如果你對新功能有什麼好點子、發現資料不全，或是單純想給點建議，隨時跟我說喔！每一則訊息都能幫我把網站做得更好，讓社群大家用得更順手，真的很感謝！",
+    "form": {
+      "title": "來打個招呼吧！",
+      "fields": {
+        "name": "你的姓名",
+        "email": "電子郵件",
+        "message": "訊息"
+      },
+      "success": "訊息已成功送出！"
+    }
   },
   "legal": {
     "title": "法律資訊",

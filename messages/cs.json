@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Název skupiny může mít maximálně 30 znaků.",
       "nameRequired": "Zadej prosím název skupiny"
+    },
+    "contactForm": {
+      "nameTooLong": "Stačí jen tvoje křestní jméno.",
+      "nameRequired": "Napiš mi prosím své jméno.",
+      "invalidEmail": "To není platná e-mailová adresa.",
+      "messageRequired": "Napiš prosím zprávu. Myslel jsem, že to je jasný...",
+      "messageTooLong": "Wow! Zkus to prosím trochu zkrátit."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Zpětná vazba? Nápady? Otázky? Stačí krátká zpráva.",
-    "intro": "Pokud máš nápady na nové funkce, narazíš na chybějící data nebo chceš jen poslat zpětnou vazbu, klidně se ozvi! Každá zpráva, která mi pomůže udělat tuhle stránku ještě užitečnější pro komunitu, mě těší."
+    "intro": "Pokud máš nápady na nové funkce, narazíš na chybějící data nebo chceš jen poslat zpětnou vazbu, klidně se ozvi! Každá zpráva, která mi pomůže udělat tuhle stránku ještě užitečnější pro komunitu, mě těší.",
+    "form": {
+      "title": "Jen napiš ahoj!",
+      "fields": {
+        "name": "Tvoje jméno",
+        "email": "E-mail",
+        "message": "Zpráva"
+      },
+      "success": "Zpráva byla odeslána!"
+    }
   },
   "legal": {
     "title": "Právní info",

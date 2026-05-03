@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Grup adı en fazla 30 karakter olmalı.",
       "nameRequired": "Lütfen bir grup ismi girin."
+    },
+    "contactForm": {
+      "nameTooLong": "Sadece adın yeterli aslında.",
+      "nameRequired": "Lütfen ismini belirt.",
+      "invalidEmail": "Bu geçerli bir e-posta adresi değil.",
+      "messageRequired": "Lütfen bir mesaj yaz. Bunun çok açık olduğunu sanıyordum...",
+      "messageTooLong": "Vay! Belki biraz daha kısa tutabilirsin."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Geri bildirim? Fikirler? Sorular? Bir mesaj atman yeter.",
-    "intro": "Yeni özellik fikirlerin varsa, eksik bir şeyler fark ettiysen ya da sadece geri bildirim vermek istersen çekinmeden yaz! Bu siteyi topluluk için daha kullanışlı hale getirmeme yardımcı olan her mesaj beni çok mutlu eder."
+    "intro": "Yeni özellik fikirlerin varsa, eksik bir şeyler fark ettiysen ya da sadece geri bildirim vermek istersen çekinmeden yaz! Bu siteyi topluluk için daha kullanışlı hale getirmeme yardımcı olan her mesaj beni çok mutlu eder.",
+    "form": {
+      "title": "Bir selam ver!",
+      "fields": {
+        "name": "Adın",
+        "email": "E-posta",
+        "message": "Mesaj"
+      },
+      "success": "Mesaj gönderildi!"
+    }
   },
   "legal": {
     "title": "Yasal Bilgiler",

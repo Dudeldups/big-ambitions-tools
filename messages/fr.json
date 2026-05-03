@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Le nom du groupe doit contenir au maximum 30 caractères.",
       "nameRequired": "Indique un nom de groupe."
+    },
+    "contactForm": {
+      "nameTooLong": "Ton prénom suffit, vraiment.",
+      "nameRequired": "Donne-moi ton nom, s'il te plaît.",
+      "invalidEmail": "C'est pas une adresse email valide.",
+      "messageRequired": "Écris un message, s'il te plaît. Je croyais que c'était évident...",
+      "messageTooLong": "Wow ! Essaie d'être un peu plus court."
     }
   },
   "home": {
@@ -552,7 +559,7 @@
     "subheading": "Feedback ? Idées ? Questions ? Un petit message suffit.",
     "intro": "Si tu as des idées de nouvelles fonctionnalités, que tu remarques des données manquantes ou que tu veux simplement me faire un retour, n'hésite pas à m'écrire ! Chaque message m'aide à rendre ce site encore plus utile pour la communauté.",
     "form": {
-      "title": "Dis juste bonjour !",
+      "title": "Fais-nous un petit coucou !",
       "fields": {
         "name": "Ton nom",
         "email": "E-mail",

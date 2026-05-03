@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Grupės pavadinimas negali būti ilgesnis nei 30 simbolių.",
       "nameRequired": "Nurodyk grupės pavadinimą."
+    },
+    "contactForm": {
+      "nameTooLong": "Tavo vardo užtenka, tikrai.",
+      "nameRequired": "Parašyk savo vardą.",
+      "invalidEmail": "Neteisingas el. pašto adresas.",
+      "messageRequired": "Įrašyk žinutę. Maniau, kad viskas ir taip aišku...",
+      "messageTooLong": "Wow! Pabandyk rašyti kiek trumpiau."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Atsiliepimai? Idėjos? Klausimai? Tiesiog parašyk.",
-    "intro": "Jei turi idėjų naujoms funkcijoms, pastebi trūkumus duomenyse ar tiesiog nori pasidalinti nuomonėm – be vargo kreipkis! Vertinu kiekvieną žinutę, nes ji padeda man šią svetainę padaryti dar naudingesnę bendruomenei."
+    "intro": "Jei turi idėjų naujoms funkcijoms, pastebi trūkumus duomenyse ar tiesiog nori pasidalinti nuomonėm – be vargo kreipkis! Vertinu kiekvieną žinutę, nes ji padeda man šią svetainę padaryti dar naudingesnę bendruomenei.",
+    "form": {
+      "title": "Tiesiog pasisveikink!",
+      "fields": {
+        "name": "Tavo vardas",
+        "email": "El. paštas",
+        "message": "Žinutė"
+      },
+      "success": "Žinutė išsiųsta!"
+    }
   },
   "legal": {
     "title": "Teisinė info",

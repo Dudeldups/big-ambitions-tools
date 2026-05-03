@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Numele grupului trebuie să aibă maxim 30 caractere.",
       "nameRequired": "Trebuie să introduci un nume de grup."
+    },
+    "contactForm": {
+      "nameTooLong": "E de ajuns doar prenumele, serios.",
+      "nameRequired": "Te rog să-mi spui numele.",
+      "invalidEmail": "Nu e o adresă de email validă.",
+      "messageRequired": "Te rog să introduci un mesaj. Credeam că e clar...",
+      "messageTooLong": "Wow! Încearcă să o ții puțin mai scurtă."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Feedback? Idei? Întrebări? Lasă-mi un mesaj.",
-    "intro": "Dacă ai idei pentru funcții noi, observi că lipsesc date sau pur și simplu vrei să-mi dai un feedback, nu ezita să mă contactezi! Mă bucur de fiecare mesaj care mă ajută să fac site-ul și mai util pentru comunitate."
+    "intro": "Dacă ai idei pentru funcții noi, observi că lipsesc date sau pur și simplu vrei să-mi dai un feedback, nu ezita să mă contactezi! Mă bucur de fiecare mesaj care mă ajută să fac site-ul și mai util pentru comunitate.",
+    "form": {
+      "title": "Spune doar Salut!",
+      "fields": {
+        "name": "Numele tău",
+        "email": "E-mail",
+        "message": "Mesaj"
+      },
+      "success": "Mesajul a fost trimis!"
+    }
   },
   "legal": {
     "title": "Info legale",

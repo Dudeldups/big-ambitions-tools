@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Nazwa grupy może mieć max. 30 znaków.",
       "nameRequired": "Podaj nazwę grupy."
+    },
+    "contactForm": {
+      "nameTooLong": "Wystarczy samo imię, naprawdę.",
+      "nameRequired": "Podaj proszę swoje imię.",
+      "invalidEmail": "To nie jest poprawny adres e-mail.",
+      "messageRequired": "Wpisz proszę wiadomość. Myślałem, że to oczywiste...",
+      "messageTooLong": "Wow! Spróbuj napisać nieco krócej."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Feedback? Pomysły? Pytania? Wystarczy krótka wiadomość.",
-    "intro": "Masz pomysł na nową funkcję, zauważasz brak danych albo po prostu chcesz zostawić feedback? Śmiało pisz! Doceniam każdą wiadomość, która pomaga mi ulepszać tę stronę dla całej społeczności."
+    "intro": "Masz pomysł na nową funkcję, zauważasz brak danych albo po prostu chcesz zostawić feedback? Śmiało pisz! Doceniam każdą wiadomość, która pomaga mi ulepszać tę stronę dla całej społeczności.",
+    "form": {
+      "title": "Po prostu napisz 'cześć'!",
+      "fields": {
+        "name": "Twoje imię",
+        "email": "E-mail",
+        "message": "Wiadomość"
+      },
+      "success": "Wiadomość wysłana!"
+    }
   },
   "legal": {
     "title": "Info prawne",

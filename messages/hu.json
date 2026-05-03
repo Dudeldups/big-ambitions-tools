@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "A csoportneve legfeljebb 30 karakter hosszú lehet.",
       "nameRequired": "Kérlek, adj meg egy csoportnevet."
+    },
+    "contactForm": {
+      "nameTooLong": "Csak a keresztneved elég, tényleg.",
+      "nameRequired": "Kérlek, add meg a nevedet.",
+      "invalidEmail": "Ez nem egy érvényes e-mail cím.",
+      "messageRequired": "Kérlek, írj egy üzenetet. Gondoltam, ez egyértelmű volt...",
+      "messageTooLong": "Wow! Próbáld meg kicsit rövidebbre tartani."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Feedback? Ötletek? Kérdések? Egy rövid üzenet elég!",
-    "intro": "Ha van ötleted új funkciókra, hiányzó adatokat észleltél, vagy csak visszajelzést szeretnél adni, írj bátran! Minden üzenet számít, ami segít abban, hogy az oldal még hasznosabb legyen a közösségnek."
+    "intro": "Ha van ötleted új funkciókra, hiányzó adatokat észleltél, vagy csak visszajelzést szeretnél adni, írj bátran! Minden üzenet számít, ami segít abban, hogy az oldal még hasznosabb legyen a közösségnek.",
+    "form": {
+      "title": "Csak szólj egy hello-t!",
+      "fields": {
+        "name": "Neved",
+        "email": "E-mail",
+        "message": "Üzenet"
+      },
+      "success": "Üzenet elküldve!"
+    }
   },
   "legal": {
     "title": "Jogi infók",

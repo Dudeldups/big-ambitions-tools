@@ -383,6 +383,13 @@
     "factoryGroup": {
       "nameTooLong": "Gruppenavnet må højst være 30 tegn langt.",
       "nameRequired": "Indtast et gruppenavn."
+    },
+    "contactForm": {
+      "nameTooLong": "Dit fornavn er egentlig nok.",
+      "nameRequired": "Skriv venligst dit navn.",
+      "invalidEmail": "Det er ikke en gyldig mailadresse.",
+      "messageRequired": "Skriv venligst en besked. Jeg troede egentlig, det var ret indlysende...",
+      "messageTooLong": "Wow! Prøv måske at holde den lidt kortere."
     }
   },
   "home": {
@@ -550,7 +557,16 @@
   },
   "contact": {
     "subheading": "Feedback? Idéer? Spørgsmål? Skriv bare en hurtig besked.",
-    "intro": "Har du idéer til nye funktioner, opdager manglende data eller vil bare give lidt feedback? Så ræk endelig ud! Jeg sætter pris på alle beskeder, der hjælper mig med at gøre siden endnu bedre for communityet."
+    "intro": "Har du idéer til nye funktioner, opdager manglende data eller vil bare give lidt feedback? Så ræk endelig ud! Jeg sætter pris på alle beskeder, der hjælper mig med at gøre siden endnu bedre for communityet.",
+    "form": {
+      "title": "Sig bare hej!",
+      "fields": {
+        "name": "Dit navn",
+        "email": "E-mail",
+        "message": "Besked"
+      },
+      "success": "Beskeden er sendt!"
+    }
   },
   "legal": {
     "title": "Juridisk info",
