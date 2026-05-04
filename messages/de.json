@@ -538,7 +538,7 @@
       },
       "employees": {
         "desc": "Trage den Lohn pro Mitarbeiter ein. Leer lassen, wenn du keine Lohnberechnung möchtest.",
-        "optimalWorkers": "Optimale Anzahl an Farbikarbeitern verwenden",
+        "optimalWorkers": "Optimale Anzahl an Fabrikarbeitern verwenden",
         "optimalTooltip": "Berechnet automatisch die optimale Anzahl an Arbeitern basierend auf Arbeitsstationen und Öffnungszeiten. Fügt einen kleinen Puffer für reibungsloses Autoscheduling im Spiel hinzu."
       },
       "vehicles": {
