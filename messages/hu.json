@@ -347,7 +347,7 @@
   "modals": {
     "discardChanges": "Nem mentett változtatások elvetése",
     "discardDesc": "A változtatások nincsenek mentve. Biztos, hogy el akarod dobni őket?",
-    "resetForm": "Adatok visszaállítása",
+    "resetForm": "Form visszaállítása",
     "resetDesc": "Biztos vagy, hogy az űrlap értékeit az alapbeállításokra vissza akarod állítani?",
     "wsPresetBtn": "Előbeállítás hozzáadása",
     "wsPresetTitle": "Előbeállítás kiválasztása",

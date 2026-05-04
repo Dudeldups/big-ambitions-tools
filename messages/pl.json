@@ -386,7 +386,7 @@
     },
     "contactForm": {
       "nameTooLong": "Wystarczy samo imię, naprawdę.",
-      "nameRequired": "Podaj proszę swoje imię",
+      "nameRequired": "Podaj swoje imię i nazwisko",
       "invalidEmail": "To nie jest poprawny adres e-mail.",
       "messageRequired": "Wpisz wiadomość. Myślałem, że to oczywiste...",
       "messageTooLong": "Wow! Spróbuj napisać nieco krócej."

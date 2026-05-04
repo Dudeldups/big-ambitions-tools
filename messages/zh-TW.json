@@ -345,7 +345,7 @@
     "groupDeleteSuccess": "群組 \"{groupName}\" 已刪除！"
   },
   "modals": {
-    "discardChanges": "不儲存變更",
+    "discardChanges": "捨棄變更",
     "discardDesc": "還有沒存檔的變更喔，確定要捨棄嗎？",
     "resetForm": "重置表單設定",
     "resetDesc": "確定要將表單設定還原為預設設定嗎？",
@@ -625,7 +625,7 @@
           "desc": "儲存你選好的語言"
         },
         "duration": {
-          "title": "有效期限",
+          "title": "保存時間",
           "desc": "最長 30 天，或是直到你手動刪除為止"
         }
       },

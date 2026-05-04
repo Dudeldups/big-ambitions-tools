@@ -387,7 +387,7 @@
     "contactForm": {
       "nameTooLong": "Достатньо лише імені.",
       "nameRequired": "Напиши, будь ласка, своє ім'я.",
-      "invalidEmail": "Неправильний email",
+      "invalidEmail": "Некоректна адреса email",
       "messageRequired": "Напиши повідомлення. Я думав, це й так очевидно...",
       "messageTooLong": "Ого! Спробуй писати трохи коротше."
     }

@@ -313,7 +313,7 @@
     "taxDeductible": "可抵扣",
     "requiredDeliveryDriverSkillValue": "司机技能",
     "destinationsThatCanDeliver": "基础目的地",
-    "destinationsFull": "目的地上限",
+    "destinationsFull": "最多目的地",
     "employees": "员工",
     "description": "描述",
     "export": "出口",
@@ -569,7 +569,7 @@
     }
   },
   "legal": {
-    "title": "法律信息",
+    "title": "法律说明",
     "link": "声明"
   },
   "privacy": {

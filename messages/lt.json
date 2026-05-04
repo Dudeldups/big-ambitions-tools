@@ -312,7 +312,7 @@
     "autoParkSupported": "Autoparkavimas",
     "taxDeductible": "Atskaitoma",
     "requiredDeliveryDriverSkillValue": "Reik. vairuotojo įgūdžiai",
-    "destinationsThatCanDeliver": "Pagr. taškai",
+    "destinationsThatCanDeliver": "Pagr. kryptys",
     "destinationsFull": "Maks. taškai",
     "employees": "Darbuotojai",
     "description": "Aprašymas",
@@ -399,7 +399,7 @@
     },
     "cta": {
       "title": "Pradėkime!",
-      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>O, matematika!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
+      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Matematika yra jėga!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
       "desc2": "Nuo savo pirmosios gamyklos planavimo iki visos imperijos gamybos rodiklių valdymo – viską rasai <link>{toolsSection}</link> skiltyje.",
       "errorDesc": "Radai klaidą ar trūkumą? Ar turi pasiūlymų, kaip pagerinti svetainę? Tiesiog <contact>susisiek</contact> su mumis!"
     },
@@ -408,7 +408,7 @@
       "subtitle": "Kaip gaila!",
       "desc": "{gameName} yra revoliucinė verslo simuliacija su vaidmenų elementais. Pradėk nuo nieko ir tapk didžiausiu New Yorko verslininku, kurdamas mažas įmones ar milžiniškas korporacijas – kaip tik nori!",
       "hovgaard": "Aplankyk oficialią svetainę <website>{companyName}</website>",
-      "steam": "Apsilankyk tiesiogiai <link>{steam}</link>"
+      "steam": "Žais tiesiogiai <link>{steam}</link>"
     },
     "updates": {
       "title": "Naujausi atnaujinimai"
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Startas: Duomenų bazė ir gamyklų planuotojas"
+    "launch": "Startas: Duomenų bazė ir gamyklos planuotojas"
   },
   "database": {
     "intro": {
@@ -440,7 +440,7 @@
       "caption": "Visų... saugyklos parinkčių apžvalga. Kol kad tik tiek. Dar bus daugiau!"
     },
     "vehicles": {
-      "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai priklauso nuo tavo {deliveryDriver}, o maksimaliam tikslų skaičiui reikia {logisticsManager} su 100 % įgūdžiu."
+      "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai – tai tavo {deliveryDriver}, o maksimaliam tikslų skaičiui reikia 100 % {logisticsManager} įgūdžių."
     }
   },
   "tools": {
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Teisinė informacija",
-    "link": "Teisinė informacija"
+    "link": "Teisės"
   },
   "privacy": {
     "title": "Privatumo informacija",
@@ -630,7 +630,7 @@
         }
       },
       "summary": "Šis slapukas yra būtinas svetainės veikimui, todėl sutikimo nereikia.",
-      "legalBasis": "Teisinė pagrinda: Art. 6 (1) f punktas BDAR"
+      "legalBasis": "Teisinė pagrinda: Art. 6 (1) f dalis BDAR"
     },
     "userRights": {
       "title": "Tavo teisės",
@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Visi žaidimo vaizdai, prekės ženklai ir elementai priklauso jų savininkams.",
+    "assets": "Visi žaidimo vaizdiniai, prekės ženklai ir assets priklauso savo savininkams.",
     "fanMade": " Tai fanų svetainė ir nėra susijusi su žaidimo kūrėjais. Kodą rasi <link>GitHub</link>."
   },
   "metadata": {
