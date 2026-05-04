@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Paleikite: Duomenų bazė ir gamyklos planuotojas"
+    "launch": "Startas: Duomenų bazė ir gamyklų planuotojas"
   },
   "database": {
     "intro": {
@@ -428,7 +428,7 @@
       "buttonDesc": "Pasirink kategorią"
     },
     "products": {
-      "caption": "Visi produktai – viename žvilgsnyje. Galite lengvai perjungti gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelnas rodomas kaip neto vertė – įskaitant ingredientus, darbuotojų atlyginimus ir mokesčius, priklausomai nuo pasirinkto sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
+      "caption": "Visi produktai – vienu žvilgsniu. Lengvai perjunk gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelnai rodomi neto vertėmis – įskaitant ingredientus, darbuotojų atlyginimus ir mokesčius, priklausomai nuo sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
     },
     "ingredients": {
       "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
@@ -440,7 +440,7 @@
       "caption": "Visų... saugyklos parinkčių apžvalga. Kol kad tik tiek. Dar bus daugiau!"
     },
     "vehicles": {
-      "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai priklauso tavo {deliveryDriver}, o maksimaliam punktų skaičiui reikia 100 % įgūdžių iš {logisticsManager}."
+      "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai priklauso nuo tavo {deliveryDriver}, o maksimaliam tikslų skaičiui reikia {logisticsManager} su 100 % įgūdžiu."
     }
   },
   "tools": {
@@ -455,7 +455,7 @@
       "notFound": {
         "title": "Žaidimo būsena nerasta",
         "desc": "Ši žaidimo būsena neegzistuoja arba buvo ištrinta.",
-        "link": "Atgal į žaidimo būsenų apžvalgą"
+        "link": "Grįžti prie žaidimo būsenų"
       }
     },
     "playthroughDetail": {
@@ -539,7 +539,7 @@
       "employees": {
         "desc": "Įvesk atlyginimą kiekvienam darbuotojui. Palik tuščią, jei nenori apskaičiuoti atlyginimo.",
         "optimalWorkers": "Naudoti optimalų Gamyklos darbuotojų kiekį",
-        "optimalTooltip": "Automatiškai apskaičiuos optimalų darbuotojų kiekį pagal darbo vietas ir darbo valandas. Pridėsime nedidelę atsargą, kad auto-planavimas žaidime vyktų sklandžiai."
+        "optimalTooltip": "Automatiškai apskaičiuos optimalų darbuotojų kiekį pagal darbo vietas ir darbo valandas. Pridės nedidelę atsargą sklandiam auto-planavimui žaidime."
       },
       "vehicles": {
         "addBtn": "Pridėti transportą"
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Teisinė informacija",
-    "link": "Teisinė info"
+    "link": "Teisinė informacija"
   },
   "privacy": {
     "title": "Privatumo informacija",
@@ -630,7 +630,7 @@
         }
       },
       "summary": "Šis slapukas yra būtinas svetainės veikimui, todėl sutikimo nereikia.",
-      "legalBasis": "Teisinė pagrinda: 6(1)f BDAR"
+      "legalBasis": "Teisinė pagrinda: Art. 6 (1) f punktas BDAR"
     },
     "userRights": {
       "title": "Tavo teisės",

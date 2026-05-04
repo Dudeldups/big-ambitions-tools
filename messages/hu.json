@@ -347,7 +347,7 @@
   "modals": {
     "discardChanges": "Nem mentett változtatások elvetése",
     "discardDesc": "A változtatások nincsenek mentve. Biztos, hogy el akarod dobni őket?",
-    "resetForm": "Törlés",
+    "resetForm": "Adatok visszaállítása",
     "resetDesc": "Biztos vagy, hogy az űrlap értékeit az alapbeállításokra vissza akarod állítani?",
     "wsPresetBtn": "Előbeállítás hozzáadása",
     "wsPresetTitle": "Előbeállítás kiválasztása",
@@ -389,7 +389,7 @@
       "nameRequired": "Kérlek, add meg a nevedet.",
       "invalidEmail": "Nem érvényes e-mail cím.",
       "messageRequired": "Kérlek, írj egy üzenetet. Gondoltam, ez egyértelmű volt...",
-      "messageTooLong": "Wow! Próbálj meg kicsit rövidebben írni!"
+      "messageTooLong": "Wow! Próbálj kicsit rövidebben írni!"
     }
   },
   "home": {

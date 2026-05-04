@@ -434,7 +434,7 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Her er alle maskinerne, du kan bruge til produktionen. Kombiner en hovedmaskine med én eller to side-maskiner for at lave en arbejdsstation til tøj."
+      "caption": "Her er alle maskinerne til produktionen. Kombiner en hovedmaskine med én eller to hjælpemaskiner for at lave en arbejdsstation til tøj."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
@@ -614,7 +614,7 @@
         ]
       },
       "summary": "Sker helt anonymt.",
-      "legalBasis": "Retsgrundlag: Art. 6, stk. 1, litra f GDPR (berettiget interesse i at analysere brugen af hjemmesiden)"
+      "legalBasis": "Retsgrundlag: Art. 6 (1) lit. f GDPR (legitim interesse i at analysere hjemmesidens brug)"
     },
     "cookies": {
       "title": "Cookies",

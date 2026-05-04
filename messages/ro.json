@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Lansare: Bază de date și Planificator de fabrică"
+    "launch": "Lansare: Baza de date și Planificator de fabrică"
   },
   "database": {
     "intro": {
@@ -437,7 +437,7 @@
       "caption": "Toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două mașini secundare pentru a crea un post de lucru."
     },
     "inventory": {
-      "caption": "O privire scurtă peste... opțiunile de stocare. Doar pentru moment. Mai urmează multe!"
+      "caption": "O scurtă privire peste... opțiunile tale de stocare. Doar deocamdată. Mai urmează!"
     },
     "vehicles": {
       "caption": "Cauți încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru un număr maxim de destinații ai nevoie de un {logisticsManager} cu 100% skill."
@@ -504,10 +504,10 @@
     "factoryGroups": {
       "buttonDesc": "Creează grup",
       "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe categorie de produse. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce să comanzi pentru fiecare fabrică și pentru depozit, ca să acoperi restul necesarului. Dialogul de livrări îți arată și ce trebuie trimis fiecărei fabrici.",
+      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună, pe grupuri de categorii de produse. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce să comanzi pentru fiecare fabrică și pentru depozit, ca să completezi restul stocului. Dialogul de livrări îți arată și ce trebuie trimis fiecărei fabrici.",
       "groupEmpty": "Nicio fabrică în acest grup. Trage un card de fabrică aici ca să îl adaugi.",
       "ungroupedTitle": "Fabrici ne-grupate",
-      "ungroupedEmpty": "Nu e nimic aici încă. Trage un card aici sau adaugă o fabrică nouă.",
+      "ungroupedEmpty": "Nu e nimic pe aici. Trage un card aici sau creează o fabrică nouă.",
       "deliveries": {
         "buttonDesc": "Livrări",
         "title": "Plan de livrare",

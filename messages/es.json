@@ -385,7 +385,7 @@
       "nameRequired": "Por favor, indica un nombre del grupo."
     },
     "contactForm": {
-      "nameTooLong": "Solo con tu nombre basta, de verdad.",
+      "nameTooLong": "Con tu nombre basta, en serio.",
       "nameRequired": "Dime tu nombre, porfa.",
       "invalidEmail": "Ese email no es válido.",
       "messageRequired": "Pon un mensaje. Pensaba que eso estaba claro...",
@@ -570,7 +570,7 @@
   },
   "legal": {
     "title": "Info legal",
-    "link": "Legales"
+    "link": "Legal"
   },
   "privacy": {
     "title": "Aviso de privacidad",

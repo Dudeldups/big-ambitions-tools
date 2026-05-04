@@ -386,7 +386,7 @@
     },
     "contactForm": {
       "nameTooLong": "Wystarczy samo imię, naprawdę.",
-      "nameRequired": "Daj znać, jak się nazywasz.",
+      "nameRequired": "Podaj proszę swoje imię",
       "invalidEmail": "To nie jest poprawny adres e-mail.",
       "messageRequired": "Wpisz wiadomość. Myślałem, że to oczywiste...",
       "messageTooLong": "Wow! Spróbuj napisać nieco krócej."
@@ -420,7 +420,7 @@
     }
   },
   "updateHistory": {
-    "launch": "Ruszamy: Baza danych i Planer fabryki"
+    "launch": "Ruszamy: Baza danych i planer fabryczny"
   },
   "database": {
     "intro": {
@@ -581,7 +581,7 @@
       "responsiblePerson": "Administrator danych w rozumieniu RODO:"
     },
     "serverLogs": {
-      "title": "Dane dostępu (logi serwera)",
+      "title": "Dane o dostępie (logi serwera)",
       "intro": "Odwiedzając tę stronę, serwer automatycznie zbiera następujące informacje:",
       "items": [
         "Adres IP (skrócony lub zanonimizowany)",
