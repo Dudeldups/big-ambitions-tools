@@ -291,7 +291,7 @@
     "retailPrice": "Myyntihinta",
     "manufacturePrice": "Valm.-hinta",
     "storageCapacity": "Varastokapasiteetti",
-    "workstation": "Vaatetyöpiste",
+    "workstation": "Työpiste",
     "neededMachines": "Koneet",
     "usedForProducts": "Tuotteille",
     "importPrice": "Tuontihinta",
