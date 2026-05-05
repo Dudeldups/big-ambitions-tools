@@ -434,7 +434,7 @@
       "caption": "Vista general de todos los ingredientes crudos, incluidas sus propiedades. Selecciona la dificultad para ver los precios correctos."
     },
     "machines": {
-      "caption": "Todas las máquinas que usas en la producción. Combina una máquina principal con una o dos secundarias para crear una estación de trabajo."
+      "caption": "Aquí tienes todas las máquinas de producción. Combina una principal con una o dos secundarias para armar tu estación de trabajo."
     },
     "inventory": {
       "caption": "Remove 'pequeña' and 'tus' to align with the English source ('An overview of all...'), unless stylistic additions are approved."
@@ -529,7 +529,7 @@
         "palletDesc": "Define cuántas estanterías para palés hay disponibles en esta fábrica.",
         "dailyAmount": "Para la entrega diaria necesitas <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para la entrega semanal necesitas <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Añade al menos una estación de trabajo para ver el número necesario de estanterías de palets.",
+        "shelfExplanation": "Añade al menos una estación de trabajo para ver el número necesario de estanterías para palés.",
         "enoughWeekly": "Suficiente para la entrega semanal.",
         "enoughDaily": "Suficiente solo para la entrega diaria. Para la logística semanal necesitas un almacén.",
         "notEnough": "Falta espacio de almacenamiento, incluso para una entrega diaria.",
@@ -545,7 +545,7 @@
         "addBtn": "Añadir vehículo"
       },
       "workstations": {
-        "addBtn": "Añadir estación de trabajo"
+        "addBtn": "Añadir estación"
       },
       "buttonDesc": "Nueva fábrica",
       "genericFactoryName": "{productName} fábrica",

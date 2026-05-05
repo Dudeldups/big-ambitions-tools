@@ -370,12 +370,12 @@
       "nameRequired": "Tvoje postava by měla mít jméno.",
       "nameTooLong": "Jméno postavy může mít maximálně 30 znaků.",
       "difficultyRequired": "Vyber prosím obtížnost.",
-      "workstationProductRequired": "Vyber prosím produkt pro každé pracoviště."
+      "workstationProductRequired": "Vyber prosím produkt pro každou pracovní stanici."
     },
     "factory": {
       "nameTooLong": "Název továrny může mít maximálně 50 znaků.",
       "descriptionTooLong": "Nepíš sem celý román. Maximálně 150 znaků!",
-      "workstationsRequired": "Přidej prosím alespoň jedno pracoviště.",
+      "workstationsRequired": "Přidej prosím alespoň jednu pracovní stanici.",
       "atLeastOneVehicle": "Každá továrna potřebuje alespoň jedno vozidlo.",
       "maxTwoVehicles": "Každá továrna může mít maximálně dvě vozidla.",
       "shelfAmountTooLow": "Aby továrna fungovala, musíš přidat regály."
@@ -434,7 +434,7 @@
       "caption": "Přehled všech surovin včetně jejich vlastností. Vyber obtížnost, aby se zobrazily správné ceny."
     },
     "machines": {
-      "caption": "Všechny stroje používané ve výrobě. Zkombinuj jeden hlavní stroj s jedním nebo dvěma vedlejšími stroji a vytvoř pracoviště."
+      "caption": "Tady jsou všechny stroje pro výrobu. Spoj jeden hlavní stroj s jedním až dvěma pomocnými stroji a vytvoř pracovní stanici."
     },
     "inventory": {
       "caption": "Přehled všech... skladovacích možností. Zatím. Brzy se přidají další!"
@@ -529,7 +529,7 @@
         "palletDesc": "Zadej, kolik paletových regálů je v této továrně k dispozici.",
         "dailyAmount": "Na denní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "weeklyAmount": "Na týdenní dodávku potřebuješ <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Přidej alespoň jedno pracoviště, aby se zobrazil potřebný počet paletových regálů.",
+        "shelfExplanation": "Přidej alespoň jednu pracovní stanici, aby se zobrazil potřebný počet paletových regálů.",
         "enoughWeekly": "Dostatek pro týdenní dodávku.",
         "enoughDaily": "Stačí jen na denní dodávku. Pro týdenní logistiku budeš potřebovat sklad.",
         "notEnough": "Málo místa i pro denní dodávku.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Zadej mzdu pro každého zaměstnance. Nech pole prázdné, pokud nechceš mzdy zahrnout do výpočtů.",
         "optimalWorkers": "Použít optimální počet továrních dělníků",
-        "optimalTooltip": "Automaticky vypočítá optimální počet pracovníků podle pracovišť a otevírací doby. Přidá malou rezervu pro plynulé automatické plánování ve hře."
+        "optimalTooltip": "Automaticky spočítá optimální počet pracovníků podle pracovních stanic a otevírací doby. Přidá malou rezervu pro plynulejší auto-schedule ve hře."
       },
       "vehicles": {
         "addBtn": "Přidat vozidlo"
       },
       "workstations": {
-        "addBtn": "Přidat pracoviště"
+        "addBtn": "Přidat pracovní stanici"
       },
       "buttonDesc": "Nová továrna",
       "genericFactoryName": "Továrna na {productName}",

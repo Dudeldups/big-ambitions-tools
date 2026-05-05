@@ -370,12 +370,12 @@
       "nameRequired": "角色应该有个名字。",
       "nameTooLong": "角色名最多 30 个字符。",
       "difficultyRequired": "请选择难度。",
-      "workstationProductRequired": "请为每个服装工作台选择产品。"
+      "workstationProductRequired": "每个工作站都要选个产品。"
     },
     "factory": {
       "nameTooLong": "工厂名最多 50 个字符。",
       "descriptionTooLong": "别在这儿写小说了。最多 150 个字符！",
-      "workstationsRequired": "请至少添加一个服装工作台。",
+      "workstationsRequired": "记得至少添加一个工作站。",
       "atLeastOneVehicle": "每座工厂至少需要一辆车。",
       "maxTwoVehicles": "每座工厂最多两辆车。",
       "shelfAmountTooLow": "你得加些货架，工厂才能运作。"
@@ -434,7 +434,7 @@
       "caption": "所有原料一览，含属性。选个难度看对应价格。"
     },
     "machines": {
-      "caption": "生产用的所有机器。把一台主机器和一到两台副机器组合起来，就能建成一个服装工作台。"
+      "caption": "生产中用到的所有机器。把一台主机器和一到两台副机器组合起来，就能打造一个工作站。"
     },
     "inventory": {
       "caption": "你的...存储选项一览。先这样了。后面还有更多！"
@@ -529,7 +529,7 @@
         "palletDesc": "定义此工厂可用的托盘货架数量。",
         "dailyAmount": "每日配送需要 <strong>{count}</strong> {object}。",
         "weeklyAmount": "每周配送需要 <strong>{count}</strong> {object}。",
-        "shelfExplanation": "添加至少一个服装工作台以查看所需的托盘货架数量。",
+        "shelfExplanation": "添加至少一个工作站以查看所需的托盘货架数量。",
         "enoughWeekly": "足够支持每周配送。",
         "enoughDaily": "仅够满足每日配送。每周物流还需要仓库。",
         "notEnough": "即使每日配送也不够存储。",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "输入每位员工的薪资。如果不想要计算薪资，可以留空。",
         "optimalWorkers": "使用最优工厂工人数量",
-        "optimalTooltip": "根据服装工作台和营业时间自动计算最优工人数量。会添加一个小缓冲以确保游戏内自动排程顺畅。"
+        "optimalTooltip": "根据工作站和营业时间自动计算最优工人数量。会添加一个小缓冲以确保游戏内自动排程顺畅。"
       },
       "vehicles": {
         "addBtn": "添加车辆"
       },
       "workstations": {
-        "addBtn": "添加服装工作台"
+        "addBtn": "添加工作站"
       },
       "buttonDesc": "新建工厂",
       "genericFactoryName": "{productName} 工厂",

@@ -370,12 +370,12 @@
       "nameRequired": "Pune un nume personajului!",
       "nameTooLong": "Numele trebuie să aibă maxim 30 caractere.",
       "difficultyRequired": "Alege o dificultate.",
-      "workstationProductRequired": "Selectează un produs pentru fiecare stație de lucru pentru îmbrăcăminte."
+      "workstationProductRequired": "Selectează un produs pentru fiecare post de lucru."
     },
     "factory": {
       "nameTooLong": "Numele fabricii trebuie să aibă maxim 50 caractere.",
       "descriptionTooLong": "Nu scrie aici un roman. Maxim 150 de caractere!",
-      "workstationsRequired": "Adaugă cel puțin o stație de lucru pentru îmbrăcăminte.",
+      "workstationsRequired": "Adaugă cel puțin un post de lucru.",
       "atLeastOneVehicle": "Ai nevoie de cel puțin un vehicul pentru fabrică.",
       "maxTwoVehicles": "Max. două vehicule per fabrică.",
       "shelfAmountTooLow": "Trebuie să adaugi rafturi pentru ca fabrica să funcționeze."
@@ -529,7 +529,7 @@
         "palletDesc": "Defineste câte rafturi pentru paleți sunt disponibile în această fabrică.",
         "dailyAmount": "Pentru livrarea zilnică ai nevoie de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pentru livrarea săptămânală ai nevoie de <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Adaugă cel puțin un post de lucru ca să vezi câte rafturi de paleți sunt necesare.",
+        "shelfExplanation": "Adaugă cel puțin un post de lucru ca să vezi câte rafturi pentru paleți sunt necesare.",
         "enoughWeekly": "Suficient pentru livrarea săptămânală.",
         "enoughDaily": "Suficient doar pentru livrarea zilnică. Pentru logistică săptămânală ai nevoie de un depozit.",
         "notEnough": "Nu e suficient spațiu de stocare, nici măcar pentru livrarea zilnică.",
@@ -539,7 +539,7 @@
       "employees": {
         "desc": "Introdu salariul pentru fiecare angajat. Lasă gol dacă nu vrei să incluzi calculele de salariu.",
         "optimalWorkers": "Folosește numărul optim de muncitori din fabrică",
-        "optimalTooltip": "Calculează automat numărul optim de muncitori bazat pe stațiile de lucru pentru îmbrăcăminte și orele de deschidere. Va adăuga un mic buffer pentru programare automată fluidă în joc."
+        "optimalTooltip": "Calculează automat numărul optim de muncitori, în funcție de posturile de lucru și orele de deschidere. Include un mic buffer pentru ca auto-schedule să meargă fluid în joc."
       },
       "vehicles": {
         "addBtn": "Adaugă vehicul"

@@ -370,12 +370,12 @@
       "nameRequired": "Je karakter moet een naam hebben.",
       "nameTooLong": "De naam mag maximaal 30 tekens lang zijn.",
       "difficultyRequired": "Kies een moeilijkheidsgraad uit.",
-      "workstationProductRequired": "Kies voor elk Kledingwerkstation een product uit."
+      "workstationProductRequired": "Kies voor elke werkplek een product."
     },
     "factory": {
       "nameTooLong": "De fabrieknaam mag maximaal 50 tekens lang zijn.",
       "descriptionTooLong": "Houd op met een roman te schrijven. 150 tekens zijn genoeg!",
-      "workstationsRequired": "Voeg minimaal één Kledingwerkstation toe.",
+      "workstationsRequired": "Voeg minimaal één werkplek toe.",
       "atLeastOneVehicle": "Je hebt minimaal één voertuig nodig voor de fabriek.",
       "maxTwoVehicles": "Per fabriek mag max. twee voertuigen worden toegewezen.",
       "shelfAmountTooLow": "Je moet rekken toevoegen zodat de fabriek werkt."
@@ -434,7 +434,7 @@
       "caption": "Overzicht van alle ruwe ingrediënten inclusief hun eigenschappen. Kies de moeilijkheidsgraad om de juiste prijzen te zien."
     },
     "machines": {
-      "caption": "Dit zijn alle machines die je voor de productie kunt gebruiken. Combineer één hoofdmachine met een of twee secundaire machines om een Kledingwerkstation te bouwen."
+      "caption": "Dit zijn alle machines die je voor de productie kunt gebruiken. Combineer één hoofdmachine met een of twee secundaire machines om een werkplek te bouwen."
     },
     "inventory": {
       "caption": "Een overzicht van al je... opslagopties. Voor nu. Meer komt nog!"
@@ -529,7 +529,7 @@
         "palletDesc": "Definieer hoeveel palletstellingen beschikbaar zijn in deze fabriek.",
         "dailyAmount": "Voor de dagelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "weeklyAmount": "Voor de wekelijkse levering heb je <strong>{count}</strong> {object} nodig.",
-        "shelfExplanation": "Voeg minimaal één kledingwerkstation toe om het benodigde aantal palletstellingen te zien.",
+        "shelfExplanation": "Voeg minimaal één werkplek toe om het benodigde aantal palletplanken te zien.",
         "enoughWeekly": "Genoeg voor de wekelijkse levering.",
         "enoughDaily": "Alleen genoeg voor de dagelijkse levering. Voor weeklogistiek heb je een magazijn nodig.",
         "notEnough": "Te weinig opslagruimte, zelfs voor een dagelijkse levering.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Voer het loon per medewerker in. Laat het leeg als je geen loonberekening wilt.",
         "optimalWorkers": "Gebruik het optimale aantal fabrieksarbeiders",
-        "optimalTooltip": "Berekent automatisch het optimale aantal arbeiders op basis van kledingwerkstations en openingstijden. Voegt een kleine buffer toe voor een soepele auto-scheduling in het spel."
+        "optimalTooltip": "Berekent automatisch het optimale aantal arbeiders op basis van werkplekken en openingstijden. Voegt een kleine buffer toe voor een soepele auto-schedule in het spel."
       },
       "vehicles": {
         "addBtn": "Voertuig toevoegen"
       },
       "workstations": {
-        "addBtn": "Kledingwerkstation toevoegen"
+        "addBtn": "Werkplek toevoegen"
       },
       "buttonDesc": "Nieuwe fabriek",
       "genericFactoryName": "{productName}-fabriek",

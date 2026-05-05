@@ -375,7 +375,7 @@
     "factory": {
       "nameTooLong": "Fabrikos pavadinimas negali būti ilgesnis nei 50 simbolių.",
       "descriptionTooLong": "Nereikia čia romano rašyti. Maksimaliai 150 simbolių!",
-      "workstationsRequired": "Pridėk bent vieną darbo stotį.",
+      "workstationsRequired": "Pridėk bent vieną darbo vietą.",
       "atLeastOneVehicle": "Fabrikoje reikia bent vienos transporto priemonės.",
       "maxTwoVehicles": "Maksimaliai dvi transporto priemonės fabrikui.",
       "shelfAmountTooLow": "Pridėk lentynų, kad gamykla veiktų."
@@ -434,7 +434,7 @@
       "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
     },
     "machines": {
-      "caption": "Visos mašinos gamybai. Sujungk vieną pagrindinę mašiną su viena ar dviem papildomomis, kad sukurtum darbo vietą."
+      "caption": "Visos gamybos mašinos. Sujunk vieną pagrindinę mašiną su viena ar dviem papildomomis, kad sukurtum darbo vietą."
     },
     "inventory": {
       "caption": "Visų... saugyklos parinkčių apžvalga. Kol kad tik tiek. Dar bus daugiau!"
@@ -545,7 +545,7 @@
         "addBtn": "Pridėti transportą"
       },
       "workstations": {
-        "addBtn": "Pridėti Drabužių darbo stotį"
+        "addBtn": "Pridėk darbo vietą"
       },
       "buttonDesc": "Nauja gamykla",
       "genericFactoryName": "{productName} gamykla",

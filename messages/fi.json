@@ -370,12 +370,12 @@
       "nameRequired": "Hahmolla täytyy olla nimi.",
       "nameTooLong": "Nimi saa olla enintään 30 merkkiä.",
       "difficultyRequired": "Valitse vaikeustaso.",
-      "workstationProductRequired": "Valitse tuote jokaiselle vaatetyöpisteelle."
+      "workstationProductRequired": "Valitse tuote jokaiselle työpisteelle."
     },
     "factory": {
       "nameTooLong": "Tehtaan nimi saa olla enintään 50 merkkiä.",
       "descriptionTooLong": "Älä kirjoita romania tähän. 150 merkkiä riittää!",
-      "workstationsRequired": "Lisää vähintään yksi vaatetyöpiste.",
+      "workstationsRequired": "Lisää vähintään yksi työpiste.",
       "atLeastOneVehicle": "Tehtaalle tarvitaan vähintään yksi ajoneuvo.",
       "maxTwoVehicles": "Tehtaalle saa olla max. kaksi ajoneuvoa.",
       "shelfAmountTooLow": "Lisää hyllyjä, jotta tehdas toimii."
@@ -434,7 +434,7 @@
       "caption": "Yleiskatsaus kaikista raaka-aineista ja niiden ominaisuuksista. Valitse vaikeustaso, niin näet oikeat hinnat."
     },
     "machines": {
-      "caption": "Kaikki tuotantoon käytettävät koneet. Yhdistä yksi pääkone ja yksi tai kaksi apukonetta, niin saat vaatetyöpisteen."
+      "caption": "Tässä kaikki tuotantokoneet. Yhdistä pääkone ja yksi tai kaksi apukonetta, niin saat työpisteen."
     },
     "inventory": {
       "caption": "Pieni yleiskatsaus kaikista... säilytysvaihtoehdoista. Toistaiseksi vain nämä. Pian lisää!"
@@ -529,7 +529,7 @@
         "palletDesc": "Määrittele tämän tehtaan lavahyllyjen määrä.",
         "dailyAmount": "Päivittäiseen toimitukseen tarvitset <strong>{count}</strong> {object}.",
         "weeklyAmount": "Viikkotoimitukseen tarvitset <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Lisää vähintään yksi vaatetyöpiste, niin näet tarvittavien lavahyllyjen määrän.",
+        "shelfExplanation": "Lisää vähintään yksi työpiste, niin näet tarvittavien lavahyllyjen määrän.",
         "enoughWeekly": "Tarpeeksi viikkotoimitukseen.",
         "enoughDaily": "Tarpeeksi vain päivittäiseen toimitukseen. Viikkotoimitukseen tarvitaan varasto.",
         "notEnough": "Liian vähän tilaa, jopa päivittäiseen toimitukseen.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Syötä palkka jokaiselle tehdastyöntekijälle. Jätä tyhjäksi, jos et halua laskea palkkoja.",
         "optimalWorkers": "Käytä optimaalista tehdastyöntekijämäärää",
-        "optimalTooltip": "Laskee automaattisesti optimaalisen tehdastyöntekijämäärän perustuen vaatetyöpisteisiin ja aukioloaikoihin. Lisää pientä puskuria sujuvan automaattisen aikataulutuksen varmistamiseksi pelissä."
+        "optimalTooltip": "Laskee automaattisesti optimaalisen työntekijämäärän työpisteiden ja aukioloaikojen perusteella. Lisää pienen puskurin, jotta pelin auto-schedule toimii sujuvasti."
       },
       "vehicles": {
         "addBtn": "Lisää ajoneuvo"
       },
       "workstations": {
-        "addBtn": "Lisää vaatetyöpiste"
+        "addBtn": "Lisää työpiste"
       },
       "buttonDesc": "Uusi tehdas",
       "genericFactoryName": "{productName} tehdas",

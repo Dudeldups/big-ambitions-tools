@@ -370,12 +370,12 @@
       "nameRequired": "キャラクターには名前が必要です。",
       "nameTooLong": "名前は最大 30 文字までです。",
       "difficultyRequired": "難易度を選んでください。",
-      "workstationProductRequired": "各ワークステーションの製品を選んでください。"
+      "workstationProductRequired": "ワークステーションごとに製品を選んでね"
     },
     "factory": {
       "nameTooLong": "工場名は最大 50 文字までです。",
       "descriptionTooLong": "ここで小説を書くのはやめて。150 文字で十分！",
-      "workstationsRequired": "少なくとも 1 つのワークステーションを追加してください。",
+      "workstationsRequired": "ワークステーションを1つ以上追加してね",
       "atLeastOneVehicle": "工場には少なくとも 1 つの車両が必要です。",
       "maxTwoVehicles": "工場には最大 2 台の車両までです。",
       "shelfAmountTooLow": "工場を動かすには、棚を追加する必要があります。"
@@ -434,7 +434,7 @@
       "caption": "原料と特性の一覧。正しい価格を表示するには、難易度を選択してね。"
     },
     "machines": {
-      "caption": "生産に使うすべての機械です。メインマシン 1 台と、サブマシン 1〜2 台を組み合わせて「衣料品ワークステーション」を作ります。"
+      "caption": "生産に使うすべての機械だよ。メインマシン1台とサブマシンを1〜2台組み合わせて、ワークステーションを作ろう。"
     },
     "inventory": {
       "caption": "すべての...保管オプションの概要です。今のところしかありません。あとでさらに追加します！"
@@ -529,7 +529,7 @@
         "palletDesc": "この工場で利用可能なパレット棚の数を定義してください。",
         "dailyAmount": "日次配送には<strong>{count}</strong> の {object} が必要です。",
         "weeklyAmount": "週次配送には<strong>{count}</strong> の {object} が必要です。",
-        "shelfExplanation": "必要なパレット棚数を確認するには、少なくとも 1 つの衣料品ワークステーションを追加してください。",
+        "shelfExplanation": "ワークステーションを1つ以上追加して、パレット棚の必要数を確認しよう。",
         "enoughWeekly": "週次配送には十分です。",
         "enoughDaily": "日次配送には十分です。週次物流には倉庫が必要です。",
         "notEnough": "日次配送でも保管スペースが不足しています。",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "各従業員の給与を入力してください。給与計算を含めたくない場合は空のままにします。",
         "optimalWorkers": "最適な工場労働者数を使用",
-        "optimalTooltip": "衣料品ワークステーションと営業時間に基づいて、最適な工場労働者数を自動計算します。ゲーム内のスムーズな自動スケジュールのために小さなバッファーを追加します。"
+        "optimalTooltip": "ワークステーションと営業時間に基づき、最適な労働者数を自動計算。ゲーム内のスムーズな auto-schedule のために小さなバッファーを追加。"
       },
       "vehicles": {
         "addBtn": "車両を追加"
       },
       "workstations": {
-        "addBtn": "衣料品ワークステーションを追加"
+        "addBtn": "ワークステーション追加"
       },
       "buttonDesc": "新しい工場",
       "genericFactoryName": "{productName} 工場",

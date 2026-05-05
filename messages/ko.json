@@ -370,12 +370,12 @@
       "nameRequired": "캐릭터에 이름을 지어주세요.",
       "nameTooLong": "이름은 최대 30 자까지 가능합니다.",
       "difficultyRequired": "난이도를 선택해주세요.",
-      "workstationProductRequired": "각 작업대마다 제품을 선택해주세요."
+      "workstationProductRequired": "작업대마다 제품을 골라줘."
     },
     "factory": {
       "nameTooLong": "공장 이름은 최대 50 자까지 가능합니다.",
       "descriptionTooLong": "여기서 소설 쓰지 마세요. 최대 150 자까지입니다!",
-      "workstationsRequired": "최소 하나의 작업대를 추가해주세요.",
+      "workstationsRequired": "작업대를 최소 하나는 추가해 줘.",
       "atLeastOneVehicle": "공장에는 최소 한 대의 차량이 필요합니다.",
       "maxTwoVehicles": "공장당 최대 두 대의 차량만 가능합니다.",
       "shelfAmountTooLow": "공장이 작동하려면 선반을 추가해주세요."
@@ -434,7 +434,7 @@
       "caption": "모든 원료와 속성을 한눈에 보세요. 올바른 가격을 보려면 난이도를 선택하세요."
     },
     "machines": {
-      "caption": "생산에 쓰이는 모든 기계입니다. 하나의 메인 기계와 하나 또는 두 개의 서브 기계를 조합하여 의류 작업대를 만드세요."
+      "caption": "생산에 쓰이는 모든 기계야. 메인 기계 하나와 서브 기계 한두 개를 조합해서 작업대를 만들어봐."
     },
     "inventory": {
       "caption": "지금까지의... 보관 옵션들을 모아봤어. 일단은 여기까지! 앞으로 더 늘어날 거야!"
@@ -529,7 +529,7 @@
         "palletDesc": "이 공장의 팔레트 선반 개수를 설정해 주세요.",
         "dailyAmount": "일일 배송에는 <strong>{count}</strong> {object} 가 필요합니다.",
         "weeklyAmount": "주간 배송에는 <strong>{count}</strong> {object} 가 필요합니다.",
-        "shelfExplanation": "필요한 팔레트 선반 수량을 보려면 최소 하나의 의류 작업대를 추가하세요.",
+        "shelfExplanation": "작업대를 하나라도 추가해야 필요한 팔레트 선반 수가 보여요.",
         "enoughWeekly": "주간 배송에 충분합니다.",
         "enoughDaily": "일일 배송에만 충분합니다. 주간 물류를 위해서는 창고가 필요합니다.",
         "notEnough": "일일 배송에도 저장 공간이 부족합니다.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "각 공장 작업자의 급여를 입력하세요. 급여 계산을 포함하지 않으려면 빈칸으로 두세요.",
         "optimalWorkers": "최적의 공장 작업자 수량 사용",
-        "optimalTooltip": "의류 작업대와 영업 시간을 기준으로 최적의 공장 작업자 수량을 자동으로 계산합니다. 게임 내 원활한 자동 스케줄링을 위해 작은 버퍼를 추가합니다."
+        "optimalTooltip": "작업대와 영업 시간을 기준으로 최적의 작업자 수를 자동으로 계산해요. 게임 내 원활한 자동 스케줄링을 위해 약간의 버퍼를 추가할게요."
       },
       "vehicles": {
         "addBtn": "차량 추가"
       },
       "workstations": {
-        "addBtn": "의류 작업대 추가"
+        "addBtn": "작업대 추가"
       },
       "buttonDesc": "새 공장",
       "genericFactoryName": "{productName} 공장",

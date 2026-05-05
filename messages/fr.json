@@ -434,7 +434,7 @@
       "caption": "Vue d'ensemble de toutes les matières premières, avec leurs propriétés. Choisis la difficulté pour afficher les prix corrects."
     },
     "machines": {
-      "caption": "Toutes les machines utilisées pour la production. Combine une machine principale avec une ou deux machines secondaires pour former un poste de travail."
+      "caption": "Voici toutes les machines que tu peux utiliser pour la production. Combine une machine principale avec une ou deux machines secondaires pour créer un poste de travail."
     },
     "inventory": {
       "caption": "Un aperçu de toutes tes... options de stockage. Pour le moment. D'autres arrivent bientôt !"
@@ -545,7 +545,7 @@
         "addBtn": "Ajouter un véhicule"
       },
       "workstations": {
-        "addBtn": "Ajouter un poste de travail"
+        "addBtn": "Ajouter poste de travail"
       },
       "buttonDesc": "Nouvelle usine",
       "genericFactoryName": "Usine de {productName}",

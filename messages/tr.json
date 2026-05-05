@@ -370,12 +370,12 @@
       "nameRequired": "Karakterinin bir ismi olmalı.",
       "nameTooLong": "İsim en fazla 30 karakter olabilir.",
       "difficultyRequired": "Lütfen bir zorluk seçin.",
-      "workstationProductRequired": "Her Giyim İş İstasyonu için bir ürün seçin."
+      "workstationProductRequired": "Lütfen her çalışma istasyonu için bir ürün seç."
     },
     "factory": {
       "nameTooLong": "Fabrika ismi en fazla 50 karakter olabilir.",
       "descriptionTooLong": "Burada roman yazmayı bırak. 150 karakter yetiyor!",
-      "workstationsRequired": "Lütfen en az bir Giyim İş İstasyonu ekle.",
+      "workstationsRequired": "En az bir çalışma istasyonu ekle.",
       "atLeastOneVehicle": "Fabrika için en az bir araca ihtiyacın var.",
       "maxTwoVehicles": "Fabrika için max. iki araç atanabilir.",
       "shelfAmountTooLow": "Fabriğin çalışması için rafları ekle."
@@ -434,7 +434,7 @@
       "caption": "Tüm hammaddeler ve özellikleri. Doğru fiyatları görmek için zorluk seviyesini seç."
     },
     "machines": {
-      "caption": "İşte üretimde kullanabileceğin tüm makineler. Bir ana makine ile bir veya iki yan makineyi birleştirerek Giyim İş İstasyonu oluştur."
+      "caption": "Üretimdeki tüm makineler burada. Bir ana makine ve bir-iki yardımcı makineyi birleştirip bir çalışma istasyonu kurabilirsin."
     },
     "inventory": {
       "caption": "Tüm... depolama seçeneklerinin küçük bir özeti. Şimdilik. Daha fazlası gelecek!"
@@ -529,7 +529,7 @@
         "palletDesc": "Bu fabrikada mevcut Palet Rafı sayısını tanımla.",
         "dailyAmount": "Günlük teslimat için <strong>{count}</strong> {object} gerekiyor.",
         "weeklyAmount": "Haftalık teslimat için <strong>{count}</strong> {object} gerekiyor.",
-        "shelfExplanation": "Gerekli palet rafı sayısını görmek için en az bir Giyim İş İstasyonu ekle.",
+        "shelfExplanation": "Gerekli palet rafı sayısını görmek için en az bir çalışma istasyonu ekle.",
         "enoughWeekly": "Haftalık teslimat için yeterli.",
         "enoughDaily": "Sadece günlük teslimat için yeterli. Haftalık lojistik için bir depoya ihtiyacın var.",
         "notEnough": "Günlük teslimat için bile yetersiz depolama alanı.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Her çalışanın maaşını gir. Maaş hesaplaması istemiyorsan boş bırak.",
         "optimalWorkers": "Optimal Fabrika İşçisi sayısını kullan",
-        "optimalTooltip": "Giyim İş İstasyonları ve çalışma saatlerine göre optimal Fabrika İşçisi sayısını otomatik hesaplar. Oyun içinde akıcı otomatik programlama için küçük bir tampon ekler."
+        "optimalTooltip": "Çalışma istasyonları ve çalışma saatlerine göre en uygun işçi sayısını otomatik hesaplar. Oyun içindeki akışın bozulmaması için küçük bir pay ekler."
       },
       "vehicles": {
         "addBtn": "Araç ekle"
       },
       "workstations": {
-        "addBtn": "Giyim İş İstasyonu ekle"
+        "addBtn": "Çalışma istasyonu ekle"
       },
       "buttonDesc": "Yeni Fabrika",
       "genericFactoryName": "{productName} fabrikası",

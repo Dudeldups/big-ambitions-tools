@@ -370,12 +370,12 @@
       "nameRequired": "Twoja postać powinna mieć imię.",
       "nameTooLong": "Nazwa postaci może mieć maksymalnie 30 znaków.",
       "difficultyRequired": "Wybierz poziom trudności.",
-      "workstationProductRequired": "Wybierz produkt dla każdego stanowiska produkcyjnego."
+      "workstationProductRequired": "Wybierz produkt dla każdego stanowiska pracy."
     },
     "factory": {
       "nameTooLong": "Nazwa fabryki może mieć maksymalnie 50 znaków.",
       "descriptionTooLong": "Nie pisz tu całego romanu! Max 150 znaków!",
-      "workstationsRequired": "Dodaj co najmniej jedno stanowisko produkcyjne.",
+      "workstationsRequired": "Dodaj przynajmniej jedno stanowisko pracy.",
       "atLeastOneVehicle": "Potrzebujesz co najmniej jednego pojazdu dla fabryki.",
       "maxTwoVehicles": "W fabryce mogą być max. dwa pojazdy.",
       "shelfAmountTooLow": "Musisz dodać półki, aby fabryka działała."
@@ -434,7 +434,7 @@
       "caption": "Przegląd wszystkich surowych składników wraz z ich właściwościami. Wybierz trudność, aby zobaczyć poprawne ceny."
     },
     "machines": {
-      "caption": "To wszystkie maszyny do produkcji. Połącz jedną główną z jedną lub dwiema pomocniczymi, żeby zbudować stanowisko produkcyjne."
+      "caption": "To wszystkie maszyny do produkcji. Połącz jedną główną z jedną lub dwiema pomocniczymi, żeby zbudować stanowisko pracy."
     },
     "inventory": {
       "caption": "Mały przegląd wszystkich... opcji magazynowych. Na razie tylko tyle. Wkrótce więcej!"
@@ -529,7 +529,7 @@
         "palletDesc": "Zdefiniuj, ile regałów paletowych jest dostępnych w tej fabryce.",
         "dailyAmount": "Do dostawy dziennej potrzebujesz <strong>{count}</strong> {object}.",
         "weeklyAmount": "Do dostawy tygodniowej potrzebujesz <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Dodaj co najmniej jedno stanowisko produkcyjne, aby zobaczyć potrzebną liczbę regałów paletowych.",
+        "shelfExplanation": "Dodaj co najmniej jedno stanowisko pracy, aby zobaczyć potrzebną liczbę regałów paletowych.",
         "enoughWeekly": "Wystarczająco na dostawę tygodniową.",
         "enoughDaily": "Tylko na dostawy dzienne. Przy logistyce tygodniowej potrzebny jest magazyn.",
         "notEnough": "Za mało miejsca na magazynie, nawet na dostawę dzienną.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Wpisz pensję każdego pracownika. Zostaw pole puste, jeśli nie chcesz wyliczać płac.",
         "optimalWorkers": "Użyj optymalnej liczby pracowników fabryki",
-        "optimalTooltip": "Automatycznie oblicza optymalną liczbę pracowników na podstawie stanowisk produkcyjnych i godzin otwarcia. Dodaje mały bufor dla płynnego autoschedulingu w grze."
+        "optimalTooltip": "Automatycznie oblicza optymalną liczbę pracowników na podstawie stanowisk pracy i godzin otwarcia. Doda mały bufor, żeby auto-schedule w grze działało płynnie."
       },
       "vehicles": {
         "addBtn": "Dodaj pojazd"
       },
       "workstations": {
-        "addBtn": "Dodaj stanowisko produkcyjne"
+        "addBtn": "Dodaj stanowisko"
       },
       "buttonDesc": "Nowa fabryka",
       "genericFactoryName": "Fabryka {productName}",

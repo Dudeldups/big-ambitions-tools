@@ -370,7 +370,7 @@
       "nameRequired": "A karakterednek kell egy neve.",
       "nameTooLong": "A név max. 30 karakter legyen.",
       "difficultyRequired": "Kérlek, válassz egy nehézséget.",
-      "workstationProductRequired": "Kérlek, válassz minden ruházati munkállomásnak egy terméket."
+      "workstationProductRequired": "Kérlek, válassz terméket minden ruházati munkállomásra."
     },
     "factory": {
       "nameTooLong": "A gyár neve max. 50 karakter legyen.",
@@ -434,7 +434,7 @@
       "caption": "Minden nyersanyag áttekintése, beleértve tulajdonságaikat is. Válaszd a nehézséget, hogy lásd a helyes árakat."
     },
     "machines": {
-      "caption": "Az összes gép, amit a gyártáshoz használhatsz. Egy főgép és egy-két melléggép kombinálásával ruházati munkállomást építhetsz."
+      "caption": "Az összes gép, amit a gyártáshoz használhatsz. Egy főgépet és egy-két melléggépet egyesítve építs ruházati munkállomást."
     },
     "inventory": {
       "caption": "Egy kis áttekintés a... tárolási lehetőségeidről. Most csak ennyi. Jön még több!"
@@ -529,7 +529,7 @@
         "palletDesc": "Állítsd be, hány palettapolcod van ebben a gyárban.",
         "dailyAmount": "A napi szállításhoz <strong>{count}</strong> {object} kell.",
         "weeklyAmount": "A heti szállításhoz <strong>{count}</strong> {object} kell.",
-        "shelfExplanation": "Adj hozzá legalább egy ruházati munkállomást, hogy lásd a szükséges palettapolcok számát.",
+        "shelfExplanation": "Adj hozzá legalább egy ruházati munkállomást, hogy lásd a szükséges raklappolcok számát.",
         "enoughWeekly": "Elég a heti szállításhoz.",
         "enoughDaily": "Elég csak a napi szállításhoz. Heti logisztikához raktár kell.",
         "notEnough": "Nincs elég tárolóhely még napi szállításhoz sem.",
@@ -545,7 +545,7 @@
         "addBtn": "Jármű hozzáadása"
       },
       "workstations": {
-        "addBtn": "Ruházati munkállomás hozzáadása"
+        "addBtn": "Munkállomás hozzáadása"
       },
       "buttonDesc": "Új gyár",
       "genericFactoryName": "{productName} gyár",

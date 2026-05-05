@@ -370,12 +370,12 @@
       "nameRequired": "Il tuo personaggio dovrebbe avere un nome.",
       "nameTooLong": "Il nome non deve superare i 30 caratteri.",
       "difficultyRequired": "Per favore, seleziona una difficoltà.",
-      "workstationProductRequired": "Seleziona un prodotto per ogni Postazione di lavoro."
+      "workstationProductRequired": "Seleziona un prodotto per ogni postazione di lavoro."
     },
     "factory": {
       "nameTooLong": "Il nome della fabbrica non deve superare i 50 caratteri.",
       "descriptionTooLong": "Smetti di scrivere un romanzo qui. 150 caratteri bastano!",
-      "workstationsRequired": "Aggiungi almeno una Postazione di lavoro.",
+      "workstationsRequired": "Aggiungi almeno una postazione di lavoro.",
       "atLeastOneVehicle": "Hai bisogno di almeno un veicolo per la fabbrica.",
       "maxTwoVehicles": "Puoi assegnare max. due veicoli alla fabbrica.",
       "shelfAmountTooLow": "Devi aggiungere degli scaffali per far funzionare la fabbrica."
@@ -434,7 +434,7 @@
       "caption": "Panoramica di tutti gli ingredienti grezzi incluse le loro proprietà. Scegli la difficoltà per vedere i prezzi corretti."
     },
     "machines": {
-      "caption": "Queste sono tutte le macchine che puoi usare per la produzione. Combina una macchina principale con una o due secondarie per creare una postazione di lavoro."
+      "caption": "Tutte le macchine disponibili per la produzione. Combina una macchina principale con una o due secondarie per creare una postazione di lavoro."
     },
     "inventory": {
       "caption": "Una panoramica delle tue... opzioni di stoccaggio. Per ora. Ne arriveranno di più!"
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Inserisci lo stipendio per ogni dipendente. Lascialo vuoto se non vuoi includere i calcoli dello stipendio.",
         "optimalWorkers": "Usa la quantità ottimale di operai di fabbrica",
-        "optimalTooltip": "Calcola automaticamente il numero ottimale di operai di fabbrica in base alle postazioni di lavoro abbigliamento e agli orari di apertura. Aggiunge un piccolo margine per uno autoscheduling fluido nel gioco."
+        "optimalTooltip": "Calcola il numero ottimale di lavoratori in base a postazioni di lavoro e orari di apertura. Aggiunge un piccolo buffer per un auto-schedule fluido nel gioco."
       },
       "vehicles": {
         "addBtn": "Aggiungi veicolo"
       },
       "workstations": {
-        "addBtn": "Aggiungi postazione di lavoro"
+        "addBtn": "Aggiungi postazione"
       },
       "buttonDesc": "Nuova fabbrica",
       "genericFactoryName": "{productName} fabbrica",

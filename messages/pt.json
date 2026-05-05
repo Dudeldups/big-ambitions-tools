@@ -370,12 +370,12 @@
       "nameRequired": "Seu personagem precisa ter um nome.",
       "nameTooLong": "O nome deve ter no máximo 30 caracteres.",
       "difficultyRequired": "Por favor, escolha uma dificuldade.",
-      "workstationProductRequired": "Por favor, escolha um produto para cada Estação de Trabalho."
+      "workstationProductRequired": "Escolha um produto para cada estação de trabalho."
     },
     "factory": {
       "nameTooLong": "O nome da fábrica deve ter no máximo 50 caracteres.",
       "descriptionTooLong": "Pare de escrever um romance aqui. Máximo de 150 caracteres!",
-      "workstationsRequired": "Por favor, adicione pelo menos uma Estação de Trabalho.",
+      "workstationsRequired": "Adicione pelo menos uma estação de trabalho.",
       "atLeastOneVehicle": "Você precisa de pelo menos um veículo para a fábrica.",
       "maxTwoVehicles": "A fábrica pode ter no máximo dois veículos.",
       "shelfAmountTooLow": "Você precisa adicionar prateleiras para a fábrica funcionar."
@@ -434,7 +434,7 @@
       "caption": "Visão geral de todos os ingredientes brutos incluindo suas propriedades. Escolhe a dificuldade para ver os preços corretos."
     },
     "machines": {
-      "caption": "São todas as máquinas usadas na produção. Combina uma máquina principal com uma ou duas secundárias para formar uma Estação de Trabalho."
+      "caption": "Aqui tens todas as máquinas para a produção. Combina uma máquina principal com uma ou duas máquinas secundárias para montares a tua Estação de Trabalho."
     },
     "inventory": {
       "caption": "Um pequeno resumo das suas... opções de armazenamento. Por enquanto. Mais por vir!"
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Digite o salário de cada operário de fábrica. Deixe em branco se não quiser incluir cálculos salariais.",
         "optimalWorkers": "Usar quantidade ótima de operários de fábrica",
-        "optimalTooltip": "Calcula automaticamente o número ótimo de operários de fábrica baseado nas estações de trabalho e horário de funcionamento. Adiciona um pequeno buffer para agendamento automático suave no jogo."
+        "optimalTooltip": "Calcula automaticamente o número ideal de trabalhadores com base nas estações de trabalho e horários. Inclui um pequeno buffer para um auto-schedule mais fluido."
       },
       "vehicles": {
         "addBtn": "Adicionar veículo"
       },
       "workstations": {
-        "addBtn": "Adicionar Estação de Trabalho"
+        "addBtn": "Adicionar estação"
       },
       "buttonDesc": "Nova fábrica",
       "genericFactoryName": "{productName} fábrica",

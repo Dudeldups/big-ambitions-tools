@@ -370,12 +370,12 @@
       "nameRequired": "你的角色應該要有名字。",
       "nameTooLong": "名字最多只能有 30 個字。",
       "difficultyRequired": "請選擇一個難度。",
-      "workstationProductRequired": "請為每個服裝工作站選擇一個產品。"
+      "workstationProductRequired": "每個工作站都請選好產品。"
     },
     "factory": {
       "nameTooLong": "工廠名稱最多只能有 50 個字。",
       "descriptionTooLong": "別寫小說了。150 個字就夠了！",
-      "workstationsRequired": "請至少添加一個服裝工作站。",
+      "workstationsRequired": "請新增至少一個工作站。",
       "atLeastOneVehicle": "每間工廠至少需要一輛車。",
       "maxTwoVehicles": "每間工廠最多只能有兩輛車。",
       "shelfAmountTooLow": "你得添加貨架，工廠才能運作。"
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "輸入每位員工的薪資。若不包含薪資計算，請留空。",
         "optimalWorkers": "使用最佳工廠員工數量",
-        "optimalTooltip": "根據服裝工作站和營業時間自動計算最佳工廠員工數量。會為遊戲中的順暢自動排程添加少量緩衝。"
+        "optimalTooltip": "根據工作站和營業時間，自動計算最佳員工人數。並會加入少量緩衝，讓遊戲內的自動排程更順暢。"
       },
       "vehicles": {
         "addBtn": "新增車輛"
       },
       "workstations": {
-        "addBtn": "新增服裝工作站"
+        "addBtn": "新增工作站"
       },
       "buttonDesc": "新工廠",
       "genericFactoryName": "{productName} 工廠",

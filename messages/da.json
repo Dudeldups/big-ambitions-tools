@@ -370,12 +370,12 @@
       "nameRequired": "Din karakter bør have et navn.",
       "nameTooLong": "Navnet må højst være 30 tegn langt.",
       "difficultyRequired": "Vælg en sværhedsgrad.",
-      "workstationProductRequired": "Vælg et produkt til hver arbejdsstation til tøj."
+      "workstationProductRequired": "Vælg et produkt til hver arbejdsstation."
     },
     "factory": {
       "nameTooLong": "Fabriksnavnet må højst være 50 tegn langt.",
       "descriptionTooLong": "Hør op med at skrive en roman her. 150 tegn er nok!",
-      "workstationsRequired": "Tilføj mindst én arbejdsstation til tøj.",
+      "workstationsRequired": "Tilføj mindst én arbejdsstation.",
       "atLeastOneVehicle": "Du skal have mindst et køretøj til fabrikken.",
       "maxTwoVehicles": "Max to køretøjer pr. fabrik.",
       "shelfAmountTooLow": "Du skal tilføje hylder for at fabrikken kan fungere."
@@ -434,7 +434,7 @@
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
     },
     "machines": {
-      "caption": "Her er alle maskinerne til produktionen. Kombiner en hovedmaskine med én eller to hjælpemaskiner for at lave en arbejdsstation til tøj."
+      "caption": "Her er alle maskinerne til din produktion. Kombiner en hovedmaskine med én eller to hjælpemaskiner for at lave en arbejdsstation."
     },
     "inventory": {
       "caption": "Et lille overblik over dine... lagermuligheder. Indtil videre. Der kommer mere!"
@@ -529,7 +529,7 @@
         "palletDesc": "Definér, hvor mange pallehylder der er på denne fabrik.",
         "dailyAmount": "Til daglig levering skal du bruge <strong>{count}</strong> {object}.",
         "weeklyAmount": "Til ugentlig levering skal du bruge <strong>{count}</strong> {object}.",
-        "shelfExplanation": "Tilføj mindst en arbejdsstation til tøj for at se det krævede antal pallehylder.",
+        "shelfExplanation": "Tilføj mindst én arbejdsstation for at se det nødvendige antal pallehylder.",
         "enoughWeekly": "Nok til ugentlig levering.",
         "enoughDaily": "Kun nok til daglig levering. Du skal bruge et lager til ugentlig logistik.",
         "notEnough": "For lidt lagerplads, selv til daglig levering.",
@@ -539,13 +539,13 @@
       "employees": {
         "desc": "Indtast løn for hver medarbejder. Lad det stå tomt, hvis du ikke vil inkludere lønberegning.",
         "optimalWorkers": "Brug optimalt antal fabriksarbejdere",
-        "optimalTooltip": "Beregner automatisk det optimale antal arbejdere baseret på arbejdsstationer til tøj og åbningstider. Tilføjer en lille buffer for en smidig auto-schedule i spillet."
+        "optimalTooltip": "Beregner automatisk det optimale antal arbejdere baseret på arbejdsstationer og åbningstider. Tilføjer en lille buffer for en smidig auto-schedule i spillet."
       },
       "vehicles": {
         "addBtn": "Tilføj køretøj"
       },
       "workstations": {
-        "addBtn": "Tilføj arbejdsstation til tøj"
+        "addBtn": "Tilføj arbejdsstation"
       },
       "buttonDesc": "Ny fabrik",
       "genericFactoryName": "{productName} Fabrik",
