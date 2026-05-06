@@ -1,5 +1,9 @@
 import "@testing-library/jest-dom";
 import { beforeEach } from "vitest";
+import { resetIndexedDbMock } from "./mocks/idb-keyval";
+
+vi.mock("idb-keyval", () => import("./mocks/idb-keyval"));
+
 import {
   AppActions,
   AppState,
