@@ -288,7 +288,7 @@
   "tableColumns": {
     "itemName": "Nume articol",
     "purchasePrice": "Preț",
-    "retailPrice": "Preț",
+    "retailPrice": "Preț vânzare",
     "manufacturePrice": "Preț fabr.",
     "storageCapacity": "Capacitate stoc",
     "workstation": "Post de lucru",
@@ -306,7 +306,7 @@
     "productionRate": "Prod./Oră",
     "vehicleName": "Nume vehicul",
     "maxFuel": "Capacitate rezervor",
-    "maxCargoCapacity": "Capacitate marfă",
+    "maxCargoCapacity": "Capacitate încărcare",
     "maxSpeed": "Viteză max.",
     "enginePower": "Accelerare",
     "autoParkSupported": "Parcare automată",
