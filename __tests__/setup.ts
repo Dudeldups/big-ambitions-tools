@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { beforeEach } from "vitest";
+import { afterEach, beforeEach, vi } from "vitest";
 import { resetIndexedDbMock } from "./mocks/idb-keyval";
 
 vi.mock("idb-keyval", () => import("./mocks/idb-keyval"));
@@ -17,13 +17,20 @@ import {
   usePlaythroughStore,
 } from "@/lib/stores/playthroughStore";
 
-beforeEach(() => {
+beforeEach(async () => {
   localStorage.clear();
   useAppStore.setState(initialAppState as AppState & AppActions, true);
   useAppStore.persist.clearStorage();
+  resetIndexedDbMock();
   usePlaythroughStore.setState(
-    initialPlaythroughState as PlaythroughState & PlaythroughActions,
+    {
+      ...initialPlaythroughState,
+      ...usePlaythroughStore.getInitialState(),
+    } as PlaythroughState & PlaythroughActions,
     true,
   );
-  usePlaythroughStore.persist.clearStorage();
+});
+
+afterEach(() => {
+  vi.restoreAllMocks();
 });
