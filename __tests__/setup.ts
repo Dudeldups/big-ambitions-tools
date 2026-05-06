@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { afterEach, beforeEach, vi } from "vitest";
 import { resetIndexedDbMock } from "./mocks/idb-keyval";
+import { resetI18nNavigationMocks } from "./mocks/i18n-navigation";
 import { resetNextNavigationMocks } from "./mocks/next-navigation";
 
 vi.mock("idb-keyval", () => import("./mocks/idb-keyval"));
@@ -29,6 +30,7 @@ import {
 beforeEach(async () => {
   localStorage.clear();
   resetIndexedDbMock();
+  resetI18nNavigationMocks();
   resetNextNavigationMocks();
   await useAppStore.persist.clearStorage();
   await usePlaythroughStore.persist.clearStorage();
