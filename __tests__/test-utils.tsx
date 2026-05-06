@@ -21,6 +21,7 @@ function AllProviders({
     <NextIntlClientProvider
       locale={locale}
       messages={messagesOverride ?? messages}
+      timeZone="UTC"
     >
       {children}
     </NextIntlClientProvider>
