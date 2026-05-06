@@ -378,7 +378,7 @@
       "workstationsRequired": "Adaugă cel puțin un post de lucru.",
       "atLeastOneVehicle": "Ai nevoie de cel puțin un vehicul pentru fabrică.",
       "maxTwoVehicles": "Max. două vehicule per fabrică.",
-      "shelfAmountTooLow": "Trebuie să adaugi rafturi pentru ca fabrica să funcționeze."
+      "shelfAmountTooLow": "Trebuie să adaugi rafturi ca să funcționeze fabrica."
     },
     "factoryGroup": {
       "nameTooLong": "Numele grupului trebuie să aibă maxim 30 caractere.",

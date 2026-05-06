@@ -378,7 +378,7 @@
       "workstationsRequired": "Kérlek, adj hozzá legalább egy ruházati munkállomást.",
       "atLeastOneVehicle": "Szükséged van legalább egy járműre a gyárhoz.",
       "maxTwoVehicles": "A gyárhoz max. két járműt lehet hozzárendelni.",
-      "shelfAmountTooLow": "Hozzá kell adnod polcokat, hogy a gyár működjön."
+      "shelfAmountTooLow": "Polcok nélkül nem tud működni a gyár."
     },
     "factoryGroup": {
       "nameTooLong": "A csoportneve legfeljebb 30 karakter hosszú lehet.",

@@ -378,7 +378,7 @@
       "workstationsRequired": "记得至少添加一个工作站。",
       "atLeastOneVehicle": "每座工厂至少需要一辆车。",
       "maxTwoVehicles": "每座工厂最多两辆车。",
-      "shelfAmountTooLow": "你得加些货架，工厂才能运作。"
+      "shelfAmountTooLow": "得加点货架，工厂才能运转。"
     },
     "factoryGroup": {
       "nameTooLong": "组名最多 30 个字符。",

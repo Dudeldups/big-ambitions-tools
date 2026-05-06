@@ -378,7 +378,7 @@
       "workstationsRequired": "ワークステーションを1つ以上追加してね",
       "atLeastOneVehicle": "工場には少なくとも 1 つの車両が必要です。",
       "maxTwoVehicles": "工場には最大 2 台の車両までです。",
-      "shelfAmountTooLow": "工場を動かすには、棚を追加する必要があります。"
+      "shelfAmountTooLow": "工場を動かすには棚を追加してね"
     },
     "factoryGroup": {
       "nameTooLong": "グループ名は最大 30 文字までです。",

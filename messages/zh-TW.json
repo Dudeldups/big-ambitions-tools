@@ -378,7 +378,7 @@
       "workstationsRequired": "請新增至少一個工作站。",
       "atLeastOneVehicle": "每間工廠至少需要一輛車。",
       "maxTwoVehicles": "每間工廠最多只能有兩輛車。",
-      "shelfAmountTooLow": "你得添加貨架，工廠才能運作。"
+      "shelfAmountTooLow": "必須添加貨架，工廠才能運作。"
     },
     "factoryGroup": {
       "nameTooLong": "群組名稱最多只能有 30 個字。",

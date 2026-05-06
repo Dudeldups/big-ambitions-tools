@@ -378,7 +378,7 @@
       "workstationsRequired": "Por favor, añade al menos una estación de trabajo.",
       "atLeastOneVehicle": "Necesitas al menos un vehículo para la fábrica.",
       "maxTwoVehicles": "Para la fábrica se permiten máx. dos vehículos asignados.",
-      "shelfAmountTooLow": "Tienes que añadir estanterías para que la fábrica funcione."
+      "shelfAmountTooLow": "Tienes que añadir estantes para que la fábrica funcione."
     },
     "factoryGroup": {
       "nameTooLong": "El nombre del grupo no puede tener más de 30 caracteres.",

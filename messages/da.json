@@ -311,8 +311,8 @@
     "enginePower": "Acceleration",
     "autoParkSupported": "Parkeringshjælp",
     "taxDeductible": "Fradrag",
-    "destinationsThatCanDeliver": "Basis-stop",
     "requiredDeliveryDriverSkillValue": "Chauffør-skill",
+    "destinationsThatCanDeliver": "Basis-stop",
     "destinationsFull": "Maks. stop",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
@@ -378,7 +378,7 @@
       "workstationsRequired": "Tilføj mindst én arbejdsstation.",
       "atLeastOneVehicle": "Du skal have mindst et køretøj til fabrikken.",
       "maxTwoVehicles": "Max to køretøjer pr. fabrik.",
-      "shelfAmountTooLow": "Du skal tilføje hylder for at fabrikken kan fungere."
+      "shelfAmountTooLow": "Du skal tilføje hylder, så fabrikken kan fungere."
     },
     "factoryGroup": {
       "nameTooLong": "Gruppenavnet må højst være 30 tegn langt.",

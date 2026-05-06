@@ -378,7 +378,7 @@
       "workstationsRequired": "Přidej prosím alespoň jednu pracovní stanici.",
       "atLeastOneVehicle": "Každá továrna potřebuje alespoň jedno vozidlo.",
       "maxTwoVehicles": "Každá továrna může mít maximálně dvě vozidla.",
-      "shelfAmountTooLow": "Aby továrna fungovala, musíš přidat regály."
+      "shelfAmountTooLow": "Musíš přidat regály, aby továrna mohla fungovat."
     },
     "factoryGroup": {
       "nameTooLong": "Název skupiny může mít maximálně 30 znaků.",

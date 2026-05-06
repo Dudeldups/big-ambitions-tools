@@ -378,7 +378,7 @@
       "workstationsRequired": "작업대를 최소 하나는 추가해 줘.",
       "atLeastOneVehicle": "공장에는 최소 한 대의 차량이 필요합니다.",
       "maxTwoVehicles": "공장당 최대 두 대의 차량만 가능합니다.",
-      "shelfAmountTooLow": "공장이 작동하려면 선반을 추가해주세요."
+      "shelfAmountTooLow": "공장이 돌아가려면 선반을 더 추가해야 해"
     },
     "factoryGroup": {
       "nameTooLong": "그룹 이름은 최대 30자예요",

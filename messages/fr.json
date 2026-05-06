@@ -378,7 +378,7 @@
       "workstationsRequired": "Ajoute au moins un poste de travail.",
       "atLeastOneVehicle": "Tu as besoin d'au moins un véhicule pour l'usine.",
       "maxTwoVehicles": "Deux véhicules maximum par usine.",
-      "shelfAmountTooLow": "Tu dois ajouter des rayonnages pour que l'usine fonctionne."
+      "shelfAmountTooLow": "Tu dois ajouter des étagères pour que l'usine fonctionne."
     },
     "factoryGroup": {
       "nameTooLong": "Le nom du groupe doit contenir au maximum 30 caractères.",

@@ -378,7 +378,7 @@
       "workstationsRequired": "Voeg minimaal één werkplek toe.",
       "atLeastOneVehicle": "Je hebt minimaal één voertuig nodig voor de fabriek.",
       "maxTwoVehicles": "Per fabriek mag max. twee voertuigen worden toegewezen.",
-      "shelfAmountTooLow": "Je moet rekken toevoegen zodat de fabriek werkt."
+      "shelfAmountTooLow": "Je moet planken toevoegen zodat de fabriek werkt."
     },
     "factoryGroup": {
       "nameTooLong": "De groepsnaam mag maximaal 30 tekens lang zijn.",
