@@ -437,7 +437,7 @@
       "caption": "Aquí tienes todas las máquinas de producción. Combina una principal con una o dos secundarias para armar tu estación de trabajo."
     },
     "inventory": {
-      "caption": "Remove 'pequeña' and 'tus' to align with the English source ('An overview of all...'), unless stylistic additions are approved."
+      "caption": "Un vistazo a todas las... opciones de almacenamiento. Por ahora. ¡Pronto habrá más!"
     },
     "vehicles": {
       "caption": "¿Buscas capacidad de carga máxima o simplemente el viaje más rápido? Aquí lo encontrarás. La habilidad del conductor depende de tu {deliveryDriver}, y para el máximo número de destinos necesitas un {logisticsManager} con un nivel de habilidad al 100%."
@@ -445,7 +445,7 @@
   },
   "tools": {
     "intro": {
-      "desc": "Aquí puedes sumérgete a fondo en los números y estadísticas del juego. ¡Planifica tus fábricas y controla la logística de todo tu imperio!"
+      "desc": "Aquí puedes sumergirte a fondo en los números y estadísticas del juego. ¡Planifica tus fábricas y controla la logística de todo tu imperio!"
     },
     "playthroughs": {
       "desc": "Abajo puedes crear y gestionar tus partidas. Una partida representa un solo recorrido del juego. Puedes crear varias partidas para comparar diferentes recorridos, probar otras dificultades o simplemente seguir tu progreso.",

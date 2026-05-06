@@ -445,11 +445,11 @@
   },
   "tools": {
     "intro": {
-      "desc": "Qui puoi approfondire l'analisi dei dati e delle statistiche del gioco."
+      "desc": "Qui puoi tuffarti nei numeri e nelle statistiche del gioco. Pianifica le tue fabbriche e gestisci la logistica di tutto il tuo impero!"
     },
     "playthroughs": {
-      "desc": "Use consistent terminology, e.g., change 'giro' to 'partita' throughout.",
-      "warning": "...modalità privata/incognito...",
+      "desc": "Qui sotto puoi creare e gestire le tue partite. Una partita rappresenta un singolo tentativo di gioco. Puoi crearne diverse per confrontare i risultati, provare altre difficoltà o semplicemente tenere traccia dei tuoi progressi.",
+      "warning": "Importante: i tuoi progressi sono salvati nel browser. Se cancelli i dati del browser o usi la modalità privata/incognito, potresti perderli.",
       "createButtonDesc": "Nuova partita",
       "noPlaythroughs": "Ancora nessuna partita. Creane una per iniziare!",
       "notFound": {
@@ -461,7 +461,7 @@
     "playthroughDetail": {
       "desc": "Qui puoi vedere le statistiche di produzione del tuo impero. Vai alla pagina Fabbriche per avere una panoramica delle tue fabbriche, tenere traccia degli articoli da ordinare per le linee di produzione e altro. Il pianificatore delle fabbriche ti mostrerà tutti i dettagli sulle statistiche di produzione, quantità d'ordine e altro.",
       "productionOverview": "Panoramica settimanale della produzione",
-      "noProductionData": "Non ci sono ancora dati disponibili."
+      "noProductionData": "Non ci sono ancora dati disponibili. Crea delle fabbriche e vedrai qui le tue statistiche di produzione."
     },
     "factories": {
       "title": "Le tue fabbriche",

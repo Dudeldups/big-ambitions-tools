@@ -466,7 +466,7 @@
     "factories": {
       "title": "Suas fábricas",
       "desc": "Uma visão geral das suas fábricas. Você pode editá-las ou excluí-las e também copiar os valores atuais para uma nova fábrica. Para ver mais detalhes sobre cada fábrica, incluindo uma lista de compras, basta clicar no respectivo cartão.",
-      "desc1": "Change to 'Com base no número de estantes para paletes adicionadas'.",
+      "desc1": "Você também pode agrupá-las clicando no botão 'Criar Grupo' abaixo. Isso permitirá que você veja essas fábricas em um só lugar e as gerencie como um grupo. Útil se você usa um armazém central para fornecer ingredientes para várias fábricas. Com base no número de estantes para paletes adicionadas, será sugerido um plano de entrega para cada fábrica.",
       "noFactories": "Ainda não há fábricas no seu jogo. Crie uma para começar!",
       "notFound": {
         "title": "Fábrica não encontrada",
