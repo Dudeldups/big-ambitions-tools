@@ -424,14 +424,14 @@
   },
   "database": {
     "intro": {
-      "desc": "Explora detalles de productos, máquinas, vehículos y mucho más. Usa el buscador y los filtros para encontrar lo que buscas rápidamente.",
+      "desc": "Explora a fondo los datos del juego: productos, máquinas, vehículos y más. Usa el buscador y los filtros para encontrar rápido lo que necesitas.",
       "buttonDesc": "Selecciona una categoría"
     },
     "products": {
       "caption": "Todos los productos de un vistazo. Puedes cambiar fácilmente entre precios de fabricación e importación. El precio minorista es el promedio de todos los distritos. Las ganancias se muestran como valores netos, incluyendo costos de ingredientes, salarios de trabajadores y impuestos basados en la dificultad seleccionada. <br></br>¿Te interesa cómo se calcula? Echa un vistazo a la sección <link>{toolsSection}</link>."
     },
     "ingredients": {
-      "caption": "Resumen de todos los ingredientes y sus propiedades. Selecciona la dificultad para ver los precios correspondientes."
+      "caption": "Vista general de todas las materias primas y sus propiedades. Selecciona la dificultad para ver los precios correctos."
     },
     "machines": {
       "caption": "Aquí tienes todas las máquinas de producción. Combina una principal con una o dos secundarias para armar tu estación de trabajo."
@@ -507,12 +507,12 @@
       "desc": "Puedes agrupar fábricas para ver mejor cada categoría de producto. Si las fábricas del grupo no tienen suficientes estanterías para palés, la lista de pedidos te dirá qué pedir para cada fábrica y también para el almacén para completar el resto. El diálogo de entregas también te mostrará qué enviar a cada fábrica.",
       "groupEmpty": "No hay fábricas en este grupo. Arrastra una tarjeta de fábrica aquí para añadirla.",
       "ungroupedTitle": "Fábricas sin agrupar",
-      "ungroupedEmpty": "Aquí no hay nada sin agrupar. Arrastra una tarjeta aquí o crea una nueva fábrica.",
+      "ungroupedEmpty": "Aquí no hay nada todavía. Arrastra una tarjeta de fábrica aquí o crea una nueva.",
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plan de entregas",
         "descNeeded": "Planes de entrega para cada fábrica en este grupo. Necesitarás {amount} estanterías para palés para abastecer todas las fábricas.",
-        "descEnough": "Todas las fábricas tienen suficientes estanterías para palés para almacenar todos los ingredientes necesarios."
+        "descEnough": "Todas las fábricas tienen suficientes estanterías para almacenar todos los ingredientes necesarios."
       },
       "shoppingList": {
         "title": "Lista de compras del grupo",

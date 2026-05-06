@@ -531,7 +531,7 @@
         "weeklyAmount": "Do dostawy tygodniowej potrzebujesz <strong>{count}</strong> {object}.",
         "shelfExplanation": "Dodaj co najmniej jedno stanowisko pracy, aby zobaczyć potrzebną liczbę regałów paletowych.",
         "enoughWeekly": "Wystarczająco na dostawę tygodniową.",
-        "enoughDaily": "Wystarczy na codzienne dostawy. Do logistyki tygodniowej potrzebujesz magazynu.",
+        "enoughDaily": "Wystarczy tylko na codzienne dostawy. Do logistyki tygodniowej potrzebujesz magazynu.",
         "notEnough": "Za mało miejsca na magazynie, nawet na dostawę dzienną.",
         "overflowWarning": "Magazyn się przepełnia!",
         "overflowDesc": "Produkujesz szybciej niż zużywasz składniki. Liczba regałów została dostosowana."
