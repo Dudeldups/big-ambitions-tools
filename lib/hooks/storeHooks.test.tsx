@@ -1,16 +1,12 @@
 import { renderHook } from "@testing-library/react";
-import { useParams } from "next/navigation";
+import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { useAppState } from "./useAppState";
 import { usePlaythroughState } from "./usePlaythroughState";
 import { useActivePlaythrough } from "./useActivePlaythrough";
 import { useAppStore } from "../stores/appStore";
 import { usePlaythroughStore } from "../stores/playthroughStore";
 
-vi.mock("next/navigation", () => ({
-  useParams: vi.fn(),
-}));
-
-const mockedUseParams = vi.mocked(useParams);
+vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
 
 describe("store hooks", () => {
   it("returns null from state hooks until the stores have hydrated", () => {
@@ -54,7 +50,7 @@ describe("store hooks", () => {
       difficulty: "hard",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
-    mockedUseParams.mockReturnValue({ playthroughId: playthrough.id });
+    setMockParams({ playthroughId: playthrough.id });
 
     const { result } = renderHook(() => useActivePlaythrough());
 
@@ -70,7 +66,7 @@ describe("store hooks", () => {
 
   it("marks an unknown route playthrough as invalid once hydrated", () => {
     usePlaythroughStore.setState({ _hasHydrated: true });
-    mockedUseParams.mockReturnValue({ playthroughId: "missing-id" });
+    setMockParams({ playthroughId: "missing-id" });
 
     const { result } = renderHook(() => useActivePlaythrough());
 
