@@ -26,6 +26,7 @@ import {
   PlaythroughState,
   usePlaythroughStore,
 } from "@/lib/stores/playthroughStore";
+import { useUiStore } from "@/lib/stores/uiStore";
 
 beforeEach(async () => {
   localStorage.clear();
@@ -46,6 +47,13 @@ beforeEach(async () => {
       ...initialPlaythroughState,
       ...usePlaythroughStore.getInitialState(),
     } as PlaythroughState & PlaythroughActions,
+    true,
+  );
+  useUiStore.setState(
+    {
+      ...useUiStore.getInitialState(),
+      isOptimalWorkerChecked: true,
+    },
     true,
   );
 });
