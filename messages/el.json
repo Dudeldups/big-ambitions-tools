@@ -286,7 +286,7 @@
     "day": "{count, plural, one {# μέρα} other {# μέρες}}"
   },
   "tableColumns": {
-    "itemName": "Όνομα",
+    "itemName": "Όνομα προϊόντος",
     "purchasePrice": "Τιμή",
     "retailPrice": "Τιμή λιανικής",
     "manufacturePrice": "Τιμή παραγωγής",
@@ -312,7 +312,7 @@
     "autoParkSupported": "Αυτόματο πάρκινγκ",
     "taxDeductible": "Εκπτωτέο",
     "requiredDeliveryDriverSkillValue": "Skill οδηγού",
-    "destinationsThatCanDeliver": "Αρχικοί προορισμοί",
+    "destinationsThatCanDeliver": "Βασ. προορ.",
     "destinationsFull": "Μέγ. προορισμοί",
     "employees": "Υπάλληλοι",
     "description": "Περιγραφή",
@@ -333,9 +333,9 @@
   },
   "toasts": {
     "genericError": "Παρουσιάστηκε σφάλμα. Έλεγξε τα δεδομένα σου και δοκίμασε ξανά. Αν το πρόβλημα συνεχιστεί, κάνε ανανέωση στη σελίδα.",
-    "playthroughSaveSuccess": "Δημιουργήθηκε η κατάσταση παιχνιδιού \"{characterName}\"!",
-    "playthroughEditSuccess": "Η κατάσταση παιχνιδιού \"{characterName}\" ενημερώθηκε!",
-    "playthroughDeleteSuccess": "Η κατάσταση παιχνιδιού \"{characterName}\" διαγράφηκε!",
+    "playthroughSaveSuccess": "Κατάσταση παιχνιδιού \"{characterName}\" δημιουργήθηκε!",
+    "playthroughEditSuccess": "Κατάσταση παιχνιδιού \"{characterName}\" ενημερώθηκε!",
+    "playthroughDeleteSuccess": "Παιχνίδι \"{characterName}\" διαγράφηκε!",
     "workstationCopyError": "Επίλεξε πρώτα έναν Σταθμό Εργασίας Ένδυσης και ένα προϊόν.",
     "factorySaveSuccess": "\"{factoryName}\" δημιουργήθηκε και προστέθηκε στην αποθήκευση!",
     "factoryEditSuccess": "\"{factoryName}\" ενημερώθηκε!",

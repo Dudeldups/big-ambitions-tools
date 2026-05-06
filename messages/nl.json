@@ -311,7 +311,7 @@
     "enginePower": "Versnelling",
     "autoParkSupported": "Parkeerhulp",
     "taxDeductible": "Aftrekbaar",
-    "requiredDeliveryDriverSkillValue": "Chauffeur-skill",
+    "requiredDeliveryDriverSkillValue": "Chauffeurskill",
     "destinationsThatCanDeliver": "Basis-stops",
     "destinationsFull": "Max. stops",
     "employees": "Medewerkers",

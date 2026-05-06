@@ -309,7 +309,7 @@
     "maxCargoCapacity": "Charge utile",
     "maxSpeed": "Vitesse max.",
     "enginePower": "Accélération",
-    "autoParkSupported": "Stationnement auto",
+    "autoParkSupported": "Park assist",
     "taxDeductible": "Déductible",
     "requiredDeliveryDriverSkillValue": "Skill chauffeur",
     "destinationsThatCanDeliver": "Dest. de base",

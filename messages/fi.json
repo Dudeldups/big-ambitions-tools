@@ -286,7 +286,7 @@
     "day": "{count, plural, one {# päivä} other {# päivää}}"
   },
   "tableColumns": {
-    "itemName": "Tuote",
+    "itemName": "Tuotenimi",
     "purchasePrice": "Hinta",
     "retailPrice": "Myyntihinta",
     "manufacturePrice": "Valm.-hinta",
@@ -310,7 +310,7 @@
     "maxSpeed": "Max nopeus",
     "enginePower": "Kiihtyvyys",
     "autoParkSupported": "Parkkiapu",
-    "taxDeductible": "Verovähennyskelpoinen",
+    "taxDeductible": "Verovähennys",
     "requiredDeliveryDriverSkillValue": "Vaat. ajajan taito",
     "destinationsThatCanDeliver": "Peruskohteet",
     "destinationsFull": "Max. kohteet",

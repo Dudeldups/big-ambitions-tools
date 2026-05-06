@@ -428,19 +428,19 @@
       "buttonDesc": "Seleziona una categoria"
     },
     "products": {
-      "caption": "Tutti i prodotti in un colpo d'occhio. Cambia facilmente tra prezzi di produzione e importazione. Il prezzo al dettaglio è la media su tutti i distretti. I profitti sono valori netti – quindi includono ingredienti, stipendi e tasse basati sulla difficoltà selezionata. <br></br>Curioso come viene calcolato? Dai un'occhiata alla sezione <link>{toolsSection}</link>."
+      "caption": "Tutti i prodotti a colpo d'occhio. Passa dai prezzi di produzione a quelli di importazione. Il prezzo al dettaglio è la media di tutti i distretti. I profitti sono valori netti, comprensivi di costi degli ingredienti, stipendi e tasse in base alla difficoltà selezionata. <br></br>Vuoi scoprire come vengono calcolati? Dai un'occhiata alla sezione <link>{toolsSection}</link>."
     },
     "ingredients": {
-      "caption": "Panoramica di tutti gli ingredienti grezzi incluse le loro proprietà. Scegli la difficoltà per vedere i prezzi corretti."
+      "caption": "Panoramica di tutti gli ingredienti e delle loro proprietà. Scegli la difficoltà per vedere i prezzi corretti."
     },
     "machines": {
       "caption": "Tutte le macchine disponibili per la produzione. Combina una macchina principale con una o due secondarie per creare una postazione di lavoro."
     },
     "inventory": {
-      "caption": "Una panoramica delle tue... opzioni di stoccaggio. Per ora. Ne arriveranno di più!"
+      "caption": "Una panoramica di tutte le... opzioni di stoccaggio. Per ora. Molto altro in arrivo!"
     },
     "vehicles": {
-      "caption": "Cerchi massimo carico o solo la corsa più veloce? Qui troverai quello che cerchi. La skill del guidatore si riferisce al tuo {deliveryDriver}, e per il massimo numero di destinazioni ti serve un {logisticsManager} con 100% di skill."
+      "caption": "Cerchi il massimo carico o solo il bolide più veloce? Qui troverai quello che cerchi. La skill del driver si riferisce al tuo {deliveryDriver}, e per il numero massimo di destinazioni ti serve un {logisticsManager} con il 100% di skill."
     }
   },
   "tools": {
@@ -465,7 +465,7 @@
     },
     "factories": {
       "title": "Le tue fabbriche",
-      "desc": "Una panoramica delle tue fabbriche. Puoi modificarle o eliminarle e anche copiare i valori attuali per una nuova fabbrica. Per vedere più dettagli su ogni fabbrica inclusa una lista della spesa, clicca semplicemente sulla rispettiva scheda.",
+      "desc": "Una panoramica delle tue fabbriche. Puoi modificarle, eliminarle o copiare i valori attuali per una nuova fabbrica. Per vedere più dettagli su ogni fabbrica, inclusa la lista della spesa, clicca sulla relativa scheda.",
       "desc1": "Puoi anche raggrupparle insieme cliccando sul pulsante Crea gruppo qui sotto. In questo modo vedrai tutte le fabbriche in un unico posto e le gestirai come gruppo. Utile se usi un magazzino centrale per fornire ingredienti a più fabbriche. In base al numero di scaffali per pallet aggiunti, suggerirà un piano di consegna per ogni fabbrica.",
       "noFactories": "Non ci sono ancora fabbriche nella tua partita. Creane una per iniziare!",
       "notFound": {
@@ -478,41 +478,41 @@
       "editBtn": "Modifica fabbrica",
       "shoppingList": {
         "title": "Lista della spesa",
-        "desc": "Questo è ciò che la tua fabbrica necessita settimanalmente per funzionare a piena capacità."
+        "desc": "Ecco di cosa ha bisogno la tua fabbrica ogni settimana per lavorare a pieno regime."
       },
       "splitShoppingList": {
         "title": "Lista della spesa divisa",
         "desc": "Ordina questi ingredienti direttamente alla tua fabbrica per dividere l'ordine. Questa è la quantità massima che i tuoi {shelfAmount} scaffali per pallet possono contenere. Tiene anche conto del numero di scatole che produci. Avresti bisogno di {requiredAmount} scaffali per immagazzinare tutti gli ingredienti per una settimana intera di produzione.",
-        "desc1": "Il resto deve essere ordinato a un magazzino da uno o più addetti agli acquisti separati. Torna alla <link>panoramica delle fabbriche</link> e crea un gruppo per vedere l'elenco completo di ciò che ordinare a quel magazzino. Mostrerà anche il piano di consegna a ogni fabbrica."
+        "desc1": "Il resto deve essere ordinato a un magazzino da uno o più addetti agli acquisti distinti. Torna alla <link>panoramica della fabbrica</link> e crea un gruppo per vedere l'elenco completo di ciò che ordinare a quel magazzino. Mostrerà anche il piano di consegna a ogni fabbrica."
       }
     },
     "playthroughForm": {
       "title": "Crea una nuova partita",
-      "desc": "Dai un nome al tuo salvataggio e seleziona la difficoltà così il sistema può calcolare i prezzi corretti. Puoi modificare o eliminare i tuoi salvataggi in qualsiasi momento.",
+      "desc": "Dai un nome alla tua partita e seleziona la difficoltà così i tool possono calcolare i prezzi corretti. Puoi modificare o eliminare le tue partite in qualsiasi momento.",
       "placeholder": "ad es. John Manhattan",
-      "deleteTitle": "Elimina salvataggio",
-      "deleteDesc": "Sei sicuro di voler eliminare questo salvataggio? Questa azione non può essere annullata."
+      "deleteTitle": "Elimina partita",
+      "deleteDesc": "Sei sicuro di voler eliminare questa partita? Questa azione non può essere annullata."
     },
     "factoryForm": {
       "deleteTitle": "Elimina fabbrica",
       "deleteDesc": "Sei sicuro di voler eliminare questa fabbrica? Questa azione non può essere annullata."
     },
     "stats": {
-      "netProfitPerWeek": "Profitto netto / settimana",
+      "netProfitPerWeek": "Utile netto / settimana",
       "ordersPerWeek": "Ordini / settimana"
     },
     "factoryGroups": {
       "buttonDesc": "Crea gruppo",
       "title": "Gruppi di fabbrica",
-      "desc": "Puoi raggruppare le fabbriche per avere una migliore panoramica per categoria di prodotto. Se le fabbriche raggruppate non hanno abbastanza scaffali per pallet assegnati, l'elenco degli acquisti ti dirà cosa ordinare per ogni fabbrica e anche per il magazzino per rifornire il resto. Il dialogo sulle consegne ti mostrerà anche cosa inviare a ciascuna fabbrica.",
+      "desc": "Puoi raggruppare le fabbriche per avere una migliore panoramica per categoria di prodotto. Se le fabbriche raggruppate non hanno abbastanza scaffali per pallet assegnati, la lista acquisti ti dirà cosa ordinare per ogni fabbrica e anche per il magazzino per rifornire il resto. La finestra delle consegne ti mostrerà anche cosa inviare a ciascuna fabbrica.",
       "groupEmpty": "Nessuna fabbrica in questo gruppo. Trascina una scheda di fabbrica qui per aggiungerla.",
       "ungroupedTitle": "Fabbriche non raggruppate",
-      "ungroupedEmpty": "Nessuna fabbrica non raggruppata. Trascina una scheda di fabbrica qui o aggiungi una nuova fabbrica.",
+      "ungroupedEmpty": "Qui non c'è ancora nulla. Trascina una scheda di fabbrica qui o aggiungine una nuova.",
       "deliveries": {
         "buttonDesc": "Consegne",
         "title": "Piano di consegna",
         "descNeeded": "Piani di consegna per ogni fabbrica in questo gruppo. Avrai bisogno di {amount} scaffali per pallet per rifornire tutte le fabbriche.",
-        "descEnough": "Tutte le fabbriche hanno abbastanza scaffali per pallet per conservare tutti gli ingredienti necessari."
+        "descEnough": "Le fabbriche hanno abbastanza scaffali per tutti gli ingredienti necessari."
       },
       "shoppingList": {
         "title": "Lista acquisti del gruppo",
@@ -523,16 +523,16 @@
       "title": "Pianificatore di fabbrica",
       "desc": "Calcola gli ingredienti, le macchine e gli operai necessari per le tue linee di produzione. Seleziona semplicemente i prodotti che vuoi produrre e il pianificatore si occuperà del resto.",
       "information": {
-        "legend": "Informazioni fabbrica",
+        "legend": "Info fabbrica",
         "name": "Nome fabbrica",
         "calcBasis": "Base di calcolo",
         "palletDesc": "Definisci quanti scaffali per pallet sono disponibili in questa fabbrica.",
         "dailyAmount": "Per la consegna giornaliera ti servono <strong>{count}</strong> {object}.",
         "weeklyAmount": "Per la consegna settimanale ti servono <strong>{count}</strong> {object}.",
         "shelfExplanation": "Aggiungi almeno una postazione di lavoro per vedere il numero necessario di scaffali per pallet.",
-        "enoughWeekly": "Sufficiente per la consegna settimanale.",
-        "enoughDaily": "Sufficiente solo per la consegna giornaliera. Per la logistica settimanale serve un magazzino.",
-        "notEnough": "Spazio insufficiente anche per la consegna giornaliera.",
+        "enoughWeekly": "Abbastanza per la consegna settimanale.",
+        "enoughDaily": "Abbastanza solo per la consegna giornaliera. Per la logistica settimanale ti serve un magazzino.",
+        "notEnough": "Non c'è abbastanza spazio nemmeno per la consegna giornaliera.",
         "overflowWarning": "Magazzino trabocca!",
         "overflowDesc": "Produci più velocemente del consumo degli ingredienti. Il numero di scaffali è stato corretto di conseguenza."
       },
@@ -551,8 +551,8 @@
       "genericFactoryName": "{productName} fabbrica",
       "estimatedSales": "Vendite settimanali stimate",
       "estimatedSalesTooltip": "Inserisci le vendite attese per ogni prodotto nei tuoi negozi.",
-      "priceIndexButton": "Scegli l'indice dei prezzi",
-      "priceIndexDesc": "Scegli l'indice di prezzo attuale del gioco per questo prodotto per calcolare il guadagno corretto. (Il prezzo di esportazione è più preciso.)"
+      "priceIndexButton": "Imposta indice prezzi",
+      "priceIndexDesc": "Scegli l'attuale indice di prezzo in-game per questo prodotto e calcola il guadagno corretto. (Il prezzo export è più preciso.)"
     }
   },
   "contact": {
