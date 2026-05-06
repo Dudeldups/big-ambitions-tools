@@ -1,0 +1,151 @@
+import userEvent from "@testing-library/user-event";
+import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
+import { _testFactoryFormValues } from "@/__tests__/test-values";
+import { FactoryFormValues } from "@/lib/schemas/factory";
+import { useForm } from "react-hook-form";
+import { PalletShelfField } from "./pallet-shelf-field";
+
+const palletShelfMocks = vi.hoisted(() => ({
+  getOptimalPalletShelfAmount: vi.fn(),
+}));
+
+vi.mock("@/lib/calculations/getOptimalPalletShelfAmount", () => palletShelfMocks);
+vi.mock("../ui/tooltip", () => ({
+  Tooltip: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  TooltipTrigger: ({
+    children,
+    ...props
+  }: React.ComponentProps<"button">) => <button {...props}>{children}</button>,
+  TooltipContent: ({ children }: { children: React.ReactNode }) => (
+    <div>{children}</div>
+  ),
+}));
+vi.mock("@/lib/hooks/useRichDefaults", () => ({
+  useRichDefaults: () => ({
+    t: (key: string, values?: Record<string, unknown>) => {
+      if (key === "counts.palletShelf") {
+        return `${values?.count} pallet shelves`;
+      }
+
+      const translations: Record<string, string> = {
+        "general.palletShelves": "Pallet shelves",
+        "tools.factoryPlanner.information.palletDesc":
+          "Define how many pallet shelves are available in this factory.",
+        "tools.factoryPlanner.information.shelfExplanation":
+          "Add at least one workstation to see the required number of pallet shelves.",
+        "tools.factoryPlanner.information.enoughWeekly":
+          "Enough for weekly delivery.",
+        "tools.factoryPlanner.information.enoughDaily":
+          "Enough for daily delivery only. A warehouse is required for weekly logistics.",
+        "tools.factoryPlanner.information.notEnough":
+          "Not enough storage even for daily delivery.",
+        "tools.factoryPlanner.information.overflowWarning": "Stock piling up!",
+        "tools.factoryPlanner.information.overflowDesc":
+          "Production outpaces ingredient consumption. Shelf count adjusted accordingly.",
+      };
+
+      return translations[key] ?? key;
+    },
+    rich: (key: string, values?: Record<string, unknown>) => {
+      if (key === "tools.factoryPlanner.information.dailyAmount") {
+        return `Daily delivery requires ${values?.count} ${values?.object}.`;
+      }
+      if (key === "tools.factoryPlanner.information.weeklyAmount") {
+        return `Weekly delivery requires ${values?.count} ${values?.object}.`;
+      }
+      return key;
+    },
+  }),
+}));
+
+function PalletShelfFieldHarness({
+  shelfAmount = 50,
+}: {
+  shelfAmount?: number;
+}) {
+  const form = useForm<FactoryFormValues>({
+    defaultValues: {
+      ..._testFactoryFormValues,
+      shelfAmount,
+    },
+  });
+
+  return <PalletShelfField control={form.control} errors={form.formState.errors} />;
+}
+
+describe("PalletShelfField", () => {
+  it("normalizes leading zeros in the shelf amount input", async () => {
+    const user = userEvent.setup();
+    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
+      daily: 1,
+      weekly: 2,
+      external: 2,
+      isOverflowing: false,
+    });
+
+    renderWithIntl(<PalletShelfFieldHarness shelfAmount={5} />);
+
+    const input = screen.getByLabelText("Pallet shelves");
+
+    await user.clear(input);
+    await user.type(input, "007");
+
+    await waitFor(() => {
+      expect(input).toHaveValue(7);
+    });
+  });
+
+  it("shows the shelf explanation when no workstation-based shelves are needed yet", () => {
+    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
+      daily: 0,
+      weekly: 0,
+      external: 0,
+      isOverflowing: false,
+    });
+
+    renderWithIntl(<PalletShelfFieldHarness />);
+
+    expect(
+      screen.getByText(
+        "Add at least one workstation to see the required number of pallet shelves.",
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("shows the weekly success state when enough shelves are available", () => {
+    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
+      daily: 4,
+      weekly: 10,
+      external: 10,
+      isOverflowing: false,
+    });
+
+    renderWithIntl(<PalletShelfFieldHarness shelfAmount={12} />);
+
+    expect(
+      screen.getByText("Daily delivery requires 4 4 pallet shelves."),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Weekly delivery requires 10 10 pallet shelves."),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Enough for weekly delivery.")).toBeInTheDocument();
+  });
+
+  it("shows overflow and daily-only warnings when weekly capacity is not enough", () => {
+    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
+      daily: 4,
+      weekly: 10,
+      external: 10,
+      isOverflowing: true,
+    });
+
+    renderWithIntl(<PalletShelfFieldHarness shelfAmount={5} />);
+
+    expect(screen.getByText("Stock piling up!")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Enough for daily delivery only. A warehouse is required for weekly logistics.",
+      ),
+    ).toBeInTheDocument();
+  });
+});
