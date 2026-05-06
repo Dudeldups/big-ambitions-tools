@@ -19,9 +19,16 @@ import {
 
 beforeEach(async () => {
   localStorage.clear();
-  useAppStore.setState(initialAppState as AppState & AppActions, true);
-  useAppStore.persist.clearStorage();
   resetIndexedDbMock();
+  await useAppStore.persist.clearStorage();
+  await usePlaythroughStore.persist.clearStorage();
+  useAppStore.setState(
+    {
+      ...initialAppState,
+      ...useAppStore.getInitialState(),
+    } as AppState & AppActions,
+    true,
+  );
   usePlaythroughStore.setState(
     {
       ...initialPlaythroughState,
