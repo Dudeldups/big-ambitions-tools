@@ -4,6 +4,14 @@ import { resetIndexedDbMock } from "./mocks/idb-keyval";
 
 vi.mock("idb-keyval", () => import("./mocks/idb-keyval"));
 
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+globalThis.ResizeObserver = ResizeObserverMock as typeof ResizeObserver;
+
 import {
   AppActions,
   AppState,
