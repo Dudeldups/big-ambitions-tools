@@ -650,8 +650,8 @@
     }
   },
   "footer": {
-    "assets": "Alle afbeeldingen, merken en assets uit het spel zijn eigendom van de eigenaren.",
-    "fanMade": "Dit is een fan-project en heeft niets te maken met de ontwikkelaars van het spel. De broncode vind je op <link>GitHub</link>."
+    "assets": "Alle afbeeldingen, merken en assets uit het spel behoren toe aan de respectievelijke eigenaren.",
+    "fanMade": "Dit is een fanproject en heeft niets te maken met de ontwikkelaars van het spel. De broncode vind je op <link>GitHub</link>."
   },
   "metadata": {
     "root": {

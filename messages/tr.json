@@ -650,8 +650,8 @@
     }
   },
   "footer": {
-    "assets": "Oyunun tüm görselleri, markaları ve varlıkları ilgili sahiplerine aittir.",
-    "fanMade": " Bu site bir fan projesidir ve oyunun geliştiricileriyle hiçbir bağlantısı yoktur. Kaynak kodu <link>GitHub</link>'de bulabilirsin."
+    "assets": "Oyun içindeki tüm görseller, markalar ve öğeler sahiplerine ait.",
+    "fanMade": "Bu site bir fan projesi; oyun geliştiricileriyle bir bağımız yok. Kaynak kodunu <link>GitHub</link> üzerinden bulabilirsin."
   },
   "metadata": {
     "root": {

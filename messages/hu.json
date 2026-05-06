@@ -651,7 +651,7 @@
   },
   "footer": {
     "assets": "A játék képei, védjegyei és assetjei a tulajdonosoké.",
-    "fanMade": " Ez egy tiszta rajongói oldal, és nincs kapcsolata a játék fejlesztőivel. A forráskódot itt találod: <link>GitHub</link>."
+    "fanMade": "Ez egy rajongói oldal, és nincs kapcsolata a játék fejlesztőivel. A forráskódot itt találod: <link>GitHub</link>."
   },
   "metadata": {
     "root": {

@@ -650,8 +650,8 @@
     }
   },
   "footer": {
-    "assets": "Toutes les images, marques et ressources du jeu appartiennent à leurs propriétaires respectifs.",
-    "fanMade": "Ce site est un projet de fans et n'est pas affilié aux développeurs du jeu. Tu peux consulter le code source sur <link>GitHub</link>."
+    "assets": "Toutes les images, marques et éléments du jeu appartiennent à leurs propriétaires respectifs.",
+    "fanMade": "Ce site est un projet de fans et n'a aucun lien avec les développeurs du jeu. Tu peux consulter le code source sur <link>GitHub</link>."
   },
   "metadata": {
     "root": {

@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Todas las imágenes, marcas y activos del juego pertenecen a sus respectivos dueños.",
+    "assets": "Las imágenes, marcas y assets del juego pertenecen a sus dueños.",
     "fanMade": " Este es un proyecto de fans y no tiene relación con los desarrolladores del juego. El código fuente lo encuentras en <link>GitHub</link>."
   },
   "metadata": {

@@ -650,7 +650,7 @@
     }
   },
   "footer": {
-    "assets": "Toate imaginile, mărcile și resursele din joc aparțin proprietarilor lor.",
+    "assets": "Toate imaginile, mărcile și asset-urile jocului aparțin proprietarilor respectivi.",
     "fanMade": "Acest site este creat de fani și nu are nicio legătură cu dezvoltatorii jocului. Codul sursă îl poți găsi pe <link>GitHub</link>."
   },
   "metadata": {
