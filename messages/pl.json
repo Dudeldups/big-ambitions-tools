@@ -428,7 +428,7 @@
       "buttonDesc": "Wybierz kategorię"
     },
     "products": {
-      "caption": "Produkty na jednym ekranie. Możesz łatwo przełączać się między cenami produkcyjnymi a importowymi. Cena detaliczna to średnia z wszystkich dzielnic. Zyski są pokazywane jako wartości netto – czyli wliczając koszty składników, pensje pracowników i podatki zgodnie z wybraną trudnością. <br></br>Ciekawe, jak to jest obliczane? Sprawdź sekcję <link>{toolsSection}</link>."
+      "caption": "Wszystkie produkty w pigułce. Możesz łatwo przełączać się między cenami produkcyjnymi a importowymi. Cena detaliczna to średnia z wszystkich dzielnic. Zyski są podawane jako wartości netto – uwzględniając koszty składników, wypłaty pracowników i podatki zależnie od wybranej trudności. <br></br>Chcesz wiedzieć, jak to się liczy? Sprawdź sekcję <link>{toolsSection}</link>."
     },
     "ingredients": {
       "caption": "Przegląd wszystkich surowych składników wraz z ich właściwościami. Wybierz trudność, aby zobaczyć poprawne ceny."
@@ -469,7 +469,7 @@
       "desc1": "Możesz też je pogrupować, klikając przycisk 'Utwórz grupę' poniżej. Dzięki temu zobaczysz wszystkie fabryki w jednym miejscu i łatwiej nimi zarządzisz. To przydatne, jeśli używasz centralnego magazynu do dostarczania składników do wielu fabryk. Na podstawie liczby dodanych regałów paletowych system podpowie Ci plan dostaw dla każdej fabryki.",
       "noFactories": "W Twoim stanie gry nie ma jeszcze żadnych fabryk. Stwórz jedną, aby zacząć zabawę!",
       "notFound": {
-        "title": "Nie ma tej fabryki",
+        "title": "Nie znaleziono fabryki",
         "desc": "Ta fabryka nie istnieje lub została usunięta.",
         "link": "Powrót do listy fabryk"
       }
@@ -512,7 +512,7 @@
         "buttonDesc": "Dostawy",
         "title": "Plan dostaw",
         "descNeeded": "Plany dostaw dla każdej fabryki w tej grupie. Potrzebujesz {amount} regałów paletowych, aby zaopatrzyć wszystkie fabryki.",
-        "descEnough": "Wszystkie fabryki mają wystarczająco dużo półek, by pomieścić wszystkie potrzebne składniki."
+        "descEnough": "Wszystkie fabryki mają wystarczająco dużo regałów, by pomieścić wszystkie potrzebne składniki."
       },
       "shoppingList": {
         "title": "Lista zakupów grupy",
@@ -531,7 +531,7 @@
         "weeklyAmount": "Do dostawy tygodniowej potrzebujesz <strong>{count}</strong> {object}.",
         "shelfExplanation": "Dodaj co najmniej jedno stanowisko pracy, aby zobaczyć potrzebną liczbę regałów paletowych.",
         "enoughWeekly": "Wystarczająco na dostawę tygodniową.",
-        "enoughDaily": "Tylko na dostawy dzienne. Przy logistyce tygodniowej potrzebny jest magazyn.",
+        "enoughDaily": "Wystarczy na codzienne dostawy. Do logistyki tygodniowej potrzebujesz magazynu.",
         "notEnough": "Za mało miejsca na magazynie, nawet na dostawę dzienną.",
         "overflowWarning": "Magazyn się przepełnia!",
         "overflowDesc": "Produkujesz szybciej niż zużywasz składniki. Liczba regałów została dostosowana."

@@ -448,7 +448,7 @@
       "desc": "Tässä voit sukeltaa syvälle pelin numeroihin ja tilastoihin. Suunnittele tehtaasi ja hallitse koko imperiumisi logistiikkaa!"
     },
     "playthroughs": {
-      "desc": "Alhaalta voit luoda ja hallita tallennuksiasi. Jokainen tallennus on oma pelikertansa. Voit tehdä useita tallennuksia vertaillaksesi eri pelikertoja, kokeilla muita vaikeustasoja tai vain seurata edistymistäsi.",
+      "desc": "Alapuolella voit luoda ja hallita tallennuksiasi. Jokainen tallennus on oma pelikertansa. Voit tehdä useita tallennuksia vertaillaksesi eri pelikertoja, kokeilla muita vaikeustasoja tai vain seurata edistymistäsi.",
       "warning": "Huom: Edistymisesi tallentuu selaimeen. Jos tyhjennät selaimen tiedot tai käytät incognito-tilaa, kaikki voi kadota.",
       "createButtonDesc": "Uusi tallennus",
       "noPlaythroughs": "Ei vielä tallennuksia. Luo uusi ja pääset alkuun!",
@@ -460,7 +460,7 @@
     },
     "playthroughDetail": {
       "desc": "Tässä näet imperiumisi tuotantotilastot. Käy \"Tehtaat\"-sivulla katsomassa tehtaasi, seuraamassa tilattavia osia ja paljon muuta. Tehtaan suunnittelija näyttää tarkat tiedot tuotantomääristä, tilauksista ja niin edelleen.",
-      "productionOverview": "Viikoittainen tuotantoyleiskatsaus",
+      "productionOverview": "Viikoittainen tuotannon yleiskatsaus",
       "noProductionData": "Tietoja ei vielä ole. Luo tehtaita, niin näet tuotantotilastosi tässä."
     },
     "factories": {
@@ -482,15 +482,15 @@
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
-        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi vetää. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
+        "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi sisältää. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
         "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet koko listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
       }
     },
     "playthroughForm": {
-      "title": "Luo uusi pelikerta",
+      "title": "Luo uusi tallennus",
       "desc": "Nimeä tallennuksesi ja valitse vaikeusaste, jotta työkalut laskevat oikeat hinnat. Voit muokata tai poistaa tallennuksesi milloin tahansa.",
       "placeholder": "esim. John Manhattan",
-      "deleteTitle": "Poista pelikerta",
+      "deleteTitle": "Poista tallennus",
       "deleteDesc": "Oletko varma, että haluat poistaa tämän tallennuksen? Tätä ei voi peruuttaa."
     },
     "factoryForm": {
@@ -511,7 +511,7 @@
       "deliveries": {
         "buttonDesc": "Toimitukset",
         "title": "Toimitussuunnitelma",
-        "descNeeded": "Toimitussuunnitelmat tämän ryhmän tehtaille. Tarvitset {amount} lavahyllyä kaikkien tehtaiden varustamiseen.",
+        "descNeeded": "Toimitussuunnitelmat tämän ryhmän tehtaille. Tarvitset {amount} lavahyllyä, jotta kaikki tehtaat saadaan katettua.",
         "descEnough": "Kaikilla tehtailla on tarpeeksi hyllyä kaikkiin ainesosiin."
       },
       "shoppingList": {
@@ -531,7 +531,7 @@
         "weeklyAmount": "Viikkotoimitukseen tarvitset <strong>{count}</strong> {object}.",
         "shelfExplanation": "Lisää vähintään yksi työpiste, niin näet tarvittavien lavahyllyjen määrän.",
         "enoughWeekly": "Tarpeeksi viikkotoimitukseen.",
-        "enoughDaily": "Tarpeeksi vain päivittäiseen toimitukseen. Viikkotoimitukseen tarvitaan varasto.",
+        "enoughDaily": "Tarpeeksi vain päivittäiseen toimitukseen. Viikkologistiikkaan tarvitset varaston.",
         "notEnough": "Liian vähän tilaa, jopa päivittäiseen toimitukseen.",
         "overflowWarning": "Varasto täyttyy!",
         "overflowDesc": "Tuotat nopeammin kuin raaka-aineita kulutat. Hyllymäärä on säädetty vastaavasti."

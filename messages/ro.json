@@ -288,7 +288,7 @@
   "tableColumns": {
     "itemName": "Nume articol",
     "purchasePrice": "Preț",
-    "retailPrice": "Preț vânzare",
+    "retailPrice": "Preț de vânzare",
     "manufacturePrice": "Preț fabr.",
     "storageCapacity": "Capacitate stoc",
     "workstation": "Post de lucru",
@@ -431,13 +431,13 @@
       "caption": "Toate produsele pe o privire de ansamblu. Poți să treci ușor între prețurile de producție și import. Prețul de retail este media peste toate districtele. Profiturile sunt afișate ca valori nete – adică inclusiv costurile ingredientelor, salariile lucrătorilor și taxele bazate pe dificultatea selectată. <br></br>Curios cum se calculează? Aruncă o privire la secțiunea <link>{toolsSection}</link>."
     },
     "ingredients": {
-      "caption": "Toate ingredientele brute și proprietățile lor. Alege dificultatea pentru a vedea prețurile corecte."
+      "caption": "Prezentare generală a tuturor ingredientelor brute, inclusiv proprietățile acestora. Selectează dificultatea pentru a vedea prețurile corecte."
     },
     "machines": {
       "caption": "Toate mașinile pe care le poți folosi în producție. Combină o mașină principală cu una sau două mașini secundare pentru a crea un post de lucru."
     },
     "inventory": {
-      "caption": "O scurtă privire peste... opțiunile tale de stocare. Doar atât, deocamdată. Mai urmează!"
+      "caption": "O scurtă prezentare a... opțiunilor tale de stocare. Doar atât, deocamdată. Mai urmează!"
     },
     "vehicles": {
       "caption": "Cauți încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru un număr maxim de destinații ai nevoie de un {logisticsManager} cu 100% skill."
@@ -449,7 +449,7 @@
     },
     "playthroughs": {
       "desc": "Mai jos poți crea și gestiona partidele tale. O partidă reprezintă o singură sesiune de joc. Poți crea mai multe partide pentru a compara diferite sesiuni, a testa alte dificultăți sau pur și simplu pentru a-ți urmări progresul.",
-      "warning": "Important: Progresul tău este stocat în browser. Dacă ștergi datele din browser sau folosești modul privat/incognito, totul ar putea dispărea.",
+      "warning": "Atenție: Progresul tău este stocat în browser. Dacă ștergi datele din browser sau folosești modul privat/incognito, totul ar putea dispărea.",
       "createButtonDesc": "Partidă nouă",
       "noPlaythroughs": "Nu ai încă nicio partidă. Creează una ca să începi!",
       "notFound": {
@@ -459,14 +459,14 @@
       }
     },
     "playthroughDetail": {
-      "desc": "Aici poți vedea statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” pentru o privire de ansamblu asupra fabricilor tale, ca să urmărești produsele de comandat pentru liniile de producție și multe altele. Planificatorul îți arată toate detaliile despre statisticile de producție, cantitățile comandate și multe altele.",
+      "desc": "Aici poți vedea statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” pentru o imagine de ansamblu asupra fabricilor tale, ca să urmărești produsele necesare liniilor de producție și nu numai. Planificatorul îți arată toate detaliile despre statisticile de producție, cantitățile comandate și multe alte detalii.",
       "productionOverview": "Rezumat săptămânal al producției",
       "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici."
     },
     "factories": {
       "title": "Fabricile tale",
       "desc": "Vezi aici toate fabricile tale. Le poți edita, șterge sau copia valorile actuale pentru o fabrică nouă. Apasă pur și simplu pe cardul fiecărei fabrici pentru detalii și lista de cumpărături.",
-      "desc1": "Poți să le grupezi făcând clic pe butonul „Creează grup” de mai jos. Astfel le poți vedea într-un singur loc și le poți gestiona ca un grup. E util dacă folosești un depozit central care furnizează ingrediente pentru mai multe fabrici. În funcție de numărul de rafturi de paleți adăugate, sistemul va sugera un plan de livrare pentru fiecare fabrică.",
+      "desc1": "Poți să le grupezi făcând clic pe butonul „Creează grup” de mai jos. Astfel le poți vedea într-un singur loc și le poți gestiona ca un grup. E util dacă folosești un depozit central care furnizează ingrediente pentru mai multe fabrici. În funcție de numărul de rafte de paleți adăugate, sistemul va sugera un plan de livrare pentru fiecare fabrică.",
       "noFactories": "Nu există încă fabrici în partida ta. Creează una pentru a începe!",
       "notFound": {
         "title": "Fabrică nu găsită",
@@ -483,7 +483,7 @@
       "splitShoppingList": {
         "title": "Listă de cumpărături împărțită",
         "desc": "Comandă aceste ingrediente direct la fabrica ta pentru a împărți comanda. Aceasta este cantitatea maximă pe care {shelfAmount} rafturi pentru paleți le pot reține. Se ia în considerare și numărul de cutii pe care le produci. Ai nevoie de {requiredAmount} rafturi pentru a stoca toate ingredientele pentru o săptămână întreagă de producție.",
-        "desc1": "Restul trebuie comandat la un depozit de către unul sau mai mulți agenți de achiziții. Întoarce-te la <link>panoul fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare pentru fiecare fabrică."
+        "desc1": "Restul trebuie comandat la un depozit de unul sau mai mulți agenți de achiziții separați. Întoarce-te la <link>prezentarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare pentru fiecare fabrică."
       }
     },
     "playthroughForm": {
@@ -504,7 +504,7 @@
     "factoryGroups": {
       "buttonDesc": "Creează grup",
       "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pe fiecare categorie de produs. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce să comanzi pentru fiecare fabrică și pentru depozit, ca să completezi restul stocului. Dialogul de livrări îți arată și ce trebuie trimis fiecărei fabrici.",
+      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pentru fiecare categorie de produs. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce să comanzi pentru fiecare fabrică și pentru depozit, ca să completezi restul stocului. Dialogul de livrări îți arată și ce trebuie trimis fiecărei fabrici.",
       "groupEmpty": "Nicio fabrică în acest grup. Trage un card de fabrică aici ca să îl adaugi.",
       "ungroupedTitle": "Fabrici ne-grupate",
       "ungroupedEmpty": "Nu e nimic pe aici. Trage un card aici sau creează o fabrică nouă.",
@@ -523,7 +523,7 @@
       "title": "Planificator de fabrici",
       "desc": "Calculează ingredientele, mașinile și muncitorii necesari pentru liniile tale de producție. Alege produsele pe care vrei să le produci, iar planerul se ocupă de restul.",
       "information": {
-        "legend": "Detalii fabrică",
+        "legend": "Informații despre fabrică",
         "name": "Numele fabricii",
         "calcBasis": "Baza de calcul",
         "palletDesc": "Defineste câte rafturi pentru paleți sunt disponibile în această fabrică.",
@@ -551,7 +551,7 @@
       "genericFactoryName": "Fabrică de {productName}",
       "estimatedSales": "Vânzări săptămânale estimate",
       "estimatedSalesTooltip": "Introdu vânzările așteptate pentru fiecare produs în magazinele tale.",
-      "priceIndexButton": "Alege indexul",
+      "priceIndexButton": "Alege index",
       "priceIndexDesc": "Alege indexul de preț actual din joc pentru acest produs ca să calculezi venitul corect. (Prețul de export e mai precis.)"
     }
   },

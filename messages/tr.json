@@ -378,7 +378,7 @@
       "workstationsRequired": "En az bir çalışma istasyonu ekle.",
       "atLeastOneVehicle": "Fabrika için en az bir araca ihtiyacın var.",
       "maxTwoVehicles": "Fabrika için max. iki araç atanabilir.",
-      "shelfAmountTooLow": "Fabriğin çalışması için rafları ekle."
+      "shelfAmountTooLow": "Fabrikanın çalışması için raf eklemen lazım."
     },
     "factoryGroup": {
       "nameTooLong": "Grup adı en fazla 30 karakter olmalı.",
@@ -428,7 +428,7 @@
       "buttonDesc": "Bir kategori seç"
     },
     "products": {
-      "caption": "Tüm ürünler tek bakışta. Üretim ve ithal fiyatları arasında kolayca geçiş yapabilirsin. Perakende fiyatı tüm ilçeler üzerinden ortalama değerdir. Karlar, seçilen zorluk seviyesine göre malzeme maliyetleri, çalışan maaşları ve vergileri dahil olan net değerler olarak gösterilir. <br></br>Nasıl hesaplandığına meraklı mısın? <link>{toolsSection}</link> bölümünü kontrol et."
+      "caption": "Tüm ürünlere tek bakışta göz at. Üretim ve ithalat fiyatları arasında kolayca geçiş yapabilirsin. Perakende fiyatı tüm ilçelerin ortalamasıdır. Karlar; malzeme maliyetleri, çalışan maaşları ve seçilen zorluk seviyesine göre vergiler dahil net değerlerdir. <br></br>Nasıl hesaplandığını mı merak ediyorsun? <link>{toolsSection}</link> bölümüne göz at."
     },
     "ingredients": {
       "caption": "Tüm hammaddeler ve özellikleri. Doğru fiyatları görmek için zorluk seviyesini seç."
@@ -440,22 +440,22 @@
       "caption": "Tüm... depolama seçeneklerinin küçük bir özeti. Şimdilik. Daha fazlası gelecek!"
     },
     "vehicles": {
-      "caption": "Maksimum yük mi yoksa sadece en hızlı araç mı arıyorsun? Burada bulabilirsin. Sürücü yeteneği {deliveryDriver} ile ilgilidir ve maksimum destinasyonlar için %100 yetenekli bir {logisticsManager} gerekir."
+      "caption": "Maksimum yük mü yoksa sadece en hızlı araç mı arıyorsun? Aradığın burada! Sürücü yeteneği {deliveryDriver}'a bağlıdır ve maksimum hedef sayısı için %100 yetenekli bir {logisticsManager} gerekiyor."
     }
   },
   "tools": {
     "intro": {
-      "desc": "Burada oyunun sayısal verileri ve istatistiklerine derinlemesine dalabilirsin. Fabrikalarını planla ve tüm İmparatorluğun lojistiğini yönet!"
+      "desc": "Burada oyunun rakamlarına ve istatistiklerine derinlemesine dalabilirsin. Fabrikalarını planla ve tüm imparatorluğunun lojistiğini yönet!"
     },
     "playthroughs": {
-      "desc": "Aşağıda oyun kayıtlarını oluşturabilir ve yönetebilirsin. Her bir kayıt, oyunun tek bir turudur. Farklı turları karşılaştırmak, farklı zorlukları denemek veya sadece ilerlemeni takip etmek için birden fazla kayıt oluşturabilirsin.",
+      "desc": "Aşağıda oyun durumlarını oluşturabilir ve yönetebilirsin. Bir oyun durumu, oyunun tek bir turunu temsil eder. Farklı turları karşılaştırmak, farklı zorlukları denemek veya sadece ilerlemeni takip etmek için birden fazla oyun durumu oluşturabilirsin.",
       "warning": "Önemli: İlerlemen tarayıcında saklanır. Tarayıcı verilerini silersen veya Gizli/İnkognito Mod kullanırsan, her şey kaybolabilir.",
-      "createButtonDesc": "Yeni Kayıt",
-      "noPlaythroughs": "Henüz kayıt yok. Başlamak için bir tane oluştur!",
+      "createButtonDesc": "Yeni oyun durumu",
+      "noPlaythroughs": "Henüz hiç oyun durumu yok. Başlamak için bir tane oluştur!",
       "notFound": {
-        "title": "Kayıt bulunamadı",
-        "desc": "Bu kayıt mevcut değil veya silinmiş.",
-        "link": "Kayıt listesine dön"
+        "title": "Oyun durumu bulunamadı",
+        "desc": "Bu oyun durumu mevcut değil veya silinmiş.",
+        "link": "Oyun durumları listesine dön"
       }
     },
     "playthroughDetail": {
@@ -466,7 +466,7 @@
     "factories": {
       "title": "Fabrikaların",
       "desc": "Fabrikalarına buradan göz atabilirsin. Düzenleyebilir, silebilir veya yeni bir fabrika için mevcut değerleri kopyalayabilirsin. Alışveriş listesi de dahil olmak üzere daha fazla detay için ilgili karta tıklaman yeterli.",
-      "desc1": "Aşağıdaki 'Grup Oluştur' butonuna tıklayarak onları da gruplandırabilirsin. Böylece tüm fabrikaları tek bir yerde görebilir ve grup olarak yönetebilirsin. Birden fazla fabrikanın malzemesini sağlamak için merkezi bir depo kullanıyorsan işe yarar. Eklediğin palet raf sayısına göre her fabrikanın için bir teslimat planı önerecek.",
+      "desc1": "Aşağıdaki 'Grup Oluştur' butonuna tıklayarak onları da gruplandırabilirsin. Böylece tüm fabrikaları tek bir yerde görebilir ve grup olarak yönetebilirsin. Birden fazla fabrikanın malzemesini sağlamak için merkezi bir depo kullanıyorsan işe yarar. Eklediğin palet rafı sayısına göre her fabrika için bir teslimat planı önerecek.",
       "noFactories": "Oyununda henüz hiç fabrika yok. Başlamak için bir tane oluştur!",
       "notFound": {
         "title": "Fabrika bulunamadı",
@@ -477,7 +477,7 @@
     "factoryDetail": {
       "editBtn": "Fabrikayı düzenle",
       "shoppingList": {
-        "title": "Satın Alma Listesi",
+        "title": "Alışveriş Listesi",
         "desc": "Fabrikanın tam kapasiteyle çalışması için haftalık olarak gereken malzemeler bunlar."
       },
       "splitShoppingList": {
@@ -488,10 +488,10 @@
     },
     "playthroughForm": {
       "title": "Yeni oyun durumu oluştur",
-      "desc": "Oyun seansına bir isim gir ve zorluk seviyesini seç, böylece araçlar doğru fiyatları hesaplayabilir. Oyun seanslarını istediğin zaman düzenleyebilir veya silebilirsin.",
+      "desc": "Oyun durumuna bir isim ver ve doğru fiyatların hesaplanabilmesi için zorluk seviyesini seç. Oyun durumlarını istediğin zaman düzenleyebilir veya silebilirsin.",
       "placeholder": "Örn. John Manhattan",
-      "deleteTitle": "Oyun seansı sil",
-      "deleteDesc": "Bu oyun seansını silmek istediğine emin misin? Bu işlem geri alınamaz."
+      "deleteTitle": "Oyun durumunu sil",
+      "deleteDesc": "Bu oyun durumunu silmek istediğine emin misin? Bu işlem geri alınamaz."
     },
     "factoryForm": {
       "deleteTitle": "Fabrika sil",
@@ -506,8 +506,8 @@
       "title": "Fabrika Grupları",
       "desc": "Ürün kategorileri başına daha iyi bir genel bakış için fabrikaları gruplandırabilirsin. Gruplanmış fabrikalara yeterli Palet Rafı atanmamışsa, Alışveriş Listesi sana her fabrika ve depoya ne sipariş etmen gerektiğini gösterecek. Teslimat diyalogu da her fabrikaya gönderilmesi gerekenleri gösterir.",
       "groupEmpty": "Bu grupta fabrika yok. Buraya bir fabrika kartı sürükleyerek ekleyebilirsin.",
-      "ungroupedTitle": "Gruplanmamış Fabrikalar",
-      "ungroupedEmpty": "Burada gruplanmamış fabrika yok. Buraya bir fabrika kartı sürükleyebilir veya yeni bir fabrika ekleyebilirsin.",
+      "ungroupedTitle": "Gruplandırılmamış Fabrikalar",
+      "ungroupedEmpty": "Henüz gruplanmamış fabrika yok. Bir kartı buraya sürükle veya yeni bir fabrika ekle.",
       "deliveries": {
         "buttonDesc": "Teslimatlar",
         "title": "Teslimat Planı",
@@ -521,7 +521,7 @@
     },
     "factoryPlanner": {
       "title": "Fabrika Planlayıcısı",
-      "desc": "Üretim hatların için gereken malzemeleri, makineleri ve iş gücünü hesapla. Üretmek istediğin ürünleri seç, planlayıcı gerisini halleder.",
+      "desc": "Üretim hatların için gereken malzemeleri, makineleri ve işçileri hesapla. Üretmek istediğin ürünleri seç, planlayıcı gerisini halleder.",
       "information": {
         "legend": "Fabrik Bilgileri",
         "name": "Fabrik Adı",

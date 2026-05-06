@@ -297,13 +297,13 @@
     "importPrice": "Importpris",
     "exportPrice": "Exportpris",
     "profitMargin": "Avance",
-    "profitPerHour": "Profit/time",
+    "profitPerHour": "Profit/t",
     "amount": "Beløb",
     "amountPerBox": "Mængde/karton",
     "usedInProducts": "I produkter",
     "importers": "Importører",
     "ingredients": "Ingredienser",
-    "productionRate": "Prod./time",
+    "productionRate": "Prod./t",
     "vehicleName": "Køretøjnavn",
     "maxFuel": "Tankindhold",
     "maxCargoCapacity": "Lastkapacitet",
@@ -312,7 +312,7 @@
     "autoParkSupported": "Parkeringshjælp",
     "taxDeductible": "Fradrag",
     "requiredDeliveryDriverSkillValue": "Chauffør-skill",
-    "destinationsThatCanDeliver": "Basis-stop",
+    "destinationsThatCanDeliver": "Basismål",
     "destinationsFull": "Maks. stop",
     "employees": "Medarbejdere",
     "description": "Beskrivelse",
@@ -469,7 +469,7 @@
       "desc1": "Du kan også gruppere dem sammen ved at klikke på knappen 'Opret gruppe' nedenfor. Så ser du alle fabrikker på ét sted og administrerer dem som en gruppe. Praktisk, hvis du bruger et centralt lager til at levere ingredienser til flere fabrikker. Baseret på antallet af pallehylder du har tilføjet, vil det foreslå en leveringsplan for hver fabrik.",
       "noFactories": "Der er ingen fabrikker i din spilstand endnu. Opret en for at komme i gang!",
       "notFound": {
-        "title": "Fabrik ikke fundet",
+        "title": "Fabrikken blev ikke fundet",
         "desc": "Denne fabrik eksisterer ikke eller er blevet slettet.",
         "link": "Tilbage til fabrikoversigten"
       }
@@ -487,11 +487,11 @@
       }
     },
     "playthroughForm": {
-      "title": "Opret et nyt spil",
+      "title": "Opret en ny spilstand",
       "desc": "Giv din spilstand et navn og vælg sværhedsgraden, så værktøjerne kan beregne de korrekte priser. Du kan altid redigere eller slette dine spilstande.",
       "placeholder": "f.eks. John Manhattan",
       "deleteTitle": "Slet spilstand",
-      "deleteDesc": "Er du sikker på, at du vil slette denne gennemspilning? Det kan ikke fortrydes."
+      "deleteDesc": "Er du sikker på, at du vil slette denne spilstand? Det kan ikke fortrydes."
     },
     "factoryForm": {
       "deleteTitle": "Slet fabrik",
@@ -521,7 +521,7 @@
     },
     "factoryPlanner": {
       "title": "Fabriksplanlægger",
-      "desc": "Beregn de nødvendige ingredienser, maskiner og fabriksarbejdere til dine produktionslinjer. Vælg blot produkterne, du vil producere, og planeren tager resten.",
+      "desc": "Beregn de nødvendige ingredienser, maskiner og arbejdere til dine produktionslinjer. Vælg blot produkterne, du vil producere, og planeren tager resten.",
       "information": {
         "legend": "Fabriksinfo",
         "name": "Fabriknavn",

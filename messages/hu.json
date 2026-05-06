@@ -453,8 +453,8 @@
       "createButtonDesc": "Új játékállapot",
       "noPlaythroughs": "Még nincs játékállapodás. Hozz létre egyet a kezdéshez!",
       "notFound": {
-        "title": "Játékmenet nem található",
-        "desc": "Ez a játékmenet nem létezik vagy törölve lett.",
+        "title": "Játékállapot nem található",
+        "desc": "Ez a játékállapot nem létezik vagy törölve lett.",
         "link": "Vissza a játékállapotok listájához"
       }
     },
@@ -488,9 +488,9 @@
     },
     "playthroughForm": {
       "title": "Új játékállapot létrehozása",
-      "desc": "Adj nevet a játékmenetednek és válaszd ki a nehézségi szintet, hogy a szerszámok kiszámíthassák a helyes árakat. Bármikor szerkesztheted vagy törölheted a játékmeneteidet.",
+      "desc": "Adj nevet a játékállapododnak és válaszd ki a nehézségi szintet, hogy a szerszámok kiszámíthassák a helyes árakat. Bármikor szerkesztheted vagy törölheted a játékállapododat.",
       "placeholder": "pl. John Manhattan",
-      "deleteTitle": "Játékmenet törlése",
+      "deleteTitle": "Játékállapot törlése",
       "deleteDesc": "Biztos akarod törölni ezt a játékállapotot? Nem tudod majd visszavonni."
     },
     "factoryForm": {
@@ -504,15 +504,15 @@
     "factoryGroups": {
       "buttonDesc": "Csoport létrehozása",
       "title": "Gyárcsoportok",
-      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakhoz nem elég palettás polc van hozzárendelve, a vásárlólista megmondja, mit kell megrendelned az egyes gyárakba és a raktárba is, hogy pótolni tudd a hiányt. A szállítási ablak is mutatja, mit küldj minden gyárba.",
+      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakhoz nem elég raklappolc van hozzárendelve, a vásárlólista megmondja, mit kell megrendelned az egyes gyárakba és a raktárba is, hogy pótolni tudd a hiányt. A szállítási ablak is mutatja, mit küldj minden gyárba.",
       "groupEmpty": "Ebben a csoportban nincs gyár. Húzz egy gyárkártyát ide, hogy hozzáadhassad.",
       "ungroupedTitle": "Nem csoportosított gyárak",
       "ungroupedEmpty": "Semmi nincs itt egyelőre. Húzz ide egy kártyát, vagy hozz létre egy új gyárat.",
       "deliveries": {
         "buttonDesc": "Szállítmányok",
         "title": "Szállítási terv",
-        "descNeeded": "Szállítási tervek a csoport minden gyárához. {amount} raklapos polcra lesz szükséged az összes gyár ellátásához.",
-        "descEnough": "Minden gyárban elég raklapos polc van az összes szükséges összetevő tárolásához."
+        "descNeeded": "Szállítási tervek a csoport minden gyárához. {amount} raklappolcra lesz szükséged az összes gyár ellátásához.",
+        "descEnough": "Minden gyárban elég raklappolc van az összes szükséges összetevő tárolásához."
       },
       "shoppingList": {
         "title": "Csoport vásárlólista",
@@ -526,7 +526,7 @@
         "legend": "Gyári információk",
         "name": "Gyár neve",
         "calcBasis": "Számítási alap",
-        "palletDesc": "Állítsd be, hány palettapolcod van ebben a gyárban.",
+        "palletDesc": "Állítsd be, hány raklappolcod van ebben a gyárban.",
         "dailyAmount": "A napi szállításhoz <strong>{count}</strong> {object} kell.",
         "weeklyAmount": "A heti szállításhoz <strong>{count}</strong> {object} kell.",
         "shelfExplanation": "Adj hozzá legalább egy ruházati munkállomást, hogy lásd a szükséges raklappolcok számát.",
@@ -542,10 +542,10 @@
         "optimalTooltip": "A ruházati munkállomások és a nyitvatartás alapján automatikusan kiszámolja a munkások optimális számát. Egy kis puffer biztosítja a zökkenetes automatikus ütemezést a játékban."
       },
       "vehicles": {
-        "addBtn": "Jármű hozzáadása"
+        "addBtn": "Hozzáadj járművet"
       },
       "workstations": {
-        "addBtn": "Munkállomás hozzáadása"
+        "addBtn": "Hozzáadj ruházati munkállomást"
       },
       "buttonDesc": "Új gyár",
       "genericFactoryName": "{productName} gyár",

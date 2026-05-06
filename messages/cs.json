@@ -378,7 +378,7 @@
       "workstationsRequired": "Přidej prosím alespoň jednu pracovní stanici.",
       "atLeastOneVehicle": "Každá továrna potřebuje alespoň jedno vozidlo.",
       "maxTwoVehicles": "Každá továrna může mít maximálně dvě vozidla.",
-      "shelfAmountTooLow": "Musíš přidat regály, aby továrna mohla fungovat."
+      "shelfAmountTooLow": "Musíš přidat regály, aby továrna fungovala."
     },
     "factoryGroup": {
       "nameTooLong": "Název skupiny může mít maximálně 30 znaků.",
@@ -448,7 +448,7 @@
       "desc": "Tady se můžeš naplno ponořit do čísel a statistik hry. Plánuj své továrny a řiď logistiku celého impéria!"
     },
     "playthroughs": {
-      "desc": "Níže si můžeš vytvářet a spravovat své průběhy hry. Každý z nich představuje jeden průchod hrou. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé pokusy, zkoušet jiné obtížnosti nebo prostě jen sledovat svůj postup.",
+      "desc": "Dole si můžeš vytvářet a spravovat své průběhy hry. Každý z nich představuje jeden samostatný průběh. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé výsledky, zkoušet jiné obtížnosti nebo prostě jen sledovat svůj postup.",
       "warning": "Důležité: Tvůj postup se ukládá v prohlížeči. Pokud smažeš data prohlížeče nebo používáš soukromý/anonymní režim, můžeš o něj přijít.",
       "createButtonDesc": "Nový průběh",
       "noPlaythroughs": "Zatím žádný průběh. Vytvoř si ho a začni!",
@@ -461,7 +461,7 @@
     "playthroughDetail": {
       "desc": "Tady uvidíš výrobní statistiky svého impéria. Na stránce „Továrny“ najdeš přehled továren, můžeš sledovat položky k objednání pro své výrobní linky a mnoho dalšího. Plánovač továren ti ukáže vše podrobně – od statistik až po množství objednávek.",
       "productionOverview": "Týdenní přehled výroby",
-      "noProductionData": "Zatím nejsou dostupná žádná data. Vytvoř továrny a tady uvidíš své výrobní statistiky."
+      "noProductionData": "Zatím tu není žádná data. Vytvoř továrny a uvidíš statistiky výroby."
     },
     "factories": {
       "title": "Tvoje továrny",
@@ -483,7 +483,7 @@
       "splitShoppingList": {
         "title": "Rozdělený nákupní seznam",
         "desc": "Objednej tyto suroviny přímo do své továrny, abys objednávku rozdělil/a. Tohle je maximální množství, které tvoje {shelfAmount} paletové regály pojmou. Zohledňuje se i počet krabic, které vyrábíš. Pro uložení všech surovin na celý týden výroby bys potřeboval/a {requiredAmount} regálů.",
-        "desc1": "Jeden nebo více nákupčích musí zbytek objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
+        "desc1": "Jeden nebo více samostatných nákupních agentů musí zbytek objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
       }
     },
     "playthroughForm": {
@@ -530,7 +530,7 @@
         "dailyAmount": "Na denní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "weeklyAmount": "Na týdenní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "shelfExplanation": "Přidej alespoň jednu pracovní stanici, aby se zobrazil potřebný počet paletových regálů.",
-        "enoughWeekly": "Dostatek pro týdenní dodávku.",
+        "enoughWeekly": "Stačí na týdenní dodávku.",
         "enoughDaily": "Stačí jen na denní dodávku. Pro týdenní logistiku budeš potřebovat sklad.",
         "notEnough": "Málo místa i pro denní dodávku.",
         "overflowWarning": "Zásoby se hromadí!",

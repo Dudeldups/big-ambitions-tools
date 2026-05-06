@@ -424,14 +424,14 @@
   },
   "database": {
     "intro": {
-      "desc": "Explora los datos detallados del juego sobre productos, máquinas, vehículos y más. Usa la búsqueda y los filtros por categoría para encontrar rápido lo que necesitas.",
+      "desc": "Explora detalles de productos, máquinas, vehículos y mucho más. Usa el buscador y los filtros para encontrar lo que buscas rápidamente.",
       "buttonDesc": "Selecciona una categoría"
     },
     "products": {
       "caption": "Todos los productos de un vistazo. Puedes cambiar fácilmente entre precios de fabricación e importación. El precio minorista es el promedio de todos los distritos. Las ganancias se muestran como valores netos, incluyendo costos de ingredientes, salarios de trabajadores y impuestos basados en la dificultad seleccionada. <br></br>¿Te interesa cómo se calcula? Echa un vistazo a la sección <link>{toolsSection}</link>."
     },
     "ingredients": {
-      "caption": "Vista general de todos los ingredientes crudos, incluidas sus propiedades. Selecciona la dificultad para ver los precios correctos."
+      "caption": "Resumen de todos los ingredientes y sus propiedades. Selecciona la dificultad para ver los precios correspondientes."
     },
     "machines": {
       "caption": "Aquí tienes todas las máquinas de producción. Combina una principal con una o dos secundarias para armar tu estación de trabajo."
@@ -507,12 +507,12 @@
       "desc": "Puedes agrupar fábricas para ver mejor cada categoría de producto. Si las fábricas del grupo no tienen suficientes estanterías para palés, la lista de pedidos te dirá qué pedir para cada fábrica y también para el almacén para completar el resto. El diálogo de entregas también te mostrará qué enviar a cada fábrica.",
       "groupEmpty": "No hay fábricas en este grupo. Arrastra una tarjeta de fábrica aquí para añadirla.",
       "ungroupedTitle": "Fábricas sin agrupar",
-      "ungroupedEmpty": "No hay fábricas sin agrupar. Arrastra una tarjeta de fábrica aquí o añade una nueva.",
+      "ungroupedEmpty": "Aquí no hay nada sin agrupar. Arrastra una tarjeta aquí o crea una nueva fábrica.",
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plan de entregas",
         "descNeeded": "Planes de entrega para cada fábrica en este grupo. Necesitarás {amount} estanterías para palés para abastecer todas las fábricas.",
-        "descEnough": "Todas las fábricas tienen suficientes estantes para almacenar todos los ingredientes necesarios."
+        "descEnough": "Todas las fábricas tienen suficientes estanterías para palés para almacenar todos los ingredientes necesarios."
       },
       "shoppingList": {
         "title": "Lista de compras del grupo",
@@ -548,11 +548,11 @@
         "addBtn": "Añadir estación"
       },
       "buttonDesc": "Nueva fábrica",
-      "genericFactoryName": "{productName} fábrica",
+      "genericFactoryName": "Fábrica de {productName}",
       "estimatedSales": "Ventas semanales estimadas",
       "estimatedSalesTooltip": "Introduce las ventas esperadas de cada producto en tus tiendas.",
       "priceIndexButton": "Seleccionar índice de precios",
-      "priceIndexDesc": "Elige el índice de precios actual del juego para este producto para calcular el ingreso correcto. (El precio de exportación es más preciso.)"
+      "priceIndexDesc": "Selecciona el índice de precios actual del juego para este producto y calcula los ingresos correctamente. (El precio de exportación es más preciso.)"
     }
   },
   "contact": {

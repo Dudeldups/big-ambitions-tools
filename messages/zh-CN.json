@@ -313,7 +313,7 @@
     "taxDeductible": "可抵扣",
     "requiredDeliveryDriverSkillValue": "司机技能",
     "destinationsThatCanDeliver": "基础目的地",
-    "destinationsFull": "最多目的地",
+    "destinationsFull": "目的地上限",
     "employees": "员工",
     "description": "描述",
     "export": "出口",
@@ -483,7 +483,7 @@
       "splitShoppingList": {
         "title": "拆分购物清单",
         "desc": "把这些原料直接订送到工厂来拆分订单。这是你的 {shelfAmount} 个托盘架能装下的最大量，也考虑了你正在生产的箱数。若要存下整整一周所需的全部原料，你需要 {requiredAmount} 个货架。",
-        "desc1": "剩下的订单需要由一名或多名采购员分别下单到仓库。回到 <link>工厂概览</link> 并创建一个组，就能看到该仓库完整的订货清单了。这里还会显示发往每个工厂的配送计划。"
+        "desc1": "剩下的订单需要由一名或多名采购代理分别下单到仓库。回到 <link>工厂概览</link> 并创建一个组，就能看到该仓库完整的订货清单了。这里还会显示发往每个工厂的配送计划。"
       }
     },
     "playthroughForm": {
@@ -507,16 +507,16 @@
       "desc": "你可以把工厂分组起来，方便按产品类别查看。如果分组的工厂没有分配足够的托盘货架，购物清单会告诉你需要给每个工厂和仓库订购什么来补足剩余部分。交付对话框也会显示要发送给每个工厂的内容。",
       "groupEmpty": "这个组里还没有工厂。把工厂卡片拖到这里来添加。",
       "ungroupedTitle": "未分组的工厂",
-      "ungroupedEmpty": "这里没有未分组的工厂。拖拽工厂卡片到这里，或者添加一个新工厂。",
+      "ungroupedEmpty": "这里现在空荡荡的。把工厂卡片拖到这里，或者直接创建一个全新的工厂吧！",
       "deliveries": {
         "buttonDesc": "配送",
         "title": "交付计划",
-        "descNeeded": "该组内各工厂的配送计划。你需要 {amount} 个货架来供应所有工厂。",
+        "descNeeded": "该组内每个工厂的配送计划。你需要 {amount} 个托盘货架来供应所有工厂。",
         "descEnough": "所有工厂的货架都足够存放所需的全部原料。"
       },
       "shoppingList": {
         "title": "分组购物清单",
-        "desc": "这里是该组内因货架不足而需要的全部原料。系统会根据工厂现有的货架数量进行计算，方便你把剩下的部分订到单独的仓库。<br></br>仓库需补货的货架数：<strong>{amount}</strong>"
+        "desc": "这里列出了该组内因托盘货架不足，需要供应给工厂的所有原料。系统会根据工厂现有的货架数量进行计算，方便你将剩余部分订到单独的仓库。<br></br>仓库需要的货架数：<strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
@@ -533,7 +533,7 @@
         "enoughWeekly": "足够支持每周配送。",
         "enoughDaily": "仅够满足每日配送。每周物流还需要仓库。",
         "notEnough": "即使每日配送也不够存储。",
-        "overflowWarning": "库存积压！",
+        "overflowWarning": "库存即将溢出！",
         "overflowDesc": "生产速度快于原料消耗，货架数已随之调整。"
       },
       "employees": {
@@ -550,7 +550,7 @@
       "buttonDesc": "新建工厂",
       "genericFactoryName": "{productName} 工厂",
       "estimatedSales": "预估周销售额",
-      "estimatedSalesTooltip": "在商店中输入每个产品的预期销量。",
+      "estimatedSalesTooltip": "在商店中输入每个产品的预期销售额。",
       "priceIndexButton": "选择价格指数",
       "priceIndexDesc": "选择该产品的当前游戏内价格指数，来计算准确收益（使用出口价会更准）。"
     }

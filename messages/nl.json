@@ -378,7 +378,7 @@
       "workstationsRequired": "Voeg minimaal één werkplek toe.",
       "atLeastOneVehicle": "Je hebt minimaal één voertuig nodig voor de fabriek.",
       "maxTwoVehicles": "Per fabriek mag max. twee voertuigen worden toegewezen.",
-      "shelfAmountTooLow": "Je moet planken toevoegen zodat de fabriek werkt."
+      "shelfAmountTooLow": "Je moet regalen toevoegen om de fabriek te laten werken."
     },
     "factoryGroup": {
       "nameTooLong": "De groepsnaam mag maximaal 30 tekens lang zijn.",
@@ -428,7 +428,7 @@
       "buttonDesc": "Kies een categorie"
     },
     "products": {
-      "caption": "Alle producten op een oogopslag. Schakel eenvoudig tussen productie- en importprijzen. De detailhandelsprijs is het gemiddelde over alle wijken. Winsten worden weergegeven als nettowarden, inclusief ingrediëntenkosten, loonkosten en belastingen gebaseerd op de geselecteerde moeilijkheidsgraad. <br></br>Benieuwd hoe dit wordt berekend? Kijk dan eens naar het <link>{toolsSection}</link> gedeelte."
+      "caption": "Alle producten in één oogopslag. Schakel eenvoudig tussen productie- en importprijzen. De detailhandelsprijs is het gemiddelde van alle wijken. Winsten zijn nettowaarden — inclusief ingrediëntenkosten, loonkosten en belastingen op basis van de gekozen moeilijkheidsgraad. <br></br>Benieuwd hoe dit wordt berekend? Check de <link>{toolsSection}</link> sectie."
     },
     "ingredients": {
       "caption": "Overzicht van alle ruwe ingrediënten inclusief hun eigenschappen. Kies de moeilijkheidsgraad om de juiste prijzen te zien."
@@ -440,7 +440,7 @@
       "caption": "Een overzicht van al je... opslagopties. Voor nu. Meer komt nog!"
     },
     "vehicles": {
-      "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. Driver skill hoort bij je {deliveryDriver}, en voor het maximale aantal bestemmingen heb je een {logisticsManager} met 100% skill nodig."
+      "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. De driver skill van je {deliveryDriver} bepaalt dit, en voor het maximale aantal bestemmingen heb je een {logisticsManager} met 100% skill nodig."
     }
   },
   "tools": {
@@ -449,9 +449,9 @@
     },
     "playthroughs": {
       "desc": "Hieronder kun je je speelstanden aanmaken en beheren. Een speelstand staat voor een enkele run van het spel. Je kunt meerdere speelstanden maken om verschillende runs te vergelijken, andere moeilijkheden uit te proberen of gewoon je voortgang in de gaten te houden.",
-      "warning": "Belangrijk: Je voortgang wordt opgeslagen in je browser. Als je de browserdata verwijdert of gebruikmaakt van privé- of inkognito-modus, kan het verdwijnen.",
+      "warning": "Belangrijk: Je voortgang wordt opgeslagen in je browser. Als je de browserdata verwijdert of de incognitomodus gebruikt, kan je voortgang verloren gaan.",
       "createButtonDesc": "Nieuwe speelstand",
-      "noPlaythroughs": "Nog geen speelstanden. Maak er een aan om los te gaan!",
+      "noPlaythroughs": "Nog geen speelstanden. Maak er een aan om te beginnen!",
       "notFound": {
         "title": "Speelstand niet gevonden",
         "desc": "Deze speelstand bestaat niet of is verwijderd.",
@@ -483,15 +483,15 @@
       "splitShoppingList": {
         "title": "Gesplitste boodschappenlijst",
         "desc": "Bestel deze ingrediënten direct naar je fabriek om de bestelling op te splitsen. Dit is het maximale aantal dat je {shelfAmount} palletplanken kunnen bevatten. Het houdt ook rekening met het aantal dozen dat je produceert. Je zou {requiredAmount} palletplanken nodig hebben om alle ingrediënten voor een hele week productie op te slaan.",
-        "desc1": "De rest moet door één of meer aparte inkoopagenten naar een magazijn worden besteld. Ga terug naar het <link>fabrieksoverzicht</link> en maak een groep aan om de volledige lijst te zien van wat er voor dat magazijn besteld moet worden. Je ziet daar ook het leveringsplan voor elke fabriek."
+        "desc1": "De rest moet door één of meer aparte inkopers naar een magazijn worden besteld. Ga terug naar het <link>fabrieksoverzicht</link> en maak een groep aan om de volledige lijst te zien van wat er voor dat magazijn besteld moet worden. Je ziet daar ook het leveringsplan voor elke fabriek."
       }
     },
     "playthroughForm": {
       "title": "Nieuwe spelstand aanmaken",
-      "desc": "Geef een naam aan je doorloop en kies de moeilijkheidsgraad zodat de tools de juiste prijzen kunnen berekenen. Je kunt je doorlopen op elk moment bewerken of verwijderen.",
+      "desc": "Geef je speelstand een naam en kies de moeilijkheidsgraad zodat de tools de juiste prijzen kunnen berekenen. Je kunt je speelstanden op elk moment bewerken of verwijderen.",
       "placeholder": "bijv. John Manhattan",
-      "deleteTitle": "Doorloop verwijderen",
-      "deleteDesc": "Weet je zeker dat je deze doorloop wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+      "deleteTitle": "Speelstand verwijderen",
+      "deleteDesc": "Weet je zeker dat je deze speelstand wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
     },
     "factoryForm": {
       "deleteTitle": "Fabriek verwijderen",
@@ -511,22 +511,22 @@
       "deliveries": {
         "buttonDesc": "Leveringen",
         "title": "Leveringsplan",
-        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletstellingen nodig om alle fabrieken te bevoorraden.",
-        "descEnough": "Alle fabrieken hebben genoeg palletstellingen voor alle benodigde ingrediënten."
+        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletplanken nodig om alle fabrieken te bevoorraden.",
+        "descEnough": "Alle fabrieken hebben genoeg palletplanken voor alle benodigde ingrediënten."
       },
       "shoppingList": {
-        "title": "Boodschappenlijst groep",
-        "desc": "Hier zie je alle ingrediënten die nodig zijn om de fabrieken in deze groep te voorzien van palletplanken waarvoor er niet genoeg beschikbaar is. Het berekent dit op basis van de beschikbare stellingen in de fabrieken, zodat je de rest naar een apart magazijn kunt bestellen.<br></br>Benodigde stellingen in het magazijn: <strong>{amount}</strong>"
+        "title": "Groepsboodschappenlijst",
+        "desc": "Dit zijn alle ingrediënten die nodig zijn voor de fabrieken in deze groep waarvoor niet genoeg palletplanken beschikbaar zijn. De berekening is gebaseerd op het aantal beschikbare palletplanken in de fabrieken, zodat je de rest naar een apart magazijn kunt bestellen.<br></br>Benodigde palletplanken in het magazijn: <strong>{amount}</strong>"
       }
     },
     "factoryPlanner": {
       "title": "Fabriekplanner",
-      "desc": "Bereken de benodigde ingrediënten, machines en fabrieksarbeiders voor je productielijnen. Kies gewoon de producten die je wilt produceren en de planner doet de rest.",
+      "desc": "Bereken de benodigde ingrediënten, machines en arbeiders voor je productielijnen. Kies gewoon de producten die je wilt produceren en de planner doet de rest.",
       "information": {
         "legend": "Fabrikinformatie",
         "name": "Fabrieknaam",
         "calcBasis": "Berekeningsbasis",
-        "palletDesc": "Definieer hoeveel palletstellingen beschikbaar zijn in deze fabriek.",
+        "palletDesc": "Definieer hoeveel palletplanken er beschikbaar zijn in deze fabriek.",
         "dailyAmount": "Voor de dagelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "weeklyAmount": "Voor de wekelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "shelfExplanation": "Voeg minimaal één werkplek toe om het benodigde aantal palletplanken te zien.",
