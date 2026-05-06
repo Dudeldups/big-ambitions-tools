@@ -304,15 +304,15 @@
     "importers": "Importuotojai",
     "ingredients": "Ingredientai",
     "productionRate": "Gamyba/val.",
-    "vehicleName": "Transporto vardas",
+    "vehicleName": "Transporto pavadinimas",
     "maxFuel": "Kuro talpa",
     "maxCargoCapacity": "Krovos talpa",
     "maxSpeed": "Maks. greitis",
     "enginePower": "Pagreitis",
     "autoParkSupported": "Automatinis parkavimas",
     "taxDeductible": "Atskaitoma",
-    "requiredDeliveryDriverSkillValue": "Vairuotojo įgūdžiai",
-    "destinationsThatCanDeliver": "Pagr. taškai",
+    "requiredDeliveryDriverSkillValue": "Vair. įgūdž.",
+    "destinationsThatCanDeliver": "Pagr. tikslai",
     "destinationsFull": "Maks. taškai",
     "employees": "Darbuotojai",
     "description": "Aprašymas",
@@ -445,40 +445,40 @@
   },
   "tools": {
     "intro": {
-      "desc": "Čia gali gilintis į žaidimo skaičius ir statistiką. Planuok savo fabrikus ir valdyk logistiką visam imperijui!"
+      "desc": "Čia gali gilintis į žaidimo skaičius ir statistiką. Planuok savo gamyklas ir valdyk logistiką visam imperijui!"
     },
     "playthroughs": {
       "desc": "Žemiau gali sukurti ir valdyti savo žaidimo būsenas. Kiekviena iš jų yra atskiras žaidimo ciklas. Galėsi sukurti kelias būsenas, kad palygintum rezultatus, išbandytum kitus sunkumo lygius ar tiesiog stebėtum savo pažangą.",
       "warning": "Svarbu: Pažanga saugoma naršyklėje. Jei ištrinsi duomenis arba naudosi privačiu režimu, viskas gali išnykti.",
       "createButtonDesc": "Nauja žaidimo būsena",
-      "noPlaythroughs": "Dar nėra žaidimo būsenų. Sukur pirmąją ir pradėk!",
+      "noPlaythroughs": "Dar nėra žaidimo būsenų. Sukurk pirmąją ir pradėk!",
       "notFound": {
         "title": "Žaidimo būsena nerasta",
         "desc": "Ši žaidimo būsena neegzistuoja arba buvo ištrinta.",
-        "link": "Grįžti prie žaidimo būsenų"
+        "link": "Atgal į žaidimo būsenų apžvalgą"
       }
     },
     "playthroughDetail": {
-      "desc": "Čia pamatysi savo imperijos gamybos statistiką. Užsuk į „Gamyklos“ puslapį, kad peržiūrėtum gamyklas, stebėtum reikiamas prekes ir daugiau. Gamyklų planuotojas parodys visus duomenis apie gamybos statistiką, užsakymų kiekį ir daugiau.",
+      "desc": "Čia pamatysi savo imperijos gamybos statistiką. Užsuk į „Gamyklos“ puslapį, kad peržiūrėtum gamyklas, stebėtum, kokias prekes reikia užsakyti savo gamybos linijoms, ir daugiau. Gamyklų planuotojas parodys visus duomenis apie gamybos statistiką, užsakymų kiekį ir daugiau.",
       "productionOverview": "Savaitinė gamybos apžvalga",
       "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką."
     },
     "factories": {
       "title": "Tavo gamyklos",
-      "desc": "Štai tavo fabrikų apžvalga. Gali jas redaguoti, ištrinti arba nukopijuoti esamas reikšmes naujam fabrikui. Jei nori sužinoti daugiau apie kiekvieną fabriką (įskaitant pirkimo sąrašą), tiesiog paspausk ant atitinkamos kortelės.",
-      "desc1": "Taip pat gali jas sugrupuoti paspaudus mygtuką „Sukurti grupę“ žemiau. Taip visos fabrikos bus vienoje vietoje ir galėsi jas valdyti kaip grupę. Tai naudinga, jei naudojiesi centraliniu sandėliu, iš kurio ingredientai tiekiami kelioms fabrikoms. Remiantis pridėtomis palečių lentynomis, kiekvienai fabrikai bus pasiūlytas pristatymo planas.",
+      "desc": "Štai tavo gamyklų apžvalga. Gali jas redaguoti, ištrinti arba nukopijuoti esamas reikšmes naujai gamyklai. Jei nori sužinoti daugiau apie kiekvieną gamyklą (įskaitant pirkimo sąrašą), tiesiog paspausk ant atitinkamos kortelės.",
+      "desc1": "Taip pat gali jas sugrupuoti paspaudus mygtuką „Sukurti grupę“ žemiau. Taip galėsi matyti visas gamyklas vienoje vietoje ir valdyti jas kaip grupę. Tai naudinga, jei naudojiesi centraliniu sandėliu, iš kurio ingredientai tiekiami kelioms gamykloms. Remiantis pridėtų palečių lentynų skaičiumi, kiekvienai gamyklai bus pasiūlytas pristatymo planas.",
       "noFactories": "Tavo žaidime dar nėra fabrikų. Sukurk vieną, kad pradėtum!",
       "notFound": {
-        "title": "Fabrika nerasta",
-        "desc": "Ši fabrika neegzistuoja arba buvo ištrinta.",
-        "link": "Atgal į fabrikų apžvalgą"
+        "title": "Gamykla nerasta",
+        "desc": "Ši gamykla neegzistuoja arba buvo ištrinta.",
+        "link": "Atgal į gamyklų apžvalgą"
       }
     },
     "factoryDetail": {
-      "editBtn": "Redaguoti fabriką",
+      "editBtn": "Redaguoti gamyklą",
       "shoppingList": {
         "title": "Pirkimų sąrašas",
-        "desc": "Štai ko tavo fabrikos reikia kas savaitę, kad veiktų visą jėgą."
+        "desc": "Štai ko tavo gamyklai reikia kas savaitę, kad dirbtų pilna jėga."
       },
       "splitShoppingList": {
         "title": "Padalinta pirkimų sąrašas",
@@ -494,8 +494,8 @@
       "deleteDesc": "Ar tikrai nori ištrinti šią žaidimo būseną? Šio veiksmo neįmanoma atšaukti."
     },
     "factoryForm": {
-      "deleteTitle": "Ištrinti fabriką",
-      "deleteDesc": "Ar tikrai nori ištrinti šią fabriką? Šio veiksmo neįmanoma atšaukti."
+      "deleteTitle": "Ištrinti gamyklą",
+      "deleteDesc": "Ar tikrai nori ištrinti šią gamyklą? Šio veiksmo neįmanoma atšaukti."
     },
     "stats": {
       "netProfitPerWeek": "Grynasis pelnas / savaitė",
@@ -503,16 +503,16 @@
     },
     "factoryGroups": {
       "buttonDesc": "Sukurti grupę",
-      "title": "Fabrikų grupės",
-      "desc": "Gali sugrupuoti fabrikus pagal produktų kategorijas, kad lengviau būtų viską apžvelgti. Jei sugrupuotoms fabrikoms nebus pakankamai palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai fabrikai ir sandėliui, kad užpildytum trūkumą. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną fabriką.",
-      "groupEmpty": "Šioje grupėje nėra fabrikų. Pertrauk kortelę čia, kad ją pridėtum.",
-      "ungroupedTitle": "Nesugrupuotos fabrikos",
-      "ungroupedEmpty": "Čia kol nieko nėra. Persitrauk kortelę į šią vietą arba sukurk naują fabriką.",
+      "title": "Gamyklų grupės",
+      "desc": "Gali sugrupuoti gamyklas pagal produktų kategorijas, kad lengviau būtų viską apžvelgti. Jei sugrupuotoms gamykloms nebus pakankamai palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai gamyklai ir sandėliui, kad užpildytum trūkumą. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną gamyklą.",
+      "groupEmpty": "Šioje grupėje nėra gamyklų. Pervilkite gamyklos kortelę čia, kad ją pridėtumėte.",
+      "ungroupedTitle": "Nesugrupuotos gamyklos",
+      "ungroupedEmpty": "Čia nieko nėra. Persitrauk kortelę čia arba sukurk naują gamyklą.",
       "deliveries": {
         "buttonDesc": "Pristatymai",
         "title": "Tiekimo planas",
         "descNeeded": "Tiekimo planai kiekvienam šios grupės fabrikui. Tau reikės {amount} palečių lentynų, kad aprūtintum visus fabrikus.",
-        "descEnough": "Visos fabrikos turi pakankamai palečių lentynų laikyti visas reikalingas ingredientus."
+        "descEnough": "Visoms gamykloms užtenka lentynų visus reikiamus ingredientus laikyti."
       },
       "shoppingList": {
         "title": "Grupės pirkimo sąrašas",
@@ -520,7 +520,7 @@
       }
     },
     "factoryPlanner": {
-      "title": "Gamyklų planavimas",
+      "title": "Gamyklų planeris",
       "desc": "Apskaičiuok reikalingus ingredientus, mašinas ir darbuotojus savo gamybos linijoms. Tiesiog pasirink produktus, kuriuos nori gaminti, o planuotojas viską atliks.",
       "information": {
         "legend": "Gamyklos informacija",
@@ -531,10 +531,10 @@
         "weeklyAmount": "Savaitės pristatymui reikia <strong>{count}</strong> {object}.",
         "shelfExplanation": "Pridėk bent vieną darbo vietą, kad pamatytum reikalingų palečių lentynų kiekį.",
         "enoughWeekly": "Užtenka savaitės pristatymui.",
-        "enoughDaily": "Užtenka tik dieniniam pristatymui. Savaitinei logistikai reikia sandėlio.",
+        "enoughDaily": "Užtenka tik kasdieniam pristatymui. Savaitinei logistikai reikia sandėlio.",
         "notEnough": "Vietos nepakanka net kasdieniam pristatymui.",
         "overflowWarning": "Sandėlis perkrautas!",
-        "overflowDesc": "Gaminiančioji produkcija viršija ingredientų sąnaudius. Lentynų skaičius atitinkamai koreguotas."
+        "overflowDesc": "Gaminiančioji produkcija viršija ingredientų sąnaudas. Lentynų skaičius atitinkamai koreguotas."
       },
       "employees": {
         "desc": "Įvesk atlyginimą kiekvienam darbuotojui. Palik tuščią, jei nenori apskaičiuoti atlyginimo.",
@@ -542,7 +542,7 @@
         "optimalTooltip": "Automatiškai apskaičiuos optimalų darbuotojų kiekį pagal darbo vietas ir darbo valandas. Pridės nedidelę atsargą sklandiam auto-planavimui žaidime."
       },
       "vehicles": {
-        "addBtn": "Pridėti transportą"
+        "addBtn": "Pridėk transportą"
       },
       "workstations": {
         "addBtn": "Pridėk darbo vietą"
@@ -552,7 +552,7 @@
       "estimatedSales": "Numatomi savaitiniai pardavimai",
       "estimatedSalesTooltip": "Įvesk numatomus pardavimus kiekvienam produktui savo parduotuvėse.",
       "priceIndexButton": "Pasirink kainų indeksą",
-      "priceIndexDesc": "Pasirink dabartinį žaidimo kainų indeksą šiam produktui, norint apskaičiuoti teisingą pajamą. (Ekporto kaina yra tikslesnė.)"
+      "priceIndexDesc": "Pasirink dabartinį žaidimo kainų indeksą šiam produktui, kad teisingai apskaičiuotum pajamą. (Ekporto kaina yra tikslesnė.)"
     }
   },
   "contact": {
