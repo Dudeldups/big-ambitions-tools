@@ -54,4 +54,33 @@ describe("PriceIndexPopover", () => {
         .getPriceIndices(playthrough.id).classicCheapMaleClothing,
     ).toBe(1.2);
   });
+
+  it("ignores invalid slider values", async () => {
+    const user = userEvent.setup();
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Riley",
+      difficulty: "easy",
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+
+    renderWithIntl(
+      <PriceIndexPopover
+        selectedProduct="classicCheapMaleClothing"
+        factoryWorkerSalary={25}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: /set price index/i }));
+
+    fireEvent.change(screen.getByRole("slider"), {
+      target: { value: "not-a-number" },
+    });
+
+    expect(
+      usePlaythroughStore
+        .getState()
+        .getPriceIndices(playthrough.id).classicCheapMaleClothing,
+    ).toBe(BASE_PRODUCT_PRICE_INDEX);
+  });
 });
