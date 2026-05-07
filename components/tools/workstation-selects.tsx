@@ -394,12 +394,12 @@ const WorkstationSelects = ({
               className="max-w-24"
               id={`workstationProductionLimit-${index}`}
               type="number"
-              value={selectedProductLimit ?? ""}
+              value={selectedProductLimit === 0 ? "" : (selectedProductLimit ?? "")}
               disabled={!isProductionLimited}
               onChange={(e) => {
                 const value = e.target.value;
                 if (value === "") {
-                  setProductionLimitForProduct(selectedProduct, undefined);
+                  setProductionLimitForProduct(selectedProduct, 0);
                   return;
                 }
 
