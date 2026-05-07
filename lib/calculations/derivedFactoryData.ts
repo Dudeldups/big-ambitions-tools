@@ -210,7 +210,7 @@ export const deriveIngredientData = (
     return {
       valueType: "ingredients",
       name: `ingredients.${name}`,
-      amount: totalAmount,
+      amount: Math.ceil(totalAmount),
       value: totalCost,
     };
   });
