@@ -25,7 +25,7 @@ import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 import { Factory, Playthrough, PriceIndices } from "../stores/playthroughStore";
 import { ImporterShoppingList } from "../utils/getShoppingList";
-import { calculateIngredientTotals } from "./calculateIngredientTotals";
+import { calculateLimitedIngredientTotals } from "./calculateIngredientTotals";
 import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
 
 export type DerivedDataFromFormValues = {
@@ -196,10 +196,10 @@ export const deriveIngredientData = (
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
-  const totalAmounts = calculateIngredientTotals(workstations, {
-    limited: true,
+  const totalAmounts = calculateLimitedIngredientTotals(
+    workstations,
     openingHours,
-  });
+  );
 
   return Object.entries(totalAmounts).map(([name, amount]) => {
     const ingredient = ingredients[name as keyof typeof ingredients];

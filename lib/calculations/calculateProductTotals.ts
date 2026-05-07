@@ -3,16 +3,11 @@ import { products } from "../game/products";
 import { FormWorkstations } from "../schemas/factory";
 import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
 
-export function calculateProductTotals(
+function calculateProductTotalsInternal(
   workstations: FormWorkstations,
-  options?: { limited?: boolean; openingHours?: number },
+  productData?: ReturnType<typeof getEffectiveProductionByProduct>,
 ): Record<ProductName, number> {
-  if (options?.limited && options.openingHours) {
-    const productData = getEffectiveProductionByProduct(
-      workstations,
-      options.openingHours,
-    );
-
+  if (productData) {
     return Object.fromEntries(
       Object.entries(productData).map(([productName, data]) => [
         productName,
@@ -32,5 +27,21 @@ export function calculateProductTotals(
       return acc;
     },
     {} as Record<ProductName, number>,
+  );
+}
+
+export function calculateProductTotals(
+  workstations: FormWorkstations,
+): Record<ProductName, number> {
+  return calculateProductTotalsInternal(workstations);
+}
+
+export function calculateLimitedProductTotals(
+  workstations: FormWorkstations,
+  openingHours: number,
+): Record<ProductName, number> {
+  return calculateProductTotalsInternal(
+    workstations,
+    getEffectiveProductionByProduct(workstations, openingHours),
   );
 }

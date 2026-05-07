@@ -4,8 +4,14 @@ import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
 import { products } from "../game/products";
 import { FormWorkstations } from "../schemas/factory";
-import { calculateIngredientTotals } from "./calculateIngredientTotals";
-import { calculateProductTotals } from "./calculateProductTotals";
+import {
+  calculateIngredientTotals,
+  calculateLimitedIngredientTotals,
+} from "./calculateIngredientTotals";
+import {
+  calculateLimitedProductTotals,
+  calculateProductTotals,
+} from "./calculateProductTotals";
 
 type OptimalPalletShelves = {
   daily: number;
@@ -14,16 +20,23 @@ type OptimalPalletShelves = {
   isOverflowing: boolean;
 };
 
-export const getOptimalPalletShelfAmount = (
-  workstations: FormWorkstations,
-  options?: { limited?: boolean; openingHours?: number },
-): OptimalPalletShelves => {
-  if (workstations.length === 0)
-    return { daily: 0, weekly: 0, external: 0, isOverflowing: false };
+type OptimalPalletShelfVariants = {
+  full: OptimalPalletShelves;
+  limited: OptimalPalletShelves | null;
+};
 
+const EMPTY_SHELVES: OptimalPalletShelves = {
+  daily: 0,
+  weekly: 0,
+  external: 0,
+  isOverflowing: false,
+};
+
+const deriveOptimalPalletShelfAmount = (
+  ingredientTotals: ReturnType<typeof calculateIngredientTotals>,
+  productTotals: ReturnType<typeof calculateProductTotals>,
+): OptimalPalletShelves => {
   const { storageCapacity } = shelves.palletShelf;
-  const ingredientTotals = calculateIngredientTotals(workstations, options);
-  const productTotals = calculateProductTotals(workstations, options);
 
   const totalIngBoxesPerHour = (
     Object.entries(ingredientTotals) as [IngredientName, number][]
@@ -49,18 +62,50 @@ export const getOptimalPalletShelfAmount = (
 
   const netDailyBoxes = dailyIngBoxes + dailyOverflow;
 
-  const dailyPalletShelfAmount = Math.ceil(netDailyBoxes / storageCapacity);
-  const weeklyPalletShelfAmount = Math.ceil(
-    (dailyIngBoxes * 7 + overflowFromMonToTue) / storageCapacity,
-  );
-  const externalPalletShelfAmount = Math.ceil(
-    (dailyIngBoxes * 7) / storageCapacity,
-  );
-
   return {
-    daily: dailyPalletShelfAmount,
-    weekly: weeklyPalletShelfAmount,
-    external: externalPalletShelfAmount,
+    daily: Math.ceil(netDailyBoxes / storageCapacity),
+    weekly: Math.ceil(
+      (dailyIngBoxes * 7 + overflowFromMonToTue) / storageCapacity,
+    ),
+    external: Math.ceil((dailyIngBoxes * 7) / storageCapacity),
     isOverflowing: dailyOverflow > 0,
   };
+};
+
+export const getOptimalPalletShelfAmounts = (
+  workstations: FormWorkstations,
+  openingHours: number,
+): OptimalPalletShelfVariants => {
+  if (workstations.length === 0) {
+    return {
+      full: EMPTY_SHELVES,
+      limited: null,
+    };
+  }
+
+  const full = deriveOptimalPalletShelfAmount(
+    calculateIngredientTotals(workstations),
+    calculateProductTotals(workstations),
+  );
+
+  const hasProductionLimit = workstations.some(
+    (workstation) => workstation.productionLimit !== undefined,
+  );
+
+  if (!hasProductionLimit) {
+    return { full, limited: null };
+  }
+
+  const limited = deriveOptimalPalletShelfAmount(
+    calculateLimitedIngredientTotals(workstations, openingHours),
+    calculateLimitedProductTotals(workstations, openingHours),
+  );
+
+  return { full, limited };
+};
+
+export const getOptimalPalletShelfAmount = (
+  workstations: FormWorkstations,
+): OptimalPalletShelves => {
+  return getOptimalPalletShelfAmounts(workstations, 24).full;
 };

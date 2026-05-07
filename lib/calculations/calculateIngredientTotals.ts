@@ -5,15 +5,10 @@ import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProdu
 
 type IngredientTotals = Record<IngredientName, number>;
 
-export function calculateIngredientTotals(
+function calculateIngredientTotalsInternal(
   workstations: FormWorkstations,
-  options?: { limited?: boolean; openingHours?: number },
+  productionRatioByProduct?: ReturnType<typeof getEffectiveProductionByProduct>,
 ): IngredientTotals {
-  const productionRatioByProduct =
-    options?.limited && options.openingHours
-      ? getEffectiveProductionByProduct(workstations, options.openingHours)
-      : undefined;
-
   return workstations.reduce((acc, ws) => {
     const product = products[ws.product];
     const productionData = productionRatioByProduct?.[ws.product];
@@ -33,4 +28,20 @@ export function calculateIngredientTotals(
 
     return acc;
   }, {} as IngredientTotals);
+}
+
+export function calculateIngredientTotals(
+  workstations: FormWorkstations,
+): IngredientTotals {
+  return calculateIngredientTotalsInternal(workstations);
+}
+
+export function calculateLimitedIngredientTotals(
+  workstations: FormWorkstations,
+  openingHours: number,
+): IngredientTotals {
+  return calculateIngredientTotalsInternal(
+    workstations,
+    getEffectiveProductionByProduct(workstations, openingHours),
+  );
 }
