@@ -70,12 +70,7 @@ const WorkstationSelects = ({
     name: "workstations",
   });
 
-  const [
-    selectedWorkstation,
-    selectedProduct,
-    workstationAmount,
-    salesAmount,
-  ] =
+  const [selectedWorkstation, selectedProduct, workstationAmount, salesAmount] =
     useWatch({
       control,
       name: [
@@ -95,10 +90,14 @@ const WorkstationSelects = ({
     allWorkstations,
     openingHours,
   );
-  const selectedProductProductionData = productionDataByProduct[selectedProduct];
+  const selectedProductProductionData =
+    productionDataByProduct[selectedProduct];
   const weeklyProductionAmount =
     selectedProductProductionData?.fullWeeklyAmount ??
-    products[selectedProduct].productionRate * workstationAmount * openingHours * 7;
+    products[selectedProduct].productionRate *
+      workstationAmount *
+      openingHours *
+      7;
   const selectedProductLimit = allWorkstations.find(
     (workstation) =>
       workstation.product === selectedProduct &&
@@ -111,8 +110,9 @@ const WorkstationSelects = ({
     value: number | undefined,
   ) => {
     const currentWorkstations = getValues("workstations");
-    const affectedIndexes = currentWorkstations.flatMap((workstation, wsIndex) =>
-      workstation.product === productName ? [wsIndex] : [],
+    const affectedIndexes = currentWorkstations.flatMap(
+      (workstation, wsIndex) =>
+        workstation.product === productName ? [wsIndex] : [],
     );
 
     if (value !== undefined) {
@@ -128,6 +128,7 @@ const WorkstationSelects = ({
       if (workstation.product !== productName) return workstation;
 
       if (value === undefined) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { productionLimit: _productionLimit, ...rest } = workstation;
         return rest;
       }
@@ -156,23 +157,26 @@ const WorkstationSelects = ({
         workstation.productionLimit !== undefined,
     )?.productionLimit;
 
-    const updatedWorkstations = currentWorkstations.map((workstation, wsIndex) => {
-      if (wsIndex !== index) return workstation;
+    const updatedWorkstations = currentWorkstations.map(
+      (workstation, wsIndex) => {
+        if (wsIndex !== index) return workstation;
 
-      if (existingLimit === undefined) {
-        const { productionLimit: _productionLimit, ...rest } = workstation;
+        if (existingLimit === undefined) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { productionLimit: _productionLimit, ...rest } = workstation;
+          return {
+            ...rest,
+            product: productName,
+          };
+        }
+
         return {
-          ...rest,
+          ...workstation,
           product: productName,
+          productionLimit: existingLimit,
         };
-      }
-
-      return {
-        ...workstation,
-        product: productName,
-        productionLimit: existingLimit,
-      };
-    });
+      },
+    );
 
     setValue("workstations", updatedWorkstations, {
       shouldValidate: true,
@@ -387,7 +391,9 @@ const WorkstationSelects = ({
                     "tools.factoryPlanner.workstations.useProductionLimit",
                   )}
                 />
-                <FieldLabel htmlFor={`workstationProductionLimitToggle-${index}`}>
+                <FieldLabel
+                  htmlFor={`workstationProductionLimitToggle-${index}`}
+                >
                   {t("tools.factoryPlanner.workstations.productionLimit")}
                 </FieldLabel>
               </div>
@@ -403,7 +409,9 @@ const WorkstationSelects = ({
               id={`workstationProductionLimit-${index}`}
               type="number"
               placeholder="0"
-              value={selectedProductLimit === 0 ? "" : (selectedProductLimit ?? "")}
+              value={
+                selectedProductLimit === 0 ? "" : (selectedProductLimit ?? "")
+              }
               disabled={!isProductionLimited}
               onChange={(e) => {
                 const value = e.target.value;
