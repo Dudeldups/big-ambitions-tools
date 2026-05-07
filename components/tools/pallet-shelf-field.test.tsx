@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { PalletShelfField } from "./pallet-shelf-field";
 
 const palletShelfMocks = vi.hoisted(() => ({
-  getOptimalPalletShelfAmount: vi.fn(),
+  getOptimalPalletShelfAmounts: vi.fn(),
 }));
 
 vi.mock("@/lib/calculations/getOptimalPalletShelfAmount", () => palletShelfMocks);
@@ -53,6 +53,9 @@ vi.mock("@/lib/hooks/useRichDefaults", () => ({
       if (key === "tools.factoryPlanner.information.weeklyAmount") {
         return `Weekly delivery requires ${values?.count} ${values?.object}.`;
       }
+      if (key === "tools.factoryPlanner.information.limitedWeeklyAmount") {
+        return `With production limits, weekly delivery requires ${values?.count} ${values?.object}.`;
+      }
       return key;
     },
   }),
@@ -60,13 +63,16 @@ vi.mock("@/lib/hooks/useRichDefaults", () => ({
 
 function PalletShelfFieldHarness({
   shelfAmount = 50,
+  workstations = _testFactoryFormValues.workstations,
 }: {
   shelfAmount?: number;
+  workstations?: FactoryFormValues["workstations"];
 }) {
   const form = useForm<FactoryFormValues>({
     defaultValues: {
       ..._testFactoryFormValues,
       shelfAmount,
+      workstations,
     },
   });
 
@@ -76,11 +82,14 @@ function PalletShelfFieldHarness({
 describe("PalletShelfField", () => {
   it("normalizes leading zeros in the shelf amount input", async () => {
     const user = userEvent.setup();
-    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
-      daily: 1,
-      weekly: 2,
-      external: 2,
-      isOverflowing: false,
+    palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({
+      full: {
+        daily: 1,
+        weekly: 2,
+        external: 2,
+        isOverflowing: false,
+      },
+      limited: null,
     });
 
     renderWithIntl(<PalletShelfFieldHarness shelfAmount={5} />);
@@ -96,11 +105,14 @@ describe("PalletShelfField", () => {
   });
 
   it("shows the shelf explanation when no workstation-based shelves are needed yet", () => {
-    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
-      daily: 0,
-      weekly: 0,
-      external: 0,
-      isOverflowing: false,
+    palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({
+      full: {
+        daily: 0,
+        weekly: 0,
+        external: 0,
+        isOverflowing: false,
+      },
+      limited: null,
     });
 
     renderWithIntl(<PalletShelfFieldHarness />);
@@ -113,11 +125,14 @@ describe("PalletShelfField", () => {
   });
 
   it("shows the weekly success state when enough shelves are available", () => {
-    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
-      daily: 4,
-      weekly: 10,
-      external: 10,
-      isOverflowing: false,
+    palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({
+      full: {
+        daily: 4,
+        weekly: 10,
+        external: 10,
+        isOverflowing: false,
+      },
+      limited: null,
     });
 
     renderWithIntl(<PalletShelfFieldHarness shelfAmount={12} />);
@@ -132,11 +147,14 @@ describe("PalletShelfField", () => {
   });
 
   it("shows overflow and daily-only warnings when weekly capacity is not enough", () => {
-    palletShelfMocks.getOptimalPalletShelfAmount.mockReturnValue({
-      daily: 4,
-      weekly: 10,
-      external: 10,
-      isOverflowing: true,
+    palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({
+      full: {
+        daily: 4,
+        weekly: 10,
+        external: 10,
+        isOverflowing: true,
+      },
+      limited: null,
     });
 
     renderWithIntl(<PalletShelfFieldHarness shelfAmount={5} />);
@@ -145,6 +163,40 @@ describe("PalletShelfField", () => {
     expect(
       screen.getByText(
         "Enough for daily delivery only. A warehouse is required for weekly logistics.",
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("shows the limited weekly shelf estimate when production limits are active", () => {
+    palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({
+      full: {
+        daily: 4,
+        weekly: 10,
+        external: 10,
+        isOverflowing: false,
+      },
+      limited: {
+        daily: 2,
+        weekly: 6,
+        external: 6,
+        isOverflowing: false,
+      },
+    });
+
+    renderWithIntl(
+      <PalletShelfFieldHarness
+        workstations={[
+          {
+            ..._testFactoryFormValues.workstations[0],
+            productionLimit: 100,
+          },
+        ]}
+      />,
+    );
+
+    expect(
+      screen.getByText(
+        "With production limits, weekly delivery requires 6 6 pallet shelves.",
       ),
     ).toBeInTheDocument();
   });

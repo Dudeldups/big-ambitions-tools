@@ -3,7 +3,7 @@ import { Difficulty } from "../game/types";
 import { FactoryFormValues } from "../schemas/factory";
 import { getTimeMultiplier } from "./getTimeMultiplier";
 import { getImportPrice } from "../calculations/math";
-import { calculateIngredientTotals } from "../calculations/calculateIngredientTotals";
+import { calculateLimitedIngredientTotals } from "../calculations/calculateIngredientTotals";
 
 export type ImporterShoppingList = {
   importer: string;
@@ -21,7 +21,10 @@ export const getShoppingList = (
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier("weekly", openingHours);
 
-  const totalAmounts = calculateIngredientTotals(workstations);
+  const totalAmounts = calculateLimitedIngredientTotals(
+    workstations,
+    openingHours,
+  );
 
   const ingredientEntries = Object.entries(totalAmounts).map(
     ([name, amount]) => {

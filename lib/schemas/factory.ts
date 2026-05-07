@@ -30,6 +30,7 @@ export const factorySchema = z.object({
         name: z.enum(WORKSTATION_NAMES),
         product: z.enum(PRODUCT_NAMES),
         salesAmount: z.number().optional(),
+        productionLimit: z.number().min(0).optional(),
       }),
     )
     .min(1, "errors.factory.workstationsRequired"),

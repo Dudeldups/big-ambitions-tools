@@ -19,7 +19,9 @@ import {
   Control,
   Controller,
   UseFieldArrayAppend,
+  UseFormGetValues,
   UseFormSetValue,
+  UseFormUnregister,
   useWatch,
 } from "react-hook-form";
 import { toast } from "sonner";
@@ -31,6 +33,10 @@ import PriceIndexPopover from "../price-index-popover";
 import Image from "next/image";
 import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
 import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWorkstation";
+import { Checkbox } from "../ui/checkbox";
+import { ProductName } from "@/lib/game/productNames";
+import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -38,6 +44,8 @@ type WorkstationSelectsProps = {
   append: UseFieldArrayAppend<FactoryFormValues, "workstations">;
   remove: (index: number) => void;
   setValue: UseFormSetValue<FactoryFormValues>;
+  getValues: UseFormGetValues<FactoryFormValues>;
+  unregister: UseFormUnregister<FactoryFormValues>;
   factoryWorkerSalary: number;
   openingHours: number;
   productData: (Product & { name: string })[];
@@ -49,11 +57,18 @@ const WorkstationSelects = ({
   append,
   remove,
   setValue,
+  getValues,
+  unregister,
   factoryWorkerSalary,
   openingHours,
   productData,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
+
+  const allWorkstations = useWatch({
+    control,
+    name: "workstations",
+  });
 
   const [selectedWorkstation, selectedProduct, workstationAmount, salesAmount] =
     useWatch({
@@ -71,14 +86,111 @@ const WorkstationSelects = ({
     workstationAmount *
     openingHours *
     7;
+  const productionDataByProduct = getEffectiveProductionByProduct(
+    allWorkstations,
+    openingHours,
+  );
+  const selectedProductProductionData =
+    productionDataByProduct[selectedProduct];
+  const weeklyProductionAmount =
+    selectedProductProductionData?.fullWeeklyAmount ??
+    products[selectedProduct].productionRate *
+      workstationAmount *
+      openingHours *
+      7;
+  const selectedProductLimit = allWorkstations.find(
+    (workstation) =>
+      workstation.product === selectedProduct &&
+      workstation.productionLimit !== undefined,
+  )?.productionLimit;
+  const isProductionLimited = selectedProductLimit !== undefined;
+
+  const setProductionLimitForProduct = (
+    productName: ProductName,
+    value: number | undefined,
+  ) => {
+    const currentWorkstations = getValues("workstations");
+    const affectedIndexes = currentWorkstations.flatMap(
+      (workstation, wsIndex) =>
+        workstation.product === productName ? [wsIndex] : [],
+    );
+
+    if (value !== undefined) {
+      affectedIndexes.forEach((wsIndex) => {
+        setValue(`workstations.${wsIndex}.productionLimit`, value, {
+          shouldValidate: true,
+        });
+      });
+      return;
+    }
+
+    const updatedWorkstations = currentWorkstations.map((workstation) => {
+      if (workstation.product !== productName) return workstation;
+
+      if (value === undefined) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { productionLimit: _productionLimit, ...rest } = workstation;
+        return rest;
+      }
+
+      return {
+        ...workstation,
+        productionLimit: value,
+      };
+    });
+
+    setValue("workstations", updatedWorkstations, {
+      shouldValidate: true,
+    });
+
+    affectedIndexes.forEach((wsIndex) => {
+      unregister(`workstations.${wsIndex}.productionLimit`);
+    });
+  };
+
+  const setProductForWorkstation = (productName: ProductName) => {
+    const currentWorkstations = getValues("workstations");
+    const existingLimit = currentWorkstations.find(
+      (workstation, wsIndex) =>
+        wsIndex !== index &&
+        workstation.product === productName &&
+        workstation.productionLimit !== undefined,
+    )?.productionLimit;
+
+    const updatedWorkstations = currentWorkstations.map(
+      (workstation, wsIndex) => {
+        if (wsIndex !== index) return workstation;
+
+        if (existingLimit === undefined) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { productionLimit: _productionLimit, ...rest } = workstation;
+          return {
+            ...rest,
+            product: productName,
+          };
+        }
+
+        return {
+          ...workstation,
+          product: productName,
+          productionLimit: existingLimit,
+        };
+      },
+    );
+
+    setValue("workstations", updatedWorkstations, {
+      shouldValidate: true,
+    });
+
+    if (existingLimit === undefined) {
+      unregister(`workstations.${index}.productionLimit`);
+    }
+  };
 
   useSyncProductWithWorkstation({
     selectedWorkstation,
     productData,
-    onProductChange: (product) =>
-      setValue(`workstations.${index}.product`, product, {
-        shouldValidate: true,
-      }),
+    onProductChange: setProductForWorkstation,
   });
 
   useMaxSalesAmount({
@@ -142,6 +254,7 @@ const WorkstationSelects = ({
                   amount: 1,
                   name: selectedWorkstation,
                   product: selectedProduct,
+                  productionLimit: selectedProductLimit,
                 });
               }
             }}
@@ -186,7 +299,12 @@ const WorkstationSelects = ({
             control={control}
             name={`workstations.${index}.product`}
             render={({ field }) => (
-              <Select value={field.value} onValueChange={field.onChange}>
+              <Select
+                value={field.value}
+                onValueChange={(value) =>
+                  setProductForWorkstation(value as ProductName)
+                }
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a product" />
                 </SelectTrigger>
@@ -217,7 +335,7 @@ const WorkstationSelects = ({
 
       <Separator />
 
-      <FieldGroup className="flex-row @max-sm:flex-col @sm:items-end">
+      <FieldGroup className="flex-row @max-lg:flex-col @lg:items-end">
         <Controller
           control={control}
           name={`workstations.${index}.salesAmount`}
@@ -250,6 +368,69 @@ const WorkstationSelects = ({
             </Field>
           )}
         />
+
+        <Field orientation="horizontal" className="w-fit flex-wrap">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id={`workstationProductionLimitToggle-${index}`}
+                  checked={isProductionLimited}
+                  onCheckedChange={(checked) => {
+                    if (!checked) {
+                      setProductionLimitForProduct(selectedProduct, undefined);
+                      return;
+                    }
+
+                    setProductionLimitForProduct(
+                      selectedProduct,
+                      weeklyProductionAmount,
+                    );
+                  }}
+                  aria-label={t(
+                    "tools.factoryPlanner.workstations.useProductionLimit",
+                  )}
+                />
+                <FieldLabel
+                  htmlFor={`workstationProductionLimitToggle-${index}`}
+                >
+                  {t("tools.factoryPlanner.workstations.productionLimit")}
+                </FieldLabel>
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              {t("tools.factoryPlanner.workstations.productionLimitTooltip")}
+            </TooltipContent>
+          </Tooltip>
+
+          <div className="flex items-center gap-2">
+            <Input
+              className="max-w-24"
+              id={`workstationProductionLimit-${index}`}
+              type="number"
+              placeholder="0"
+              value={
+                selectedProductLimit === 0 ? "" : (selectedProductLimit ?? "")
+              }
+              disabled={!isProductionLimited}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value === "") {
+                  setProductionLimitForProduct(selectedProduct, 0);
+                  return;
+                }
+
+                setProductionLimitForProduct(
+                  selectedProduct,
+                  Math.min(weeklyProductionAmount, Number(value)),
+                );
+              }}
+              min={1}
+              max={weeklyProductionAmount}
+            />
+            <span>/ {weeklyProductionAmount}</span>
+          </div>
+        </Field>
 
         {products[selectedProduct].productSalesRatio > 0 && (
           <PriceIndexPopover

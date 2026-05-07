@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Field, FieldDescription, FieldError, FieldLabel } from "../ui/field";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { cn } from "@/lib/utils";
-import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { getOptimalPalletShelfAmounts } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { Check, CircleX, TriangleAlert } from "lucide-react";
@@ -16,13 +16,19 @@ type Props = {
 
 export function PalletShelfField({ className, control, errors }: Props) {
   const { t, rich } = useRichDefaults();
-  const [shelfAmount, workstations] = useWatch({
+  const [shelfAmount, workstations, openingHours] = useWatch({
     control,
-    name: ["shelfAmount", "workstations"],
+    name: ["shelfAmount", "workstations", "openingHours"],
   });
 
-  const { daily, weekly, isOverflowing } =
-    getOptimalPalletShelfAmount(workstations);
+  const { full, limited } = getOptimalPalletShelfAmounts(
+    workstations,
+    openingHours,
+  );
+  const { daily, weekly, isOverflowing } = full;
+  const hasProductionLimit = workstations.some(
+    (workstation) => workstation.productionLimit !== undefined,
+  );
 
   const hasWeekly = shelfAmount >= weekly;
   const hasDaily = shelfAmount >= daily;
@@ -81,6 +87,18 @@ export function PalletShelfField({ className, control, errors }: Props) {
                     object: palletShelfStringWeekly,
                   })}
                 </p>
+                {hasProductionLimit &&
+                  limited &&
+                  limited.weekly !== weekly && (
+                  <p>
+                    {rich("tools.factoryPlanner.information.limitedWeeklyAmount", {
+                      count: limited.weekly,
+                      object: t("counts.palletShelf", {
+                        count: limited.weekly,
+                      }),
+                    })}
+                  </p>
+                )}
                 {isOverflowing && (
                   <Tooltip>
                     <TooltipTrigger className="text-alert flex gap-2">

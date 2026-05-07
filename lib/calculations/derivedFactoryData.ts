@@ -25,7 +25,8 @@ import { ProductName } from "../game/productNames";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 import { Factory, Playthrough, PriceIndices } from "../stores/playthroughStore";
 import { ImporterShoppingList } from "../utils/getShoppingList";
-import { calculateIngredientTotals } from "./calculateIngredientTotals";
+import { calculateLimitedIngredientTotals } from "./calculateIngredientTotals";
+import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
 
 export type DerivedDataFromFormValues = {
   valueType?: string;
@@ -195,7 +196,10 @@ export const deriveIngredientData = (
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
-  const totalAmounts = calculateIngredientTotals(workstations);
+  const totalAmounts = calculateLimitedIngredientTotals(
+    workstations,
+    openingHours,
+  );
 
   return Object.entries(totalAmounts).map(([name, amount]) => {
     const ingredient = ingredients[name as keyof typeof ingredients];
@@ -206,7 +210,7 @@ export const deriveIngredientData = (
     return {
       valueType: "ingredients",
       name: `ingredients.${name}`,
-      amount: totalAmount,
+      amount: Math.ceil(totalAmount),
       value: totalCost,
     };
   });
@@ -221,26 +225,16 @@ export const deriveProductData = (
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
 
-  const productHourlyYieldByProduct = workstations.reduce(
-    (acc, ws) => {
-      const product = products[ws.product];
-      const prev = acc[ws.product] ?? { rate: 0, salesAmount: 0 };
-      return {
-        ...acc,
-        [ws.product]: {
-          rate: prev.rate + product.productionRate * ws.amount,
-          salesAmount: prev.salesAmount + (ws.salesAmount ?? 0),
-        },
-      };
-    },
-    {} as Record<ProductName, { rate: number; salesAmount: number }>,
+  const productHourlyYieldByProduct = getEffectiveProductionByProduct(
+    workstations,
+    openingHours,
   );
 
   return Object.entries(productHourlyYieldByProduct).flatMap(
-    ([name, { rate, salesAmount }]) => {
+    ([name, { effectiveRatePerHour, salesAmount }]) => {
       const product = products[name as keyof typeof products];
 
-      const totalAmount = rate * timeMult;
+      const totalAmount = effectiveRatePerHour * timeMult;
       const weeklyToPeriodMult = timeMult / (openingHours * 7);
       const retailAmount = Math.min(
         salesAmount * weeklyToPeriodMult,
