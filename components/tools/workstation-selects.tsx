@@ -335,7 +335,7 @@ const WorkstationSelects = ({
 
       <Separator />
 
-      <FieldGroup className="flex-row @max-sm:flex-col @sm:items-end">
+      <FieldGroup className="flex-row @max-lg:flex-col @lg:items-end">
         <Controller
           control={control}
           name={`workstations.${index}.salesAmount`}
