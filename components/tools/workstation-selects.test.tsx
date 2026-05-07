@@ -201,4 +201,48 @@ describe("WorkstationSelects", () => {
       ).toBeEnabled();
     });
   });
+
+  it("keeps the checkbox checked when the production limit input is cleared", async () => {
+    const user = userEvent.setup();
+    const messagesOverride = {
+      ...messages,
+      tools: {
+        ...messages.tools,
+        factoryPlanner: {
+          ...messages.tools.factoryPlanner,
+          workstations: {
+            ...messages.tools.factoryPlanner.workstations,
+            useProductionLimit: "Use production limit",
+            productionLimit: "Weekly production limit",
+          },
+        },
+      },
+    };
+
+    renderWithIntl(<WorkstationSelectsHarness />, { messagesOverride });
+
+    const workstation = screen.getByTestId("workstation-0");
+    const checkbox = within(workstation).getByRole("checkbox", {
+      name: "Use production limit",
+    });
+    const input = workstation.querySelector(
+      "#workstationProductionLimit-0",
+    ) as HTMLInputElement | null;
+
+    expect(checkbox).toBeChecked();
+    expect(input).not.toBeNull();
+
+    await user.clear(input!);
+
+    await waitFor(() => {
+      expect(
+        within(screen.getByTestId("workstation-0")).getByRole("checkbox", {
+          name: "Use production limit",
+        }),
+      ).toBeChecked();
+      expect(screen.getByTestId("form-values")).toHaveTextContent(
+        '"productionLimit": 0',
+      );
+    });
+  });
 });
