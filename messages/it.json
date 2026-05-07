@@ -534,7 +534,8 @@
         "enoughDaily": "Abbastanza solo per la consegna giornaliera. Per la logistica settimanale ti serve un magazzino.",
         "notEnough": "Non c'è abbastanza spazio nemmeno per la consegna giornaliera.",
         "overflowWarning": "Magazzino trabocca!",
-        "overflowDesc": "Produci più velocemente del consumo degli ingredienti. Il numero di scaffali è stato corretto di conseguenza."
+        "overflowDesc": "Produci più velocemente del consumo degli ingredienti. Il numero di scaffali è stato corretto di conseguenza.",
+        "limitedWeeklyAmount": "Con i limiti di produzione, la consegna settimanale richiede <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Inserisci lo stipendio per ogni dipendente. Lascialo vuoto se non vuoi includere i calcoli dello stipendio.",
@@ -545,7 +546,10 @@
         "addBtn": "Aggiungi veicolo"
       },
       "workstations": {
-        "addBtn": "Aggiungi postazione"
+        "addBtn": "Aggiungi postazione",
+        "useProductionLimit": "Usa limite di produzione",
+        "productionLimit": "Limite produzione settimanale",
+        "productionLimitTooltip": "Limita la produzione settimanale di questo prodotto nella fabbrica alla quantità selezionata."
       },
       "buttonDesc": "Nuova fabbrica",
       "genericFactoryName": "{productName} fabbrica",

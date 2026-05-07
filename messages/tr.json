@@ -534,7 +534,8 @@
         "enoughDaily": "Sadece günlük teslimat için yeterli. Haftalık lojistik için bir depoya ihtiyacın var.",
         "notEnough": "Günlük teslimat için bile yetersiz depolama alanı.",
         "overflowWarning": "Depo doluyor!",
-        "overflowDesc": "Üretim, malzeme tüketimini geride bırakıyor. Raf sayısı buna göre ayarlandı."
+        "overflowDesc": "Üretim, malzeme tüketimini geride bırakıyor. Raf sayısı buna göre ayarlandı.",
+        "limitedWeeklyAmount": "Üretim limitiyle haftalık teslimat <strong>{count}</strong> {object} gerektirir."
       },
       "employees": {
         "desc": "Her çalışanın maaşını gir. Maaş hesaplaması istemiyorsan boş bırak.",
@@ -545,7 +546,10 @@
         "addBtn": "Araç ekle"
       },
       "workstations": {
-        "addBtn": "Çalışma istasyonu ekle"
+        "addBtn": "Çalışma istasyonu ekle",
+        "useProductionLimit": "Üretim limitini kullan",
+        "productionLimit": "Haftalık üretim limiti",
+        "productionLimitTooltip": "Fabrikadaki bu ürünün haftalık üretimini seçilen miktara sınırlar."
       },
       "buttonDesc": "Yeni Fabrika",
       "genericFactoryName": "{productName} fabrikası",

@@ -534,7 +534,8 @@
         "enoughDaily": "Užtenka tik kasdieniam pristatymui. Savaitinei logistikai reikia sandėlio.",
         "notEnough": "Vietos nepakanka net kasdieniam pristatymui.",
         "overflowWarning": "Sandėlis perkrautas!",
-        "overflowDesc": "Gaminiančioji produkcija viršija ingredientų sąnaudas. Lentynų skaičius atitinkamai koreguotas."
+        "overflowDesc": "Gaminiančioji produkcija viršija ingredientų sąnaudas. Lentynų skaičius atitinkamai koreguotas.",
+        "limitedWeeklyAmount": "Dėl gamybos limitų savaitinei siuntai reikia <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Įvesk atlyginimą kiekvienam darbuotojui. Palik tuščią, jei nenori apskaičiuoti atlyginimo.",
@@ -545,7 +546,10 @@
         "addBtn": "Pridėk transportą"
       },
       "workstations": {
-        "addBtn": "Pridėk darbo vietą"
+        "addBtn": "Pridėk darbo vietą",
+        "useProductionLimit": "Naudoti gamybos limitą",
+        "productionLimit": "Savaitinis gamybos limitas",
+        "productionLimitTooltip": "Riboja šio produkto savaitinę gamybą gamykloje iki pasirinkto kiekio."
       },
       "buttonDesc": "Nauja gamykla",
       "genericFactoryName": "{productName} gamykla",

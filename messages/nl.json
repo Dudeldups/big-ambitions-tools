@@ -534,7 +534,8 @@
         "enoughDaily": "Alleen genoeg voor de dagelijkse levering. Voor weeklogistiek heb je een magazijn nodig.",
         "notEnough": "Te weinig opslagruimte, zelfs voor een dagelijkse levering.",
         "overflowWarning": "Voorraad loopt over!",
-        "overflowDesc": "Je produceert sneller dan je ingrediënten verbruikt. Het aantal palletplanken is aangepast."
+        "overflowDesc": "Je produceert sneller dan je ingrediënten verbruikt. Het aantal palletplanken is aangepast.",
+        "limitedWeeklyAmount": "Met productielimiet vereist de wekelijkse levering <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Voer het loon per medewerker in. Laat het leeg als je geen loonberekening wilt.",
@@ -545,7 +546,10 @@
         "addBtn": "Voertuig toevoegen"
       },
       "workstations": {
-        "addBtn": "Werkplek toevoegen"
+        "addBtn": "Werkplek toevoegen",
+        "useProductionLimit": "Productielimiet gebruiken",
+        "productionLimit": "Wekelijks productielimiet",
+        "productionLimitTooltip": "Beperkt de wekelijkse productie van dit product in de fabriek tot de geselecteerde hoeveelheid."
       },
       "buttonDesc": "Nieuwe fabriek",
       "genericFactoryName": "{productName}-fabriek",
