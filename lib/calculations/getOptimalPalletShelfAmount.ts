@@ -16,13 +16,14 @@ type OptimalPalletShelves = {
 
 export const getOptimalPalletShelfAmount = (
   workstations: FormWorkstations,
+  options?: { limited?: boolean; openingHours?: number },
 ): OptimalPalletShelves => {
   if (workstations.length === 0)
     return { daily: 0, weekly: 0, external: 0, isOverflowing: false };
 
   const { storageCapacity } = shelves.palletShelf;
-  const ingredientTotals = calculateIngredientTotals(workstations);
-  const productTotals = calculateProductTotals(workstations);
+  const ingredientTotals = calculateIngredientTotals(workstations, options);
+  const productTotals = calculateProductTotals(workstations, options);
 
   const totalIngBoxesPerHour = (
     Object.entries(ingredientTotals) as [IngredientName, number][]

@@ -21,7 +21,10 @@ export const getShoppingList = (
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier("weekly", openingHours);
 
-  const totalAmounts = calculateIngredientTotals(workstations);
+  const totalAmounts = calculateIngredientTotals(workstations, {
+    limited: true,
+    openingHours,
+  });
 
   const ingredientEntries = Object.entries(totalAmounts).map(
     ([name, amount]) => {
