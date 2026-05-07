@@ -36,6 +36,7 @@ import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWor
 import { Checkbox } from "../ui/checkbox";
 import { ProductName } from "@/lib/game/productNames";
 import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -365,29 +366,36 @@ const WorkstationSelects = ({
         />
 
         <Field orientation="horizontal" className="w-fit flex-wrap">
-          <div className="flex items-center gap-2">
-            <Checkbox
-              id={`workstationProductionLimitToggle-${index}`}
-              checked={isProductionLimited}
-              onCheckedChange={(checked) => {
-                if (!checked) {
-                  setProductionLimitForProduct(selectedProduct, undefined);
-                  return;
-                }
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id={`workstationProductionLimitToggle-${index}`}
+                  checked={isProductionLimited}
+                  onCheckedChange={(checked) => {
+                    if (!checked) {
+                      setProductionLimitForProduct(selectedProduct, undefined);
+                      return;
+                    }
 
-                setProductionLimitForProduct(
-                  selectedProduct,
-                  weeklyProductionAmount,
-                );
-              }}
-              aria-label={t(
-                "tools.factoryPlanner.workstations.useProductionLimit",
-              )}
-            />
-            <FieldLabel htmlFor={`workstationProductionLimitToggle-${index}`}>
-              {t("tools.factoryPlanner.workstations.productionLimit")}
-            </FieldLabel>
-          </div>
+                    setProductionLimitForProduct(
+                      selectedProduct,
+                      weeklyProductionAmount,
+                    );
+                  }}
+                  aria-label={t(
+                    "tools.factoryPlanner.workstations.useProductionLimit",
+                  )}
+                />
+                <FieldLabel htmlFor={`workstationProductionLimitToggle-${index}`}>
+                  {t("tools.factoryPlanner.workstations.productionLimit")}
+                </FieldLabel>
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              {t("tools.factoryPlanner.workstations.productionLimitTooltip")}
+            </TooltipContent>
+          </Tooltip>
 
           <div className="flex items-center gap-2">
             <Input
