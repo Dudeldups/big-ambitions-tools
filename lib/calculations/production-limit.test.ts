@@ -38,15 +38,12 @@ describe("production limits", () => {
     const shoppingList = getShoppingList(testFactory, "normal");
     const allItems = shoppingList.flatMap((entry) => entry.items);
 
-    expect(
-      allItems.find((item) => item.name === "rawSausage")?.amount,
-    ).toBeCloseTo(1000);
-    expect(allItems.find((item) => item.name === "dough")?.amount).toBeCloseTo(
-      1000,
+    expect(allItems.every((item) => Number.isInteger(item.amount))).toBe(true);
+    expect(allItems.find((item) => item.name === "rawSausage")?.amount).toBe(
+      1001,
     );
-    expect(allItems.find((item) => item.name === "tomato")?.amount).toBeCloseTo(
-      250,
-    );
+    expect(allItems.find((item) => item.name === "dough")?.amount).toBe(1001);
+    expect(allItems.find((item) => item.name === "tomato")?.amount).toBe(251);
   });
 
   it("caps product output by the weekly production limit", () => {
