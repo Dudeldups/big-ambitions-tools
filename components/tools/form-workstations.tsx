@@ -28,6 +28,8 @@ const productData = Object.entries(products).map(([key, value]) => ({
 const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
   const {
     setValue,
+    getValues,
+    unregister,
     control,
     formState: { errors },
   } = form;
@@ -67,6 +69,8 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
             append={appendWs}
             remove={removeWs}
             setValue={setValue}
+            getValues={getValues}
+            unregister={unregister}
             factoryWorkerSalary={factoryWorkerSalary}
             openingHours={openingHours}
             productData={sortedProductData}

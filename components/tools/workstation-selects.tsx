@@ -19,7 +19,9 @@ import {
   Control,
   Controller,
   UseFieldArrayAppend,
+  UseFormGetValues,
   UseFormSetValue,
+  UseFormUnregister,
   useWatch,
 } from "react-hook-form";
 import { toast } from "sonner";
@@ -32,6 +34,8 @@ import Image from "next/image";
 import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
 import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWorkstation";
 import { Checkbox } from "../ui/checkbox";
+import { ProductName } from "@/lib/game/productNames";
+import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -39,6 +43,8 @@ type WorkstationSelectsProps = {
   append: UseFieldArrayAppend<FactoryFormValues, "workstations">;
   remove: (index: number) => void;
   setValue: UseFormSetValue<FactoryFormValues>;
+  getValues: UseFormGetValues<FactoryFormValues>;
+  unregister: UseFormUnregister<FactoryFormValues>;
   factoryWorkerSalary: number;
   openingHours: number;
   productData: (Product & { name: string })[];
@@ -50,13 +56,25 @@ const WorkstationSelects = ({
   append,
   remove,
   setValue,
+  getValues,
+  unregister,
   factoryWorkerSalary,
   openingHours,
   productData,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
 
-  const [selectedWorkstation, selectedProduct, workstationAmount, salesAmount] =
+  const allWorkstations = useWatch({
+    control,
+    name: "workstations",
+  });
+
+  const [
+    selectedWorkstation,
+    selectedProduct,
+    workstationAmount,
+    salesAmount,
+  ] =
     useWatch({
       control,
       name: [
@@ -72,14 +90,102 @@ const WorkstationSelects = ({
     workstationAmount *
     openingHours *
     7;
+  const productionDataByProduct = getEffectiveProductionByProduct(
+    allWorkstations,
+    openingHours,
+  );
+  const selectedProductProductionData = productionDataByProduct[selectedProduct];
+  const weeklyProductionAmount =
+    selectedProductProductionData?.fullWeeklyAmount ??
+    products[selectedProduct].productionRate * workstationAmount * openingHours * 7;
+  const selectedProductLimit = allWorkstations.find(
+    (workstation) =>
+      workstation.product === selectedProduct &&
+      workstation.productionLimit !== undefined,
+  )?.productionLimit;
+  const isProductionLimited = selectedProductLimit !== undefined;
+
+  const setProductionLimitForProduct = (
+    productName: ProductName,
+    value: number | undefined,
+  ) => {
+    const currentWorkstations = getValues("workstations");
+    const affectedIndexes = currentWorkstations.flatMap((workstation, wsIndex) =>
+      workstation.product === productName ? [wsIndex] : [],
+    );
+
+    if (value !== undefined) {
+      affectedIndexes.forEach((wsIndex) => {
+        setValue(`workstations.${wsIndex}.productionLimit`, value, {
+          shouldValidate: true,
+        });
+      });
+      return;
+    }
+
+    const updatedWorkstations = currentWorkstations.map((workstation) => {
+      if (workstation.product !== productName) return workstation;
+
+      if (value === undefined) {
+        const { productionLimit: _productionLimit, ...rest } = workstation;
+        return rest;
+      }
+
+      return {
+        ...workstation,
+        productionLimit: value,
+      };
+    });
+
+    setValue("workstations", updatedWorkstations, {
+      shouldValidate: true,
+    });
+
+    affectedIndexes.forEach((wsIndex) => {
+      unregister(`workstations.${wsIndex}.productionLimit`);
+    });
+  };
+
+  const setProductForWorkstation = (productName: ProductName) => {
+    const currentWorkstations = getValues("workstations");
+    const existingLimit = currentWorkstations.find(
+      (workstation, wsIndex) =>
+        wsIndex !== index &&
+        workstation.product === productName &&
+        workstation.productionLimit !== undefined,
+    )?.productionLimit;
+
+    const updatedWorkstations = currentWorkstations.map((workstation, wsIndex) => {
+      if (wsIndex !== index) return workstation;
+
+      if (existingLimit === undefined) {
+        const { productionLimit: _productionLimit, ...rest } = workstation;
+        return {
+          ...rest,
+          product: productName,
+        };
+      }
+
+      return {
+        ...workstation,
+        product: productName,
+        productionLimit: existingLimit,
+      };
+    });
+
+    setValue("workstations", updatedWorkstations, {
+      shouldValidate: true,
+    });
+
+    if (existingLimit === undefined) {
+      unregister(`workstations.${index}.productionLimit`);
+    }
+  };
 
   useSyncProductWithWorkstation({
     selectedWorkstation,
     productData,
-    onProductChange: (product) =>
-      setValue(`workstations.${index}.product`, product, {
-        shouldValidate: true,
-      }),
+    onProductChange: setProductForWorkstation,
   });
 
   useMaxSalesAmount({
@@ -143,6 +249,7 @@ const WorkstationSelects = ({
                   amount: 1,
                   name: selectedWorkstation,
                   product: selectedProduct,
+                  productionLimit: selectedProductLimit,
                 });
               }
             }}
@@ -187,7 +294,12 @@ const WorkstationSelects = ({
             control={control}
             name={`workstations.${index}.product`}
             render={({ field }) => (
-              <Select value={field.value} onValueChange={field.onChange}>
+              <Select
+                value={field.value}
+                onValueChange={(value) =>
+                  setProductForWorkstation(value as ProductName)
+                }
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a product" />
                 </SelectTrigger>
