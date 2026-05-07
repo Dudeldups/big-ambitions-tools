@@ -31,6 +31,7 @@ import PriceIndexPopover from "../price-index-popover";
 import Image from "next/image";
 import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
 import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWorkstation";
+import { Checkbox } from "../ui/checkbox";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -250,6 +251,57 @@ const WorkstationSelects = ({
             </Field>
           )}
         />
+
+        <Field orientation="horizontal" className="w-fit flex-wrap">
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id={`workstationProductionLimitToggle-${index}`}
+              checked={isProductionLimited}
+              onCheckedChange={(checked) => {
+                if (!checked) {
+                  setProductionLimitForProduct(selectedProduct, undefined);
+                  return;
+                }
+
+                setProductionLimitForProduct(
+                  selectedProduct,
+                  weeklyProductionAmount,
+                );
+              }}
+              aria-label={t(
+                "tools.factoryPlanner.workstations.useProductionLimit",
+              )}
+            />
+            <FieldLabel htmlFor={`workstationProductionLimitToggle-${index}`}>
+              {t("tools.factoryPlanner.workstations.productionLimit")}
+            </FieldLabel>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Input
+              className="max-w-24"
+              id={`workstationProductionLimit-${index}`}
+              type="number"
+              value={selectedProductLimit ?? ""}
+              disabled={!isProductionLimited}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value === "") {
+                  setProductionLimitForProduct(selectedProduct, undefined);
+                  return;
+                }
+
+                setProductionLimitForProduct(
+                  selectedProduct,
+                  Math.min(weeklyProductionAmount, Number(value)),
+                );
+              }}
+              min={1}
+              max={weeklyProductionAmount}
+            />
+            <span>/ {weeklyProductionAmount}</span>
+          </div>
+        </Field>
 
         {products[selectedProduct].productSalesRatio > 0 && (
           <PriceIndexPopover
