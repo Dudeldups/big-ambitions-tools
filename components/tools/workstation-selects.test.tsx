@@ -15,6 +15,24 @@ vi.mock("../price-index-popover", () => ({
   default: () => null,
 }));
 
+vi.mock("../ui/tooltip", () => ({
+  Tooltip: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  TooltipTrigger: ({
+    children,
+    asChild,
+    ...props
+  }: React.ComponentProps<"button"> & { asChild?: boolean }) => {
+    if (asChild && React.isValidElement(children)) {
+      return React.cloneElement(children, props);
+    }
+
+    return <button {...props}>{children}</button>;
+  },
+  TooltipContent: ({ children }: { children: React.ReactNode }) => (
+    <div>{children}</div>
+  ),
+}));
+
 vi.mock("sonner", () => ({
   toast: {
     error: vi.fn(),
