@@ -53,6 +53,9 @@ vi.mock("@/lib/hooks/useRichDefaults", () => ({
       if (key === "tools.factoryPlanner.information.weeklyAmount") {
         return `Weekly delivery requires ${values?.count} ${values?.object}.`;
       }
+      if (key === "tools.factoryPlanner.information.limitedWeeklyAmount") {
+        return `With production limits, weekly delivery requires ${values?.count} ${values?.object}.`;
+      }
       return key;
     },
   }),
@@ -60,13 +63,16 @@ vi.mock("@/lib/hooks/useRichDefaults", () => ({
 
 function PalletShelfFieldHarness({
   shelfAmount = 50,
+  workstations = _testFactoryFormValues.workstations,
 }: {
   shelfAmount?: number;
+  workstations?: FactoryFormValues["workstations"];
 }) {
   const form = useForm<FactoryFormValues>({
     defaultValues: {
       ..._testFactoryFormValues,
       shelfAmount,
+      workstations,
     },
   });
 
@@ -145,6 +151,42 @@ describe("PalletShelfField", () => {
     expect(
       screen.getByText(
         "Enough for daily delivery only. A warehouse is required for weekly logistics.",
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("shows the limited weekly shelf estimate when production limits are active", () => {
+    palletShelfMocks.getOptimalPalletShelfAmount.mockImplementation(
+      (_workstations, options?: { limited?: boolean }) =>
+        options?.limited
+          ? {
+              daily: 2,
+              weekly: 6,
+              external: 6,
+              isOverflowing: false,
+            }
+          : {
+              daily: 4,
+              weekly: 10,
+              external: 10,
+              isOverflowing: false,
+            },
+    );
+
+    renderWithIntl(
+      <PalletShelfFieldHarness
+        workstations={[
+          {
+            ..._testFactoryFormValues.workstations[0],
+            productionLimit: 100,
+          },
+        ]}
+      />,
+    );
+
+    expect(
+      screen.getByText(
+        "With production limits, weekly delivery requires 6 6 pallet shelves.",
       ),
     ).toBeInTheDocument();
   });
