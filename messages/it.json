@@ -321,13 +321,13 @@
     "deliverUpTo": "Consegna fino a"
   },
   "workstationPresets": {
-    "cheapClothing": "Vestiti economici",
-    "expensiveClothing": "Vestiti costosi",
+    "cheapClothing": "Abbigliamento economico",
+    "expensiveClothing": "Abbigliamento costoso",
     "electronics": "Elettronica",
     "jewelry": "Gioielli",
     "gifts": "Regali",
     "books": "Libri",
-    "bottledGoods": "Prodotti in bottiglia",
+    "bottledGoods": "Prodotti imbottigliati",
     "food": "Cibo",
     "gardenProducts": "Prodotti da giardino"
   },
@@ -395,18 +395,18 @@
   "home": {
     "selectLanguage": "Seleziona lingua",
     "intro": {
-      "desc": "Qui trovi info e strumenti su <em>{gameName}</em> di {companyName}. Attualmente questo sito web dei fan è focalizzato sulle meccaniche delle fabbriche per aiutarti a ottimizzare il gameplay. I calcoli si basano sulla versione {gameVersion} del gioco e potrebbero cambiare con gli aggiornamenti futuri."
+      "desc": "Qui trovi info e strumenti su <em>{gameName}</em> di {companyName}. Al momento, questo fan site si concentra sulle meccaniche della fabbrica per aiutarti a ottimizzare il gameplay. I calcoli si basano sulla versione {gameVersion} del gioco e potrebbero cambiare con i futuri aggiornamenti."
     },
     "cta": {
       "title": "Iniziamo!",
-      "desc": "Vuoi solo controllare qualcosa o fare due calcoli? <em>Sì, cavolo, i numeri!</em> Fai un salto nel <link>{database}</link> e inizia a curiosare.",
+      "desc": "Vuoi solo controllare qualcosa o fare due calcoli? <em>Grande, la matematica!</em> Fai un salto nel <link>{database}</link> e inizia a curiosare.",
       "desc2": "Dalla pianificazione della tua prima fabbrica alla gestione dei tassi di produzione del tuo intero impero, troverai tutto nella sezione <link>{toolsSection}</link>.",
-      "errorDesc": "Hai trovato un errore o mancano delle info? O hai suggerimenti per migliorare il sito? Sentiti libero di <contact>contattaci</contact>!"
+      "errorDesc": "Hai trovato un errore o mancano delle info? O hai suggerimenti per migliorare il sito? <contact>Contattaci pure!</contact>"
     },
     "game": {
       "title": "Non conosci ancora il gioco?",
       "subtitle": "Che peccato!",
-      "desc": "{gameName} è una rivoluzionaria simulazione di business a ruolo. Passa da zero al più grande imprenditore di New York aprendo piccoli negozi o costruendo lentamente enormi imperi aziendali come preferisci.",
+      "desc": "{gameName} è una rivoluzionaria simulazione gestionale RPG. Parti da zero e diventa il più grande imprenditore di New York, aprendo piccoli negozi o costruendo lentamente enormi imperi aziendali, proprio come vuoi tu.",
       "hovgaard": "Dai un'occhiata al sito ufficiale di <website>{companyName}</website>",
       "steam": "Visita il gioco direttamente su <link>{steam}</link>"
     },

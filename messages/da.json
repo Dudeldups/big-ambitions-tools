@@ -327,7 +327,7 @@
     "jewelry": "Smykker",
     "gifts": "Gaver",
     "books": "Bøger",
-    "bottledGoods": "Drikkevarer",
+    "bottledGoods": "Flaskeprodukter",
     "food": "Mad",
     "gardenProducts": "Haveprodukter"
   },
@@ -398,9 +398,9 @@
       "desc": "Her finder du info og værktøjer til <em>{gameName}</em> fra {companyName}. Denne fanside fokuserer lige nu på fabriksmekanik, så du kan få det bedste ud af dit gameplay. Beregningerne er baseret på version {gameVersion} og kan ændre sig med fremtidige opdateringer."
     },
     "cta": {
-      "title": "Lad os komme i gang!",
+      "title": "Kom så i gang!",
       "desc": "Vil du bare lige slå noget op eller lege lidt med tallene? <em>Fedt, matematik!</em> Så smut forbi <link>{database}</link> og gå på opdagelse.",
-      "desc2": "Fra planlægning af din første fabrik til styring af produktionsraterne i hele dit imperium – du finder det hele i <link>{toolsSection}</link>.",
+      "desc2": "Du finder alt fra planlægning af din første fabrik til styring af produktionsraterne for hele dit imperium i sektionen <link>{toolsSection}</link>.",
       "errorDesc": "Har du opdaget en fejl eller mangler noget info? Eller har du forslag til at gøre siden bedre? Så <contact>skriv endelig til os</contact>!"
     },
     "game": {

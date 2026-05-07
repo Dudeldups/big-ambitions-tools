@@ -321,8 +321,8 @@
     "deliverUpTo": "Livrează până la"
   },
   "workstationPresets": {
-    "cheapClothing": "Haine ieftine",
-    "expensiveClothing": "Haine scumpe",
+    "cheapClothing": "Îmbrăcăminte ieftină",
+    "expensiveClothing": "Îmbrăcăminte scumpă",
     "electronics": "Electronice",
     "jewelry": "Bijuterii",
     "gifts": "Cadouri",
@@ -399,14 +399,14 @@
     },
     "cta": {
       "title": "Hai să începem!",
-      "desc": "Vrei doar să verifici ceva rapid sau să te joci puțin cu cifrele? <em>Ador matematica!</em> Treci pe <link>{database}</link> și hai să explorezi.",
+      "desc": "Vrei doar să verifici ceva rapid sau să te joci puțin cu cifrele? <em>Mișto, matematica!</em> Treci pe <link>{database}</link> și hai să explorezi.",
       "desc2": "De la planificarea primei tale fabrici până la gestionarea ratelor de producție ale întregului tău imperiu, găsești totul în secțiunea <link>{toolsSection}</link>.",
       "errorDesc": "Ai găsit o eroare sau lipsesc informații? Sau ai sugestii pentru a îmbunătăți site-ul? Nu ezita să <contact>ne contactezi</contact>!"
     },
     "game": {
       "title": "Încă nu cunoști jocul?",
       "subtitle": "Ce păcat!",
-      "desc": "{gameName} este o simulare revoluționară de tip business RPG. Transformă-te din nimic în cel mai mare antreprenor din New York, deschizând mici afaceri sau construind treptat un imperiu corporativ uriaș – exact cum vrei tu.",
+      "desc": "{gameName} este o simulare revoluționară de tip business RPG. Începe de la zero și devino cel mai mare antreprenor din New York, deschizând mici afaceri sau construind treptat un imperiu corporativ uriaș – exact cum vrei tu.",
       "hovgaard": "Vezi site-ul oficial al <website>{companyName}</website>",
       "steam": "Vizitează jocul direct pe <link>{steam}</link>"
     },
@@ -415,7 +415,7 @@
     },
     "notFound": {
       "title": "Pagina nu a fost găsită",
-      "desc": "Pagina asta și-a luat liber azi.",
+      "desc": "Se pare că pagina asta și-a luat o zi liberă.",
       "link": "Înapoi la acasă"
     }
   },

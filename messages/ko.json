@@ -321,15 +321,15 @@
     "deliverUpTo": "최대치까지 배송"
   },
   "workstationPresets": {
-    "cheapClothing": "저렴한 옷",
-    "expensiveClothing": "비싼 옷",
+    "cheapClothing": "의류(저가)",
+    "expensiveClothing": "의류(고가)",
     "electronics": "전자제품",
     "jewelry": "주얼리",
     "gifts": "선물",
     "books": "책",
-    "bottledGoods": "병 제품",
+    "bottledGoods": "병입 상품",
     "food": "음식",
-    "gardenProducts": "정원용품"
+    "gardenProducts": "원예 제품"
   },
   "toasts": {
     "genericError": "오류가 발생했습니다. 입력값을 확인하고 다시 시도해 주세요. 문제가 지속되면 페이지를 새로고침해 보세요.",
@@ -398,17 +398,17 @@
       "desc": "{companyName}의 <em>{gameName}</em> 정보와 툴을 모아둔 곳이야. 지금은 플레이어들이 더 효율적으로 플레이할 수 있게 공장 메커니즘 위주로 다루고 있어. 계산 방식은 {gameVersion} 버전 기준이라, 앞으로 업데이트에 따라 바뀔 수도 있어."
     },
     "cta": {
-      "title": "시작해볼까요!",
-      "desc": "그냥 뭐 좀 찾아보고 숫자 계산이나 좀 해볼까? <em>좋아, 수학 가자!</em> <link>{database}</link>에 가서 한번 둘러봐.",
-      "desc2": "첫 공장 계획부터 제국 전체의 생산율 관리까지, 모든 것은 <link>{toolsSection}</link> 섹션에 있어요.",
+      "title": "시작해보자!",
+      "desc": "그냥 뭐 좀 찾아보고 숫자 계산이나 좀 해볼까? <em>캬, 역시 수학이지!</em> <link>{database}</link>에 가서 한번 둘러봐.",
+      "desc2": "첫 공장 계획부터 제국 전체의 생산율 관리까지, <link>{toolsSection}</link> 섹션에서 모든 걸 찾을 수 있어.",
       "errorDesc": "오류나 누락된 정보를 발견하셨나요? 아니면 사이트를 개선할 제안이 있으신가요? <contact>편하게 연락해주세요</contact>!"
     },
     "game": {
-      "title": "아직 게임을 모르고 계세요?",
+      "title": "이 게임, 아직 안 해보셨나요?",
       "subtitle": "정말 아쉽네요!",
       "desc": "{gameName}은 혁명적인 비즈니스 RPG 시뮬레이션이에요! 아무것도 없는 상태에서 작은 가게를 시작해 거대 기업을 일구며, 뉴욕 최고의 사업가로 성장해 보세요. 여러분이 원하는 방식 그대로 말이죠!",
-      "hovgaard": "<website>{companyName}</website> 의 공식 웹사이트를 확인해보세요",
-      "steam": "<link>{steam}</link> 에서 게임을 직접 방문하세요"
+      "hovgaard": "<website>{companyName}</website>의 공식 웹사이트를 확인해보세요",
+      "steam": "<link>{steam}</link>에서 바로 확인하기"
     },
     "updates": {
       "title": "최신 업데이트"

@@ -321,8 +321,8 @@
     "deliverUpTo": "最大配送数量"
   },
   "workstationPresets": {
-    "cheapClothing": "安い服",
-    "expensiveClothing": "高い服",
+    "cheapClothing": "安価な服",
+    "expensiveClothing": "高価な服",
     "electronics": "電子機器",
     "jewelry": "ジュエリー",
     "gifts": "プレゼント",
@@ -395,17 +395,17 @@
   "home": {
     "selectLanguage": "言語を選択する",
     "intro": {
-      "desc": "<em>{gameName}</em> の情報とツールを集めたファンサイトです。{companyName} 製。現在は工場メカニクスに焦点を当てており、プレイヤーがプレイを最適化できるよう支援しています。計算はゲームのバージョン {gameVersion} に基づいており、今後のアップデートで変更される可能性があります。"
+      "desc": "<em>{gameName}</em> の情報やツールが集まるファンサイトだよ！{companyName} 製のゲームの工場メカニクスに特化して、効率的なプレイをサポート。計算データはバージョン {gameVersion} に基づいてるから、今後のアプデで変わることもあるよ。"
     },
     "cta": {
       "title": "さあ、早速始めてみよう！",
       "desc": "ちょっと調べ物をしたり、数字をいじったりしたい？ <em>数学、激アツ！</em> <link>{database}</link> をのぞいて、いろいろ探ってみよう！",
-      "desc2": "最初の工場から帝国全体の生産率管理まで、<link>{toolsSection}</link> には全てあります。",
-      "errorDesc": "エラーや不足している情報に遭遇しましたか？サイトの改善案もありますか？<contact>お気軽にご連絡ください</contact>！"
+      "desc2": "最初の工場づくりから帝国全体の生産率管理まで、<link>{toolsSection}</link> には全部揃ってるよ。",
+      "errorDesc": "エラーを見つけた？それとも足りない情報があるかな？サイトを良くするための提案も大歓迎！<contact>気軽に連絡してね</contact>！"
     },
     "game": {
       "title": "ゲームまだ知らない？",
-      "subtitle": "残念だ！",
+      "subtitle": "残念！",
       "desc": "{gameName} は革命的なビジネスロールプレイングシミュレーションです。小さな店舗を開店したり、好きなように巨大企業を築いたりして、ゼロからニューヨーク最大の起業家を目指しましょう。",
       "hovgaard": "<website>{companyName}</website> の公式ウェブサイトをチェック。",
       "steam": "<link>{steam}</link> でゲームを直接プレイ。"
@@ -415,7 +415,7 @@
     },
     "notFound": {
       "title": "ページが見つかりません",
-      "desc": "このページは今日、突然休んでしまったようです。",
+      "desc": "このページ、今日は休みみたい。",
       "link": "トップへ戻る"
     }
   },

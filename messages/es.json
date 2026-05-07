@@ -321,13 +321,13 @@
     "deliverUpTo": "Entregar hasta"
   },
   "workstationPresets": {
-    "cheapClothing": "Ropa Barata",
+    "cheapClothing": "Ropa barata",
     "expensiveClothing": "Ropa Cara",
     "electronics": "Electrónica",
-    "jewelry": "Joyas",
+    "jewelry": "Joyería",
     "gifts": "Regalos",
     "books": "Libros",
-    "bottledGoods": "Artículos Embotellados",
+    "bottledGoods": "Productos embotellados",
     "food": "Comida",
     "gardenProducts": "Productos de Jardín"
   },
@@ -401,12 +401,12 @@
       "title": "¡Vamos a empezar!",
       "desc": "¿Solo quieres consultar algo o jugar un poco con los números? <em>¡Me flipan las mates!</em> Pásate por la <link>{database}</link> y empieza a curiosear.",
       "desc2": "Desde la planificación de tu primera fábrica hasta la gestión de las tasas de producción de todo tu imperio, encontrarás todo en la sección <link>{toolsSection}</link>.",
-      "errorDesc": "¿Encontraste un error o te falta información? ¿O tienes sugerencias para mejorar la página? ¡No dudes en <contact>contáctanos</contact>!"
+      "errorDesc": "¿Encontraste un error o te falta información? ¿O tienes sugerencias para mejorar la página? <contact>¡Puedes contactarnos!</contact>"
     },
     "game": {
       "title": "¿Aún no conoces el juego?",
       "subtitle": "¡Qué lástima!",
-      "desc": "{gameName} es una revolucionaria simulación de negocios con rol. Lleva tu empresa desde cero hasta convertirte en el mayor empresario de Nueva York, abriendo pequeños negocios o construyendo lentamente un gran imperio corporativo a tu manera.",
+      "desc": "{gameName} es un revolucionario simulador de negocios RPG. Pasa de cero a ser el mayor empresario de Nueva York abriendo pequeños negocios o creando grandes corporaciones, como tú quieras.",
       "hovgaard": "Echa un vistazo a la web oficial de <website>{companyName}</website>",
       "steam": "Visita el juego directamente en <link>{steam}</link>"
     },

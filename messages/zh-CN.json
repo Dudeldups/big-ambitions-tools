@@ -404,11 +404,11 @@
       "errorDesc": "发现错误或缺失信息？或者想提点改进建议？随时 <contact>联系我们</contact>！"
     },
     "game": {
-      "title": "还没了解这个游戏？",
+      "title": "还不认识这款游戏吗？",
       "subtitle": "真可惜！",
       "desc": "{gameName} 是一款革命性的角色扮演经营模拟游戏。通过开设小店或逐步建立庞大的企业帝国，你可以从零开始，成为纽约最大的企业家——完全由你决定。",
       "hovgaard": "去 <website>{companyName}</website> 看看官网吧",
-      "steam": "直接在 <link>{steam}</link> 访问游戏"
+      "steam": "直接在 <link>{steam}</link> 查看游戏"
     },
     "updates": {
       "title": "最新更新"

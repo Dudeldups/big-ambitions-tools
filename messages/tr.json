@@ -321,13 +321,13 @@
     "deliverUpTo": "Şu miktara kadar teslim et"
   },
   "workstationPresets": {
-    "cheapClothing": "Ucuz Giyim",
-    "expensiveClothing": "Pahalı Giyim",
+    "cheapClothing": "Ucuz Kıyafet",
+    "expensiveClothing": "Pahalı Kıyafet",
     "electronics": "Elektronik",
     "jewelry": "Takı",
     "gifts": "Hediyeler",
     "books": "Kitap",
-    "bottledGoods": "Şişe Ürünleri",
+    "bottledGoods": "Şişeli Ürünler",
     "food": "Yemek",
     "gardenProducts": "Bahçe Ürünleri"
   },
@@ -399,12 +399,12 @@
     },
     "cta": {
       "title": "Hadi başlayalım!",
-      "desc": "Sadece bir şeylere hızlıca bakıp biraz hesap kitap yapmak mı istiyorsun? <em>Ooo, matematik!</em> Hadi <link>{database}</link> kısmına bir göz at ve keşfetmeye başla.",
-      "desc2": "İlk fabrikandan tüm imparatorluğun üretim hızlarını yönetene kadar her şeyi <link>{toolsSection}</link> bölümünde bulabilirsin.",
+      "desc": "Sadece bir şeylere hızlıca bakıp biraz hesap kitap yapmak mı istiyorsun? <em>Matematik budur!</em> Hadi <link>{database}</link> kısmına bir göz at ve keşfetmeye başla.",
+      "desc2": "İlk fabrikanı planlamaktan, tüm imparatorluğunun üretim hızlarını yönetmeye kadar her şeyi <link>{toolsSection}</link> bölümünde bulabilirsin.",
       "errorDesc": "Bir hata mı buldun veya eksik bilgi mi var? Ya da siteyi iyileştirmek için önerin mi var? <contact>bize ulaşmaktan çekinme</contact>!"
     },
     "game": {
-      "title": "Oyunu henüz tanımıyorsun mu?",
+      "title": "Oyunu henüz tanımıyor musun?",
       "subtitle": "Tüh!",
       "desc": "{gameName}, çığır açan bir işletme RPG simülasyonu. Küçük dükkanlar açarak veya yavaş yavaş devasa şirketler kurarak, istediğin gibi sıfırdan New York'un en büyük girişimcisi olabilirsin.",
       "hovgaard": "<website>{companyName}</website> resmi web sitesine göz at!",

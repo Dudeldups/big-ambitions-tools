@@ -395,7 +395,7 @@
   "home": {
     "selectLanguage": "Válassz nyelvet",
     "intro": {
-      "desc": "Itt megtalálod a(z) <em>{gameName}</em> legjobb infókat és eszközöket, amiket a {companyName} fejlesztett. Jelenleg a gyártási mechanikákra koncentrálunk, hogy segítsünk kihozni a legtöbbet a vállalkozásodból. A számítások a(z) {gameVersion} verzióra épülnek, és a jövőbeni frissítések során változhatnak."
+      "desc": "Itt találsz infókat és eszközöket az <em>{gameName}</em> játékhoz, a {companyName} fejlesztésétől. Jelenleg a gyári mechanikákra fókuszálunk, hogy segítsünk kihozni a legtöbbet a vállalkozásodból. A számítások a(z) {gameVersion} verzióra épülnek, és változhatnak a jövőbeni frissítések során."
     },
     "cta": {
       "title": "Vágjunk bele!",
@@ -406,12 +406,12 @@
     "game": {
       "title": "Még nem ismered a játékot?",
       "subtitle": "Kár!",
-      "desc": "{gameName} egy forradalmi business szerepjáték-szimulátor. Indulj a nulláról, és válj New York legnagyobb vállalkozójává: nyiss kis üzleteket, vagy építs hatalmas vállalatokat – ahogy csak akarod!",
+      "desc": "{gameName} egy forradalmi business szerepjáték-szimulátor. Indulj a nulláról, és válj New York legnagyobb vállalkozójává: nyiss kis üzleteket, vagy lassan építs hatalmas vállalatokat – ahogy csak akarod!",
       "hovgaard": "Nézd meg a <website>{companyName}</website> hivatalos oldalát.",
       "steam": "Látogasd meg a játékot közvetlenül itt: <link>{steam}</link>"
     },
     "updates": {
-      "title": "Frissítések"
+      "title": "Legfrissebb frissítések"
     },
     "notFound": {
       "title": "Oldal nem található",

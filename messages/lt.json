@@ -395,11 +395,11 @@
   "home": {
     "selectLanguage": "Pasirinkite kalbą",
     "intro": {
-      "desc": "Čia rasi informaciją ir įrankius <em>{gameName}</em> žaidimui nuo {companyName}. Šiuo metu ši fanų svetainė susitelkusi į gamyklos mechanikas, kad padėtų žaidėjams optimizuoti procesus. Skaičiavimai remiasi {gameVersion} versija ir gali keistis dėl būsimų atnaujinimų."
+      "desc": "Čia rasi informaciją ir įrankius apie <em>{gameName}</em> žaidimą, kurį sukūrė {companyName}. Šiuo metu ši fanų svetainė orientuota į gamyklos mechanikas, kad padėtų žaidėjams optimizuoti procesus. Skaičiavimai remiasi {gameVersion} versija ir gali keistis dėl būsimų atnaujinimų."
     },
     "cta": {
       "title": "Pradėkime!",
-      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Matematika yra jėga!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
+      "desc": "Tik nori kažką pasižvalgyti ar šiek tiek pasimaišyti su skaičiais? <em>Garsu, matematika!</em> Užsuk į <link>{database}</link> ir pradėk tyrinėti.",
       "desc2": "Nuo savo pirmosios gamyklos planavimo iki visos imperijos gamybos rodiklių valdymo – viską rasai <link>{toolsSection}</link> skiltyje.",
       "errorDesc": "Radai klaidą ar trūkumą? Ar turi pasiūlymų, kaip pagerinti svetainę? Tiesiog <contact>susisiek</contact> su mumis!"
     },

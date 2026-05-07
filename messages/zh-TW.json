@@ -398,7 +398,7 @@
       "desc": "這裡有關於 {companyName} 開發的 <em>{gameName}</em> 的資訊與工具。本粉絲站目前專注於工廠機制，幫助玩家優化玩法。計算基於遊戲版本 {gameVersion}，未來更新可能會有所變動。"
     },
     "cta": {
-      "title": "來開始吧！",
+      "title": "我們開始吧！",
       "desc": "只想隨手查查資料、算算數字嗎？<em>喔耶，算數學！</em> 快來 <link>{database}</link> 逛逛吧。",
       "desc2": "<link>{toolsSection}</link> 區塊應有盡有，從規劃第一間工廠到管理整個帝國的生產率通通搞定。",
       "errorDesc": "發現錯誤或資訊遺漏？或有建議想改善網站？隨時 <contact>聯絡我們</contact> 吧！"
@@ -407,7 +407,7 @@
       "title": "還沒接觸過遊戲？",
       "subtitle": "太可惜了！",
       "desc": "{gameName} 是一款革命性的商業角色扮演模擬遊戲。透過開設小店或逐步建立龐大企業，從零開始成為紐約最大的企業家——完全由你決定。",
-      "hovgaard": "查看官方網站 <website>{companyName}</website>",
+      "hovgaard": "快來逛逛 <website>{companyName}</website> 的官網吧！",
       "steam": "直接在 <link>{steam}</link> 遊玩遊戲"
     },
     "updates": {

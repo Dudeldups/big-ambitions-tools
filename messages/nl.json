@@ -327,8 +327,8 @@
     "jewelry": "Sieraden",
     "gifts": "Cadeaus",
     "books": "Boeken",
-    "bottledGoods": "flesproducten",
-    "food": "eten",
+    "bottledGoods": "Flesproducten",
+    "food": "Eten",
     "gardenProducts": "Tuinproducten"
   },
   "toasts": {
@@ -395,18 +395,18 @@
   "home": {
     "selectLanguage": "Kies een taal",
     "intro": {
-      "desc": "Hier vind je info en tools rondom <em>{gameName}</em> van {companyName}. Op deze fansite draait alles momenteel om fabriekmechanica, zodat je het beste uit je business kunt halen. De berekeningen zijn gebaseerd op versie {gameVersion} en kunnen veranderen met toekomstige updates."
+      "desc": "Hier vind je info en tools rondom <em>{gameName}</em> van {companyName}. Op deze fansite draait alles momenteel om fabrieksmechanica, zodat je het beste uit je business kunt halen. De berekeningen zijn gebaseerd op versie {gameVersion} en kunnen veranderen met toekomstige updates."
     },
     "cta": {
       "title": "Aan de slag!",
-      "desc": "Wil je gewoon even iets opzoeken of wat met cijfers aan de slag? <em>Lekker, wiskunde!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
+      "desc": "Wil je gewoon even iets opzoeken of wat cijferwerk doen? <em>Lekker, wiskunde!</em> Duik de <link>{database}</link> in en ga lekker rondkijken.",
       "desc2": "Van het plannen van je eerste fabriek tot aan het beheren van de productieraten van je hele imperium, vind je alles in het gedeelte <link>{toolsSection}</link>.",
-      "errorDesc": "Sto je op een foutje gestoten of mis je info? Of heb je suggesties om de site te verbeteren? Dan <contact>meld je maar even</contact>!"
+      "errorDesc": "Ben je op een foutje gestoten of mis je info? Of heb je suggesties om de site te verbeteren? <contact>Laat het ons gerust weten!</contact>"
     },
     "game": {
       "title": "Ken je het spel nog niet?",
       "subtitle": "Wat jammer!",
-      "desc": "{gameName} is een revolutionaire business-rollensimulatie. Werk je van niks naar de grootste ondernemer van New York toe door kleine winkels te openen of langzaam een enorm bedrijfsemporium op te bouwen – precies zoals jij wilt.",
+      "desc": "{gameName} is een revolutionaire business-rollensimulatie. Klim van helemaal niets naar de top als grootste ondernemer van New York door kleine winkels te openen of langzaam een enorm bedrijfsimperium op te bouwen – precies zoals jij wilt.",
       "hovgaard": "Bekijk de officiële website van <website>{companyName}</website>",
       "steam": "Bezoek het spel direct op <link>{steam}</link>"
     },

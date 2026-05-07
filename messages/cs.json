@@ -399,8 +399,8 @@
     },
     "cta": {
       "title": "Tak jdeme do toho!",
-      "desc": "Chceš se jen tak něco vyhledat a trochu pokrouhat s čísly? <em>Mňam, matika!</em> Zajeď do <link>{database}</link> a začni prozkoumávat.",
-      "desc2": "Od plánování první továrny až po řízení výrobních temp celého impéria najdeš všechno v sekci <link>{toolsSection}</link>.",
+      "desc": "Chceš se jen tak něco vyhledat a trochu si pohrávat s čísly? <em>Jo, matika!</em> Tak se kukni do <link>{database}</link> a začni prozkoumávat.",
+      "desc2": "Od plánování své první továrny až po řízení výrobních temp celého impéria najdeš všechno v sekci <link>{toolsSection}</link>.",
       "errorDesc": "Našel jsi chybu nebo ti chybí nějaké informace? Nebo máš návrh, jak web vylepšit? Klidně se <contact>ozvi</contact>!"
     },
     "game": {

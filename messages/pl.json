@@ -321,8 +321,8 @@
     "deliverUpTo": "Dostarczaj maksymalnie"
   },
   "workstationPresets": {
-    "cheapClothing": "Tanie ubrania",
-    "expensiveClothing": "Drogie ubrania",
+    "cheapClothing": "Odzież (tania)",
+    "expensiveClothing": "Odzież (droga)",
     "electronics": "Elektronika",
     "jewelry": "Biżuteria",
     "gifts": "Prezenty",

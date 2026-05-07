@@ -398,15 +398,15 @@
       "desc": "Aqui você encontra informações e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para ajudar você a otimizar sua produção e seu negócio. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
     },
     "cta": {
-      "title": "Vamos começar!",
+      "title": "Bora lá!",
       "desc": "Só quer pesquisar algo ou fazer umas contas? <em>Massa, matemática!</em> Dá um pulo na <link>{database}</link> e bora explorar.",
-      "desc2": "Do planejamento de sua primeira fábrica ao gerenciamento das taxas de produção de todo o seu império, você encontrará tudo na seção <link>{toolsSection}</link>.",
+      "desc2": "Do planejamento da sua primeira fábrica até a gestão da produção de todo o seu império, tem tudo na seção <link>{toolsSection}</link>.",
       "errorDesc": "Encontrou um erro ou falta alguma informação? Ou tem sugestões para melhorar o site? Sinta-se à vontade para <contact>falar com a gente</contact>!"
     },
     "game": {
-      "title": "Ainda não conheces o jogo?",
+      "title": "Ainda não conhece o jogo?",
       "subtitle": "Que pena!",
-      "desc": "{gameName} é uma revolucionária simulação de negócios de RPG. Vá de zero ao maior empresário de Nova York abrindo pequenos negócios ou construindo lentamente um grande império corporativo da maneira que quiser.",
+      "desc": "{gameName} é uma simulação revolucionária de negócios e RPG. Comece do zero e torne-se o maior empresário de Nova York, abrindo pequenos negócios ou construindo um grande império corporativo, como quiser.",
       "hovgaard": "Confira o site oficial de <website>{companyName}</website>",
       "steam": "Visite o jogo diretamente no <link>{steam}</link>"
     },

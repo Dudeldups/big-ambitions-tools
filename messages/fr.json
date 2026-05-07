@@ -322,13 +322,13 @@
   },
   "workstationPresets": {
     "cheapClothing": "Vêtements (bon marché)",
-    "expensiveClothing": "Vêtements (haut de gamme)",
+    "expensiveClothing": "Vêtements (chers)",
     "electronics": "Électronique",
     "jewelry": "Bijoux",
     "gifts": "Cadeaux",
     "books": "Livres",
     "bottledGoods": "Produits en bouteille",
-    "food": "Alimentation",
+    "food": "Nourriture",
     "gardenProducts": "Produits de jardin"
   },
   "toasts": {
@@ -395,10 +395,10 @@
   "home": {
     "selectLanguage": "Sélectionner la langue",
     "intro": {
-      "desc": "Des infos et des outils pour le jeu <em>{gameName}</em> de {companyName}. Cette fan-site se concentre actuellement sur les mécaniques d'usine pour t'aider à optimiser ton gameplay. Les calculs sont basés sur la version {gameVersion} du jeu et peuvent évoluer avec les prochaines mises à jour."
+      "desc": "Des infos et des outils pour le jeu <em>{gameName}</em> de {companyName}. Ce fansite se concentre actuellement sur les mécaniques d'usine pour t'aider à optimiser ton gameplay. Les calculs sont basés sur la version {gameVersion} du jeu et peuvent évoluer avec les prochaines mises à jour."
     },
     "cta": {
-      "title": "Commençons !",
+      "title": "C'est parti !",
       "desc": "T'as juste envie de checker un truc ou de jouer avec les chiffres ? <em>Trop bien, les maths !</em> Direction la <link>{database}</link> pour aller fouiller un peu.",
       "desc2": "De la planification de ta première usine à la gestion des taux de production de tout ton empire, tu trouveras tout dans la section <link>{toolsSection}</link>.",
       "errorDesc": "Tu as trouvé une erreur ou des infos manquantes ? Ou tu as des suggestions pour améliorer le site ? N'hésite pas à <contact>nous contacter</contact> !"
@@ -406,7 +406,7 @@
     "game": {
       "title": "Tu ne connais pas encore le jeu ?",
       "subtitle": "Quel dommage !",
-      "desc": "{gameName} est une simulation de business révolutionnaire. Pars de zéro et deviens le plus grand entrepreneur de New York en ouvrant de petits commerces ou en construisant progressivement un immense empire, comme tu veux.",
+      "desc": "{gameName} est une simulation de business et de jeu de rôle révolutionnaire. Pars de zéro pour devenir le plus grand entrepreneur de New York en ouvrant de petits commerces ou en bâtissant progressivement un immense empire, comme tu veux.",
       "hovgaard": "Découvre le site officiel de <website>{companyName}</website>",
       "steam": "Découvre le jeu directement sur <link>{steam}</link>"
     },
