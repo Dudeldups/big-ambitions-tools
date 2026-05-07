@@ -534,7 +534,8 @@
         "enoughDaily": "Suficient doar pentru livrarea zilnică. Pentru logistică săptămânală ai nevoie de un depozit.",
         "notEnough": "Nu e suficient spațiu de stocare, nici măcar pentru livrarea zilnică.",
         "overflowWarning": "Se acumulează stoc!",
-        "overflowDesc": "Produci mai repede decât consumi ingredientele. Am ajustat numărul de rafturi."
+        "overflowDesc": "Produci mai repede decât consumi ingredientele. Am ajustat numărul de rafturi.",
+        "limitedWeeklyAmount": "Cu limite de producție, livrarea săptămânală necesită <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Introdu salariul pentru fiecare angajat. Lasă gol dacă nu vrei să incluzi calculele de salariu.",
@@ -545,7 +546,10 @@
         "addBtn": "Adaugă vehicul"
       },
       "workstations": {
-        "addBtn": "Adaugă post de lucru"
+        "addBtn": "Adaugă post de lucru",
+        "useProductionLimit": "Folosește limita de producție",
+        "productionLimit": "Limită producție săptămânală",
+        "productionLimitTooltip": "Limitează producția săptămânală a acestui produs în fabrică la cantitatea selectată."
       },
       "buttonDesc": "Fabrică nouă",
       "genericFactoryName": "Fabrică de {productName}",

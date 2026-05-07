@@ -534,7 +534,8 @@
         "enoughDaily": "Stačí jen na denní dodávku. Pro týdenní logistiku budeš potřebovat sklad.",
         "notEnough": "Málo místa i pro denní dodávku.",
         "overflowWarning": "Zásoby se hromadí!",
-        "overflowDesc": "Produkuješ rychleji, než spotřebováváš suroviny. Počet regálů se podle toho upravil."
+        "overflowDesc": "Produkuješ rychleji, než spotřebováváš suroviny. Počet regálů se podle toho upravil.",
+        "limitedWeeklyAmount": "S limity výroby vyžaduje týdenní dodávka <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Zadej mzdu pro každého zaměstnance. Nech pole prázdné, pokud nechceš mzdy zahrnout do výpočtů.",
@@ -545,7 +546,10 @@
         "addBtn": "Přidat vozidlo"
       },
       "workstations": {
-        "addBtn": "Přidat pracovní stanici"
+        "addBtn": "Přidat pracovní stanici",
+        "useProductionLimit": "Použít limit výroby",
+        "productionLimit": "Týdenní limit výroby",
+        "productionLimitTooltip": "Omezuje týdenní výrobu tohoto produktu v továrně na zvolené množství."
       },
       "buttonDesc": "Nová továrna",
       "genericFactoryName": "Továrna na {productName}",

@@ -534,7 +534,8 @@
         "enoughDaily": "Tarpeeksi vain päivittäiseen toimitukseen. Viikkologistiikkaan tarvitset varaston.",
         "notEnough": "Liian vähän tilaa, jopa päivittäiseen toimitukseen.",
         "overflowWarning": "Varasto täyttyy!",
-        "overflowDesc": "Tuotat nopeammin kuin raaka-aineita kulutat. Hyllymäärä on säädetty vastaavasti."
+        "overflowDesc": "Tuotat nopeammin kuin raaka-aineita kulutat. Hyllymäärä on säädetty vastaavasti.",
+        "limitedWeeklyAmount": "Tuotantorajoitteilla viikoittainen toimitus vaatii <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Syötä palkka jokaiselle tehdastyöntekijälle. Jätä tyhjäksi, jos et halua laskea palkkoja.",
@@ -545,7 +546,10 @@
         "addBtn": "Lisää ajoneuvo"
       },
       "workstations": {
-        "addBtn": "Lisää työpiste"
+        "addBtn": "Lisää työpiste",
+        "useProductionLimit": "Käytä tuotantorajoitetta",
+        "productionLimit": "Viikoittainen tuotantoraja",
+        "productionLimitTooltip": "Rajoittaa tämän tuotteen viikoittaisen tuotannon tehtaassa valittuun määrään."
       },
       "buttonDesc": "Uusi tehdas",
       "genericFactoryName": "{productName} tehdas",

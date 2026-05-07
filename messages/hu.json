@@ -534,7 +534,8 @@
         "enoughDaily": "Elég csak a napi szállításhoz. Heti logisztikához raktár kell.",
         "notEnough": "Nincs elég tárolóhely még napi szállításhoz sem.",
         "overflowWarning": "Készlet felhalmozódik!",
-        "overflowDesc": "A gyártás gyorsabb, mint a fogyasztás. A polkok számát ehhez igazítottuk."
+        "overflowDesc": "A gyártás gyorsabb, mint a fogyasztás. A polkok számát ehhez igazítottuk.",
+        "limitedWeeklyAmount": "A termelési limit miatt a heti szállításhoz <strong>{count}</strong> {object} kell."
       },
       "employees": {
         "desc": "Add meg minden munkás bérét. Hagyd üresen, ha nem szeretnéd számolni a bért.",
@@ -545,7 +546,10 @@
         "addBtn": "Hozzáadj járművet"
       },
       "workstations": {
-        "addBtn": "Hozzáadj ruházati munkállomást"
+        "addBtn": "Hozzáadj ruházati munkállomást",
+        "useProductionLimit": "Termelési limit használata",
+        "productionLimit": "Heti termelési limit",
+        "productionLimitTooltip": "A kiválasztott mennyiségre korlátozza erre a termék heti termelését a gyárban."
       },
       "buttonDesc": "Új gyár",
       "genericFactoryName": "{productName} gyár",

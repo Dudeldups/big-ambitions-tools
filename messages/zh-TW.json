@@ -534,7 +534,8 @@
         "enoughDaily": "只夠每天配送。如果要跑每週物流，得準備個倉庫。",
         "notEnough": "即使每日配送也不夠儲存空間。",
         "overflowWarning": "庫存快塞爆了！",
-        "overflowDesc": "產量比原料消耗還快，所以調整了貨架數量。"
+        "overflowDesc": "產量比原料消耗還快，所以調整了貨架數量。",
+        "limitedWeeklyAmount": "若有生產限制，每週配送需 <strong>{count}</strong> {object}。"
       },
       "employees": {
         "desc": "輸入每位員工的薪資。若不包含薪資計算，請留空。",
@@ -545,7 +546,10 @@
         "addBtn": "新增車輛"
       },
       "workstations": {
-        "addBtn": "新增工作站"
+        "addBtn": "新增工作站",
+        "useProductionLimit": "使用生產限制",
+        "productionLimit": "每週生產限制",
+        "productionLimitTooltip": "將工廠中此產品的每週產量限制在所選數量。"
       },
       "buttonDesc": "新工廠",
       "genericFactoryName": "{productName} 工廠",

@@ -534,7 +534,8 @@
         "enoughDaily": "일일 배송에만 충분합니다. 주간 물류를 위해서는 창고가 필요합니다.",
         "notEnough": "일일 배송에도 저장 공간이 부족합니다.",
         "overflowWarning": "재고가 계속 쌓여요!",
-        "overflowDesc": "재료 소모보다 생산이 더 빨라요. 선반 수도 그에 맞춰 조정했어요."
+        "overflowDesc": "재료 소모보다 생산이 더 빨라요. 선반 수도 그에 맞춰 조정했어요.",
+        "limitedWeeklyAmount": "생산 한도를 사용하면 주간 배송에 <strong>{count}</strong> {object}이(가) 필요해요."
       },
       "employees": {
         "desc": "각 공장 작업자의 급여를 입력하세요. 급여 계산을 포함하지 않으려면 빈칸으로 두세요.",
@@ -545,7 +546,10 @@
         "addBtn": "차량 추가"
       },
       "workstations": {
-        "addBtn": "작업대 추가"
+        "addBtn": "작업대 추가",
+        "useProductionLimit": "생산 한도 사용",
+        "productionLimit": "주간 생산 한도",
+        "productionLimitTooltip": "공장에서 이 제품의 주간 생산량을 선택한 수량으로 제한해요."
       },
       "buttonDesc": "새 공장",
       "genericFactoryName": "{productName} 공장",

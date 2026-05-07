@@ -534,7 +534,8 @@
         "enoughDaily": "Suficiente apenas para entrega diária. Para logística semanal, você precisa de um armazém.",
         "notEnough": "Armazenamento insuficiente, mesmo para entrega diária.",
         "overflowWarning": "Estoque transbordando!",
-        "overflowDesc": "Você produz mais rápido do que consome ingredientes. O número de estantes foi ajustado conforme necessário."
+        "overflowDesc": "Você produz mais rápido do que consome ingredientes. O número de estantes foi ajustado conforme necessário.",
+        "limitedWeeklyAmount": "Com limite de produção, a entrega semanal exige <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Digite o salário de cada operário de fábrica. Deixe em branco se não quiser incluir cálculos salariais.",
@@ -545,7 +546,10 @@
         "addBtn": "Adicionar veículo"
       },
       "workstations": {
-        "addBtn": "Adicionar estação"
+        "addBtn": "Adicionar estação",
+        "useProductionLimit": "Usar limite de produção",
+        "productionLimit": "Limite de produção semanal",
+        "productionLimitTooltip": "Limita a produção semanal deste produto na fábrica à quantidade selecionada."
       },
       "buttonDesc": "Nova fábrica",
       "genericFactoryName": "{productName} fábrica",

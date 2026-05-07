@@ -534,7 +534,8 @@
         "enoughDaily": "Genug nur für die tägliche Lieferung. Für wöchentliche Logistik brauchst du ein Lagerhaus.",
         "notEnough": "Zu wenig Lagerplatz, selbst für eine tägliche Lieferung.",
         "overflowWarning": "Lager läuft über!",
-        "overflowDesc": "Du produzierst schneller, als du Zutaten verbrauchst. Die Regalanzahl wurde entsprechend korrigiert."
+        "overflowDesc": "Du produzierst schneller, als du Zutaten verbrauchst. Die Regalanzahl wurde entsprechend korrigiert.",
+        "limitedWeeklyAmount": "Mit Produktionslimit erfordert die wöchentliche Lieferung <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Trage den Lohn pro Mitarbeiter ein. Leer lassen, wenn du keine Lohnberechnung möchtest.",
@@ -545,7 +546,10 @@
         "addBtn": "Fahrzeug hinzufügen"
       },
       "workstations": {
-        "addBtn": "Arbeitsstation hinzufügen"
+        "addBtn": "Arbeitsstation hinzufügen",
+        "useProductionLimit": "Produktionslimit nutzen",
+        "productionLimit": "Wöchentliches Produktionslimit",
+        "productionLimitTooltip": "Begrenzt die wöchentliche Produktion dieses Produkts in der Fabrik auf die gewählte Menge."
       },
       "buttonDesc": "Neue Fabrik",
       "genericFactoryName": "{productName} Fabrik",

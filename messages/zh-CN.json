@@ -534,7 +534,8 @@
         "enoughDaily": "仅够满足每日配送。每周物流还需要仓库。",
         "notEnough": "即使每日配送也不够存储。",
         "overflowWarning": "库存即将溢出！",
-        "overflowDesc": "生产速度快于原料消耗，货架数已随之调整。"
+        "overflowDesc": "生产速度快于原料消耗，货架数已随之调整。",
+        "limitedWeeklyAmount": "开启生产限制后，每周交付需 <strong>{count}</strong> {object}。"
       },
       "employees": {
         "desc": "输入每位员工的薪资。如果不想要计算薪资，可以留空。",
@@ -545,7 +546,10 @@
         "addBtn": "添加车辆"
       },
       "workstations": {
-        "addBtn": "添加工作站"
+        "addBtn": "添加工作站",
+        "useProductionLimit": "使用生产限制",
+        "productionLimit": "每周生产限制",
+        "productionLimitTooltip": "将此产品在工厂内的每周产量限制为设定值。"
       },
       "buttonDesc": "新建工厂",
       "genericFactoryName": "{productName} 工厂",

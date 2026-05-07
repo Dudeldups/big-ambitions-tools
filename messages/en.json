@@ -534,7 +534,8 @@
         "enoughDaily": "Enough for daily delivery only. A warehouse is required for weekly logistics.",
         "notEnough": "Not enough storage even for daily delivery.",
         "overflowWarning": "Stock piling up!",
-        "overflowDesc": "Production outpaces ingredient consumption. Shelf count adjusted accordingly."
+        "overflowDesc": "Production outpaces ingredient consumption. Shelf count adjusted accordingly.",
+        "limitedWeeklyAmount": "With production limits, weekly delivery requires <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Enter the salary for each employee. Leave it empty if you don't want to include salary calculations.",
@@ -545,7 +546,10 @@
         "addBtn": "Add vehicle"
       },
       "workstations": {
-        "addBtn": "Add workstation"
+        "addBtn": "Add workstation",
+        "useProductionLimit": "Use production limit",
+        "productionLimit": "Weekly production limit",
+        "productionLimitTooltip": "Limits the weekly production of this product in the factory to the selected amount."
       },
       "buttonDesc": "New factory",
       "genericFactoryName": "{productName} factory",

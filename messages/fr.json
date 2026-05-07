@@ -534,7 +534,8 @@
         "enoughDaily": "Juste assez pour une livraison quotidienne. Il te faut un entrepôt pour la logistique hebdomadaire.",
         "notEnough": "Pas assez d'espace de stockage, même pour une livraison quotidienne.",
         "overflowWarning": "Le stock déborde !",
-        "overflowDesc": "La production dépasse la consommation d'ingrédients. Le nombre de rayonnages a été ajusté en conséquence."
+        "overflowDesc": "La production dépasse la consommation d'ingrédients. Le nombre de rayonnages a été ajusté en conséquence.",
+        "limitedWeeklyAmount": "Avec les limites de production, la livraison hebdomadaire nécessite <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Saisis le salaire de chaque employé. Laisse vide si tu ne veux pas inclure les calculs de salaire.",
@@ -545,7 +546,10 @@
         "addBtn": "Ajouter véhicule"
       },
       "workstations": {
-        "addBtn": "Ajouter poste"
+        "addBtn": "Ajouter poste",
+        "useProductionLimit": "Utiliser la limite de production",
+        "productionLimit": "Limite de production hebdomadaire",
+        "productionLimitTooltip": "Limite la production hebdomadaire de ce produit dans l'usine à la quantité choisie."
       },
       "buttonDesc": "Nouvelle usine",
       "genericFactoryName": "Usine de {productName}",

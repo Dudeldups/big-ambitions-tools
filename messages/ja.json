@@ -534,7 +534,8 @@
         "enoughDaily": "日次配送には十分です。週次物流には倉庫が必要です。",
         "notEnough": "日次配送でも保管スペースが不足しています。",
         "overflowWarning": "在庫が溢れそう！",
-        "overflowDesc": "生産が材料の消費を上回ってるよ。棚の数もそれに合わせて調整したよ。"
+        "overflowDesc": "生産が材料の消費を上回ってるよ。棚の数もそれに合わせて調整したよ。",
+        "limitedWeeklyAmount": "生産制限を適用すると、週次の配送に<strong>{count}</strong>個の{object}が必要になります。"
       },
       "employees": {
         "desc": "各従業員の給与を入力してね。給与計算が不要なら、空欄のままでOK！",
@@ -545,7 +546,10 @@
         "addBtn": "車両を追加"
       },
       "workstations": {
-        "addBtn": "ワークステーション追加"
+        "addBtn": "ワークステーション追加",
+        "useProductionLimit": "生産制限を使う",
+        "productionLimit": "週次生産制限",
+        "productionLimitTooltip": "工場でのこの製品の週次生産量を、設定した量に制限します。"
       },
       "buttonDesc": "新しい工場",
       "genericFactoryName": "{productName} 工場",
