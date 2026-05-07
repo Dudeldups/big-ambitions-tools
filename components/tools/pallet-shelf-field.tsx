@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Field, FieldDescription, FieldError, FieldLabel } from "../ui/field";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { cn } from "@/lib/utils";
-import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { getOptimalPalletShelfAmounts } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { Check, CircleX, TriangleAlert } from "lucide-react";
@@ -21,12 +21,11 @@ export function PalletShelfField({ className, control, errors }: Props) {
     name: ["shelfAmount", "workstations", "openingHours"],
   });
 
-  const { daily, weekly, isOverflowing } =
-    getOptimalPalletShelfAmount(workstations);
-  const limitedShelves = getOptimalPalletShelfAmount(workstations, {
-    limited: true,
+  const { full, limited } = getOptimalPalletShelfAmounts(
+    workstations,
     openingHours,
-  });
+  );
+  const { daily, weekly, isOverflowing } = full;
   const hasProductionLimit = workstations.some(
     (workstation) => workstation.productionLimit !== undefined,
   );
@@ -88,12 +87,14 @@ export function PalletShelfField({ className, control, errors }: Props) {
                     object: palletShelfStringWeekly,
                   })}
                 </p>
-                {hasProductionLimit && limitedShelves.weekly !== weekly && (
+                {hasProductionLimit &&
+                  limited &&
+                  limited.weekly !== weekly && (
                   <p>
                     {rich("tools.factoryPlanner.information.limitedWeeklyAmount", {
-                      count: limitedShelves.weekly,
+                      count: limited.weekly,
                       object: t("counts.palletShelf", {
-                        count: limitedShelves.weekly,
+                        count: limited.weekly,
                       }),
                     })}
                   </p>
