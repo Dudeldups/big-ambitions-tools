@@ -16,13 +16,20 @@ type Props = {
 
 export function PalletShelfField({ className, control, errors }: Props) {
   const { t, rich } = useRichDefaults();
-  const [shelfAmount, workstations] = useWatch({
+  const [shelfAmount, workstations, openingHours] = useWatch({
     control,
-    name: ["shelfAmount", "workstations"],
+    name: ["shelfAmount", "workstations", "openingHours"],
   });
 
   const { daily, weekly, isOverflowing } =
     getOptimalPalletShelfAmount(workstations);
+  const limitedShelves = getOptimalPalletShelfAmount(workstations, {
+    limited: true,
+    openingHours,
+  });
+  const hasProductionLimit = workstations.some(
+    (workstation) => workstation.productionLimit !== undefined,
+  );
 
   const hasWeekly = shelfAmount >= weekly;
   const hasDaily = shelfAmount >= daily;
@@ -81,6 +88,16 @@ export function PalletShelfField({ className, control, errors }: Props) {
                     object: palletShelfStringWeekly,
                   })}
                 </p>
+                {hasProductionLimit && limitedShelves.weekly !== weekly && (
+                  <p>
+                    {rich("tools.factoryPlanner.information.limitedWeeklyAmount", {
+                      count: limitedShelves.weekly,
+                      object: t("counts.palletShelf", {
+                        count: limitedShelves.weekly,
+                      }),
+                    })}
+                  </p>
+                )}
                 {isOverflowing && (
                   <Tooltip>
                     <TooltipTrigger className="text-alert flex gap-2">
