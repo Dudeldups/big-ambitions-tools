@@ -30,11 +30,10 @@ export const getShoppingList = (
     ([name, amount]) => {
       const ingredient = ingredients[name as keyof typeof ingredients];
 
-      const totalAmount = amount * timeMult;
+      const totalAmount = Math.ceil(amount * timeMult);
       const totalCost =
         getImportPrice(ingredient.wholesalePrice, difficulty) *
-        amount *
-        timeMult;
+        totalAmount;
 
       return {
         key: name,
