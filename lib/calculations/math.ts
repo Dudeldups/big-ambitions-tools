@@ -134,3 +134,6 @@ export function getWorkstationPrice(ws: Workstation) {
     0,
   );
 }
+
+export const ceilWithTolerance = (value: number, tolerance = 1e-9) =>
+  Math.ceil(value - tolerance);
