@@ -157,31 +157,73 @@ function WorkstationSelectsHarness() {
   );
 }
 
+function WorkstationSalesAmountHarness() {
+  const form = useForm<FactoryFormValues>({
+    defaultValues: {
+      name: "Factory",
+      description: "",
+      openingHours: 10,
+      shelfAmount: 2,
+      employees: {
+        deliveryDriver: { amount: 1, salary: 10 },
+        hrManager: { amount: 0, salary: 10 },
+        logisticsManager: { amount: 1, salary: 10 },
+        purchasingAgent: { amount: 0, salary: 10 },
+        factoryWorker: { amount: 1, salary: 10 },
+      },
+      vehicles: [{ name: "FreightTruckT1" }],
+      workstations: [
+        {
+          amount: 1,
+          name: "foodWorkstation",
+          product: "burger",
+          salesAmount: 100,
+        },
+      ],
+    },
+  });
+
+  const { control, setValue, getValues } = form;
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "workstations",
+  });
+
+  return (
+    <div>
+      {fields.map((field, index) => (
+        <div key={field.id} data-testid={`sales-workstation-${index}`}>
+          <WorkstationSelects
+            control={control}
+            index={index}
+            append={append}
+            remove={remove}
+            setValue={setValue}
+            getValues={getValues}
+            unregister={form.unregister}
+            factoryWorkerSalary={10}
+            openingHours={10}
+            productData={productData}
+          />
+        </div>
+      ))}
+      <pre data-testid="sales-form-values">
+        {JSON.stringify(form.watch("workstations"), null, 2)}
+      </pre>
+    </div>
+  );
+}
+
 describe("WorkstationSelects", () => {
   it("allows toggling the production limit after copying and changing the product", async () => {
     const user = userEvent.setup();
-    const messagesOverride = {
-      ...messages,
-      tools: {
-        ...messages.tools,
-        factoryPlanner: {
-          ...messages.tools.factoryPlanner,
-          workstations: {
-            ...messages.tools.factoryPlanner.workstations,
-            useProductionLimit: "Use production limit",
-            productionLimit: "Weekly production limit",
-          },
-        },
-      },
-    };
-
-    renderWithIntl(<WorkstationSelectsHarness />, { messagesOverride });
+    renderWithIntl(<WorkstationSelectsHarness />);
 
     await user.click(screen.getByRole("button", { name: "Copy" }));
 
     expect(
       within(screen.getByTestId("workstation-1")).getByRole("checkbox", {
-        name: "Use production limit",
+        name: messages.tools.factoryPlanner.workstations.useProductionLimit,
       }),
     ).toBeChecked();
 
@@ -195,13 +237,13 @@ describe("WorkstationSelects", () => {
     await waitFor(() => {
       expect(
         within(screen.getByTestId("workstation-1")).getByRole("checkbox", {
-          name: "Use production limit",
+          name: messages.tools.factoryPlanner.workstations.useProductionLimit,
         }),
       ).not.toBeChecked();
     });
 
     const checkbox = within(screen.getByTestId("workstation-1")).getByRole("checkbox", {
-      name: "Use production limit",
+      name: messages.tools.factoryPlanner.workstations.useProductionLimit,
     });
 
     await user.click(checkbox);
@@ -209,12 +251,12 @@ describe("WorkstationSelects", () => {
     await waitFor(() => {
       expect(
         within(screen.getByTestId("workstation-1")).getByRole("checkbox", {
-          name: "Use production limit",
+          name: messages.tools.factoryPlanner.workstations.useProductionLimit,
         }),
       ).toBeChecked();
       expect(
         within(screen.getByTestId("workstation-1")).getByLabelText(
-          "Weekly production limit",
+          messages.tools.factoryPlanner.workstations.productionLimit,
         ),
       ).toBeEnabled();
     });
@@ -222,26 +264,11 @@ describe("WorkstationSelects", () => {
 
   it("keeps the checkbox checked when the production limit input is cleared", async () => {
     const user = userEvent.setup();
-    const messagesOverride = {
-      ...messages,
-      tools: {
-        ...messages.tools,
-        factoryPlanner: {
-          ...messages.tools.factoryPlanner,
-          workstations: {
-            ...messages.tools.factoryPlanner.workstations,
-            useProductionLimit: "Use production limit",
-            productionLimit: "Weekly production limit",
-          },
-        },
-      },
-    };
-
-    renderWithIntl(<WorkstationSelectsHarness />, { messagesOverride });
+    renderWithIntl(<WorkstationSelectsHarness />);
 
     const workstation = screen.getByTestId("workstation-0");
     const checkbox = within(workstation).getByRole("checkbox", {
-      name: "Use production limit",
+      name: messages.tools.factoryPlanner.workstations.useProductionLimit,
     });
     const input = workstation.querySelector(
       "#workstationProductionLimit-0",
@@ -255,11 +282,32 @@ describe("WorkstationSelects", () => {
     await waitFor(() => {
       expect(
         within(screen.getByTestId("workstation-0")).getByRole("checkbox", {
-          name: "Use production limit",
+          name: messages.tools.factoryPlanner.workstations.useProductionLimit,
         }),
       ).toBeChecked();
       expect(screen.getByTestId("form-values")).toHaveTextContent(
         '"productionLimit": 0',
+      );
+    });
+  });
+
+  it("keeps estimated sales empty after clearing a previously saved value", async () => {
+    const user = userEvent.setup();
+    renderWithIntl(<WorkstationSalesAmountHarness />);
+
+    const workstation = screen.getByTestId("sales-workstation-0");
+    const input = within(workstation).getByLabelText(
+      messages.tools.factoryPlanner.estimatedSales,
+    ) as HTMLInputElement;
+
+    expect(input).toHaveValue("100");
+
+    await user.clear(input);
+
+    await waitFor(() => {
+      expect(input).toHaveValue("");
+      expect(screen.getByTestId("sales-form-values")).not.toHaveTextContent(
+        '"salesAmount": 100',
       );
     });
   });
