@@ -29,10 +29,7 @@ export const factorySchema = z.object({
         amount: z.number().min(1).max(MAX_WORKSTATION_AMOUNT),
         name: z.enum(WORKSTATION_NAMES),
         product: z.enum(PRODUCT_NAMES),
-        salesAmount: z.preprocess(
-          (value) => (value === null ? undefined : value),
-          z.number().optional(),
-        ),
+        salesAmount: z.number().optional(),
         productionLimit: z.number().min(0).optional(),
       }),
     )
