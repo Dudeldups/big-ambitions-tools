@@ -355,7 +355,20 @@ const WorkstationSelects = ({
                   onChange={(e) => {
                     const value = e.target.value.replace(/\D/g, "");
                     if (value === "") {
-                      setValue(`workstations.${index}.salesAmount`, null as never, {
+                      const updatedWorkstations = getValues("workstations").map(
+                        (workstation, wsIndex) => {
+                          if (wsIndex !== index) return workstation;
+
+                          // Remove the optional field entirely so edit forms
+                          // don't snap back to the previous default value.
+                          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                          const { salesAmount: _salesAmount, ...rest } =
+                            workstation;
+                          return rest;
+                        },
+                      );
+
+                      setValue("workstations", updatedWorkstations, {
                         shouldDirty: true,
                         shouldTouch: true,
                         shouldValidate: true,
