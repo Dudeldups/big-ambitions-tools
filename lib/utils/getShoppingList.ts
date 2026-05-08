@@ -2,7 +2,7 @@ import { ingredients } from "../game/ingredients";
 import { Difficulty } from "../game/types";
 import { FactoryFormValues } from "../schemas/factory";
 import { getTimeMultiplier } from "./getTimeMultiplier";
-import { getImportPrice } from "../calculations/math";
+import { ceilWithTolerance, getImportPrice } from "../calculations/math";
 import { calculateLimitedIngredientTotals } from "../calculations/calculateIngredientTotals";
 
 export type ImporterShoppingList = {
@@ -30,7 +30,7 @@ export const getShoppingList = (
     ([name, amount]) => {
       const ingredient = ingredients[name as keyof typeof ingredients];
 
-      const totalAmount = Math.ceil(amount * timeMult);
+      const totalAmount = ceilWithTolerance(amount * timeMult);
       const totalCost =
         getImportPrice(ingredient.wholesalePrice, difficulty) *
         totalAmount;

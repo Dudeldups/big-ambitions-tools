@@ -1,5 +1,6 @@
 import { FormEmployees } from "./../schemas/employee";
 import {
+  ceilWithTolerance,
   getAverageRetailPrice,
   getExportPrice,
   getImportPrice,
@@ -210,7 +211,7 @@ export const deriveIngredientData = (
     return {
       valueType: "ingredients",
       name: `ingredients.${name}`,
-      amount: Math.ceil(totalAmount),
+      amount: ceilWithTolerance(totalAmount),
       value: totalCost,
     };
   });
