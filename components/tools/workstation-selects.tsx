@@ -128,7 +128,6 @@ const WorkstationSelects = ({
       if (workstation.product !== productName) return workstation;
 
       if (value === undefined) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { productionLimit: _productionLimit, ...rest } = workstation;
         return rest;
       }
@@ -162,7 +161,6 @@ const WorkstationSelects = ({
         if (wsIndex !== index) return workstation;
 
         if (existingLimit === undefined) {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { productionLimit: _productionLimit, ...rest } = workstation;
           return {
             ...rest,
@@ -361,7 +359,6 @@ const WorkstationSelects = ({
 
                           // Remove the optional field entirely so edit forms
                           // don't snap back to the previous default value.
-                          // eslint-disable-next-line @typescript-eslint/no-unused-vars
                           const { salesAmount: _salesAmount, ...rest } =
                             workstation;
                           return rest;
