@@ -40,10 +40,10 @@ describe("production limits", () => {
 
     expect(allItems.every((item) => Number.isInteger(item.amount))).toBe(true);
     expect(allItems.find((item) => item.name === "rawSausage")?.amount).toBe(
-      1001,
+      1000,
     );
-    expect(allItems.find((item) => item.name === "dough")?.amount).toBe(1001);
-    expect(allItems.find((item) => item.name === "tomato")?.amount).toBe(251);
+    expect(allItems.find((item) => item.name === "dough")?.amount).toBe(1000);
+    expect(allItems.find((item) => item.name === "tomato")?.amount).toBe(250);
   });
 
   it("caps product output by the weekly production limit", () => {
@@ -64,9 +64,53 @@ describe("production limits", () => {
 
     expect(
       ingredientRows.find((row) => row.name === "ingredients.rawSausage")?.amount,
-    ).toBe(1001);
+    ).toBe(1000);
     expect(
       ingredientRows.find((row) => row.name === "ingredients.tomato")?.amount,
-    ).toBe(251);
+    ).toBe(250);
+  });
+
+  it("does not over-round limited ingredients when the same product is split across workstation entries", () => {
+    const jewelryFactory: FactoryFormValues = {
+      ...testFactory,
+      name: "Jewelry Factory",
+      workstations: [
+        {
+          amount: 5,
+          name: "jewelryWorkstation",
+          product: "cheapJewelry",
+          productionLimit: 5000,
+        },
+        {
+          amount: 5,
+          name: "jewelryWorkstation",
+          product: "expensiveJewelry",
+          productionLimit: 1000,
+        },
+        {
+          amount: 1,
+          name: "jewelryWorkstation",
+          product: "cheapJewelry",
+        },
+        {
+          amount: 1,
+          name: "jewelryWorkstation",
+          product: "expensiveJewelry",
+        },
+      ],
+    };
+
+    const shoppingList = getShoppingList(jewelryFactory, "normal");
+    const allItems = shoppingList.flatMap((entry) => entry.items);
+
+    expect(allItems.find((item) => item.name === "metalBand")?.amount).toBe(
+      6000,
+    );
+    expect(
+      allItems.find((item) => item.name === "uncutGemsCheap")?.amount,
+    ).toBe(5000);
+    expect(
+      allItems.find((item) => item.name === "uncutGemsExpensive")?.amount,
+    ).toBe(1000);
   });
 });
