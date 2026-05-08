@@ -348,16 +348,25 @@ const WorkstationSelects = ({
                 <Input
                   className="max-w-24"
                   id={`workstationSalesAmount-${index}`}
-                  type="number"
-                  value={field.value ?? ""}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  value={salesAmount ?? ""}
                   onChange={(e) => {
-                    const value = e.target.value;
+                    const value = e.target.value.replace(/\D/g, "");
+                    if (value === "") {
+                      setValue(`workstations.${index}.salesAmount`, null as never, {
+                        shouldDirty: true,
+                        shouldTouch: true,
+                        shouldValidate: true,
+                      });
+                      return;
+                    }
+
                     field.onChange(
-                      value === ""
-                        ? undefined
-                        : Number(value) > productionAmount
-                          ? productionAmount
-                          : Number(value),
+                      Number(value) > productionAmount
+                        ? productionAmount
+                        : Number(value),
                     );
                   }}
                   onBlur={field.onBlur}
