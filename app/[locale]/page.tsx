@@ -92,20 +92,22 @@ export default function Home() {
       <SectionWrapper centerMobile className="max-w-4xl gap-8">
         {/* Quote of the day */}
         <div className="flex flex-col items-center gap-4 text-center">
-          <h2>{quoteOfTheDay.title}</h2>
+          <h2 className="text-pretty">{quoteOfTheDay.title}</h2>
         </div>
 
-        <div className="mx-auto grid w-full max-w-2xl items-center gap-6 md:grid-cols-[auto_minmax(0,1fr)] md:gap-8">
-          <Image
-            src="/assets/images/uncle_fred.png"
-            alt="Uncle Fred"
-            width={220}
-            height={220}
-            className="mx-auto h-auto w-36 object-contain sm:w-44 md:w-48"
-          />
+        <div className="mx-auto mt-8 grid w-full max-w-2xl items-center gap-6 md:grid-cols-[auto_minmax(0,1fr)] md:gap-0">
+          <div className="relative z-10 mx-auto md:mx-0">
+            <Image
+              src="/assets/images/uncle_fred.png"
+              alt="Uncle Fred"
+              width={192}
+              height={192}
+              className="border-border bg-popover mx-auto aspect-square w-44 rounded-full border object-cover shadow-md md:w-56"
+            />
+          </div>
 
-          <div className="via-popover-foreground/90 p-clamp-x card--quote from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-xl rounded-xl bg-linear-170">
-            <blockquote className="text-h5 text-card leading-relaxed text-pretty max-lg:text-center">
+          <div className="via-popover-foreground/90 from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-lg rounded-xl bg-linear-170 p-6 pl-10 md:-ms-6">
+            <blockquote className="text-h5 text-card leading-relaxed text-pretty max-md:text-center">
               {dailyQuote}
             </blockquote>
           </div>
