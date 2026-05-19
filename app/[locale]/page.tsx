@@ -95,10 +95,20 @@ export default function Home() {
           <h2>{quoteOfTheDay.title}</h2>
         </div>
 
-        <div className="via-popover-foreground/90 p-clamp-x card--quote from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-3xl rounded-xl bg-linear-170">
-          <blockquote className="text-h5 text-card leading-relaxed text-pretty max-lg:text-center">
-            {dailyQuote}
-          </blockquote>
+        <div className="mx-auto grid w-full max-w-2xl items-center gap-6 md:grid-cols-[auto_minmax(0,1fr)] md:gap-8">
+          <Image
+            src="/assets/images/uncle_fred.png"
+            alt="Uncle Fred"
+            width={220}
+            height={220}
+            className="mx-auto h-auto w-36 object-contain sm:w-44 md:w-48"
+          />
+
+          <div className="via-popover-foreground/90 p-clamp-x card--quote from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-xl rounded-xl bg-linear-170">
+            <blockquote className="text-h5 text-card leading-relaxed text-pretty max-lg:text-center">
+              {dailyQuote}
+            </blockquote>
+          </div>
         </div>
       </SectionWrapper>
 
