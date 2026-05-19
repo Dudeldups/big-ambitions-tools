@@ -106,7 +106,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="via-popover-foreground/90 from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-lg rounded-xl bg-linear-170 p-6 pl-10 md:-ms-6">
+          <div className="via-popover-foreground/90 from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-lg rounded-xl bg-linear-170 p-4 md:-ms-6 md:p-6 md:pl-10">
             <blockquote className="text-h5 text-card leading-relaxed text-pretty max-md:text-center">
               {dailyQuote}
             </blockquote>
