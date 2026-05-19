@@ -89,6 +89,21 @@ export default function Home() {
         </hgroup>
       </SectionWrapper>
 
+      <SectionWrapper centerMobile className="max-w-4xl gap-8">
+        {/* Quote of the day */}
+        <div className="flex flex-col items-center gap-4 text-center">
+          <h2>{quoteOfTheDay.title}</h2>
+        </div>
+
+        <div className="via-popover-foreground/90 p-clamp-x card--quote from-popover-foreground/80 to-popover-foreground/80 ring-muted-foreground mx-auto w-full max-w-3xl rounded-xl bg-linear-170">
+          <blockquote className="text-h5 text-card leading-relaxed text-pretty max-lg:text-center">
+            {dailyQuote}
+          </blockquote>
+        </div>
+      </SectionWrapper>
+
+      <SectionSeparator />
+
       <SectionWrapper className="max-w-5xl max-lg:items-center max-lg:gap-14 lg:flex-row lg:justify-between">
         {/* CTA */}
         <div className="flex flex-col items-center gap-8 lg:items-start lg:gap-14">
