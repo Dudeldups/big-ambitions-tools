@@ -32,9 +32,26 @@ const heroIcons = [
   { Icon: PencilRuler, id: "ruler" },
 ];
 
+const getQuoteIndexForDay = (quoteCount: number) => {
+  const today = new Date();
+  const utcDayKey = Date.UTC(
+    today.getUTCFullYear(),
+    today.getUTCMonth(),
+    today.getUTCDate(),
+  );
+
+  return Math.floor(utcDayKey / 86_400_000) % quoteCount;
+};
+
 export default function Home() {
   const tUpdates = useTranslations("updateHistory");
   const { t: tHome, rich } = useRichDefaults("home");
+  const quoteOfTheDay = {
+    title: tHome("quoteOfTheDay.title"),
+    quotes: tHome.raw("quoteOfTheDay.quotes") as string[],
+  };
+  const dailyQuote =
+    quoteOfTheDay.quotes[getQuoteIndexForDay(quoteOfTheDay.quotes.length)];
 
   const format = useFormatter();
   const dateFormattingRules: DateTimeFormatOptions = {
