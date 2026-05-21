@@ -79,6 +79,7 @@ describe("GroupShoppingListDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
     const bakery = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -91,7 +92,9 @@ describe("GroupShoppingListDialog", () => {
       shelfAmount: 4,
     });
 
-    usePlaythroughStore.getState().addFactoryToPlaythrough(playthrough.id, bakery.id);
+    usePlaythroughStore
+      .getState()
+      .addFactoryToPlaythrough(playthrough.id, bakery.id);
     usePlaythroughStore
       .getState()
       .addFactoryToPlaythrough(playthrough.id, pharmacy.id);
@@ -106,10 +109,12 @@ describe("GroupShoppingListDialog", () => {
         items: [{ name: "water", amount: 10, value: 100 }],
       },
     ]);
-    vi.mocked(splitShoppingListByShelves).mockImplementation((shoppingList) => ({
-      factoryList: [],
-      externalList: shoppingList,
-    }));
+    vi.mocked(splitShoppingListByShelves).mockImplementation(
+      (shoppingList) => ({
+        factoryList: [],
+        externalList: shoppingList,
+      }),
+    );
     vi.mocked(mergeShoppingLists).mockReturnValue([
       {
         importer: "combined-importer",
@@ -117,7 +122,9 @@ describe("GroupShoppingListDialog", () => {
       },
     ]);
 
-    renderWithIntl(<GroupShoppingListDialog factoryIds={[bakery.id, pharmacy.id]} />);
+    renderWithIntl(
+      <GroupShoppingListDialog factoryIds={[bakery.id, pharmacy.id]} />,
+    );
 
     const trigger = screen.getByRole("button", { name: /shopping list/i });
     expect(trigger).not.toHaveClass("hidden");
@@ -147,13 +154,16 @@ describe("GroupShoppingListDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
+      gameVersion: "0.10",
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
       name: "Covered Factory",
     });
 
-    usePlaythroughStore.getState().addFactoryToPlaythrough(playthrough.id, factory.id);
+    usePlaythroughStore
+      .getState()
+      .addFactoryToPlaythrough(playthrough.id, factory.id);
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
 
@@ -168,8 +178,8 @@ describe("GroupShoppingListDialog", () => {
 
     renderWithIntl(<GroupShoppingListDialog factoryIds={[factory.id]} />);
 
-    expect(
-      screen.getByRole("button", { name: /shopping list/i }),
-    ).toHaveClass("hidden");
+    expect(screen.getByRole("button", { name: /shopping list/i })).toHaveClass(
+      "hidden",
+    );
   });
 });

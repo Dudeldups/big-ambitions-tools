@@ -51,6 +51,7 @@ describe("FactoryOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     useAppStore.setState({ _hasHydrated: true, calculationPeriod: "weekly" });
@@ -77,7 +78,9 @@ describe("FactoryOverview", () => {
 
     renderWithIntl(<FactoryOverview values={_testFactoryFormValues} />);
 
-    expect(screen.getByTestId("overview-One-time costs")).toHaveTextContent("3");
+    expect(screen.getByTestId("overview-One-time costs")).toHaveTextContent(
+      "3",
+    );
     expect(
       screen.getByTestId("overview-Recurring costs (weekly)"),
     ).toHaveTextContent("2");
@@ -97,6 +100,7 @@ describe("FactoryOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     useAppStore.setState({ _hasHydrated: true, calculationPeriod: "weekly" });

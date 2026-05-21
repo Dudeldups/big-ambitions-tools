@@ -30,6 +30,7 @@ describe("PriceIndexPopover", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -49,9 +50,8 @@ describe("PriceIndexPopover", () => {
     fireEvent.change(slider, { target: { value: "1.2" } });
 
     expect(
-      usePlaythroughStore
-        .getState()
-        .getPriceIndices(playthrough.id).classicCheapMaleClothing,
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id)
+        .classicCheapMaleClothing,
     ).toBe(1.2);
   });
 
@@ -60,6 +60,7 @@ describe("PriceIndexPopover", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "easy",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -78,9 +79,8 @@ describe("PriceIndexPopover", () => {
     });
 
     expect(
-      usePlaythroughStore
-        .getState()
-        .getPriceIndices(playthrough.id).classicCheapMaleClothing,
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id)
+        .classicCheapMaleClothing,
     ).toBe(BASE_PRODUCT_PRICE_INDEX);
   });
 });
