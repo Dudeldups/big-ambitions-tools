@@ -39,14 +39,18 @@ vi.mock("./edit-playthrough-form", async () => {
       onSubmit,
       cancelEditing,
     }: {
-      onSubmit: (values: { characterName: string; difficulty: string }) => void;
+      onSubmit: (values: {
+        characterName: string;
+        difficulty: string;
+        gameVersion: string;
+      }) => void;
       cancelEditing: () => void;
     }) => {
-      const { setValue } =
-        reactHookForm.useFormContext<{
-          characterName: string;
-          difficulty: string;
-        }>();
+      const { setValue } = reactHookForm.useFormContext<{
+        characterName: string;
+        difficulty: string;
+        gameVersion: string;
+      }>();
 
       return (
         <div data-testid="edit-playthrough-form">
@@ -59,6 +63,9 @@ vi.mock("./edit-playthrough-form", async () => {
               setValue("difficulty", "hard", {
                 shouldDirty: true,
               });
+              setValue("gameVersion", "0.10", {
+                shouldDirty: true,
+              });
             }}
           >
             make-dirty
@@ -69,6 +76,7 @@ vi.mock("./edit-playthrough-form", async () => {
               onSubmit({
                 characterName: "Updated Name",
                 difficulty: "hard",
+                gameVersion: "0.10",
               })
             }
           >
@@ -87,7 +95,9 @@ describe("PlaythroughOverview", () => {
   it("renders a loading spinner before the playthrough store has hydrated", () => {
     renderWithIntl(<PlaythroughOverview />);
 
-    expect(screen.getByRole("status", { name: /loading/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: /loading/i }),
+    ).toBeInTheDocument();
   });
 
   it("renders the empty state when no playthroughs exist", () => {
@@ -105,12 +115,15 @@ describe("PlaythroughOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "easy",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
 
     renderWithIntl(<PlaythroughOverview />);
 
-    await user.click(screen.getByRole("button", { name: `edit-${playthrough.id}` }));
+    await user.click(
+      screen.getByRole("button", { name: `edit-${playthrough.id}` }),
+    );
 
     expect(screen.getByTestId("edit-playthrough-form")).toBeInTheDocument();
 
@@ -134,7 +147,9 @@ describe("PlaythroughOverview", () => {
         position: "bottom-right",
       }),
     );
-    expect(screen.queryByTestId("edit-playthrough-form")).not.toBeInTheDocument();
+    expect(
+      screen.queryByTestId("edit-playthrough-form"),
+    ).not.toBeInTheDocument();
   });
 
   it("leaves edit mode when cancelEditing is triggered", async () => {
@@ -142,17 +157,22 @@ describe("PlaythroughOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
 
     renderWithIntl(<PlaythroughOverview />);
 
-    await user.click(screen.getByRole("button", { name: `edit-${playthrough.id}` }));
+    await user.click(
+      screen.getByRole("button", { name: `edit-${playthrough.id}` }),
+    );
     expect(screen.getByTestId("edit-playthrough-form")).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "cancel-edit" }));
 
-    expect(screen.queryByTestId("edit-playthrough-form")).not.toBeInTheDocument();
+    expect(
+      screen.queryByTestId("edit-playthrough-form"),
+    ).not.toBeInTheDocument();
     expect(
       screen.getByTestId(`playthrough-card-${playthrough.id}`),
     ).toBeInTheDocument();

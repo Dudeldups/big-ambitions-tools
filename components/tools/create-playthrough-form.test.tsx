@@ -13,11 +13,11 @@ describe("CreatePlaythroughForm", () => {
 
     renderWithIntl(<CreatePlaythroughForm />);
 
-    await user.click(
-      screen.getByRole("button", { name: /new playthrough/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /new playthrough/i }));
 
-    expect(screen.getByRole("status", { name: /loading/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: /loading/i }),
+    ).toBeInTheDocument();
     expect(screen.queryByLabelText("Easy")).not.toBeInTheDocument();
   });
 
@@ -28,9 +28,7 @@ describe("CreatePlaythroughForm", () => {
 
     renderWithIntl(<CreatePlaythroughForm />);
 
-    await user.click(
-      screen.getByRole("button", { name: /new playthrough/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /new playthrough/i }));
     await user.click(screen.getByRole("button", { name: "Confirm" }));
 
     expect(
@@ -47,9 +45,7 @@ describe("CreatePlaythroughForm", () => {
 
     renderWithIntl(<CreatePlaythroughForm />);
 
-    await user.click(
-      screen.getByRole("button", { name: /new playthrough/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /new playthrough/i }));
 
     expect(screen.getByLabelText("Hard")).toBeChecked();
 
@@ -63,6 +59,7 @@ describe("CreatePlaythroughForm", () => {
     expect(usePlaythroughStore.getState().playthroughs[0]).toMatchObject({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: "0.10",
       isActive: true,
     });
     expect(sonnerToastMock.success).toHaveBeenCalledWith(
