@@ -1,4 +1,4 @@
-export const GAME_VERSIONS = ["0.10", "0.11"] as const;
+export const GAME_VERSIONS = ["0.10"] as const;
 
 export type GameVersion = (typeof GAME_VERSIONS)[number];
 
@@ -14,10 +14,10 @@ export const GAME_VERSION_META = {
     id: "0.10",
     status: "stable",
   },
-  "0.11": {
-    id: "0.11",
-    status: "experimental",
-  },
+  // "0.11": {
+  //   id: "0.11",
+  //   status: "experimental",
+  // },
 } satisfies Record<GameVersion, GameVersionMeta>;
 
 export const getGameVersionMeta = (version: GameVersion): GameVersionMeta => {
