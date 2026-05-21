@@ -27,3 +27,11 @@ export const getGameVersionMeta = (version: GameVersion): GameVersionMeta => {
 export const SELECTABLE_GAME_VERSIONS = GAME_VERSIONS.filter(
   (version) => getGameVersionMeta(version).status !== "archived",
 );
+
+export const DEFAULT_GAME_VERSION = [...GAME_VERSIONS]
+  .reverse()
+  .find((version) => getGameVersionMeta(version).status === "stable");
+
+if (!DEFAULT_GAME_VERSION) {
+  throw new Error("At least one stable game version is required.");
+}
