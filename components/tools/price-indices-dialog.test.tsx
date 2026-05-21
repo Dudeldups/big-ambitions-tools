@@ -4,6 +4,7 @@ import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { BASE_PRODUCT_PRICE_INDEX } from "@/lib/constants";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { assertPriceIndex } from "@/lib/utils/assertPriceIndex";
 import { safeLog } from "@/lib/utils/safeLog";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -42,7 +43,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -65,7 +66,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -89,7 +90,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });

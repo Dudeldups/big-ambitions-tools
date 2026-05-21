@@ -2,6 +2,7 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useForm } from "react-hook-form";
@@ -91,7 +92,7 @@ describe("PalletShelfField", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });

@@ -8,6 +8,7 @@ import {
 } from "@/__tests__/test-utils";
 import messages from "@/messages/en.json";
 import { products } from "@/lib/game/products";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useFieldArray, useForm } from "react-hook-form";
@@ -229,7 +230,7 @@ describe("WorkstationSelects", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });

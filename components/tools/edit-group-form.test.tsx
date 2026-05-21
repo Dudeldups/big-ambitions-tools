@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import EditGroupForm from "./edit-group-form";
 
@@ -15,7 +16,7 @@ describe("EditGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const group = usePlaythroughStore
       .getState()
@@ -57,7 +58,7 @@ describe("EditGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const group = usePlaythroughStore
       .getState()
@@ -95,7 +96,7 @@ describe("EditGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Taylor",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const group = usePlaythroughStore
       .getState()

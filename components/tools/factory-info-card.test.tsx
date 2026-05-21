@@ -5,6 +5,7 @@ import { routerMock } from "@/__tests__/mocks/i18n-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import FactoryInfoCard from "./factory-info-card";
 
@@ -17,7 +18,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -58,7 +59,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -93,7 +94,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -132,7 +133,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Taylor",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,

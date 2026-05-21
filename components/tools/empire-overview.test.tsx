@@ -1,6 +1,7 @@
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import EmpireOverview from "./empire-overview";
 
@@ -45,7 +46,7 @@ describe("EmpireOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const bakery = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -100,7 +101,7 @@ describe("EmpireOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,

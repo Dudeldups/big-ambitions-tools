@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import PlaythroughOverview from "./playthrough-overview";
 
@@ -63,7 +64,7 @@ vi.mock("./edit-playthrough-form", async () => {
               setValue("difficulty", "hard", {
                 shouldDirty: true,
               });
-              setValue("gameVersion", "0.10", {
+              setValue("gameVersion", DEFAULT_GAME_VERSION, {
                 shouldDirty: true,
               });
             }}
@@ -76,7 +77,7 @@ vi.mock("./edit-playthrough-form", async () => {
               onSubmit({
                 characterName: "Updated Name",
                 difficulty: "hard",
-                gameVersion: "0.10",
+                gameVersion: DEFAULT_GAME_VERSION,
               })
             }
           >
@@ -115,7 +116,7 @@ describe("PlaythroughOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
 
@@ -157,7 +158,7 @@ describe("PlaythroughOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
 

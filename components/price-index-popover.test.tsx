@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { BASE_PRODUCT_PRICE_INDEX } from "@/lib/constants";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import PriceIndexPopover from "./price-index-popover";
 
@@ -30,7 +31,7 @@ describe("PriceIndexPopover", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -60,7 +61,7 @@ describe("PriceIndexPopover", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });

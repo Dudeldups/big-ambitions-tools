@@ -5,6 +5,7 @@ import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
@@ -76,7 +77,7 @@ describe("GroupDeliveriesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const bakery = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -155,7 +156,7 @@ describe("GroupDeliveriesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,

@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import PlaythroughInfoCard from "./playthrough-info-card";
 
@@ -12,7 +13,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     renderWithIntl(
@@ -38,7 +39,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const startEditing = vi.fn();
 
@@ -61,7 +62,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const cancelEditing = vi.fn();
 
@@ -84,7 +85,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     renderWithIntl(

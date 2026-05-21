@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { useAppStore } from "@/lib/stores/appStore";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import CreatePlaythroughForm from "./create-playthrough-form";
@@ -59,7 +60,7 @@ describe("CreatePlaythroughForm", () => {
     expect(usePlaythroughStore.getState().playthroughs[0]).toMatchObject({
       characterName: "Jordan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
       isActive: true,
     });
     expect(sonnerToastMock.success).toHaveBeenCalledWith(

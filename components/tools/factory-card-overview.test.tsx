@@ -7,6 +7,7 @@ import {
   within,
 } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import FactoryCardOverview from "./factory-card-overview";
 
@@ -65,7 +66,7 @@ describe("FactoryCardOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factoryA = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,

@@ -1,6 +1,7 @@
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
 import { products } from "../game/products";
+import { DEFAULT_GAME_VERSION } from "../game/versions";
 import { usePlaythroughStore } from "./playthroughStore";
 
 describe("usePlaythroughStore", () => {
@@ -8,13 +9,13 @@ describe("usePlaythroughStore", () => {
     const first = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "easy",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     const second = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Sam",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     const state = usePlaythroughStore.getState();
@@ -25,10 +26,10 @@ describe("usePlaythroughStore", () => {
     expect(state.playthroughs).toHaveLength(2);
     expect(state.playthroughs[0].id).toBe(second.id);
     expect(state.playthroughs[0].isActive).toBe(true);
-    expect(state.playthroughs[0].gameVersion).toBe("0.10");
+    expect(state.playthroughs[0].gameVersion).toBe(DEFAULT_GAME_VERSION);
     expect(state.playthroughs[1].id).toBe(first.id);
     expect(state.playthroughs[1].isActive).toBe(false);
-    expect(state.playthroughs[1].gameVersion).toBe("0.10");
+    expect(state.playthroughs[1].gameVersion).toBe(DEFAULT_GAME_VERSION);
 
     expect(Object.keys(first.priceIndices).sort()).toEqual(
       persistedProductNames.sort(),
@@ -42,7 +43,7 @@ describe("usePlaythroughStore", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -88,7 +89,7 @@ describe("usePlaythroughStore", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore
@@ -107,7 +108,7 @@ describe("usePlaythroughStore", () => {
             id: playthrough.id,
             characterName: "Chris",
             difficulty: "hard",
-            gameVersion: "0.10",
+            gameVersion: DEFAULT_GAME_VERSION,
             priceIndices: expect.objectContaining({
               classicCheapMaleClothing: 1.3,
             }),
@@ -130,7 +131,7 @@ describe("usePlaythroughStore", () => {
       id: playthrough.id,
       characterName: "Chris",
       difficulty: "hard",
-      gameVersion: "0.10",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     expect(hydratedPlaythrough?.priceIndices.classicCheapMaleClothing).toBe(
       1.3,
