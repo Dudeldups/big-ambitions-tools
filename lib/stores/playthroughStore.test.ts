@@ -1,8 +1,14 @@
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
 import { products } from "../game/products";
+import { ProductName } from "../game/productNames";
+import { Product } from "../game/types";
 import { DEFAULT_GAME_VERSION } from "../game/versions";
-import { usePlaythroughStore } from "./playthroughStore";
+import {
+  createDefaultPriceIndices,
+  syncPriceIndicesToProducts,
+  usePlaythroughStore,
+} from "./playthroughStore";
 
 describe("usePlaythroughStore", () => {
   it("creates playthroughs with default price indices and keeps only the newest one active", () => {
@@ -136,5 +142,47 @@ describe("usePlaythroughStore", () => {
     expect(hydratedPlaythrough?.priceIndices.classicCheapMaleClothing).toBe(
       1.3,
     );
+  });
+
+  it("syncs existing price indices against the target product list", () => {
+    const targetProducts = {
+      burger: {
+        defaultMarketPrice: 10,
+      },
+      pizza: {
+        defaultMarketPrice: 20,
+      },
+      umbrella: {
+        defaultMarketPrice: 0,
+      },
+    } as Partial<Record<ProductName, Product>>;
+
+    const syncedPriceIndices = syncPriceIndicesToProducts(
+      {
+        burger: 1.3,
+        sodaCan: 1.1,
+      },
+      targetProducts,
+    );
+
+    expect(syncedPriceIndices).toEqual({
+      burger: 1.3,
+      pizza: BASE_PRODUCT_PRICE_INDEX,
+    });
+  });
+
+  it("creates default price indices only for products with a market price", () => {
+    const targetProducts = {
+      burger: {
+        defaultMarketPrice: 10,
+      },
+      umbrella: {
+        defaultMarketPrice: 0,
+      },
+    } as Partial<Record<ProductName, Product>>;
+
+    expect(createDefaultPriceIndices(targetProducts)).toEqual({
+      burger: BASE_PRODUCT_PRICE_INDEX,
+    });
   });
 });
