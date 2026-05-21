@@ -28,6 +28,11 @@ describe("PlaythroughInfoCard", () => {
     expect(screen.getByText("Jordan")).toBeInTheDocument();
     expect(screen.getByText(/Difficulty: Hard/i)).toBeInTheDocument();
     expect(screen.getByText(/Factories: 0/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        new RegExp(`Game version: ${DEFAULT_GAME_VERSION}`, "i"),
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Jordan/i })).toHaveAttribute(
       "href",
       `/tools/${playthrough.id}`,
