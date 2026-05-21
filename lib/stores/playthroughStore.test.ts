@@ -8,11 +8,13 @@ describe("usePlaythroughStore", () => {
     const first = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "easy",
+      gameVersion: "0.10",
     });
 
     const second = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Sam",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
 
     const state = usePlaythroughStore.getState();
@@ -23,8 +25,10 @@ describe("usePlaythroughStore", () => {
     expect(state.playthroughs).toHaveLength(2);
     expect(state.playthroughs[0].id).toBe(second.id);
     expect(state.playthroughs[0].isActive).toBe(true);
+    expect(state.playthroughs[0].gameVersion).toBe("0.10");
     expect(state.playthroughs[1].id).toBe(first.id);
     expect(state.playthroughs[1].isActive).toBe(false);
+    expect(state.playthroughs[1].gameVersion).toBe("0.10");
 
     expect(Object.keys(first.priceIndices).sort()).toEqual(
       persistedProductNames.sort(),
@@ -38,6 +42,7 @@ describe("usePlaythroughStore", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
+      gameVersion: "0.10",
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -48,13 +53,12 @@ describe("usePlaythroughStore", () => {
       .getState()
       .addFactoryToPlaythrough(playthrough.id, factory.id);
 
-    const group = usePlaythroughStore.getState().createFactoryGroup(
-      playthrough.id,
-      {
+    const group = usePlaythroughStore
+      .getState()
+      .createFactoryGroup(playthrough.id, {
         name: "Downtown",
         color: "#fff",
-      },
-    );
+      });
 
     usePlaythroughStore
       .getState()
@@ -84,27 +88,26 @@ describe("usePlaythroughStore", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
 
-    usePlaythroughStore.getState().setPriceIndex(
-      playthrough.id,
-      "classicCheapMaleClothing",
-      1.3,
-    );
+    usePlaythroughStore
+      .getState()
+      .setPriceIndex(playthrough.id, "classicCheapMaleClothing", 1.3);
 
-    const persistedState =
-      await usePlaythroughStore.persist.getOptions().storage?.getItem(
-        "playthrough-storage",
-      );
+    const persistedState = await usePlaythroughStore.persist
+      .getOptions()
+      .storage?.getItem("playthrough-storage");
 
     expect(persistedState).toMatchObject({
-      version: 0,
+      version: 1,
       state: {
         playthroughs: [
           expect.objectContaining({
             id: playthrough.id,
             characterName: "Chris",
             difficulty: "hard",
+            gameVersion: "0.10",
             priceIndices: expect.objectContaining({
               classicCheapMaleClothing: 1.3,
             }),
@@ -127,6 +130,7 @@ describe("usePlaythroughStore", () => {
       id: playthrough.id,
       characterName: "Chris",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
     expect(hydratedPlaythrough?.priceIndices.classicCheapMaleClothing).toBe(
       1.3,

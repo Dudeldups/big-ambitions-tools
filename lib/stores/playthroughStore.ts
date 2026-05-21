@@ -7,9 +7,9 @@ import { PlaythroughFormValues } from "../schemas/playthrough";
 import { FactoryFormValues } from "../schemas/factory";
 import { generateUniqueId } from "./generateUniqueId";
 import { ProductName } from "../game/productNames";
-import { products } from "../game/products";
 import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
 import { FactoryGroupFormValues } from "../schemas/factoryGroup";
+import { getGameData } from "../game/registry";
 
 export type Factory = FactoryFormValues & {
   id: string;
@@ -123,10 +123,11 @@ export const usePlaythroughStore = create(
 
         const existingIds = new Set(playthroughs.map((p) => p.id));
         const id = generateUniqueId(existingIds);
+        const { products } = getGameData(values.gameVersion);
 
         const defaultPriceIndices = Object.fromEntries(
           Object.entries(products)
-            .filter(([, p]) => p.defaultMarketPrice > 0)
+            .filter(([, p]) => p && p.defaultMarketPrice > 0)
             .map(([productName]) => [
               productName as ProductName,
               BASE_PRODUCT_PRICE_INDEX,
@@ -417,10 +418,23 @@ export const usePlaythroughStore = create(
     })),
     {
       name: "playthrough-storage",
-      version: 0,
+      version: 1,
       storage: createJSONStorage(() => indexedDBStorage),
       partialize: (state) => omit(state, ["_hasHydrated"]),
       skipHydration: true,
+      migrate: (persistedState) => {
+        const state = persistedState as PlaythroughState | undefined;
+
+        if (!state) return initialPlaythroughState;
+
+        return {
+          ...state,
+          playthroughs: state.playthroughs.map((playthrough) => ({
+            ...playthrough,
+            gameVersion: playthrough.gameVersion ?? "0.10",
+          })),
+        };
+      },
       onRehydrateStorage: () => (state) => {
         state?._setHasHydrated(true);
       },

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { DIFFICULTY_OPTIONS } from "../constants";
+import { GAME_VERSIONS } from "../game/versions";
 
 export const playthroughSchema = z.object({
   characterName: z
@@ -10,6 +11,7 @@ export const playthroughSchema = z.object({
   difficulty: z.enum(DIFFICULTY_OPTIONS, {
     message: "errors.playthrough.difficultyRequired",
   }),
+  gameVersion: z.enum(GAME_VERSIONS),
 });
 
 export type PlaythroughFormValues = z.infer<typeof playthroughSchema>;
