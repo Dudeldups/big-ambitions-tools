@@ -12,6 +12,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
 
     renderWithIntl(
@@ -37,6 +38,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
+      gameVersion: "0.10",
     });
     const startEditing = vi.fn();
 
@@ -59,6 +61,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "easy",
+      gameVersion: "0.10",
     });
     const cancelEditing = vi.fn();
 
@@ -81,6 +84,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
 
     renderWithIntl(
@@ -97,9 +101,9 @@ describe("PlaythroughInfoCard", () => {
 
     await user.click(screen.getByRole("button", { name: "Confirm" }));
 
-    expect(usePlaythroughStore.getState().getPlaythroughById(playthrough.id)).toBe(
-      undefined,
-    );
+    expect(
+      usePlaythroughStore.getState().getPlaythroughById(playthrough.id),
+    ).toBe(undefined);
     expect(sonnerToastMock.success).toHaveBeenCalledWith(
       'Playthrough "Morgan" deleted!',
       expect.objectContaining({

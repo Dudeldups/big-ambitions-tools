@@ -30,6 +30,7 @@ describe("store hooks", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "easy",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
 
@@ -48,6 +49,7 @@ describe("store hooks", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Taylor",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });

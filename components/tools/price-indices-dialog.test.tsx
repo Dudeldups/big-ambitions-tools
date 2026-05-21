@@ -12,9 +12,9 @@ import PriceIndicesDialog from "./price-indices-dialog";
 vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
 vi.mock("sonner", () => import("@/__tests__/mocks/sonner"));
 vi.mock("@/lib/utils/assertPriceIndex", async () => {
-  const actual = await vi.importActual<typeof import("@/lib/utils/assertPriceIndex")>(
-    "@/lib/utils/assertPriceIndex",
-  );
+  const actual = await vi.importActual<
+    typeof import("@/lib/utils/assertPriceIndex")
+  >("@/lib/utils/assertPriceIndex");
 
   return {
     ...actual,
@@ -42,6 +42,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
+      gameVersion: "0.10",
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -64,6 +65,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "easy",
+      gameVersion: "0.10",
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -77,9 +79,9 @@ describe("PriceIndicesDialog", () => {
       target: { value: "1.2", name: "burger" },
     });
 
-    expect(usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger).toBe(
-      1.2,
-    );
+    expect(
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger,
+    ).toBe(1.2);
   });
 
   it("shows an error toast for invalid price index values", async () => {
@@ -87,6 +89,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "normal",
+      gameVersion: "0.10",
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -105,9 +108,9 @@ describe("PriceIndicesDialog", () => {
     });
 
     expect(sonnerToastMock.error).toHaveBeenCalledTimes(1);
-    expect(usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger).toBe(
-      BASE_PRODUCT_PRICE_INDEX,
-    );
+    expect(
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger,
+    ).toBe(BASE_PRODUCT_PRICE_INDEX);
     expect(safeLog).toHaveBeenCalledTimes(1);
   });
 });
