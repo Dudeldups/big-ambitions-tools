@@ -4,9 +4,12 @@ import { Field, FieldDescription, FieldError, FieldLabel } from "../ui/field";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { cn } from "@/lib/utils";
 import { getOptimalPalletShelfAmounts } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { Check, CircleX, TriangleAlert } from "lucide-react";
+import { gameData as gameData010 } from "@/data/game/0.10";
 
 type Props = {
   className?: string;
@@ -16,14 +19,19 @@ type Props = {
 
 export function PalletShelfField({ className, control, errors }: Props) {
   const { t, rich } = useRichDefaults();
+  const { activePlaythrough } = useActivePlaythrough();
   const [shelfAmount, workstations, openingHours] = useWatch({
     control,
     name: ["shelfAmount", "workstations", "openingHours"],
   });
 
+  const gameData = activePlaythrough
+    ? getPlaythroughGameData(activePlaythrough)
+    : gameData010;
   const { full, limited } = getOptimalPalletShelfAmounts(
     workstations,
     openingHours,
+    gameData,
   );
   const { daily, weekly, isOverflowing } = full;
   const hasProductionLimit = workstations.some(
@@ -87,16 +95,17 @@ export function PalletShelfField({ className, control, errors }: Props) {
                     object: palletShelfStringWeekly,
                   })}
                 </p>
-                {hasProductionLimit &&
-                  limited &&
-                  limited.weekly !== weekly && (
+                {hasProductionLimit && limited && limited.weekly !== weekly && (
                   <p>
-                    {rich("tools.factoryPlanner.information.limitedWeeklyAmount", {
-                      count: limited.weekly,
-                      object: t("counts.palletShelf", {
+                    {rich(
+                      "tools.factoryPlanner.information.limitedWeeklyAmount",
+                      {
                         count: limited.weekly,
-                      }),
-                    })}
+                        object: t("counts.palletShelf", {
+                          count: limited.weekly,
+                        }),
+                      },
+                    )}
                   </p>
                 )}
                 {isOverflowing && (

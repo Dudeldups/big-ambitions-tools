@@ -37,6 +37,9 @@ import { Checkbox } from "../ui/checkbox";
 import { ProductName } from "@/lib/game/productNames";
 import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
+import { getPlaythroughGameData } from "@/lib/game/registry";
+import { gameData as gameData010 } from "@/data/game/0.10";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -64,6 +67,7 @@ const WorkstationSelects = ({
   productData,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
+  const { activePlaythrough } = useActivePlaythrough();
 
   const allWorkstations = useWatch({
     control,
@@ -81,23 +85,23 @@ const WorkstationSelects = ({
       ],
     });
 
+  const gameData = activePlaythrough
+    ? getPlaythroughGameData(activePlaythrough)
+    : gameData010;
+  const selectedProductData =
+    gameData.products[selectedProduct] ?? products[selectedProduct];
   const productionAmount =
-    products[selectedProduct].productionRate *
-    workstationAmount *
-    openingHours *
-    7;
+    selectedProductData.productionRate * workstationAmount * openingHours * 7;
   const productionDataByProduct = getEffectiveProductionByProduct(
     allWorkstations,
     openingHours,
+    gameData,
   );
   const selectedProductProductionData =
     productionDataByProduct[selectedProduct];
   const weeklyProductionAmount =
     selectedProductProductionData?.fullWeeklyAmount ??
-    products[selectedProduct].productionRate *
-      workstationAmount *
-      openingHours *
-      7;
+    selectedProductData.productionRate * workstationAmount * openingHours * 7;
   const selectedProductLimit = allWorkstations.find(
     (workstation) =>
       workstation.product === selectedProduct &&
@@ -451,7 +455,7 @@ const WorkstationSelects = ({
           </div>
         </Field>
 
-        {products[selectedProduct].productSalesRatio > 0 && (
+        {selectedProductData.productSalesRatio > 0 && (
           <PriceIndexPopover
             selectedProduct={selectedProduct}
             factoryWorkerSalary={factoryWorkerSalary}

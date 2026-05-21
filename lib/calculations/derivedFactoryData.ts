@@ -8,21 +8,16 @@ import {
 } from "@/lib/calculations/math";
 import { FULLTIME_MAX_WORKING_HOURS, TAX_RATE } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
-import { employees } from "../game/employees";
-import { ingredients } from "../game/ingredients";
 import { MachineName } from "../game/machineNames";
-import { machines, workstations } from "../game/machines";
-import { products } from "../game/products";
-import { CalculationPeriod, Difficulty } from "../game/types";
+import { CalculationPeriod, Difficulty, GameData } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
-import { vehicles } from "../game/vehicles";
 import {
   FactoryFormValues,
   FormVehicles,
   FormWorkstations,
 } from "../schemas/factory";
-import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
+import { getPlaythroughGameData } from "../game/registry";
 import { getTimeMultiplier } from "../utils/getTimeMultiplier";
 import { Factory, Playthrough, PriceIndices } from "../stores/playthroughStore";
 import { ImporterShoppingList } from "../utils/getShoppingList";
@@ -39,10 +34,12 @@ export type DerivedDataFromFormValues = {
 
 export const deriveWorkstationData = (
   values: FactoryFormValues,
+  gameData: GameData,
 ): DerivedDataFromFormValues => {
   const machineCountsByName = values.workstations.reduce(
     (acc, ws) => {
-      const neededMachines = workstations[ws.name].neededMachines;
+      const workstation = gameData.workstations[ws.name]!;
+      const neededMachines = workstation.neededMachines;
       for (const machine of neededMachines) {
         if (ws.amount === 0) continue;
         acc[machine] = (acc[machine] ?? 0) + ws.amount;
@@ -53,16 +50,21 @@ export const deriveWorkstationData = (
   );
 
   return (Object.entries(machineCountsByName) as [MachineName, number][]).map(
-    ([name, amount]) => ({
-      amount,
-      name: `machines.${name}`,
-      value: amount * machines[name].purchasePrice,
-    }),
+    ([name, amount]) => {
+      const machine = gameData.machines[name]!;
+
+      return {
+        amount,
+        name: `machines.${name}`,
+        value: amount * machine.purchasePrice,
+      };
+    },
   );
 };
 
 export const deriveVehicleData = (
   values: FactoryFormValues,
+  gameData: GameData,
 ): DerivedDataFromFormValues => {
   const { vehicles: formVehicles } = values;
 
@@ -77,20 +79,26 @@ export const deriveVehicleData = (
   );
 
   return (Object.entries(countsByName) as [VehicleName, number][]).map(
-    ([name, amount]) => ({
-      amount,
-      name: `vehicles.${name}`,
-      value: amount * vehicles[name].purchasePrice,
-    }),
+    ([name, amount]) => {
+      const vehicle = gameData.vehicles[name]!;
+
+      return {
+        amount,
+        name: `vehicles.${name}`,
+        value: amount * vehicle.purchasePrice,
+      };
+    },
   );
 };
 
 export const derivePalletShelfData = (
   values: FactoryFormValues,
+  gameData: GameData,
 ): DerivedDataFromFormValues => {
   const { shelfAmount } = values;
+  const palletShelf = gameData.shelves.palletShelf!;
 
-  const value = shelfAmount * shelves.palletShelf.purchasePrice;
+  const value = shelfAmount * palletShelf.purchasePrice;
 
   return [
     {
@@ -104,6 +112,7 @@ export const derivePalletShelfData = (
 export const deriveEmployeeData = (
   values: FactoryFormValues,
   calculationPeriod: CalculationPeriod,
+  gameData: GameData,
 ): DerivedDataFromFormValues => {
   const { employees: employeeData, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
@@ -115,7 +124,8 @@ export const deriveEmployeeData = (
 
     if (amount <= 0) return [];
 
-    const employee = employees[n];
+    const employee = gameData.employees[n];
+    if (!employee) return [];
     const averageWorkingHoursPerDay =
       "customWorkingHours" in employee
         ? employee.customWorkingHours / 7
@@ -193,6 +203,7 @@ export const deriveIngredientData = (
   values: FactoryFormValues,
   difficulty: Difficulty,
   calculationPeriod: CalculationPeriod,
+  gameData: GameData,
 ): DerivedDataFromFormValues => {
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
@@ -200,10 +211,12 @@ export const deriveIngredientData = (
   const totalAmounts = calculateLimitedIngredientTotals(
     workstations,
     openingHours,
+    gameData,
   );
 
   return Object.entries(totalAmounts).map(([name, amount]) => {
-    const ingredient = ingredients[name as keyof typeof ingredients];
+    const ingredient =
+      gameData.ingredients[name as keyof typeof gameData.ingredients]!;
     const totalAmount = amount * timeMult;
     const totalCost =
       getImportPrice(ingredient.wholesalePrice, difficulty) * amount * timeMult;
@@ -222,6 +235,7 @@ export const deriveProductData = (
   difficulty: Difficulty,
   calculationPeriod: CalculationPeriod,
   priceIndices: PriceIndices,
+  gameData: GameData,
 ): DerivedDataFromFormValues => {
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier(calculationPeriod, openingHours);
@@ -229,11 +243,13 @@ export const deriveProductData = (
   const productHourlyYieldByProduct = getEffectiveProductionByProduct(
     workstations,
     openingHours,
+    gameData,
   );
 
   return Object.entries(productHourlyYieldByProduct).flatMap(
     ([name, { effectiveRatePerHour, salesAmount }]) => {
-      const product = products[name as keyof typeof products];
+      const product =
+        gameData.products[name as keyof typeof gameData.products]!;
 
       const totalAmount = effectiveRatePerHour * timeMult;
       const weeklyToPeriodMult = timeMult / (openingHours * 7);
@@ -258,6 +274,7 @@ export const deriveProductData = (
         product,
         difficulty,
         values.employees.factoryWorker.salary,
+        gameData,
       );
       const taxMult = 1 - TAX_RATE[difficulty];
       const retailProfit =
@@ -299,11 +316,12 @@ export const deriveWeeklyIncome = (
 ): number => {
   const { difficulty, priceIndices } = playthrough;
   const calculationPeriod = "weekly";
+  const gameData = getPlaythroughGameData(playthrough);
 
   return factories.reduce((total, factory) => {
     const recurringCost = [
-      ...deriveEmployeeData(factory, calculationPeriod),
-      ...deriveIngredientData(factory, difficulty, calculationPeriod),
+      ...deriveEmployeeData(factory, calculationPeriod, gameData),
+      ...deriveIngredientData(factory, difficulty, calculationPeriod, gameData),
     ].reduce((sum, item) => sum + item.value, 0);
 
     const income = deriveProductData(
@@ -311,6 +329,7 @@ export const deriveWeeklyIncome = (
       difficulty,
       calculationPeriod,
       priceIndices,
+      gameData,
     ).reduce((sum, item) => sum + item.value, 0);
 
     return total + (income - recurringCost);
@@ -323,12 +342,14 @@ export const deriveWeeklyIngredientCosts = (
 ): number => {
   const { difficulty } = playthrough;
   const calculationPeriod = "weekly";
+  const gameData = getPlaythroughGameData(playthrough);
 
   return factories.reduce((total, factory) => {
     const ingredientCosts = deriveIngredientData(
       factory,
       difficulty,
       calculationPeriod,
+      gameData,
     ).reduce((sum, item) => sum + item.value, 0);
 
     return total + ingredientCosts;

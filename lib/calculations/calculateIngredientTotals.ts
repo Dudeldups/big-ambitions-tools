@@ -1,5 +1,5 @@
 import { IngredientName } from "../game/ingredientNames";
-import { products } from "../game/products";
+import { GameData } from "../game/types";
 import { FormWorkstations } from "../schemas/factory";
 import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
 
@@ -7,10 +7,11 @@ type IngredientTotals = Record<IngredientName, number>;
 
 function calculateIngredientTotalsInternal(
   workstations: FormWorkstations,
+  gameData: GameData,
   productionRatioByProduct?: ReturnType<typeof getEffectiveProductionByProduct>,
 ): IngredientTotals {
   return workstations.reduce((acc, ws) => {
-    const product = products[ws.product];
+    const product = gameData.products[ws.product]!;
     const productionData = productionRatioByProduct?.[ws.product];
     const factor =
       productionData && productionData.fullRatePerHour > 0
@@ -32,16 +33,19 @@ function calculateIngredientTotalsInternal(
 
 export function calculateIngredientTotals(
   workstations: FormWorkstations,
+  gameData: GameData,
 ): IngredientTotals {
-  return calculateIngredientTotalsInternal(workstations);
+  return calculateIngredientTotalsInternal(workstations, gameData);
 }
 
 export function calculateLimitedIngredientTotals(
   workstations: FormWorkstations,
   openingHours: number,
+  gameData: GameData,
 ): IngredientTotals {
   return calculateIngredientTotalsInternal(
     workstations,
-    getEffectiveProductionByProduct(workstations, openingHours),
+    gameData,
+    getEffectiveProductionByProduct(workstations, openingHours, gameData),
   );
 }

@@ -1,9 +1,7 @@
 import { IngredientName } from "../game/ingredientNames";
-import { ingredients } from "../game/ingredients";
-import { shelves } from "../game/inventory";
 import { ProductName } from "../game/productNames";
-import { products } from "../game/products";
 import { FormWorkstations } from "../schemas/factory";
+import { GameData } from "../game/types";
 import {
   calculateIngredientTotals,
   calculateLimitedIngredientTotals,
@@ -35,18 +33,22 @@ const EMPTY_SHELVES: OptimalPalletShelves = {
 const deriveOptimalPalletShelfAmount = (
   ingredientTotals: ReturnType<typeof calculateIngredientTotals>,
   productTotals: ReturnType<typeof calculateProductTotals>,
+  gameData: GameData,
 ): OptimalPalletShelves => {
-  const { storageCapacity } = shelves.palletShelf;
+  const palletShelf = gameData.shelves.palletShelf!;
+  const { storageCapacity } = palletShelf;
 
   const totalIngBoxesPerHour = (
     Object.entries(ingredientTotals) as [IngredientName, number][]
   )
-    .map(([iName, amount]) => amount / ingredients[iName].amountPerBox)
+    .map(
+      ([iName, amount]) => amount / gameData.ingredients[iName]!.amountPerBox,
+    )
     .reduce((sum, amount) => sum + amount, 0);
 
   const totalProdBoxesPerHour = Object.entries(productTotals).reduce(
     (acc, [pName, amount]) => {
-      const product = products[pName as ProductName];
+      const product = gameData.products[pName as ProductName]!;
       return acc + amount / product.amountPerBox;
     },
     0,
@@ -75,6 +77,7 @@ const deriveOptimalPalletShelfAmount = (
 export const getOptimalPalletShelfAmounts = (
   workstations: FormWorkstations,
   openingHours: number,
+  gameData: GameData,
 ): OptimalPalletShelfVariants => {
   if (workstations.length === 0) {
     return {
@@ -84,8 +87,9 @@ export const getOptimalPalletShelfAmounts = (
   }
 
   const full = deriveOptimalPalletShelfAmount(
-    calculateIngredientTotals(workstations),
-    calculateProductTotals(workstations),
+    calculateIngredientTotals(workstations, gameData),
+    calculateProductTotals(workstations, gameData),
+    gameData,
   );
 
   const hasProductionLimit = workstations.some(
@@ -97,8 +101,9 @@ export const getOptimalPalletShelfAmounts = (
   }
 
   const limited = deriveOptimalPalletShelfAmount(
-    calculateLimitedIngredientTotals(workstations, openingHours),
-    calculateLimitedProductTotals(workstations, openingHours),
+    calculateLimitedIngredientTotals(workstations, openingHours, gameData),
+    calculateLimitedProductTotals(workstations, openingHours, gameData),
+    gameData,
   );
 
   return { full, limited };
@@ -106,6 +111,7 @@ export const getOptimalPalletShelfAmounts = (
 
 export const getOptimalPalletShelfAmount = (
   workstations: FormWorkstations,
+  gameData: GameData,
 ): OptimalPalletShelves => {
-  return getOptimalPalletShelfAmounts(workstations, 24).full;
+  return getOptimalPalletShelfAmounts(workstations, 24, gameData).full;
 };

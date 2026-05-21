@@ -1,5 +1,4 @@
-import { ingredients } from "../game/ingredients";
-import { Difficulty } from "../game/types";
+import { Difficulty, GameData } from "../game/types";
 import { FactoryFormValues } from "../schemas/factory";
 import { getTimeMultiplier } from "./getTimeMultiplier";
 import { ceilWithTolerance, getImportPrice } from "../calculations/math";
@@ -17,6 +16,7 @@ export type ImporterShoppingList = {
 export const getShoppingList = (
   values: FactoryFormValues,
   difficulty: Difficulty,
+  gameData: GameData,
 ): ImporterShoppingList[] => {
   const { workstations, openingHours } = values;
   const timeMult = getTimeMultiplier("weekly", openingHours);
@@ -24,16 +24,17 @@ export const getShoppingList = (
   const totalAmounts = calculateLimitedIngredientTotals(
     workstations,
     openingHours,
+    gameData,
   );
 
   const ingredientEntries = Object.entries(totalAmounts).map(
     ([name, amount]) => {
-      const ingredient = ingredients[name as keyof typeof ingredients];
+      const ingredient =
+        gameData.ingredients[name as keyof typeof gameData.ingredients]!;
 
       const totalAmount = ceilWithTolerance(amount * timeMult);
       const totalCost =
-        getImportPrice(ingredient.wholesalePrice, difficulty) *
-        totalAmount;
+        getImportPrice(ingredient.wholesalePrice, difficulty) * totalAmount;
 
       return {
         key: name,

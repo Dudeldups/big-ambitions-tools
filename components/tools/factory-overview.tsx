@@ -8,6 +8,7 @@ import {
   deriveVehicleData,
   deriveWorkstationData,
 } from "@/lib/calculations/derivedFactoryData";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Separator } from "../ui/separator";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
@@ -34,11 +35,12 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   // TODO add skeletons
   if (!difficulty || !priceIndices || !activePlaythrough) return null;
+  const gameData = getPlaythroughGameData(activePlaythrough);
 
   const oneTimeCostRowData = [
-    ...derivePalletShelfData(values),
-    ...deriveVehicleData(values),
-    ...deriveWorkstationData(values),
+    ...derivePalletShelfData(values, gameData),
+    ...deriveVehicleData(values, gameData),
+    ...deriveWorkstationData(values, gameData),
   ];
   const totalOneTimeCost = oneTimeCostRowData.reduce(
     (sum, item) => sum + item.value,
@@ -46,8 +48,8 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   );
 
   const recurringCostRowData = [
-    ...deriveEmployeeData(values, calculationPeriod),
-    ...deriveIngredientData(values, difficulty, calculationPeriod),
+    ...deriveEmployeeData(values, calculationPeriod, gameData),
+    ...deriveIngredientData(values, difficulty, calculationPeriod, gameData),
   ];
   const totalRecurringCost = recurringCostRowData.reduce(
     (sum, item) => sum + item.value,
@@ -59,6 +61,7 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
     difficulty,
     calculationPeriod,
     priceIndices,
+    gameData,
   );
 
   const profitRowData = [...sortedProductData];

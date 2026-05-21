@@ -1,10 +1,11 @@
 import { ProductName } from "../game/productNames";
-import { products } from "../game/products";
+import { GameData } from "../game/types";
 import { FormWorkstations } from "../schemas/factory";
 import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
 
 function calculateProductTotalsInternal(
   workstations: FormWorkstations,
+  gameData: GameData,
   productData?: ReturnType<typeof getEffectiveProductionByProduct>,
 ): Record<ProductName, number> {
   if (productData) {
@@ -18,7 +19,7 @@ function calculateProductTotalsInternal(
 
   return workstations.reduce(
     (acc, ws) => {
-      const product = products[ws.product];
+      const product = gameData.products[ws.product]!;
 
       const itemsPerHour = ws.amount * product.productionRate;
 
@@ -32,16 +33,19 @@ function calculateProductTotalsInternal(
 
 export function calculateProductTotals(
   workstations: FormWorkstations,
+  gameData: GameData,
 ): Record<ProductName, number> {
-  return calculateProductTotalsInternal(workstations);
+  return calculateProductTotalsInternal(workstations, gameData);
 }
 
 export function calculateLimitedProductTotals(
   workstations: FormWorkstations,
   openingHours: number,
+  gameData: GameData,
 ): Record<ProductName, number> {
   return calculateProductTotalsInternal(
     workstations,
-    getEffectiveProductionByProduct(workstations, openingHours),
+    gameData,
+    getEffectiveProductionByProduct(workstations, openingHours, gameData),
   );
 }

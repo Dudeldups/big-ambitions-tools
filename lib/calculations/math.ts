@@ -12,8 +12,7 @@ import { IMPORT_PRICE_BASE_MULT } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { employees } from "../game/employees";
 import { machines, Workstation } from "../game/machines";
-import { Product } from "../game/products";
-import { Difficulty } from "../game/types";
+import { Difficulty, GameData, Product } from "../game/types";
 import { DisplayPrices } from "../stores/appStore";
 import { getIngredientDataForProduct } from "../utils/getIngredientDataForProduct";
 
@@ -74,10 +73,15 @@ export const getManufacturePrice = (
   product: Product,
   difficulty: Difficulty,
   factoryWorkerSalary?: number,
+  gameData?: GameData,
 ): number => {
   const employeeSalary =
     factoryWorkerSalary ?? getEmployeeSalary("factoryWorker", difficulty);
-  const ingredientData = getIngredientDataForProduct(product, difficulty);
+  const ingredientData = getIngredientDataForProduct(
+    product,
+    difficulty,
+    gameData,
+  );
   const totalIngredientPrice = ingredientData.reduce(
     (acc, ingredient) => acc + ingredient.cost,
     0,

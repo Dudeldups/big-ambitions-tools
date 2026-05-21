@@ -1,12 +1,12 @@
+import { gameData as gameData010 } from "@/data/game/0.10";
 import { getImportPrice } from "../calculations/math";
 import { IngredientName } from "../game/ingredientNames";
-import { ingredients } from "../game/ingredients";
-import { Product } from "../game/products";
-import { Difficulty } from "../game/types";
+import { Difficulty, GameData, Product } from "../game/types";
 
 export const getIngredientDataForProduct = (
   product: Product,
   difficulty: Difficulty,
+  gameData: GameData = gameData010,
 ): { name: IngredientName; amount: number; cost: number }[] => {
   const neededIngredients = product.ingredients
     .flatMap((ingredientGroup) => Object.entries(ingredientGroup))
@@ -15,7 +15,8 @@ export const getIngredientDataForProduct = (
     );
 
   return neededIngredients.map(([name, amount]) => {
-    const ingredient = ingredients[name as keyof typeof ingredients];
+    const ingredient =
+      gameData.ingredients[name as keyof typeof gameData.ingredients]!;
     const cost = getImportPrice(ingredient.wholesalePrice, difficulty) * amount;
 
     return {
