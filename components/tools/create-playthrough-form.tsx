@@ -170,7 +170,7 @@ const CreatePlaythroughForm = () => {
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent position="popper">
                       <SelectGroup>
                         {SELECTABLE_GAME_VERSIONS.map((version) => (
                           <SelectItem key={version} value={version}>

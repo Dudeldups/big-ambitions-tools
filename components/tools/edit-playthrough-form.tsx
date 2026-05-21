@@ -48,7 +48,7 @@ const EditPlaythroughForm = ({
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent position="popper">
                 <SelectGroup>
                   {DIFFICULTY_OPTIONS.map((opt) => (
                     <SelectItem key={opt} value={opt}>
@@ -68,7 +68,7 @@ const EditPlaythroughForm = ({
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent position="popper">
                 <SelectGroup>
                   {SELECTABLE_GAME_VERSIONS.map((version) => (
                     <SelectItem key={version} value={version}>
