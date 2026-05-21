@@ -24,6 +24,11 @@ export const getGameVersionMeta = (version: GameVersion): GameVersionMeta => {
   return GAME_VERSION_META[version];
 };
 
+export const getGameVersionLabel = (version: GameVersion): string => {
+  const { status } = getGameVersionMeta(version);
+  return status === "experimental" ? `${version} (experimental)` : version;
+};
+
 export const SELECTABLE_GAME_VERSIONS = GAME_VERSIONS.filter(
   (version) => getGameVersionMeta(version).status !== "archived",
 );

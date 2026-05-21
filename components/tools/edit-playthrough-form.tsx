@@ -11,7 +11,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
-import { SELECTABLE_GAME_VERSIONS } from "@/lib/game/versions";
+import {
+  getGameVersionLabel,
+  SELECTABLE_GAME_VERSIONS,
+} from "@/lib/game/versions";
 import { PlaythroughFormValues } from "@/lib/schemas/playthrough";
 import { SquareCheckBig, X } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -69,7 +72,7 @@ const EditPlaythroughForm = ({
                 <SelectGroup>
                   {SELECTABLE_GAME_VERSIONS.map((version) => (
                     <SelectItem key={version} value={version}>
-                      {version}
+                      {getGameVersionLabel(version)}
                     </SelectItem>
                   ))}
                 </SelectGroup>

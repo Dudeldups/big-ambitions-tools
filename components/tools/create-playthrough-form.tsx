@@ -27,6 +27,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
 import {
   DEFAULT_GAME_VERSION,
+  getGameVersionLabel,
   SELECTABLE_GAME_VERSIONS,
 } from "@/lib/game/versions";
 import { useAppState } from "@/lib/hooks/useAppState";
@@ -173,7 +174,7 @@ const CreatePlaythroughForm = () => {
                       <SelectGroup>
                         {SELECTABLE_GAME_VERSIONS.map((version) => (
                           <SelectItem key={version} value={version}>
-                            {version}
+                            {getGameVersionLabel(version)}
                           </SelectItem>
                         ))}
                       </SelectGroup>
