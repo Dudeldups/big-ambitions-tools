@@ -1,7 +1,8 @@
 import "@/__tests__/mocks/data-table";
 
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
-import { ingredients } from "@/lib/game/ingredients";
+import { getGameData } from "@/lib/game/registry";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 
 import IngredientsPage from "./page";
 
@@ -13,7 +14,9 @@ describe("IngredientsPage", () => {
 
   it("passes the correct number of ingredients", () => {
     renderWithIntl(<IngredientsPage />);
-    const expectedCount = Object.keys(ingredients).length;
+    const expectedCount = Object.keys(
+      getGameData(DEFAULT_GAME_VERSION).ingredients,
+    ).length;
     expect(screen.getByTestId("row-count")).toHaveTextContent(
       String(expectedCount),
     );

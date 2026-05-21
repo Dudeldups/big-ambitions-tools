@@ -1,8 +1,9 @@
 import "@/__tests__/mocks/data-table";
-import { machines, workstations } from "@/lib/game/machines";
 import MachinesPage from "./page";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { MachineName } from "@/lib/game/machineNames";
+import { getGameData } from "@/lib/game/registry";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 
 describe("MachinesPage", () => {
   it("renders both tables", () => {
@@ -14,6 +15,7 @@ describe("MachinesPage", () => {
     renderWithIntl(<MachinesPage />);
     const [machinesTable] = screen.getAllByTestId("row-data");
     const data = JSON.parse(machinesTable.getAttribute("data-value")!);
+    const { machines } = getGameData(DEFAULT_GAME_VERSION);
 
     expect(data).toHaveLength(Object.keys(machines).length);
 
@@ -29,6 +31,7 @@ describe("MachinesPage", () => {
     renderWithIntl(<MachinesPage />);
     const [, workstationsTable] = screen.getAllByTestId("row-data");
     const data = JSON.parse(workstationsTable.getAttribute("data-value")!);
+    const { workstations } = getGameData(DEFAULT_GAME_VERSION);
 
     expect(data).toHaveLength(Object.keys(workstations).length);
 

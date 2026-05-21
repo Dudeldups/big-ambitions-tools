@@ -2,9 +2,10 @@ import "@/__tests__/mocks/data-table";
 
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import ProductsPage from "./page";
-import { products } from "@/lib/game/products";
 import { initialAppState, useAppStore } from "@/lib/stores/appStore";
 import { getTableData } from "@/__tests__/helpers/table-page";
+import { getGameData } from "@/lib/game/registry";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 
 describe("ProductsPage", () => {
   it("renders the data table", () => {
@@ -14,6 +15,7 @@ describe("ProductsPage", () => {
 
   it("passes the correct number of products", () => {
     renderWithIntl(<ProductsPage />);
+    const { products } = getGameData(DEFAULT_GAME_VERSION);
     expect(screen.getByTestId("row-count")).toHaveTextContent(
       String(Object.keys(products).length),
     );
