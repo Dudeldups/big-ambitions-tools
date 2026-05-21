@@ -15,8 +15,20 @@ import { Field, FieldError, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
+import {
+  DEFAULT_GAME_VERSION,
+  SELECTABLE_GAME_VERSIONS,
+} from "@/lib/game/versions";
 import { useAppState } from "@/lib/hooks/useAppState";
 import {
   PlaythroughFormValues,
@@ -51,6 +63,7 @@ const CreatePlaythroughForm = () => {
     defaultValues: {
       characterName: "",
       difficulty: appDifficulty || "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     },
   });
 
@@ -71,6 +84,7 @@ const CreatePlaythroughForm = () => {
       reset((values) => ({
         ...values,
         difficulty: appDifficulty,
+        gameVersion: values.gameVersion || DEFAULT_GAME_VERSION,
       }));
     }
   }, [appDifficulty, reset]);
@@ -143,6 +157,30 @@ const CreatePlaythroughForm = () => {
               {errors.difficulty?.message && (
                 <FieldError>{t(errors.difficulty.message as never)}</FieldError>
               )}
+            </Field>
+
+            <Field>
+              <Label>{t("general.gameVersion")}</Label>
+              <Controller
+                control={control}
+                name="gameVersion"
+                render={({ field }) => (
+                  <Select value={field.value} onValueChange={field.onChange}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {SELECTABLE_GAME_VERSIONS.map((version) => (
+                          <SelectItem key={version} value={version}>
+                            {version}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                )}
+              />
             </Field>
           </FieldGroup>
 
