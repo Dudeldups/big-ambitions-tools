@@ -8,6 +8,14 @@ import { getGameData } from "@/lib/game/registry";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 
 describe("ProductsPage", () => {
+  beforeEach(() => {
+    useAppStore.setState({
+      ...initialAppState,
+      _hasHydrated: true,
+      gameVersion: DEFAULT_GAME_VERSION,
+    });
+  });
+
   it("renders the data table", () => {
     renderWithIntl(<ProductsPage />);
     expect(screen.getByTestId("data-table")).toBeInTheDocument();
@@ -21,8 +29,13 @@ describe("ProductsPage", () => {
     );
   });
 
-  it("passes undefined profit data when store is not hydrated", () => {
-    useAppStore.setState({ ...initialAppState, difficulty: undefined });
+  it("passes undefined profit data when difficulty is unavailable", () => {
+    useAppStore.setState({
+      ...initialAppState,
+      _hasHydrated: true,
+      gameVersion: DEFAULT_GAME_VERSION,
+      difficulty: undefined,
+    });
     renderWithIntl(<ProductsPage />);
 
     const data = getTableData(screen);

@@ -5,8 +5,17 @@ import { VehicleName } from "@/lib/game/vehicleNames";
 import { getTableData } from "@/__tests__/helpers/table-page";
 import { getGameData } from "@/lib/game/registry";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
+import { initialAppState, useAppStore } from "@/lib/stores/appStore";
 
 describe("VehiclesPage", () => {
+  beforeEach(() => {
+    useAppStore.setState({
+      ...initialAppState,
+      _hasHydrated: true,
+      gameVersion: DEFAULT_GAME_VERSION,
+    });
+  });
+
   it("renders the data table", () => {
     renderWithIntl(<VehiclesPage />);
     expect(screen.getByTestId("data-table")).toBeInTheDocument();
@@ -25,8 +34,10 @@ describe("VehiclesPage", () => {
     const data = getTableData(screen);
     const { vehicles } = getGameData(DEFAULT_GAME_VERSION);
     const firstVehicleName = Object.keys(vehicles)[0] as VehicleName;
+    const firstVehicle = vehicles[firstVehicleName];
 
+    expect(firstVehicle).toBeDefined();
     expect(data[0].itemName).toBe(firstVehicleName);
-    expect(data[0]).toMatchObject(vehicles[firstVehicleName]);
+    expect(data[0]).toMatchObject(firstVehicle!);
   });
 });
