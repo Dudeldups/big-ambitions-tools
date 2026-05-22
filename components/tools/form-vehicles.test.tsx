@@ -2,9 +2,17 @@ import userEvent from "@testing-library/user-event";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { FactoryFormValues } from "@/lib/schemas/factory";
+import { Translator } from "@/lib/types";
 import { useEffect } from "react";
 import { useForm, UseFormReturn } from "react-hook-form";
 import FormVehicles from "./form-vehicles";
+
+const mockTranslator = Object.assign((key: string) => key, {
+  rich: (key: string) => key,
+  markup: (key: string) => key,
+  raw: (key: string) => key,
+  has: () => true,
+}) as unknown as Translator;
 
 vi.mock("./vehicle-select", () => ({
   default: ({ index }: { index: number }) => (
@@ -25,7 +33,7 @@ function FormVehiclesHarness({
     onFormReady?.(form);
   }, [form, onFormReady]);
 
-  return <FormVehicles control={form.control} t={(key: string) => key as never} />;
+  return <FormVehicles control={form.control} t={mockTranslator} />;
 }
 
 describe("FormVehicles", () => {

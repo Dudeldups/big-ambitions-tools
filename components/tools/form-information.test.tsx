@@ -3,9 +3,17 @@ import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { useAppStore } from "@/lib/stores/appStore";
 import { FactoryFormValues } from "@/lib/schemas/factory";
+import { Translator } from "@/lib/types";
 import { useForm, UseFormReturn } from "react-hook-form";
 import { useEffect } from "react";
 import FormInformation from "./form-information";
+
+const mockTranslator = Object.assign((key: string) => key, {
+  rich: (key: string) => key,
+  markup: (key: string) => key,
+  raw: (key: string) => key,
+  has: () => true,
+}) as unknown as Translator;
 
 vi.mock("./pallet-shelf-field", () => ({
   PalletShelfField: () => <div data-testid="pallet-shelf-field" />,
@@ -25,7 +33,13 @@ function FormInformationHarness({
     onFormReady?.(form);
   }, [form, onFormReady]);
 
-  return <FormInformation form={form} openingHours={openingHours} t={(key: string) => key as never} />;
+  return (
+    <FormInformation
+      form={form}
+      openingHours={openingHours}
+      t={mockTranslator}
+    />
+  );
 }
 
 describe("FormInformation", () => {
@@ -52,7 +66,9 @@ describe("FormInformation", () => {
 
     renderWithIntl(<FormInformationHarness />);
 
-    await user.click(screen.getByLabelText("general.calculationPeriodOptions.daily"));
+    await user.click(
+      screen.getByLabelText("general.calculationPeriodOptions.daily"),
+    );
 
     expect(useAppStore.getState().calculationPeriod).toBe("daily");
   });
