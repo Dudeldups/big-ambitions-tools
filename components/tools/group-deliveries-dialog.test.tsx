@@ -103,8 +103,8 @@ describe("GroupDeliveriesDialog", () => {
     vi.mocked(getOptimalPalletShelfAmount).mockImplementation(
       (workstations) => {
         return workstations[0]?.product === "classicCheapMaleClothing"
-          ? { external: 6 }
-          : { external: 0 };
+          ? { daily: 2, weekly: 6, external: 6, isOverflowing: false }
+          : { daily: 0, weekly: 0, external: 0, isOverflowing: false };
       },
     );
     vi.mocked(getShoppingList).mockImplementation((factory) => [
@@ -170,7 +170,12 @@ describe("GroupDeliveriesDialog", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(0);
-    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({ external: 0 });
+    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({
+      daily: 0,
+      weekly: 0,
+      external: 0,
+      isOverflowing: false,
+    });
     vi.mocked(getShoppingList).mockReturnValue([]);
     vi.mocked(splitShoppingListByShelves).mockReturnValue({
       factoryList: [],

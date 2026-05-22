@@ -103,7 +103,12 @@ describe("GroupShoppingListDialog", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(3);
-    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({ external: 6 });
+    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({
+      daily: 2,
+      weekly: 6,
+      external: 6,
+      isOverflowing: false,
+    });
     vi.mocked(getShoppingList).mockImplementation((factory) => [
       {
         importer: `${factory.name}-importer`,
@@ -169,7 +174,12 @@ describe("GroupShoppingListDialog", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(0);
-    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({ external: 0 });
+    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({
+      daily: 0,
+      weekly: 0,
+      external: 0,
+      isOverflowing: false,
+    });
     vi.mocked(getShoppingList).mockReturnValue([]);
     vi.mocked(splitShoppingListByShelves).mockReturnValue({
       factoryList: [],

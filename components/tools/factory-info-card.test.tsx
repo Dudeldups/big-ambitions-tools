@@ -75,8 +75,11 @@ describe("FactoryInfoCard", () => {
       <FactoryInfoCard factoryId={factory.id} setDraggedFactoryId={vi.fn()} />,
     );
 
-    const card = screen.getByText("Copy Me").closest('[draggable="true"]')!;
-    const buttons = within(card).getAllByRole("button");
+    const card = screen
+      .getByText("Copy Me")
+      .closest('[draggable="true"]') as HTMLElement | null;
+    expect(card).toBeInstanceOf(HTMLElement);
+    const buttons = within(card!).getAllByRole("button");
 
     await user.click(buttons[0]);
 
