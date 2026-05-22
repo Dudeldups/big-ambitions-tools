@@ -127,9 +127,7 @@ export const deriveEmployeeData = (
     const employee = gameData.employees[n];
     if (!employee) return [];
     const averageWorkingHoursPerDay =
-      "customWorkingHours" in employee
-        ? employee.customWorkingHours / 7
-        : FULLTIME_MAX_WORKING_HOURS / 7;
+      (employee.customWorkingHours ?? FULLTIME_MAX_WORKING_HOURS) / 7;
 
     const totalWorkstationAmount = values.workstations.reduce(
       (sum, ws) => sum + ws.amount,
