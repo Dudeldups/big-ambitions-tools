@@ -1,11 +1,16 @@
 import userEvent from "@testing-library/user-event";
+import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Translator } from "@/lib/types";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useEffect } from "react";
 import { useForm, UseFormReturn } from "react-hook-form";
 import FormVehicles from "./form-vehicles";
+
+vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
 
 const mockTranslator = Object.assign((key: string) => key, {
   rich: (key: string) => key,
@@ -37,6 +42,16 @@ function FormVehiclesHarness({
 }
 
 describe("FormVehicles", () => {
+  beforeEach(() => {
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Jordan",
+      difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+  });
+
   it("appends a second default vehicle and hides the add button at the limit", async () => {
     const user = userEvent.setup();
     let formRef: UseFormReturn<FactoryFormValues> | undefined;

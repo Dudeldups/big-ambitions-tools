@@ -7,7 +7,7 @@ import {
   within,
 } from "@/__tests__/test-utils";
 import messages from "@/messages/en.json";
-import { products } from "@/lib/game/products";
+import { getGameData } from "@/lib/game/registry";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -106,10 +106,10 @@ vi.mock("../ui/select", async () => {
   };
 });
 
-const productData = Object.entries(products).map(([key, value]) => ({
-  name: key,
-  ...value,
-}));
+const gameData = getGameData(DEFAULT_GAME_VERSION);
+const productData = Object.entries(gameData.products).flatMap(([key, value]) =>
+  value ? [{ name: key, ...value }] : [],
+);
 
 function WorkstationSelectsHarness() {
   const form = useForm<FactoryFormValues>({
@@ -158,6 +158,7 @@ function WorkstationSelectsHarness() {
             factoryWorkerSalary={10}
             openingHours={10}
             productData={productData}
+            gameData={gameData}
           />
         </div>
       ))}
@@ -215,6 +216,7 @@ function WorkstationSalesAmountHarness() {
             factoryWorkerSalary={10}
             openingHours={10}
             productData={productData}
+            gameData={gameData}
           />
         </div>
       ))}
