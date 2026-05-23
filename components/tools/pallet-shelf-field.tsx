@@ -9,7 +9,6 @@ import { getPlaythroughGameData } from "@/lib/game/registry";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { Check, CircleX, TriangleAlert } from "lucide-react";
-import { gameData as gameData010 } from "@/data/game/0.10";
 
 type Props = {
   className?: string;
@@ -25,9 +24,9 @@ export function PalletShelfField({ className, control, errors }: Props) {
     name: ["shelfAmount", "workstations", "openingHours"],
   });
 
-  const gameData = activePlaythrough
-    ? getPlaythroughGameData(activePlaythrough)
-    : gameData010;
+  if (!activePlaythrough) return null;
+
+  const gameData = getPlaythroughGameData(activePlaythrough);
   const { full, limited } = getOptimalPalletShelfAmounts(
     workstations,
     openingHours,

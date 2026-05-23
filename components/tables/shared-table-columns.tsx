@@ -186,6 +186,12 @@ export const createSourcePriceColumn = (
   const isImport =
     displayPrices?.source === DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT;
 
+  if (!isImport && !gameData) {
+    return createProductCurrencyColumn("manufacturePrice", undefined);
+  }
+
+  const manufactureGameData = gameData;
+
   return isImport
     ? createProductCurrencyColumn("importPrice", difficulty, (row, diff) =>
         getImportPrice(
