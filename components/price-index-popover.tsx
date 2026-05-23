@@ -69,8 +69,8 @@ const PriceIndexPopover = ({
     getManufacturePrice(
       selectedProductObj,
       activePlaythrough.difficulty,
-      factoryWorkerSalary,
       gameData,
+      factoryWorkerSalary,
     ).toFixed(2),
   );
 

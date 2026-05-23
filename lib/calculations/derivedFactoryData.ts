@@ -271,8 +271,8 @@ export const deriveProductData = (
       const manufacturePrice = getManufacturePrice(
         product,
         difficulty,
-        values.employees.factoryWorker.salary,
         gameData,
+        values.employees.factoryWorker.salary,
       );
       const taxMult = 1 - TAX_RATE[difficulty];
       const retailProfit =

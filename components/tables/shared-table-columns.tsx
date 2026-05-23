@@ -195,7 +195,7 @@ export const createSourcePriceColumn = (
         ),
       )
     : createProductCurrencyColumn("manufacturePrice", difficulty, (row, diff) =>
-        getManufacturePrice(row, diff as Difficulty, undefined, gameData),
+        getManufacturePrice(row, diff as Difficulty, manufactureGameData!),
       );
 };
 
