@@ -32,17 +32,6 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
     formState: { errors },
   } = form;
 
-  if (!activePlaythrough) return null;
-
-  const gameData = getPlaythroughGameData(activePlaythrough);
-  const productData = (
-    Object.entries(gameData.products) as [ProductName, Product | undefined][]
-  ).flatMap(([name, product]) => (product ? [{ name, ...product }] : []));
-
-  const sortedProductData = productData.sort((a, b) =>
-    t(`products.${a.name}`).localeCompare(t(`products.${b.name}`)),
-  );
-
   const openingHours = useWatch({ control, name: "openingHours" });
 
   const factoryWorkerSalary = useWatch({
@@ -58,6 +47,17 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
     control,
     name: "workstations",
   });
+
+  if (!activePlaythrough) return null;
+
+  const gameData = getPlaythroughGameData(activePlaythrough);
+  const productData = (
+    Object.entries(gameData.products) as [ProductName, Product | undefined][]
+  ).flatMap(([name, product]) => (product ? [{ name, ...product }] : []));
+
+  const sortedProductData = productData.sort((a, b) =>
+    t(`products.${a.name}`).localeCompare(t(`products.${b.name}`)),
+  );
 
   return (
     <FieldSet>
