@@ -22,7 +22,8 @@ export default function ProductsPage() {
   const displayPrices = useAppState((state) => state.displayPrices);
   const tablePriceIndex = useAppState((state) => state.tablePriceIndex);
   const isStateLoaded = !!difficulty && !!displayPrices && !!tablePriceIndex;
-  const products = gameVersion ? getGameData(gameVersion).products : undefined;
+  const gameData = gameVersion ? getGameData(gameVersion) : undefined;
+  const products = gameData?.products;
 
   const data = useMemo(
     () =>
@@ -37,6 +38,7 @@ export default function ProductsPage() {
               ? getProfitMarginForProduct(
                   product,
                   difficulty,
+                  gameData,
                   tablePriceIndex,
                   displayPrices,
                 )
@@ -45,6 +47,7 @@ export default function ProductsPage() {
               ? getProfitPerHourForProduct(
                   product,
                   difficulty,
+                  gameData,
                   tablePriceIndex,
                   displayPrices,
                 )
@@ -60,12 +63,20 @@ export default function ProductsPage() {
               },
             ];
           }),
-    [products, isStateLoaded, difficulty, tablePriceIndex, displayPrices],
+    [
+      products,
+      gameData,
+      isStateLoaded,
+      difficulty,
+      tablePriceIndex,
+      displayPrices,
+    ],
   );
 
   const columns = useMemo(
-    () => productsColumns(t, difficulty, displayPrices, tablePriceIndex),
-    [difficulty, displayPrices, t, tablePriceIndex],
+    () =>
+      productsColumns(t, difficulty, displayPrices, tablePriceIndex, gameData),
+    [difficulty, displayPrices, gameData, t, tablePriceIndex],
   );
 
   return (

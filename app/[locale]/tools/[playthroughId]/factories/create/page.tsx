@@ -4,6 +4,7 @@ import SectionWrapper from "@/components/deco/section-wrapper";
 import FormWrapper from "@/components/tools/form-wrapper";
 import { useRouter } from "@/i18n/navigation";
 import { getEmployeeSalary } from "@/lib/calculations/math";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { FactoryFormValues, factorySchema } from "@/lib/schemas/factory";
@@ -18,6 +19,9 @@ const CreateFactoryPage = () => {
   const t = useTranslations();
   const { activePlaythrough } = useActivePlaythrough();
   const difficulty = activePlaythrough?.difficulty;
+  const gameData = activePlaythrough
+    ? getPlaythroughGameData(activePlaythrough)
+    : null;
 
   const templateFactory = usePlaythroughState((state) => state.templateFactory);
   const setTemplateFactory = usePlaythroughStore(
@@ -49,33 +53,33 @@ const CreateFactoryPage = () => {
   const { reset, getValues } = form;
 
   useEffect(() => {
-    if (!difficulty) return;
+    if (!difficulty || !gameData) return;
     reset({
       ...getValues(),
       employees: {
         deliveryDriver: {
           amount: 1,
-          salary: getEmployeeSalary("deliveryDriver", difficulty),
+          salary: getEmployeeSalary("deliveryDriver", difficulty, gameData),
         },
         hrManager: {
           amount: 0,
-          salary: getEmployeeSalary("hrManager", difficulty),
+          salary: getEmployeeSalary("hrManager", difficulty, gameData),
         },
         logisticsManager: {
           amount: 1,
-          salary: getEmployeeSalary("logisticsManager", difficulty),
+          salary: getEmployeeSalary("logisticsManager", difficulty, gameData),
         },
         purchasingAgent: {
           amount: 0,
-          salary: getEmployeeSalary("purchasingAgent", difficulty),
+          salary: getEmployeeSalary("purchasingAgent", difficulty, gameData),
         },
         factoryWorker: {
           amount: 0,
-          salary: getEmployeeSalary("factoryWorker", difficulty),
+          salary: getEmployeeSalary("factoryWorker", difficulty, gameData),
         },
       },
     });
-  }, [difficulty, getValues, reset]);
+  }, [difficulty, gameData, getValues, reset]);
 
   useEffect(() => {
     if (templateFactory) {

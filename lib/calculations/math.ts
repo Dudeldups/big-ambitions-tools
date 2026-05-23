@@ -10,9 +10,7 @@ import {
 } from "../constants";
 import { IMPORT_PRICE_BASE_MULT } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
-import { employees } from "../game/employees";
-import { machines, Workstation } from "../game/machines";
-import { Difficulty, GameData, Product } from "../game/types";
+import { Difficulty, GameData, Product, Workstation } from "../game/types";
 import { DisplayPrices } from "../stores/appStore";
 import { getIngredientDataForProduct } from "../utils/getIngredientDataForProduct";
 
@@ -61,8 +59,9 @@ export const getAverageRetailPrice = (product: Product): number =>
 export const getEmployeeSalary = (
   employeeName: EmployeeName,
   difficulty: Difficulty,
+  gameData: GameData,
 ) => {
-  const employee = employees[employeeName];
+  const employee = gameData.employees[employeeName]!;
 
   return Math.round(
     SALARY_BASE_MULT * SALARY_DIFF_MULT[difficulty] * employee.baseHourlyWage,
@@ -76,7 +75,8 @@ export const getManufacturePrice = (
   gameData?: GameData,
 ): number => {
   const employeeSalary =
-    factoryWorkerSalary ?? getEmployeeSalary("factoryWorker", difficulty);
+    factoryWorkerSalary ??
+    getEmployeeSalary("factoryWorker", difficulty, gameData!);
   const ingredientData = getIngredientDataForProduct(
     product,
     difficulty,
@@ -94,6 +94,7 @@ export const getManufacturePrice = (
 export const getProfitMarginForProduct = (
   product: Product,
   difficulty: Difficulty,
+  gameData: GameData,
   priceIndex: number = BASE_PRODUCT_PRICE_INDEX,
   displayPrices: DisplayPrices = {
     source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
@@ -109,7 +110,7 @@ export const getProfitMarginForProduct = (
 
   const costPerItem =
     source === DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE
-      ? getManufacturePrice(product, difficulty)
+      ? getManufacturePrice(product, difficulty, undefined, gameData)
       : getImportPrice(product.wholesalePrice, difficulty, priceIndex);
 
   const taxMult = 1 - TAX_RATE[difficulty];
@@ -123,18 +124,24 @@ export const getProfitMarginForProduct = (
 export const getProfitPerHourForProduct = (
   product: Product,
   difficulty: Difficulty,
+  gameData: GameData,
   priceIndex: number = BASE_PRODUCT_PRICE_INDEX,
   displayPrices: DisplayPrices = {
     source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
     target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
   },
 ) =>
-  getProfitMarginForProduct(product, difficulty, priceIndex, displayPrices)
-    .margin * product.productionRate;
+  getProfitMarginForProduct(
+    product,
+    difficulty,
+    gameData,
+    priceIndex,
+    displayPrices,
+  ).margin * product.productionRate;
 
-export function getWorkstationPrice(ws: Workstation) {
+export function getWorkstationPrice(ws: Workstation, gameData: GameData) {
   return ws.neededMachines.reduce(
-    (sum, machineName) => sum + machines[machineName].purchasePrice,
+    (sum, machineName) => sum + gameData.machines[machineName]!.purchasePrice,
     0,
   );
 }

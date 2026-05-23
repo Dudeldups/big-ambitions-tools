@@ -82,6 +82,7 @@ const FactoryIdPage = () => {
     shoppingListData,
     requiredShelves,
     activeFactory.shelfAmount,
+    gameData,
   );
 
   const onDelete = () => {

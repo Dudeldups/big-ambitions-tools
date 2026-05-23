@@ -50,6 +50,7 @@ const GroupShoppingListDialog = ({
       getShoppingList(factory, activePlaythrough.difficulty, gameData),
       getOptimalPalletShelfAmount(factory.workstations, gameData).external,
       factory.shelfAmount,
+      gameData,
     ).externalList;
   });
 

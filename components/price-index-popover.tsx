@@ -21,7 +21,6 @@ import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { getExportPrice, getManufacturePrice } from "@/lib/calculations/math";
-import { products } from "@/lib/game/products";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { usePriceIndex } from "@/lib/hooks/usePriceIndex";
 import { getPlaythroughGameData } from "@/lib/game/registry";
@@ -55,8 +54,7 @@ const PriceIndexPopover = ({
 
   if (!activePlaythrough) return null;
   const gameData = getPlaythroughGameData(activePlaythrough);
-  const selectedProductObj =
-    gameData.products[selectedProduct] ?? products[selectedProduct];
+  const selectedProductObj = gameData.products[selectedProduct]!;
   const { wholesalePrice } = selectedProductObj;
 
   const exportPrice = parseFloat(

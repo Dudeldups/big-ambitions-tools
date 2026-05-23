@@ -1,5 +1,5 @@
 import { IngredientName } from "../game/ingredientNames";
-import { ingredients } from "../game/ingredients";
+import { GameData } from "../game/types";
 import { ImporterShoppingList } from "./getShoppingList";
 
 type SplitShoppingList = {
@@ -11,6 +11,7 @@ export const splitShoppingListByShelves = (
   list: ImporterShoppingList[],
   requiredShelves: number,
   availableShelves: number,
+  gameData: GameData,
 ): SplitShoppingList => {
   if (requiredShelves <= 0 || availableShelves >= requiredShelves) {
     return { factoryList: list, externalList: [] };
@@ -27,7 +28,7 @@ export const splitShoppingListByShelves = (
 
     for (const item of entry.items) {
       const ingredientName = item.name as IngredientName;
-      const { amountPerBox } = ingredients[ingredientName];
+      const { amountPerBox } = gameData.ingredients[ingredientName]!;
 
       const rawFactoryAmount = item.amount * factoryRatio;
 

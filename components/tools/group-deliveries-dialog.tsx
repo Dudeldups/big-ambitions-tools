@@ -59,6 +59,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
       shoppingList,
       requiredShelves,
       factory.shelfAmount,
+      gameData,
     );
 
     return {

@@ -4,7 +4,7 @@ import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
 import { currencyCell } from "@/lib/utils/currencyCell";
 import { Column, ColumnDef, Table } from "@tanstack/react-table";
-import { Difficulty, StoreDifficulty } from "@/lib/game/types";
+import { Difficulty, GameData, StoreDifficulty } from "@/lib/game/types";
 import { Importer } from "@/lib/game/importerNames";
 import { Check, X } from "lucide-react";
 import { ProductsColumnData } from "@/app/[locale]/database/products/table-columns";
@@ -181,6 +181,7 @@ export const createSourcePriceColumn = (
   difficulty: StoreDifficulty | undefined,
   displayPrices: DisplayPrices | null,
   tablePriceIndex: number | null,
+  gameData?: GameData,
 ) => {
   const isImport =
     displayPrices?.source === DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT;
@@ -194,7 +195,7 @@ export const createSourcePriceColumn = (
         ),
       )
     : createProductCurrencyColumn("manufacturePrice", difficulty, (row, diff) =>
-        getManufacturePrice(row, diff as Difficulty),
+        getManufacturePrice(row, diff as Difficulty, undefined, gameData),
       );
 };
 
