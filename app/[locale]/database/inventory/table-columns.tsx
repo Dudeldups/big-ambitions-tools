@@ -1,7 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { Shelf } from "@/lib/game/inventory";
+import { Shelf } from "@/lib/game/types";
 import {
   createCurrencyColumn,
   createNumericColumn,

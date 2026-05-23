@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { ProductName } from "../game/productNames";
-import { Product } from "../game/products";
+import { Product } from "../game/types";
 
 type Params = {
   selectedWorkstation: string;

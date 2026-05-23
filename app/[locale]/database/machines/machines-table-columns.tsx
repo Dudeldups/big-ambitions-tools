@@ -5,7 +5,7 @@ import {
   createColumnWithImage,
   createCurrencyColumn,
 } from "@/components/tables/shared-table-columns";
-import { Machine } from "@/lib/game/machines";
+import { Machine } from "@/lib/game/types";
 import { Translator } from "@/lib/types";
 
 type MachinesColumnData = Machine & {

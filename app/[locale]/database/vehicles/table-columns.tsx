@@ -6,7 +6,7 @@ import {
 } from "@/components/tables/shared-table-columns";
 import TableHeadContent from "@/components/tables/table-head-content";
 import { VehicleName } from "@/lib/game/vehicleNames";
-import { Vehicle } from "@/lib/game/vehicles";
+import { Vehicle } from "@/lib/game/types";
 import { Translator } from "@/lib/types";
 import { getMeta } from "@/lib/utils/getMeta";
 import { ColumnDef } from "@tanstack/react-table";

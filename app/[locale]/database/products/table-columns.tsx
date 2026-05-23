@@ -8,10 +8,9 @@ import {
   createSalePriceColumn,
   createSourcePriceColumn,
 } from "@/components/tables/shared-table-columns";
-import { Product } from "@/lib/game/products";
 import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
-import { GameData, StoreDifficulty } from "@/lib/game/types";
+import { GameData, Product, StoreDifficulty } from "@/lib/game/types";
 import { DisplayPrices } from "@/lib/stores/appStore";
 import IngredientsCell from "@/components/tables/ingredients-cell";
 import { Skeleton } from "@/components/ui/skeleton";

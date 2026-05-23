@@ -7,8 +7,7 @@ import {
   createImportersColumn,
   createNumericColumn,
 } from "@/components/tables/shared-table-columns";
-import { Ingredient } from "@/lib/game/ingredients";
-import { Difficulty } from "@/lib/game/types";
+import { Difficulty, Ingredient } from "@/lib/game/types";
 import { getImportPrice } from "@/lib/calculations/math";
 import { Translator } from "@/lib/types";
 
