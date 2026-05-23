@@ -71,12 +71,11 @@ export const getEmployeeSalary = (
 export const getManufacturePrice = (
   product: Product,
   difficulty: Difficulty,
+  gameData: GameData,
   factoryWorkerSalary?: number,
-  gameData?: GameData,
 ): number => {
   const employeeSalary =
-    factoryWorkerSalary ??
-    getEmployeeSalary("factoryWorker", difficulty, gameData!);
+    factoryWorkerSalary ?? getEmployeeSalary("factoryWorker", difficulty, gameData);
   const ingredientData = getIngredientDataForProduct(
     product,
     difficulty,
@@ -110,7 +109,7 @@ export const getProfitMarginForProduct = (
 
   const costPerItem =
     source === DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE
-      ? getManufacturePrice(product, difficulty, undefined, gameData)
+      ? getManufacturePrice(product, difficulty, gameData)
       : getImportPrice(product.wholesalePrice, difficulty, priceIndex);
 
   const taxMult = 1 - TAX_RATE[difficulty];
