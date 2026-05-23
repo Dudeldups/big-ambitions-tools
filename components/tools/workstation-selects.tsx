@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
-import { Product, products } from "@/lib/game/products";
+import { Product } from "@/lib/game/types";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Copy, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -37,9 +37,7 @@ import { Checkbox } from "../ui/checkbox";
 import { ProductName } from "@/lib/game/productNames";
 import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import { getPlaythroughGameData } from "@/lib/game/registry";
-import { gameData as gameData010 } from "@/data/game/0.10";
+import { GameData } from "@/lib/game/types";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -52,6 +50,7 @@ type WorkstationSelectsProps = {
   factoryWorkerSalary: number;
   openingHours: number;
   productData: (Product & { name: string })[];
+  gameData: GameData;
 };
 
 const WorkstationSelects = ({
@@ -65,9 +64,9 @@ const WorkstationSelects = ({
   factoryWorkerSalary,
   openingHours,
   productData,
+  gameData,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
-  const { activePlaythrough } = useActivePlaythrough();
 
   const allWorkstations = useWatch({
     control,
@@ -85,11 +84,7 @@ const WorkstationSelects = ({
       ],
     });
 
-  const gameData = activePlaythrough
-    ? getPlaythroughGameData(activePlaythrough)
-    : gameData010;
-  const selectedProductData =
-    gameData.products[selectedProduct] ?? products[selectedProduct];
+  const selectedProductData = gameData.products[selectedProduct]!;
   const productionAmount =
     selectedProductData.productionRate * workstationAmount * openingHours * 7;
   const productionDataByProduct = getEffectiveProductionByProduct(

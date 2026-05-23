@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { Vehicle, vehicles } from "@/lib/game/vehicles";
+import { Vehicle } from "@/lib/game/types";
 import { useTranslations } from "next-intl";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { NONE_VALUE } from "@/lib/constants";
@@ -20,23 +20,16 @@ type VehicleSelectProps = {
   control: Control<FactoryFormValues>;
   index: number;
   onRemove: () => void;
+  deliveryVehicles: (Vehicle & { name: VehicleName })[];
 };
 
-const VehicleSelect = ({ control, index, onRemove }: VehicleSelectProps) => {
+const VehicleSelect = ({
+  control,
+  index,
+  onRemove,
+  deliveryVehicles,
+}: VehicleSelectProps) => {
   const t = useTranslations();
-  const deliveryVehicles = (
-    Object.entries(vehicles) as [VehicleName, Vehicle][]
-  )
-    .map(([vName, vData]) => ({
-      ...vData,
-      name: vName,
-    }))
-    .filter((v) => v.destinationsThatCanDeliver >= 1)
-    .sort(
-      (a, b) =>
-        b.destinationsThatCanDeliver - a.destinationsThatCanDeliver ||
-        a.purchasePrice - b.purchasePrice,
-    );
 
   return (
     <Controller

@@ -13,19 +13,17 @@ import { ProductName } from "@/lib/game/productNames";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { useFieldArray, UseFormReturn, useWatch } from "react-hook-form";
 import { Translator } from "@/lib/types";
-import { products } from "@/lib/game/products";
+import { Product } from "@/lib/game/types";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 
 type FormWorkstationProps = {
   form: UseFormReturn<FactoryFormValues>;
   t: Translator;
 };
 
-const productData = Object.entries(products).map(([key, value]) => ({
-  name: key,
-  ...value,
-}));
-
 const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
+  const { activePlaythrough } = useActivePlaythrough();
   const {
     setValue,
     getValues,
@@ -33,6 +31,13 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
     control,
     formState: { errors },
   } = form;
+
+  if (!activePlaythrough) return null;
+
+  const gameData = getPlaythroughGameData(activePlaythrough);
+  const productData = (
+    Object.entries(gameData.products) as [ProductName, Product | undefined][]
+  ).flatMap(([name, product]) => (product ? [{ name, ...product }] : []));
 
   const sortedProductData = productData.sort((a, b) =>
     t(`products.${a.name}`).localeCompare(t(`products.${b.name}`)),
@@ -74,6 +79,7 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
             factoryWorkerSalary={factoryWorkerSalary}
             openingHours={openingHours}
             productData={sortedProductData}
+            gameData={gameData}
           />
         ))}
 
@@ -98,7 +104,10 @@ const FormWorkstations = ({ form, t }: FormWorkstationProps) => {
             {t("tools.factoryPlanner.workstations.addBtn")}
           </Button>
 
-          <WorkstationPresetDialog append={appendWs} />
+          <WorkstationPresetDialog
+            append={appendWs}
+            productsByName={gameData.products}
+          />
         </Field>
       </FieldGroup>
     </FieldSet>

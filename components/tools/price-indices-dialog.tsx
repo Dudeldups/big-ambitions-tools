@@ -11,7 +11,6 @@ import {
 } from "../ui/dialog";
 import { Button } from "../ui/button";
 import { SlidersHorizontal } from "lucide-react";
-import { products } from "@/lib/game/products";
 import { Field, FieldGroup, FieldLabel } from "../ui/field";
 import {
   MAX_PRODUCT_PRICE_INDEX,
@@ -26,8 +25,8 @@ import { ProductName } from "@/lib/game/productNames";
 import { Separator } from "../ui/separator";
 import { toast } from "sonner";
 import { safeLog } from "@/lib/utils/safeLog";
-
-const productNames = Object.keys(products) as ProductName[];
+import { getPlaythroughGameData } from "@/lib/game/registry";
+import { Product } from "@/lib/game/types";
 
 const PriceIndicesDialog = () => {
   const tGeneral = useTranslations("general");
@@ -59,6 +58,14 @@ const PriceIndicesDialog = () => {
 
   if (!activePlaythrough || !currentPriceIndices) return null;
 
+  const gameData = getPlaythroughGameData(activePlaythrough);
+  const productNames = (
+    Object.entries(gameData.products) as [ProductName, Product | undefined][]
+  )
+    .filter(([, product]) => product && product.productSalesRatio > 0)
+    .map(([name]) => name)
+    .sort((a, b) => tProducts(a).localeCompare(tProducts(b)));
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -76,38 +83,31 @@ const PriceIndicesDialog = () => {
 
         <form className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto pr-2 sm:max-h-[70vh]">
           <FieldGroup className="gap-0">
-            {productNames
-              .filter((name) => products[name].productSalesRatio > 0)
-              .sort((a, b) => {
-                return tProducts(a).localeCompare(tProducts(b));
-              })
-              .map((productName, index) => (
-                <Field key={productName}>
-                  <FieldLabel htmlFor={productName} className="justify-between">
-                    {tProducts(productName)}:
-                    <span className="font-bold">
-                      {currentPriceIndices[productName]?.toFixed(2)}
-                    </span>
-                  </FieldLabel>
-                  <input
-                    id={productName}
-                    name={productName}
-                    type="range"
-                    min={MIN_PRODUCT_PRICE_INDEX}
-                    max={MAX_PRODUCT_PRICE_INDEX}
-                    step={0.01}
-                    value={currentPriceIndices[productName]}
-                    onChange={onIndexChange}
-                    className={cn(
-                      "accent-foreground w-full transition-opacity",
-                    )}
-                  />
+            {productNames.map((productName, index) => (
+              <Field key={productName}>
+                <FieldLabel htmlFor={productName} className="justify-between">
+                  {tProducts(productName)}:
+                  <span className="font-bold">
+                    {currentPriceIndices[productName]?.toFixed(2)}
+                  </span>
+                </FieldLabel>
+                <input
+                  id={productName}
+                  name={productName}
+                  type="range"
+                  min={MIN_PRODUCT_PRICE_INDEX}
+                  max={MAX_PRODUCT_PRICE_INDEX}
+                  step={0.01}
+                  value={currentPriceIndices[productName]}
+                  onChange={onIndexChange}
+                  className={cn("accent-foreground w-full transition-opacity")}
+                />
 
-                  {index !== productNames.length - 1 && (
-                    <Separator className="my-3" />
-                  )}
-                </Field>
-              ))}
+                {index !== productNames.length - 1 && (
+                  <Separator className="my-3" />
+                )}
+              </Field>
+            ))}
           </FieldGroup>
         </form>
 

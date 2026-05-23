@@ -12,13 +12,15 @@ import { WORKSTATION_PRESETS } from "@/lib/utils/workstationPresets";
 import { UseFieldArrayAppend } from "react-hook-form";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { useTranslations } from "next-intl";
-import { products } from "@/lib/game/products";
+import { Product } from "@/lib/game/types";
+import { ProductName } from "@/lib/game/productNames";
 
 type Props = {
   append: UseFieldArrayAppend<FactoryFormValues, "workstations">;
+  productsByName: Partial<Record<ProductName, Product>>;
 };
 
-const WorkstationPresetDialog = ({ append }: Props) => {
+const WorkstationPresetDialog = ({ append, productsByName }: Props) => {
   const t = useTranslations("workstationPresets");
   const tModals = useTranslations("modals");
 
@@ -44,7 +46,7 @@ const WorkstationPresetDialog = ({ append }: Props) => {
               onClick={() => {
                 const allWs = productNames.map((productName) => ({
                   amount: 1,
-                  name: products[productName].workstation,
+                  name: productsByName[productName]!.workstation,
                   product: productName,
                 }));
                 append(allWs);
