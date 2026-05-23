@@ -6,7 +6,6 @@ import { useAppState } from "@/lib/hooks/useAppState";
 import { useTranslations } from "next-intl";
 import DefaultHgroup from "@/components/deco/default-hgroup";
 import { getGameData } from "@/lib/game/registry";
-import { useMemo } from "react";
 import { DataTableSkeleton } from "@/components/cemetery/data-table-skeleton";
 
 export default function IngredientsPage() {
@@ -17,15 +16,11 @@ export default function IngredientsPage() {
     ? getGameData(gameVersion).ingredients
     : undefined;
 
-  const data = useMemo(
-    () =>
-      !ingredients
-        ? []
-        : Object.entries(ingredients).flatMap(([itemName, ingredient]) =>
-            ingredient ? [{ itemName, ...ingredient }] : [],
-          ),
-    [ingredients],
-  );
+  const data = !ingredients
+    ? []
+    : Object.entries(ingredients).flatMap(([itemName, ingredient]) =>
+        ingredient ? [{ itemName, ...ingredient }] : [],
+      );
 
   return (
     <>

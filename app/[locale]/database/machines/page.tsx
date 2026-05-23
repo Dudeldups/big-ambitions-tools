@@ -11,7 +11,6 @@ import { WorkstationName } from "@/lib/game/machineNames";
 import DefaultHgroup from "@/components/deco/default-hgroup";
 import { cn } from "@/lib/utils";
 import SectionSeparator from "@/components/deco/section-separator";
-import { useMemo } from "react";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { getGameData } from "@/lib/game/registry";
 import { DataTableSkeleton } from "@/components/cemetery/data-table-skeleton";
@@ -24,25 +23,17 @@ export default function MachinesPage() {
     ? getGameData(gameVersion).workstations
     : undefined;
 
-  const machinesData = useMemo(
-    () =>
-      !machines
-        ? []
-        : Object.entries(machines).flatMap(([itemName, machine]) =>
-            machine ? [{ itemName, ...machine }] : [],
-          ),
-    [machines],
-  );
+  const machinesData = !machines
+    ? []
+    : Object.entries(machines).flatMap(([itemName, machine]) =>
+        machine ? [{ itemName, ...machine }] : [],
+      );
 
-  const workstationsData = useMemo(
-    () =>
-      !workstations
-        ? []
-        : Object.entries(workstations).flatMap(([itemName, workstation]) =>
-            workstation ? [{ itemName, ...workstation }] : [],
-          ),
-    [workstations],
-  );
+  const workstationsData = !workstations
+    ? []
+    : Object.entries(workstations).flatMap(([itemName, workstation]) =>
+        workstation ? [{ itemName, ...workstation }] : [],
+      );
 
   return (
     <>

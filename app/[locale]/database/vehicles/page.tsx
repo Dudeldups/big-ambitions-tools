@@ -7,7 +7,6 @@ import DefaultHgroup from "@/components/deco/default-hgroup";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { getGameData } from "@/lib/game/registry";
-import { useMemo } from "react";
 import { DataTableSkeleton } from "@/components/cemetery/data-table-skeleton";
 
 export default function VehiclesPage() {
@@ -15,16 +14,12 @@ export default function VehiclesPage() {
   const gameVersion = useAppState((state) => state.gameVersion);
   const vehicles = gameVersion ? getGameData(gameVersion).vehicles : undefined;
 
-  const data: VehiclesColumnData[] = useMemo(
-    () =>
-      !vehicles
-        ? []
-        : (Object.keys(vehicles) as VehicleName[]).flatMap((vehicleName) => {
-            const vehicle = vehicles[vehicleName];
-            return vehicle ? [{ ...vehicle, itemName: vehicleName }] : [];
-          }),
-    [vehicles],
-  );
+  const data: VehiclesColumnData[] = !vehicles
+    ? []
+    : (Object.keys(vehicles) as VehicleName[]).flatMap((vehicleName) => {
+        const vehicle = vehicles[vehicleName];
+        return vehicle ? [{ ...vehicle, itemName: vehicleName }] : [];
+      });
 
   return (
     <>

@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import DefaultHgroup from "@/components/deco/default-hgroup";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { getGameData } from "@/lib/game/registry";
-import { useMemo } from "react";
 import { DataTableSkeleton } from "@/components/cemetery/data-table-skeleton";
 
 export default function InventoryPage() {
@@ -14,15 +13,11 @@ export default function InventoryPage() {
   const gameVersion = useAppState((state) => state.gameVersion);
   const shelves = gameVersion ? getGameData(gameVersion).shelves : undefined;
 
-  const data = useMemo(
-    () =>
-      !shelves
-        ? []
-        : Object.entries(shelves).flatMap(([itemName, shelf]) =>
-            shelf ? [{ itemName, ...shelf }] : [],
-          ),
-    [shelves],
-  );
+  const data = !shelves
+    ? []
+    : Object.entries(shelves).flatMap(([itemName, shelf]) =>
+        shelf ? [{ itemName, ...shelf }] : [],
+      );
 
   return (
     <>
