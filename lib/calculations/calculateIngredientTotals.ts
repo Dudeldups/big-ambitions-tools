@@ -1,4 +1,5 @@
 import { IngredientName } from "../game/ingredientNames";
+import { requireProduct } from "../game/requireGameData";
 import { GameData } from "../game/types";
 import { FormWorkstations } from "../schemas/factory";
 import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
@@ -11,7 +12,7 @@ function calculateIngredientTotalsInternal(
   productionRatioByProduct?: ReturnType<typeof getEffectiveProductionByProduct>,
 ): IngredientTotals {
   return workstations.reduce((acc, ws) => {
-    const product = gameData.products[ws.product]!;
+    const product = requireProduct(gameData, ws.product);
     const productionData = productionRatioByProduct?.[ws.product];
     const factor =
       productionData && productionData.fullRatePerHour > 0

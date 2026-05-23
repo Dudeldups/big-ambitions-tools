@@ -1,4 +1,5 @@
 import { IngredientName } from "../game/ingredientNames";
+import { requireIngredient } from "../game/requireGameData";
 import { GameData } from "../game/types";
 import { ImporterShoppingList } from "./getShoppingList";
 
@@ -28,7 +29,7 @@ export const splitShoppingListByShelves = (
 
     for (const item of entry.items) {
       const ingredientName = item.name as IngredientName;
-      const { amountPerBox } = gameData.ingredients[ingredientName]!;
+      const { amountPerBox } = requireIngredient(gameData, ingredientName);
 
       const rawFactoryAmount = item.amount * factoryRatio;
 

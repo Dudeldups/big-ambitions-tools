@@ -1,4 +1,5 @@
 import { ProductName } from "../game/productNames";
+import { requireProduct } from "../game/requireGameData";
 import { GameData } from "../game/types";
 import { FormWorkstations } from "../schemas/factory";
 import { getEffectiveProductionByProduct } from "./getEffectiveProductionByProduct";
@@ -19,7 +20,7 @@ function calculateProductTotalsInternal(
 
   return workstations.reduce(
     (acc, ws) => {
-      const product = gameData.products[ws.product]!;
+      const product = requireProduct(gameData, ws.product);
 
       const itemsPerHour = ws.amount * product.productionRate;
 

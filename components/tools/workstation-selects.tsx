@@ -35,6 +35,7 @@ import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
 import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWorkstation";
 import { Checkbox } from "../ui/checkbox";
 import { ProductName } from "@/lib/game/productNames";
+import { requireProduct } from "@/lib/game/requireGameData";
 import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { GameData } from "@/lib/game/types";
@@ -84,7 +85,7 @@ const WorkstationSelects = ({
       ],
     });
 
-  const selectedProductData = gameData.products[selectedProduct]!;
+  const selectedProductData = requireProduct(gameData, selectedProduct);
   const productionAmount =
     selectedProductData.productionRate * workstationAmount * openingHours * 7;
   const productionDataByProduct = getEffectiveProductionByProduct(

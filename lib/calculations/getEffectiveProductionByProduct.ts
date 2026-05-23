@@ -1,4 +1,5 @@
 import { ProductName } from "../game/productNames";
+import { requireProduct } from "../game/requireGameData";
 import { GameData } from "../game/types";
 import { FormWorkstations } from "../schemas/factory";
 
@@ -30,7 +31,7 @@ export const getEffectiveProductionByProduct = (
 ): Partial<Record<ProductName, EffectiveProductProduction>> => {
   const grouped = workstations.reduce(
     (acc, ws) => {
-      const product = gameData.products[ws.product]!;
+      const product = requireProduct(gameData, ws.product);
       const prev = acc[ws.product] ?? {
         salesAmount: 0,
         fullRatePerHour: 0,

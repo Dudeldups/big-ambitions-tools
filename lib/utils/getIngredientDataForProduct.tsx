@@ -1,5 +1,6 @@
 import { getImportPrice } from "../calculations/math";
 import { IngredientName } from "../game/ingredientNames";
+import { requireIngredient } from "../game/requireGameData";
 import { Difficulty, GameData, Product } from "../game/types";
 
 export const getIngredientDataForProduct = (
@@ -14,8 +15,7 @@ export const getIngredientDataForProduct = (
     );
 
   return neededIngredients.map(([name, amount]) => {
-    const ingredient =
-      gameData.ingredients[name as keyof typeof gameData.ingredients]!;
+    const ingredient = requireIngredient(gameData, name);
     const cost = getImportPrice(ingredient.wholesalePrice, difficulty) * amount;
 
     return {

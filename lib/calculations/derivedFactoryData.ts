@@ -8,9 +8,18 @@ import {
 } from "@/lib/calculations/math";
 import { FULLTIME_MAX_WORKING_HOURS, TAX_RATE } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
+import { IngredientName } from "../game/ingredientNames";
 import { MachineName } from "../game/machineNames";
 import { CalculationPeriod, Difficulty, GameData } from "../game/types";
 import { VehicleName } from "../game/vehicleNames";
+import {
+  requireIngredient,
+  requireMachine,
+  requireProduct,
+  requireShelf,
+  requireVehicle,
+  requireWorkstation,
+} from "../game/requireGameData";
 import {
   FactoryFormValues,
   FormVehicles,
@@ -38,7 +47,7 @@ export const deriveWorkstationData = (
 ): DerivedDataFromFormValues => {
   const machineCountsByName = values.workstations.reduce(
     (acc, ws) => {
-      const workstation = gameData.workstations[ws.name]!;
+      const workstation = requireWorkstation(gameData, ws.name);
       const neededMachines = workstation.neededMachines;
       for (const machine of neededMachines) {
         if (ws.amount === 0) continue;
@@ -51,7 +60,7 @@ export const deriveWorkstationData = (
 
   return (Object.entries(machineCountsByName) as [MachineName, number][]).map(
     ([name, amount]) => {
-      const machine = gameData.machines[name]!;
+      const machine = requireMachine(gameData, name);
 
       return {
         amount,
@@ -80,7 +89,7 @@ export const deriveVehicleData = (
 
   return (Object.entries(countsByName) as [VehicleName, number][]).map(
     ([name, amount]) => {
-      const vehicle = gameData.vehicles[name]!;
+      const vehicle = requireVehicle(gameData, name);
 
       return {
         amount,
@@ -96,7 +105,7 @@ export const derivePalletShelfData = (
   gameData: GameData,
 ): DerivedDataFromFormValues => {
   const { shelfAmount } = values;
-  const palletShelf = gameData.shelves.palletShelf!;
+  const palletShelf = requireShelf(gameData, "palletShelf");
 
   const value = shelfAmount * palletShelf.purchasePrice;
 
@@ -213,8 +222,7 @@ export const deriveIngredientData = (
   );
 
   return Object.entries(totalAmounts).map(([name, amount]) => {
-    const ingredient =
-      gameData.ingredients[name as keyof typeof gameData.ingredients]!;
+    const ingredient = requireIngredient(gameData, name as IngredientName);
     const totalAmount = amount * timeMult;
     const totalCost =
       getImportPrice(ingredient.wholesalePrice, difficulty) * amount * timeMult;
@@ -246,8 +254,7 @@ export const deriveProductData = (
 
   return Object.entries(productHourlyYieldByProduct).flatMap(
     ([name, { effectiveRatePerHour, salesAmount }]) => {
-      const product =
-        gameData.products[name as keyof typeof gameData.products]!;
+      const product = requireProduct(gameData, name as ProductName);
 
       const totalAmount = effectiveRatePerHour * timeMult;
       const weeklyToPeriodMult = timeMult / (openingHours * 7);

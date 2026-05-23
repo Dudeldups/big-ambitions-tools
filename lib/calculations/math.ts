@@ -10,6 +10,7 @@ import {
 } from "../constants";
 import { IMPORT_PRICE_BASE_MULT } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
+import { requireEmployee, requireMachine } from "../game/requireGameData";
 import { Difficulty, GameData, Product, Workstation } from "../game/types";
 import { DisplayPrices } from "../stores/appStore";
 import { getIngredientDataForProduct } from "../utils/getIngredientDataForProduct";
@@ -61,7 +62,7 @@ export const getEmployeeSalary = (
   difficulty: Difficulty,
   gameData: GameData,
 ) => {
-  const employee = gameData.employees[employeeName]!;
+  const employee = requireEmployee(gameData, employeeName);
 
   return Math.round(
     SALARY_BASE_MULT * SALARY_DIFF_MULT[difficulty] * employee.baseHourlyWage,
@@ -75,7 +76,8 @@ export const getManufacturePrice = (
   factoryWorkerSalary?: number,
 ): number => {
   const employeeSalary =
-    factoryWorkerSalary ?? getEmployeeSalary("factoryWorker", difficulty, gameData);
+    factoryWorkerSalary ??
+    getEmployeeSalary("factoryWorker", difficulty, gameData);
   const ingredientData = getIngredientDataForProduct(
     product,
     difficulty,
@@ -140,7 +142,8 @@ export const getProfitPerHourForProduct = (
 
 export function getWorkstationPrice(ws: Workstation, gameData: GameData) {
   return ws.neededMachines.reduce(
-    (sum, machineName) => sum + gameData.machines[machineName]!.purchasePrice,
+    (sum, machineName) =>
+      sum + requireMachine(gameData, machineName).purchasePrice,
     0,
   );
 }

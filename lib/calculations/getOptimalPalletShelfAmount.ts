@@ -1,5 +1,10 @@
 import { IngredientName } from "../game/ingredientNames";
 import { ProductName } from "../game/productNames";
+import {
+  requireIngredient,
+  requireProduct,
+  requireShelf,
+} from "../game/requireGameData";
 import { FormWorkstations } from "../schemas/factory";
 import { GameData } from "../game/types";
 import {
@@ -35,20 +40,21 @@ const deriveOptimalPalletShelfAmount = (
   productTotals: ReturnType<typeof calculateProductTotals>,
   gameData: GameData,
 ): OptimalPalletShelves => {
-  const palletShelf = gameData.shelves.palletShelf!;
+  const palletShelf = requireShelf(gameData, "palletShelf");
   const { storageCapacity } = palletShelf;
 
   const totalIngBoxesPerHour = (
     Object.entries(ingredientTotals) as [IngredientName, number][]
   )
     .map(
-      ([iName, amount]) => amount / gameData.ingredients[iName]!.amountPerBox,
+      ([iName, amount]) =>
+        amount / requireIngredient(gameData, iName).amountPerBox,
     )
     .reduce((sum, amount) => sum + amount, 0);
 
   const totalProdBoxesPerHour = Object.entries(productTotals).reduce(
     (acc, [pName, amount]) => {
-      const product = gameData.products[pName as ProductName]!;
+      const product = requireProduct(gameData, pName as ProductName);
       return acc + amount / product.amountPerBox;
     },
     0,

@@ -16,6 +16,7 @@ import {
   TAX_RATE,
 } from "@/lib/constants";
 import { ProductName } from "@/lib/game/productNames";
+import { requireProduct } from "@/lib/game/requireGameData";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
@@ -54,7 +55,7 @@ const PriceIndexPopover = ({
 
   if (!activePlaythrough) return null;
   const gameData = getPlaythroughGameData(activePlaythrough);
-  const selectedProductObj = gameData.products[selectedProduct]!;
+  const selectedProductObj = requireProduct(gameData, selectedProduct);
   const { wholesalePrice } = selectedProductObj;
 
   const exportPrice = parseFloat(
