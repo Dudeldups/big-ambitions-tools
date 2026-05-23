@@ -1,6 +1,6 @@
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
-import { products } from "../game/products";
+import { getGameData } from "../game/registry";
 import { ProductName } from "../game/productNames";
 import { Product } from "../game/types";
 import { DEFAULT_GAME_VERSION } from "../game/versions";
@@ -25,8 +25,13 @@ describe("usePlaythroughStore", () => {
     });
 
     const state = usePlaythroughStore.getState();
-    const persistedProductNames = Object.entries(products)
-      .filter(([, product]) => product.defaultMarketPrice > 0)
+    const persistedProductNames = (
+      Object.entries(getGameData(DEFAULT_GAME_VERSION).products) as [
+        ProductName,
+        Product | undefined,
+      ][]
+    )
+      .filter(([, product]) => product && product.defaultMarketPrice > 0)
       .map(([name]) => name);
 
     expect(state.playthroughs).toHaveLength(2);
