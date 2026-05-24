@@ -2,10 +2,6 @@ import { gameData as gameData010 } from "@/data/game/0.10";
 import { GameData } from "./types";
 import { GameVersion } from "./versions";
 
-export type GameDataOwner = {
-  gameVersion: GameVersion;
-};
-
 export const GAME_DATA_BY_VERSION: Partial<Record<GameVersion, GameData>> = {
   "0.10": gameData010,
 };
@@ -20,6 +16,6 @@ export const getGameData = (version: GameVersion): GameData => {
   return gameData;
 };
 
-export const getPlaythroughGameData = ({
-  gameVersion,
-}: GameDataOwner): GameData => getGameData(gameVersion);
+export const getPlaythroughGameData = (owner: {
+  gameVersion: GameVersion;
+}): GameData => getGameData(owner.gameVersion);
