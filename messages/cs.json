@@ -536,7 +536,7 @@
         "notEnough": "Málo místa i pro denní dodávku.",
         "overflowWarning": "Zásoby se hromadí!",
         "overflowDesc": "Produkuješ rychleji, než spotřebováváš suroviny. Počet regálů se podle toho upravil.",
-        "limitedWeeklyAmount": "S limity výroby vyžaduje týdenní dodávka <strong>{count}</strong> {object}."
+        "limitedWeeklyAmount": "Kvůli limitům výroby vyžaduje týdenní dodávka <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Zadej mzdu pro každého zaměstnance. Nech pole prázdné, pokud nechceš mzdy zahrnout do výpočtů.",

@@ -256,7 +256,7 @@
     "deliveryDriver": "Autista addetto alle consegne",
     "openingHours": "Orari di apertura",
     "description": "Descrizione",
-    "gameVersion": "Versione gioco",
+    "gameVersion": "Versione del gioco",
     "day": "Giorno",
     "week": "Settimana",
     "difficultyOptions": {
@@ -548,7 +548,7 @@
       },
       "workstations": {
         "addBtn": "Aggiungi postazione",
-        "useProductionLimit": "Usa limite di produzione",
+        "useProductionLimit": "Usa limite produzione",
         "productionLimit": "Limite produzione settimanale",
         "productionLimitTooltip": "Limita la produzione settimanale di questo prodotto nella fabbrica alla quantità selezionata."
       },

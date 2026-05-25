@@ -536,7 +536,7 @@
         "notEnough": "For lidt lagerplads, selv til daglig levering.",
         "overflowWarning": "Lager løber over!",
         "overflowDesc": "Du producerer hurtigere end du bruger ingredienser. Antallet af hylder er blevet justeret derefter.",
-        "limitedWeeklyAmount": "Med produktionsgrænser kræver ugentlig levering <strong>{count}</strong> {object}."
+        "limitedWeeklyAmount": "Med produktionsgrænser kræver den ugentlige levering <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Indtast løn for hver medarbejder. Lad det stå tomt, hvis du ikke vil inkludere lønberegning.",
@@ -550,7 +550,7 @@
         "addBtn": "Tilføj arbejdsstation",
         "useProductionLimit": "Brug produktionsgrænse",
         "productionLimit": "Ugentlig produktionsgrænse",
-        "productionLimitTooltip": "Begrænser den ugentlige produktion af dette produkt i fabrikken til den valgte mængde."
+        "productionLimitTooltip": "Begrænser den ugentlige produktion af dette produkt på fabrikken til den valgte mængde."
       },
       "buttonDesc": "Ny fabrik",
       "genericFactoryName": "{productName} Fabrik",

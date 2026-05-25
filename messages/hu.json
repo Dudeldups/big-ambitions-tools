@@ -548,9 +548,9 @@
       },
       "workstations": {
         "addBtn": "Hozzáadj ruházati munkállomást",
-        "useProductionLimit": "Termelési limit használata",
+        "useProductionLimit": "Használj termelési limitet",
         "productionLimit": "Heti termelési limit",
-        "productionLimitTooltip": "A kiválasztott mennyiségre korlátozza erre a termék heti termelését a gyárban."
+        "productionLimitTooltip": "Korlátozza a termék heti termelését a gyárban a kiválasztott mennyiségre."
       },
       "buttonDesc": "Új gyár",
       "genericFactoryName": "{productName} gyár",

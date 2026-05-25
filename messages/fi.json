@@ -256,7 +256,7 @@
     "deliveryDriver": "Toimituskuljettaja",
     "openingHours": "Aukioloajat",
     "description": "Kuvaus",
-    "gameVersion": "Pelin versio",
+    "gameVersion": "Peliversio",
     "day": "Päivä",
     "week": "Viikko",
     "difficultyOptions": {
@@ -548,7 +548,7 @@
       },
       "workstations": {
         "addBtn": "Lisää työpiste",
-        "useProductionLimit": "Käytä tuotantorajoitetta",
+        "useProductionLimit": "Käytä tuotantorajaa",
         "productionLimit": "Viikoittainen tuotantoraja",
         "productionLimitTooltip": "Rajoittaa tämän tuotteen viikoittaisen tuotannon tehtaassa valittuun määrään."
       },

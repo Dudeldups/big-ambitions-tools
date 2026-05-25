@@ -549,7 +549,7 @@
       "workstations": {
         "addBtn": "Adaugă post de lucru",
         "useProductionLimit": "Folosește limita de producție",
-        "productionLimit": "Limită producție săptămânală",
+        "productionLimit": "Limită de producție săptămânală",
         "productionLimitTooltip": "Limitează producția săptămânală a acestui produs în fabrică la cantitatea selectată."
       },
       "buttonDesc": "Fabrică nouă",

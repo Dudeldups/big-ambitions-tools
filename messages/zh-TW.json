@@ -550,7 +550,7 @@
         "addBtn": "新增工作站",
         "useProductionLimit": "使用生產限制",
         "productionLimit": "每週生產限制",
-        "productionLimitTooltip": "將工廠中此產品的每週產量限制在所選數量。"
+        "productionLimitTooltip": "限制此產品在工廠的每週產量為所選數量。"
       },
       "buttonDesc": "新工廠",
       "genericFactoryName": "{productName} 工廠",
