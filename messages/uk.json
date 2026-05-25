@@ -256,6 +256,7 @@
     "deliveryDriver": "Водій доставки",
     "openingHours": "Години роботи",
     "description": "Опис",
+    "gameVersion": "Версія гри",
     "day": "День",
     "week": "Тиждень",
     "difficultyOptions": {

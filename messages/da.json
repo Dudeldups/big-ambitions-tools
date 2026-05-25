@@ -256,6 +256,7 @@
     "deliveryDriver": "Chauffør",
     "openingHours": "Åbningstider",
     "description": "Beskrivelse",
+    "gameVersion": "Spilversion",
     "day": "Dag",
     "week": "Uge",
     "difficultyOptions": {

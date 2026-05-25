@@ -256,6 +256,7 @@
     "deliveryDriver": "Pristatymo vairuotojas",
     "openingHours": "Darbo laikas",
     "description": "Aprašymas",
+    "gameVersion": "Žaidimo versija",
     "day": "Diena",
     "week": "Savaitė",
     "difficultyOptions": {

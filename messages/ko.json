@@ -256,6 +256,7 @@
     "deliveryDriver": "배송 기사",
     "openingHours": "영업시간",
     "description": "설명",
+    "gameVersion": "게임 버전",
     "day": "일",
     "week": "주",
     "difficultyOptions": {

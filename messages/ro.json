@@ -256,6 +256,7 @@
     "deliveryDriver": "Curier",
     "openingHours": "Oră deschidere",
     "description": "Descriere",
+    "gameVersion": "Versiunea jocului",
     "day": "Zi",
     "week": "Săptămână",
     "difficultyOptions": {

@@ -256,6 +256,7 @@
     "deliveryDriver": "Livreur",
     "openingHours": "Heures d’ouverture",
     "description": "Description",
+    "gameVersion": "Version du jeu",
     "day": "jour",
     "week": "semaine",
     "difficultyOptions": {

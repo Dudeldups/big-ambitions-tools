@@ -256,6 +256,7 @@
     "deliveryDriver": "Kierowca dostaw",
     "openingHours": "Godziny otwarcia",
     "description": "Opis",
+    "gameVersion": "Wersja gry",
     "day": "Dzień",
     "week": "Tydzień",
     "difficultyOptions": {

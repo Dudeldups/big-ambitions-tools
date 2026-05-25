@@ -256,6 +256,7 @@
     "deliveryDriver": "送貨司機",
     "openingHours": "營業時間",
     "description": "描述",
+    "gameVersion": "遊戲版本",
     "day": "天",
     "week": "週",
     "difficultyOptions": {

@@ -256,6 +256,7 @@
     "deliveryDriver": "Csomagszállító",
     "openingHours": "Nyitvatartási idő",
     "description": "Leírás",
+    "gameVersion": "Játékverzió",
     "day": "Nap",
     "week": "Hét",
     "difficultyOptions": {

@@ -256,6 +256,7 @@
     "deliveryDriver": "Řidič dodávky",
     "openingHours": "Otevírací doba",
     "description": "Popis",
+    "gameVersion": "Verze hry",
     "day": "Den",
     "week": "Týden",
     "difficultyOptions": {

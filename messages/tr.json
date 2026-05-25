@@ -256,6 +256,7 @@
     "deliveryDriver": "Teslimat Sürücüsü",
     "openingHours": "Açılış saatleri",
     "description": "Açıklama",
+    "gameVersion": "Oyun sürümü",
     "day": "Gün",
     "week": "Hafta",
     "difficultyOptions": {

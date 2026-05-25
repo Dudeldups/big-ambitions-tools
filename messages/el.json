@@ -256,6 +256,7 @@
     "deliveryDriver": "Οδηγός Διανομών",
     "openingHours": "Ώρες λειτουργίας",
     "description": "Περιγραφή",
+    "gameVersion": "Έκδοση παιχνιδιού",
     "day": "Ημέρα",
     "week": "Εβδομάδα",
     "difficultyOptions": {

@@ -256,6 +256,7 @@
     "deliveryDriver": "Repartidor",
     "openingHours": "Horario de apertura",
     "description": "Descripción",
+    "gameVersion": "Versión del juego",
     "day": "Día",
     "week": "Semana",
     "difficultyOptions": {
