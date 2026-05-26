@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Sélectionner la langue",
     "intro": {
-      "desc": "Des infos et des outils pour le jeu <em>{gameName}</em> de {companyName}. Ce fansite se concentre actuellement sur les mécaniques d'usine pour t'aider à optimiser ton gameplay. Les calculs sont basés sur la version {gameVersion} du jeu et peuvent évoluer avec les prochaines mises à jour."
+      "desc": "Retrouve ici des infos et des outils pour le jeu <em>{gameName}</em> de {companyName}. Actuellement, ce fansite se concentre sur les mécaniques d'usine pour t'aider à optimiser ton gameplay. Les données et calculs peuvent changer avec les futures mises à jour du jeu."
     },
     "cta": {
       "title": "C'est parti !",

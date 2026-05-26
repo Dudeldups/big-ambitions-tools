@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Vælg sprog",
     "intro": {
-      "desc": "Her finder du info og værktøjer til <em>{gameName}</em> fra {companyName}. Denne fanside fokuserer lige nu på fabriksmekanik, så du kan få det bedste ud af dit gameplay. Beregningerne er baseret på version {gameVersion} og kan ændre sig med fremtidige opdateringer."
+      "desc": "Her finder du info og værktøjer til <em>{gameName}</em> fra {companyName}. Lige nu fokuserer denne fanside på fabrik-mekanikker, så du kan få det maksimale ud af dit gameplay. Data og beregninger kan ændre sig med fremtidige opdateringer."
     },
     "cta": {
       "title": "Kom så i gang!",

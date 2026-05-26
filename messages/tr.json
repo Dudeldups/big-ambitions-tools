@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
+      "desc": "{companyName}'in <em>{gameName}</em> oyunu için tüm bilgi ve araçlar burada. Şu an bu hayran sitesinde, oyununu optimize etmene yardımcı olacak fabrika mekaniklerine odaklandık. Veriler ve hesaplamalar gelecek güncellemelerle değişebilir."
     },
     "cta": {
       "title": "Hadi başlayalım!",

@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Pasirinkite kalbą",
     "intro": {
-      "desc": "Čia rasi informaciją ir įrankius apie <em>{gameName}</em> žaidimą, kurį sukūrė {companyName}. Šiuo metu ši fanų svetainė orientuota į gamyklos mechanikas, kad padėtų žaidėjams optimizuoti procesus. Skaičiavimai remiasi {gameVersion} versija ir gali keistis dėl būsimų atnaujinimų."
+      "desc": "Čia rasi informaciją ir įrankius <em>{gameName}</em> žaidimui, kurį sukūrė {companyName}. Šiuo metu ši fanų svetainė susitelkė į gamyklos mechaniką, kad padėtų tau geriau išnaudoti savo verslą. Duomenys ir skaičiavimai gali keistis su ateities žaidimo atnaujinimais."
     },
     "cta": {
       "title": "Pradėkime!",

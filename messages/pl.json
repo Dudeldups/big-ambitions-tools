@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Wybierz język",
     "intro": {
-      "desc": "Znajdziesz tu informacje i narzędzia do <em>{gameName}</em> od {companyName}. Na tej stronie fanowskiej skupiamy się obecnie na mechanice fabrycznej, żebyś mógł wycisnąć z biznesu maksimum. Obliczenia opierają się na wersji {gameVersion} i mogą ulec zmianie przy przyszłych aktualizacjach."
+      "desc": "Tutaj znajdziesz info i narzędzia związane z <em>{gameName}</em> od {companyName}. Obecnie ta strona skupia się na mechanice fabryk, żeby pomóc Ci wycisnąć jak najwięcej z rozgrywki. Dane i obliczenia mogą ulec zmianie wraz z przyszłymi aktualizacjami gry."
     },
     "cta": {
       "title": "Zaczynamy!",

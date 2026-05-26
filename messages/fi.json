@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Valitse kieli",
     "intro": {
-      "desc": "Tässä on kokoelma infoa ja työkaluja <em>{gameName}</em> -peliin ({companyName}). Tämä fanisivusto keskittyy tällä hetkellä tehtaan mekaniikkoihin, jotta saat pelistä kaiken irti. Laskelmat perustuvat versioon {gameVersion} ja voivat muuttua päivitysten myötä."
+      "desc": "Täältä löydät infoja ja työkaluja {companyName}:n pelistä <em>{gameName}</em>. Tällä hetkellä fanisivusto keskittyy tehdasmekaniikkaan, jotta saat pelistä kaiken irti. Tiedot ja laskelmat saattavat muuttua tulevissa päivityksissä."
     },
     "cta": {
       "title": "Aloitetaan!",

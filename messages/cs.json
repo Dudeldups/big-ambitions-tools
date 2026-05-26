@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Zvolte jazyk",
     "intro": {
-      "desc": "Sbírka informací a nástrojů ke hře <em>{gameName}</em> od {companyName}. Tahle fanouškovská stránka se aktuálně zaměřuje na tovární mechaniky a pomáhá hráčům optimalizovat hraní. Výpočty vycházejí z verze hry {gameVersion} a s budoucími aktualizacemi se mohou změnit."
+      "desc": "Tady najdeš všechna info a nástroje k hře <em>{gameName}</em> od {companyName}. Momentálně se tato fanstránka soustředí hlavně na mechaniky továren, aby ti pomohla vytěžit z tvého podnikání to nejlepší. Data a výpočty se mohou měnit s budoucími aktualizacemi hry."
     },
     "cta": {
       "title": "Tak jdeme do toho!",

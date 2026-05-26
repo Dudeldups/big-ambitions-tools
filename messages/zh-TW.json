@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "選擇語言",
     "intro": {
-      "desc": "這裡有關於 {companyName} 開發的 <em>{gameName}</em> 的資訊與工具。本粉絲站目前專注於工廠機制，幫助玩家優化玩法。計算基於遊戲版本 {gameVersion}，未來更新可能會有所變動。"
+      "desc": "這裡有 {companyName} 遊戲 <em>{gameName}</em> 的各種資訊和工具。目前這個粉絲站主要在研究工廠機制，想幫大家優化遊戲玩法。數據和計算可能會隨遊戲更新而變動。"
     },
     "cta": {
       "title": "我們開始吧！",

@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Selectează limba",
     "intro": {
-      "desc": "Aici găsești info și tools pentru <em>{gameName}</em> de la {companyName}. Acest site dedicat fanilor se concentrează acum pe mecanicile fabricilor, ca să te ajutăm să îți optimizezi gameplay-ul. Calculele se bazează pe versiunea {gameVersion} și pot fi modificate prin actualizările viitoare."
+      "desc": "Aici găsești info și tool-uri despre <em>{gameName}</em> de la {companyName}. Acum ne concentrăm pe mecanicile de fabrică, ca să îți poți optimiza gameplay-ul. Datele și calculele s-ar putea schimba odată cu viitoarele update-uri."
     },
     "cta": {
       "title": "Hai să începem!",

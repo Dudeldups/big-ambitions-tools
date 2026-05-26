@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "选择语言",
     "intro": {
-      "desc": "这里是 <em>{gameName}</em>（由 {companyName} 制作）的游戏信息和工具集合。本粉丝站目前专注于工厂机制，助你优化游戏体验。计算基于游戏版本 {gameVersion}，未来更新可能会有所变动。"
+      "desc": "这里汇集了 {companyName} 开发的游戏 <em>{gameName}</em> 的各类信息与工具。目前本站专注于工厂机制，助你玩转游戏、优化策略。数据和计算可能会随游戏后续更新而变动。"
     },
     "cta": {
       "title": "走起！",

@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Seleccionar idioma",
     "intro": {
-      "desc": "Aquí encontrarás información y herramientas sobre <em>{gameName}</em> de {companyName}. Actualmente esta fansite se centra en las mecánicas de fábrica para que saques lo mejor de tu negocio. Los cálculos se basan en la versión {gameVersion} y pueden cambiar con futuras actualizaciones."
+      "desc": "Aquí tienes info y herramientas sobre <em>{gameName}</em> de {companyName}. Ahora mismo, esta web se centra en las mecánicas de fábrica para ayudarte a optimizar tu partida. Los datos y cálculos pueden cambiar con futuras actualizaciones del juego."
     },
     "cta": {
       "title": "¡Vamos a empezar!",

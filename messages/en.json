@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Select language",
     "intro": {
-      "desc": "A collection of infos and tools for the game <em>{gameName}</em> by {companyName}. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version {gameVersion} of the game and may change with future updates."
+      "desc": "A collection of infos and tools for the game <em>{gameName}</em> by {companyName}. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Data and calculations may change with future game updates."
     },
     "cta": {
       "title": "Let's get started!",

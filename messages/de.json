@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Sprache auswählen",
     "intro": {
-      "desc": "Hier findest du Infos und Tools rund um <em>{gameName}</em> von {companyName}. Aktuell dreht sich auf dieser Fanseite alles um Fabrik-Mechaniken, damit du das Beste aus deinem Business rausholen kannst. Die Berechnungen basieren auf Version {gameVersion} und können sich mit künftigen Updates ändern."
+      "desc": "Hier findest du Infos und Tools rund um <em>{gameName}</em> von {companyName}. Aktuell dreht sich auf dieser Fanseite alles um Fabrik-Mechaniken, damit du das Beste aus deinem Business rausholen kannst. Daten und Berechnungen können sich mit künftigen Spiele-Updates ändern."
     },
     "cta": {
       "title": "Lass uns loslegen!",

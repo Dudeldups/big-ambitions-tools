@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Selecionar idioma",
     "intro": {
-      "desc": "Aqui você encontra informações e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para ajudar você a otimizar sua produção e seu negócio. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
+      "desc": "Aqui você encontra infos e ferramentas sobre o jogo <em>{gameName}</em>, da {companyName}. No momento, este fansite foca nas mecânicas de fábrica para te ajudar a otimizar seu gameplay. Dados e cálculos podem mudar com futuras atualizações do jogo."
     },
     "cta": {
       "title": "Bora lá!",

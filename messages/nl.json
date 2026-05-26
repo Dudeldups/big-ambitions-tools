@@ -396,7 +396,7 @@
   "home": {
     "selectLanguage": "Kies een taal",
     "intro": {
-      "desc": "Hier vind je info en tools rondom <em>{gameName}</em> van {companyName}. Op deze fansite draait alles momenteel om fabrieksmechanica, zodat je het beste uit je business kunt halen. De berekeningen zijn gebaseerd op versie {gameVersion} en kunnen veranderen met toekomstige updates."
+      "desc": "Hier vind je info en tools over <em>{gameName}</em> van {companyName}. Op deze fansite draait het momenteel allemaal om fabrieksmechanieken, zodat je het maximale uit je gameplay kunt halen. Data en berekeningen kunnen veranderen bij toekomstige game-updates."
     },
     "cta": {
       "title": "Aan de slag!",
