@@ -83,7 +83,6 @@ export type Vehicle = {
 };
 
 export type Employee = {
-  id: number;
   baseHourlyWage: number;
   hasParttimeDemand: boolean;
   customWorkingHours?: number;
