@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Julkaisu: Tietokanta ja tehassuunnittelija"
+    "launch": "Julkaisu: Tietokanta ja tehassuunnittelija",
+    "qotd": "Fredin 'Päivän mietelause' lisättiin etusivulle",
+    "update11": "Lisätty pelidatan versiointia tukemaan vakaata 0.10- ja kokeellista 0.11-haaroja"
   },
   "database": {
     "intro": {

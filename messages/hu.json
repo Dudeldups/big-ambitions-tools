@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Indítás: Adatbázis és Gyártervező"
+    "launch": "Indítás: Adatbázis és Gyártervező",
+    "qotd": "Fred 'napi idézetét' hozzáadtuk a kezdőlaphoz",
+    "update11": "Hozzáadtuk a játékadatok verziózását, hogy támogassuk a stabil 0.10 és kísérleti 0.11 branch-eket"
   },
   "database": {
     "intro": {

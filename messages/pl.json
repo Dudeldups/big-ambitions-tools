@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Ruszamy: Baza danych i planer fabryczny"
+    "launch": "Ruszamy: Baza danych i planer fabryczny",
+    "qotd": "Dodano 'Cytat dnia' Freda na stronę główną",
+    "update11": "Dodano wersjonowanie danych gry dla gałęzi 0.10 (stabilna) i 0.11 (eksperymentalna)"
   },
   "database": {
     "intro": {

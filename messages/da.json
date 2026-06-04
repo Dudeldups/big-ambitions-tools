@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Startskud: Database og Fabriksplanlægger"
+    "launch": "Startskud: Database og Fabriksplanlægger",
+    "qotd": "Freds 'Dagens citat' tilføjet til forsiden",
+    "update11": "Versionering af spildata til support af stabile 0.10 og eksperimentelle 0.11 grene"
   },
   "database": {
     "intro": {

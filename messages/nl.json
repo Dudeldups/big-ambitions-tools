@@ -166,7 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
-    "LytteL6": "Luisteren L6",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Database en Fabrieksplanner"
+    "launch": "Start: Database en Fabrieksplanner",
+    "qotd": "Freds 'Citaat van de dag' toegevoegd aan de homepage",
+    "update11": "Versionering voor gamedata toegevoegd om de stabiele 0.10 en experimentele 0.11 branches te ondersteunen"
   },
   "database": {
     "intro": {

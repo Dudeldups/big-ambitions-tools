@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Launch: Database and Factory Planner"
+    "launch": "Launch: Database and Factory Planner",
+    "qotd": "Added Fred's 'Quote of the day' to the homepage",
+    "update11": "Added versioning for game data to support stable 0.10 and experimental 0.11 branches"
   },
   "database": {
     "intro": {

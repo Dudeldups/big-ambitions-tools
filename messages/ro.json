@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Baza de date și Planificatorul de fabrică"
+    "launch": "Start: Baza de date și Planificatorul de fabrică",
+    "qotd": "Am adăugat 'Citatul zilei' lui Fred pe homepage",
+    "update11": "Am adăugat versionarea datelor de joc pentru versiunile stabile 0.10 și cele experimentale 0.11"
   },
   "database": {
     "intro": {

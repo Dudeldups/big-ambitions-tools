@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Top départ : Base de données & Planificateur d'usine"
+    "launch": "Top départ : Base de données & Planificateur d'usine",
+    "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
+    "update11": "Versionnage des données de jeu ajouté pour supporter les branches stables 0.10 et expérimentales 0.11"
   },
   "database": {
     "intro": {

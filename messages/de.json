@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Startschuss: Datenbank und Fabrikplaner"
+    "launch": "Startschuss: Datenbank und Fabrikplaner",
+    "qotd": "Freds 'Zitat des Tages' zur Startseite hinzugefügt",
+    "update11": "Versionierung für Spieldaten hinzugefügt, um die stabile Version 0.10 und die experimentelle Version 0.11 zu unterstützen"
   },
   "database": {
     "intro": {

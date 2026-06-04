@@ -422,7 +422,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Başlıyoruz: Veritabanı ve Fabrika Planlayıcı"
+    "launch": "Başlıyoruz: Veritabanı ve Fabrika Planlayıcı",
+    "qotd": "Fred'in 'Günün Sözü' ana sayfaya eklendi",
+    "update11": "Stabil 0.10 ve deneysel 0.11 sürümlerini desteklemek için oyun verilerine versiyonlama eklendi"
   },
   "database": {
     "intro": {
