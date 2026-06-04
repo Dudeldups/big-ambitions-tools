@@ -20,6 +20,7 @@ export type AppState = {
   _hasHydrated: boolean;
   difficulty: Difficulty;
   gameVersion: GameVersion;
+  hasSeenGameVersionNotice: boolean;
   displayPrices: DisplayPrices;
   calculationPeriod: CalculationPeriod;
   tablePriceIndex: number;
@@ -31,6 +32,7 @@ export type AppActions = {
   _setHasHydrated: (hasHydrated: boolean) => void;
   setDifficulty: (difficulty: Difficulty) => void;
   setGameVersion: (gameVersion: GameVersion) => void;
+  setHasSeenGameVersionNotice: (hasSeen: boolean) => void;
   setDisplayPrices: (source: PriceSource, target: PriceTarget) => void;
   setCalculationPeriod: (period: CalculationPeriod) => void;
   setTablePriceIndex: (index: number) => void;
@@ -40,6 +42,7 @@ export const initialAppState: AppState = {
   _hasHydrated: false,
   difficulty: "easy",
   gameVersion: DEFAULT_GAME_VERSION,
+  hasSeenGameVersionNotice: false,
   displayPrices: {
     source: DISPLAY_PRICE_OPTIONS.SOURCE.MANUFACTURE,
     target: DISPLAY_PRICE_OPTIONS.TARGET.EXPORT,
@@ -70,6 +73,11 @@ export const useAppStore = create(
       setGameVersion: (gameVersion) =>
         set((state) => {
           state.gameVersion = gameVersion;
+        }),
+
+      setHasSeenGameVersionNotice: (hasSeen) =>
+        set((state) => {
+          state.hasSeenGameVersionNotice = hasSeen;
         }),
 
       setDisplayPrices: (source, target) =>
@@ -103,6 +111,7 @@ export const useAppStore = create(
         return {
           ...state,
           gameVersion: state.gameVersion ?? DEFAULT_GAME_VERSION,
+          hasSeenGameVersionNotice: state.hasSeenGameVersionNotice ?? false,
         };
       },
       onRehydrateStorage: () => (state) => {
