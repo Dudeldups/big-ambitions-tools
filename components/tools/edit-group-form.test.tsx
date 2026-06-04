@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import EditGroupForm from "./edit-group-form";
 
@@ -15,14 +16,14 @@ describe("EditGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
-    const group = usePlaythroughStore.getState().createFactoryGroup(
-      playthrough.id,
-      {
+    const group = usePlaythroughStore
+      .getState()
+      .createFactoryGroup(playthrough.id, {
         name: "Supplies",
         color: "#ffffff",
-      },
-    );
+      });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
 
@@ -57,14 +58,14 @@ describe("EditGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
-    const group = usePlaythroughStore.getState().createFactoryGroup(
-      playthrough.id,
-      {
+    const group = usePlaythroughStore
+      .getState()
+      .createFactoryGroup(playthrough.id, {
         name: "Logistics",
         color: "#abcdef",
-      },
-    );
+      });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
 
@@ -73,7 +74,9 @@ describe("EditGroupForm", () => {
     await user.click(screen.getByRole("button", { name: "Edit" }));
 
     act(() => {
-      usePlaythroughStore.getState().deleteFactoryGroup(playthrough.id, group.id);
+      usePlaythroughStore
+        .getState()
+        .deleteFactoryGroup(playthrough.id, group.id);
     });
 
     await user.clear(screen.getByLabelText("Name"));
@@ -93,14 +96,14 @@ describe("EditGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Taylor",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
-    const group = usePlaythroughStore.getState().createFactoryGroup(
-      playthrough.id,
-      {
+    const group = usePlaythroughStore
+      .getState()
+      .createFactoryGroup(playthrough.id, {
         name: "North Hub",
         color: "#ffffff",
-      },
-    );
+      });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
 

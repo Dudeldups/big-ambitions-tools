@@ -4,6 +4,10 @@ import { FieldGroup, FieldLegend, FieldSet } from "../ui/field";
 import VehicleSelect from "./vehicle-select";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Translator } from "@/lib/types";
+import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
+import { getPlaythroughGameData } from "@/lib/game/registry";
+import { Vehicle } from "@/lib/game/types";
+import { VehicleName } from "@/lib/game/vehicleNames";
 
 type FormVehicleProps = {
   control: Control<FactoryFormValues>;
@@ -11,6 +15,7 @@ type FormVehicleProps = {
 };
 
 const FormVehicles = ({ control, t }: FormVehicleProps) => {
+  const { activePlaythrough } = useActivePlaythrough();
   const {
     fields: vehicleFields,
     append: appendVehicle,
@@ -19,6 +24,20 @@ const FormVehicles = ({ control, t }: FormVehicleProps) => {
     control,
     name: "vehicles",
   });
+
+  if (!activePlaythrough) return null;
+
+  const gameData = getPlaythroughGameData(activePlaythrough);
+  const deliveryVehicles = (
+    Object.entries(gameData.vehicles) as [VehicleName, Vehicle | undefined][]
+  )
+    .flatMap(([name, vehicle]) => (vehicle ? [{ ...vehicle, name }] : []))
+    .filter((vehicle) => vehicle.destinationsThatCanDeliver >= 1)
+    .sort(
+      (a, b) =>
+        b.destinationsThatCanDeliver - a.destinationsThatCanDeliver ||
+        a.purchasePrice - b.purchasePrice,
+    );
 
   return (
     <FieldSet className="@container/field-set">
@@ -33,6 +52,7 @@ const FormVehicles = ({ control, t }: FormVehicleProps) => {
             control={control}
             index={index}
             onRemove={() => removeVehicle(index)}
+            deliveryVehicles={deliveryVehicles}
           />
         ))}
 

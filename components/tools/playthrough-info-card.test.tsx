@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import PlaythroughInfoCard from "./playthrough-info-card";
 
@@ -12,6 +13,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     renderWithIntl(
@@ -26,6 +28,11 @@ describe("PlaythroughInfoCard", () => {
     expect(screen.getByText("Jordan")).toBeInTheDocument();
     expect(screen.getByText(/Difficulty: Hard/i)).toBeInTheDocument();
     expect(screen.getByText(/Factories: 0/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        new RegExp(`Game version: ${DEFAULT_GAME_VERSION}`, "i"),
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Jordan/i })).toHaveAttribute(
       "href",
       `/tools/${playthrough.id}`,
@@ -37,6 +44,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const startEditing = vi.fn();
 
@@ -59,6 +67,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const cancelEditing = vi.fn();
 
@@ -81,6 +90,7 @@ describe("PlaythroughInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     renderWithIntl(
@@ -97,9 +107,9 @@ describe("PlaythroughInfoCard", () => {
 
     await user.click(screen.getByRole("button", { name: "Confirm" }));
 
-    expect(usePlaythroughStore.getState().getPlaythroughById(playthrough.id)).toBe(
-      undefined,
-    );
+    expect(
+      usePlaythroughStore.getState().getPlaythroughById(playthrough.id),
+    ).toBe(undefined);
     expect(sonnerToastMock.success).toHaveBeenCalledWith(
       'Playthrough "Morgan" deleted!',
       expect.objectContaining({

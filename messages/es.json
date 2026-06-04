@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Repartidor",
     "openingHours": "Horario de apertura",
     "description": "Descripción",
+    "gameVersion": "Versión del juego",
     "day": "Día",
     "week": "Semana",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Seleccionar idioma",
     "intro": {
-      "desc": "Aquí encontrarás información y herramientas sobre <em>{gameName}</em> de {companyName}. Actualmente esta fansite se centra en las mecánicas de fábrica para que saques lo mejor de tu negocio. Los cálculos se basan en la versión {gameVersion} y pueden cambiar con futuras actualizaciones."
+      "desc": "Aquí tienes info y herramientas sobre <em>{gameName}</em> de {companyName}. Ahora mismo, esta web se centra en las mecánicas de fábrica para ayudarte a optimizar tu partida. Los datos y cálculos pueden cambiar con futuras actualizaciones del juego."
     },
     "quoteOfTheDay": {
       "title": "Frase del día del tío Fred",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "¡Arrancamos!: Base de datos y planificador de planta"
+    "launch": "¡Arrancamos!: Base de datos y planificador de planta",
+    "qotd": "Añadida la 'Frase del día' de Fred a la página de inicio",
+    "update11": "Añadido versionado de datos del juego para las ramas estable 0.10 y experimental 0.11"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Partida no encontrada",
         "desc": "Esta partida no existe o ha sido eliminada.",
         "link": "Volver al resumen de partidas"
+      },
+      "gameVersionNotice": {
+        "title": "Datos de juego versionados",
+        "desc": "Las partidas ahora usan datos de juego versionados. Las partidas guardadas se han configurado por defecto en la versión 0.10. Puedes cambiar la versión del juego para cada partida en la <link>vista general</link>."
       }
     },
     "playthroughDetail": {

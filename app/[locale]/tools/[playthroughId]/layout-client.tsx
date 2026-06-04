@@ -18,6 +18,9 @@ import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import { StatBadge } from "@/components/deco/stat-badge";
 import { usePlaythroughDocumentTitle } from "@/lib/hooks/usePlaythroughDocumentTitle";
+import GameVersionNotice from "@/components/notices/game-version-notice";
+import { useAppState } from "@/lib/hooks/useAppState";
+import { useAppStore } from "@/lib/stores/appStore";
 
 const PlaythroughIdLayoutClient = ({
   children,
@@ -27,6 +30,12 @@ const PlaythroughIdLayoutClient = ({
   const t = useTranslations("tools");
   const tGeneral = useTranslations("general");
   const { isLoading, isInvalid, activePlaythrough } = useActivePlaythrough();
+  const hasSeenGameVersionNotice = useAppState(
+    (state) => state.hasSeenGameVersionNotice,
+  );
+  const setHasSeenGameVersionNotice = useAppStore(
+    (state) => state.setHasSeenGameVersionNotice,
+  );
   const pathname = usePathname();
   usePlaythroughDocumentTitle(activePlaythrough?.characterName);
   const isNewFactoryDisabled =
@@ -58,6 +67,12 @@ const PlaythroughIdLayoutClient = ({
       <SectionWrapper variant="primary" size="compact" />
 
       <div className="px-clamp-x mt-10 mb-14">
+        {!hasSeenGameVersionNotice && (
+          <GameVersionNotice
+            onDismiss={() => setHasSeenGameVersionNotice(true)}
+          />
+        )}
+
         <section className="bg-background shadow-foreground/30 border-foreground/20 max-w-page mx-auto rounded-lg border px-4 py-3 shadow-sm">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">

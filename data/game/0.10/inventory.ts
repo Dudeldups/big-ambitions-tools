@@ -1,9 +1,5 @@
-import { InventoryItemName, ShelfName } from "./inventoryNames";
-
-export type Shelf = {
-  purchasePrice: number;
-  storageCapacity: number;
-};
+import { InventoryItemName, ShelfName } from "@/lib/game/inventoryNames";
+import { InventoryItem, Shelf } from "@/lib/game/types";
 
 export const shelves: Record<ShelfName, Shelf> = {
   palletShelf: {
@@ -14,10 +10,6 @@ export const shelves: Record<ShelfName, Shelf> = {
     purchasePrice: 1200,
     storageCapacity: 16,
   },
-};
-
-export type InventoryItem = {
-  purchasePrice: number;
 };
 
 export const inventoryItems: Record<InventoryItemName, InventoryItem> = {

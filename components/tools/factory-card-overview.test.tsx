@@ -1,7 +1,13 @@
 import userEvent from "@testing-library/user-event";
 import { fireEvent } from "@testing-library/react";
-import { renderWithIntl, screen, waitFor, within } from "@/__tests__/test-utils";
+import {
+  renderWithIntl,
+  screen,
+  waitFor,
+  within,
+} from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import FactoryCardOverview from "./factory-card-overview";
 
@@ -60,6 +66,7 @@ describe("FactoryCardOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factoryA = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -77,13 +84,12 @@ describe("FactoryCardOverview", () => {
       .getState()
       .addFactoryToPlaythrough(playthrough.id, factoryB.id);
 
-    const group = usePlaythroughStore.getState().createFactoryGroup(
-      playthrough.id,
-      {
+    const group = usePlaythroughStore
+      .getState()
+      .createFactoryGroup(playthrough.id, {
         name: "Grouped",
         color: "#ffffff",
-      },
-    );
+      });
     usePlaythroughStore
       .getState()
       .addFactoryToGroup(playthrough.id, factoryA.id, group.id);
@@ -103,8 +109,12 @@ describe("FactoryCardOverview", () => {
     expect(screen.getByTestId("create-group-form")).toBeInTheDocument();
     expect(screen.getByText(group.name)).toBeInTheDocument();
     expect(screen.getByText("Ungrouped factories")).toBeInTheDocument();
-    expect(screen.getByTestId(`factory-card-${factoryA.id}`)).toBeInTheDocument();
-    expect(screen.getByTestId(`factory-card-${factoryB.id}`)).toBeInTheDocument();
+    expect(
+      screen.getByTestId(`factory-card-${factoryA.id}`),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId(`factory-card-${factoryB.id}`),
+    ).toBeInTheDocument();
   });
 
   it("moves an ungrouped factory into a group on drop", async () => {
@@ -116,9 +126,12 @@ describe("FactoryCardOverview", () => {
 
     renderWithIntl(<FactoryCardOverview playthrough={playthrough} />);
 
-    await user.click(screen.getByRole("button", { name: `drag-${factoryB.id}` }));
+    await user.click(
+      screen.getByRole("button", { name: `drag-${factoryB.id}` }),
+    );
 
-    const groupContainer = screen.getByText(group.name).parentElement?.parentElement;
+    const groupContainer = screen.getByText(group.name).parentElement
+      ?.parentElement;
     fireEvent.drop(groupContainer!);
 
     await waitFor(() => {
@@ -138,10 +151,13 @@ describe("FactoryCardOverview", () => {
 
     renderWithIntl(<FactoryCardOverview playthrough={playthrough} />);
 
-    await user.click(screen.getByRole("button", { name: `drag-${factoryA.id}` }));
+    await user.click(
+      screen.getByRole("button", { name: `drag-${factoryA.id}` }),
+    );
 
-    const ungroupedContainer =
-      screen.getByText("Ungrouped factories").parentElement;
+    const ungroupedContainer = screen.getByText(
+      "Ungrouped factories",
+    ).parentElement;
     fireEvent.drop(ungroupedContainer!);
 
     await waitFor(() => {
@@ -161,8 +177,12 @@ describe("FactoryCardOverview", () => {
 
     renderWithIntl(<FactoryCardOverview playthrough={playthrough} />);
 
-    const groupSection = screen.getByText(group.name).closest("div")?.parentElement!;
-    await user.click(within(groupSection).getByRole("button", { name: "delete-group" }));
+    const groupSection = screen
+      .getByText(group.name)
+      .closest("div")?.parentElement!;
+    await user.click(
+      within(groupSection).getByRole("button", { name: "delete-group" }),
+    );
 
     expect(
       usePlaythroughStore.getState().getGroupById(playthroughId, group.id),

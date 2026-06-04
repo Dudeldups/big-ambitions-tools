@@ -1,7 +1,10 @@
 import userEvent from "@testing-library/user-event";
+import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useForm } from "react-hook-form";
 import { PalletShelfField } from "./pallet-shelf-field";
 
@@ -9,13 +12,16 @@ const palletShelfMocks = vi.hoisted(() => ({
   getOptimalPalletShelfAmounts: vi.fn(),
 }));
 
-vi.mock("@/lib/calculations/getOptimalPalletShelfAmount", () => palletShelfMocks);
+vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
+vi.mock(
+  "@/lib/calculations/getOptimalPalletShelfAmount",
+  () => palletShelfMocks,
+);
 vi.mock("../ui/tooltip", () => ({
   Tooltip: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-  TooltipTrigger: ({
-    children,
-    ...props
-  }: React.ComponentProps<"button">) => <button {...props}>{children}</button>,
+  TooltipTrigger: ({ children, ...props }: React.ComponentProps<"button">) => (
+    <button {...props}>{children}</button>
+  ),
   TooltipContent: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
   ),
@@ -76,10 +82,22 @@ function PalletShelfFieldHarness({
     },
   });
 
-  return <PalletShelfField control={form.control} errors={form.formState.errors} />;
+  return (
+    <PalletShelfField control={form.control} errors={form.formState.errors} />
+  );
 }
 
 describe("PalletShelfField", () => {
+  beforeEach(() => {
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Jordan",
+      difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+  });
+
   it("normalizes leading zeros in the shelf amount input", async () => {
     const user = userEvent.setup();
     palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({

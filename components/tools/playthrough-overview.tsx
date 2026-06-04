@@ -1,6 +1,7 @@
 "use client";
 
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughState } from "@/lib/hooks/usePlaythroughState";
 import { PlaythroughFormValues } from "@/lib/schemas/playthrough";
 import {
@@ -26,14 +27,20 @@ const PlaythroughOverview = () => {
     string | null
   >(null);
 
-  const form = useForm<PlaythroughFormValues>();
+  const form = useForm<PlaythroughFormValues>({
+    defaultValues: { gameVersion: DEFAULT_GAME_VERSION },
+  });
   const {
     reset,
     formState: { isDirty },
   } = form;
 
   const startEditing = (pt: Playthrough) => {
-    reset({ characterName: pt.characterName, difficulty: pt.difficulty });
+    reset({
+      characterName: pt.characterName,
+      difficulty: pt.difficulty,
+      gameVersion: pt.gameVersion,
+    });
     setEditingPlaythroughId(pt.id);
   };
 
@@ -49,6 +56,7 @@ const PlaythroughOverview = () => {
       const updatedPlaythrough = editPlaythrough(editingPlaythroughId, {
         characterName: values.characterName,
         difficulty: values.difficulty as (typeof DIFFICULTY_OPTIONS)[number],
+        gameVersion: values.gameVersion,
       });
       if (updatedPlaythrough) {
         toast.success(

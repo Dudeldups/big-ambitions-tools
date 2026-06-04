@@ -1,8 +1,16 @@
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { useUiStore } from "@/lib/stores/uiStore";
+import { Translator } from "@/lib/types";
 import { useForm } from "react-hook-form";
 import EmployeeSalaryField from "./employee-salary-field";
+
+const mockTranslator = Object.assign((key: string) => key, {
+  rich: (key: string) => key,
+  markup: (key: string) => key,
+  raw: (key: string) => key,
+  has: () => true,
+}) as unknown as Translator;
 
 function EmployeeSalaryFieldHarness({
   employeeName,
@@ -15,7 +23,7 @@ function EmployeeSalaryFieldHarness({
     <EmployeeSalaryField
       employeeName={employeeName}
       register={form.register}
-      t={(key: string) => key as never}
+      t={mockTranslator}
     />
   );
 }
@@ -26,17 +34,15 @@ describe("EmployeeSalaryField", () => {
 
     renderWithIntl(<EmployeeSalaryFieldHarness employeeName="factoryWorker" />);
 
-    expect(
-      screen.getByLabelText("general.amount"),
-    ).toBeDisabled();
+    expect(screen.getByLabelText("general.amount")).toBeDisabled();
   });
 
   it("always disables fixed-amount employee fields", () => {
-    renderWithIntl(<EmployeeSalaryFieldHarness employeeName="deliveryDriver" />);
+    renderWithIntl(
+      <EmployeeSalaryFieldHarness employeeName="deliveryDriver" />,
+    );
 
-    expect(
-      screen.getByLabelText("general.amount"),
-    ).toBeDisabled();
+    expect(screen.getByLabelText("general.amount")).toBeDisabled();
   });
 
   it("keeps non-fixed employee amounts editable", () => {
@@ -46,8 +52,6 @@ describe("EmployeeSalaryField", () => {
       <EmployeeSalaryFieldHarness employeeName="logisticsManager" />,
     );
 
-    expect(
-      screen.getByLabelText("general.amount"),
-    ).toBeEnabled();
+    expect(screen.getByLabelText("general.amount")).toBeEnabled();
   });
 });

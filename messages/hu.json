@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Csomagszállító",
     "openingHours": "Nyitvatartási idő",
     "description": "Leírás",
+    "gameVersion": "Játékverzió",
     "day": "Nap",
     "week": "Hét",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Válassz nyelvet",
     "intro": {
-      "desc": "Itt találsz infókat és eszközöket az <em>{gameName}</em> játékhoz, a {companyName} fejlesztésétől. Jelenleg a gyári mechanikákra fókuszálunk, hogy segítsünk kihozni a legtöbbet a vállalkozásodból. A számítások a(z) {gameVersion} verzióra épülnek, és változhatnak a jövőbeni frissítések során."
+      "desc": "Itt találod az összes infót és eszközt a {companyName} fejlesztésű <em>{gameName}</em> játékhoz. Jelenleg a gyár mechanikáira fókuszálunk, hogy segítsünk optimalizálni a játékmenetedet. Az adatok és számítások a jövőbeni frissítések során változhatnak."
     },
     "quoteOfTheDay": {
       "title": "Fred nagybácsi napi idézete",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Indítás: Adatbázis és Gyártervező"
+    "launch": "Indítás: Adatbázis és Gyártervező",
+    "qotd": "Fred 'napi idézetét' hozzáadtuk a kezdőlaphoz",
+    "update11": "Hozzáadtuk a játékadatok verziózását, hogy támogassuk a stabil 0.10 és kísérleti 0.11 branch-eket"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Játékállapot nem található",
         "desc": "Ez a játékállapot nem létezik vagy törölve lett.",
         "link": "Vissza a játékállapotok listájához"
+      },
+      "gameVersionNotice": {
+        "title": "Verziósított játékadatok",
+        "desc": "A játékállapotok mostantól verziósított adatokat használnak. A meglévő mentések alapértelmezetten a 0.10-es verziót használják. Az <link>áttekintésben</link> minden játékállapotnál külön is módosíthatod a játékverziót."
       }
     },
     "playthroughDetail": {
@@ -601,9 +609,9 @@
       },
       "workstations": {
         "addBtn": "Hozzáadj ruházati munkállomást",
-        "useProductionLimit": "Termelési limit használata",
+        "useProductionLimit": "Használj termelési limitet",
         "productionLimit": "Heti termelési limit",
-        "productionLimitTooltip": "A kiválasztott mennyiségre korlátozza erre a termék heti termelését a gyárban."
+        "productionLimitTooltip": "Korlátozza a termék heti termelését a gyárban a kiválasztott mennyiségre."
       },
       "buttonDesc": "Új gyár",
       "genericFactoryName": "{productName} gyár",

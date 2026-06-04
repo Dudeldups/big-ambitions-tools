@@ -16,14 +16,15 @@ import {
   TAX_RATE,
 } from "@/lib/constants";
 import { ProductName } from "@/lib/game/productNames";
+import { requireProduct } from "@/lib/game/requireGameData";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { getExportPrice, getManufacturePrice } from "@/lib/calculations/math";
-import { products } from "@/lib/game/products";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { usePriceIndex } from "@/lib/hooks/usePriceIndex";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 
 type PriceIndexPopoverProps = {
   className?: string;
@@ -40,8 +41,6 @@ const PriceIndexPopover = ({
   const { activePlaythrough } = useActivePlaythrough();
   const setPriceIndex = usePlaythroughStore((state) => state.setPriceIndex);
   const currentPriceIndex = usePriceIndex(selectedProduct);
-  const selectedProductObj = products[selectedProduct];
-  const { wholesalePrice } = selectedProductObj;
 
   const assertIndex = (index: number) =>
     index >= MIN_PRODUCT_PRICE_INDEX && index <= MAX_PRODUCT_PRICE_INDEX;
@@ -55,6 +54,9 @@ const PriceIndexPopover = ({
   };
 
   if (!activePlaythrough) return null;
+  const gameData = getPlaythroughGameData(activePlaythrough);
+  const selectedProductObj = requireProduct(gameData, selectedProduct);
+  const { wholesalePrice } = selectedProductObj;
 
   const exportPrice = parseFloat(
     getExportPrice(
@@ -68,6 +70,7 @@ const PriceIndexPopover = ({
     getManufacturePrice(
       selectedProductObj,
       activePlaythrough.difficulty,
+      gameData,
       factoryWorkerSalary,
     ).toFixed(2),
   );

@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Lieferfahrer",
     "openingHours": "Öffnungszeiten",
     "description": "Beschreibung",
+    "gameVersion": "Spielversion",
     "day": "Tag",
     "week": "Woche",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Sprache auswählen",
     "intro": {
-      "desc": "Hier findest du Infos und Tools rund um <em>{gameName}</em> von {companyName}. Aktuell dreht sich auf dieser Fanseite alles um Fabrik-Mechaniken, damit du das Beste aus deinem Business rausholen kannst. Die Berechnungen basieren auf Version {gameVersion} und können sich mit künftigen Updates ändern."
+      "desc": "Hier findest du Infos und Tools rund um <em>{gameName}</em> von {companyName}. Aktuell dreht sich auf dieser Fanseite alles um Fabrik-Mechaniken, damit du das Beste aus deinem Business rausholen kannst. Daten und Berechnungen können sich mit künftigen Spiele-Updates ändern."
     },
     "quoteOfTheDay": {
       "title": "Onkel Fred's Zitat des Tages",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Startschuss: Datenbank und Fabrikplaner"
+    "launch": "Startschuss: Datenbank und Fabrikplaner",
+    "qotd": "Freds 'Zitat des Tages' zur Startseite hinzugefügt",
+    "update11": "Versionierung für Spieldaten hinzugefügt, um die stabile Version 0.10 und die experimentelle Version 0.11 zu unterstützen"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Spielstand nicht gefunden",
         "desc": "Dieser Spielstand existiert nicht oder wurde gelöscht.",
         "link": "Zurück zur Übersicht der Spielstände"
+      },
+      "gameVersionNotice": {
+        "title": "Versionierte Spieledaten",
+        "desc": "Spielstände benutzen nun versionierte Spieledaten. Existierende Spielstände sind auf Version 0.10 gesetzt worden. Du kannst die Spielversion für jeden Spielstand in der <link>Übersicht</link> ändern."
       }
     },
     "playthroughDetail": {

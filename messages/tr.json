@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Teslimat Sürücüsü",
     "openingHours": "Açılış saatleri",
     "description": "Açıklama",
+    "gameVersion": "Oyun sürümü",
     "day": "Gün",
     "week": "Hafta",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Dil seç",
     "intro": {
-      "desc": "{companyName}'den <em>{gameName}</em> hakkında bilgi ve araçlar burada! Şu an fabrika mekaniklerine odaklanıyoruz; böylece oyununu en iyi şekilde optimize edebilirsin. Hesaplamalar {gameVersion} sürümü baz alınarak yapılmıştır ve güncellemelerle değişebilir."
+      "desc": "{companyName}'in <em>{gameName}</em> oyunu için tüm bilgi ve araçlar burada. Şu an bu hayran sitesinde, oyununu optimize etmene yardımcı olacak fabrika mekaniklerine odaklandık. Veriler ve hesaplamalar gelecek güncellemelerle değişebilir."
     },
     "quoteOfTheDay": {
       "title": "Fred Amca'nın Günün Sözü",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Başlıyoruz: Veritabanı ve Fabrika Planlayıcı"
+    "launch": "Başlıyoruz: Veritabanı ve Fabrika Planlayıcı",
+    "qotd": "Fred'in 'Günün Sözü' ana sayfaya eklendi",
+    "update11": "Stabil 0.10 ve deneysel 0.11 sürümlerini desteklemek için oyun verilerine versiyonlama eklendi"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Oyun durumu bulunamadı",
         "desc": "Bu oyun durumu mevcut değil veya silinmiş.",
         "link": "Oyun durumları listesine dön"
+      },
+      "gameVersionNotice": {
+        "title": "Sürüm Bazlı Oyun Verileri",
+        "desc": "Oyun durumları artık sürüm bazlı veriler kullanıyor. Mevcut kayıtlar varsayılan olarak 0.10 sürümüne ayarlandı. Her oyun durumu için oyun sürümünü <link>genel bakış</link> kısmından düzenleyebilirsin."
       }
     },
     "playthroughDetail": {

@@ -4,6 +4,7 @@ import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { BASE_PRODUCT_PRICE_INDEX } from "@/lib/constants";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { assertPriceIndex } from "@/lib/utils/assertPriceIndex";
 import { safeLog } from "@/lib/utils/safeLog";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -12,9 +13,9 @@ import PriceIndicesDialog from "./price-indices-dialog";
 vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
 vi.mock("sonner", () => import("@/__tests__/mocks/sonner"));
 vi.mock("@/lib/utils/assertPriceIndex", async () => {
-  const actual = await vi.importActual<typeof import("@/lib/utils/assertPriceIndex")>(
-    "@/lib/utils/assertPriceIndex",
-  );
+  const actual = await vi.importActual<
+    typeof import("@/lib/utils/assertPriceIndex")
+  >("@/lib/utils/assertPriceIndex");
 
   return {
     ...actual,
@@ -42,6 +43,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -64,6 +66,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -77,9 +80,9 @@ describe("PriceIndicesDialog", () => {
       target: { value: "1.2", name: "burger" },
     });
 
-    expect(usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger).toBe(
-      1.2,
-    );
+    expect(
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger,
+    ).toBe(1.2);
   });
 
   it("shows an error toast for invalid price index values", async () => {
@@ -87,6 +90,7 @@ describe("PriceIndicesDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
 
     usePlaythroughStore.setState({ _hasHydrated: true });
@@ -105,9 +109,9 @@ describe("PriceIndicesDialog", () => {
     });
 
     expect(sonnerToastMock.error).toHaveBeenCalledTimes(1);
-    expect(usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger).toBe(
-      BASE_PRODUCT_PRICE_INDEX,
-    );
+    expect(
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id).burger,
+    ).toBe(BASE_PRODUCT_PRICE_INDEX);
     expect(safeLog).toHaveBeenCalledTimes(1);
   });
 });

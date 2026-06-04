@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "배송 기사",
     "openingHours": "영업시간",
     "description": "설명",
+    "gameVersion": "게임 버전",
     "day": "일",
     "week": "주",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "언어 선택",
     "intro": {
-      "desc": "{companyName}의 <em>{gameName}</em> 정보와 툴을 모아둔 곳이야. 지금은 플레이어들이 더 효율적으로 플레이할 수 있게 공장 메커니즘 위주로 다루고 있어. 계산 방식은 {gameVersion} 버전 기준이라, 앞으로 업데이트에 따라 바뀔 수도 있어."
+      "desc": "{companyName}의 <em>{gameName}</em>을 위한 정보와 툴 모음이에요. 지금은 플레이어분들이 더 효율적으로 플레이할 수 있도록 공장 시스템을 중점적으로 다루고 있어요. 게임 업데이트에 따라 데이터나 계산 방식이 바뀔 수도 있으니 참고해 주세요."
     },
     "quoteOfTheDay": {
       "title": "프레드 아저씨의 오늘의 한마디",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "데이터베이스 & 공장 플래너 등장!"
+    "launch": "데이터베이스 & 공장 플래너 등장!",
+    "qotd": "홈페이지에 프레드의 '오늘의 명언' 추가",
+    "update11": "게임 데이터 버전 관리 추가 (0.10 안정 / 0.11 실험 버전 지원)"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "저장 데이터를 찾을 수 없음",
         "desc": "이 저장 데이터는 존재하지 않거나 삭제되었어요.",
         "link": "저장 데이터 목록으로 돌아가기"
+      },
+      "gameVersionNotice": {
+        "title": "버전별 게임 데이터",
+        "desc": "이제 저장 데이터에 버전 정보가 적용돼요. 기존 저장 데이터는 0.10 버전으로 기본 설정되어 있어요. <link>개요</link>에서 각 저장 데이터의 버전을 직접 수정할 수 있어요."
       }
     },
     "playthroughDetail": {

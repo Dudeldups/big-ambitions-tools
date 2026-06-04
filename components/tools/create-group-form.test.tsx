@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import CreateGroupForm from "./create-group-form";
 
@@ -15,6 +16,7 @@ describe("CreateGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -24,7 +26,9 @@ describe("CreateGroupForm", () => {
     await user.click(screen.getByRole("button", { name: /create group/i }));
     await user.click(screen.getByRole("button", { name: "Confirm" }));
 
-    expect(await screen.findByText("Group name is required.")).toBeInTheDocument();
+    expect(
+      await screen.findByText("Group name is required."),
+    ).toBeInTheDocument();
     expect(
       usePlaythroughStore.getState().getPlaythroughById(playthrough.id)
         ?.factoryGroups,
@@ -36,6 +40,7 @@ describe("CreateGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jamie",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -73,7 +78,9 @@ describe("CreateGroupForm", () => {
         position: "bottom-right",
       }),
     );
-    expect(screen.queryByText("Create a new factory group")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Create a new factory group"),
+    ).not.toBeInTheDocument();
   });
 
   it("resets edited values when the dialog is canceled", async () => {
@@ -81,6 +88,7 @@ describe("CreateGroupForm", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });

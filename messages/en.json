@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Delivery Driver",
     "openingHours": "Opening hours",
     "description": "Description",
+    "gameVersion": "Game version",
     "day": "day",
     "week": "week",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Select language",
     "intro": {
-      "desc": "A collection of infos and tools for the game <em>{gameName}</em> by {companyName}. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Calculations are based on version {gameVersion} of the game and may change with future updates."
+      "desc": "A collection of infos and tools for the game <em>{gameName}</em> by {companyName}. This fansite is currently focused on factory mechanics to help players optimize their gameplay. Data and calculations may change with future game updates."
     },
     "quoteOfTheDay": {
       "title": "Uncle Fred's quote of the day",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Launch: Database and Factory Planner"
+    "launch": "Launch: Database and Factory Planner",
+    "qotd": "Added Fred's 'Quote of the day' to the homepage",
+    "update11": "Added versioning for game data to support stable 0.10 and experimental 0.11 branches"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Playthrough not found",
         "desc": "This playthrough doesn't exist or has been deleted.",
         "link": "Back to playthrough overview"
+      },
+      "gameVersionNotice": {
+        "title": "Versioned Game Data",
+        "desc": "Playthroughs now use versioned game data. Existing saves were defaulted to version 0.10. You can edit the game version for each playthrough in the <link>overview</link>."
       }
     },
     "playthroughDetail": {

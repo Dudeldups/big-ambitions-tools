@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { useAppStore } from "@/lib/stores/appStore";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import CreatePlaythroughForm from "./create-playthrough-form";
@@ -13,11 +14,11 @@ describe("CreatePlaythroughForm", () => {
 
     renderWithIntl(<CreatePlaythroughForm />);
 
-    await user.click(
-      screen.getByRole("button", { name: /new playthrough/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /new playthrough/i }));
 
-    expect(screen.getByRole("status", { name: /loading/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: /loading/i }),
+    ).toBeInTheDocument();
     expect(screen.queryByLabelText("Easy")).not.toBeInTheDocument();
   });
 
@@ -28,9 +29,7 @@ describe("CreatePlaythroughForm", () => {
 
     renderWithIntl(<CreatePlaythroughForm />);
 
-    await user.click(
-      screen.getByRole("button", { name: /new playthrough/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /new playthrough/i }));
     await user.click(screen.getByRole("button", { name: "Confirm" }));
 
     expect(
@@ -47,9 +46,7 @@ describe("CreatePlaythroughForm", () => {
 
     renderWithIntl(<CreatePlaythroughForm />);
 
-    await user.click(
-      screen.getByRole("button", { name: /new playthrough/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /new playthrough/i }));
 
     expect(screen.getByLabelText("Hard")).toBeChecked();
 
@@ -63,6 +60,7 @@ describe("CreatePlaythroughForm", () => {
     expect(usePlaythroughStore.getState().playthroughs[0]).toMatchObject({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
       isActive: true,
     });
     expect(sonnerToastMock.success).toHaveBeenCalledWith(

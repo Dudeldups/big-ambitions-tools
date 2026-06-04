@@ -1,3 +1,4 @@
+import { gameData as gameData010 } from "@/data/game/0.10";
 import { describe, expect, it } from "vitest";
 import { deriveIngredientData, deriveProductData } from "./derivedFactoryData";
 import { FactoryFormValues } from "../schemas/factory";
@@ -35,7 +36,7 @@ const testFactory: FactoryFormValues = {
 
 describe("production limits", () => {
   it("applies a product limit across all matching workstations in the shopping list", () => {
-    const shoppingList = getShoppingList(testFactory, "normal");
+    const shoppingList = getShoppingList(testFactory, "normal", gameData010);
     const allItems = shoppingList.flatMap((entry) => entry.items);
 
     expect(allItems.every((item) => Number.isInteger(item.amount))).toBe(true);
@@ -52,6 +53,7 @@ describe("production limits", () => {
       "normal",
       "weekly",
       { hotdog: 100 },
+      gameData010,
     );
 
     expect(productRows).toHaveLength(1);
@@ -60,10 +62,16 @@ describe("production limits", () => {
   });
 
   it("rounds ingredient overview amounts up to whole numbers", () => {
-    const ingredientRows = deriveIngredientData(testFactory, "normal", "weekly");
+    const ingredientRows = deriveIngredientData(
+      testFactory,
+      "normal",
+      "weekly",
+      gameData010,
+    );
 
     expect(
-      ingredientRows.find((row) => row.name === "ingredients.rawSausage")?.amount,
+      ingredientRows.find((row) => row.name === "ingredients.rawSausage")
+        ?.amount,
     ).toBe(1000);
     expect(
       ingredientRows.find((row) => row.name === "ingredients.tomato")?.amount,
@@ -100,7 +108,7 @@ describe("production limits", () => {
       ],
     };
 
-    const shoppingList = getShoppingList(jewelryFactory, "normal");
+    const shoppingList = getShoppingList(jewelryFactory, "normal", gameData010);
     const allItems = shoppingList.flatMap((entry) => entry.items);
 
     expect(allItems.find((item) => item.name === "metalBand")?.amount).toBe(

@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Řidič dodávky",
     "openingHours": "Otevírací doba",
     "description": "Popis",
+    "gameVersion": "Verze hry",
     "day": "Den",
     "week": "Týden",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Zvolte jazyk",
     "intro": {
-      "desc": "Sbírka informací a nástrojů ke hře <em>{gameName}</em> od {companyName}. Tahle fanouškovská stránka se aktuálně zaměřuje na tovární mechaniky a pomáhá hráčům optimalizovat hraní. Výpočty vycházejí z verze hry {gameVersion} a s budoucími aktualizacemi se mohou změnit."
+      "desc": "Tady najdeš všechna info a nástroje k hře <em>{gameName}</em> od {companyName}. Momentálně se tato fanstránka soustředí hlavně na mechaniky továren, aby ti pomohla vytěžit z tvého podnikání to nejlepší. Data a výpočty se mohou měnit s budoucími aktualizacemi hry."
     },
     "quoteOfTheDay": {
       "title": "Citát dne strýčka Freda",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Databáze a plánovač výroby"
+    "launch": "Start: Databáze a plánovač výroby",
+    "qotd": "Přidáno Fredův 'Citát dne' na hlavní stránku",
+    "update11": "Přidáno verzování herních dat pro podporu stabilní větve 0.10 a experimentální 0.11"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Průběh nenalezen",
         "desc": "Tento průběh neexistuje nebo byl smazán.",
         "link": "Zpět na přehled průběhů"
+      },
+      "gameVersionNotice": {
+        "title": "Versionovaná herní data",
+        "desc": "Průběhy her nyní využívají verzionovaná herní data. U stávajících uložených her je výchozí verze 0.10. Verzi hry pro každý průběh můžeš upravit v <link>přehledu</link>."
       }
     },
     "playthroughDetail": {
@@ -589,7 +597,7 @@
         "notEnough": "Málo místa i pro denní dodávku.",
         "overflowWarning": "Zásoby se hromadí!",
         "overflowDesc": "Produkuješ rychleji, než spotřebováváš suroviny. Počet regálů se podle toho upravil.",
-        "limitedWeeklyAmount": "S limity výroby vyžaduje týdenní dodávka <strong>{count}</strong> {object}."
+        "limitedWeeklyAmount": "Kvůli limitům výroby vyžaduje týdenní dodávka <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Zadej mzdu pro každého zaměstnance. Nech pole prázdné, pokud nechceš mzdy zahrnout do výpočtů.",

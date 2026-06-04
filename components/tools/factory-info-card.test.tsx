@@ -5,6 +5,7 @@ import { routerMock } from "@/__tests__/mocks/i18n-navigation";
 import { sonnerToastMock } from "@/__tests__/mocks/sonner";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import FactoryInfoCard from "./factory-info-card";
 
@@ -17,6 +18,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -30,24 +32,25 @@ describe("FactoryInfoCard", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     renderWithIntl(
-      <FactoryInfoCard
-        factoryId={factory.id}
-        setDraggedFactoryId={vi.fn()}
-      />,
+      <FactoryInfoCard factoryId={factory.id} setDraggedFactoryId={vi.fn()} />,
     );
 
     expect(screen.getByText("Bakery")).toBeInTheDocument();
     expect(screen.getByText("Bread and pastries")).toBeInTheDocument();
     expect(screen.getByText(/12h/i)).toBeInTheDocument();
     expect(screen.getByText(/3x Clothing Workstation/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Bakery" })).toHaveAttribute(
+      "href",
+      `/tools/${playthrough.id}/factories/${factory.id}`,
+    );
     expect(
-      screen.getByRole("link", { name: "Bakery" }),
-    ).toHaveAttribute("href", `/tools/${playthrough.id}/factories/${factory.id}`);
-    expect(
-      screen.getAllByRole("link").some((link) =>
-        link.getAttribute("href") ===
-        `/tools/${playthrough.id}/factories/${factory.id}/edit`,
-      ),
+      screen
+        .getAllByRole("link")
+        .some(
+          (link) =>
+            link.getAttribute("href") ===
+            `/tools/${playthrough.id}/factories/${factory.id}/edit`,
+        ),
     ).toBe(true);
   });
 
@@ -56,6 +59,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -68,14 +72,14 @@ describe("FactoryInfoCard", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     renderWithIntl(
-      <FactoryInfoCard
-        factoryId={factory.id}
-        setDraggedFactoryId={vi.fn()}
-      />,
+      <FactoryInfoCard factoryId={factory.id} setDraggedFactoryId={vi.fn()} />,
     );
 
-    const card = screen.getByText("Copy Me").closest('[draggable="true"]')!;
-    const buttons = within(card).getAllByRole("button");
+    const card = screen
+      .getByText("Copy Me")
+      .closest('[draggable="true"]') as HTMLElement | null;
+    expect(card).toBeInstanceOf(HTMLElement);
+    const buttons = within(card!).getAllByRole("button");
 
     await user.click(buttons[0]);
 
@@ -93,6 +97,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -105,10 +110,7 @@ describe("FactoryInfoCard", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     renderWithIntl(
-      <FactoryInfoCard
-        factoryId={factory.id}
-        setDraggedFactoryId={vi.fn()}
-      />,
+      <FactoryInfoCard factoryId={factory.id} setDraggedFactoryId={vi.fn()} />,
     );
 
     await user.click(screen.getByRole("button", { name: "Delete" }));
@@ -134,6 +136,7 @@ describe("FactoryInfoCard", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Taylor",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,

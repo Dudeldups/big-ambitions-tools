@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "配送ドライバー",
     "openingHours": "営業時間",
     "description": "説明",
+    "gameVersion": "ゲームバージョン",
     "day": "日",
     "week": "週",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "言語を選択する",
     "intro": {
-      "desc": "<em>{gameName}</em> の情報やツールが集まるファンサイトだよ！{companyName} 製のゲームの工場メカニクスに特化して、効率的なプレイをサポート。計算データはバージョン {gameVersion} に基づいてるから、今後のアプデで変わることもあるよ。"
+      "desc": "{companyName}が手掛ける<em>{gameName}</em>の攻略情報やツールが集まるサイトです！今は「工場」の仕組みに特化して、効率的なプレイをサポート中。データや計算内容は、今後のアップデートで変わることもあるので注意してくださいね。"
     },
     "quoteOfTheDay": {
       "title": "フレッドおじさんの今日の言葉",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "データベースと工場プランナーが登場！"
+    "launch": "データベースと工場プランナーが登場！",
+    "qotd": "Fredの「今日の一言」をトップページに追加",
+    "update11": "安定版0.10と実験版0.11に対応するため、ゲームデータのバージョニングを追加"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "プレイが見つかりません",
         "desc": "このプレイは存在しないか、削除されてしまいました。",
         "link": "プレイ一覧に戻る"
+      },
+      "gameVersionNotice": {
+        "title": "バージョン付きゲームデータ",
+        "desc": "プレイスルーでバージョン管理されたゲームデータが使えるようになったよ！既存のセーブはデフォルトでバージョン 0.10 に設定されてる。各プレイスルーのバージョンは <link>一覧</link> から変更できるよ。"
       }
     },
     "playthroughDetail": {
@@ -589,7 +597,7 @@
         "notEnough": "日次配送でも保管スペースが不足しています。",
         "overflowWarning": "在庫が溢れそう！",
         "overflowDesc": "生産が材料の消費を上回ってるよ。棚の数もそれに合わせて調整したよ。",
-        "limitedWeeklyAmount": "生産制限を適用すると、週次の配送に<strong>{count}</strong>個の{object}が必要になります。"
+        "limitedWeeklyAmount": "生産制限のため、週次配送には<strong>{count}</strong> {object}が必要です。"
       },
       "employees": {
         "desc": "各従業員の給与を入力してね。給与計算が不要なら、空欄のままでOK！",
@@ -603,7 +611,7 @@
         "addBtn": "ワークステーション追加",
         "useProductionLimit": "生産制限を使う",
         "productionLimit": "週次生産制限",
-        "productionLimitTooltip": "工場でのこの製品の週次生産量を、設定した量に制限します。"
+        "productionLimitTooltip": "工場内の本製品の週次生産量を、設定した量に制限します。"
       },
       "buttonDesc": "新しい工場",
       "genericFactoryName": "{productName} 工場",

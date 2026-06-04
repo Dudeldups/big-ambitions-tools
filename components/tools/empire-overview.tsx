@@ -4,6 +4,7 @@ import {
   DerivedDataFromFormValues,
   deriveProductData,
 } from "@/lib/calculations/derivedFactoryData";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -48,10 +49,17 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
 
   // TODO add skeletons
   if (!difficulty || !priceIndices || !activePlaythrough) return null;
+  const gameData = getPlaythroughGameData(activePlaythrough);
 
   const factoriesProductData = factories
     .flatMap((factory) =>
-      deriveProductData(factory, difficulty, calculationPeriod, priceIndices),
+      deriveProductData(
+        factory,
+        difficulty,
+        calculationPeriod,
+        priceIndices,
+        gameData,
+      ),
     )
     .reduce<DerivedDataFromFormValues>((acc, item) => {
       const existing = acc.find((i) => i.name === item.name);

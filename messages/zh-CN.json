@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "送货司机",
     "openingHours": "营业时间",
     "description": "描述",
+    "gameVersion": "游戏版本",
     "day": "天",
     "week": "周",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "选择语言",
     "intro": {
-      "desc": "这里是 <em>{gameName}</em>（由 {companyName} 制作）的游戏信息和工具集合。本粉丝站目前专注于工厂机制，助你优化游戏体验。计算基于游戏版本 {gameVersion}，未来更新可能会有所变动。"
+      "desc": "这里汇集了 {companyName} 开发的游戏 <em>{gameName}</em> 的各类信息与工具。目前本站专注于工厂机制，助你玩转游戏、优化策略。数据和计算可能会随游戏后续更新而变动。"
     },
     "quoteOfTheDay": {
       "title": "弗雷德叔叔的今日名言",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "上线：数据库与工厂规划器"
+    "launch": "上线：数据库与工厂规划器",
+    "qotd": "首页新增了 Fred 的 '每日一语'",
+    "update11": "新增游戏数据版本管理，支持稳定版 0.10 和实验版 0.11 分支"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "找不到存档",
         "desc": "这个存档不存在，或者已经被删除了。",
         "link": "返回存档概览"
+      },
+      "gameVersionNotice": {
+        "title": "版本化游戏数据",
+        "desc": "存档现在支持版本化了。旧存档的默认版本是 0.10。你可以在 <link>概览</link> 里修改每个存档的版本。"
       }
     },
     "playthroughDetail": {
@@ -603,7 +611,7 @@
         "addBtn": "添加工作站",
         "useProductionLimit": "使用生产限制",
         "productionLimit": "每周生产限制",
-        "productionLimitTooltip": "将此产品在工厂内的每周产量限制为设定值。"
+        "productionLimitTooltip": "限制该产品在工厂的每周产量至设定值。"
       },
       "buttonDesc": "新建工厂",
       "genericFactoryName": "{productName} 工厂",

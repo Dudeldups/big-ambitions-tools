@@ -1,6 +1,7 @@
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { useAppStore } from "@/lib/stores/appStore";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import FactoryOverview from "./factory-overview";
@@ -51,6 +52,7 @@ describe("FactoryOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     useAppStore.setState({ _hasHydrated: true, calculationPeriod: "weekly" });
@@ -77,7 +79,9 @@ describe("FactoryOverview", () => {
 
     renderWithIntl(<FactoryOverview values={_testFactoryFormValues} />);
 
-    expect(screen.getByTestId("overview-One-time costs")).toHaveTextContent("3");
+    expect(screen.getByTestId("overview-One-time costs")).toHaveTextContent(
+      "3",
+    );
     expect(
       screen.getByTestId("overview-Recurring costs (weekly)"),
     ).toHaveTextContent("2");
@@ -97,6 +101,7 @@ describe("FactoryOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Alex",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     useAppStore.setState({ _hasHydrated: true, calculationPeriod: "weekly" });

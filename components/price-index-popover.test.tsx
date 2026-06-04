@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { BASE_PRODUCT_PRICE_INDEX } from "@/lib/constants";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import PriceIndexPopover from "./price-index-popover";
 
@@ -30,6 +31,7 @@ describe("PriceIndexPopover", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Chris",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -49,9 +51,8 @@ describe("PriceIndexPopover", () => {
     fireEvent.change(slider, { target: { value: "1.2" } });
 
     expect(
-      usePlaythroughStore
-        .getState()
-        .getPriceIndices(playthrough.id).classicCheapMaleClothing,
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id)
+        .classicCheapMaleClothing,
     ).toBe(1.2);
   });
 
@@ -60,6 +61,7 @@ describe("PriceIndexPopover", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Riley",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
@@ -78,9 +80,8 @@ describe("PriceIndexPopover", () => {
     });
 
     expect(
-      usePlaythroughStore
-        .getState()
-        .getPriceIndices(playthrough.id).classicCheapMaleClothing,
+      usePlaythroughStore.getState().getPriceIndices(playthrough.id)
+        .classicCheapMaleClothing,
     ).toBe(BASE_PRODUCT_PRICE_INDEX);
   });
 });

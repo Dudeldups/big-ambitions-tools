@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Curier",
     "openingHours": "Oră deschidere",
     "description": "Descriere",
+    "gameVersion": "Versiunea jocului",
     "day": "Zi",
     "week": "Săptămână",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Selectează limba",
     "intro": {
-      "desc": "Aici găsești info și tools pentru <em>{gameName}</em> de la {companyName}. Acest site dedicat fanilor se concentrează acum pe mecanicile fabricilor, ca să te ajutăm să îți optimizezi gameplay-ul. Calculele se bazează pe versiunea {gameVersion} și pot fi modificate prin actualizările viitoare."
+      "desc": "Aici găsești info și tool-uri despre <em>{gameName}</em> de la {companyName}. Acum ne concentrăm pe mecanicile de fabrică, ca să îți poți optimiza gameplay-ul. Datele și calculele s-ar putea schimba odată cu viitoarele update-uri."
     },
     "quoteOfTheDay": {
       "title": "Citatul zilei de la unchiul Fred",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Baza de date și Planificatorul de fabrică"
+    "launch": "Start: Baza de date și Planificatorul de fabrică",
+    "qotd": "Am adăugat 'Citatul zilei' lui Fred pe homepage",
+    "update11": "Am adăugat versionarea datelor de joc pentru versiunile stabile 0.10 și cele experimentale 0.11"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Nu am găsit nicio partidă",
         "desc": "Această partidă nu există sau a fost ștearsă.",
         "link": "Înapoi la lista de partide"
+      },
+      "gameVersionNotice": {
+        "title": "Date de joc versionate",
+        "desc": "Partidele folosesc acum date de joc versionate. Salvările existente au fost setate pe versiunea 0.10. Poți edita versiunea pentru fiecare partidă în <link>rezumat</link>."
       }
     },
     "playthroughDetail": {
@@ -602,7 +610,7 @@
       "workstations": {
         "addBtn": "Adaugă post de lucru",
         "useProductionLimit": "Folosește limita de producție",
-        "productionLimit": "Limită producție săptămânală",
+        "productionLimit": "Limită de producție săptămânală",
         "productionLimitTooltip": "Limitează producția săptămânală a acestui produs în fabrică la cantitatea selectată."
       },
       "buttonDesc": "Fabrică nouă",

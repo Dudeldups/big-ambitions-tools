@@ -1,11 +1,24 @@
 import userEvent from "@testing-library/user-event";
+import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { renderWithIntl, screen, waitFor } from "@/__tests__/test-utils";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
-import { products } from "@/lib/game/products";
+import { getGameData } from "@/lib/game/registry";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
+import { Translator } from "@/lib/types";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useEffect } from "react";
 import { useForm, UseFormReturn } from "react-hook-form";
 import FormWorkstations from "./form-workstations";
+
+vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
+
+const mockTranslator = Object.assign((key: string) => key, {
+  rich: (key: string) => key,
+  markup: (key: string) => key,
+  raw: (key: string) => key,
+  has: () => true,
+}) as unknown as Translator;
 
 vi.mock("./workstation-selects", () => ({
   default: ({ index }: { index: number }) => (
@@ -30,10 +43,20 @@ function FormWorkstationsHarness({
     onFormReady?.(form);
   }, [form, onFormReady]);
 
-  return <FormWorkstations form={form} t={(key: string) => key as never} />;
+  return <FormWorkstations form={form} t={mockTranslator} />;
 }
 
 describe("FormWorkstations", () => {
+  beforeEach(() => {
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Jordan",
+      difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+  });
+
   it("appends a new workstation with a matching default product", async () => {
     const user = userEvent.setup();
     let formRef: UseFormReturn<FactoryFormValues> | undefined;
@@ -60,13 +83,14 @@ describe("FormWorkstations", () => {
     });
 
     const newWorkstation = formRef?.getValues().workstations.at(-1);
+    const gameData = getGameData(DEFAULT_GAME_VERSION);
 
     expect(newWorkstation).toMatchObject({
       amount: 1,
       name: "clothingWorkstation",
     });
     expect(
-      newWorkstation && products[newWorkstation.product].workstation,
+      newWorkstation && gameData.products[newWorkstation.product]?.workstation,
     ).toBe("clothingWorkstation");
   });
 });

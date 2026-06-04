@@ -4,6 +4,7 @@ import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { mergeShoppingLists } from "@/lib/utils/mergeShoppingLists";
@@ -79,6 +80,7 @@ describe("GroupShoppingListDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Morgan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const bakery = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -91,7 +93,9 @@ describe("GroupShoppingListDialog", () => {
       shelfAmount: 4,
     });
 
-    usePlaythroughStore.getState().addFactoryToPlaythrough(playthrough.id, bakery.id);
+    usePlaythroughStore
+      .getState()
+      .addFactoryToPlaythrough(playthrough.id, bakery.id);
     usePlaythroughStore
       .getState()
       .addFactoryToPlaythrough(playthrough.id, pharmacy.id);
@@ -99,17 +103,24 @@ describe("GroupShoppingListDialog", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(3);
-    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({ external: 6 });
+    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({
+      daily: 2,
+      weekly: 6,
+      external: 6,
+      isOverflowing: false,
+    });
     vi.mocked(getShoppingList).mockImplementation((factory) => [
       {
         importer: `${factory.name}-importer`,
         items: [{ name: "water", amount: 10, value: 100 }],
       },
     ]);
-    vi.mocked(splitShoppingListByShelves).mockImplementation((shoppingList) => ({
-      factoryList: [],
-      externalList: shoppingList,
-    }));
+    vi.mocked(splitShoppingListByShelves).mockImplementation(
+      (shoppingList) => ({
+        factoryList: [],
+        externalList: shoppingList,
+      }),
+    );
     vi.mocked(mergeShoppingLists).mockReturnValue([
       {
         importer: "combined-importer",
@@ -117,7 +128,9 @@ describe("GroupShoppingListDialog", () => {
       },
     ]);
 
-    renderWithIntl(<GroupShoppingListDialog factoryIds={[bakery.id, pharmacy.id]} />);
+    renderWithIntl(
+      <GroupShoppingListDialog factoryIds={[bakery.id, pharmacy.id]} />,
+    );
 
     const trigger = screen.getByRole("button", { name: /shopping list/i });
     expect(trigger).not.toHaveClass("hidden");
@@ -147,18 +160,26 @@ describe("GroupShoppingListDialog", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
       name: "Covered Factory",
     });
 
-    usePlaythroughStore.getState().addFactoryToPlaythrough(playthrough.id, factory.id);
+    usePlaythroughStore
+      .getState()
+      .addFactoryToPlaythrough(playthrough.id, factory.id);
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(0);
-    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({ external: 0 });
+    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({
+      daily: 0,
+      weekly: 0,
+      external: 0,
+      isOverflowing: false,
+    });
     vi.mocked(getShoppingList).mockReturnValue([]);
     vi.mocked(splitShoppingListByShelves).mockReturnValue({
       factoryList: [],
@@ -168,8 +189,8 @@ describe("GroupShoppingListDialog", () => {
 
     renderWithIntl(<GroupShoppingListDialog factoryIds={[factory.id]} />);
 
-    expect(
-      screen.getByRole("button", { name: /shopping list/i }),
-    ).toHaveClass("hidden");
+    expect(screen.getByRole("button", { name: /shopping list/i })).toHaveClass(
+      "hidden",
+    );
   });
 });

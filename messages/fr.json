@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Livreur",
     "openingHours": "Heures d’ouverture",
     "description": "Description",
+    "gameVersion": "Version du jeu",
     "day": "jour",
     "week": "semaine",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Sélectionner la langue",
     "intro": {
-      "desc": "Des infos et des outils pour le jeu <em>{gameName}</em> de {companyName}. Ce fansite se concentre actuellement sur les mécaniques d'usine pour t'aider à optimiser ton gameplay. Les calculs sont basés sur la version {gameVersion} du jeu et peuvent évoluer avec les prochaines mises à jour."
+      "desc": "Retrouve ici des infos et des outils pour le jeu <em>{gameName}</em> de {companyName}. Actuellement, ce fansite se concentre sur les mécaniques d'usine pour t'aider à optimiser ton gameplay. Les données et calculs peuvent changer avec les futures mises à jour du jeu."
     },
     "quoteOfTheDay": {
       "title": "La citation du jour de l'oncle Fred",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Top départ : Base de données & Planificateur d'usine"
+    "launch": "Top départ : Base de données & Planificateur d'usine",
+    "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
+    "update11": "Versionnage des données de jeu ajouté pour supporter les branches stables 0.10 et expérimentales 0.11"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Partie introuvable",
         "desc": "Cette partie n'existe pas ou a été supprimée.",
         "link": "Retour à la liste des parties"
+      },
+      "gameVersionNotice": {
+        "title": "Données de jeu versionnées",
+        "desc": "Les parties utilisent désormais des données de jeu versionnées. Tes sauvegardes existantes ont été mises à la version 0.10 par défaut. Tu peux modifier la version du jeu pour chaque partie dans la <link>vue d'ensemble</link>."
       }
     },
     "playthroughDetail": {

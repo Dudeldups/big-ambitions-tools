@@ -12,6 +12,7 @@ import {
 import { ClipboardCheck } from "lucide-react";
 import ImporterTable from "../tables/importer-table";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { mergeShoppingLists } from "@/lib/utils/mergeShoppingLists";
@@ -35,16 +36,21 @@ const GroupShoppingListDialog = ({
   const groupFactories = factoryIds.map((fId) => getFactoryById(fId));
 
   if (!groupFactories || !activePlaythrough) return null;
+  const gameData = getPlaythroughGameData(activePlaythrough);
 
-  const neededPalletShelvesTotal = getMissingPalletShelvesTotal(groupFactories);
+  const neededPalletShelvesTotal = getMissingPalletShelvesTotal(
+    groupFactories,
+    gameData,
+  );
 
   const splitPerFactory = groupFactories.flatMap((factory) => {
     if (!factory) return [];
 
     return splitShoppingListByShelves(
-      getShoppingList(factory, activePlaythrough.difficulty),
-      getOptimalPalletShelfAmount(factory.workstations).external,
+      getShoppingList(factory, activePlaythrough.difficulty, gameData),
+      getOptimalPalletShelfAmount(factory.workstations, gameData).external,
       factory.shelfAmount,
+      gameData,
     ).externalList;
   });
 

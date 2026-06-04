@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Autista addetto alle consegne",
     "openingHours": "Orari di apertura",
     "description": "Descrizione",
+    "gameVersion": "Versione del gioco",
     "day": "Giorno",
     "week": "Settimana",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Seleziona lingua",
     "intro": {
-      "desc": "Qui trovi info e strumenti su <em>{gameName}</em> di {companyName}. Al momento, questo fan site si concentra sulle meccaniche della fabbrica per aiutarti a ottimizzare il gameplay. I calcoli si basano sulla versione {gameVersion} del gioco e potrebbero cambiare con i futuri aggiornamenti."
+      "desc": "Qui trovi info e tool per il gioco <em>{gameName}</em> di {companyName}. Al momento questo fansite si concentra sulle meccaniche delle fabbriche, per aiutarti a ottimizzare il tuo gameplay. Dati e calcoli potrebbero cambiare con i futuri aggiornamenti del gioco."
     },
     "quoteOfTheDay": {
       "title": "La citazione del giorno di Zio Fred",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Al via: Database e Pianificatore di fabbrica"
+    "launch": "Al via: Database e Pianificatore di fabbrica",
+    "qotd": "Aggiunta la 'Citazione del giorno' di Fred nella home",
+    "update11": "Aggiunto il versionamento dei dati di gioco per i branch stabile 0.10 e sperimentale 0.11"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Partita non trovata",
         "desc": "Questa partita non esiste o è stata eliminata.",
         "link": "Torna alla panoramica delle partite"
+      },
+      "gameVersionNotice": {
+        "title": "Dati di gioco versionati",
+        "desc": "Le partite ora usano dati di gioco versionati. I salvataggi esistenti sono stati impostati alla versione 0.10. Puoi modificare la versione del gioco per ogni partita nella <link>panoramica</link>."
       }
     },
     "playthroughDetail": {
@@ -601,7 +609,7 @@
       },
       "workstations": {
         "addBtn": "Aggiungi postazione",
-        "useProductionLimit": "Usa limite di produzione",
+        "useProductionLimit": "Usa limite produzione",
         "productionLimit": "Limite produzione settimanale",
         "productionLimitTooltip": "Limita la produzione settimanale di questo prodotto nella fabbrica alla quantità selezionata."
       },

@@ -11,6 +11,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
+import {
+  getGameVersionLabel,
+  SELECTABLE_GAME_VERSIONS,
+} from "@/lib/game/versions";
 import { PlaythroughFormValues } from "@/lib/schemas/playthrough";
 import { SquareCheckBig, X } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -44,11 +48,31 @@ const EditPlaythroughForm = ({
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent position="popper">
                 <SelectGroup>
                   {DIFFICULTY_OPTIONS.map((opt) => (
                     <SelectItem key={opt} value={opt}>
                       {tGeneral(`difficultyOptions.${opt}`)}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          )}
+        />
+        <Controller
+          control={control}
+          name="gameVersion"
+          render={({ field }) => (
+            <Select value={field.value} onValueChange={field.onChange}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent position="popper">
+                <SelectGroup>
+                  {SELECTABLE_GAME_VERSIONS.map((version) => (
+                    <SelectItem key={version} value={version}>
+                      {getGameVersionLabel(version)}
                     </SelectItem>
                   ))}
                 </SelectGroup>

@@ -1,14 +1,25 @@
 import userEvent from "@testing-library/user-event";
-import { renderWithIntl, screen, waitFor, within } from "@/__tests__/test-utils";
+import { setMockParams } from "@/__tests__/mocks/next-navigation";
+import {
+  renderWithIntl,
+  screen,
+  waitFor,
+  within,
+} from "@/__tests__/test-utils";
 import messages from "@/messages/en.json";
-import { products } from "@/lib/game/products";
+import { getGameData } from "@/lib/game/registry";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
+import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useFieldArray, useForm } from "react-hook-form";
 import WorkstationSelects from "./workstation-selects";
 import React from "react";
 
+vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
 vi.mock("next/image", () => ({
-  default: (props: React.ComponentProps<"img">) => <img {...props} alt={props.alt} />,
+  default: (props: React.ComponentProps<"img">) => (
+    <img {...props} alt={props.alt} />
+  ),
 }));
 
 vi.mock("../price-index-popover", () => ({
@@ -95,10 +106,10 @@ vi.mock("../ui/select", async () => {
   };
 });
 
-const productData = Object.entries(products).map(([key, value]) => ({
-  name: key,
-  ...value,
-}));
+const gameData = getGameData(DEFAULT_GAME_VERSION);
+const productData = Object.entries(gameData.products).flatMap(([key, value]) =>
+  value ? [{ name: key, ...value }] : [],
+);
 
 function WorkstationSelectsHarness() {
   const form = useForm<FactoryFormValues>({
@@ -147,6 +158,7 @@ function WorkstationSelectsHarness() {
             factoryWorkerSalary={10}
             openingHours={10}
             productData={productData}
+            gameData={gameData}
           />
         </div>
       ))}
@@ -204,6 +216,7 @@ function WorkstationSalesAmountHarness() {
             factoryWorkerSalary={10}
             openingHours={10}
             productData={productData}
+            gameData={gameData}
           />
         </div>
       ))}
@@ -215,6 +228,16 @@ function WorkstationSalesAmountHarness() {
 }
 
 describe("WorkstationSelects", () => {
+  beforeEach(() => {
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Jordan",
+      difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+  });
+
   it("allows toggling the production limit after copying and changing the product", async () => {
     const user = userEvent.setup();
     renderWithIntl(<WorkstationSelectsHarness />);
@@ -227,7 +250,9 @@ describe("WorkstationSelects", () => {
       }),
     ).toBeChecked();
 
-    const pizzaButtons = within(screen.getByTestId("workstation-1")).getAllByRole("button", {
+    const pizzaButtons = within(
+      screen.getByTestId("workstation-1"),
+    ).getAllByRole("button", {
       name: /pizza/i,
     });
     await user.click(pizzaButtons[0]);
@@ -242,9 +267,12 @@ describe("WorkstationSelects", () => {
       ).not.toBeChecked();
     });
 
-    const checkbox = within(screen.getByTestId("workstation-1")).getByRole("checkbox", {
-      name: messages.tools.factoryPlanner.workstations.useProductionLimit,
-    });
+    const checkbox = within(screen.getByTestId("workstation-1")).getByRole(
+      "checkbox",
+      {
+        name: messages.tools.factoryPlanner.workstations.useProductionLimit,
+      },
+    );
 
     await user.click(checkbox);
 

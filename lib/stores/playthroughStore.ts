@@ -7,9 +7,10 @@ import { PlaythroughFormValues } from "../schemas/playthrough";
 import { FactoryFormValues } from "../schemas/factory";
 import { generateUniqueId } from "./generateUniqueId";
 import { ProductName } from "../game/productNames";
-import { products } from "../game/products";
 import { BASE_PRODUCT_PRICE_INDEX } from "../constants";
 import { FactoryGroupFormValues } from "../schemas/factoryGroup";
+import { getGameData } from "../game/registry";
+import { Product } from "../game/types";
 
 export type Factory = FactoryFormValues & {
   id: string;
@@ -108,6 +109,33 @@ export const initialPlaythroughState: PlaythroughState = {
   templateFactory: undefined,
 };
 
+export const createDefaultPriceIndices = (
+  products: Partial<Record<ProductName, Product>>,
+): PriceIndices =>
+  Object.fromEntries(
+    Object.entries(products)
+      .filter(([, product]) => product && product.defaultMarketPrice > 0)
+      .map(([productName]) => [
+        productName as ProductName,
+        BASE_PRODUCT_PRICE_INDEX,
+      ]),
+  ) as PriceIndices;
+
+export const syncPriceIndicesToProducts = (
+  currentPriceIndices: PriceIndices,
+  products: Partial<Record<ProductName, Product>>,
+): PriceIndices => {
+  const defaultPriceIndices = createDefaultPriceIndices(products);
+
+  return Object.fromEntries(
+    Object.keys(defaultPriceIndices).map((productName) => [
+      productName,
+      currentPriceIndices[productName as ProductName] ??
+        BASE_PRODUCT_PRICE_INDEX,
+    ]),
+  ) as PriceIndices;
+};
+
 export const usePlaythroughStore = create(
   persist(
     immer<PlaythroughState & PlaythroughActions>((set, get) => ({
@@ -123,15 +151,8 @@ export const usePlaythroughStore = create(
 
         const existingIds = new Set(playthroughs.map((p) => p.id));
         const id = generateUniqueId(existingIds);
-
-        const defaultPriceIndices = Object.fromEntries(
-          Object.entries(products)
-            .filter(([, p]) => p.defaultMarketPrice > 0)
-            .map(([productName]) => [
-              productName as ProductName,
-              BASE_PRODUCT_PRICE_INDEX,
-            ]),
-        ) as PriceIndices;
+        const { products } = getGameData(values.gameVersion);
+        const defaultPriceIndices = createDefaultPriceIndices(products);
 
         const newPlaythrough = {
           ...values,
@@ -159,6 +180,17 @@ export const usePlaythroughStore = create(
             (p) => p.id === playthroughId,
           );
           if (playthrough) {
+            if (
+              updatedFields.gameVersion &&
+              updatedFields.gameVersion !== playthrough.gameVersion
+            ) {
+              const { products } = getGameData(updatedFields.gameVersion);
+              playthrough.priceIndices = syncPriceIndicesToProducts(
+                playthrough.priceIndices,
+                products,
+              );
+            }
+
             Object.assign(playthrough, updatedFields);
           }
         });
@@ -417,10 +449,23 @@ export const usePlaythroughStore = create(
     })),
     {
       name: "playthrough-storage",
-      version: 0,
+      version: 1,
       storage: createJSONStorage(() => indexedDBStorage),
       partialize: (state) => omit(state, ["_hasHydrated"]),
       skipHydration: true,
+      migrate: (persistedState) => {
+        const state = persistedState as PlaythroughState | undefined;
+
+        if (!state) return initialPlaythroughState;
+
+        return {
+          ...state,
+          playthroughs: state.playthroughs.map((playthrough) => ({
+            ...playthrough,
+            gameVersion: playthrough.gameVersion ?? "0.10",
+          })),
+        };
+      },
       onRehydrateStorage: () => (state) => {
         state?._setHasHydrated(true);
       },

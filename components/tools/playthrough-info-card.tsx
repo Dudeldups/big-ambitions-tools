@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { getGameVersionLabel } from "@/lib/game/versions";
 import {
   Playthrough,
   usePlaythroughStore,
@@ -61,6 +62,9 @@ const PlaythroughInfoCard = ({
           </dd>
           <dd className="text-muted-foreground">
             {tGeneral("factories")}: {pt.factoryIds.length}
+          </dd>
+          <dd className="text-muted-foreground">
+            {tGeneral("gameVersion")}: {getGameVersionLabel(pt.gameVersion)}
           </dd>
         </dl>
       </Link>

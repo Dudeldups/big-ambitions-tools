@@ -1,5 +1,6 @@
 import { ProductName } from "../game/productNames";
-import { products } from "../game/products";
+import { requireProduct } from "../game/requireGameData";
+import { GameData } from "../game/types";
 import { FormWorkstations } from "../schemas/factory";
 
 export type EffectiveProductProduction = {
@@ -26,10 +27,11 @@ const resolveProductionLimit = (
 export const getEffectiveProductionByProduct = (
   workstations: FormWorkstations,
   openingHours: number,
+  gameData: GameData,
 ): Partial<Record<ProductName, EffectiveProductProduction>> => {
   const grouped = workstations.reduce(
     (acc, ws) => {
-      const product = products[ws.product];
+      const product = requireProduct(gameData, ws.product);
       const prev = acc[ws.product] ?? {
         salesAmount: 0,
         fullRatePerHour: 0,
@@ -38,7 +40,8 @@ export const getEffectiveProductionByProduct = (
 
       acc[ws.product] = {
         salesAmount: prev.salesAmount + (ws.salesAmount ?? 0),
-        fullRatePerHour: prev.fullRatePerHour + product.productionRate * ws.amount,
+        fullRatePerHour:
+          prev.fullRatePerHour + product.productionRate * ws.amount,
         productionLimit: resolveProductionLimit(
           prev.productionLimit,
           ws.productionLimit,

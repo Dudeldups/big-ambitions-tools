@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Bezorger",
     "openingHours": "Openingstijden",
     "description": "Beschrijving",
+    "gameVersion": "Gameversie",
     "day": "Dag",
     "week": "Week",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Kies een taal",
     "intro": {
-      "desc": "Hier vind je info en tools rondom <em>{gameName}</em> van {companyName}. Op deze fansite draait alles momenteel om fabrieksmechanica, zodat je het beste uit je business kunt halen. De berekeningen zijn gebaseerd op versie {gameVersion} en kunnen veranderen met toekomstige updates."
+      "desc": "Hier vind je info en tools over <em>{gameName}</em> van {companyName}. Op deze fansite draait het momenteel allemaal om fabrieksmechanieken, zodat je het maximale uit je gameplay kunt halen. Data en berekeningen kunnen veranderen bij toekomstige game-updates."
     },
     "quoteOfTheDay": {
       "title": "Citaat van de dag van oom Fred",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Start: Database en Fabrieksplanner"
+    "launch": "Start: Database en Fabrieksplanner",
+    "qotd": "Freds 'Citaat van de dag' toegevoegd aan de homepage",
+    "update11": "Versionering voor gamedata toegevoegd om de stabiele 0.10 en experimentele 0.11 branches te ondersteunen"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Speelstand niet gevonden",
         "desc": "Deze speelstand bestaat niet of is verwijderd.",
         "link": "Terug naar het overzicht van speelstanden"
+      },
+      "gameVersionNotice": {
+        "title": "Spelgegevens met versies",
+        "desc": "Speelstanden gebruiken nu spelgegevens met versies. Bestaande speelstanden staan standaard op versie 0.10. Je kunt de spelversie per speelstand aanpassen in het <link>overzicht</link>."
       }
     },
     "playthroughDetail": {

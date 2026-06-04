@@ -3,6 +3,7 @@ import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { useAppState } from "./useAppState";
 import { usePlaythroughState } from "./usePlaythroughState";
 import { useActivePlaythrough } from "./useActivePlaythrough";
+import { DEFAULT_GAME_VERSION } from "../game/versions";
 import { useAppStore } from "../stores/appStore";
 import { usePlaythroughStore } from "../stores/playthroughStore";
 
@@ -30,6 +31,7 @@ describe("store hooks", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "easy",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
 
@@ -48,6 +50,7 @@ describe("store hooks", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Taylor",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });

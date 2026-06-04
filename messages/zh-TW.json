@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "送貨司機",
     "openingHours": "營業時間",
     "description": "描述",
+    "gameVersion": "遊戲版本",
     "day": "天",
     "week": "週",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "選擇語言",
     "intro": {
-      "desc": "這裡有關於 {companyName} 開發的 <em>{gameName}</em> 的資訊與工具。本粉絲站目前專注於工廠機制，幫助玩家優化玩法。計算基於遊戲版本 {gameVersion}，未來更新可能會有所變動。"
+      "desc": "這裡有 {companyName} 遊戲 <em>{gameName}</em> 的各種資訊和工具。目前這個粉絲站主要在研究工廠機制，想幫大家優化遊戲玩法。數據和計算可能會隨遊戲更新而變動。"
     },
     "quoteOfTheDay": {
       "title": "弗雷德叔叔的每日一句",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "登場：資料庫與工廠規劃器"
+    "launch": "登場：資料庫與工廠規劃器",
+    "qotd": "首頁新增 Fred 的「今日語錄」",
+    "update11": "新增遊戲數據版本控制，以支援穩定版 0.10 與實驗版 0.11 分支"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "找不到遊戲進度",
         "desc": "這個遊戲進度找不到了，或是已經被刪除了。",
         "link": "返回遊戲進度總覽"
+      },
+      "gameVersionNotice": {
+        "title": "遊戲資料版本",
+        "desc": "現在的遊戲進度都改用版本化的遊戲資料了。現有的存檔預設為 0.10 版本。你可以在 <link>概覽</link> 中修改每個遊戲進度的版本。"
       }
     },
     "playthroughDetail": {
@@ -603,7 +611,7 @@
         "addBtn": "新增工作站",
         "useProductionLimit": "使用生產限制",
         "productionLimit": "每週生產限制",
-        "productionLimitTooltip": "將工廠中此產品的每週產量限制在所選數量。"
+        "productionLimitTooltip": "限制此產品在工廠的每週產量為所選數量。"
       },
       "buttonDesc": "新工廠",
       "genericFactoryName": "{productName} 工廠",

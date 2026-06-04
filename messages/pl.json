@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Kierowca dostaw",
     "openingHours": "Godziny otwarcia",
     "description": "Opis",
+    "gameVersion": "Wersja gry",
     "day": "Dzień",
     "week": "Tydzień",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Wybierz język",
     "intro": {
-      "desc": "Znajdziesz tu informacje i narzędzia do <em>{gameName}</em> od {companyName}. Na tej stronie fanowskiej skupiamy się obecnie na mechanice fabrycznej, żebyś mógł wycisnąć z biznesu maksimum. Obliczenia opierają się na wersji {gameVersion} i mogą ulec zmianie przy przyszłych aktualizacjach."
+      "desc": "Tutaj znajdziesz info i narzędzia związane z <em>{gameName}</em> od {companyName}. Obecnie ta strona skupia się na mechanice fabryk, żeby pomóc Ci wycisnąć jak najwięcej z rozgrywki. Dane i obliczenia mogą ulec zmianie wraz z przyszłymi aktualizacjami gry."
     },
     "quoteOfTheDay": {
       "title": "Cytat dnia Wujka Freda",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Ruszamy: Baza danych i planer fabryczny"
+    "launch": "Ruszamy: Baza danych i planer fabryczny",
+    "qotd": "Dodano 'Cytat dnia' Freda na stronę główną",
+    "update11": "Dodano wersjonowanie danych gry dla gałęzi 0.10 (stabilna) i 0.11 (eksperymentalna)"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Nie znaleziono stanu gry",
         "desc": "Ten stan gry nie istnieje lub został usunięty.",
         "link": "Powrót do listy stanów gry"
+      },
+      "gameVersionNotice": {
+        "title": "Wersjonowane dane gry",
+        "desc": "Stany gry korzystają teraz z wersjonowanych danych. Istniejące zapisy mają domyślnie ustawioną wersję 0.10. Możesz zmienić wersję dla każdego stanu gry w <link>widoku ogólnym</link>."
       }
     },
     "playthroughDetail": {

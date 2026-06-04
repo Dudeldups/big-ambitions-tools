@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Toimituskuljettaja",
     "openingHours": "Aukioloajat",
     "description": "Kuvaus",
+    "gameVersion": "Peliversio",
     "day": "Päivä",
     "week": "Viikko",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Valitse kieli",
     "intro": {
-      "desc": "Tässä on kokoelma infoa ja työkaluja <em>{gameName}</em> -peliin ({companyName}). Tämä fanisivusto keskittyy tällä hetkellä tehtaan mekaniikkoihin, jotta saat pelistä kaiken irti. Laskelmat perustuvat versioon {gameVersion} ja voivat muuttua päivitysten myötä."
+      "desc": "Täältä löydät infoja ja työkaluja {companyName}:n pelistä <em>{gameName}</em>. Tällä hetkellä fanisivusto keskittyy tehdasmekaniikkaan, jotta saat pelistä kaiken irti. Tiedot ja laskelmat saattavat muuttua tulevissa päivityksissä."
     },
     "quoteOfTheDay": {
       "title": "Setä Fredin päivän sitaatti",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Julkaisu: Tietokanta ja tehassuunnittelija"
+    "launch": "Julkaisu: Tietokanta ja tehassuunnittelija",
+    "qotd": "Fredin 'Päivän mietelause' lisättiin etusivulle",
+    "update11": "Lisätty pelidatan versiointia tukemaan vakaata 0.10- ja kokeellista 0.11-haaroja"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Tallennusta ei löytynyt",
         "desc": "Tallennus ei ole olemassa tai se on poistettu.",
         "link": "Takaisin tallenteiden listaan"
+      },
+      "gameVersionNotice": {
+        "title": "Pelin versiotiedot",
+        "desc": "Tallennuksissa käytetään nyt versioituja pelitietoja. Olemassa olevat tallennukset on asetettu oletusarvoisesti versioon 0.10. Voit muuttaa peliversion jokaiselle tallennukselle <link>yleisnäkymässä</link>."
       }
     },
     "playthroughDetail": {
@@ -601,7 +609,7 @@
       },
       "workstations": {
         "addBtn": "Lisää työpiste",
-        "useProductionLimit": "Käytä tuotantorajoitetta",
+        "useProductionLimit": "Käytä tuotantorajaa",
         "productionLimit": "Viikoittainen tuotantoraja",
         "productionLimitTooltip": "Rajoittaa tämän tuotteen viikoittaisen tuotannon tehtaassa valittuun määrään."
       },

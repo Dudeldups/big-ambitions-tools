@@ -27,6 +27,7 @@ import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
 import { Separator } from "@/components/ui/separator";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { sLink } from "@/i18n/defaults";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 
 const FactoryIdPage = () => {
   const { t, rich } = useRichDefaults();
@@ -38,6 +39,7 @@ const FactoryIdPage = () => {
 
   // TODO add skeletons
   if (!activeFactory || !activePlaythrough || !priceIndices) return null;
+  const gameData = getPlaythroughGameData(activePlaythrough);
 
   const workstationAmount = activeFactory.workstations.reduce(
     (sum, ws) => sum + ws.amount,
@@ -49,11 +51,12 @@ const FactoryIdPage = () => {
   const shoppingListData = getShoppingList(
     activeFactory,
     activePlaythrough.difficulty,
+    gameData,
   );
 
   const recurringRowData = [
     ...deriveImporterTotals(shoppingListData),
-    ...deriveEmployeeData(activeFactory, calculationPeriod),
+    ...deriveEmployeeData(activeFactory, calculationPeriod, gameData),
   ];
 
   const sortedProductData = deriveProductData(
@@ -61,22 +64,25 @@ const FactoryIdPage = () => {
     activePlaythrough.difficulty,
     calculationPeriod,
     priceIndices,
+    gameData,
   ).sort((a, b) => (a.valueType ?? "").localeCompare(b.valueType ?? ""));
 
   const oneTimeCostRowData = [
-    ...derivePalletShelfData(activeFactory),
-    ...deriveVehicleData(activeFactory),
-    ...deriveWorkstationData(activeFactory),
+    ...derivePalletShelfData(activeFactory, gameData),
+    ...deriveVehicleData(activeFactory, gameData),
+    ...deriveWorkstationData(activeFactory, gameData),
   ];
 
   const requiredShelves = getOptimalPalletShelfAmount(
     activeFactory.workstations,
+    gameData,
   ).weekly;
 
   const { factoryList, externalList } = splitShoppingListByShelves(
     shoppingListData,
     requiredShelves,
     activeFactory.shelfAmount,
+    gameData,
   );
 
   const onDelete = () => {

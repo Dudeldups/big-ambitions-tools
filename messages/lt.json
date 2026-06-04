@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Pristatymo vairuotojas",
     "openingHours": "Darbo laikas",
     "description": "Aprašymas",
+    "gameVersion": "Žaidimo versija",
     "day": "Diena",
     "week": "Savaitė",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Pasirinkite kalbą",
     "intro": {
-      "desc": "Čia rasi informaciją ir įrankius apie <em>{gameName}</em> žaidimą, kurį sukūrė {companyName}. Šiuo metu ši fanų svetainė orientuota į gamyklos mechanikas, kad padėtų žaidėjams optimizuoti procesus. Skaičiavimai remiasi {gameVersion} versija ir gali keistis dėl būsimų atnaujinimų."
+      "desc": "Čia rasi informaciją ir įrankius <em>{gameName}</em> žaidimui, kurį sukūrė {companyName}. Šiuo metu ši fanų svetainė susitelkė į gamyklos mechaniką, kad padėtų tau geriau išnaudoti savo verslą. Duomenys ir skaičiavimai gali keistis su ateities žaidimo atnaujinimais."
     },
     "quoteOfTheDay": {
       "title": "Dėdės Fredo dienos citata",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Startas: Duomenų bazė ir gamyklos planuotojas"
+    "launch": "Startas: Duomenų bazė ir gamyklos planuotojas",
+    "qotd": "Fredo 'Dienos citata' pridėta į pagrindinį puslapį",
+    "update11": "Pridėtas žaidimo duomenų versijavimas (stabili 0.10 ir eksperimentinė 0.11 šakos)"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Žaidimo būsena nerasta",
         "desc": "Ši žaidimo būsena neegzistuoja arba buvo ištrinta.",
         "link": "Atgal į žaidimo būsenų apžvalgą"
+      },
+      "gameVersionNotice": {
+        "title": "Versionuoti žaidimo duomenys",
+        "desc": "Žaidimo būsenos dabar naudoja versijotus duomenis. Senoms žaidimo būsenoms nustatyta 0.10 versija. Žaidimo versiją kiekvienai būsenai gali pakeisti <link>apžvalgoje</link>."
       }
     },
     "playthroughDetail": {

@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Motorista de Entrega",
     "openingHours": "Horário de funcionamento",
     "description": "Descrição",
+    "gameVersion": "Versão do jogo",
     "day": "dia",
     "week": "semana",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Selecionar idioma",
     "intro": {
-      "desc": "Aqui você encontra informações e ferramentas sobre <em>{gameName}</em> da {companyName}. Atualmente, este site de fãs foca nas mecânicas de fábrica para ajudar você a otimizar sua produção e seu negócio. Os cálculos são baseados na versão {gameVersion} do jogo e podem mudar com atualizações futuras."
+      "desc": "Aqui você encontra infos e ferramentas sobre o jogo <em>{gameName}</em>, da {companyName}. No momento, este fansite foca nas mecânicas de fábrica para te ajudar a otimizar seu gameplay. Dados e cálculos podem mudar com futuras atualizações do jogo."
     },
     "quoteOfTheDay": {
       "title": "Citação do dia do Tio Fred",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Novidade: Base de Dados e Planeador de Fábrica"
+    "launch": "Novidade: Base de Dados e Planeador de Fábrica",
+    "qotd": "Adicionada a 'Frase do dia' do Fred à página inicial",
+    "update11": "Adicionado versionamento de dados para suportar as versões estável 0.10 e experimental 0.11"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Partida não encontrada",
         "desc": "Esta partida não existe ou foi excluída.",
         "link": "Voltar para a visão geral das partidas"
+      },
+      "gameVersionNotice": {
+        "title": "Dados do jogo versionados",
+        "desc": "As partidas agora usam dados de jogo versionados. As partidas antigas ficaram com a versão 0.10 por padrão. Você pode editar a versão do jogo de cada partida na <link>Visão Geral</link>."
       }
     },
     "playthroughDetail": {

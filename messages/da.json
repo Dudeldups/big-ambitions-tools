@@ -166,6 +166,7 @@
     "VordTiaraVic": "Vord Tiara Vic",
     "MersaidiS500": "Mersaidi S500",
     "MersaidiMGAGT": "Mersaidi MGA GT",
+    "LytteL6": "Lytte L6",
     "HonzaMimic": "Honza Mimic",
     "Ferdinand112": "Ferdinand 112",
     "UMCNunavut": "UMC Nunavut",
@@ -256,6 +257,7 @@
     "deliveryDriver": "Chauffør",
     "openingHours": "Åbningstider",
     "description": "Beskrivelse",
+    "gameVersion": "Spilversion",
     "day": "Dag",
     "week": "Uge",
     "difficultyOptions": {
@@ -395,7 +397,7 @@
   "home": {
     "selectLanguage": "Vælg sprog",
     "intro": {
-      "desc": "Her finder du info og værktøjer til <em>{gameName}</em> fra {companyName}. Denne fanside fokuserer lige nu på fabriksmekanik, så du kan få det bedste ud af dit gameplay. Beregningerne er baseret på version {gameVersion} og kan ændre sig med fremtidige opdateringer."
+      "desc": "Her finder du info og værktøjer til <em>{gameName}</em> fra {companyName}. Lige nu fokuserer denne fanside på fabrik-mekanikker, så du kan få det maksimale ud af dit gameplay. Data og beregninger kan ændre sig med fremtidige opdateringer."
     },
     "quoteOfTheDay": {
       "title": "Onkel Freds dagens citat",
@@ -474,7 +476,9 @@
     }
   },
   "updateHistory": {
-    "launch": "Startskud: Database og Fabriksplanlægger"
+    "launch": "Startskud: Database og Fabriksplanlægger",
+    "qotd": "Freds 'Dagens citat' tilføjet til forsiden",
+    "update11": "Versionering af spildata til support af stabile 0.10 og eksperimentelle 0.11 grene"
   },
   "database": {
     "intro": {
@@ -510,6 +514,10 @@
         "title": "Spilstand ikke fundet",
         "desc": "Denne spilstand findes ikke eller er blevet slettet.",
         "link": "Tilbage til spilstandsoversigt"
+      },
+      "gameVersionNotice": {
+        "title": "Versionerede spildata",
+        "desc": "Spilstande bruger nu versionerede spildata. Eksisterende spilstande er sat til version 0.10 som standard. Du kan ændre spilversionen for hver spilstand i <link>oversigten</link>."
       }
     },
     "playthroughDetail": {
@@ -589,7 +597,7 @@
         "notEnough": "For lidt lagerplads, selv til daglig levering.",
         "overflowWarning": "Lager løber over!",
         "overflowDesc": "Du producerer hurtigere end du bruger ingredienser. Antallet af hylder er blevet justeret derefter.",
-        "limitedWeeklyAmount": "Med produktionsgrænser kræver ugentlig levering <strong>{count}</strong> {object}."
+        "limitedWeeklyAmount": "Med produktionsgrænser kræver den ugentlige levering <strong>{count}</strong> {object}."
       },
       "employees": {
         "desc": "Indtast løn for hver medarbejder. Lad det stå tomt, hvis du ikke vil inkludere lønberegning.",
@@ -603,7 +611,7 @@
         "addBtn": "Tilføj arbejdsstation",
         "useProductionLimit": "Brug produktionsgrænse",
         "productionLimit": "Ugentlig produktionsgrænse",
-        "productionLimitTooltip": "Begrænser den ugentlige produktion af dette produkt i fabrikken til den valgte mængde."
+        "productionLimitTooltip": "Begrænser den ugentlige produktion af dette produkt på fabrikken til den valgte mængde."
       },
       "buttonDesc": "Ny fabrik",
       "genericFactoryName": "{productName} Fabrik",

@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { WORKSTATION_NAMES } from "@/lib/game/machineNames";
-import { Product, products } from "@/lib/game/products";
+import { Product } from "@/lib/game/types";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Copy, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -35,8 +35,10 @@ import { useMaxSalesAmount } from "@/lib/hooks/useMaxSalesAmount";
 import { useSyncProductWithWorkstation } from "@/lib/hooks/useSyncProductWithWorkstation";
 import { Checkbox } from "../ui/checkbox";
 import { ProductName } from "@/lib/game/productNames";
+import { requireProduct } from "@/lib/game/requireGameData";
 import { getEffectiveProductionByProduct } from "@/lib/calculations/getEffectiveProductionByProduct";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { GameData } from "@/lib/game/types";
 
 type WorkstationSelectsProps = {
   control: Control<FactoryFormValues>;
@@ -49,6 +51,7 @@ type WorkstationSelectsProps = {
   factoryWorkerSalary: number;
   openingHours: number;
   productData: (Product & { name: string })[];
+  gameData: GameData;
 };
 
 const WorkstationSelects = ({
@@ -62,6 +65,7 @@ const WorkstationSelects = ({
   factoryWorkerSalary,
   openingHours,
   productData,
+  gameData,
 }: WorkstationSelectsProps) => {
   const t = useTranslations();
 
@@ -81,23 +85,19 @@ const WorkstationSelects = ({
       ],
     });
 
+  const selectedProductData = requireProduct(gameData, selectedProduct);
   const productionAmount =
-    products[selectedProduct].productionRate *
-    workstationAmount *
-    openingHours *
-    7;
+    selectedProductData.productionRate * workstationAmount * openingHours * 7;
   const productionDataByProduct = getEffectiveProductionByProduct(
     allWorkstations,
     openingHours,
+    gameData,
   );
   const selectedProductProductionData =
     productionDataByProduct[selectedProduct];
   const weeklyProductionAmount =
     selectedProductProductionData?.fullWeeklyAmount ??
-    products[selectedProduct].productionRate *
-      workstationAmount *
-      openingHours *
-      7;
+    selectedProductData.productionRate * workstationAmount * openingHours * 7;
   const selectedProductLimit = allWorkstations.find(
     (workstation) =>
       workstation.product === selectedProduct &&
@@ -451,7 +451,7 @@ const WorkstationSelects = ({
           </div>
         </Field>
 
-        {products[selectedProduct].productSalesRatio > 0 && (
+        {selectedProductData.productSalesRatio > 0 && (
           <PriceIndexPopover
             selectedProduct={selectedProduct}
             factoryWorkerSalary={factoryWorkerSalary}

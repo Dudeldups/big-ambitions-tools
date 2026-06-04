@@ -1,6 +1,7 @@
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import EmpireOverview from "./empire-overview";
 
@@ -15,14 +16,20 @@ vi.mock("../tables/shared-table-columns", () => ({
   createNumericColumn: vi.fn(() => ({ id: "amount" })),
 }));
 vi.mock("../tables/data-table", () => ({
-  DataTable: ({ data }: { data: Array<{ itemName: string; amount: number }> }) => (
+  DataTable: ({
+    data,
+  }: {
+    data: Array<{ itemName: string; amount: number }>;
+  }) => (
     <div data-testid="empire-table">
       {data.map((row) => `${row.itemName}:${row.amount}`).join(",")}
     </div>
   ),
 }));
 vi.mock("../no-data-found", () => ({
-  default: ({ text }: { text: string }) => <div data-testid="no-data">{text}</div>,
+  default: ({ text }: { text: string }) => (
+    <div data-testid="no-data">{text}</div>
+  ),
 }));
 
 describe("EmpireOverview", () => {
@@ -39,6 +46,7 @@ describe("EmpireOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
       difficulty: "hard",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const bakery = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -53,7 +61,9 @@ describe("EmpireOverview", () => {
       name: "Ignored Factory",
     });
 
-    usePlaythroughStore.getState().addFactoryToPlaythrough(playthrough.id, bakery.id);
+    usePlaythroughStore
+      .getState()
+      .addFactoryToPlaythrough(playthrough.id, bakery.id);
     usePlaythroughStore
       .getState()
       .addFactoryToPlaythrough(playthrough.id, pharmacy.id);
@@ -81,7 +91,9 @@ describe("EmpireOverview", () => {
     expect(screen.getByTestId("empire-table")).toHaveTextContent(
       "burger:15,sodaCan:4",
     );
-    expect(screen.getByTestId("empire-table")).not.toHaveTextContent("umbrella");
+    expect(screen.getByTestId("empire-table")).not.toHaveTextContent(
+      "umbrella",
+    );
     expect(derivedMocks.deriveProductData).toHaveBeenCalledTimes(2);
   });
 
@@ -89,13 +101,16 @@ describe("EmpireOverview", () => {
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Casey",
       difficulty: "normal",
+      gameVersion: DEFAULT_GAME_VERSION,
     });
     const factory = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
       name: "Quiet Factory",
     });
 
-    usePlaythroughStore.getState().addFactoryToPlaythrough(playthrough.id, factory.id);
+    usePlaythroughStore
+      .getState()
+      .addFactoryToPlaythrough(playthrough.id, factory.id);
     usePlaythroughStore.setState({ _hasHydrated: true });
     setMockParams({ playthroughId: playthrough.id });
     derivedMocks.deriveProductData.mockReturnValue([]);

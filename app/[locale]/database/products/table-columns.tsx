@@ -8,10 +8,9 @@ import {
   createSalePriceColumn,
   createSourcePriceColumn,
 } from "@/components/tables/shared-table-columns";
-import { Product } from "@/lib/game/products";
 import TableHeadContent from "@/components/tables/table-head-content";
 import { getMeta } from "@/lib/utils/getMeta";
-import { StoreDifficulty } from "@/lib/game/types";
+import { GameData, Product, StoreDifficulty } from "@/lib/game/types";
 import { DisplayPrices } from "@/lib/stores/appStore";
 import IngredientsCell from "@/components/tables/ingredients-cell";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -31,6 +30,7 @@ export const productsColumns = (
   difficulty: StoreDifficulty,
   displayPrices: DisplayPrices | null,
   tablePriceIndex: number | null,
+  gameData?: GameData,
 ): ColumnDef<ProductsColumnData>[] => {
   const isManufactureMode = displayPrices?.source === "MANUFACTURE";
 
@@ -53,7 +53,12 @@ export const productsColumns = (
 
   return [
     createColumnWithImage(t, "itemName", "products"),
-    createSourcePriceColumn(difficulty, displayPrices, tablePriceIndex),
+    createSourcePriceColumn(
+      difficulty,
+      displayPrices,
+      tablePriceIndex,
+      gameData,
+    ),
     createSalePriceColumn(difficulty, displayPrices, tablePriceIndex),
     {
       id: "profitMargin",

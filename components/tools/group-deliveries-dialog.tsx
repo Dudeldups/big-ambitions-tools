@@ -15,6 +15,7 @@ import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
+import { getPlaythroughGameData } from "@/lib/game/registry";
 import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
 import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
@@ -34,14 +35,23 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
   const groupFactories = factoryIds.map((fId) => getFactoryById(fId));
 
   if (!groupFactories || !activePlaythrough) return null;
+  const gameData = getPlaythroughGameData(activePlaythrough);
 
-  const neededPalletShelvesTotal = getMissingPalletShelvesTotal(groupFactories);
+  const neededPalletShelvesTotal = getMissingPalletShelvesTotal(
+    groupFactories,
+    gameData,
+  );
 
   const deliveryLists = groupFactories.flatMap((factory) => {
     if (!factory) return [];
-    const shoppingList = getShoppingList(factory, activePlaythrough.difficulty);
+    const shoppingList = getShoppingList(
+      factory,
+      activePlaythrough.difficulty,
+      gameData,
+    );
     const requiredShelves = getOptimalPalletShelfAmount(
       factory.workstations,
+      gameData,
     ).external;
     if (factory.shelfAmount > requiredShelves) return [];
 
@@ -49,6 +59,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
       shoppingList,
       requiredShelves,
       factory.shelfAmount,
+      gameData,
     );
 
     return {
