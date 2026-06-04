@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { X } from "lucide-react";
 
 type GameVersionNoticeProps = {
-  onDismiss?: () => void;
+  onDismiss: () => void;
 };
 
 const GameVersionNotice = ({ onDismiss }: GameVersionNoticeProps) => {
