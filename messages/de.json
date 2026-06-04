@@ -460,7 +460,7 @@
       },
       "gameVersionNotice": {
         "title": "Versionierte Spieledaten",
-        "desc": "Spielstände benutzen nun versionierte Spieledaten. Existierende Spiestände sind auf Version 0.10 gesetzt worden. Du kannst die Spielversion für jeden Spielstand in der <link>Übersicht</link> ändern."
+        "desc": "Spielstände benutzen nun versionierte Spieledaten. Existierende Spielstände sind auf Version 0.10 gesetzt worden. Du kannst die Spielversion für jeden Spielstand in der <link>Übersicht</link> ändern."
       }
     },
     "playthroughDetail": {
