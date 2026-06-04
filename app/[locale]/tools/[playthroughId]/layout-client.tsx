@@ -18,6 +18,7 @@ import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import { StatBadge } from "@/components/deco/stat-badge";
 import { usePlaythroughDocumentTitle } from "@/lib/hooks/usePlaythroughDocumentTitle";
+import GameVersionNotice from "@/components/notices/game-version-notice";
 
 const PlaythroughIdLayoutClient = ({
   children,
@@ -58,6 +59,8 @@ const PlaythroughIdLayoutClient = ({
       <SectionWrapper variant="primary" size="compact" />
 
       <div className="px-clamp-x mt-10 mb-14">
+        <GameVersionNotice />
+
         <section className="bg-background shadow-foreground/30 border-foreground/20 max-w-page mx-auto rounded-lg border px-4 py-3 shadow-sm">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">
