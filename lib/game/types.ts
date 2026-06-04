@@ -50,7 +50,6 @@ export type Product = {
 
 export type Ingredient = {
   amountPerBox: number;
-  id: number;
   wholesalePrice: number;
   defaultMarketPrice: number;
   productSalesRatio: number;
