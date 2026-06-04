@@ -8,6 +8,7 @@ describe("useAppStore", () => {
 
     store.setDifficulty("hard");
     store.setGameVersion(DEFAULT_GAME_VERSION);
+    store.setHasSeenGameVersionNotice(true);
     store.setDisplayPrices(
       DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT,
       DISPLAY_PRICE_OPTIONS.TARGET.RETAIL,
@@ -19,6 +20,7 @@ describe("useAppStore", () => {
       ...initialAppState,
       difficulty: "hard",
       gameVersion: DEFAULT_GAME_VERSION,
+      hasSeenGameVersionNotice: true,
       displayPrices: {
         source: DISPLAY_PRICE_OPTIONS.SOURCE.IMPORT,
         target: DISPLAY_PRICE_OPTIONS.TARGET.RETAIL,
@@ -33,11 +35,13 @@ describe("useAppStore", () => {
 
     store.setDifficulty("normal");
     store.setGameVersion(DEFAULT_GAME_VERSION);
+    store.setHasSeenGameVersionNotice(true);
     store.setTablePriceIndex(1.15);
 
     const persistedState = localStorage.getItem("app-storage");
     expect(persistedState).toContain('"difficulty":"normal"');
     expect(persistedState).toContain(`"gameVersion":"${DEFAULT_GAME_VERSION}"`);
+    expect(persistedState).toContain('"hasSeenGameVersionNotice":true');
     expect(persistedState).not.toContain("_hasHydrated");
 
     useAppStore.setState({ _hasHydrated: false });
@@ -48,6 +52,7 @@ describe("useAppStore", () => {
       _hasHydrated: true,
       difficulty: "normal",
       gameVersion: DEFAULT_GAME_VERSION,
+      hasSeenGameVersionNotice: true,
       tablePriceIndex: 1.15,
     });
   });
