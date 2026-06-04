@@ -64,7 +64,6 @@ export type Workstation = {
 };
 
 export type Vehicle = {
-  id: number;
   purchasePrice: number;
   isATruck: boolean;
   maxFuel: number;
