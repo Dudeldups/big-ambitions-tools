@@ -48,11 +48,11 @@ const DatabaseLayoutClient = ({ children }: { children: React.ReactNode }) => {
         <div className="flex flex-col flex-wrap items-center gap-6 md:flex-row md:justify-between">
           <TableSwitcher />
 
-            <Label>{tGeneral("gameVersion")}</Label>
           <div className="flex max-w-xs flex-col items-end gap-0.5 space-y-2">
+            <Label htmlFor="db-game-version">{tGeneral("gameVersion")}</Label>
             {gameVersion ? (
               <Select value={gameVersion} onValueChange={setGameVersion}>
-                <SelectTrigger>
+                <SelectTrigger id="db-game-version">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent position="popper">
