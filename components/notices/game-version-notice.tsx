@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { sLink } from "@/i18n/defaults";
+import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { X } from "lucide-react";
 
 type GameVersionNoticeProps = {
@@ -9,15 +11,15 @@ type GameVersionNoticeProps = {
 };
 
 const GameVersionNotice = ({ onDismiss }: GameVersionNoticeProps) => {
+  const { t, rich } = useRichDefaults("tools.playthroughs.gameVersionNotice");
+
   return (
     <Card className="border-alert max-w-page mx-auto my-8 border">
       <CardContent className="flex gap-3 md:items-start md:justify-between">
         <div className="space-y-1">
-          <p className="font-semibold">Versioned game data</p>
+          <p className="font-semibold">{t("title")}</p>
           <p className="text-muted-foreground">
-            Playthroughs now use versioned game data. Existing saves were
-            defaulted to version 0.10. You can edit the game version for each
-            playthrough in the overview.
+            {rich("desc", { link: sLink("/tools") })}
           </p>
         </div>
 

@@ -457,6 +457,10 @@
         "title": "Playthrough not found",
         "desc": "This playthrough doesn't exist or has been deleted.",
         "link": "Back to playthrough overview"
+      },
+      "gameVersionNotice": {
+        "title": "Versioned Game Data",
+        "desc": "Playthroughs now use versioned game data. Existing saves were defaulted to version 0.10. You can edit the game version for each playthrough in the <link>overview</link>."
       }
     },
     "playthroughDetail": {
