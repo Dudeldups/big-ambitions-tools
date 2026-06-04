@@ -36,7 +36,6 @@ export type TableData<T extends TableType, V> = [TableKeyMap[T], V][];
 
 export type Product = {
   amountPerBox: number;
-  id: number;
   wholesalePrice: number;
   defaultMarketPrice: number;
   productSalesRatio: number;
