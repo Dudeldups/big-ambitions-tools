@@ -457,6 +457,10 @@
         "title": "Partie introuvable",
         "desc": "Cette partie n'existe pas ou a été supprimée.",
         "link": "Retour à la liste des parties"
+      },
+      "gameVersionNotice": {
+        "title": "Données de jeu versionnées",
+        "desc": "Les parties utilisent désormais des données de jeu versionnées. Tes sauvegardes existantes ont été mises à la version 0.10 par défaut. Tu peux modifier la version du jeu pour chaque partie dans la <link>vue d'ensemble</link>."
       }
     },
     "playthroughDetail": {

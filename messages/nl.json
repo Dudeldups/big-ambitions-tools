@@ -457,6 +457,10 @@
         "title": "Speelstand niet gevonden",
         "desc": "Deze speelstand bestaat niet of is verwijderd.",
         "link": "Terug naar het overzicht van speelstanden"
+      },
+      "gameVersionNotice": {
+        "title": "Spelgegevens met versies",
+        "desc": "Speelstanden gebruiken nu spelgegevens met versies. Bestaande speelstanden staan standaard op versie 0.10. Je kunt de spelversie per speelstand aanpassen in het <link>overzicht</link>."
       }
     },
     "playthroughDetail": {

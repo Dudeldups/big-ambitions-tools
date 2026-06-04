@@ -457,6 +457,10 @@
         "title": "找不到存档",
         "desc": "这个存档不存在，或者已经被删除了。",
         "link": "返回存档概览"
+      },
+      "gameVersionNotice": {
+        "title": "版本化游戏数据",
+        "desc": "存档现在支持版本化了。旧存档的默认版本是 0.10。你可以在 <link>概览</link> 里修改每个存档的版本。"
       }
     },
     "playthroughDetail": {

@@ -457,6 +457,10 @@
         "title": "Játékállapot nem található",
         "desc": "Ez a játékállapot nem létezik vagy törölve lett.",
         "link": "Vissza a játékállapotok listájához"
+      },
+      "gameVersionNotice": {
+        "title": "Verziósított játékadatok",
+        "desc": "A játékállapotok mostantól verziósított adatokat használnak. A meglévő mentések alapértelmezetten a 0.10-es verziót használják. Az <link>áttekintésben</link> minden játékállapotnál külön is módosíthatod a játékverziót."
       }
     },
     "playthroughDetail": {

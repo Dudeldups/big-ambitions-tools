@@ -457,6 +457,10 @@
         "title": "Partida no encontrada",
         "desc": "Esta partida no existe o ha sido eliminada.",
         "link": "Volver al resumen de partidas"
+      },
+      "gameVersionNotice": {
+        "title": "Datos de juego versionados",
+        "desc": "Las partidas ahora usan datos de juego versionados. Las partidas guardadas se han configurado por defecto en la versión 0.10. Puedes cambiar la versión del juego para cada partida en la <link>vista general</link>."
       }
     },
     "playthroughDetail": {

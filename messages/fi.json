@@ -457,6 +457,10 @@
         "title": "Tallennusta ei löytynyt",
         "desc": "Tallennus ei ole olemassa tai se on poistettu.",
         "link": "Takaisin tallenteiden listaan"
+      },
+      "gameVersionNotice": {
+        "title": "Pelin versiotiedot",
+        "desc": "Tallennuksissa käytetään nyt versioituja pelitietoja. Olemassa olevat tallennukset on asetettu oletusarvoisesti versioon 0.10. Voit muuttaa peliversion jokaiselle tallennukselle <link>yleisnäkymässä</link>."
       }
     },
     "playthroughDetail": {

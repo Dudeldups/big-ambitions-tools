@@ -457,6 +457,10 @@
         "title": "Oyun durumu bulunamadı",
         "desc": "Bu oyun durumu mevcut değil veya silinmiş.",
         "link": "Oyun durumları listesine dön"
+      },
+      "gameVersionNotice": {
+        "title": "Sürüm Bazlı Oyun Verileri",
+        "desc": "Oyun durumları artık sürüm bazlı veriler kullanıyor. Mevcut kayıtlar varsayılan olarak 0.10 sürümüne ayarlandı. Her oyun durumu için oyun sürümünü <link>genel bakış</link> kısmından düzenleyebilirsin."
       }
     },
     "playthroughDetail": {

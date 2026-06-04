@@ -457,6 +457,10 @@
         "title": "Žaidimo būsena nerasta",
         "desc": "Ši žaidimo būsena neegzistuoja arba buvo ištrinta.",
         "link": "Atgal į žaidimo būsenų apžvalgą"
+      },
+      "gameVersionNotice": {
+        "title": "Versionuoti žaidimo duomenys",
+        "desc": "Žaidimo būsenos dabar naudoja versijotus duomenis. Senoms žaidimo būsenoms nustatyta 0.10 versija. Žaidimo versiją kiekvienai būsenai gali pakeisti <link>apžvalgoje</link>."
       }
     },
     "playthroughDetail": {

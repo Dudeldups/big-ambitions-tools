@@ -457,6 +457,10 @@
         "title": "Nie znaleziono stanu gry",
         "desc": "Ten stan gry nie istnieje lub został usunięty.",
         "link": "Powrót do listy stanów gry"
+      },
+      "gameVersionNotice": {
+        "title": "Wersjonowane dane gry",
+        "desc": "Stany gry korzystają teraz z wersjonowanych danych. Istniejące zapisy mają domyślnie ustawioną wersję 0.10. Możesz zmienić wersję dla każdego stanu gry w <link>widoku ogólnym</link>."
       }
     },
     "playthroughDetail": {

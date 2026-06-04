@@ -457,6 +457,10 @@
         "title": "Nu am găsit nicio partidă",
         "desc": "Această partidă nu există sau a fost ștearsă.",
         "link": "Înapoi la lista de partide"
+      },
+      "gameVersionNotice": {
+        "title": "Date de joc versionate",
+        "desc": "Partidele folosesc acum date de joc versionate. Salvările existente au fost setate pe versiunea 0.10. Poți edita versiunea pentru fiecare partidă în <link>rezumat</link>."
       }
     },
     "playthroughDetail": {

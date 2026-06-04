@@ -457,6 +457,10 @@
         "title": "Průběh nenalezen",
         "desc": "Tento průběh neexistuje nebo byl smazán.",
         "link": "Zpět na přehled průběhů"
+      },
+      "gameVersionNotice": {
+        "title": "Versionovaná herní data",
+        "desc": "Průběhy her nyní využívají verzionovaná herní data. U stávajících uložených her je výchozí verze 0.10. Verzi hry pro každý průběh můžeš upravit v <link>přehledu</link>."
       }
     },
     "playthroughDetail": {

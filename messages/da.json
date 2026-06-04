@@ -457,6 +457,10 @@
         "title": "Spilstand ikke fundet",
         "desc": "Denne spilstand findes ikke eller er blevet slettet.",
         "link": "Tilbage til spilstandsoversigt"
+      },
+      "gameVersionNotice": {
+        "title": "Versionerede spildata",
+        "desc": "Spilstande bruger nu versionerede spildata. Eksisterende spilstande er sat til version 0.10 som standard. Du kan ændre spilversionen for hver spilstand i <link>oversigten</link>."
       }
     },
     "playthroughDetail": {
