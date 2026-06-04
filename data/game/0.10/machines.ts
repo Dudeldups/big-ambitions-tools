@@ -2,45 +2,35 @@ import { MachineName, WorkstationName } from "@/lib/game/machineNames";
 import { Machine, Workstation } from "@/lib/game/types";
 
 export const machines = {
-  industrialBlendingMachine: {
-    id: 371,
-    purchasePrice: 45000,
-  },
   automatedBakingMachine: {
-    id: 372,
     purchasePrice: 75000,
   },
-  foodAssemblyMachine: {
-    id: 376,
-    purchasePrice: 60000,
-  },
-  industrialSewingMachine: {
-    id: 421,
-    purchasePrice: 95000,
+  bottlingMachine: {
+    purchasePrice: 27500,
   },
   consumerGoodsAssemblyMachine: {
-    id: 425,
     purchasePrice: 240000,
   },
+  foodAssemblyMachine: {
+    purchasePrice: 60000,
+  },
+  hydroponicPlanter: {
+    purchasePrice: 35000,
+  },
+  industrialBlendingMachine: {
+    purchasePrice: 45000,
+  },
+  industrialSewingMachine: {
+    purchasePrice: 95000,
+  },
+  kilnMachine: {
+    purchasePrice: 115000,
+  },
   laserCuttingMachine: {
-    id: 441,
     purchasePrice: 145000,
   },
   polishingMachine: {
-    id: 442,
     purchasePrice: 125000,
-  },
-  kilnMachine: {
-    id: 444,
-    purchasePrice: 115000,
-  },
-  bottlingMachine: {
-    id: 468,
-    purchasePrice: 27500,
-  },
-  hydroponicPlanter: {
-    id: 698,
-    purchasePrice: 35000,
   },
 } as const satisfies Partial<Record<MachineName, Machine>>;
 

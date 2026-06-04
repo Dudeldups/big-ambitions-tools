@@ -56,7 +56,6 @@ export type Ingredient = {
 };
 
 export type Machine = {
-  id: number;
   purchasePrice: number;
 };
 
