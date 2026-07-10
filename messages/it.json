@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Al via: Database e Pianificatore di fabbrica",
     "qotd": "Aggiunta la 'Citazione del giorno' di Fred nella home",
-    "update11": "Aggiunto il versionamento dei dati di gioco per i branch stabile 0.10 e sperimentale 0.11"
+    "update11": "Aggiunto il versionamento dei dati di gioco per supportare le due versioni più recenti"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Dati di gioco versionati",
-        "desc": "Le partite ora usano dati di gioco versionati. I salvataggi esistenti sono stati impostati alla versione 0.10. Puoi modificare la versione del gioco per ogni partita nella <link>panoramica</link>."
+        "desc": "Le partite ora usano dati di gioco versionati. Puoi modificare la versione del gioco per ogni partita nella <link>panoramica</link>."
       }
     },
     "playthroughDetail": {

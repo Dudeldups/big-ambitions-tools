@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Launch: Database and Factory Planner",
     "qotd": "Added Fred's 'Quote of the day' to the homepage",
-    "update11": "Added versioning for game data to support stable 0.10 and experimental 0.11 branches"
+    "update11": "Added versioning for game data to support the two latest versions"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Versioned Game Data",
-        "desc": "Playthroughs now use versioned game data. Existing saves were defaulted to version 0.10. You can edit the game version for each playthrough in the <link>overview</link>."
+        "desc": "Playthroughs now use versioned game data. You can edit the game version for each playthrough in the <link>overview</link>."
       }
     },
     "playthroughDetail": {

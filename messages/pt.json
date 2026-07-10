@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Novidade: Base de Dados e Planeador de Fábrica",
     "qotd": "Adicionada a 'Frase do dia' do Fred à página inicial",
-    "update11": "Adicionado versionamento de dados para suportar as versões estável 0.10 e experimental 0.11"
+    "update11": "Adicionado versionamento de dados para suportar as duas versões mais recentes"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Dados do jogo versionados",
-        "desc": "As partidas agora usam dados de jogo versionados. As partidas antigas ficaram com a versão 0.10 por padrão. Você pode editar a versão do jogo de cada partida na <link>Visão Geral</link>."
+        "desc": "As partidas agora usam dados de jogo versionados. Você pode editar a versão do jogo de cada partida na <link>Visão Geral</link>."
       }
     },
     "playthroughDetail": {

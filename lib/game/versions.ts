@@ -16,7 +16,7 @@ export const GAME_VERSION_META = {
   },
   "0.11": {
     id: "0.11",
-    status: "experimental",
+    status: "stable",
   },
 } satisfies Record<GameVersion, GameVersionMeta>;
 

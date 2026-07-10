@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Indítás: Adatbázis és Gyártervező",
     "qotd": "Fred 'napi idézetét' hozzáadtuk a kezdőlaphoz",
-    "update11": "Hozzáadtuk a játékadatok verziózását, hogy támogassuk a stabil 0.10 és kísérleti 0.11 branch-eket"
+    "update11": "Hozzáadtuk a játékadatok verziózását, hogy támogassuk a két legújabb verziót"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Verziósított játékadatok",
-        "desc": "A játékállapotok mostantól verziósított adatokat használnak. A meglévő mentések alapértelmezetten a 0.10-es verziót használják. Az <link>áttekintésben</link> minden játékállapotnál külön is módosíthatod a játékverziót."
+        "desc": "A játékállapotok mostantól verziósított adatokat használnak. Az <link>áttekintésben</link> minden játékállapotnál külön is módosíthatod a játékverziót."
       }
     },
     "playthroughDetail": {

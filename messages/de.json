@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Startschuss: Datenbank und Fabrikplaner",
     "qotd": "Freds 'Zitat des Tages' zur Startseite hinzugefügt",
-    "update11": "Versionierung für Spieldaten hinzugefügt, um die stabile Version 0.10 und die experimentelle Version 0.11 zu unterstützen"
+    "update11": "Versionierung für Spieldaten hinzugefügt, um die beiden aktuellsten Versionen zu unterstützen"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Versionierte Spieledaten",
-        "desc": "Spielstände benutzen nun versionierte Spieledaten. Existierende Spielstände sind auf Version 0.10 gesetzt worden. Du kannst die Spielversion für jeden Spielstand in der <link>Übersicht</link> ändern."
+        "desc": "Spielstände benutzen nun versionierte Spieledaten. Du kannst die Spielversion für jeden Spielstand in der <link>Übersicht</link> ändern."
       }
     },
     "playthroughDetail": {

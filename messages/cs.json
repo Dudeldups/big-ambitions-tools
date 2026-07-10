@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Start: Databáze a plánovač výroby",
     "qotd": "Přidáno Fredův 'Citát dne' na hlavní stránku",
-    "update11": "Přidáno verzování herních dat pro podporu stabilní větve 0.10 a experimentální 0.11"
+    "update11": "Přidáno verzování herních dat pro podporu dvou nejnovějších verzí"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Versionovaná herní data",
-        "desc": "Průběhy her nyní využívají verzionovaná herní data. U stávajících uložených her je výchozí verze 0.10. Verzi hry pro každý průběh můžeš upravit v <link>přehledu</link>."
+        "desc": "Průběhy her nyní využívají verzionovaná herní data. Verzi hry pro každý průběh můžeš upravit v <link>přehledu</link>."
       }
     },
     "playthroughDetail": {

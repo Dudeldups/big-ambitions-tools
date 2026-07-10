@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Startas: Duomenų bazė ir gamyklos planuotojas",
     "qotd": "Fredo 'Dienos citata' pridėta į pagrindinį puslapį",
-    "update11": "Pridėtas žaidimo duomenų versijavimas (stabili 0.10 ir eksperimentinė 0.11 šakos)"
+    "update11": "Pridėtas žaidimo duomenų versijavimas, skirtas palaikyti dvi naujausias versijas"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Versionuoti žaidimo duomenys",
-        "desc": "Žaidimo būsenos dabar naudoja versijotus duomenis. Senoms žaidimo būsenoms nustatyta 0.10 versija. Žaidimo versiją kiekvienai būsenai gali pakeisti <link>apžvalgoje</link>."
+        "desc": "Žaidimo būsenos dabar naudoja versijotus duomenis. Žaidimo versiją kiekvienai būsenai gali pakeisti <link>apžvalgoje</link>."
       }
     },
     "playthroughDetail": {

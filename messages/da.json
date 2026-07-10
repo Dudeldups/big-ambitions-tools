@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Startskud: Database og Fabriksplanlægger",
     "qotd": "Freds 'Dagens citat' tilføjet til forsiden",
-    "update11": "Versionering af spildata til support af stabile 0.10 og eksperimentelle 0.11 grene"
+    "update11": "Versionering af spildata til understøttelse af de to nyeste versioner"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Versionerede spildata",
-        "desc": "Spilstande bruger nu versionerede spildata. Eksisterende spilstande er sat til version 0.10 som standard. Du kan ændre spilversionen for hver spilstand i <link>oversigten</link>."
+        "desc": "Spilstande bruger nu versionerede spildata. Du kan ændre spilversionen for hver spilstand i <link>oversigten</link>."
       }
     },
     "playthroughDetail": {

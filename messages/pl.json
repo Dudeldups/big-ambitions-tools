@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Ruszamy: Baza danych i planer fabryczny",
     "qotd": "Dodano 'Cytat dnia' Freda na stronę główną",
-    "update11": "Dodano wersjonowanie danych gry dla gałęzi 0.10 (stabilna) i 0.11 (eksperymentalna)"
+    "update11": "Dodano wersjonowanie danych gry, aby wspierać dwie najnowsze wersje"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Wersjonowane dane gry",
-        "desc": "Stany gry korzystają teraz z wersjonowanych danych. Istniejące zapisy mają domyślnie ustawioną wersję 0.10. Możesz zmienić wersję dla każdego stanu gry w <link>widoku ogólnym</link>."
+        "desc": "Stany gry korzystają teraz z wersjonowanych danych. Możesz zmienić wersję dla każdego stanu gry w <link>widoku ogólnym</link>."
       }
     },
     "playthroughDetail": {

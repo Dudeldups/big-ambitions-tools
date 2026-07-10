@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Julkaisu: Tietokanta ja tehassuunnittelija",
     "qotd": "Fredin 'Päivän mietelause' lisättiin etusivulle",
-    "update11": "Lisätty pelidatan versiointia tukemaan vakaata 0.10- ja kokeellista 0.11-haaroja"
+    "update11": "Lisätty pelidatan versiointia tukemaan kahta uusinta versiota"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Pelin versiotiedot",
-        "desc": "Tallennuksissa käytetään nyt versioituja pelitietoja. Olemassa olevat tallennukset on asetettu oletusarvoisesti versioon 0.10. Voit muuttaa peliversion jokaiselle tallennukselle <link>yleisnäkymässä</link>."
+        "desc": "Tallennuksissa käytetään nyt versioituja pelitietoja. Voit muuttaa peliversion jokaiselle tallennukselle <link>yleisnäkymässä</link>."
       }
     },
     "playthroughDetail": {

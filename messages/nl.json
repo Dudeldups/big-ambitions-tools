@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Start: Database en Fabrieksplanner",
     "qotd": "Freds 'Citaat van de dag' toegevoegd aan de homepage",
-    "update11": "Versionering voor gamedata toegevoegd om de stabiele 0.10 en experimentele 0.11 branches te ondersteunen"
+    "update11": "Versionering voor gamedata toegevoegd om de twee nieuwste versies te ondersteunen"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Spelgegevens met versies",
-        "desc": "Speelstanden gebruiken nu spelgegevens met versies. Bestaande speelstanden staan standaard op versie 0.10. Je kunt de spelversie per speelstand aanpassen in het <link>overzicht</link>."
+        "desc": "Speelstanden gebruiken nu spelgegevens met versies. Je kunt de spelversie per speelstand aanpassen in het <link>overzicht</link>."
       }
     },
     "playthroughDetail": {

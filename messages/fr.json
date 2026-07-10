@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Top départ : Base de données & Planificateur d'usine",
     "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
-    "update11": "Versionnage des données de jeu ajouté pour supporter les branches stables 0.10 et expérimentales 0.11"
+    "update11": "Versionnage des données de jeu ajouté pour prendre en charge les deux versions les plus récentes"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Données de jeu versionnées",
-        "desc": "Les parties utilisent désormais des données de jeu versionnées. Tes sauvegardes existantes ont été mises à la version 0.10 par défaut. Tu peux modifier la version du jeu pour chaque partie dans la <link>vue d'ensemble</link>."
+        "desc": "Les parties utilisent désormais des données de jeu versionnées. Tu peux modifier la version du jeu pour chaque partie dans la <link>vue d'ensemble</link>."
       }
     },
     "playthroughDetail": {

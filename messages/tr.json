@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "Başlıyoruz: Veritabanı ve Fabrika Planlayıcı",
     "qotd": "Fred'in 'Günün Sözü' ana sayfaya eklendi",
-    "update11": "Stabil 0.10 ve deneysel 0.11 sürümlerini desteklemek için oyun verilerine versiyonlama eklendi"
+    "update11": "En güncel iki sürümü desteklemek için oyun verilerine sürümleme eklendi"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "Sürüm Bazlı Oyun Verileri",
-        "desc": "Oyun durumları artık sürüm bazlı veriler kullanıyor. Mevcut kayıtlar varsayılan olarak 0.10 sürümüne ayarlandı. Her oyun durumu için oyun sürümünü <link>genel bakış</link> kısmından düzenleyebilirsin."
+        "desc": "Oyun durumları artık sürüm bazlı veriler kullanıyor. Her oyun durumu için oyun sürümünü <link>genel bakış</link> kısmından düzenleyebilirsin."
       }
     },
     "playthroughDetail": {

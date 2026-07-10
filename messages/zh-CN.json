@@ -478,7 +478,7 @@
   "updateHistory": {
     "launch": "上线：数据库与工厂规划器",
     "qotd": "首页新增了 Fred 的 '每日一语'",
-    "update11": "新增游戏数据版本管理，支持稳定版 0.10 和实验版 0.11 分支"
+    "update11": "新增游戏数据版本管理，以支持最新的两个版本"
   },
   "database": {
     "intro": {
@@ -517,7 +517,7 @@
       },
       "gameVersionNotice": {
         "title": "版本化游戏数据",
-        "desc": "存档现在支持版本化了。旧存档的默认版本是 0.10。你可以在 <link>概览</link> 里修改每个存档的版本。"
+        "desc": "存档现在支持版本化了。你可以在 <link>概览</link> 里修改每个存档的版本。"
       }
     },
     "playthroughDetail": {
