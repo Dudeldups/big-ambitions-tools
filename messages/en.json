@@ -505,6 +505,10 @@
     "intro": {
       "desc": "This is where you can dive deep into the numbers and statistics of the game. Plan your factories and manage the logistics for your whole empire!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions Factory Planner and Production Tools",
+      "desc": "Use the Big Ambitions factory planner to map out production lines, staffing, and supply chains in one place. Calculate required ingredients, machines, workers, and delivery volumes before bottlenecks appear."
+    },
     "playthroughs": {
       "desc": "Below, you can create and manage your playthroughs. A playthrough represents a single run of the game. You can create multiple playthroughs to compare different runs, experiment with other difficulties, or just keep track of your progress.",
       "warning": "Important: Your progress is stored in your browser. If you clear your browser data or use private/incognito mode, it may be lost.",

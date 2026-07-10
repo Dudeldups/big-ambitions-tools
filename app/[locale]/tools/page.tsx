@@ -10,6 +10,20 @@ import { useTranslations } from "next-intl";
 const Tools = () => {
   const t = useTranslations("tools");
   const tGeneral = useTranslations("general");
+  const plannerHighlights = [
+    {
+      title: t("factoryPlanner.title"),
+      description: t("factoryPlanner.desc"),
+    },
+    {
+      title: t("playthroughDetail.productionOverview"),
+      description: t("playthroughDetail.desc"),
+    },
+    {
+      title: t("factoryGroups.deliveries.title"),
+      description: t("factoryGroups.desc"),
+    },
+  ];
 
   return (
     <div className="main-wrapper">
@@ -21,6 +35,27 @@ const Tools = () => {
             <p className="text-h5">{t("intro.desc")}</p>
           </div>
         </hgroup>
+      </SectionWrapper>
+
+      <SectionWrapper className="gap-8 md:gap-10">
+        <DefaultHgroup
+          title={t("plannerOverview.title")}
+          caption={t("plannerOverview.desc")}
+        />
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {plannerHighlights.map((item) => (
+            <article
+              key={item.title}
+              className="bg-card border-border/60 shadow-accent/30 rounded-xl border p-5 shadow-sm"
+            >
+              <h2 className="text-h5 text-card-foreground">{item.title}</h2>
+              <p className="text-muted-foreground mt-3 text-sm leading-6">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </div>
       </SectionWrapper>
 
       <SectionWrapper className="gap-10 md:gap-14">

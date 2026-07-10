@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Hier tauchst du tief in die Zahlen und Statistiken des Spiels ein. Plane deine Fabriken und steuere die Logistik für dein ganzes Imperium!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions Fabrikplaner und Produktions-Tools",
+      "desc": "Nutze den Big Ambitions Fabrikplaner, um Produktionslinien, Mitarbeiter und Lieferketten an einem Ort zu planen. Berechne benötigte Zutaten, Maschinen, Arbeiter und Liefermengen, bevor Engpässe entstehen."
+    },
     "playthroughs": {
       "desc": "Unten kannst du deine Spielstände erstellen und verwalten. Ein Spielstand steht für einen einzelnen Durchgang des Spiels. Du kannst mehrere Spielstände anlegen, um verschiedene Runs zu vergleichen, andere Schwierigkeiten auszuprobieren oder einfach deinen Fortschritt im Auge zu behalten.",
       "warning": "Wichtig: Dein Fortschritt wird im Browser gespeichert. Löscht du die Browserdaten oder nutzt du den Privat- oder Inkognito-Modus, könnte alles weg sein.",
