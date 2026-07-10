@@ -526,7 +526,7 @@
     },
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
-      "productionOverview": "Weekly production overview",
+      "productionOverview": "Weekly Production Overview",
       "noProductionData": "No data available yet. Create factories and you'll see your production stats here."
     },
     "factories": {
@@ -576,7 +576,7 @@
       "ungroupedEmpty": "No ungrouped factories. Drag a factory card here or add a new factory.",
       "deliveries": {
         "buttonDesc": "Deliveries",
-        "title": "Delivery plan",
+        "title": "Delivery Plan",
         "descNeeded": "Delivery plans for each factory in this group. You will need {amount} pallet shelves to supply all factories.",
         "descEnough": "All factories have enough shelves to hold all needed ingredients."
       },
