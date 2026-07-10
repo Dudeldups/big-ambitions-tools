@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Hier duik je diep in de cijfers en statistieken van het spel. Plan je fabrieken en beheer de logistiek voor je hele imperium!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions fabrieksplanner en productietools",
+      "desc": "Gebruik de Big Ambitions-fabrieksplanner om productielijnen, personeel en toeleveringsketens op één plek te plannen. Bereken de benodigde ingrediënten, machines, arbeiders en leveringsvolumes voordat er knelpunten ontstaan."
+    },
     "playthroughs": {
       "desc": "Hieronder kun je je speelstanden aanmaken en beheren. Een speelstand staat voor een enkele run van het spel. Je kunt meerdere speelstanden maken om verschillende runs te vergelijken, andere moeilijkheden uit te proberen of gewoon je voortgang in de gaten te houden.",
       "warning": "Belangrijk: Je voortgang wordt opgeslagen in je browser. Als je de browserdata verwijdert of de incognitomodus gebruikt, kan je voortgang verloren gaan.",

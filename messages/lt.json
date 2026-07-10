@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Čia gali gilintis į žaidimo skaičius ir statistiką. Planuok savo gamyklas ir valdyk logistiką visam imperijui!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions gamyklų planuoklis ir gamybos įrankiai",
+      "desc": "Naudok Big Ambitions gamyklų planuoklį, kad vienoje vietoje suplanuotum gamybos linijas, darbuotojus ir tiekimo grandines. Apskaičiuok reikalingus ingredientus, mašinas, darbuotojus ir pristatymo kiekius dar prieš atsirandant siauriems taškams."
+    },
     "playthroughs": {
       "desc": "Žemiau gali sukurti ir valdyti savo žaidimo būsenas. Kiekviena iš jų yra atskiras žaidimo ciklas. Galėsi sukurti kelias būsenas, kad palygintum rezultatus, išbandytum kitus sunkumo lygius ar tiesiog stebėtum savo pažangą.",
       "warning": "Svarbu: Pažanga saugoma naršyklėje. Jei ištrinsi duomenis arba naudosi privačiu režimu, viskas gali išnykti.",

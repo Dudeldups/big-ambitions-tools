@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Itt merülhetsz el a játék számaiban és statisztikáiban. Tervezd meg a gyáraidat, és irányítsd az egész birodalmod logisztikáját!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions gyártervező és termelési eszközök",
+      "desc": "Használd a Big Ambitions gyártervezőjét, hogy egy helyen tervezhesd meg a gyártósorokat, a dolgozókat és az ellátási láncokat. Számold ki a szükséges alapanyagokat, gépeket, munkásokat és szállítási mennyiségeket még azelőtt, hogy szűk keresztmetszetek alakulnának ki."
+    },
     "playthroughs": {
       "desc": "Alul létrehozhatsz és kezelhetsz játékállapotokat. Egy játékállapot egyetlen menetet jelent. Létrehozhatsz több is, hogy összehasonlítsd a különböző meneteket, kipróbáld más nehézségi szinteket, vagy egyszerűen csak nyomon kövesd a haladásodat.",
       "warning": "Fontos: A haladásod a böngésződben tárolódik. Ha törölöd a böngészőadatokat vagy privát/incognito módot használsz, elveszítheted az egészet.",

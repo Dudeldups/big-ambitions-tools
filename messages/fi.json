@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Tässä voit sukeltaa syvälle pelin numeroihin ja tilastoihin. Suunnittele tehtaasi ja hallitse koko imperiumisi logistiikkaa!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions -tehdassuunnittelija ja tuotantotyökalut",
+      "desc": "Käytä Big Ambitionsin tehdassuunnittelijaa tuotantolinjojen, työntekijöiden ja toimitusketjujen suunnitteluun yhdessä paikassa. Laske tarvittavat ainekset, koneet, työntekijät ja toimitusmäärät ennen kuin pullonkauloja syntyy."
+    },
     "playthroughs": {
       "desc": "Alapuolella voit luoda ja hallita tallennuksiasi. Jokainen tallennus on oma pelikertansa. Voit tehdä useita tallennuksia vertaillaksesi eri pelikertoja, kokeilla muita vaikeustasoja tai vain seurata edistymistäsi.",
       "warning": "Huom: Edistymisesi tallentuu selaimeen. Jos tyhjennät selaimen tiedot tai käytät incognito-tilaa, kaikki voi kadota.",

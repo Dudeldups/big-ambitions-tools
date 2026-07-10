@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Tutaj możesz wgłębić się w liczby i statystyki gry. Planuj swoje fabryki i zarządzaj logistyką całego swojego imperium!"
     },
+    "plannerOverview": {
+      "title": "Planer fabryk i narzędzia produkcyjne Big Ambitions",
+      "desc": "Użyj planera fabryk Big Ambitions, aby w jednym miejscu zaplanować linie produkcyjne, pracowników i łańcuchy dostaw. Oblicz potrzebne składniki, maszyny, robotników i wielkości dostaw, zanim pojawią się wąskie gardła."
+    },
     "playthroughs": {
       "desc": "Poniżej możesz tworzyć i zarządzać stanami gry. Każdy z nich to jedna sesja w grze. Możesz tworzyć wiele stanów gry, żeby porównywać różne podejścia, testować inne poziomy trudności lub po prostu śledzić postępy.",
       "warning": "Ważne: Twój postęp jest zapisywany w przeglądarce. Jeśli wyczyścisz dane przeglądarki lub użyjesz trybu prywatnego/incognito, wszystko może zniknąć.",

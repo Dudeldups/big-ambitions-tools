@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Aqui você pode mergulhar fundo nos números e estatísticas do jogo. Planeje suas fábricas e gerencie a logística de todo o seu império!"
     },
+    "plannerOverview": {
+      "title": "Planejador de fábricas e ferramentas de produção de Big Ambitions",
+      "desc": "Use o planejador de fábricas de Big Ambitions para organizar linhas de produção, funcionários e cadeias de suprimento em um só lugar. Calcule os ingredientes, máquinas, trabalhadores e volumes de entrega necessários antes que surjam gargalos."
+    },
     "playthroughs": {
       "desc": "Abaixo, você pode criar e gerenciar suas partidas. Uma partida representa uma única execução do jogo. Você pode criar múltiplas partidas para comparar diferentes tentativas, experimentar outras dificuldades ou apenas acompanhar seu progresso.",
       "warning": "Importante: Seu progresso é salvo no seu navegador. Se você limpar os dados do navegador ou usar o modo privado/incógnito, tudo pode ser perdido.",

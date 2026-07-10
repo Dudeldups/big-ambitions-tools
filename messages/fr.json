@@ -505,6 +505,10 @@
     "intro": {
       "desc": "C'est ici que tu peux plonger dans les chiffres et les statistiques du jeu. Planifie tes usines et gère la logistique de tout ton empire !"
     },
+    "plannerOverview": {
+      "title": "Planificateur d'usines et outils de production Big Ambitions",
+      "desc": "Utilise le planificateur d'usines Big Ambitions pour organiser tes lignes de production, tes employés et tes chaînes logistiques au même endroit. Calcule les ingrédients, machines, ouvriers et volumes de livraison nécessaires avant que des goulets d'étranglement n'apparaissent."
+    },
     "playthroughs": {
       "desc": "Ci-dessous, tu peux créer et gérer tes parties. Une partie représente une seule session de jeu. Tu peux en créer plusieurs pour comparer différents runs, tester d'autres difficultés ou simplement suivre ta progression.",
       "warning": "Important : ta progression est enregistrée dans ton navigateur. Si tu effaces les données du navigateur ou utilises le mode privé/incognito, elle pourrait être perdue.",

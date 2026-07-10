@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Tady se můžeš naplno ponořit do čísel a statistik hry. Plánuj své továrny a řiď logistiku celého impéria!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions plánovač továren a výrobní nástroje",
+      "desc": "Použij plánovač továren pro Big Ambitions k plánování výrobních linek, zaměstnanců a dodavatelských řetězců na jednom místě. Spočítej potřebné suroviny, stroje, pracovníky i objemy dodávek dřív, než vzniknou úzká místa."
+    },
     "playthroughs": {
       "desc": "Dole si můžeš vytvářet a spravovat své průběhy hry. Každý z nich představuje jeden samostatný průběh. Můžeš si vytvořit více průběhů, abys mohl porovnávat různé výsledky, zkoušet jiné obtížnosti nebo prostě jen sledovat svůj postup.",
       "warning": "Důležité: Tvůj postup se ukládá v prohlížeči. Pokud smažeš data prohlížeče nebo používáš soukromý/anonymní režim, můžeš o něj přijít.",

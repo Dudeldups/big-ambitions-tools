@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Her kan du dykke ned i spillets tal og statistikker. Planlæg dine fabrikker og styr logistikken for dit hele imperium!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions fabriksplanlægger og produktionsværktøjer",
+      "desc": "Brug Big Ambitions-fabriksplanlæggeren til at planlægge produktionslinjer, medarbejdere og forsyningskæder ét sted. Beregn nødvendige ingredienser, maskiner, arbejdere og leveringsmængder, før der opstår flaskehalse."
+    },
     "playthroughs": {
       "desc": "Her kan du oprette og styre dine spilstande. En spilstand er én gennemspilning af spillet. Du kan lave flere spilstande for at sammenligne forskellige runs, prøve andre sværhedsgrader eller bare holde styr på dine fremskridt.",
       "warning": "Vigtigt: Dit fremskridt gemmes i din browser. Sletter du browserdata eller bruger privat-/inkognito-tilstand, kan det gå tabt.",

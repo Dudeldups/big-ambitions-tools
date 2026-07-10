@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Aici poți să te scufunzi adânc în cifrele și statisticile jocului. Planifică-ți fabricile și gestionează logistica pentru întregul tău imperiu!"
     },
+    "plannerOverview": {
+      "title": "Planificator de fabrici și unelte de producție Big Ambitions",
+      "desc": "Folosește planificatorul de fabrici Big Ambitions pentru a organiza liniile de producție, personalul și lanțurile de aprovizionare într-un singur loc. Calculează ingredientele, utilajele, muncitorii și volumele de livrare necesare înainte să apară blocaje."
+    },
     "playthroughs": {
       "desc": "Mai jos poți crea și gestiona partidele tale. O partidă reprezintă o singură sesiune de joc. Poți crea mai multe partide pentru a compara diferite sesiuni, a testa alte dificultăți sau pur și simplu pentru a-ți urmări progresul.",
       "warning": "Atenție: Progresul tău este stocat în browser. Dacă ștergi datele din browser sau folosești modul privat/incognito, totul ar putea dispărea.",

@@ -505,6 +505,10 @@
     "intro": {
       "desc": "Burada oyunun rakamlarına ve istatistiklerine derinlemesine dalabilirsin. Fabrikalarını planla ve tüm imparatorluğunun lojistiğini yönet!"
     },
+    "plannerOverview": {
+      "title": "Big Ambitions fabrika planlayıcısı ve üretim araçları",
+      "desc": "Big Ambitions fabrika planlayıcısını kullanarak üretim hatlarını, çalışanları ve tedarik zincirlerini tek bir yerde planla. Darboğazlar oluşmadan önce gerekli malzemeleri, makineleri, işçileri ve teslimat miktarlarını hesapla."
+    },
     "playthroughs": {
       "desc": "Aşağıda oyun durumlarını oluşturabilir ve yönetebilirsin. Bir oyun durumu, oyunun tek bir turunu temsil eder. Farklı turları karşılaştırmak, farklı zorlukları denemek veya sadece ilerlemeni takip etmek için birden fazla oyun durumu oluşturabilirsin.",
       "warning": "Önemli: İlerlemen tarayıcında saklanır. Tarayıcı verilerini silersen veya Gizli/İnkognito Mod kullanırsan, her şey kaybolabilir.",
