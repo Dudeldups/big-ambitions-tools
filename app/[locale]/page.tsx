@@ -263,7 +263,10 @@ export default function Home() {
         <ul className="relative grid grid-cols-[auto_auto_minmax(0,1fr)] gap-x-6 gap-y-4 text-left lg:mx-auto">
           {updateHistory
             .slice()
-            .reverse()
+            .sort(
+              (a, b) =>
+                new Date(b.date).getTime() - new Date(a.date).getTime(),
+            )
             .map((update, index) => (
               <li
                 key={`update-${index}`}
