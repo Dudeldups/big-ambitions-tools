@@ -36,7 +36,7 @@ vi.mock("@/lib/hooks/useRichDefaults", () => ({
       const translations: Record<string, string> = {
         "general.palletShelves": "Pallet shelves",
         "tools.factoryPlanner.information.palletDesc":
-          "Define how many pallet shelves are available in this factory.",
+          "Define how many pallet shelves are available in this factory. Set this to 0 to order all ingredients to the warehouse group instead.",
         "tools.factoryPlanner.information.shelfExplanation":
           "Add at least one workstation to see the required number of pallet shelves.",
         "tools.factoryPlanner.information.enoughWeekly":
@@ -120,6 +120,28 @@ describe("PalletShelfField", () => {
     await waitFor(() => {
       expect(input).toHaveValue(7);
     });
+  });
+
+  it("allows zero shelves when all ingredients are ordered to the warehouse group", () => {
+    palletShelfMocks.getOptimalPalletShelfAmounts.mockReturnValue({
+      full: {
+        daily: 1,
+        weekly: 2,
+        external: 2,
+        isOverflowing: false,
+      },
+      limited: null,
+    });
+
+    renderWithIntl(<PalletShelfFieldHarness shelfAmount={0} />);
+
+    expect(screen.getByLabelText("Pallet shelves")).toHaveValue(0);
+    expect(screen.getByLabelText("Pallet shelves")).toHaveAttribute("min", "0");
+    expect(
+      screen.getByText(
+        "Define how many pallet shelves are available in this factory. Set this to 0 to order all ingredients to the warehouse group instead.",
+      ),
+    ).toBeInTheDocument();
   });
 
   it("shows the shelf explanation when no workstation-based shelves are needed yet", () => {

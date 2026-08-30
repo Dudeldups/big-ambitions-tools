@@ -62,7 +62,7 @@ export function PalletShelfField({ className, control, errors }: Props) {
               id="shelf-amount"
               type="number"
               placeholder="0"
-              min={1}
+              min={0}
               {...field}
               onChange={(e) => {
                 let value = e.target.value.replace(/^0+/, "");

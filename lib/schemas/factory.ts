@@ -14,7 +14,7 @@ export const factorySchema = z.object({
 
   openingHours: z.number().min(1).max(24),
 
-  shelfAmount: z.number().min(1, "errors.factory.shelfAmountTooLow"),
+  shelfAmount: z.number().min(0, "errors.factory.shelfAmountTooLow"),
 
   employees: employeesSchema,
 
