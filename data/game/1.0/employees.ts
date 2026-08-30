@@ -20,7 +20,7 @@ export const employees = {
   },
   deliveryDriver: {
     baseHourlyWage: 18,
-    hasParttimeDemand: false,
+    hasParttimeDemand: true,
     customWorkingHours: DELIVERY_DRIVER_WORKING_HOURS,
   },
   dj: {
@@ -65,6 +65,10 @@ export const employees = {
     baseHourlyWage: 30,
     hasParttimeDemand: true,
     customWorkingHours: HQ_WORKING_HOURS,
+  },
+  pricingManager: {
+    baseHourlyWage: 30,
+    hasParttimeDemand: true,
   },
   programmer: {
     baseHourlyWage: 36,

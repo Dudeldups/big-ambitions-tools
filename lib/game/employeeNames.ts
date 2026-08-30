@@ -19,6 +19,7 @@ export const EMPLOYEE_NAMES = [
   "programmer",
   "eventPlanner",
   "travelAgent",
+  "pricingManager",
 ] as const;
 
 export type EmployeeName = (typeof EMPLOYEE_NAMES)[number];

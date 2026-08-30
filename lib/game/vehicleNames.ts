@@ -14,6 +14,7 @@ export const VEHICLE_NAMES = [
   "FreightTruckT1",
   "MersaidiDash",
   "LytteL6",
+  "Limo",
 ] as const;
 
 export type VehicleName = (typeof VEHICLE_NAMES)[number];

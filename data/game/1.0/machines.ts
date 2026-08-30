@@ -6,7 +6,7 @@ export const machines = {
     purchasePrice: 75000,
   },
   bottlingMachine: {
-    purchasePrice: 95000,
+    purchasePrice: 27500,
   },
   consumerGoodsAssemblyMachine: {
     purchasePrice: 240000,
