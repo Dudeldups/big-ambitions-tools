@@ -87,7 +87,7 @@ describe("EmpireOverview", () => {
 
     renderWithIntl(<EmpireOverview className="test-class" />);
 
-    expect(screen.getByText("Weekly production overview")).toBeInTheDocument();
+    expect(screen.getByText("Weekly Production Overview")).toBeInTheDocument();
     expect(screen.getByTestId("empire-table")).toHaveTextContent(
       "burger:15,sodaCan:4",
     );

@@ -12,8 +12,9 @@ import {
 } from "@/components/ui/select";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
 import {
+  GAME_VERSIONS,
   getGameVersionLabel,
-  SELECTABLE_GAME_VERSIONS,
+  getGameVersionMeta,
 } from "@/lib/game/versions";
 import { PlaythroughFormValues } from "@/lib/schemas/playthrough";
 import { SquareCheckBig, X } from "lucide-react";
@@ -70,8 +71,14 @@ const EditPlaythroughForm = ({
               </SelectTrigger>
               <SelectContent position="popper">
                 <SelectGroup>
-                  {SELECTABLE_GAME_VERSIONS.map((version) => (
-                    <SelectItem key={version} value={version}>
+                  {GAME_VERSIONS.map((version) => (
+                    <SelectItem
+                      key={version}
+                      value={version}
+                      disabled={
+                        getGameVersionMeta(version).status === "archived"
+                      }
+                    >
                       {getGameVersionLabel(version)}
                     </SelectItem>
                   ))}

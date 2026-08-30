@@ -1,4 +1,4 @@
-export const GAME_VERSIONS = ["0.10", "0.11"] as const;
+export const GAME_VERSIONS = ["0.10", "0.11", "1.0"] as const;
 
 export type GameVersion = (typeof GAME_VERSIONS)[number];
 
@@ -12,10 +12,14 @@ export type GameVersionMeta = {
 export const GAME_VERSION_META = {
   "0.10": {
     id: "0.10",
-    status: "stable",
+    status: "archived",
   },
   "0.11": {
     id: "0.11",
+    status: "stable",
+  },
+  "1.0": {
+    id: "1.0",
     status: "stable",
   },
 } satisfies Record<GameVersion, GameVersionMeta>;
@@ -26,7 +30,12 @@ export const getGameVersionMeta = (version: GameVersion): GameVersionMeta => {
 
 export const getGameVersionLabel = (version: GameVersion): string => {
   const { status } = getGameVersionMeta(version);
-  return status === "experimental" ? `${version} (experimental)` : version;
+
+  if (status === "experimental") {
+    return `${version} (experimental)`;
+  }
+
+  return status === "archived" ? `${version} (archived)` : version;
 };
 
 export const SELECTABLE_GAME_VERSIONS = GAME_VERSIONS.filter(
