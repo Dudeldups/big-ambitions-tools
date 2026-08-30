@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Startas: Duomenų bazė ir gamyklos planuotojas",
     "qotd": "Fredo 'Dienos citata' pridėta į pagrindinį puslapį",
-    "update11": "Pridėtas žaidimo duomenų versijavimas, skirtas palaikyti dvi naujausias versijas"
+    "update11": "Pridėtas žaidimo duomenų versijavimas, skirtas palaikyti dvi naujausias versijas",
+    "update10": "Atnaujinta Big Ambitions 1.0 versijai ir pridėtas ingredientų užsakymas tik į sandėlio grupę"
   },
   "database": {
     "intro": {

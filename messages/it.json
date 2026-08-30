@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Al via: Database e Pianificatore di fabbrica",
     "qotd": "Aggiunta la 'Citazione del giorno' di Fred nella home",
-    "update11": "Aggiunto il versionamento dei dati di gioco per supportare le due versioni più recenti"
+    "update11": "Aggiunto il versionamento dei dati di gioco per supportare le due versioni più recenti",
+    "update10": "Aggiornato per Big Ambitions 1.0 e aggiunto l'ordine degli ingredienti solo al gruppo di magazzino"
   },
   "database": {
     "intro": {

@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Ruszamy: Baza danych i planer fabryczny",
     "qotd": "Dodano 'Cytat dnia' Freda na stronę główną",
-    "update11": "Dodano wersjonowanie danych gry, aby wspierać dwie najnowsze wersje"
+    "update11": "Dodano wersjonowanie danych gry, aby wspierać dwie najnowsze wersje",
+    "update10": "Zaktualizowano dla Big Ambitions 1.0 i dodano zamawianie składników wyłącznie do grupy magazynowej"
   },
   "database": {
     "intro": {

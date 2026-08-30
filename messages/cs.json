@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Start: Databáze a plánovač výroby",
     "qotd": "Přidáno Fredův 'Citát dne' na hlavní stránku",
-    "update11": "Přidáno verzování herních dat pro podporu dvou nejnovějších verzí"
+    "update11": "Přidáno verzování herních dat pro podporu dvou nejnovějších verzí",
+    "update10": "Aktualizováno pro Big Ambitions 1.0 a přidáno objednávání surovin pouze do skladové skupiny"
   },
   "database": {
     "intro": {

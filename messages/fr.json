@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Top départ : Base de données & Planificateur d'usine",
     "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
-    "update11": "Versionnage des données de jeu ajouté pour prendre en charge les deux versions les plus récentes"
+    "update11": "Versionnage des données de jeu ajouté pour prendre en charge les deux versions les plus récentes",
+    "update10": "Mis à jour pour Big Ambitions 1.0 et ajout des commandes d'ingrédients uniquement vers le groupe d'entrepôt"
   },
   "database": {
     "intro": {

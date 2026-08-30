@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "上线：数据库与工厂规划器",
     "qotd": "首页新增了 Fred 的 '每日一语'",
-    "update11": "新增游戏数据版本管理，以支持最新的两个版本"
+    "update11": "新增游戏数据版本管理，以支持最新的两个版本",
+    "update10": "已更新至 Big Ambitions 1.0，并新增仅向仓库组订购原料的功能"
   },
   "database": {
     "intro": {

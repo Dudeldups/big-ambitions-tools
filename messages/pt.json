@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Novidade: Base de Dados e Planeador de Fábrica",
     "qotd": "Adicionada a 'Frase do dia' do Fred à página inicial",
-    "update11": "Adicionado versionamento de dados para suportar as duas versões mais recentes"
+    "update11": "Adicionado versionamento de dados para suportar as duas versões mais recentes",
+    "update10": "Atualizado para Big Ambitions 1.0 e adicionada a encomenda de ingredientes apenas para o grupo de armazém"
   },
   "database": {
     "intro": {

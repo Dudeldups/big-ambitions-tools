@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Julkaisu: Tietokanta ja tehassuunnittelija",
     "qotd": "Fredin 'Päivän mietelause' lisättiin etusivulle",
-    "update11": "Lisätty pelidatan versiointia tukemaan kahta uusinta versiota"
+    "update11": "Lisätty pelidatan versiointia tukemaan kahta uusinta versiota",
+    "update10": "Päivitetty Big Ambitions 1.0:aan ja lisätty ainesosien tilaaminen vain varastoryhmään"
   },
   "database": {
     "intro": {

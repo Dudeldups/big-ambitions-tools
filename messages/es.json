@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "¡Arrancamos!: Base de datos y planificador de planta",
     "qotd": "Añadida la 'Frase del día' de Fred a la página de inicio",
-    "update11": "Añadido versionado de datos del juego para admitir las dos versiones más recientes"
+    "update11": "Añadido versionado de datos del juego para admitir las dos versiones más recientes",
+    "update10": "Actualizado para Big Ambitions 1.0 y añadidos los pedidos de ingredientes solo al grupo de almacén"
   },
   "database": {
     "intro": {

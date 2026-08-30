@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Startskud: Database og Fabriksplanlægger",
     "qotd": "Freds 'Dagens citat' tilføjet til forsiden",
-    "update11": "Versionering af spildata til understøttelse af de to nyeste versioner"
+    "update11": "Versionering af spildata til understøttelse af de to nyeste versioner",
+    "update10": "Opdateret til Big Ambitions 1.0 og tilføjet bestilling af ingredienser kun til lagergruppen"
   },
   "database": {
     "intro": {

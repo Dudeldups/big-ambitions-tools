@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Başlıyoruz: Veritabanı ve Fabrika Planlayıcı",
     "qotd": "Fred'in 'Günün Sözü' ana sayfaya eklendi",
-    "update11": "En güncel iki sürümü desteklemek için oyun verilerine sürümleme eklendi"
+    "update11": "En güncel iki sürümü desteklemek için oyun verilerine sürümleme eklendi",
+    "update10": "Big Ambitions 1.0 için güncellendi ve malzemelerin yalnızca depo grubuna sipariş edilmesi eklendi"
   },
   "database": {
     "intro": {

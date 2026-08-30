@@ -4,6 +4,10 @@ type UpdateId = keyof typeof messages.updateHistory;
 
 export const updateHistory: { id: UpdateId; date: string }[] = [
   {
+    id: "update10",
+    date: "2026-08-30",
+  },
+  {
     id: "launch",
     date: "2026-05-03",
   },

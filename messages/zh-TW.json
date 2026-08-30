@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "登場：資料庫與工廠規劃器",
     "qotd": "首頁新增 Fred 的「今日語錄」",
-    "update11": "新增遊戲數據版本控制，以支援最新的兩個版本"
+    "update11": "新增遊戲數據版本控制，以支援最新的兩個版本",
+    "update10": "已更新至 Big Ambitions 1.0，並新增僅向倉庫群組訂購原料的功能"
   },
   "database": {
     "intro": {

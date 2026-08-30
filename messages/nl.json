@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Start: Database en Fabrieksplanner",
     "qotd": "Freds 'Citaat van de dag' toegevoegd aan de homepage",
-    "update11": "Versionering voor gamedata toegevoegd om de twee nieuwste versies te ondersteunen"
+    "update11": "Versionering voor gamedata toegevoegd om de twee nieuwste versies te ondersteunen",
+    "update10": "Bijgewerkt voor Big Ambitions 1.0 en het bestellen van ingrediënten alleen naar de magazijngroep toegevoegd"
   },
   "database": {
     "intro": {

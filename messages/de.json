@@ -479,7 +479,8 @@
   "updateHistory": {
     "launch": "Startschuss: Datenbank und Fabrikplaner",
     "qotd": "Freds 'Zitat des Tages' zur Startseite hinzugefügt",
-    "update11": "Versionierung für Spieldaten hinzugefügt, um die beiden aktuellsten Versionen zu unterstützen"
+    "update11": "Versionierung für Spieldaten hinzugefügt, um die beiden aktuellsten Versionen zu unterstützen",
+    "update10": "Für Big Ambitions 1.0 aktualisiert und Bestellung von Zutaten nur an die Lagergruppe hinzugefügt"
   },
   "database": {
     "intro": {
