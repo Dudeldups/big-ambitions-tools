@@ -593,7 +593,7 @@
         "legend": "Fabrik-Informationen",
         "name": "Fabrikname",
         "calcBasis": "Berechnungsgrundlage",
-        "palletDesc": "Definiere, wie viele Palettenregale in dieser Fabrik verfügbar sind.",
+        "palletDesc": "Definiere, wie viele Palettenregale in dieser Fabrik verfügbar sind. Setze diesen Wert auf 0, um stattdessen alle Zutaten an die Lagergruppe zu bestellen.",
         "dailyAmount": "Für die tägliche Lieferung brauchst du <strong>{count}</strong> {object}.",
         "weeklyAmount": "Für die wöchentliche Lieferung brauchst du <strong>{count}</strong> {object}.",
         "shelfExplanation": "Füge mindestens eine Arbeitsstation hinzu, um die benötigten Palettenregale zu sehen.",

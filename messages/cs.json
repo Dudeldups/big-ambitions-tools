@@ -593,7 +593,7 @@
         "legend": "Informace o továrně",
         "name": "Název továrny",
         "calcBasis": "Základ výpočtu",
-        "palletDesc": "Zadej, kolik paletových regálů je v této továrně k dispozici.",
+        "palletDesc": "Zadej, kolik paletových regálů je v této továrně k dispozici. Nastav hodnotu na 0, pokud chceš všechny suroviny objednávat místo toho do skladové skupiny.",
         "dailyAmount": "Na denní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "weeklyAmount": "Na týdenní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "shelfExplanation": "Přidej alespoň jednu pracovní stanici, aby se zobrazil potřebný počet paletových regálů.",

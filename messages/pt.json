@@ -593,7 +593,7 @@
         "legend": "Informações da Fábrica",
         "name": "Nome da Fábrica",
         "calcBasis": "Base de Cálculo",
-        "palletDesc": "Defina quantas estantes para paletes estão disponíveis nesta fábrica.",
+        "palletDesc": "Defina quantas estantes para paletes estão disponíveis nesta fábrica. Defina como 0 para encomendar todos os ingredientes para o grupo de armazém.",
         "dailyAmount": "Para a entrega diária você precisa de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para a entrega semanal você precisa de <strong>{count}</strong> {object}.",
         "shelfExplanation": "Adicione pelo menos uma estação de trabalho para ver o número necessário de estantes para paletes.",

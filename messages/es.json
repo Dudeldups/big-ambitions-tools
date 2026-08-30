@@ -593,7 +593,7 @@
         "legend": "Información de la fábrica",
         "name": "Nombre de la fábrica",
         "calcBasis": "Base del cálculo",
-        "palletDesc": "Define cuántas estanterías para palés hay disponibles en esta fábrica.",
+        "palletDesc": "Define cuántas estanterías para palés hay disponibles en esta fábrica. Establece este valor en 0 para pedir todos los ingredientes al grupo de almacén.",
         "dailyAmount": "Para la entrega diaria necesitas <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para la entrega semanal necesitas <strong>{count}</strong> {object}.",
         "shelfExplanation": "Añade al menos una estación de trabajo para ver el número necesario de estanterías para palés.",

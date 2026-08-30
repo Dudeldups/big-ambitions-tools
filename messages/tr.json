@@ -593,7 +593,7 @@
         "legend": "Fabrik Bilgileri",
         "name": "Fabrik Adı",
         "calcBasis": "Hesaplama Temeli",
-        "palletDesc": "Bu fabrikada mevcut Palet Rafı sayısını tanımla.",
+        "palletDesc": "Bu fabrikada mevcut Palet Rafı sayısını tanımla. Tüm malzemeleri depo grubuna sipariş etmek için bunu 0 olarak ayarla.",
         "dailyAmount": "Günlük teslimat için <strong>{count}</strong> {object} gerekiyor.",
         "weeklyAmount": "Haftalık teslimat için <strong>{count}</strong> {object} gerekiyor.",
         "shelfExplanation": "Gerekli palet rafı sayısını görmek için en az bir çalışma istasyonu ekle.",

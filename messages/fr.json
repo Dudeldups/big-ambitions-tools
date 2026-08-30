@@ -593,7 +593,7 @@
         "legend": "Informations sur l'usine",
         "name": "Nom de l'usine",
         "calcBasis": "Base de calcul",
-        "palletDesc": "Indique combien de rayonnages à palettes sont disponibles dans cette usine.",
+        "palletDesc": "Indique combien de rayonnages à palettes sont disponibles dans cette usine. Définissez cette valeur sur 0 pour commander tous les ingrédients au groupe d'entrepôt.",
         "dailyAmount": "Pour la livraison quotidienne, il te faut <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pour la livraison hebdomadaire, il te faut <strong>{count}</strong> {object}.",
         "shelfExplanation": "Ajoute au moins un poste de travail pour afficher le nombre de rayonnages à palettes requis.",

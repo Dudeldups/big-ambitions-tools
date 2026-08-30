@@ -593,7 +593,7 @@
         "legend": "Factory information",
         "name": "Factory name",
         "calcBasis": "Calculation basis",
-        "palletDesc": "Define how many pallet shelves are available in this factory.",
+        "palletDesc": "Define how many pallet shelves are available in this factory. Set this to 0 to order all ingredients to the warehouse group instead.",
         "dailyAmount": "Daily delivery requires <strong>{count}</strong> {object}.",
         "weeklyAmount": "Weekly delivery requires <strong>{count}</strong> {object}.",
         "shelfExplanation": "Add at least one workstation to see the required number of pallet shelves.",

@@ -593,7 +593,7 @@
         "legend": "Informații despre fabrică",
         "name": "Numele fabricii",
         "calcBasis": "Baza de calcul",
-        "palletDesc": "Defineste câte rafturi pentru paleți sunt disponibile în această fabrică.",
+        "palletDesc": "Defineste câte rafturi pentru paleți sunt disponibile în această fabrică. Setează valoarea la 0 pentru a comanda toate ingredientele către grupul de depozite.",
         "dailyAmount": "Pentru livrarea zilnică ai nevoie de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pentru livrarea săptămânală ai nevoie de <strong>{count}</strong> {object}.",
         "shelfExplanation": "Adaugă cel puțin un post de lucru ca să vezi câte rafturi pentru paleți sunt necesare.",

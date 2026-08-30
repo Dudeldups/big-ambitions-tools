@@ -593,7 +593,7 @@
         "legend": "Info fabbrica",
         "name": "Nome fabbrica",
         "calcBasis": "Base di calcolo",
-        "palletDesc": "Definisci quanti scaffali per pallet sono disponibili in questa fabbrica.",
+        "palletDesc": "Definisci quanti scaffali per pallet sono disponibili in questa fabbrica. Imposta questo valore su 0 per ordinare tutti gli ingredienti al gruppo di magazzino.",
         "dailyAmount": "Per la consegna giornaliera ti servono <strong>{count}</strong> {object}.",
         "weeklyAmount": "Per la consegna settimanale ti servono <strong>{count}</strong> {object}.",
         "shelfExplanation": "Aggiungi almeno una postazione di lavoro per vedere il numero necessario di scaffali per pallet.",

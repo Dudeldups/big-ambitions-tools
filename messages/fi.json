@@ -593,7 +593,7 @@
         "legend": "Tehtaan tiedot",
         "name": "Tehtaan nimi",
         "calcBasis": "Laskentaperusta",
-        "palletDesc": "Määrittele tämän tehtaan lavahyllyjen määrä.",
+        "palletDesc": "Määrittele tämän tehtaan lavahyllyjen määrä. Aseta arvoksi 0, jos haluat tilata kaikki ainesosat varastoryhmään.",
         "dailyAmount": "Päivittäiseen toimitukseen tarvitset <strong>{count}</strong> {object}.",
         "weeklyAmount": "Viikkotoimitukseen tarvitset <strong>{count}</strong> {object}.",
         "shelfExplanation": "Lisää vähintään yksi työpiste, niin näet tarvittavien lavahyllyjen määrän.",

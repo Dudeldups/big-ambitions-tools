@@ -593,7 +593,7 @@
         "legend": "Fabriksinfo",
         "name": "Fabriknavn",
         "calcBasis": "Beregningsgrundlag",
-        "palletDesc": "Definér, hvor mange pallehylder der er på denne fabrik.",
+        "palletDesc": "Definér, hvor mange pallehylder der er på denne fabrik. Sæt dette til 0 for i stedet at bestille alle ingredienser til lagergruppen.",
         "dailyAmount": "Til daglig levering skal du bruge <strong>{count}</strong> {object}.",
         "weeklyAmount": "Til ugentlig levering skal du bruge <strong>{count}</strong> {object}.",
         "shelfExplanation": "Tilføj mindst én arbejdsstation for at se det nødvendige antal pallehylder.",

@@ -593,7 +593,7 @@
         "legend": "Gamyklos informacija",
         "name": "Gamyklos pavadinimas",
         "calcBasis": "Skaičiavimo pagrindas",
-        "palletDesc": "Nustatyk, kiek palečių lentynų yra šioje gamykloje.",
+        "palletDesc": "Nustatyk, kiek palečių lentynų yra šioje gamykloje. Nustatyk 0, kad visus ingredientus užsakytum į sandėlio grupę.",
         "dailyAmount": "Dienos pristatymui reikia <strong>{count}</strong> {object}.",
         "weeklyAmount": "Savaitės pristatymui reikia <strong>{count}</strong> {object}.",
         "shelfExplanation": "Pridėk bent vieną darbo vietą, kad pamatytum reikalingų palečių lentynų kiekį.",

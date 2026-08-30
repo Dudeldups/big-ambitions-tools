@@ -593,7 +593,7 @@
         "legend": "Fabrikinformatie",
         "name": "Fabrieknaam",
         "calcBasis": "Berekeningsbasis",
-        "palletDesc": "Definieer hoeveel palletplanken er beschikbaar zijn in deze fabriek.",
+        "palletDesc": "Definieer hoeveel palletplanken er beschikbaar zijn in deze fabriek. Stel dit in op 0 om alle ingrediënten naar de magazijngroep te bestellen.",
         "dailyAmount": "Voor de dagelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "weeklyAmount": "Voor de wekelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "shelfExplanation": "Voeg minimaal één werkplek toe om het benodigde aantal palletplanken te zien.",

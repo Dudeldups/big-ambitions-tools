@@ -593,7 +593,7 @@
         "legend": "Gyári információk",
         "name": "Gyár neve",
         "calcBasis": "Számítási alap",
-        "palletDesc": "Állítsd be, hány raklappolcod van ebben a gyárban.",
+        "palletDesc": "Állítsd be, hány raklappolcod van ebben a gyárban. Állítsd 0-ra, hogy minden hozzávalót a raktárcsoportba rendelj.",
         "dailyAmount": "A napi szállításhoz <strong>{count}</strong> {object} kell.",
         "weeklyAmount": "A heti szállításhoz <strong>{count}</strong> {object} kell.",
         "shelfExplanation": "Adj hozzá legalább egy ruházati munkállomást, hogy lásd a szükséges raklappolcok számát.",

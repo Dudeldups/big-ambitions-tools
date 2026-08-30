@@ -593,7 +593,7 @@
         "legend": "Informacje o fabryce",
         "name": "Nazwa fabryki",
         "calcBasis": "Podstawa obliczeń",
-        "palletDesc": "Zdefiniuj, ile regałów paletowych jest dostępnych w tej fabryce.",
+        "palletDesc": "Zdefiniuj, ile regałów paletowych jest dostępnych w tej fabryce. Ustaw 0, aby zamawiać wszystkie składniki do grupy magazynowej.",
         "dailyAmount": "Do dostawy dziennej potrzebujesz <strong>{count}</strong> {object}.",
         "weeklyAmount": "Do dostawy tygodniowej potrzebujesz <strong>{count}</strong> {object}.",
         "shelfExplanation": "Dodaj co najmniej jedno stanowisko pracy, aby zobaczyć potrzebną liczbę regałów paletowych.",

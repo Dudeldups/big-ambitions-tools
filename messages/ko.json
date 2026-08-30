@@ -593,7 +593,7 @@
         "legend": "공장 정보",
         "name": "공장 이름",
         "calcBasis": "계산 기준",
-        "palletDesc": "이 공장의 팔레트 선반 개수를 설정해 주세요.",
+        "palletDesc": "이 공장의 팔레트 선반 개수를 설정해 주세요. 0으로 설정하면 모든 재료를 대신 창고 그룹으로 주문합니다.",
         "dailyAmount": "일일 배송에는 <strong>{count}</strong> {object}가 필요해요.",
         "weeklyAmount": "주간 배송에는 <strong>{count}</strong> {object} 가 필요합니다.",
         "shelfExplanation": "작업대를 하나라도 추가해야 필요한 팔레트 선반 수가 보여요.",

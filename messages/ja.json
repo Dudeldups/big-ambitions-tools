@@ -593,7 +593,7 @@
         "legend": "工場情報",
         "name": "工場名",
         "calcBasis": "計算基準",
-        "palletDesc": "この工場のパレット棚の数を設定してね",
+        "palletDesc": "この工場のパレット棚の数を設定してね。0に設定すると、すべての材料を代わりに倉庫グループへ注文できるよ。",
         "dailyAmount": "日次配送には<strong>{count}</strong> の {object} が必要です。",
         "weeklyAmount": "週次配送には<strong>{count}</strong> の {object} が必要です。",
         "shelfExplanation": "ワークステーションを1つ以上追加して、パレット棚の必要数を確認しよう。",

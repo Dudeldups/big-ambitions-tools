@@ -593,7 +593,7 @@
         "legend": "工厂信息",
         "name": "工厂名称",
         "calcBasis": "计算基准",
-        "palletDesc": "定义此工厂可用的托盘货架数量。",
+        "palletDesc": "定义此工厂可用的托盘货架数量。将此项设为 0，即可将所有原料改为订购至仓库组。",
         "dailyAmount": "每日配送需要 <strong>{count}</strong> {object}。",
         "weeklyAmount": "每周配送需要 <strong>{count}</strong> {object}。",
         "shelfExplanation": "添加至少一个工作站以查看所需的托盘货架数量。",

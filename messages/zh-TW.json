@@ -593,7 +593,7 @@
         "legend": "工廠資訊",
         "name": "工廠名稱",
         "calcBasis": "計算基準",
-        "palletDesc": "設定此工廠可用的棧板架數量。",
+        "palletDesc": "設定此工廠可用的棧板架數量。將此設為 0，即可改為將所有原料訂購至倉庫群組。",
         "dailyAmount": "每日配送需要 <strong>{count}</strong> {object}。",
         "weeklyAmount": "每週配送需要 <strong>{count}</strong> {object}。",
         "shelfExplanation": "新增至少一個工作站，就能看到需要的棧板架數量。",
