@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Camion de fret T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Limousine exécutive Petrolls"
   },
   "inventory": {
     "palletShelf": "Rayonnage à palettes",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Livreur",
     "hrManager": "Responsable RH",
     "factoryWorker": "Ouvrier d’usine",
-    "purchasingAgent": "Agent d’achats",
+    "purchasingAgent": "Agent d'achats",
     "logisticsManager": "Responsable logistique",
     "customerService": "Service client",
     "cleaning": "Nettoyage",
@@ -445,9 +446,9 @@
         "Observe ce que disent tes clients lorsqu'ils visitent ton magasin.",
         "Veille à satisfaire les exigences de tes employés.",
         "Des employés mécontents performent en dessous de leur niveau de compétence.",
-        "Les étagères de stockage sont un excellent moyen de mieux organiser l'inventaire de ton magasin.",
+        "Les étagères de stockage sont un excellent moyen de mieux organiser l'inventaire de votre magasin.",
         "Pour que tes employés puissent nettoyer un magasin, ils auront besoin d'une station de nettoyage.",
-        "Dormir dans ta voiture est pratique, mais cela a un impact négatif sur ton bonheur.",
+        "Dormir dans votre voiture est pratique, mais cela a un impact négatif sur votre bonheur.",
         "Les bancs autour de la ville peuvent être utilisés pour passer le temps rapidement et gagner un peu d'énergie.",
         "Marre de payer un loyer ? Économise et achète plutôt l'immeuble !",
         "Utilise la fonctionnalité « Clients au fil du temps » de BizMan pour savoir à quelles heures ton entreprise sera la plus rentable."

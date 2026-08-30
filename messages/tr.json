@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Yük Kamyonu T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive Limousine"
   },
   "inventory": {
     "palletShelf": "Palet Rafı",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Teslimat Sürücüsü",
     "hrManager": "İK Müdürü",
     "factoryWorker": "Fabrika İşçisi",
-    "purchasingAgent": "Satın Alma Görevlisi",
+    "purchasingAgent": "Satın Alma Uzmanı",
     "logisticsManager": "Lojistik Müdürü",
     "customerService": "Müşteri Hizmetleri",
     "cleaning": "Temizlik",

@@ -3,7 +3,7 @@
     "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
-    "bluestone": "Bluestone Imports",
+    "bluestone": "Bluestone 進口",
     "lunartide": "月潮貨運",
     "maritimefreight": "海運貨運線",
     "aquaticbay": "水域灣貨運",
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "貨運卡車 T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls 行政禮車"
   },
   "inventory": {
     "palletShelf": "棧板架",

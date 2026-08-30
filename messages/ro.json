@@ -1,12 +1,12 @@
 {
   "importers": {
     "jetcargo": "Jet Cargo Imports",
-    "seaside": "Internaționale de pe litoral",
+    "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
-    "lunartide": "Expedieri Lunar Tide",
-    "maritimefreight": "Linia maritimă de marfă",
-    "aquaticbay": "Acvatic Bay Cargo",
+    "lunartide": "Lunar Tide Shipments",
+    "maritimefreight": "Maritime Freight Line",
+    "aquaticbay": "Aquatic Bay Cargo",
     "globalharvest": "Global Harvest Traders"
   },
   "products": {
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Camion de marfă T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Limuzină executivă Petrolls"
   },
   "inventory": {
     "palletShelf": "Raft pentru paleți",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Curier",
     "hrManager": "Manager HR",
     "factoryWorker": "Muncitor din fabrică",
-    "purchasingAgent": "Agent de Achiziții",
+    "purchasingAgent": "Agent de achiziții",
     "logisticsManager": "Manager Logistică",
     "customerService": "Serviciu clienți",
     "cleaning": "Curățenie",
@@ -440,15 +441,15 @@
         "Dispersarea riscului îți va face imperiul mult mai puțin vulnerabil la schimbările pieței.",
         "Același lucru este valabil și pentru investițiile tale. Începe să investești în imobiliare.",
         "A face bani nu te face fericit. Viața este despre a avea un scop și a te bucura de drum.",
-        "Un agent de achiziții de nivel superior va asigura prețuri de import mai bune.",
+        "Un agent de achiziții de nivel mai înalt va asigura prețuri de import mai bune.",
         "Folosește marketingul pentru a crește scorul de promovare.",
         "Nu ești sigur cum să îți îmbunătățești afacerea? Observă ce spun clienții în timp ce îți vizitează magazinul.",
         "Asigură-te că îndeplinești cerințele angajaților tăi.",
         "Angajații nemulțumiți au performanțe sub nivelul lor de calificare.",
-        "Rafturile de depozitare sunt o modalitate excelentă de a organiza mai bine inventarul magazinului tău.",
+        "Rafturile de depozitare sunt o modalitate excelentă de a-ți organiza mai bine stocul magazinului.",
         "Pentru ca angajații tăi să curețe un magazin, vor avea nevoie de o stație de curățare.",
-        "Este convenabil să dormi în mașină, dar îți afectează negativ fericirea.",
-        "Băncile din jurul orașului pot fi folosite pentru a sări rapid în timp și pentru a câștiga puțină energie.",
+        "Să dormi în mașină e convenabil, dar îți afectează negativ fericirea.",
+        "Băncile din oraș pot fi folosite pentru a trece rapid timpul și a câștiga ceva energie.",
         "Te-ai săturat să plătești chirie? Economisește și cumpără clădirea în schimb!",
         "Folosește „Clienți de-a lungul timpului” din BizMan pentru a afla la ce oră afacerea ta va fi cea mai profitabilă."
       ]

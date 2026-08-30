@@ -4,9 +4,9 @@
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
-    "lunartide": "Lunar Tide Shipments",
-    "maritimefreight": "Maritime Freight Line",
-    "aquaticbay": "Aquatic Bay Cargo",
+    "lunartide": "Przesyłki Lunar Tide",
+    "maritimefreight": "Morska Linia Frachtowa",
+    "aquaticbay": "Fracht Aquatic Bay",
     "globalharvest": "Global Harvest Traders"
   },
   "products": {
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Ciężarówka dostawcza T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Limuzyna Petrolls Executive"
   },
   "inventory": {
     "palletShelf": "Regał paletowy",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Kierowca dostaw",
     "hrManager": "Menedżer HR",
     "factoryWorker": "Pracownik fabryki",
-    "purchasingAgent": "Agent zakupów",
+    "purchasingAgent": "Specjalista ds. zakupów",
     "logisticsManager": "Kierownik logistyki",
     "customerService": "Obsługa klienta",
     "cleaning": "Sprzątanie",
@@ -440,15 +441,15 @@
         "Dywersyfikacja ryzyka sprawi, że twoje imperium będzie dużo mniej podatne na zmiany rynkowe.",
         "To samo dotyczy twoich inwestycji. Zacznij inwestować w nieruchomości.",
         "Samo zarabianie pieniędzy nie daje szczęścia. Życie polega na posiadaniu celu i czerpaniu radości z drogi.",
-        "Agent ds. zakupów o wyższym poziomie zapewni lepsze ceny importowe.",
+        "Wyższy poziom agenta zakupów zapewni lepsze ceny importu.",
         "Użyj marketingu, aby zwiększyć wynik promocji.",
         "Nie wiesz, jak ulepszyć firmę? Obserwuj, co mówią klienci podczas wizyty w twoim sklepie.",
         "Pamiętaj, aby spełniać wymagania pracowników.",
         "Niezadowoleni pracownicy pracują poniżej swojego poziomu umiejętności.",
-        "Półki magazynowe to świetny sposób na lepszą organizację zapasów w twoim sklepie.",
+        "Półki magazynowe to świetny sposób na lepszą organizację zapasów sklepu.",
         "Aby pracownicy mogli sprzątać sklep, potrzebują stanowiska sprzątającego.",
-        "Spanie w samochodzie jest wygodne, ale negatywnie wpływa na twój poziom szczęścia.",
-        "Ławki w całym mieście można wykorzystać do szybkiego przewijania czasu i odzyskania części energii.",
+        "Spanie w samochodzie jest wygodne, ale negatywnie wpływa na twoje zadowolenie.",
+        "Ławki w całym mieście pozwalają szybko przewinąć czas i odzyskać trochę energii.",
         "Masz dość płacenia czynszu? Oszczędzaj i kup zamiast tego budynek!",
         "Skorzystaj z \"Klienci w czasie\" w BizManie, aby dowiedzieć się, w jakich godzinach twoja firma będzie najbardziej dochodowa."
       ]

@@ -1,6 +1,6 @@
 {
   "importers": {
-    "jetcargo": "Jet Cargo import",
+    "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Teherautó T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive limuzin"
   },
   "inventory": {
     "palletShelf": "Raklappolc",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Csomagszállító",
     "hrManager": "HR menedzser",
     "factoryWorker": "Gyári munkás",
-    "purchasingAgent": "Beszerző ügynök",
+    "purchasingAgent": "Beszerző",
     "logisticsManager": "Logisztikai menedzser",
     "customerService": "Kiszolgálás",
     "cleaning": "Takarító",
@@ -395,7 +396,7 @@
     }
   },
   "home": {
-    "selectLanguage": "Válassz nyelvet",
+    "selectLanguage": "Nyelv kiválasztása",
     "intro": {
       "desc": "Itt találod az összes infót és eszközt a {companyName} fejlesztésű <em>{gameName}</em> játékhoz. Jelenleg a gyár mechanikáira fókuszálunk, hogy segítsünk optimalizálni a játékmenetedet. Az adatok és számítások a jövőbeni frissítések során változhatnak."
     },
@@ -440,15 +441,15 @@
         "A kockázat szétosztásával a birodalmad sokkal kevésbé lesz sebezhető a piaci változásokkal szemben.",
         "Ugyanez vonatkozik a befektetéseidre is. Kezdj el ingatlanba fektetni.",
         "A pénzkeresés nem tesz boldoggá. Az élet arról szól, hogy legyen egy célod, és élvezd az utazást.",
-        "Egy magasabb szintű beszerző ügynök jobb importárakat biztosít.",
+        "Egy magasabb szintű beszerző jobb importárakat biztosít.",
         "Használj marketinget a promóciós pontszám növelésére.",
         "Figyeld meg, mit mondanak a vásárlók, miközben felkeresik az üzletedet.",
         "Figyelj rá, hogy teljesítsd alkalmazottaid igényeit.",
         "A boldogtalan alkalmazottak képzettségi szintjük alatt teljesítenek.",
-        "A tárolópolcok nagyszerű módot jelentenek az üzlet készletének jobb rendezésére.",
+        "A raktárpolcok remekül segítenek a bolt készletének jobb rendszerezésében.",
         "Ahhoz, hogy alkalmazottaid kitakaríthassanak egy üzletet, takarítóállomásra lesz szükségük.",
-        "Lehet az autóban is aludni, de ez negatívan befolyásolja a boldogságot.",
-        "A városban található padok segítségével gyorsan ugorhatsz az időben, és energiát nyerhetsz.",
+        "Kényelmes az autódban aludni, de negatívan hat a boldogságodra.",
+        "A városban található padokkal gyorsan előrepörgetheted az időt és egy kis energiához juthatsz.",
         "Unod a bérleti díj fizetését? Spórolj, és vedd meg inkább az épületet!",
         "A BizMan „Korábbi ügyfélforgalom” funkciójával megtudhatod, hogy vállalkozásod mely órákban lesz a legjövedelmezőbb."
       ]
@@ -575,7 +576,7 @@
       "ungroupedTitle": "Nem csoportosított gyárak",
       "ungroupedEmpty": "Semmi nincs itt egyelőre. Húzz ide egy kártyát, vagy hozz létre egy új gyárat.",
       "deliveries": {
-        "buttonDesc": "Szállítmányok",
+        "buttonDesc": "Szállítások",
         "title": "Szállítási terv",
         "descNeeded": "Szállítási tervek a csoport minden gyárához. {amount} raklappolcra lesz szükséged az összes gyár ellátásához.",
         "descEnough": "Minden gyárban elég raklappolc van az összes szükséges összetevő tárolásához."

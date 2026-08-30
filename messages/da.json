@@ -1,12 +1,12 @@
 {
   "importers": {
-    "jetcargo": "Jet Cargo import",
+    "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
-    "lunartide": "Lunar Tide Shipments",
-    "maritimefreight": "Maritime Freight Line",
-    "aquaticbay": "Aquatic Bay Cargo",
+    "lunartide": "Lunar Tide Forsendelser",
+    "maritimefreight": "Maritim Fragtrute",
+    "aquaticbay": "Aquatic Bay Fragt",
     "globalharvest": "Global Harvest Traders"
   },
   "products": {
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Freight Truck T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive Limousine"
   },
   "inventory": {
     "palletShelf": "Pallehylde",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Chauffør",
     "hrManager": "HR-chef",
     "factoryWorker": "Fabriksarbejder",
-    "purchasingAgent": "Indkøber",
+    "purchasingAgent": "Indkøbsagent",
     "logisticsManager": "Logistikchef",
     "customerService": "Kundeservice",
     "cleaning": "Rengøring",
@@ -440,15 +441,15 @@
         "At sprede risikoen gør dit imperium mindre sårbart over for markedsændringer.",
         "Det samme gælder for dine investeringer. Begynd at investere i fast ejendom.",
         "At tjene penge gør dig ikke lykkelig. Livet handler om at have et mål og nyde rejsen.",
-        "En indkøbsagent på et højere niveau sikrer bedre importpriser.",
+        "En indkøbsagent på højere niveau sikrer bedre importpriser.",
         "Brug markedsføring til at øge din forfremmelsesscore.",
         "Læg mærke til, hvad dine kunder siger, når de besøger din butik.",
         "Sørg for at opfylde dine medarbejderes krav.",
         "Utilfredse medarbejdere præsterer under deres færdighedsniveau.",
-        "Lagerhylder er en god måde at organisere din butiks lager bedre på.",
+        "Lagerreoler er en god måde at organisere din butiks lager bedre på.",
         "For at dine medarbejdere kan gøre rent i en butik, skal de have en rengøringsstation.",
-        "At sove i din bil er praktisk, men det påvirker din lykke negativt.",
-        "Bænke rundt om i byen kan bruges til hurtigt at springe tiden over og få lidt energi.",
+        "At sove i din bil er bekvemt, men det påvirker din lykke negativt.",
+        "Bænke rundt i byen kan bruges til hurtigt at springe tid over og få lidt energi.",
         "Træt af at betale husleje? Spar op og køb bygningen i stedet!",
         "Brug BizMans \"Kunder over tid\" for at finde ud af, hvilke tidspunkter din virksomhed er mest profitabel."
       ]
@@ -575,7 +576,7 @@
       "ungroupedTitle": "Ikke-grupperede fabrikker",
       "ungroupedEmpty": "Der sker ikke noget her endnu. Træk et fabrikskort herind eller opret en ny fabrik.",
       "deliveries": {
-        "buttonDesc": "Leverancer",
+        "buttonDesc": "Leveringer",
         "title": "Leveringsplan",
         "descNeeded": "Leveringsplaner for hver fabrik i denne gruppe. Du skal bruge {amount} pallehylder til at forsyne alle fabrikker.",
         "descEnough": "Alle fabrikker har nok pallehylder til at opbevare alle nødvendige ingredienser."

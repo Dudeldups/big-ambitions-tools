@@ -4,9 +4,9 @@
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
-    "lunartide": "Lunar Tide Shipments",
-    "maritimefreight": "Maritime Freight Line",
-    "aquaticbay": "Aquatic Bay Cargo",
+    "lunartide": "Lunar Tide -lähetykset",
+    "maritimefreight": "Merirahtilinja",
+    "aquaticbay": "Aquatic Bay -rahti",
     "globalharvest": "Global Harvest Traders"
   },
   "products": {
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Kuorma-auto T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive Limousine"
   },
   "inventory": {
     "palletShelf": "Lavahylly",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Toimituskuljettaja",
     "hrManager": "Henkilöstöpäällikkö",
     "factoryWorker": "Tehdastyöntekijä",
-    "purchasingAgent": "Ostoagentti",
+    "purchasingAgent": "Ostoasiantuntija",
     "logisticsManager": "Logistiikkapäällikkö",
     "customerService": "Asiakaspalvelu",
     "cleaning": "Siivous",
@@ -445,10 +446,10 @@
         "Tarkkaile, mitä asiakkaasi sanovat käydessään kaupassasi.",
         "Varmista, että täytät työntekijöidesi vaatimukset.",
         "Onnettomat työntekijät suoriutuvat alle taitotasonsa.",
-        "Varastohyllyt ovat erinomainen tapa järjestää myymäläsi varasto paremmin.",
+        "Varastohyllyt ovat erinomainen tapa järjestää kauppasi varastoa paremmin.",
         "Jotta työntekijäsi voivat siivota myymälän, he tarvitsevat siivouspisteen.",
-        "Autossa nukkuminen on kätevää, mutta se vaikuttaa negatiivisesti onnellisuuteesi.",
-        "Kaupungin penkkejä voi käyttää ajan pikakelaukseen ja energian keräämiseen.",
+        "Autossa nukkuminen on kätevää, mutta se vaikuttaa kielteisesti onnellisuuteesi.",
+        "Kaupungin penkkejä voi käyttää ajan nopeaan ohittamiseen ja energian kartuttamiseen.",
         "Kyllästyttääkö vuokran maksaminen? Säästä ja osta rakennus sen sijaan!",
         "Käytä BizManin \"Asiakkaat ajan myötä\" -näkymää oppiaksesi, mihin kellonaikoihin yrityksesi on tuottavin."
       ]

@@ -1,7 +1,7 @@
 {
   "importers": {
-    "jetcargo": "Import van straalvracht",
-    "seaside": "Internationale kusten",
+    "jetcargo": "Jet Cargo Imports",
+    "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
     "lunartide": "Lunar Tide Shipments",
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Vrachtwagen T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive Limousine"
   },
   "inventory": {
     "palletShelf": "Palletplank",
@@ -395,7 +396,7 @@
     }
   },
   "home": {
-    "selectLanguage": "Kies een taal",
+    "selectLanguage": "Selecteer taal",
     "intro": {
       "desc": "Hier vind je info en tools over <em>{gameName}</em> van {companyName}. Op deze fansite draait het momenteel allemaal om fabrieksmechanieken, zodat je het maximale uit je gameplay kunt halen. Data en berekeningen kunnen veranderen bij toekomstige game-updates."
     },
@@ -440,15 +441,15 @@
         "Risicospreiding maakt je imperium veel minder kwetsbaar voor marktveranderingen.",
         "Hetzelfde geldt voor je beleggingen. Begin met beleggen in vastgoed.",
         "Geld verdienen maakt je niet gelukkig. Het leven draait om het hebben van een doel en genieten van de reis.",
-        "Een inkoper met een hoger niveau zorgt voor betere importprijzen.",
+        "Een inkoper van een hoger niveau zorgt voor betere importprijzen.",
         "Gebruik marketing om je promotiescore te verbeteren.",
         "Weet je niet zeker hoe je jouw bedrijf kunt verbeteren? Observeer wat je klanten zeggen wanneer ze je winkel bezoeken.",
         "Zorg ervoor dat je aan de eisen van je medewerkers voldoet.",
         "Ongelukkige medewerkers presteren onder hun niveau.",
-        "Opslagplanken zijn een geweldige manier om de inventaris van je winkel beter te organiseren.",
+        "Opslagrekken zijn een geweldige manier om de voorraad van je winkel beter te organiseren.",
         "Om je medewerkers een winkel te laten schoonmaken, hebben zij een schoonmaakstation nodig.",
-        "Slapen in je auto is handig, maar heeft een negatieve invloed op je geluk.",
-        "Banken in de stad kunnen worden gebruikt om snel tijd over te slaan en wat energie op te doen.",
+        "Slapen in je auto is handig, maar het heeft een negatieve invloed op je geluk.",
+        "Bankjes in de stad kunnen worden gebruikt om snel tijd over te slaan en wat energie te krijgen.",
         "Ben je het betalen van huur beu? Spaar en koop in plaats daarvan het gebouw!",
         "Gebruik BizMan's \"Klanten in de loop van de tijd\" om te ontdekken op welke uren je bedrijf het meest winstgevend zal zijn."
       ]

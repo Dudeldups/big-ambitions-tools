@@ -3,7 +3,7 @@
     "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
-    "bluestone": "Bluestone Imports",
+    "bluestone": "蓝石进口",
     "lunartide": "月潮货运",
     "maritimefreight": "海运货运线",
     "aquaticbay": "水域湾货运",
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "货运卡车 T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls 行政加长轿车"
   },
   "inventory": {
     "palletShelf": "托盘货架",
@@ -183,7 +184,7 @@
     "deliveryDriver": "送货司机",
     "hrManager": "人力资源经理",
     "factoryWorker": "工厂工人",
-    "purchasingAgent": "采购代理",
+    "purchasingAgent": "采购专员",
     "logisticsManager": "物流经理",
     "customerService": "客户服务",
     "cleaning": "清洁",

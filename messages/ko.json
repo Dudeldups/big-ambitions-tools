@@ -3,7 +3,7 @@
     "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
-    "bluestone": "Bluestone Imports",
+    "bluestone": "블루스톤 임포트",
     "lunartide": "루나 타이드 선적",
     "maritimefreight": "해상 화물 라인",
     "aquaticbay": "아쿠아틱 베이 화물",
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "화물 트럭 T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive Limousine"
   },
   "inventory": {
     "palletShelf": "팔레트 선반",

@@ -3,7 +3,7 @@
     "jetcargo": "Jet Cargo Imports",
     "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
-    "bluestone": "Bluestone Imports",
+    "bluestone": "Importações Bluestone",
     "lunartide": "Lunar Tide Shipments",
     "maritimefreight": "Maritime Freight Line",
     "aquaticbay": "Aquatic Bay Cargo",
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Caminhão de Carga T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Limusine Executiva"
   },
   "inventory": {
     "palletShelf": "Estante para Paletes",

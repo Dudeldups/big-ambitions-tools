@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Nákladní vůz T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive Limousine"
   },
   "inventory": {
     "palletShelf": "Paletový regál",
@@ -183,7 +184,7 @@
     "deliveryDriver": "Řidič dodávky",
     "hrManager": "Manažer lidských zdrojů",
     "factoryWorker": "Tovární dělník",
-    "purchasingAgent": "Nákupní agent",
+    "purchasingAgent": "Nákupčí",
     "logisticsManager": "Vedoucí logistiky",
     "customerService": "Služby zákazníkům",
     "cleaning": "Úklid",
@@ -360,7 +361,7 @@
     "groupDesc": "Seskup továrny a získej přehled o všech potřebných surovinách.",
     "editGroupTitle": "Upravit skupinu továren",
     "editGroupDesc": "Vyber nové hodnoty.",
-    "groupLabelName": "název",
+    "groupLabelName": "Název",
     "groupLabelColor": "Barva",
     "deleteGroupTitle": "Smazat skupinu",
     "deleteGroupDesc": "Opravdu chceš tuto skupinu smazat? Pokud jsou k ní přiřazené továrny, budou přesunuty do výchozí skupiny.",
@@ -395,7 +396,7 @@
     }
   },
   "home": {
-    "selectLanguage": "Zvolte jazyk",
+    "selectLanguage": "Vyberte jazyk",
     "intro": {
       "desc": "Tady najdeš všechna info a nástroje k hře <em>{gameName}</em> od {companyName}. Momentálně se tato fanstránka soustředí hlavně na mechaniky továren, aby ti pomohla vytěžit z tvého podnikání to nejlepší. Data a výpočty se mohou měnit s budoucími aktualizacemi hry."
     },
@@ -440,15 +441,15 @@
         "Rozložení rizika učiní tvoje impérium méně zranitelné vůči změnám na trhu.",
         "To samé platí pro tvé investice. Začni investovat do nemovitostí.",
         "Vydělávání peněz tě neudělá šťastným. Život je o tom mít cíl a užívat si cestu.",
-        "Nákupní agent vyšší úrovně zajistí lepší dovozní ceny.",
+        "Nákupčí vyšší úrovně zajistí lepší dovozní ceny.",
         "Využij marketing ke zvýšení skóre propagace.",
         "Sleduj, co tvoji zákazníci říkají při návštěvě tvého obchodu.",
         "Ujisti se, že splníš požadavky svých zaměstnanců.",
         "Nešťastní zaměstnanci pracují pod úrovní svých dovedností.",
-        "Skladovací police jsou skvělým způsobem, jak lépe uspořádat zásoby v obchodě.",
+        "Skladové police jsou skvělý způsob, jak lépe uspořádat zásoby vašeho obchodu.",
         "Aby tvoji zaměstnanci mohli uklízet prodejnu, budou potřebovat úklidovou stanici.",
-        "Spaní v autě je pohodlné, ale negativně ovlivňuje tvoje štěstí.",
-        "Lavičky po městě lze využít k rychlému přeskočení času a nabrání nějaké energie.",
+        "Spát v autě je pohodlné, ale negativně ovlivňuje vaši spokojenost.",
+        "Lavičky po městě lze využít k rychlému přeskočení času a získání trochu energie.",
         "Nebaví tě platit nájem? Ušetři a kup si místo toho budovu!",
         "Použij v BizMan \"Zákazníci v průběhu času\" a zjisti, ve kterých hodinách bude tvoje podnikání nejziskovější."
       ]

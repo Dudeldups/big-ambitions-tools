@@ -1,12 +1,12 @@
 {
   "importers": {
-    "jetcargo": "Reaktyvinių krovinių importas",
-    "seaside": "Pajūrio tarptautinės varžybos",
+    "jetcargo": "Jet Cargo Imports",
+    "seaside": "Seaside Internationals",
     "unitedocean": "United Ocean Import",
     "bluestone": "Bluestone Imports",
-    "lunartide": "Mėnulio potvynio siuntos",
-    "maritimefreight": "Jūrinių krovinių linija",
-    "aquaticbay": "Vandens įlankos kroviniai",
+    "lunartide": "Lunar Tide Shipments",
+    "maritimefreight": "Maritime Freight Line",
+    "aquaticbay": "Aquatic Bay Cargo",
     "globalharvest": "Global Harvest Traders"
   },
   "products": {
@@ -173,7 +173,8 @@
     "VordV150": "Vord V150",
     "DeliveryTruck": "Vord Courier D500",
     "FreightTruckT1": "Krovininis sunkvežimis T1",
-    "MersaidiDash": "Mersaidi Dash"
+    "MersaidiDash": "Mersaidi Dash",
+    "Limo": "Petrolls Executive limuzinas"
   },
   "inventory": {
     "palletShelf": "Palečių lentyna",
@@ -360,7 +361,7 @@
     "groupDesc": "Sugrupuoti gamyklas, kad pamatytum visus reikalingus ingredientus.",
     "editGroupTitle": "Redaguoti gamyklų grupę",
     "editGroupDesc": "Pasirink naujas reikšmes.",
-    "groupLabelName": "vardas",
+    "groupLabelName": "Pavadinimas",
     "groupLabelColor": "Spalva",
     "deleteGroupTitle": "Ištrinti grupę",
     "deleteGroupDesc": "Ar tikrai nori ištrinti šią grupę? Jei yra priskirtų gamyklų, jos bus perkeltos į numatytąją grupę.",
@@ -445,10 +446,10 @@
         "Nežinote, kaip pagerinti savo verslą? Stebėkite, ką sako jūsų klientai, lankydamiesi jūsų parduotuvėje.",
         "Nepamirškite patenkinti darbuotojų reikalavimų.",
         "Nepatenkinti darbuotojai dirba prasčiau nei leidžia jų įgūdžių lygis.",
-        "Sandėliavimo lentynos yra puikus būdas geriau sutvarkyti jūsų parduotuvės atsargas.",
+        "Sandėliavimo lentynos – puikus būdas geriau sutvarkyti parduotuvės atsargas.",
         "Kad jūsų darbuotojai galėtų išvalyti parduotuvę, jiems reikės valymo stoties.",
-        "Miegoti automobilyje patogu, bet tai neigiamai veikia jūsų laimės lygį.",
-        "Mieste esantys suoliukai leidžia greitai praleisti laiką ir atgauti šiek tiek energijos.",
+        "Miegoti automobilyje patogu, bet tai neigiamai veikia jūsų laimę.",
+        "Miesto suoliukai leidžia greitai prasukti laiką ir šiek tiek atgauti energijos.",
         "Pabodo mokėti nuomą? Sutaupykite ir nusipirkite pastatą!",
         "Naudokite BizMan funkciją „Klientai laikui bėgant“, kad sužinotumėte, kuriomis valandomis jūsų verslas bus pelningiausias."
       ]
