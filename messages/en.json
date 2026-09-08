@@ -738,5 +738,21 @@
     "playthroughs": {
       "description": "Manage and compare your {gameName} playthroughs. Track your progress across different difficulties, analyze production stats, and optimize your business runs."
     }
+  },
+  "settingsBackup": {
+    "dialogTriggerTitle": "Backup & Restore Settings",
+    "dialogTriggerSrOnly": "Backup and restore settings",
+    "dialogTitle": "Backup & Restore Settings",
+    "dialogDescription": "Export or import your saved playthrough and factory settings (IndexedDB storage).",
+    "exportTitle": "Export Settings",
+    "exportDescription": "Download your data as a JSON backup file.",
+    "exportButton": "Export",
+    "importTitle": "Import Settings",
+    "importDescription": "Restore your data from a JSON backup file.",
+    "importButton": "Import",
+    "exportSuccess": "Settings exported successfully!",
+    "exportError": "Failed to export settings.",
+    "importSuccess": "Settings imported successfully!",
+    "importError": "Failed to import settings. Please check the JSON file."
   }
 }

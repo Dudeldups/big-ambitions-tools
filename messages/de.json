@@ -738,5 +738,21 @@
     "playthroughs": {
       "description": "Verwalte und vergleiche deine {gameName} Spielstände. Behalte den Überblick über deinen Fortschritt, analysiere Statistiken und optimiere deine Strategie."
     }
+  },
+  "settingsBackup": {
+    "dialogTriggerTitle": "Einstellungen sichern & wiederherstellen",
+    "dialogTriggerSrOnly": "Einstellungen sichern und wiederherstellen",
+    "dialogTitle": "Einstellungen sichern & wiederherstellen",
+    "dialogDescription": "Exportiere oder importiere deine gespeicherten Spielstände und Fabrikeinstellungen (IndexedDB-Speicher).",
+    "exportTitle": "Einstellungen exportieren",
+    "exportDescription": "Lade deine Daten als JSON-Sicherungsdatei herunter.",
+    "exportButton": "Exportieren",
+    "importTitle": "Einstellungen importieren",
+    "importDescription": "Stelle deine Daten aus einer JSON-Sicherungsdatei wieder her.",
+    "importButton": "Importieren",
+    "exportSuccess": "Einstellungen erfolgreich exportiert!",
+    "exportError": "Fehler beim Exportieren der Einstellungen.",
+    "importSuccess": "Einstellungen erfolgreich importiert!",
+    "importError": "Fehler beim Importieren der Einstellungen. Bitte prüfe die JSON-Datei."
   }
 }
