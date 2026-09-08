@@ -3,6 +3,7 @@ import LanguageSelect from "./language-select";
 import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
 import { useTranslations } from "next-intl";
+import { SettingsBackupDialog } from "@/components/settings-backup-dialog";
 
 type NavContentProps = {
   onAction?: () => void;
@@ -49,6 +50,7 @@ const NavContent = ({ onAction }: NavContentProps) => {
       </nav>
 
       <div className="flex items-end gap-4 max-md:flex-col md:items-center">
+        <SettingsBackupDialog />
         <ThemeToggle />
 
         <LanguageSelect />
