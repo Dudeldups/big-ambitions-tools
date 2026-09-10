@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "群組購物清單",
+        "useFactoryShelves": "使用工廠貨架",
+        "noWarehouseRequired": "該群組不需要倉庫。",
         "desc": "這裡列出了這個群組中，因為棧板架不足而需要補貨的所有原料。系統會根據工廠現有的棧板架數量來計算，方便你把剩下的部分訂到另外的倉庫。<br></br>倉庫需要的棧板架：<strong>{amount}</strong>"
       }
     },

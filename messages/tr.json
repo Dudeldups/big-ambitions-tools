@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Grup Alışveriş Listesi",
+        "useFactoryShelves": "Fabrika raflarını kullan",
+        "noWarehouseRequired": "Bu grup için depo gerekmiyor.",
         "desc": "Bu grupta yeterli rafı olmayan fabrikalar için gereken tüm malzemeler burada. Fabrikalardaki mevcut raflara göre hesaplama yapar, böylece kalan kısmı ayrı bir depoya sipariş edebilirsin.<br></br>Depoda gereken raf sayısı: <strong>{amount}</strong>"
       }
     },

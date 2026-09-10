@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Csoport vásárlólista",
+        "useFactoryShelves": "Gyári polcok használata",
+        "noWarehouseRequired": "Ehhez a csoporthoz nincs szükség raktárra.",
         "desc": "Itt láthatod az összes összetevőt, ami a csoportban lévő gyárak kiegészítéséhez kell, ha nincs elég raklappolcuk. A számítás a gyárakban elérhető polcok alapján történik, így megrendelheted a többit egy külön raktárba.<br></br>Szükséges raklappolcok a raktárba: <strong>{amount}</strong>"
       }
     },

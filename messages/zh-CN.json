@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "分组购物清单",
+        "useFactoryShelves": "使用工厂货架",
+        "noWarehouseRequired": "该组不需要仓库。",
         "desc": "这里列出了该组内因托盘货架不足，需要供应给工厂的所有原料。系统会根据工厂现有的货架数量进行计算，方便你将剩余部分订到单独的仓库。<br></br>仓库需要的货架数：<strong>{amount}</strong>"
       }
     },

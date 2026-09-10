@@ -5,6 +5,7 @@ import { getOptimalPalletShelfAmount } from "./getOptimalPalletShelfAmount";
 export function getMissingPalletShelvesTotal(
   factories: (Factory | undefined)[],
   gameData: GameData,
+  useFactoryShelves: boolean = true,
 ): number {
   return factories.reduce((acc, f) => {
     if (!f) return acc;
@@ -14,7 +15,9 @@ export function getMissingPalletShelvesTotal(
       gameData,
     ).external;
 
-    const missing = Math.max(required - f.shelfAmount, 0);
+    const missing = useFactoryShelves
+      ? Math.max(required - f.shelfAmount, 0)
+      : required;
 
     return acc + missing;
   }, 0);

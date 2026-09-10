@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Lista acquisti del gruppo",
+        "useFactoryShelves": "Usa scaffali di fabbrica",
+        "noWarehouseRequired": "Nessun magazzino richiesto per questo gruppo.",
         "desc": "Qui vedi tutti gli ingredienti necessari per rifornire le fabbriche di questo gruppo che non hanno abbastanza scaffali per pallet. Il tool calcola in base agli scaffali disponibili nelle fabbriche, così puoi ordinare il resto da inviare al magazzino separato.<br></br>Scaffali per pallet necessari nel magazzino: <strong>{amount}</strong>"
       }
     },

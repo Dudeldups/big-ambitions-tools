@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Lista de compras del grupo",
+        "useFactoryShelves": "Usar estanterías de fábrica",
+        "noWarehouseRequired": "No se requiere almacén para este grupo.",
         "desc": "Aquí tienes todos los ingredientes necesarios para abastecer las fábricas de este grupo que no tienen suficientes estanterías para palés disponibles allí. El cálculo se basa en las estanterías para palés existentes en las fábricas para que puedas pedir el resto a un almacén separado.<br></br>Estanterías para palés necesarias en el almacén: <strong>{amount}</strong>"
       }
     },

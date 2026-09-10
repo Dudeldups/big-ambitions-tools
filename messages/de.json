@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Gruppen-Einkaufsliste",
+        "useFactoryShelves": "Fabrikregale nutzen",
+        "noWarehouseRequired": "Für diese Gruppe wird kein Lagerhaus benötigt.",
         "desc": "Hier siehst du alle Zutaten, die du für die Fabriken in dieser Gruppe brauchst, für die vor Ort nicht genug Regalkapazität vorhanden ist. Das Tool berechnet das Ganze basierend auf den Regalen in den Fabriken, damit du den Rest einfach in ein separates Lagerhaus bestellen kannst.<br></br>Benötigte Regale im Lagerhaus: <strong>{amount}</strong>"
       }
     },

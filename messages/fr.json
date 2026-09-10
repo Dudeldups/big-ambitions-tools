@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Liste d'achats du groupe",
+        "useFactoryShelves": "Utiliser les rayonnages d’usine",
+        "noWarehouseRequired": "Aucun entrepôt n’est requis pour ce groupe.",
         "desc": "Voici tous les ingrédients nécessaires pour approvisionner les usines de ce groupe qui ne disposent pas de suffisamment de rayonnages sur place. L'outil calcule cela en fonction des rayonnages disponibles dans les usines afin que tu puisses commander le reste vers un entrepôt séparé.<br></br>Rayonnages nécessaires dans l'entrepôt : <strong>{amount}</strong>"
       }
     },

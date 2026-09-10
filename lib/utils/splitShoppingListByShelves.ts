@@ -13,12 +13,15 @@ export const splitShoppingListByShelves = (
   requiredShelves: number,
   availableShelves: number,
   gameData: GameData,
+  useFactoryShelves: boolean = true,
 ): SplitShoppingList => {
-  if (requiredShelves <= 0 || availableShelves >= requiredShelves) {
+  const effectiveAvailableShelves = useFactoryShelves ? availableShelves : 0;
+
+  if (requiredShelves <= 0 || effectiveAvailableShelves >= requiredShelves) {
     return { factoryList: list, externalList: [] };
   }
 
-  const factoryRatio = availableShelves / requiredShelves;
+  const factoryRatio = effectiveAvailableShelves / requiredShelves;
 
   const factoryList: ImporterShoppingList[] = [];
   const externalList: ImporterShoppingList[] = [];

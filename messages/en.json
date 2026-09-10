@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Group shopping list",
+        "useFactoryShelves": "Use factory shelves",
+        "noWarehouseRequired": "No warehouse required for this group.",
         "desc": "These are all ingredients needed to supply factories that don't have enough pallet shelves inside this group. It calculates based on the amount of shelves available in the factories so you can order the rest to a separate warehouse.<br></br>Shelves needed in warehouse: <strong>{amount}</strong>"
       }
     },

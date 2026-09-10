@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "グループの買い物リスト",
+        "useFactoryShelves": "工場の棚を使用",
+        "noWarehouseRequired": "このグループに倉庫は必要ありません。",
         "desc": "このグループの工場で足りないパレット棚を補充するための材料リストだよ。工場の空き状況から計算して、残りは別の倉庫へ注文できるよ。<br></br>倉庫に必要なパレット棚：<strong>{amount}</strong>"
       }
     },

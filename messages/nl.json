@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Groepsboodschappenlijst",
+        "useFactoryShelves": "Fabrieksstellingen gebruiken",
+        "noWarehouseRequired": "Geen magazijn vereist voor deze groep.",
         "desc": "Dit zijn alle ingrediënten die nodig zijn voor de fabrieken in deze groep waarvoor niet genoeg palletplanken beschikbaar zijn. De berekening is gebaseerd op het aantal beschikbare palletplanken in de fabrieken, zodat je de rest naar een apart magazijn kunt bestellen.<br></br>Benodigde palletplanken in het magazijn: <strong>{amount}</strong>"
       }
     },

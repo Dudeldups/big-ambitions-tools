@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Lista zakupów grupy",
+        "useFactoryShelves": "Użyj regałów fabrycznych",
+        "noWarehouseRequired": "Dla tej grupy nie jest wymagany magazyn.",
         "desc": "Tu znajdziesz wszystkie składniki potrzebne do zaopatrzenia fabryk z tej grupy, które mają za mało regałów paletowych. Wszystko jest wyliczane na podstawie dostępnych regałów, żebyś mógł zamówić resztę do oddzielnego magazynu.<br></br>Regały potrzebne w magazynie: <strong>{amount}</strong>"
       }
     },

@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Grupės pirkimo sąrašas",
+        "useFactoryShelves": "Naudoti gamyklos lentynas",
+        "noWarehouseRequired": "Šiai grupei sandėlis nereikalingas.",
         "desc": "Šioje grupėje pamatysi visus ingredientus, reikalingus gamykloms, kurioms trūksta lentynų. Įrankis apskaičiuos kiek jų reikia gamyklose, kad likutį galėtum užsisakyti į atskirą sandėlį.<br></br>Sandėlyje reikalingų lentynų: <strong>{amount}</strong>"
       }
     },

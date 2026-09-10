@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Lista de compras do grupo",
+        "useFactoryShelves": "Usar prateleiras da fábrica",
+        "noWarehouseRequired": "Nenhum armazém é necessário para este grupo.",
         "desc": "Aqui você vê todos os ingredientes necessários para abastecer as fábricas deste grupo que não têm estantes para paletes suficientes no local. A ferramenta calcula tudo com base nas estantes disponíveis nas fábricas, para que você possa encomendar o resto para um armazém separado.<br></br>Estantes necessárias no armazém: <strong>{amount}</strong>"
       }
     },

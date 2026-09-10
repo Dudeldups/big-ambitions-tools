@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Ryhmän ostoslista",
+        "useFactoryShelves": "Käytä tehtaan hyllyjä",
+        "noWarehouseRequired": "Tälle ryhmälle ei tarvita varastoa.",
         "desc": "Tässä näet kaikki raaka-aineet, joita ryhmän tehtaille tarvitaan, jos niissä ei ole tarpeeksi lavahyllyjä. Laskenta perustuu tehtaiden hyllymäärään, jotta voit tilata loput erilliseen varastoon.<br></br>Varastoon tarvittavat lavahyllyt: <strong>{amount}</strong>"
       }
     },

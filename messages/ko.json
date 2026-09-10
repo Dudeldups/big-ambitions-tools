@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "그룹 구매 목록",
+        "useFactoryShelves": "공장 선반 사용",
+        "noWarehouseRequired": "이 그룹에는 창고가 필요하지 않습니다.",
         "desc": "이 그룹 내 선반이 부족한 공장에 필요한 모든 재료를 확인할 수 있어요. 공장의 현재 선반 수량을 기준으로 계산해서, 나머지는 별도 창고로 바로 주문할 수 있게 도와줘요.<br></br>창고에 필요한 선반: <strong>{amount}</strong>"
       }
     },

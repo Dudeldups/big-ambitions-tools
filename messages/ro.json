@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Lista de cumpărături grupată",
+        "useFactoryShelves": "Folosește rafturile fabricii",
+        "noWarehouseRequired": "Nu este necesar niciun depozit pentru acest grup.",
         "desc": "Aici vezi toate ingredientele necesare pentru fabricile din acest grup care nu au suficiente rafturi de paleți. Calculul se face pe baza celor disponibile în fabrici, ca să poți comanda restul pentru un depozit separat.<br></br>Rafturi necesare în depozit: <strong>{amount}</strong>"
       }
     },

@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Gruppens indkøbsliste",
+        "useFactoryShelves": "Brug fabriksreoler",
+        "noWarehouseRequired": "Intet lager er nødvendigt for denne gruppe.",
         "desc": "Her ser du alle ingredienser, der skal bruges til fabrikkerne i denne gruppe, som ikke har nok pallehylder. Den beregner det ud fra antallet af ledige hylder på fabrikkerne, så du kan bestille resten til et separat lager.<br></br>Hylder til lageret: <strong>{amount}</strong>"
       }
     },

@@ -584,6 +584,8 @@
       },
       "shoppingList": {
         "title": "Skupinový nákupní seznam",
+        "useFactoryShelves": "Použít regály v továrně",
+        "noWarehouseRequired": "Pro tuto skupinu není potřeba žádný sklad.",
         "desc": "Tady jsou všechny suroviny potřebné k zásobování továren v této skupině, které nemají dost paletových regálů přímo v továrně. Výpočet vychází z počtu dostupných regálů v továrnách, takže zbytek můžeš objednat do samostatného skladu.<br></br>Regály potřebné ve skladu: <strong>{amount}</strong>"
       }
     },
