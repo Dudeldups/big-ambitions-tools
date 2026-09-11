@@ -84,4 +84,50 @@ describe("PriceIndexPopover", () => {
         .classicCheapMaleClothing,
     ).toBe(BASE_PRODUCT_PRICE_INDEX);
   });
+
+  it("deducts version 1.0 manufacturing costs before calculating tax", async () => {
+    const user = userEvent.setup();
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Jordan",
+      difficulty: "hard",
+      gameVersion: "1.0",
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+
+    renderWithIntl(
+      <PriceIndexPopover
+        selectedProduct="cheapJewelry"
+        factoryWorkerSalary={27}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: /set price index/i }));
+
+    expect(screen.getByText("-$5.73")).toBeInTheDocument();
+    expect(screen.getByText("$13.38")).toBeInTheDocument();
+  });
+
+  it("preserves gross-revenue taxation for versions before 1.0", async () => {
+    const user = userEvent.setup();
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Morgan",
+      difficulty: "hard",
+      gameVersion: "0.11",
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+
+    renderWithIntl(
+      <PriceIndexPopover
+        selectedProduct="cheapJewelry"
+        factoryWorkerSalary={27}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: /set price index/i }));
+
+    expect(screen.getByText("-$17.74")).toBeInTheDocument();
+    expect(screen.getByText("$1.37")).toBeInTheDocument();
+  });
 });

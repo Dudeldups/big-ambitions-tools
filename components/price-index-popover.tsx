@@ -13,7 +13,6 @@ import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import {
   MAX_PRODUCT_PRICE_INDEX,
   MIN_PRODUCT_PRICE_INDEX,
-  TAX_RATE,
 } from "@/lib/constants";
 import { ProductName } from "@/lib/game/productNames";
 import { requireProduct } from "@/lib/game/requireGameData";
@@ -21,7 +20,12 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { getExportPrice, getManufacturePrice } from "@/lib/calculations/math";
+import {
+  getExportPrice,
+  getIncomeTax,
+  getManufacturePrice,
+  getProfitAfterIncomeTax,
+} from "@/lib/calculations/math";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { usePriceIndex } from "@/lib/hooks/usePriceIndex";
 import { getPlaythroughGameData } from "@/lib/game/registry";
@@ -75,11 +79,21 @@ const PriceIndexPopover = ({
     ).toFixed(2),
   );
 
-  const taxRate = TAX_RATE[activePlaythrough.difficulty];
-  const taxAmount = exportPrice * taxRate;
-
-  const profit =
-    Math.round((exportPrice - taxAmount - manufacturePrice) * 100) / 100;
+  const deductibleExpenses = gameData.taxRules
+    .recurringFactoryExpensesDeductible
+    ? manufacturePrice
+    : 0;
+  const taxAmount = getIncomeTax(
+    exportPrice,
+    deductibleExpenses,
+    activePlaythrough.difficulty,
+  );
+  const profit = getProfitAfterIncomeTax(
+    exportPrice,
+    manufacturePrice,
+    deductibleExpenses,
+    activePlaythrough.difficulty,
+  );
 
   return (
     <Popover>
