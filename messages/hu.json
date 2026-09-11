@@ -482,7 +482,8 @@
     "launch": "Indítás: Adatbázis és Gyártervező",
     "qotd": "Fred 'napi idézetét' hozzáadtuk a kezdőlaphoz",
     "update11": "Hozzáadtuk a játékadatok verziózását, hogy támogassuk a két legújabb verziót",
-    "update10": "Frissítve Big Ambitions 1.0-ra, és hozzáadva az alapanyagok csak raktárcsoportba történő rendelése"
+    "update10": "Frissítve Big Ambitions 1.0-ra, és hozzáadva az alapanyagok csak raktárcsoportba történő rendelése",
+    "update12": "Frissítettük a gyárak adószámításait és javítottuk a közös raktárak szállítási terveit"
   },
   "database": {
     "intro": {

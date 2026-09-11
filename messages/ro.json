@@ -482,7 +482,8 @@
     "launch": "Start: Baza de date și Planificatorul de fabrică",
     "qotd": "Am adăugat 'Citatul zilei' lui Fred pe homepage",
     "update11": "Am adăugat versionarea datelor de joc pentru a susține cele mai noi două versiuni",
-    "update10": "Actualizat pentru Big Ambitions 1.0 și adăugată comandarea ingredientelor doar către grupul de depozite"
+    "update10": "Actualizat pentru Big Ambitions 1.0 și adăugată comandarea ingredientelor doar către grupul de depozite",
+    "update12": "Am actualizat calculele fiscale ale fabricilor și am îmbunătățit planurile de livrare din depozitele comune"
   },
   "database": {
     "intro": {

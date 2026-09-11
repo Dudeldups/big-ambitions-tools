@@ -482,7 +482,8 @@
     "launch": "Launch: Database and Factory Planner",
     "qotd": "Added Fred's 'Quote of the day' to the homepage",
     "update11": "Added versioning for game data to support the two latest versions",
-    "update10": "Updated for Big Ambitions 1.0 and added warehouse-only factory ordering"
+    "update10": "Updated for Big Ambitions 1.0 and added warehouse-only factory ordering",
+    "update12": "Updated factory tax calculations and improved shared-warehouse delivery plans"
   },
   "database": {
     "intro": {
