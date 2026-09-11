@@ -2,13 +2,10 @@ import userEvent from "@testing-library/user-event";
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { renderWithIntl, screen } from "@/__tests__/test-utils";
-import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
-import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
-import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import GroupDeliveriesDialog from "./group-deliveries-dialog";
 
 vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
@@ -17,20 +14,8 @@ vi.mock("@/lib/calculations/getMissingPalletShelvesTotal", () => ({
   getMissingPalletShelvesTotal: vi.fn(),
 }));
 
-vi.mock("@/lib/calculations/getOptimalPalletShelfAmount", () => ({
-  getOptimalPalletShelfAmount: vi.fn(),
-}));
-
 vi.mock("@/lib/utils/getShoppingList", () => ({
   getShoppingList: vi.fn(),
-}));
-
-vi.mock("@/lib/utils/splitShoppingListByShelves", () => ({
-  splitShoppingListByShelves: vi.fn(),
-}));
-
-vi.mock("@/lib/calculations/calculateDailyWarehouseSupply", () => ({
-  calculateDailyWarehouseSupply: vi.fn(),
 }));
 
 vi.mock("../details", () => ({
@@ -72,7 +57,7 @@ describe("GroupDeliveriesDialog", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("shows the missing shelf amount and only renders delivery details for factories that still need deliveries", async () => {
+  it("shows daily consumption for every factory regardless of its pallet shelves", async () => {
     const user = userEvent.setup();
     const playthrough = usePlaythroughStore.getState().createPlaythrough({
       characterName: "Jordan",
@@ -82,7 +67,7 @@ describe("GroupDeliveriesDialog", () => {
     const bakery = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
       name: "Bakery",
-      shelfAmount: 4,
+      shelfAmount: 0,
     });
     const pharmacy = usePlaythroughStore.getState().createFactory({
       ..._testFactoryFormValues,
@@ -100,33 +85,18 @@ describe("GroupDeliveriesDialog", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(5);
-    vi.mocked(getOptimalPalletShelfAmount).mockImplementation(
-      (workstations) => {
-        return workstations[0]?.product === "classicCheapMaleClothing"
-          ? { daily: 2, weekly: 6, external: 6, isOverflowing: false }
-          : { daily: 0, weekly: 0, external: 0, isOverflowing: false };
-      },
-    );
     vi.mocked(getShoppingList).mockImplementation((factory) => [
       {
         importer: `${factory.name}-importer`,
-        items: [{ name: "water", amount: 10, value: 100 }],
+        items: [
+          {
+            name: "water",
+            amount: factory.name === "Bakery" ? 70 : 35,
+            value: 100,
+          },
+        ],
       },
     ]);
-    vi.mocked(splitShoppingListByShelves).mockImplementation(
-      (shoppingList) => ({
-        factoryList: shoppingList,
-        externalList: [],
-      }),
-    );
-    vi.mocked(calculateDailyWarehouseSupply).mockImplementation(
-      (factoryList) => [
-        {
-          name: String(factoryList[0]?.items[0]?.name ?? "unknown"),
-          amount: Number(factoryList[0]?.items[0]?.amount ?? 0),
-        },
-      ],
-    );
 
     renderWithIntl(
       <GroupDeliveriesDialog factoryIds={[bakery.id, pharmacy.id]} />,
@@ -146,9 +116,12 @@ describe("GroupDeliveriesDialog", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.getByTestId("details-Bakery")).toBeInTheDocument();
-    expect(screen.queryByTestId("details-Pharmacy")).not.toBeInTheDocument();
-    expect(screen.getByTestId("deliveries-table")).toHaveTextContent(
+    expect(screen.getByTestId("details-Pharmacy")).toBeInTheDocument();
+    expect(screen.getAllByTestId("deliveries-table")[0]).toHaveTextContent(
       "water:10",
+    );
+    expect(screen.getAllByTestId("deliveries-table")[1]).toHaveTextContent(
+      "water:5",
     );
   });
 
@@ -170,18 +143,7 @@ describe("GroupDeliveriesDialog", () => {
     setMockParams({ playthroughId: playthrough.id });
 
     vi.mocked(getMissingPalletShelvesTotal).mockReturnValue(0);
-    vi.mocked(getOptimalPalletShelfAmount).mockReturnValue({
-      daily: 0,
-      weekly: 0,
-      external: 0,
-      isOverflowing: false,
-    });
     vi.mocked(getShoppingList).mockReturnValue([]);
-    vi.mocked(splitShoppingListByShelves).mockReturnValue({
-      factoryList: [],
-      externalList: [],
-    });
-    vi.mocked(calculateDailyWarehouseSupply).mockReturnValue([]);
 
     renderWithIntl(<GroupDeliveriesDialog factoryIds={[factory.id]} />);
 
