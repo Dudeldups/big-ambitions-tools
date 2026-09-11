@@ -249,6 +249,8 @@
     "profit": "Profit",
     "netProfit": "Profit net",
     "taxes": "Taxe",
+    "taxableIncome": "Venit impozabil",
+    "taxDeductibleExpenses": "Cheltuieli deductibile fiscal",
     "salary": "Salariu",
     "manufacturingCosts": "Costuri de producție",
     "manufacturingCostsShort": "Costuri prod.",
@@ -488,7 +490,9 @@
       "buttonDesc": "Alege o categorie"
     },
     "products": {
-      "caption": "Toate produsele pe o privire de ansamblu. Poți să treci ușor între prețurile de producție și import. Prețul de retail este media peste toate districtele. Profiturile sunt afișate ca valori nete – adică inclusiv costurile ingredientelor, salariile lucrătorilor și taxele bazate pe dificultatea selectată. <br></br>Curios cum se calculează? Aruncă o privire la secțiunea <link>{toolsSection}</link>."
+      "caption": "Toate produsele pe o privire de ansamblu. Poți să treci ușor între prețurile de producție și import. Prețul de retail este media peste toate districtele. Profiturile sunt afișate ca valori nete – adică inclusiv costurile ingredientelor, salariile lucrătorilor și taxele bazate pe dificultatea selectată. <br></br>Curios cum se calculează? Aruncă o privire la secțiunea <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "Indicele de preț ajustează prețul de export al unui produs și, când alegi Import, costul de import al acestuia. Nu schimbă prețul mediu de retail sau costurile de producție. Profitul net se bazează pe sursa și canalul de vânzare alese; pentru produsele fabricate, include materiile prime și salariile muncitorilor din fabrică, plus impozitul pe venit pentru dificultatea selectată.",
+      "priceIndexExplanationConclusion": "Pe scurt: profitul afișat este suma estimată care îți rămâne după costurile aplicabile ale produsului și impozitul pe venit; cheltuielile generale ale fabricii nu sunt incluse."
     },
     "ingredients": {
       "caption": "Prezentare generală a tuturor ingredientelor brute, inclusiv proprietățile acestora. Selectează dificultatea pentru a vedea prețurile corecte."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "În versiunea 1.0, materiile prime și salariile angajaților reduc venitul impozabil. Echipamentele fabricii, rafturile pentru paleți și vehiculele de livrare eligibile sunt deductibile la cumpărare, dar deducerile unice nu sunt incluse în această estimare a taxelor recurente.",
       "title": "Planificator de fabrici",
       "desc": "Calculează ingredientele, mașinile și muncitorii necesari pentru liniile tale de producție. Alege produsele pe care vrei să le produci, iar planerul se ocupă de restul.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "Fabrică de {productName}",
       "estimatedSales": "Vânzări săptămânale estimate",
       "estimatedSalesTooltip": "Introdu vânzările așteptate pentru fiecare produs în magazinele tale.",
-      "priceIndexButton": "Alege index",
-      "priceIndexDesc": "Alege indexul de preț actual din joc pentru acest produs ca să calculezi venitul corect. (Prețul de export e mai precis.)"
+      "priceIndexButton": "Indice de preț și profit",
+      "priceIndexTitle": "Calculul indicelui de preț și al profitului",
+      "priceIndexDesc": "Alege indicele de preț actual din joc pentru a calcula venitul din export, impozitul pe venit și profitul net pe unitate. Prețul de export oferă cel mai precis rezultat.",
+      "priceIndexExportRevenue": "Venit din export / unitate",
+      "priceIndexDeductibleManufacturingCosts": "Costuri de producție deductibile",
+      "priceIndexProfitBeforeTax": "Profit înainte de impozitare",
+      "priceIndexProfitBeforeTaxTaxable": "Profit înainte de impozitare (impozabil)",
+      "priceIndexIncomeTax": "Impozit pe venit ({rate}%)",
+      "priceIndexResultHeading": "Rezultat pe unitate",
+      "priceIndexCalculationHeading": "Cum se calculează",
+      "priceIndexTaxHeading": "Impozit pe venit",
+      "priceIndexManufacturingCostNote": "Costurile de producție includ materiile prime și salariile muncitorilor din fabrică pe unitate.",
+      "priceIndexLegacyTaxNote": "În această versiune a jocului, costurile de producție nu reduc venitul impozabil."
     }
   },
   "contact": {

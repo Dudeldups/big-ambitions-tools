@@ -249,6 +249,8 @@
     "profit": "Pelnas",
     "netProfit": "Neto pelnas",
     "taxes": "Mokesčiai",
+    "taxableIncome": "Apmokestinamosios pajamos",
+    "taxDeductibleExpenses": "Mokesčiams atskaitomos išlaidos",
     "salary": "Atlyginimas",
     "manufacturingCosts": "Gamybos kaštai",
     "manufacturingCostsShort": "Gam. kaštai",
@@ -488,7 +490,9 @@
       "buttonDesc": "Pasirink kategorią"
     },
     "products": {
-      "caption": "Visi produktai – vienu žvilgsniu. Lengvai perjunk gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelnai rodomi neto vertėmis – įskaitant ingredientus, darbuotojų atlyginimus ir mokesčius, priklausomai nuo sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį."
+      "caption": "Visi produktai – vienu žvilgsniu. Lengvai perjunk gamybos ir importo kainas. Parduodamoji kaina yra visų rajonų vidurkis. Pelnai rodomi neto vertėmis – įskaitant ingredientus, darbuotojų atlyginimus ir mokesčius, priklausomai nuo sunkumo lygio. <br></br>Nori sužinoti, kaip tai skaičiuojama? Peržiūrėk <link>{toolsSection}</link> skiltį.",
+      "priceIndexExplanation": "Kainų indeksas keičia produkto eksporto kainą ir, pasirinkus Importą, jo importo kaštus. Jis nekeičia vidutinės mažmeninės kainos ar gamybos kaštų. Neto pelnas apskaičiuojamas pagal pasirinktą šaltinį ir pardavimo kanalą; gaminamiems produktams įtraukiamos žaliavos ir gamyklos darbuotojų atlyginimai bei pasirinkto sunkumo lygio pajamų mokestis.",
+      "priceIndexExplanationConclusion": "Trumpai tariant: rodomas pelnas yra apskaičiuota suma, kuri tau lieka po taikomų produkto kaštų ir pajamų mokesčio; bendrosios gamyklos išlaidos neįtrauktos."
     },
     "ingredients": {
       "caption": "Visų žaliavų apžvalga, įskaitant jų savybes. Pasirink sunkumą, kad matytum teisingas kainas."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "1.0 versijoje žaliavos ir darbuotojų atlyginimai mažina apmokestinamąsias pajamas. Gamyklos įranga, palečių lentynos ir tinkamos pristatymo transporto priemonės yra atskaitomos jas perkant, tačiau vienkartiniai atskaitymai į šį pasikartojančių mokesčių įvertį neįtraukti.",
       "title": "Gamyklų planeris",
       "desc": "Apskaičiuok reikalingus ingredientus, mašinas ir darbuotojus savo gamybos linijoms. Tiesiog pasirink produktus, kuriuos nori gaminti, o planuotojas viską atliks.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} gamykla",
       "estimatedSales": "Numatomi savaitiniai pardavimai",
       "estimatedSalesTooltip": "Įvesk numatomus pardavimus kiekvienam produktui savo parduotuvėse.",
-      "priceIndexButton": "Pasirink kainų indeksą",
-      "priceIndexDesc": "Pasirink dabartinį žaidimo kainų indeksą šiam produktui, kad teisingai apskaičiuotum pajamą. (Ekporto kaina yra tikslesnė.)"
+      "priceIndexButton": "Kainų indeksas ir pelnas",
+      "priceIndexTitle": "Kainų indekso ir pelno skaičiavimas",
+      "priceIndexDesc": "Pasirink dabartinį žaidimo kainų indeksą, kad apskaičiuotum eksporto pajamas, pajamų mokestį ir neto pelną vienetui. Eksporto kaina suteikia tiksliausią rezultatą.",
+      "priceIndexExportRevenue": "Eksporto pajamos / vnt.",
+      "priceIndexDeductibleManufacturingCosts": "Mokesčiams atskaitomi gamybos kaštai",
+      "priceIndexProfitBeforeTax": "Pelnas prieš mokesčius",
+      "priceIndexProfitBeforeTaxTaxable": "Pelnas prieš mokesčius (apmokestinamas)",
+      "priceIndexIncomeTax": "Pajamų mokestis ({rate} %)",
+      "priceIndexResultHeading": "Rezultatas vienetui",
+      "priceIndexCalculationHeading": "Kaip tai apskaičiuojama",
+      "priceIndexTaxHeading": "Pajamų mokestis",
+      "priceIndexManufacturingCostNote": "Gamybos kaštai apima žaliavas ir gamyklos darbuotojų atlyginimus vienetui.",
+      "priceIndexLegacyTaxNote": "Šioje žaidimo versijoje gamybos kaštai nemažina apmokestinamųjų pajamų."
     }
   },
   "contact": {

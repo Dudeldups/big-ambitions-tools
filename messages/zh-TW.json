@@ -249,6 +249,8 @@
     "profit": "利潤",
     "netProfit": "淨利潤",
     "taxes": "稅款",
+    "taxableIncome": "應稅收入",
+    "taxDeductibleExpenses": "可扣稅支出",
     "salary": "薪資",
     "manufacturingCosts": "製造成本",
     "manufacturingCostsShort": "製造成本",
@@ -488,7 +490,9 @@
       "buttonDesc": "選擇一個類別"
     },
     "products": {
-      "caption": "所有產品一目了然。隨時切換製造價與進口價。零售價是各街區的平均值。利潤顯示為淨值，包含原料成本、員工薪資及根據選定難度計算的稅金。<br></br>好奇怎麼算的？看看 <link>{toolsSection}</link> 部分吧。"
+      "caption": "所有產品一目了然。隨時切換製造價與進口價。零售價是各街區的平均值。利潤顯示為淨值，包含原料成本、員工薪資及根據選定難度計算的稅金。<br></br>好奇怎麼算的？看看 <link>{toolsSection}</link> 部分吧。",
+      "priceIndexExplanation": "價格指數會調整商品的出口價格；選擇「進口」時，也會調整進口成本。它不會影響平均零售價或製造成本。淨利潤會依照所選的進貨方式和銷售管道計算；對於自行製造的商品，還會計入原材料、工廠工人工資，以及所選難度下的所得稅。",
+      "priceIndexExplanationConclusion": "簡單來說：顯示的利潤是扣除適用的商品成本和所得稅後，預計能留下的金額；其中不包含工廠整體的間接費用。"
     },
     "ingredients": {
       "caption": "查看所有原料及其屬性。選擇難度以查看正確價格。"
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "在1.0版本中，原材料和員工薪資會減少應稅收入。工廠設備、棧板貨架和符合條件的配送車輛可在購買時扣稅，但此週期性稅費估算不包含一次性扣除。",
       "title": "工廠規劃器",
       "desc": "計算生產線所需的原料、機器和工廠員工。只需選擇你想生產的產品，剩下的交給規劃器就好。",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} 工廠",
       "estimatedSales": "預估每週銷售量",
       "estimatedSalesTooltip": "在商店中輸入每個產品的預估銷量。",
-      "priceIndexButton": "設定價格指數",
-      "priceIndexDesc": "選取這個產品目前的遊戲內價格指數，來計算正確的收益（用出口價格會更準）。"
+      "priceIndexButton": "價格指數與利潤",
+      "priceIndexTitle": "價格指數與利潤計算",
+      "priceIndexDesc": "選擇目前的遊戲內價格指數，即可計算單件商品的出口收入、所得稅和淨利潤。出口價格能提供最準確的結果。",
+      "priceIndexExportRevenue": "單件出口收入",
+      "priceIndexDeductibleManufacturingCosts": "可扣稅製造成本",
+      "priceIndexProfitBeforeTax": "稅前利潤",
+      "priceIndexProfitBeforeTaxTaxable": "稅前利潤（應稅）",
+      "priceIndexIncomeTax": "所得稅（{rate}%）",
+      "priceIndexResultHeading": "單件結果",
+      "priceIndexCalculationHeading": "計算方式",
+      "priceIndexTaxHeading": "所得稅",
+      "priceIndexManufacturingCostNote": "製造成本包含單件商品所需的原材料和工廠工人工資。",
+      "priceIndexLegacyTaxNote": "在此遊戲版本中，製造成本不會減少應稅收入。"
     }
   },
   "contact": {

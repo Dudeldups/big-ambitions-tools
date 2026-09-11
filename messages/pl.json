@@ -249,6 +249,8 @@
     "profit": "Zysk",
     "netProfit": "Zysk netto",
     "taxes": "Podatki",
+    "taxableIncome": "Dochód podlegający opodatkowaniu",
+    "taxDeductibleExpenses": "Koszty uzyskania przychodu",
     "salary": "Wynagrodzenie",
     "manufacturingCosts": "Koszty produkcji",
     "manufacturingCostsShort": "Koszt. prod.",
@@ -488,7 +490,9 @@
       "buttonDesc": "Wybierz kategorię"
     },
     "products": {
-      "caption": "Wszystkie produkty w pigułce. Możesz łatwo przełączać się między cenami produkcyjnymi a importowymi. Cena detaliczna to średnia z wszystkich dzielnic. Zyski są podawane jako wartości netto – uwzględniając koszty składników, wypłaty pracowników i podatki zależnie od wybranej trudności. <br></br>Chcesz wiedzieć, jak to się liczy? Sprawdź sekcję <link>{toolsSection}</link>."
+      "caption": "Wszystkie produkty w pigułce. Możesz łatwo przełączać się między cenami produkcyjnymi a importowymi. Cena detaliczna to średnia z wszystkich dzielnic. Zyski są podawane jako wartości netto – uwzględniając koszty składników, wypłaty pracowników i podatki zależnie od wybranej trudności. <br></br>Chcesz wiedzieć, jak to się liczy? Sprawdź sekcję <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "Indeks cenowy zmienia cenę eksportową produktu, a po wybraniu Importu także jego koszt importu. Nie wpływa na średnią cenę detaliczną ani koszty produkcji. Zysk netto zależy od wybranego źródła i kanału sprzedaży; dla produkowanych towarów uwzględnia surowce i wypłaty pracowników fabryki, a także podatek dochodowy zależny od wybranego poziomu trudności.",
+      "priceIndexExplanationConclusion": "Krótko mówiąc: wyświetlany zysk to szacowana kwota, która zostaje ci po odjęciu odpowiednich kosztów produktu i podatku dochodowego; ogólne koszty stałe fabryki nie są uwzględnione."
     },
     "ingredients": {
       "caption": "Przegląd wszystkich surowych składników wraz z ich właściwościami. Wybierz trudność, aby zobaczyć poprawne ceny."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "W wersji 1.0 surowce i wynagrodzenia pracowników zmniejszają dochód podlegający opodatkowaniu. Wyposażenie fabryki, regały paletowe i kwalifikujące się pojazdy dostawcze można odliczyć przy zakupie, ale jednorazowe odliczenia nie są uwzględnione w tym szacunku podatków cyklicznych.",
       "title": "Planer fabryk",
       "desc": "Oblicz wymagane składniki, maszyny i pracowników do swoich linii produkcyjnych. Po prostu wybierz produkty, które chcesz produkować, a planer zajmie się resztą.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "Fabryka {productName}",
       "estimatedSales": "Szacowana sprzedaż tygodniowa",
       "estimatedSalesTooltip": "Wpisz spodziewaną sprzedaż każdego produktu w swoich sklepach.",
-      "priceIndexButton": "Wybierz indeks cenowy",
-      "priceIndexDesc": "Wybierz aktualny indeks cenowy w grze dla tego produktu, aby obliczyć poprawny dochód. (Cena eksportowa jest dokładniejsza.)"
+      "priceIndexButton": "Indeks cenowy i zysk",
+      "priceIndexTitle": "Obliczanie indeksu cenowego i zysku",
+      "priceIndexDesc": "Wybierz aktualny indeks cenowy w grze, aby obliczyć przychód z eksportu, podatek dochodowy i zysk netto na sztukę. Cena eksportowa daje najdokładniejszy wynik.",
+      "priceIndexExportRevenue": "Przychód z eksportu / szt.",
+      "priceIndexDeductibleManufacturingCosts": "Koszty produkcji do odliczenia",
+      "priceIndexProfitBeforeTax": "Zysk przed opodatkowaniem",
+      "priceIndexProfitBeforeTaxTaxable": "Zysk przed opodatkowaniem (podlegający opodatkowaniu)",
+      "priceIndexIncomeTax": "Podatek dochodowy ({rate}%)",
+      "priceIndexResultHeading": "Wynik na sztukę",
+      "priceIndexCalculationHeading": "Jak to jest liczone",
+      "priceIndexTaxHeading": "Podatek dochodowy",
+      "priceIndexManufacturingCostNote": "Koszty produkcji obejmują surowce i wypłaty pracowników fabryki na sztukę.",
+      "priceIndexLegacyTaxNote": "W tej wersji gry koszty produkcji nie zmniejszają dochodu podlegającego opodatkowaniu."
     }
   },
   "contact": {

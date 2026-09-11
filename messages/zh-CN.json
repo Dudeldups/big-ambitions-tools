@@ -249,6 +249,8 @@
     "profit": "利润",
     "netProfit": "净利润",
     "taxes": "税款",
+    "taxableIncome": "应税收入",
+    "taxDeductibleExpenses": "可抵税支出",
     "salary": "工资收入",
     "manufacturingCosts": "制造成本",
     "manufacturingCostsShort": "制造费",
@@ -488,7 +490,9 @@
       "buttonDesc": "选个分类"
     },
     "products": {
-      "caption": "所有产品一目了然。轻松切换制造价和进口价。零售价是所有区域的平均值。利润显示为净收益，包含原料、工资和税费（基于所选难度）。<br></br>好奇怎么算的？去 <link>{toolsSection}</link> 看看。"
+      "caption": "所有产品一目了然。轻松切换制造价和进口价。零售价是所有区域的平均值。利润显示为净收益，包含原料、工资和税费（基于所选难度）。<br></br>好奇怎么算的？去 <link>{toolsSection}</link> 看看。",
+      "priceIndexExplanation": "价格指数会调整商品的出口价格；选择“进口”时，也会调整进口成本。它不会影响平均零售价或制造成本。净利润会根据所选的进货方式和销售渠道计算；对于自产商品，还会计入原材料、工厂工人工资，以及所选难度下的所得税。",
+      "priceIndexExplanationConclusion": "简单来说：显示的利润是扣除适用的商品成本和所得税后预计能留下的金额；其中不包含工厂整体的间接费用。"
     },
     "ingredients": {
       "caption": "所有原料一览，含属性。选个难度看对应价格。"
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "在1.0版本中，原材料和员工工资会减少应税收入。工厂设备、托盘货架和符合条件的配送车辆可在购买时抵税，但此周期性税费估算不包含一次性抵扣。",
       "title": "工厂规划器",
       "desc": "计算生产线所需的原料、机器和工人。只需选择你想生产的产品，剩下的交给规划器就行。",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} 工厂",
       "estimatedSales": "预估周销售额",
       "estimatedSalesTooltip": "在商店中输入每个产品的预期销售额。",
-      "priceIndexButton": "选择价格指数",
-      "priceIndexDesc": "选择该产品的当前游戏内价格指数，来计算准确收益（使用出口价会更准）。"
+      "priceIndexButton": "价格指数与利润",
+      "priceIndexTitle": "价格指数与利润计算",
+      "priceIndexDesc": "选择当前的游戏内价格指数，即可计算单件商品的出口收入、所得税和净利润。出口价格能提供最准确的结果。",
+      "priceIndexExportRevenue": "单件出口收入",
+      "priceIndexDeductibleManufacturingCosts": "可抵税制造成本",
+      "priceIndexProfitBeforeTax": "税前利润",
+      "priceIndexProfitBeforeTaxTaxable": "税前利润（应税）",
+      "priceIndexIncomeTax": "所得税（{rate}%）",
+      "priceIndexResultHeading": "单件结果",
+      "priceIndexCalculationHeading": "计算方式",
+      "priceIndexTaxHeading": "所得税",
+      "priceIndexManufacturingCostNote": "制造成本包含单件商品所需的原材料和工厂工人工资。",
+      "priceIndexLegacyTaxNote": "在此游戏版本中，制造成本不会减少应税收入。"
     }
   },
   "contact": {

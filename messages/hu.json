@@ -249,6 +249,8 @@
     "profit": "Nyereség",
     "netProfit": "Nettó nyereség",
     "taxes": "Adók",
+    "taxableIncome": "Adóköteles jövedelem",
+    "taxDeductibleExpenses": "Adóból levonható kiadások",
     "salary": "Fizetés",
     "manufacturingCosts": "Gyártási költségek",
     "manufacturingCostsShort": "Gyárt. költségek",
@@ -488,7 +490,9 @@
       "buttonDesc": "Válassz egy kategóriát"
     },
     "products": {
-      "caption": "Összes termék egy pillantásra. Válts könnyedén a gyártási és az importárak között. A kiskeri ár minden kerület átlaga. A profitot nettóként látod, beleértve az összetevők költségét, a munkabért és a nehézségtől függő adókat. <br></br>Kíváncsi vagy, hogyan számolják ki? Nézd meg a <link>{toolsSection}</link> részt."
+      "caption": "Összes termék egy pillantásra. Válts könnyedén a gyártási és az importárak között. A kiskeri ár minden kerület átlaga. A profitot nettóként látod, beleértve az összetevők költségét, a munkabért és a nehézségtől függő adókat. <br></br>Kíváncsi vagy, hogyan számolják ki? Nézd meg a <link>{toolsSection}</link> részt.",
+      "priceIndexExplanation": "Az árindex módosítja a termék exportárát, és ha az Import lehetőséget választod, az importköltségét is. Az átlagos kiskereskedelmi árat és a gyártási költségeket nem változtatja meg. A nettó nyereség a választott forrás és értékesítési csatorna alapján készül; a gyártott termékeknél beleszámítanak a nyersanyagok és a gyári munkások bérei, valamint a választott nehézség szerinti jövedelemadó.",
+      "priceIndexExplanationConclusion": "Röviden: a megjelenített nyereség az a becsült összeg, ami a vonatkozó termékköltségek és a jövedelemadó után nálad marad; a gyár általános rezsiköltségei nincsenek benne."
     },
     "ingredients": {
       "caption": "Minden nyersanyag áttekintése, beleértve tulajdonságaikat is. Válaszd a nehézséget, hogy lásd a helyes árakat."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "Az 1.0-s verzióban a nyersanyagok és az alkalmazottak bérei csökkentik az adóköteles jövedelmet. A gyári berendezések, raklapállványok és az erre jogosult szállítójárművek vásárláskor levonhatók, de az egyszeri levonások nem szerepelnek ebben az ismétlődő adóbecslésben.",
       "title": "Gyártervező",
       "desc": "Számold ki a szükséges összetevőket, gépeket és munkásokat a gyártási vonalaidhoz. Csak válaszd ki a gyártani kívánt termékeket, és a tervező megteszi a többit.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} gyár",
       "estimatedSales": "Becsült heti eladások",
       "estimatedSalesTooltip": "Írd be a várható bevételt minden termékhez a boltjaidban.",
-      "priceIndexButton": "Válaszd az árindexet",
-      "priceIndexDesc": "Válaszd ki a termék aktuális játékbeli árindexét a pontos bevételhez. (Az export ára pontosabb.)"
+      "priceIndexButton": "Árindex és nyereség",
+      "priceIndexTitle": "Árindex- és nyereségszámítás",
+      "priceIndexDesc": "Válaszd ki az aktuális játékbeli árindexet az exportbevétel, a jövedelemadó és a darabonkénti nettó nyereség kiszámításához. Az exportár adja a legpontosabb eredményt.",
+      "priceIndexExportRevenue": "Exportbevétel / db",
+      "priceIndexDeductibleManufacturingCosts": "Adóból levonható gyártási költségek",
+      "priceIndexProfitBeforeTax": "Adózás előtti nyereség",
+      "priceIndexProfitBeforeTaxTaxable": "Adózás előtti nyereség (adóköteles)",
+      "priceIndexIncomeTax": "Jövedelemadó ({rate}%)",
+      "priceIndexResultHeading": "Eredmény darabonként",
+      "priceIndexCalculationHeading": "Így számoljuk",
+      "priceIndexTaxHeading": "Jövedelemadó",
+      "priceIndexManufacturingCostNote": "A gyártási költségek tartalmazzák a nyersanyagokat és a gyári munkások darabonkénti bérét.",
+      "priceIndexLegacyTaxNote": "Ebben a játékverzióban a gyártási költségek nem csökkentik az adóköteles jövedelmet."
     }
   },
   "contact": {

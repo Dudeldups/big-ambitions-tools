@@ -249,6 +249,8 @@
     "profit": "Voitto",
     "netProfit": "Nettovoitto",
     "taxes": "Verot",
+    "taxableIncome": "Verotettava tulo",
+    "taxDeductibleExpenses": "Verovähennyskelpoiset kulut",
     "salary": "Palkka",
     "manufacturingCosts": "Valmistuskulut",
     "manufacturingCostsShort": "Valm.kulut",
@@ -488,7 +490,9 @@
       "buttonDesc": "Valitse kategoria"
     },
     "products": {
-      "caption": "Kaikki tuotteet yhdellä silmäyksellä. Voit vaihtaa helposti valmistus- ja tuontihintojen välillä. Myyntihinta on keskiarvo kaikista kaupunginosista. Voittotiedot ovat nettomäärät, mukaan lukien raaka-aineiden kustannukset, työntekijöiden palkat ja verot valitun vaikeustason perusteella. <br></br>Haluatko tietää, miten lasketaan? Katso <link>{toolsSection}</link> -osio."
+      "caption": "Kaikki tuotteet yhdellä silmäyksellä. Voit vaihtaa helposti valmistus- ja tuontihintojen välillä. Myyntihinta on keskiarvo kaikista kaupunginosista. Voittotiedot ovat nettomäärät, mukaan lukien raaka-aineiden kustannukset, työntekijöiden palkat ja verot valitun vaikeustason perusteella. <br></br>Haluatko tietää, miten lasketaan? Katso <link>{toolsSection}</link> -osio.",
+      "priceIndexExplanation": "Hintaindeksi muuttaa tuotteen vientihintaa ja, kun Tuonti on valittu, sen tuontikustannusta. Se ei muuta keskimääräistä vähittäismyyntihintaa tai valmistuskuluja. Nettovoitto perustuu valittuun lähteeseen ja myyntikanavaan; valmistetuissa tuotteissa huomioidaan raaka-aineet ja tehdastyöntekijöiden palkat sekä valitun vaikeustason tulovero.",
+      "priceIndexExplanationConclusion": "Lyhyesti: Näytetty voitto on arvio siitä, paljonko sinulle jää soveltuvien tuotekustannusten ja tuloveron jälkeen; tehtaan yleisiä kuluja ei ole huomioitu."
     },
     "ingredients": {
       "caption": "Yleiskatsaus kaikista raaka-aineista ja niiden ominaisuuksista. Valitse vaikeustaso, niin näet oikeat hinnat."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "Versiossa 1.0 raaka-aineet ja työntekijöiden palkat pienentävät verotettavaa tuloa. Tehtaan laitteet, kuormalavahyllyt ja ehdot täyttävät jakeluajoneuvot ovat vähennyskelpoisia ostohetkellä, mutta kertaluonteisia vähennyksiä ei huomioida tässä toistuvan veron arviossa.",
       "title": "Tehtaan suunnittelija",
       "desc": "Laske tarvittavat raaka-aineet, koneet ja tehdastyöntekijät tuotantolinjoillesi. Valitse vain tuotteet, jotka haluat valmistaa, ja suunnittelija hoitaa loput.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} tehdas",
       "estimatedSales": "Arvioidut viikoittaiset myynnit",
       "estimatedSalesTooltip": "Syötä kunkin tuotteen odotettu myynti kaupoissasi.",
-      "priceIndexButton": "Valitse hintaindeksi",
-      "priceIndexDesc": "Valitse tämän tuotteen nykyinen pelihintaindeksi oikean tulon laskemiseksi. (Vientihinta on tarkempi.)"
+      "priceIndexButton": "Hintaindeksi ja voitto",
+      "priceIndexTitle": "Hintaindeksin ja voiton laskenta",
+      "priceIndexDesc": "Valitse nykyinen pelin hintaindeksi laskeaksesi vientitulon, tuloveron ja nettovoiton tuotetta kohti. Vientihinta antaa tarkimman tuloksen.",
+      "priceIndexExportRevenue": "Vientitulo / tuote",
+      "priceIndexDeductibleManufacturingCosts": "Verovähennyskelpoiset valmistuskulut",
+      "priceIndexProfitBeforeTax": "Voitto ennen veroja",
+      "priceIndexProfitBeforeTaxTaxable": "Voitto ennen veroja (verotettava)",
+      "priceIndexIncomeTax": "Tulovero ({rate} %)",
+      "priceIndexResultHeading": "Tulos tuotetta kohti",
+      "priceIndexCalculationHeading": "Näin se lasketaan",
+      "priceIndexTaxHeading": "Tulovero",
+      "priceIndexManufacturingCostNote": "Valmistuskulut sisältävät raaka-aineet ja tehdastyöntekijöiden palkat tuotetta kohti.",
+      "priceIndexLegacyTaxNote": "Tässä peliversiossa valmistuskulut eivät pienennä verotettavaa tuloa."
     }
   },
   "contact": {

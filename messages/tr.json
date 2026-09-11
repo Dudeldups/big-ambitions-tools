@@ -249,6 +249,8 @@
     "profit": "Kâr",
     "netProfit": "Net Kar",
     "taxes": "Vergiler",
+    "taxableIncome": "Vergiye tabi gelir",
+    "taxDeductibleExpenses": "Vergiden düşülebilir giderler",
     "salary": "Maaş geliri",
     "manufacturingCosts": "Üretim Maliyetleri",
     "manufacturingCostsShort": "Üretim K.",
@@ -488,7 +490,9 @@
       "buttonDesc": "Bir kategori seç"
     },
     "products": {
-      "caption": "Tüm ürünlere tek bakışta göz at. Üretim ve ithalat fiyatları arasında kolayca geçiş yapabilirsin. Perakende fiyatı tüm ilçelerin ortalamasıdır. Karlar; malzeme maliyetleri, çalışan maaşları ve seçilen zorluk seviyesine göre vergiler dahil net değerlerdir. <br></br>Nasıl hesaplandığını mı merak ediyorsun? <link>{toolsSection}</link> bölümüne göz at."
+      "caption": "Tüm ürünlere tek bakışta göz at. Üretim ve ithalat fiyatları arasında kolayca geçiş yapabilirsin. Perakende fiyatı tüm ilçelerin ortalamasıdır. Karlar; malzeme maliyetleri, çalışan maaşları ve seçilen zorluk seviyesine göre vergiler dahil net değerlerdir. <br></br>Nasıl hesaplandığını mı merak ediyorsun? <link>{toolsSection}</link> bölümüne göz at.",
+      "priceIndexExplanation": "Fiyat endeksi bir ürünün ihracat fiyatını ve İthalat seçildiğinde ithalat maliyetini ayarlar. Ortalama perakende fiyatını veya üretim maliyetlerini değiştirmez. Net kâr, seçilen kaynak ve satış kanalına göre hesaplanır; üretilen ürünlerde ham maddeler ve fabrika işçisi ücretleriyle birlikte seçilen zorluk seviyesindeki gelir vergisi de hesaba katılır.",
+      "priceIndexExplanationConclusion": "Kısacası: gösterilen kâr, ilgili ürün maliyetleri ve gelir vergisi düşüldükten sonra elinde kalacağı tahmin edilen tutardır; fabrika genel giderleri dahil değildir."
     },
     "ingredients": {
       "caption": "Tüm hammaddeler ve özellikleri. Doğru fiyatları görmek için zorluk seviyesini seç."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "1.0 sürümünde ham maddeler ve çalışan ücretleri vergiye tabi geliri azaltır. Fabrika ekipmanı, palet rafları ve uygun teslimat araçları satın alındığında vergiden düşülebilir, ancak tek seferlik indirimler bu düzenli vergi tahminine dahil değildir.",
       "title": "Fabrika Planlayıcısı",
       "desc": "Üretim hatların için gereken malzemeleri, makineleri ve işçileri hesapla. Üretmek istediğin ürünleri seç, planlayıcı gerisini halleder.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} fabrikası",
       "estimatedSales": "Tahmini haftalık satışlar",
       "estimatedSalesTooltip": "Mağazalarındaki her ürün için beklenen satışları gir.",
-      "priceIndexButton": "Fiyat endeksi seç",
-      "priceIndexDesc": "Doğru geliri hesaplamak için bu ürünün güncel oyun içi fiyat endeksini seç. (İhracat fiyatı daha doğru.)"
+      "priceIndexButton": "Fiyat endeksi ve kâr",
+      "priceIndexTitle": "Fiyat endeksi ve kâr hesabı",
+      "priceIndexDesc": "Birim başına ihracat gelirini, gelir vergisini ve net kârı hesaplamak için güncel oyun içi fiyat endeksini seç. İhracat fiyatı en doğru sonucu verir.",
+      "priceIndexExportRevenue": "Birim başına ihracat geliri",
+      "priceIndexDeductibleManufacturingCosts": "Vergiden düşülebilir üretim maliyetleri",
+      "priceIndexProfitBeforeTax": "Vergi öncesi kâr",
+      "priceIndexProfitBeforeTaxTaxable": "Vergi öncesi kâr (vergiye tabi)",
+      "priceIndexIncomeTax": "Gelir vergisi (%{rate})",
+      "priceIndexResultHeading": "Birim başına sonuç",
+      "priceIndexCalculationHeading": "Nasıl hesaplanıyor",
+      "priceIndexTaxHeading": "Gelir vergisi",
+      "priceIndexManufacturingCostNote": "Üretim maliyetlerine birim başına ham madde ve fabrika işçisi ücretleri dahildir.",
+      "priceIndexLegacyTaxNote": "Bu oyun sürümünde üretim maliyetleri vergiye tabi geliri azaltmaz."
     }
   },
   "contact": {

@@ -249,6 +249,8 @@
     "profit": "Profitto",
     "netProfit": "Utile netto",
     "taxes": "Tasse",
+    "taxableIncome": "Reddito imponibile",
+    "taxDeductibleExpenses": "Spese deducibili",
     "salary": "Stipendio",
     "manufacturingCosts": "Costi di produzione",
     "manufacturingCostsShort": "Costi prod.",
@@ -488,7 +490,9 @@
       "buttonDesc": "Seleziona una categoria"
     },
     "products": {
-      "caption": "Tutti i prodotti a colpo d'occhio. Passa dai prezzi di produzione a quelli di importazione. Il prezzo al dettaglio è la media di tutti i distretti. I profitti sono valori netti, comprensivi di costi degli ingredienti, stipendi e tasse in base alla difficoltà selezionata. <br></br>Vuoi scoprire come vengono calcolati? Dai un'occhiata alla sezione <link>{toolsSection}</link>."
+      "caption": "Tutti i prodotti a colpo d'occhio. Passa dai prezzi di produzione a quelli di importazione. Il prezzo al dettaglio è la media di tutti i distretti. I profitti sono valori netti, comprensivi di costi degli ingredienti, stipendi e tasse in base alla difficoltà selezionata. <br></br>Vuoi scoprire come vengono calcolati? Dai un'occhiata alla sezione <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "L’indice dei prezzi modifica il prezzo di esportazione di un prodotto e, quando selezioni Importazione, il relativo costo di importazione. Non cambia il prezzo medio al dettaglio né i costi di produzione. L’utile netto si basa sulla fonte e sul canale di vendita scelti; per i prodotti fabbricati include materie prime e stipendi degli operai di fabbrica, oltre all’imposta sul reddito prevista dalla difficoltà selezionata.",
+      "priceIndexExplanationConclusion": "In breve: l’utile mostrato è l’importo stimato che ti rimane dopo i costi applicabili del prodotto e l’imposta sul reddito; i costi generali della fabbrica non sono inclusi."
     },
     "ingredients": {
       "caption": "Panoramica di tutti gli ingredienti e delle loro proprietà. Scegli la difficoltà per vedere i prezzi corretti."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "Nella versione 1.0, le materie prime e gli stipendi dei dipendenti riducono il reddito imponibile. Le attrezzature di fabbrica, le scaffalature per pallet e i veicoli di consegna idonei sono deducibili al momento dell’acquisto, ma le detrazioni una tantum non sono incluse in questa stima delle imposte ricorrenti.",
       "title": "Pianificatore di fabbrica",
       "desc": "Calcola gli ingredienti, le macchine e gli operai necessari per le tue linee di produzione. Seleziona semplicemente i prodotti che vuoi produrre e il pianificatore si occuperà del resto.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} fabbrica",
       "estimatedSales": "Vendite settimanali stimate",
       "estimatedSalesTooltip": "Inserisci le vendite attese per ogni prodotto nei tuoi negozi.",
-      "priceIndexButton": "Imposta indice prezzi",
-      "priceIndexDesc": "Scegli l'attuale indice di prezzo in-game per questo prodotto e calcola il guadagno corretto. (Il prezzo export è più preciso.)"
+      "priceIndexButton": "Indice prezzi e profitto",
+      "priceIndexTitle": "Calcolo dell’indice prezzi e del profitto",
+      "priceIndexDesc": "Scegli l’indice dei prezzi attuale nel gioco per calcolare i ricavi da esportazione, l’imposta sul reddito e l’utile netto per unità. Il prezzo di esportazione offre il risultato più preciso.",
+      "priceIndexExportRevenue": "Ricavi da esportazione / unità",
+      "priceIndexDeductibleManufacturingCosts": "Costi di produzione deducibili",
+      "priceIndexProfitBeforeTax": "Profitto prima delle imposte",
+      "priceIndexProfitBeforeTaxTaxable": "Profitto prima delle imposte (imponibile)",
+      "priceIndexIncomeTax": "Imposta sul reddito ({rate}%)",
+      "priceIndexResultHeading": "Risultato per unità",
+      "priceIndexCalculationHeading": "Come viene calcolato",
+      "priceIndexTaxHeading": "Imposta sul reddito",
+      "priceIndexManufacturingCostNote": "I costi di produzione includono materie prime e stipendi degli operai di fabbrica per unità.",
+      "priceIndexLegacyTaxNote": "In questa versione del gioco, i costi di produzione non riducono il reddito imponibile."
     }
   },
   "contact": {

@@ -249,6 +249,8 @@
     "profit": "Profit",
     "netProfit": "Nettoverskud",
     "taxes": "Skatter",
+    "taxableIncome": "Skattepligtig indkomst",
+    "taxDeductibleExpenses": "Fradragsberettigede udgifter",
     "salary": "Løn",
     "manufacturingCosts": "Produktionsomkostninger",
     "manufacturingCostsShort": "Prod. omk.",
@@ -488,7 +490,9 @@
       "buttonDesc": "Vælg en kategori"
     },
     "products": {
-      "caption": "Alle produkter på ét blik. Du kan nemt skifte mellem produktions- og importpriser. Detailhandelsprisen er gennemsnittet over alle distrikter. Gevinster vises som netto-værdier – altså inklusive ingredienser, lønninger og skatter baseret på den valgte sværhedsgrad. <br></br>Nysgerrig på, hvordan det beregnes? Tjek <link>{toolsSection}</link>-sektionen."
+      "caption": "Alle produkter på ét blik. Du kan nemt skifte mellem produktions- og importpriser. Detailhandelsprisen er gennemsnittet over alle distrikter. Gevinster vises som netto-værdier – altså inklusive ingredienser, lønninger og skatter baseret på den valgte sværhedsgrad. <br></br>Nysgerrig på, hvordan det beregnes? Tjek <link>{toolsSection}</link>-sektionen.",
+      "priceIndexExplanation": "Prisindekset justerer et produkts eksportpris og, når Import er valgt, dets importomkostning. Det ændrer ikke den gennemsnitlige detailpris eller produktionsomkostningerne. Nettooverskuddet bruger den valgte kilde og salgskanal; for fremstillede produkter medregnes råvarer og løn til fabriksarbejdere samt indkomstskat ved den valgte sværhedsgrad.",
+      "priceIndexExplanationConclusion": "Kort sagt: Det viste overskud er det anslåede beløb, du har tilbage efter de relevante produktomkostninger og indkomstskat; fabrikkens generelle driftsomkostninger er ikke medregnet."
     },
     "ingredients": {
       "caption": "Oversigt over alle råvarer inklusive deres egenskaber. Vælg sværhedsgraden for at se de rigtige priser."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "I version 1.0 reducerer råvarer og medarbejderløn den skattepligtige indkomst. Fabriksudstyr, pallereoler og kvalificerede leveringskøretøjer er fradragsberettigede ved køb, men engangsfradrag er ikke med i dette estimat af løbende skat.",
       "title": "Fabriksplanlægger",
       "desc": "Beregn de nødvendige ingredienser, maskiner og arbejdere til dine produktionslinjer. Vælg blot produkterne, du vil producere, og planeren tager resten.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "{productName} Fabrik",
       "estimatedSales": "Estimeret ugentligt salg",
       "estimatedSalesTooltip": "Indtast det forventede salg pr. produkt i dine butikker.",
-      "priceIndexButton": "Vælg prisindeks",
-      "priceIndexDesc": "Vælg det aktuelle spilprisindeks for dette produkt til at beregne den korrekte indtægt. (Exportprisen er mere præcis.)"
+      "priceIndexButton": "Prisindeks og overskud",
+      "priceIndexTitle": "Beregning af prisindeks og overskud",
+      "priceIndexDesc": "Vælg det aktuelle prisindeks i spillet for at beregne eksportindtægt, indkomstskat og nettooverskud pr. enhed. Eksportprisen giver det mest præcise resultat.",
+      "priceIndexExportRevenue": "Eksportindtægt / enhed",
+      "priceIndexDeductibleManufacturingCosts": "Fradragsberettigede produktionsomkostninger",
+      "priceIndexProfitBeforeTax": "Overskud før skat",
+      "priceIndexProfitBeforeTaxTaxable": "Overskud før skat (skattepligtigt)",
+      "priceIndexIncomeTax": "Indkomstskat ({rate} %)",
+      "priceIndexResultHeading": "Resultat pr. enhed",
+      "priceIndexCalculationHeading": "Sådan beregnes det",
+      "priceIndexTaxHeading": "Indkomstskat",
+      "priceIndexManufacturingCostNote": "Produktionsomkostningerne omfatter råvarer og løn til fabriksarbejdere pr. enhed.",
+      "priceIndexLegacyTaxNote": "Produktionsomkostningerne reducerer ikke den skattepligtige indkomst i denne spilversion."
     }
   },
   "contact": {

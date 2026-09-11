@@ -249,6 +249,8 @@
     "profit": "Zisk",
     "netProfit": "Čistý zisk",
     "taxes": "Daně",
+    "taxableIncome": "Zdanitelný příjem",
+    "taxDeductibleExpenses": "Daňově uznatelné výdaje",
     "salary": "Plat",
     "manufacturingCosts": "Výrobní náklady",
     "manufacturingCostsShort": "Výr. náklady",
@@ -488,7 +490,9 @@
       "buttonDesc": "Vyber kategorii"
     },
     "products": {
-      "caption": "Přehled všech produktů. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměrem všech čtvrtí. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>."
+      "caption": "Přehled všech produktů. Přepínej mezi výrobními a importními cenami. Maloobchodní cena je průměrem všech čtvrtí. Zisky jsou zobrazeny jako čisté hodnoty – tedy včetně nákladů na suroviny, mezd a daní podle zvolené obtížnosti. <br></br>Zajímá tě, jak se to počítá? Mrkni do sekce <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "Cenový index upravuje exportní cenu produktu a při volbě Import také jeho dovozní náklady. Nemění průměrnou maloobchodní cenu ani výrobní náklady. Čistý zisk vychází ze zvoleného zdroje a prodejního kanálu; u vyráběných produktů zahrnuje suroviny a mzdy továrních dělníků a také daň z příjmu podle zvolené obtížnosti.",
+      "priceIndexExplanationConclusion": "Stručně řečeno: Zobrazený zisk je odhadovaná částka, která ti zůstane po odečtení příslušných nákladů na produkt a daně z příjmu; celkové režijní náklady továrny nejsou zahrnuty."
     },
     "ingredients": {
       "caption": "Přehled všech surovin včetně jejich vlastností. Vyber obtížnost, aby se zobrazily správné ceny."
@@ -588,6 +592,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "Ve verzi 1.0 snižují suroviny a mzdy zaměstnanců zdanitelný příjem. Vybavení továrny, paletové regály a způsobilá rozvozová vozidla lze při nákupu daňově odečíst, jednorázové odpočty ale nejsou v tomto odhadu pravidelných daní zahrnuty.",
       "title": "Plánovač továren",
       "desc": "Spočítej potřebné suroviny, stroje a pracovníky pro svoje výrobní linky. Stačí vybrat produkty, které chceš vyrábět, a plánovač se postará o zbytek.",
       "information": {
@@ -623,8 +628,19 @@
       "genericFactoryName": "Továrna na {productName}",
       "estimatedSales": "Odhadované týdenní prodeje",
       "estimatedSalesTooltip": "Zadej očekávané prodeje pro každý produkt ve svých obchodech.",
-      "priceIndexButton": "Nastavit cenový index",
-      "priceIndexDesc": "Vyber aktuální herní cenový index produktu pro výpočet správného příjmu. (Exportní cena je přesnější.)"
+      "priceIndexButton": "Cenový index a zisk",
+      "priceIndexTitle": "Výpočet cenového indexu a zisku",
+      "priceIndexDesc": "Vyber aktuální herní cenový index a vypočítej exportní tržbu, daň z příjmu a čistý zisk na kus. Exportní cena poskytuje nejpřesnější výsledek.",
+      "priceIndexExportRevenue": "Exportní tržba / kus",
+      "priceIndexDeductibleManufacturingCosts": "Daňově uznatelné výrobní náklady",
+      "priceIndexProfitBeforeTax": "Zisk před zdaněním",
+      "priceIndexProfitBeforeTaxTaxable": "Zisk před zdaněním (zdanitelný)",
+      "priceIndexIncomeTax": "Daň z příjmu ({rate} %)",
+      "priceIndexResultHeading": "Výsledek na kus",
+      "priceIndexCalculationHeading": "Jak se to počítá",
+      "priceIndexTaxHeading": "Daň z příjmu",
+      "priceIndexManufacturingCostNote": "Výrobní náklady zahrnují suroviny a mzdy továrních dělníků na kus.",
+      "priceIndexLegacyTaxNote": "V této verzi hry výrobní náklady nesnižují zdanitelný příjem."
     }
   },
   "contact": {
