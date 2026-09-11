@@ -6,6 +6,7 @@ import { initialAppState, useAppStore } from "@/lib/stores/appStore";
 import { getTableData } from "@/__tests__/helpers/table-page";
 import { getGameData } from "@/lib/game/registry";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
+import deMessages from "@/messages/de.json";
 
 describe("ProductsPage", () => {
   beforeEach(() => {
@@ -43,5 +44,36 @@ describe("ProductsPage", () => {
     expect(data[0].profitPerHour).toBeNull();
     expect(data[0].margin).toBeUndefined();
     expect(data[0].marginPercent).toBeUndefined();
+  });
+
+  it("explains what the price index changes", () => {
+    renderWithIntl(<ProductsPage />);
+
+    const explanation = screen.getByRole("complementary", {
+      name: "Price index",
+    });
+    expect(explanation).toHaveTextContent(
+      "The price index adjusts a product's export price",
+    );
+    expect(explanation).toHaveTextContent(
+      "It does not change the average retail price or manufacturing costs",
+    );
+  });
+
+  it("renders the price index explanation in German", () => {
+    renderWithIntl(<ProductsPage />, {
+      locale: "de",
+      messagesOverride: deMessages,
+    });
+
+    const explanation = screen.getByRole("complementary", {
+      name: "Preisindex",
+    });
+    expect(explanation).toHaveTextContent(
+      "Der Preisindex passt den Exportpreis eines Produkts",
+    );
+    expect(explanation).toHaveTextContent(
+      "Er verändert weder den durchschnittlichen Verkaufspreis noch die Herstellungskosten",
+    );
   });
 });

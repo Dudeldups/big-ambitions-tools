@@ -192,7 +192,7 @@ describe("PriceIndexPopover", () => {
       screen.getByText("Preisindex- und Gewinnberechnung"),
     ).toBeInTheDocument();
     expect(screen.getByText("Ergebnis pro Stück")).toBeInTheDocument();
-    expect(screen.getByText("So wird gerechnet")).toBeInTheDocument();
+    expect(screen.getByText("So wird's berechnet")).toBeInTheDocument();
     expect(
       screen.getByText("Steuerlich absetzbare Herstellungskosten"),
     ).toBeInTheDocument();

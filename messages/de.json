@@ -490,7 +490,8 @@
       "buttonDesc": "Wähl eine Kategorie"
     },
     "products": {
-      "caption": "Alle Produkte auf einen Blick. Du kannst ganz einfach zwischen Herstellungs- und Importpreisen umschalten. Der Einzelhandelspreis ist der Durchschnitt über alle Stadtbezirke. Die Gewinne sind Netto-Werte – also inklusive Zutaten, Gehältern und Steuern basierend auf der ausgewählten Schwierigkeit. <br></br>Neugierig, wie das berechnet wird? Schau dir die <link>{toolsSection}</link> Seite an."
+      "caption": "Alle Produkte auf einen Blick. Du kannst ganz einfach zwischen Herstellungs- und Importpreisen umschalten. Der Einzelhandelspreis ist der Durchschnitt über alle Stadtbezirke. Die Gewinne sind Netto-Werte – also inklusive Zutaten, Gehältern und Steuern basierend auf der ausgewählten Schwierigkeit. <br></br>Neugierig, wie das berechnet wird? Schau dir die <link>{toolsSection}</link> Seite an.",
+      "priceIndexExplanation": "Der Preisindex passt den Exportpreis eines Produkts und – wenn Import ausgewählt ist – dessen Importkosten an. Er verändert weder den durchschnittlichen Verkaufspreis noch die Herstellungskosten. Der Nettogewinn basiert auf der gewählten Kosten- und Verkaufsoption; bei hergestellten Produkten fließen Rohstoffe und Fabrikarbeiterlöhne ein, außerdem die Einkommensteuer des gewählten Schwierigkeitsgrads."
     },
     "ingredients": {
       "caption": "Übersicht aller Rohzutaten inklusive ihrer Eigenschaften. Wähle die Schwierigkeit, um die korrekten Preise zu sehen."
@@ -635,7 +636,7 @@
       "priceIndexProfitBeforeTaxTaxable": "Gewinn vor Steuern (steuerpflichtig)",
       "priceIndexIncomeTax": "Einkommensteuer ({rate} %)",
       "priceIndexResultHeading": "Ergebnis pro Stück",
-      "priceIndexCalculationHeading": "So wird gerechnet",
+      "priceIndexCalculationHeading": "So wird's berechnet",
       "priceIndexTaxHeading": "Einkommensteuer",
       "priceIndexManufacturingCostNote": "Die Herstellungskosten enthalten Rohstoffe und Fabrikarbeiterlöhne pro Stück.",
       "priceIndexLegacyTaxNote": "In dieser Spielversion senken die Herstellungskosten das zu versteuernde Einkommen nicht."
