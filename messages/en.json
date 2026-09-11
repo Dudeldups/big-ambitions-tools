@@ -630,11 +630,14 @@
       "priceIndexDesc": "Select the current ingame price index for this product to calculate the correct income. (Export price is more accurate.)",
       "priceIndexExportRevenue": "Export revenue / item",
       "priceIndexDeductibleManufacturingCosts": "Deductible manufacturing costs",
+      "priceIndexProfitBeforeTax": "Profit before tax",
+      "priceIndexProfitBeforeTaxTaxable": "Profit before tax (taxable)",
       "priceIndexIncomeTax": "Income tax ({rate}%)",
       "priceIndexResultHeading": "Per-item result",
       "priceIndexCalculationHeading": "How it's calculated",
       "priceIndexTaxHeading": "Income tax",
-      "priceIndexManufacturingCostNote": "Manufacturing costs include raw materials and factory worker wages per item."
+      "priceIndexManufacturingCostNote": "Manufacturing costs include raw materials and factory worker wages per item.",
+      "priceIndexLegacyTaxNote": "Manufacturing costs do not reduce taxable income in this game version."
     }
   },
   "contact": {

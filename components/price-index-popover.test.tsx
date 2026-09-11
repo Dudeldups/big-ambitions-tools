@@ -108,19 +108,16 @@ describe("PriceIndexPopover", () => {
     expect(
       screen.getByText("Deductible manufacturing costs"),
     ).toBeInTheDocument();
-    expect(screen.getByText("Taxable income")).toBeInTheDocument();
+    expect(screen.getAllByText("Profit before tax (taxable)")).toHaveLength(2);
     expect(screen.getByText("$19.11")).toBeInTheDocument();
     expect(screen.getByText("Income tax (30%)")).toBeInTheDocument();
     expect(screen.getByText("-$5.73")).toBeInTheDocument();
     expect(screen.getByText("$13.38")).toBeInTheDocument();
     expect(screen.getByText("Per-item result")).toBeInTheDocument();
     expect(screen.getByText("How it's calculated")).toBeInTheDocument();
-    expect(
-      screen.getByText("($59.15 − $40.04) × 30% = $5.73"),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText("$59.15 − $40.04 − $5.73 = $13.38"),
-    ).toBeInTheDocument();
+    expect(screen.getByText("$59.15 − $40.04 = $19.11")).toBeInTheDocument();
+    expect(screen.getByText("$19.11 × 30% = $5.73")).toBeInTheDocument();
+    expect(screen.getByText("$19.11 − $5.73 = $13.38")).toBeInTheDocument();
     expect(
       screen.getByText(
         "Manufacturing costs include raw materials and factory worker wages per item.",
@@ -150,5 +147,9 @@ describe("PriceIndexPopover", () => {
     expect(screen.getByText("-$17.74")).toBeInTheDocument();
     expect(screen.getByText("$1.37")).toBeInTheDocument();
     expect(screen.getByText("$59.15 × 30% = $17.74")).toBeInTheDocument();
+    expect(screen.getAllByText("Profit before tax")).toHaveLength(2);
+    expect(
+      screen.getByText(/Manufacturing costs do not reduce taxable income/),
+    ).toBeInTheDocument();
   });
 });
