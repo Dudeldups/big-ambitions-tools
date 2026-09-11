@@ -113,11 +113,13 @@ describe("PriceIndexPopover", () => {
     expect(screen.getByText("Income tax (30%)")).toBeInTheDocument();
     expect(screen.getByText("-$5.73")).toBeInTheDocument();
     expect(screen.getByText("$13.38")).toBeInTheDocument();
+    expect(screen.getByText("Per-item result")).toBeInTheDocument();
+    expect(screen.getByText("How it's calculated")).toBeInTheDocument();
     expect(
-      screen.getByText("Tax: ($59.15 − $40.04) × 30% = $5.73"),
+      screen.getByText("($59.15 − $40.04) × 30% = $5.73"),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Profit: $59.15 − $40.04 − $5.73 = $13.38"),
+      screen.getByText("$59.15 − $40.04 − $5.73 = $13.38"),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
@@ -147,6 +149,6 @@ describe("PriceIndexPopover", () => {
 
     expect(screen.getByText("-$17.74")).toBeInTheDocument();
     expect(screen.getByText("$1.37")).toBeInTheDocument();
-    expect(screen.getByText("Tax: $59.15 × 30% = $17.74")).toBeInTheDocument();
+    expect(screen.getByText("$59.15 × 30% = $17.74")).toBeInTheDocument();
   });
 });

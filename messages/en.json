@@ -631,6 +631,9 @@
       "priceIndexExportRevenue": "Export revenue / item",
       "priceIndexDeductibleManufacturingCosts": "Deductible manufacturing costs",
       "priceIndexIncomeTax": "Income tax ({rate}%)",
+      "priceIndexResultHeading": "Per-item result",
+      "priceIndexCalculationHeading": "How it's calculated",
+      "priceIndexTaxHeading": "Income tax",
       "priceIndexManufacturingCostNote": "Manufacturing costs include raw materials and factory worker wages per item."
     }
   },
