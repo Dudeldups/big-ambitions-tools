@@ -249,6 +249,8 @@
     "profit": "Bénéfice",
     "netProfit": "Bénéfice net",
     "taxes": "Impôts",
+    "taxableIncome": "Revenu imposable",
+    "taxDeductibleExpenses": "Dépenses déductibles",
     "salary": "Salaire",
     "manufacturingCosts": "Coûts de fabrication",
     "manufacturingCostsShort": "Coût fab.",
@@ -480,7 +482,8 @@
     "launch": "Top départ : Base de données & Planificateur d'usine",
     "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
     "update11": "Versionnage des données de jeu ajouté pour prendre en charge les deux versions les plus récentes",
-    "update10": "Mis à jour pour Big Ambitions 1.0 et ajout des commandes d'ingrédients uniquement vers le groupe d'entrepôt"
+    "update10": "Mis à jour pour Big Ambitions 1.0 et ajout des commandes d'ingrédients uniquement vers le groupe d'entrepôt",
+    "update12": "Calculs fiscaux des usines mis à jour et plans de livraison depuis les entrepôts partagés améliorés"
   },
   "database": {
     "intro": {
@@ -488,7 +491,9 @@
       "buttonDesc": "Choisis une catégorie"
     },
     "products": {
-      "caption": "Tous les produits en un coup d'œil. Tu peux facilement basculer entre les prix de fabrication et d'importation. Le prix de vente au détail est la moyenne de tous les districts. Les profits sont affichés en valeurs nettes, incluant le coût des ingrédients, les salaires et les taxes selon la difficulté sélectionnée. <br></br>Tu te demandes comment c'est calculé ? Consulte la section <link>{toolsSection}</link>."
+      "caption": "Tous les produits en un coup d'œil. Tu peux facilement basculer entre les prix de fabrication et d'importation. Le prix de vente au détail est la moyenne de tous les districts. Les profits sont affichés en valeurs nettes, incluant le coût des ingrédients, les salaires et les taxes selon la difficulté sélectionnée. <br></br>Tu te demandes comment c'est calculé ? Consulte la section <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "L’indice des prix ajuste le prix d’exportation d’un produit et, lorsque tu sélectionnes Import, son coût d’importation. Il ne modifie ni le prix de vente moyen ni les coûts de fabrication. Le bénéfice net dépend de la source et du canal de vente choisis ; pour les produits fabriqués, il inclut les matières premières et les salaires des ouvriers d’usine, ainsi que l’impôt sur le revenu selon la difficulté sélectionnée.",
+      "priceIndexExplanationConclusion": "En bref : le bénéfice affiché est le montant estimé qu’il te reste après les coûts applicables au produit et l’impôt sur le revenu ; les frais généraux de l’usine ne sont pas inclus."
     },
     "ingredients": {
       "caption": "Vue d'ensemble de toutes les matières premières, avec leurs propriétés. Choisis la difficulté pour afficher les prix corrects."
@@ -579,7 +584,7 @@
       "deliveries": {
         "buttonDesc": "Livraisons",
         "title": "Plan de livraison",
-        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Tu auras besoin de {amount} rayonnages à palettes pour approvisionner toutes les usines.",
+        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Un entrepôt partagé aura besoin de {amount} rayonnages à palettes pour approvisionner toutes les usines de ce groupe.",
         "descEnough": "Toutes les usines disposent de suffisamment de rayonnages à palettes pour stocker tous les ingrédients nécessaires."
       },
       "shoppingList": {
@@ -588,6 +593,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "Dans la version 1.0, les matières premières et les salaires des employés réduisent le revenu imposable. L’équipement de l’usine, les rayonnages à palettes et les véhicules de livraison éligibles sont déductibles à l’achat, mais les déductions ponctuelles ne sont pas incluses dans cette estimation des impôts récurrents.",
       "title": "Planificateur d'usine",
       "desc": "Calcule les ingrédients, les machines et les ouvriers nécessaires pour tes lignes de production. Choisis simplement les produits que tu veux produire et le planificateur s'occupe du reste.",
       "information": {
@@ -623,8 +629,19 @@
       "genericFactoryName": "Usine de {productName}",
       "estimatedSales": "Ventes hebdomadaires estimées",
       "estimatedSalesTooltip": "Indique les ventes attendues pour chaque produit dans tes boutiques.",
-      "priceIndexButton": "Régler index",
-      "priceIndexDesc": "Choisis l'indice de prix actuel du jeu pour ce produit afin de calculer le revenu correct. (Le prix à l'export est plus précis.)"
+      "priceIndexButton": "Indice des prix et bénéfice",
+      "priceIndexTitle": "Calcul de l’indice des prix et du bénéfice",
+      "priceIndexDesc": "Choisis l’indice des prix actuel du jeu pour calculer le revenu d’exportation, l’impôt sur le revenu et le bénéfice net par article. Le prix d’exportation donne le résultat le plus précis.",
+      "priceIndexExportRevenue": "Revenu d’exportation / article",
+      "priceIndexDeductibleManufacturingCosts": "Coûts de fabrication déductibles",
+      "priceIndexProfitBeforeTax": "Bénéfice avant impôts",
+      "priceIndexProfitBeforeTaxTaxable": "Bénéfice avant impôts (imposable)",
+      "priceIndexIncomeTax": "Impôt sur le revenu ({rate} %)",
+      "priceIndexResultHeading": "Résultat par article",
+      "priceIndexCalculationHeading": "Comment c’est calculé",
+      "priceIndexTaxHeading": "Impôt sur le revenu",
+      "priceIndexManufacturingCostNote": "Les coûts de fabrication comprennent les matières premières et les salaires des ouvriers d’usine par article.",
+      "priceIndexLegacyTaxNote": "Dans cette version du jeu, les coûts de fabrication ne réduisent pas le revenu imposable."
     }
   },
   "contact": {

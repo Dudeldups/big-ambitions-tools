@@ -5,8 +5,9 @@ import {
   getExportPrice,
   getImportPrice,
   getManufacturePrice,
+  getProfitAfterIncomeTax,
 } from "@/lib/calculations/math";
-import { FULLTIME_MAX_WORKING_HOURS, TAX_RATE } from "../constants";
+import { FULLTIME_MAX_WORKING_HOURS } from "../constants";
 import { EmployeeName } from "../game/employeeNames";
 import { IngredientName } from "../game/ingredientNames";
 import { MachineName } from "../game/machineNames";
@@ -281,11 +282,28 @@ export const deriveProductData = (
         gameData,
         values.employees.factoryWorker.salary,
       );
-      const taxMult = 1 - TAX_RATE[difficulty];
-      const retailProfit =
-        retailValue * taxMult - manufacturePrice * retailAmount;
-      const exportProfit =
-        exportValue * taxMult - manufacturePrice * exportAmount;
+      const retailManufacturingCost = manufacturePrice * retailAmount;
+      const exportManufacturingCost = manufacturePrice * exportAmount;
+      const deductibleRetailExpenses = gameData.taxRules
+        .recurringFactoryExpensesDeductible
+        ? retailManufacturingCost
+        : 0;
+      const deductibleExportExpenses = gameData.taxRules
+        .recurringFactoryExpensesDeductible
+        ? exportManufacturingCost
+        : 0;
+      const retailProfit = getProfitAfterIncomeTax(
+        retailValue,
+        retailManufacturingCost,
+        deductibleRetailExpenses,
+        difficulty,
+      );
+      const exportProfit = getProfitAfterIncomeTax(
+        exportValue,
+        exportManufacturingCost,
+        deductibleExportExpenses,
+        difficulty,
+      );
 
       return [
         ...(isValidRetail && retailAmount > 0

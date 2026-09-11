@@ -1,6 +1,6 @@
 import { setMockParams } from "@/__tests__/mocks/next-navigation";
 import { _testFactoryFormValues } from "@/__tests__/test-values";
-import { renderWithIntl, screen } from "@/__tests__/test-utils";
+import { renderWithIntl, screen, within } from "@/__tests__/test-utils";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { useAppStore } from "@/lib/stores/appStore";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -91,10 +91,18 @@ describe("FactoryOverview", () => {
 
     expect(screen.getByText("Summary")).toBeInTheDocument();
     expect(screen.getByText("$2,000.00")).toBeInTheDocument();
-    expect(screen.getByText("$600.00")).toBeInTheDocument();
     expect(screen.getByText("$500.00")).toBeInTheDocument();
-    expect(screen.getByText("$900.00")).toBeInTheDocument();
-    expect(screen.getByText("8 days")).toBeInTheDocument();
+    expect(screen.getByText("$1,500.00")).toBeInTheDocument();
+    expect(screen.getByText("$450.00")).toBeInTheDocument();
+    expect(screen.getByText("$1,050.00")).toBeInTheDocument();
+    expect(screen.getByText("7 days")).toBeInTheDocument();
+    expect(screen.getByText("Tax-deductible expenses")).toBeInTheDocument();
+    expect(screen.getByText("Taxable income")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "In version 1.0, ingredients and employee wages reduce taxable income. Factory equipment, pallet shelves, and qualifying delivery vehicles are deductible when purchased, but one-time deductions are not included in this recurring tax estimate.",
+      ),
+    ).toBeInTheDocument();
   });
 
   it("shows never when the factory would not amortize", () => {
@@ -122,6 +130,47 @@ describe("FactoryOverview", () => {
 
     renderWithIntl(<FactoryOverview values={_testFactoryFormValues} />);
 
+    const taxableIncomeRow = screen.getByText("Taxable income").parentElement;
+    expect(taxableIncomeRow).not.toBeNull();
+    expect(within(taxableIncomeRow!).getByText("$0.00")).toBeInTheDocument();
     expect(screen.getByText("Never")).toBeInTheDocument();
+  });
+
+  it("keeps recurring factory expenses non-deductible before version 1.0", () => {
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Morgan",
+      difficulty: "hard",
+      gameVersion: "0.11",
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    useAppStore.setState({ _hasHydrated: true, calculationPeriod: "weekly" });
+    setMockParams({ playthroughId: playthrough.id });
+
+    derivedMocks.derivePalletShelfData.mockReturnValue([]);
+    derivedMocks.deriveVehicleData.mockReturnValue([]);
+    derivedMocks.deriveWorkstationData.mockReturnValue([]);
+    derivedMocks.deriveEmployeeData.mockReturnValue([
+      { name: "employees.factoryWorker", amount: 20, value: 300 },
+    ]);
+    derivedMocks.deriveIngredientData.mockReturnValue([
+      { name: "ingredients.fabricCheap", amount: 1, value: 200 },
+    ]);
+    derivedMocks.deriveProductData.mockReturnValue([
+      { name: "products.classicCheapMaleClothing", amount: 1, value: 2000 },
+    ]);
+
+    renderWithIntl(<FactoryOverview values={_testFactoryFormValues} />);
+
+    const taxableIncomeRow = screen.getByText("Taxable income").parentElement;
+    expect(taxableIncomeRow).not.toBeNull();
+    expect(
+      within(taxableIncomeRow!).getByText("$2,000.00"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("$600.00")).toBeInTheDocument();
+    expect(screen.getByText("$900.00")).toBeInTheDocument();
+    expect(screen.getByText("Expenses")).toBeInTheDocument();
+    expect(
+      screen.queryByText("Tax-deductible expenses"),
+    ).not.toBeInTheDocument();
   });
 });

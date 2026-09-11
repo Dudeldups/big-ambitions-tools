@@ -15,4 +15,7 @@ export const gameData = {
   vehicles,
   shelves,
   inventoryItems,
+  taxRules: {
+    recurringFactoryExpensesDeductible: false,
+  },
 } satisfies GameData;

@@ -19,6 +19,6 @@ export function calculateDailyWarehouseSupply(
 
   return Array.from(map.entries()).map(([name, weeklyAmount]) => ({
     name,
-    amount: weeklyAmount,
+    amount: Math.ceil(weeklyAmount / 7),
   }));
 }

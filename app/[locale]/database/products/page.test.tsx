@@ -6,6 +6,7 @@ import { initialAppState, useAppStore } from "@/lib/stores/appStore";
 import { getTableData } from "@/__tests__/helpers/table-page";
 import { getGameData } from "@/lib/game/registry";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
+import deMessages from "@/messages/de.json";
 
 describe("ProductsPage", () => {
   beforeEach(() => {
@@ -43,5 +44,50 @@ describe("ProductsPage", () => {
     expect(data[0].profitPerHour).toBeNull();
     expect(data[0].margin).toBeUndefined();
     expect(data[0].marginPercent).toBeUndefined();
+  });
+
+  it("explains what the price index changes", () => {
+    renderWithIntl(<ProductsPage />);
+
+    const explanation = screen.getByRole("complementary", {
+      name: "Price index",
+    });
+    expect(explanation).toHaveTextContent(
+      "The price index adjusts a product's export price",
+    );
+    expect(explanation).toHaveTextContent(
+      "It does not change the average retail price or manufacturing costs",
+    );
+    expect(explanation).toHaveTextContent(
+      "the displayed profit is the estimated amount left after the applicable product costs and income tax",
+    );
+    expect(explanation).toHaveTextContent(
+      "factory-wide overhead is not included",
+    );
+    expect(screen.getByText(/^In short,/)).toHaveClass("pt-2");
+  });
+
+  it("renders the price index explanation in German", () => {
+    renderWithIntl(<ProductsPage />, {
+      locale: "de",
+      messagesOverride: deMessages,
+    });
+
+    const explanation = screen.getByRole("complementary", {
+      name: "Preisindex",
+    });
+    expect(explanation).toHaveTextContent(
+      "Der Preisindex passt den Exportpreis eines Produkts",
+    );
+    expect(explanation).toHaveTextContent(
+      "Er verändert weder den durchschnittlichen Verkaufspreis noch die Herstellungskosten",
+    );
+    expect(explanation).toHaveTextContent(
+      "Der angezeigte Gewinn ist der geschätzte Betrag, der nach den jeweiligen Produktkosten und der Einkommensteuer übrig bleibt",
+    );
+    expect(explanation).toHaveTextContent(
+      "allgemeine Fabrikkosten sind nicht enthalten",
+    );
+    expect(screen.getByText(/^Kurz gesagt:/)).toHaveClass("pt-2");
   });
 });

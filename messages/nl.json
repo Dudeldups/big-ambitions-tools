@@ -249,6 +249,8 @@
     "profit": "Winst",
     "netProfit": "Nettowinst",
     "taxes": "Belastingen",
+    "taxableIncome": "Belastbaar inkomen",
+    "taxDeductibleExpenses": "Fiscaal aftrekbare kosten",
     "salary": "Salaris",
     "manufacturingCosts": "Productiekosten",
     "manufacturingCostsShort": "Prod.kosten",
@@ -480,7 +482,8 @@
     "launch": "Start: Database en Fabrieksplanner",
     "qotd": "Freds 'Citaat van de dag' toegevoegd aan de homepage",
     "update11": "Versionering voor gamedata toegevoegd om de twee nieuwste versies te ondersteunen",
-    "update10": "Bijgewerkt voor Big Ambitions 1.0 en het bestellen van ingrediënten alleen naar de magazijngroep toegevoegd"
+    "update10": "Bijgewerkt voor Big Ambitions 1.0 en het bestellen van ingrediënten alleen naar de magazijngroep toegevoegd",
+    "update12": "Belastingberekeningen voor fabrieken bijgewerkt en leveringsplannen vanuit gedeelde magazijnen verbeterd"
   },
   "database": {
     "intro": {
@@ -488,7 +491,9 @@
       "buttonDesc": "Kies een categorie"
     },
     "products": {
-      "caption": "Alle producten in één oogopslag. Schakel eenvoudig tussen productie- en importprijzen. De detailhandelsprijs is het gemiddelde van alle wijken. Winsten zijn nettowaarden — inclusief ingrediëntenkosten, loonkosten en belastingen op basis van de gekozen moeilijkheidsgraad. <br></br>Benieuwd hoe dit wordt berekend? Check de <link>{toolsSection}</link> sectie."
+      "caption": "Alle producten in één oogopslag. Schakel eenvoudig tussen productie- en importprijzen. De detailhandelsprijs is het gemiddelde van alle wijken. Winsten zijn nettowaarden — inclusief ingrediëntenkosten, loonkosten en belastingen op basis van de gekozen moeilijkheidsgraad. <br></br>Benieuwd hoe dit wordt berekend? Check de <link>{toolsSection}</link> sectie.",
+      "priceIndexExplanation": "De prijsindex past de exportprijs van een product aan en, wanneer je Import selecteert, ook de importkosten. De gemiddelde winkelprijs en productiekosten veranderen niet. De nettowinst is gebaseerd op de gekozen bron en het verkoopkanaal; bij geproduceerde artikelen worden grondstoffen en lonen van fabrieksarbeiders meegerekend, plus inkomstenbelasting volgens de gekozen moeilijkheidsgraad.",
+      "priceIndexExplanationConclusion": "Kort gezegd: de getoonde winst is het geschatte bedrag dat je overhoudt na de toepasselijke productkosten en inkomstenbelasting; algemene overheadkosten van de fabriek zijn niet inbegrepen."
     },
     "ingredients": {
       "caption": "Overzicht van alle ruwe ingrediënten inclusief hun eigenschappen. Kies de moeilijkheidsgraad om de juiste prijzen te zien."
@@ -579,7 +584,7 @@
       "deliveries": {
         "buttonDesc": "Leveringen",
         "title": "Leveringsplan",
-        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletplanken nodig om alle fabrieken te bevoorraden.",
+        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Een gedeeld magazijn heeft {amount} palletplanken nodig om alle fabrieken in deze groep te bevoorraden.",
         "descEnough": "Alle fabrieken hebben genoeg palletplanken voor alle benodigde ingrediënten."
       },
       "shoppingList": {
@@ -588,6 +593,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "In versie 1.0 verlagen grondstoffen en werknemerslonen het belastbare inkomen. Fabrieksapparatuur, palletstellingen en daarvoor in aanmerking komende bezorgvoertuigen zijn aftrekbaar bij aankoop, maar eenmalige aftrekposten zijn niet opgenomen in deze schatting van terugkerende belasting.",
       "title": "Fabriekplanner",
       "desc": "Bereken de benodigde ingrediënten, machines en arbeiders voor je productielijnen. Kies gewoon de producten die je wilt produceren en de planner doet de rest.",
       "information": {
@@ -623,8 +629,19 @@
       "genericFactoryName": "{productName}-fabriek",
       "estimatedSales": "Geschatte wekelijkse verkopen",
       "estimatedSalesTooltip": "Vul de verwachte omzet per product in je winkels in.",
-      "priceIndexButton": "Prijsindex kiezen",
-      "priceIndexDesc": "Kies de huidige game-prijsindex voor dit product om het juiste inkomen te berekenen. (De exportprijs is nauwkeuriger.)"
+      "priceIndexButton": "Prijsindex en winst",
+      "priceIndexTitle": "Berekening van prijsindex en winst",
+      "priceIndexDesc": "Kies de huidige prijsindex in de game om de exportopbrengst, inkomstenbelasting en nettowinst per stuk te berekenen. De exportprijs geeft het nauwkeurigste resultaat.",
+      "priceIndexExportRevenue": "Exportopbrengst / stuk",
+      "priceIndexDeductibleManufacturingCosts": "Aftrekbare productiekosten",
+      "priceIndexProfitBeforeTax": "Winst vóór belasting",
+      "priceIndexProfitBeforeTaxTaxable": "Winst vóór belasting (belastbaar)",
+      "priceIndexIncomeTax": "Inkomstenbelasting ({rate}%)",
+      "priceIndexResultHeading": "Resultaat per stuk",
+      "priceIndexCalculationHeading": "Zo wordt het berekend",
+      "priceIndexTaxHeading": "Inkomstenbelasting",
+      "priceIndexManufacturingCostNote": "Productiekosten omvatten grondstoffen en lonen van fabrieksarbeiders per stuk.",
+      "priceIndexLegacyTaxNote": "In deze gameversie verlagen productiekosten het belastbare inkomen niet."
     }
   },
   "contact": {

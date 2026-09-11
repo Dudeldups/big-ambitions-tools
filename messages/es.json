@@ -249,6 +249,8 @@
     "profit": "Beneficio",
     "netProfit": "Beneficio neto",
     "taxes": "Impuestos",
+    "taxableIncome": "Ingresos imponibles",
+    "taxDeductibleExpenses": "Gastos deducibles fiscalmente",
     "salary": "Salario",
     "manufacturingCosts": "Costes de fabricación",
     "manufacturingCostsShort": "Costes fabr.",
@@ -480,7 +482,8 @@
     "launch": "¡Arrancamos!: Base de datos y planificador de planta",
     "qotd": "Añadida la 'Frase del día' de Fred a la página de inicio",
     "update11": "Añadido versionado de datos del juego para admitir las dos versiones más recientes",
-    "update10": "Actualizado para Big Ambitions 1.0 y añadidos los pedidos de ingredientes solo al grupo de almacén"
+    "update10": "Actualizado para Big Ambitions 1.0 y añadidos los pedidos de ingredientes solo al grupo de almacén",
+    "update12": "Actualizados los cálculos de impuestos de las fábricas y mejorados los planes de entrega desde almacenes compartidos"
   },
   "database": {
     "intro": {
@@ -488,7 +491,9 @@
       "buttonDesc": "Selecciona una categoría"
     },
     "products": {
-      "caption": "Todos los productos de un vistazo. Puedes cambiar fácilmente entre precios de fabricación e importación. El precio minorista es el promedio de todos los distritos. Las ganancias se muestran como valores netos, incluyendo costos de ingredientes, salarios de trabajadores y impuestos basados en la dificultad seleccionada. <br></br>¿Te interesa cómo se calcula? Echa un vistazo a la sección <link>{toolsSection}</link>."
+      "caption": "Todos los productos de un vistazo. Puedes cambiar fácilmente entre precios de fabricación e importación. El precio minorista es el promedio de todos los distritos. Las ganancias se muestran como valores netos, incluyendo costos de ingredientes, salarios de trabajadores y impuestos basados en la dificultad seleccionada. <br></br>¿Te interesa cómo se calcula? Echa un vistazo a la sección <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "El índice de precios ajusta el precio de exportación de un producto y, si seleccionas Importación, también su coste de importación. No modifica el precio medio de venta al público ni los costes de fabricación. El beneficio neto se basa en el origen y el canal de venta seleccionados; para los productos fabricados, incluye materias primas y salarios de trabajadores de fábrica, además del impuesto sobre la renta según la dificultad seleccionada.",
+      "priceIndexExplanationConclusion": "En resumen: El beneficio mostrado es la cantidad estimada que te queda después de los costes aplicables del producto y el impuesto sobre la renta; los gastos generales de la fábrica no están incluidos."
     },
     "ingredients": {
       "caption": "Vista general de todas las materias primas y sus propiedades. Selecciona la dificultad para ver los precios correctos."
@@ -579,7 +584,7 @@
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plan de entregas",
-        "descNeeded": "Planes de entrega para cada fábrica en este grupo. Necesitarás {amount} estanterías para palés para abastecer todas las fábricas.",
+        "descNeeded": "Planes de entrega para cada fábrica en este grupo. Un almacén compartido necesitará {amount} estanterías para palés para abastecer todas las fábricas de este grupo.",
         "descEnough": "Todas las fábricas tienen suficientes estanterías para almacenar todos los ingredientes necesarios."
       },
       "shoppingList": {
@@ -588,6 +593,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "En la versión 1.0, las materias primas y los salarios de los empleados reducen los ingresos imponibles. El equipamiento de fábrica, las estanterías para palés y los vehículos de reparto que cumplan los requisitos son deducibles al comprarlos, pero las deducciones únicas no se incluyen en esta estimación de impuestos recurrentes.",
       "title": "Planificador de Fábrica",
       "desc": "Calcula los ingredientes, máquinas y trabajadores necesarios para tus líneas de producción. Solo selecciona los productos que quieres fabricar y el planificador hará el resto.",
       "information": {
@@ -623,8 +629,19 @@
       "genericFactoryName": "Fábrica de {productName}",
       "estimatedSales": "Ventas semanales estimadas",
       "estimatedSalesTooltip": "Introduce las ventas esperadas de cada producto en tus tiendas.",
-      "priceIndexButton": "Seleccionar índice de precios",
-      "priceIndexDesc": "Selecciona el índice de precios actual del juego para este producto y calcula los ingresos correctamente. (El precio de exportación es más preciso.)"
+      "priceIndexButton": "Índice de precios y beneficio",
+      "priceIndexTitle": "Cálculo del índice de precios y beneficio",
+      "priceIndexDesc": "Selecciona el índice de precios actual del juego para calcular los ingresos por exportación, el impuesto sobre la renta y el beneficio neto por unidad. El precio de exportación ofrece el resultado más preciso.",
+      "priceIndexExportRevenue": "Ingresos de exportación / unidad",
+      "priceIndexDeductibleManufacturingCosts": "Costes de fabricación deducibles",
+      "priceIndexProfitBeforeTax": "Beneficio antes de impuestos",
+      "priceIndexProfitBeforeTaxTaxable": "Beneficio antes de impuestos (imponible)",
+      "priceIndexIncomeTax": "Impuesto sobre la renta ({rate}%)",
+      "priceIndexResultHeading": "Resultado por unidad",
+      "priceIndexCalculationHeading": "Cómo se calcula",
+      "priceIndexTaxHeading": "Impuesto sobre la renta",
+      "priceIndexManufacturingCostNote": "Los costes de fabricación incluyen materias primas y salarios de trabajadores de fábrica por unidad.",
+      "priceIndexLegacyTaxNote": "En esta versión del juego, los costes de fabricación no reducen los ingresos imponibles."
     }
   },
   "contact": {

@@ -21,7 +21,13 @@ import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { getExportPrice, getManufacturePrice } from "@/lib/calculations/math";
+import {
+  getExportPrice,
+  getIncomeTax,
+  getManufacturePrice,
+  getProfitAfterIncomeTax,
+  getTaxableIncome,
+} from "@/lib/calculations/math";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { usePriceIndex } from "@/lib/hooks/usePriceIndex";
 import { getPlaythroughGameData } from "@/lib/game/registry";
@@ -75,11 +81,82 @@ const PriceIndexPopover = ({
     ).toFixed(2),
   );
 
+  const manufacturingCostsAreDeductible =
+    gameData.taxRules.recurringFactoryExpensesDeductible;
+  const deductibleExpenses = manufacturingCostsAreDeductible
+    ? manufacturePrice
+    : 0;
+  const taxableIncome = getTaxableIncome(exportPrice, deductibleExpenses);
   const taxRate = TAX_RATE[activePlaythrough.difficulty];
-  const taxAmount = exportPrice * taxRate;
+  const taxAmount = getIncomeTax(
+    exportPrice,
+    deductibleExpenses,
+    activePlaythrough.difficulty,
+  );
+  const profit = getProfitAfterIncomeTax(
+    exportPrice,
+    manufacturePrice,
+    deductibleExpenses,
+    activePlaythrough.difficulty,
+  );
+  const formattedExportPrice = formatToUSD(exportPrice);
+  const formattedManufacturePrice = formatToUSD(manufacturePrice);
+  const profitBeforeTax = exportPrice - manufacturePrice;
+  const formattedProfitBeforeTax = formatToUSD(profitBeforeTax);
+  const formattedTaxableIncome = formatToUSD(taxableIncome);
+  const formattedTaxAmount = formatToUSD(taxAmount);
+  const formattedProfit = formatToUSD(profit);
 
-  const profit =
-    Math.round((exportPrice - taxAmount - manufacturePrice) * 100) / 100;
+  const exportRevenueLabel = t.has(
+    "tools.factoryPlanner.priceIndexExportRevenue",
+  )
+    ? t("tools.factoryPlanner.priceIndexExportRevenue")
+    : "Export revenue / item";
+  const manufacturingCostsLabel = manufacturingCostsAreDeductible
+    ? t.has("tools.factoryPlanner.priceIndexDeductibleManufacturingCosts")
+      ? t("tools.factoryPlanner.priceIndexDeductibleManufacturingCosts")
+      : "Deductible manufacturing costs"
+    : t("general.manufacturingCosts");
+  const profitBeforeTaxLabel = manufacturingCostsAreDeductible
+    ? t.has("tools.factoryPlanner.priceIndexProfitBeforeTaxTaxable")
+      ? t("tools.factoryPlanner.priceIndexProfitBeforeTaxTaxable")
+      : "Profit before tax (taxable)"
+    : t.has("tools.factoryPlanner.priceIndexProfitBeforeTax")
+      ? t("tools.factoryPlanner.priceIndexProfitBeforeTax")
+      : "Profit before tax";
+  const incomeTaxLabel = t.has("tools.factoryPlanner.priceIndexIncomeTax")
+    ? t("tools.factoryPlanner.priceIndexIncomeTax", {
+        rate: taxRate * 100,
+      })
+    : `Income tax (${taxRate * 100}%)`;
+  const resultHeading = t.has("tools.factoryPlanner.priceIndexResultHeading")
+    ? t("tools.factoryPlanner.priceIndexResultHeading")
+    : "Per-item result";
+  const calculationHeading = t.has(
+    "tools.factoryPlanner.priceIndexCalculationHeading",
+  )
+    ? t("tools.factoryPlanner.priceIndexCalculationHeading")
+    : "How it's calculated";
+  const taxHeading = t.has("tools.factoryPlanner.priceIndexTaxHeading")
+    ? t("tools.factoryPlanner.priceIndexTaxHeading")
+    : "Income tax";
+  const profitBeforeTaxFormula = `${formattedExportPrice} − ${formattedManufacturePrice} = ${formattedProfitBeforeTax}`;
+  const taxFormula = `${formattedTaxableIncome} × ${taxRate * 100}% = ${formattedTaxAmount}`;
+  const profitFormula = `${formattedProfitBeforeTax} − ${formattedTaxAmount} = ${formattedProfit}`;
+  const baseManufacturingCostNote = t.has(
+    "tools.factoryPlanner.priceIndexManufacturingCostNote",
+  )
+    ? t("tools.factoryPlanner.priceIndexManufacturingCostNote")
+    : "Manufacturing costs include raw materials and factory worker wages per item.";
+  const legacyTaxNote = t.has("tools.factoryPlanner.priceIndexLegacyTaxNote")
+    ? t("tools.factoryPlanner.priceIndexLegacyTaxNote")
+    : "Manufacturing costs do not reduce taxable income in this game version.";
+  const manufacturingCostNote = manufacturingCostsAreDeductible
+    ? baseManufacturingCostNote
+    : `${baseManufacturingCostNote} ${legacyTaxNote}`;
+  const popoverTitle = t.has("tools.factoryPlanner.priceIndexTitle")
+    ? t("tools.factoryPlanner.priceIndexTitle")
+    : t("tools.factoryPlanner.priceIndexButton");
 
   return (
     <Popover>
@@ -89,11 +166,9 @@ const PriceIndexPopover = ({
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="border-muted-foreground border">
+      <PopoverContent className="border-muted-foreground w-96 max-w-[calc(100vw-2rem)] border">
         <PopoverHeader>
-          <PopoverTitle>
-            {t("tools.factoryPlanner.priceIndexButton")}
-          </PopoverTitle>
+          <PopoverTitle>{popoverTitle}</PopoverTitle>
           <PopoverDescription>
             {t("tools.factoryPlanner.priceIndexDesc")}
           </PopoverDescription>
@@ -121,26 +196,69 @@ const PriceIndexPopover = ({
             </div>
           </Field>
 
-          <dl className="grid grid-cols-2 justify-between gap-2">
-            <dt>{t("general.exportPrice")}</dt>
-            <dd className="amount">{formatToUSD(exportPrice)}</dd>
+          <section className="space-y-1.5">
+            <h3 className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
+              {resultHeading}
+            </h3>
+            <dl className="overflow-hidden rounded-md border">
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b px-3 py-2">
+                <dt>{exportRevenueLabel}</dt>
+                <dd className="amount">{formattedExportPrice}</dd>
+              </div>
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-3 py-2">
+                <dt>{manufacturingCostsLabel}</dt>
+                <dd className="amount">-{formattedManufacturePrice}</dd>
+              </div>
+              <div className="bg-muted/40 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-y px-3 py-2 font-medium">
+                <dt>{profitBeforeTaxLabel}</dt>
+                <dd className="amount">{formattedProfitBeforeTax}</dd>
+              </div>
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-3 py-2">
+                <dt>{incomeTaxLabel}</dt>
+                <dd className="amount">-{formattedTaxAmount}</dd>
+              </div>
+              <div className="bg-muted/40 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t px-3 py-2 font-semibold">
+                <dt>{t("general.netProfit")}</dt>
+                <dd
+                  className={cn(
+                    "amount",
+                    profit > 0 ? "text-success" : "text-destructive",
+                  )}
+                >
+                  {formattedProfit}
+                </dd>
+              </div>
+            </dl>
+          </section>
 
-            <dt>{t("general.taxes")}</dt>
-            <dd className="amount">-{formatToUSD(taxAmount)}</dd>
-
-            <dt>{t("general.manufacturingCostsShort")}</dt>
-            <dd className="amount">-{formatToUSD(manufacturePrice)}</dd>
-
-            <dt>{t("general.netProfit")}</dt>
-            <dd
-              className={cn(
-                "amount",
-                profit > 0 ? "text-success" : "text-destructive",
-              )}
-            >
-              {formatToUSD(profit)}
-            </dd>
-          </dl>
+          <section className="space-y-1.5 border-t pt-3">
+            <h3 className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
+              {calculationHeading}
+            </h3>
+            <div className="bg-muted/40 divide-y overflow-hidden rounded-md border text-xs tabular-nums">
+              <div className="space-y-1 p-3">
+                <p className="text-muted-foreground font-medium">
+                  {profitBeforeTaxLabel}
+                </p>
+                <p className="font-mono">{profitBeforeTaxFormula}</p>
+              </div>
+              <div className="space-y-1 p-3">
+                <p className="text-muted-foreground font-medium">
+                  {taxHeading}
+                </p>
+                <p className="font-mono">{taxFormula}</p>
+              </div>
+              <div className="space-y-1 p-3">
+                <p className="text-muted-foreground font-medium">
+                  {t("general.netProfit")}
+                </p>
+                <p className="font-mono">{profitFormula}</p>
+              </div>
+            </div>
+            <p className="text-muted-foreground px-1 text-xs">
+              {manufacturingCostNote}
+            </p>
+          </section>
         </FieldGroup>
       </PopoverContent>
     </Popover>

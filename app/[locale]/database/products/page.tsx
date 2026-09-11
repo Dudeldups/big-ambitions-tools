@@ -88,6 +88,21 @@ export default function ProductsPage() {
         })}
       />
 
+      <aside
+        aria-labelledby="products-price-index-explanation"
+        className="bg-muted/30 mt-6 max-w-3xl space-y-1 rounded-md border p-3 text-sm"
+      >
+        <h3 id="products-price-index-explanation" className="font-semibold">
+          {t("general.priceIndex")}
+        </h3>
+        <p className="text-muted-foreground">
+          {t("database.products.priceIndexExplanation")}
+        </p>
+        <p className="text-muted-foreground pt-2 font-medium">
+          {t("database.products.priceIndexExplanationConclusion")}
+        </p>
+      </aside>
+
       {gameVersion ? (
         <DataTable columns={columns} data={data} />
       ) : (

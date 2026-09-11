@@ -249,6 +249,8 @@
     "profit": "Lucro",
     "netProfit": "Lucro líquido",
     "taxes": "Impostos",
+    "taxableIncome": "Renda tributável",
+    "taxDeductibleExpenses": "Despesas dedutíveis",
     "salary": "Salário",
     "manufacturingCosts": "Custos de produção",
     "manufacturingCostsShort": "Custos prod.",
@@ -480,7 +482,8 @@
     "launch": "Novidade: Base de Dados e Planeador de Fábrica",
     "qotd": "Adicionada a 'Frase do dia' do Fred à página inicial",
     "update11": "Adicionado versionamento de dados para suportar as duas versões mais recentes",
-    "update10": "Atualizado para Big Ambitions 1.0 e adicionada a encomenda de ingredientes apenas para o grupo de armazém"
+    "update10": "Atualizado para Big Ambitions 1.0 e adicionada a encomenda de ingredientes apenas para o grupo de armazém",
+    "update12": "Atualizados os cálculos de impostos das fábricas e melhorados os planos de entrega de armazéns compartilhados"
   },
   "database": {
     "intro": {
@@ -488,7 +491,9 @@
       "buttonDesc": "Escolhe uma categoria"
     },
     "products": {
-      "caption": "Todos os produtos de uma só vez. Troca facilmente entre preços de fabricação e importação. O preço de varejo é a média em todos os distritos. Os lucros são valores líquidos – incluindo ingredientes, salários dos funcionários e impostos baseados na dificuldade selecionada. <br></br>Curioso como é calculado? Confere a seção <link>{toolsSection}</link>."
+      "caption": "Todos os produtos de uma só vez. Troca facilmente entre preços de fabricação e importação. O preço de varejo é a média em todos os distritos. Os lucros são valores líquidos – incluindo ingredientes, salários dos funcionários e impostos baseados na dificuldade selecionada. <br></br>Curioso como é calculado? Confere a seção <link>{toolsSection}</link>.",
+      "priceIndexExplanation": "O índice de preços ajusta o preço de exportação de um produto e, quando você seleciona Importação, também o custo de importação. Ele não altera o preço médio de varejo nem os custos de produção. O lucro líquido se baseia na origem e no canal de venda escolhidos; para produtos fabricados, inclui matérias-primas e salários dos operários de fábrica, além do imposto de renda da dificuldade selecionada.",
+      "priceIndexExplanationConclusion": "Resumindo: o lucro exibido é o valor estimado que sobra para você depois dos custos aplicáveis do produto e do imposto de renda; os custos gerais da fábrica não estão incluídos."
     },
     "ingredients": {
       "caption": "Visão geral dos ingredientes e suas propriedades. Selecione a dificuldade para ver os preços corretos."
@@ -579,7 +584,7 @@
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plano de entregas",
-        "descNeeded": "Planos de entrega para cada fábrica neste grupo. Você precisará de {amount} estantes para paletes para abastecer todas as fábricas.",
+        "descNeeded": "Planos de entrega para cada fábrica neste grupo. Um armazém compartilhado precisará de {amount} estantes para paletes para abastecer todas as fábricas deste grupo.",
         "descEnough": "Todas as fábricas têm estantes para paletes suficientes para guardar todos os ingredientes necessários."
       },
       "shoppingList": {
@@ -588,6 +593,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "Na versão 1.0, as matérias-primas e os salários dos funcionários reduzem a renda tributável. Os equipamentos da fábrica, as prateleiras para paletes e os veículos de entrega elegíveis são dedutíveis no momento da compra, mas as deduções únicas não estão incluídas nesta estimativa de impostos recorrentes.",
       "title": "Planejador de Fábrica",
       "desc": "Calcule os ingredientes, máquinas e operários necessários para suas linhas de produção. Basta selecionar os produtos que deseja produzir e o planejador fará o resto.",
       "information": {
@@ -623,8 +629,19 @@
       "genericFactoryName": "{productName} fábrica",
       "estimatedSales": "Vendas semanais estimadas",
       "estimatedSalesTooltip": "Digite o valor esperado de vendas por produto nas suas lojas.",
-      "priceIndexButton": "Definir índice de preço",
-      "priceIndexDesc": "Selecione o índice de preços atual deste produto no jogo para calcular a receita correta. (O preço de exportação é mais preciso.)"
+      "priceIndexButton": "Índice de preços e lucro",
+      "priceIndexTitle": "Cálculo do índice de preços e do lucro",
+      "priceIndexDesc": "Selecione o índice de preços atual do jogo para calcular a receita de exportação, o imposto de renda e o lucro líquido por unidade. O preço de exportação oferece o resultado mais preciso.",
+      "priceIndexExportRevenue": "Receita de exportação / unidade",
+      "priceIndexDeductibleManufacturingCosts": "Custos de produção dedutíveis",
+      "priceIndexProfitBeforeTax": "Lucro antes dos impostos",
+      "priceIndexProfitBeforeTaxTaxable": "Lucro antes dos impostos (tributável)",
+      "priceIndexIncomeTax": "Imposto de renda ({rate}%)",
+      "priceIndexResultHeading": "Resultado por unidade",
+      "priceIndexCalculationHeading": "Como é calculado",
+      "priceIndexTaxHeading": "Imposto de renda",
+      "priceIndexManufacturingCostNote": "Os custos de produção incluem matérias-primas e salários dos operários de fábrica por unidade.",
+      "priceIndexLegacyTaxNote": "Nesta versão do jogo, os custos de produção não reduzem a renda tributável."
     }
   },
   "contact": {

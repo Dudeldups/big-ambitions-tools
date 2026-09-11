@@ -249,6 +249,8 @@
     "profit": "이익",
     "netProfit": "순이익",
     "taxes": "세금",
+    "taxableIncome": "과세 소득",
+    "taxDeductibleExpenses": "세금 공제 가능 비용",
     "salary": "급여",
     "manufacturingCosts": "제조 비용",
     "manufacturingCostsShort": "제조비",
@@ -480,7 +482,8 @@
     "launch": "데이터베이스 & 공장 플래너 등장!",
     "qotd": "홈페이지에 프레드의 '오늘의 명언' 추가",
     "update11": "최신 두 버전을 지원하기 위한 게임 데이터 버전 관리 추가",
-    "update10": "Big Ambitions 1.0으로 업데이트하고 재료를 창고 그룹으로만 주문하는 기능을 추가했습니다"
+    "update10": "Big Ambitions 1.0으로 업데이트하고 재료를 창고 그룹으로만 주문하는 기능을 추가했습니다",
+    "update12": "공장 세금 계산을 업데이트하고 공유 창고 배송 계획을 개선했습니다"
   },
   "database": {
     "intro": {
@@ -488,7 +491,9 @@
       "buttonDesc": "카테고리 선택"
     },
     "products": {
-      "caption": "제품 한눈에 보기. 제조가와 수입가 전환이 쉽죠. 소매가는 모든 지구 평균입니다. 순이익은 재료비, 인건비, 세금까지 포함된 순수익으로 표시됩니다 (선택한 난이도 기준). <br></br>계산 방법 궁금해요? <link>{toolsSection}</link> 섹션 확인해보세요."
+      "caption": "제품 한눈에 보기. 제조가와 수입가 전환이 쉽죠. 소매가는 모든 지구 평균입니다. 순이익은 재료비, 인건비, 세금까지 포함된 순수익으로 표시됩니다 (선택한 난이도 기준). <br></br>계산 방법 궁금해요? <link>{toolsSection}</link> 섹션 확인해보세요.",
+      "priceIndexExplanation": "가격 지수는 제품의 수출 가격을 조정하고, 수입을 선택하면 수입 비용도 조정해요. 평균 소매 가격이나 제조 비용에는 영향을 주지 않아요. 순이익은 선택한 공급 방식과 판매 경로를 기준으로 계산하며, 직접 제조한 제품에는 원자재와 공장 작업자 임금, 선택한 난이도의 소득세가 포함돼요.",
+      "priceIndexExplanationConclusion": "한마디로, 표시된 이익은 해당 제품 비용과 소득세를 뺀 뒤 남는 예상 금액이에요. 공장 전체의 간접비는 포함되지 않아요."
     },
     "ingredients": {
       "caption": "모든 원료와 속성을 한눈에 보세요. 올바른 가격을 보려면 난이도를 선택하세요."
@@ -579,7 +584,7 @@
       "deliveries": {
         "buttonDesc": "배송",
         "title": "배송 계획",
-        "descNeeded": "이 그룹 공장들의 배송 계획이에요. 모든 공장에 물량을 공급하려면 팔레트 선반 {amount}개가 필요해요.",
+        "descNeeded": "이 그룹 공장들의 배송 계획이에요. 공유 창고에서 이 그룹의 모든 공장에 물량을 공급하려면 팔레트 선반 {amount}개가 필요해요.",
         "descEnough": "모든 공장이 필요한 재료를 보관할 만큼 충분한 팔레트 선반을 가지고 있습니다."
       },
       "shoppingList": {
@@ -588,6 +593,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "버전 1.0에서는 원자재와 직원 임금이 과세 소득을 줄여 줘요. 공장 장비, 팔레트 선반, 공제 대상 배송 차량은 구매 시 세금 공제를 받을 수 있지만, 일회성 공제는 이 반복 세금 추정치에 포함되지 않아요.",
       "title": "공장 플래너",
       "desc": "생산 라인에 필요한 재료, 기계, 그리고 공장 작업자를 계산하세요. 만들고 싶은 제품만 선택하면 플래너가 나머지를 처리해 줍니다.",
       "information": {
@@ -623,8 +629,19 @@
       "genericFactoryName": "{productName} 공장",
       "estimatedSales": "예상 주간 매출",
       "estimatedSalesTooltip": "각 제품별 예상 매출을 입력하세요.",
-      "priceIndexButton": "가격 지수 설정",
-      "priceIndexDesc": "수익을 정확히 계산하려면 이 제품의 인게임 가격 지수를 골라봐! (수출 가격이 더 정확해.)"
+      "priceIndexButton": "가격 지수와 이익",
+      "priceIndexTitle": "가격 지수와 이익 계산",
+      "priceIndexDesc": "현재 게임 내 가격 지수를 선택하면 개당 수출 수익, 소득세, 순이익을 계산할 수 있어요. 수출 가격을 사용하면 가장 정확한 결과를 얻을 수 있어요.",
+      "priceIndexExportRevenue": "개당 수출 수익",
+      "priceIndexDeductibleManufacturingCosts": "세금 공제 가능한 제조 비용",
+      "priceIndexProfitBeforeTax": "세전 이익",
+      "priceIndexProfitBeforeTaxTaxable": "세전 이익(과세 대상)",
+      "priceIndexIncomeTax": "소득세 ({rate}%)",
+      "priceIndexResultHeading": "개당 결과",
+      "priceIndexCalculationHeading": "계산 방법",
+      "priceIndexTaxHeading": "소득세",
+      "priceIndexManufacturingCostNote": "제조 비용에는 개당 원자재 비용과 공장 작업자 임금이 포함돼요.",
+      "priceIndexLegacyTaxNote": "이 게임 버전에서는 제조 비용이 과세 소득을 줄이지 않아요."
     }
   },
   "contact": {

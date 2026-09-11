@@ -13,11 +13,9 @@ import {
 import { Package } from "lucide-react";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
 import { getShoppingList } from "@/lib/utils/getShoppingList";
 import { getPlaythroughGameData } from "@/lib/game/registry";
 import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
-import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
 import { cn } from "@/lib/utils";
 import DeliveriesTable from "../tables/deliveries-table";
@@ -49,22 +47,10 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
       activePlaythrough.difficulty,
       gameData,
     );
-    const requiredShelves = getOptimalPalletShelfAmount(
-      factory.workstations,
-      gameData,
-    ).external;
-    if (factory.shelfAmount > requiredShelves) return [];
-
-    const { factoryList } = splitShoppingListByShelves(
-      shoppingList,
-      requiredShelves,
-      factory.shelfAmount,
-      gameData,
-    );
 
     return {
       destination: factory.name,
-      deliveryList: calculateDailyWarehouseSupply(factoryList),
+      deliveryList: calculateDailyWarehouseSupply(shoppingList),
     };
   });
 
