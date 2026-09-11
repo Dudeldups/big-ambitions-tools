@@ -58,6 +58,12 @@ describe("ProductsPage", () => {
     expect(explanation).toHaveTextContent(
       "It does not change the average retail price or manufacturing costs",
     );
+    expect(explanation).toHaveTextContent(
+      "the displayed profit is the estimated amount left after the applicable product costs and income tax",
+    );
+    expect(explanation).toHaveTextContent(
+      "factory-wide overhead is not included",
+    );
   });
 
   it("renders the price index explanation in German", () => {
@@ -74,6 +80,12 @@ describe("ProductsPage", () => {
     );
     expect(explanation).toHaveTextContent(
       "Er verändert weder den durchschnittlichen Verkaufspreis noch die Herstellungskosten",
+    );
+    expect(explanation).toHaveTextContent(
+      "Der angezeigte Gewinn ist der geschätzte Betrag, der nach den jeweiligen Produktkosten und der Einkommensteuer übrig bleibt",
+    );
+    expect(explanation).toHaveTextContent(
+      "allgemeine Fabrikkosten sind nicht enthalten",
     );
   });
 });
