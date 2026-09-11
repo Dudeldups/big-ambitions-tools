@@ -104,8 +104,26 @@ describe("PriceIndexPopover", () => {
 
     await user.click(screen.getByRole("button", { name: /set price index/i }));
 
+    expect(screen.getByText("Export revenue / item")).toBeInTheDocument();
+    expect(
+      screen.getByText("Deductible manufacturing costs"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Taxable income")).toBeInTheDocument();
+    expect(screen.getByText("$19.11")).toBeInTheDocument();
+    expect(screen.getByText("Income tax (30%)")).toBeInTheDocument();
     expect(screen.getByText("-$5.73")).toBeInTheDocument();
     expect(screen.getByText("$13.38")).toBeInTheDocument();
+    expect(
+      screen.getByText("Tax: ($59.15 − $40.04) × 30% = $5.73"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Profit: $59.15 − $40.04 − $5.73 = $13.38"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Manufacturing costs include raw materials and factory worker wages per item.",
+      ),
+    ).toBeInTheDocument();
   });
 
   it("preserves gross-revenue taxation for versions before 1.0", async () => {
@@ -129,5 +147,6 @@ describe("PriceIndexPopover", () => {
 
     expect(screen.getByText("-$17.74")).toBeInTheDocument();
     expect(screen.getByText("$1.37")).toBeInTheDocument();
+    expect(screen.getByText("Tax: $59.15 × 30% = $17.74")).toBeInTheDocument();
   });
 });

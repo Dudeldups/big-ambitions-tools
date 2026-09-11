@@ -13,6 +13,7 @@ import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import {
   MAX_PRODUCT_PRICE_INDEX,
   MIN_PRODUCT_PRICE_INDEX,
+  TAX_RATE,
 } from "@/lib/constants";
 import { ProductName } from "@/lib/game/productNames";
 import { requireProduct } from "@/lib/game/requireGameData";
@@ -25,6 +26,7 @@ import {
   getIncomeTax,
   getManufacturePrice,
   getProfitAfterIncomeTax,
+  getTaxableIncome,
 } from "@/lib/calculations/math";
 import { formatToUSD } from "@/lib/utils/formatToUSD";
 import { usePriceIndex } from "@/lib/hooks/usePriceIndex";
@@ -79,10 +81,13 @@ const PriceIndexPopover = ({
     ).toFixed(2),
   );
 
-  const deductibleExpenses = gameData.taxRules
-    .recurringFactoryExpensesDeductible
+  const manufacturingCostsAreDeductible =
+    gameData.taxRules.recurringFactoryExpensesDeductible;
+  const deductibleExpenses = manufacturingCostsAreDeductible
     ? manufacturePrice
     : 0;
+  const taxableIncome = getTaxableIncome(exportPrice, deductibleExpenses);
+  const taxRate = TAX_RATE[activePlaythrough.difficulty];
   const taxAmount = getIncomeTax(
     exportPrice,
     deductibleExpenses,
@@ -94,6 +99,38 @@ const PriceIndexPopover = ({
     deductibleExpenses,
     activePlaythrough.difficulty,
   );
+  const formattedExportPrice = formatToUSD(exportPrice);
+  const formattedManufacturePrice = formatToUSD(manufacturePrice);
+  const formattedTaxAmount = formatToUSD(taxAmount);
+  const formattedProfit = formatToUSD(profit);
+
+  const exportRevenueLabel = t.has(
+    "tools.factoryPlanner.priceIndexExportRevenue",
+  )
+    ? t("tools.factoryPlanner.priceIndexExportRevenue")
+    : "Export revenue / item";
+  const manufacturingCostsLabel = manufacturingCostsAreDeductible
+    ? t.has("tools.factoryPlanner.priceIndexDeductibleManufacturingCosts")
+      ? t("tools.factoryPlanner.priceIndexDeductibleManufacturingCosts")
+      : "Deductible manufacturing costs"
+    : t("general.manufacturingCosts");
+  const taxableIncomeLabel = t.has("general.taxableIncome")
+    ? t("general.taxableIncome")
+    : "Taxable income";
+  const incomeTaxLabel = t.has("tools.factoryPlanner.priceIndexIncomeTax")
+    ? t("tools.factoryPlanner.priceIndexIncomeTax", {
+        rate: taxRate * 100,
+      })
+    : `Income tax (${taxRate * 100}%)`;
+  const taxFormula = manufacturingCostsAreDeductible
+    ? `Tax: (${formattedExportPrice} − ${formattedManufacturePrice}) × ${taxRate * 100}% = ${formattedTaxAmount}`
+    : `Tax: ${formattedExportPrice} × ${taxRate * 100}% = ${formattedTaxAmount}`;
+  const profitFormula = `Profit: ${formattedExportPrice} − ${formattedManufacturePrice} − ${formattedTaxAmount} = ${formattedProfit}`;
+  const manufacturingCostNote = t.has(
+    "tools.factoryPlanner.priceIndexManufacturingCostNote",
+  )
+    ? t("tools.factoryPlanner.priceIndexManufacturingCostNote")
+    : "Manufacturing costs include raw materials and factory worker wages per item.";
 
   return (
     <Popover>
@@ -103,7 +140,7 @@ const PriceIndexPopover = ({
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="border-muted-foreground border">
+      <PopoverContent className="border-muted-foreground w-80 max-w-[calc(100vw-2rem)] border">
         <PopoverHeader>
           <PopoverTitle>
             {t("tools.factoryPlanner.priceIndexButton")}
@@ -136,14 +173,17 @@ const PriceIndexPopover = ({
           </Field>
 
           <dl className="grid grid-cols-2 justify-between gap-2">
-            <dt>{t("general.exportPrice")}</dt>
-            <dd className="amount">{formatToUSD(exportPrice)}</dd>
+            <dt>{exportRevenueLabel}</dt>
+            <dd className="amount">{formattedExportPrice}</dd>
 
-            <dt>{t("general.taxes")}</dt>
-            <dd className="amount">-{formatToUSD(taxAmount)}</dd>
+            <dt>{manufacturingCostsLabel}</dt>
+            <dd className="amount">-{formattedManufacturePrice}</dd>
 
-            <dt>{t("general.manufacturingCostsShort")}</dt>
-            <dd className="amount">-{formatToUSD(manufacturePrice)}</dd>
+            <dt>{taxableIncomeLabel}</dt>
+            <dd className="amount">{formatToUSD(taxableIncome)}</dd>
+
+            <dt>{incomeTaxLabel}</dt>
+            <dd className="amount">-{formattedTaxAmount}</dd>
 
             <dt>{t("general.netProfit")}</dt>
             <dd
@@ -152,9 +192,15 @@ const PriceIndexPopover = ({
                 profit > 0 ? "text-success" : "text-destructive",
               )}
             >
-              {formatToUSD(profit)}
+              {formattedProfit}
             </dd>
           </dl>
+
+          <div className="bg-muted/50 space-y-1 rounded-md p-2 text-xs tabular-nums">
+            <p>{taxFormula}</p>
+            <p>{profitFormula}</p>
+            <p className="text-muted-foreground">{manufacturingCostNote}</p>
+          </div>
         </FieldGroup>
       </PopoverContent>
     </Popover>
