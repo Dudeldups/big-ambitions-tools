@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Leveringen",
         "title": "Leveringsplan",
-        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Je hebt {amount} palletplanken nodig om alle fabrieken te bevoorraden.",
+        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Een gedeeld magazijn heeft {amount} palletplanken nodig om alle fabrieken in deze groep te bevoorraden.",
         "descEnough": "Alle fabrieken hebben genoeg palletplanken voor alle benodigde ingrediënten."
       },
       "shoppingList": {

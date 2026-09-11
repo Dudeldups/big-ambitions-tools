@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Deliveries",
         "title": "Delivery Plan",
-        "descNeeded": "Delivery plans for each factory in this group. You will need {amount} pallet shelves to supply all factories.",
+        "descNeeded": "Delivery plans for each factory in this group. A shared warehouse will need {amount} pallet shelves to supply all factories in this group.",
         "descEnough": "All factories have enough shelves to hold all needed ingredients."
       },
       "shoppingList": {

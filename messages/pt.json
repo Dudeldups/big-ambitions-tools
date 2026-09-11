@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plano de entregas",
-        "descNeeded": "Planos de entrega para cada fábrica neste grupo. Você precisará de {amount} estantes para paletes para abastecer todas as fábricas.",
+        "descNeeded": "Planos de entrega para cada fábrica neste grupo. Um armazém compartilhado precisará de {amount} estantes para paletes para abastecer todas as fábricas deste grupo.",
         "descEnough": "Todas as fábricas têm estantes para paletes suficientes para guardar todos os ingredientes necessários."
       },
       "shoppingList": {

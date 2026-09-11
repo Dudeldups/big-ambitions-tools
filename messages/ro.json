@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Livrări",
         "title": "Plan de livrare",
-        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Ai nevoie de {amount} rafturi de paleți pentru toate fabricile.",
+        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Un depozit comun va avea nevoie de {amount} rafturi de paleți pentru a aproviziona toate fabricile din acest grup.",
         "descEnough": "Toate fabricile au suficiente rafturi de paleți pentru toate ingredientele necesare."
       },
       "shoppingList": {

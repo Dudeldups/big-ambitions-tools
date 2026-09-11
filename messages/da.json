@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Leveringer",
         "title": "Leveringsplan",
-        "descNeeded": "Leveringsplaner for hver fabrik i denne gruppe. Du skal bruge {amount} pallehylder til at forsyne alle fabrikker.",
+        "descNeeded": "Leveringsplaner for hver fabrik i denne gruppe. Et fælles lager skal bruge {amount} pallehylder for at kunne forsyne alle fabrikker i denne gruppe.",
         "descEnough": "Alle fabrikker har nok pallehylder til at opbevare alle nødvendige ingredienser."
       },
       "shoppingList": {

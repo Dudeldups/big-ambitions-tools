@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Toimitukset",
         "title": "Toimitussuunnitelma",
-        "descNeeded": "Toimitussuunnitelmat tämän ryhmän tehtaille. Tarvitset {amount} lavahyllyä, jotta kaikki tehtaat saadaan katettua.",
+        "descNeeded": "Toimitussuunnitelmat tämän ryhmän tehtaille. Yhteinen varasto tarvitsee {amount} lavahyllyä toimittaakseen tavaraa kaikille tämän ryhmän tehtaille.",
         "descEnough": "Kaikilla tehtailla on tarpeeksi hyllyä kaikkiin ainesosiin."
       },
       "shoppingList": {

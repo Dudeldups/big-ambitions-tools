@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Dodávky",
         "title": "Plán dodávek",
-        "descNeeded": "Plány dodávek pro každou továrnu v této skupině. Pro zásobování všech továren budeš potřebovat {amount} paletových regálů.",
+        "descNeeded": "Plány dodávek pro každou továrnu v této skupině. Sdílený sklad bude potřebovat {amount} paletových regálů, aby zásoboval všechny továrny v této skupině.",
         "descEnough": "Všechny továrny mají dost regálů na uložení všech potřebných surovin."
       },
       "shoppingList": {

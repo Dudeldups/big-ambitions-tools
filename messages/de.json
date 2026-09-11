@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Lieferungen",
         "title": "Lieferplan",
-        "descNeeded": "Lieferpläne für jede Fabrik in dieser Gruppe. Du benötigst {amount} Palettenregale, um alle Fabriken zu versorgen.",
+        "descNeeded": "Lieferpläne für jede Fabrik in dieser Gruppe. Ein gemeinsam genutztes Lagerhaus benötigt {amount} Palettenregale, um alle Fabriken in dieser Gruppe zu versorgen.",
         "descEnough": "Alle Fabriken haben genug Regale, um alle benötigten Zutaten aufzubewahren."
       },
       "shoppingList": {

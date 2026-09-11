@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Livraisons",
         "title": "Plan de livraison",
-        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Tu auras besoin de {amount} rayonnages à palettes pour approvisionner toutes les usines.",
+        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Un entrepôt partagé aura besoin de {amount} rayonnages à palettes pour approvisionner toutes les usines de ce groupe.",
         "descEnough": "Toutes les usines disposent de suffisamment de rayonnages à palettes pour stocker tous les ingrédients nécessaires."
       },
       "shoppingList": {

@@ -112,7 +112,7 @@ describe("GroupDeliveriesDialog", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        /you will need 5 pallet shelves to supply all factories/i,
+        /a shared warehouse will need 5 pallet shelves to supply all factories in this group/i,
       ),
     ).toBeInTheDocument();
     expect(screen.getByTestId("details-Bakery")).toBeInTheDocument();

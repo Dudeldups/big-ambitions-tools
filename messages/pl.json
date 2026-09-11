@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Dostawy",
         "title": "Plan dostaw",
-        "descNeeded": "Plany dostaw dla każdej fabryki w tej grupie. Potrzebujesz {amount} regałów paletowych, aby zaopatrzyć wszystkie fabryki.",
+        "descNeeded": "Plany dostaw dla każdej fabryki w tej grupie. Wspólny magazyn będzie potrzebować {amount} regałów paletowych, aby zaopatrywać wszystkie fabryki w tej grupie.",
         "descEnough": "Wszystkie fabryki mają wystarczająco dużo regałów, by pomieścić wszystkie potrzebne składniki."
       },
       "shoppingList": {

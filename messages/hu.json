@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Szállítások",
         "title": "Szállítási terv",
-        "descNeeded": "Szállítási tervek a csoport minden gyárához. {amount} raklappolcra lesz szükséged az összes gyár ellátásához.",
+        "descNeeded": "Szállítási tervek a csoport minden gyárához. Egy közös raktárnak {amount} raklappolcra lesz szüksége a csoport összes gyárának ellátásához.",
         "descEnough": "Minden gyárban elég raklappolc van az összes szükséges összetevő tárolásához."
       },
       "shoppingList": {

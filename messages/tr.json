@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Teslimatlar",
         "title": "Teslimat Planı",
-        "descNeeded": "Bu gruptaki her fabrika için teslimat planları. Tüm fabrikaları tedarik etmek için {amount} Palet Rafına ihtiyacın olacak.",
+        "descNeeded": "Bu gruptaki her fabrika için teslimat planları. Ortak bir deponun bu gruptaki tüm fabrikaları tedarik etmek için {amount} Palet Rafına ihtiyacı olacak.",
         "descEnough": "Tüm fabrikalar, tüm gerekli malzemeleri saklamak için yeterli Palet Rafına sahip."
       },
       "shoppingList": {

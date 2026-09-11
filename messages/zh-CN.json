@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "配送",
         "title": "交付计划",
-        "descNeeded": "该组内每个工厂的配送计划。你需要 {amount} 个托盘货架来供应所有工厂。",
+        "descNeeded": "该组内每个工厂的配送计划。共享仓库需要 {amount} 个托盘货架，才能为该组内的所有工厂供货。",
         "descEnough": "所有工厂的货架都足够存放所需的全部原料。"
       },
       "shoppingList": {

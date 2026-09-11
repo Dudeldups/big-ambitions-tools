@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "配送",
         "title": "配送計劃",
-        "descNeeded": "這個群組裡每個工廠的配送計畫。你需要 {amount} 個棧板架來供應所有工廠。",
+        "descNeeded": "這個群組裡每個工廠的配送計畫。共用倉庫需要 {amount} 個棧板架，才能供應這個群組裡的所有工廠。",
         "descEnough": "所有工廠都有足夠的棧板架來存放所有需要的原料。"
       },
       "shoppingList": {

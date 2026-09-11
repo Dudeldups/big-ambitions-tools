@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Pristatymai",
         "title": "Tiekimo planas",
-        "descNeeded": "Tiekimo planai kiekvienam šios grupės fabrikui. Tau reikės {amount} palečių lentynų, kad aprūtintum visus fabrikus.",
+        "descNeeded": "Tiekimo planai kiekvienam šios grupės fabrikui. Bendram sandėliui reikės {amount} palečių lentynų, kad jis aprūpintų visus šios grupės fabrikus.",
         "descEnough": "Visoms gamykloms užtenka lentynų visus reikiamus ingredientus laikyti."
       },
       "shoppingList": {

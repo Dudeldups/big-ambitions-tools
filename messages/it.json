@@ -583,7 +583,7 @@
       "deliveries": {
         "buttonDesc": "Consegne",
         "title": "Piano di consegna",
-        "descNeeded": "Piani di consegna per ogni fabbrica in questo gruppo. Avrai bisogno di {amount} scaffali per pallet per rifornire tutte le fabbriche.",
+        "descNeeded": "Piani di consegna per ogni fabbrica in questo gruppo. Un magazzino condiviso avrà bisogno di {amount} scaffali per pallet per rifornire tutte le fabbriche di questo gruppo.",
         "descEnough": "Le fabbriche hanno abbastanza scaffali per tutti gli ingredienti necessari."
       },
       "shoppingList": {
