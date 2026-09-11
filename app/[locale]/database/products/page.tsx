@@ -98,6 +98,9 @@ export default function ProductsPage() {
         <p className="text-muted-foreground">
           {t("database.products.priceIndexExplanation")}
         </p>
+        <p className="text-muted-foreground pt-2 font-medium">
+          {t("database.products.priceIndexExplanationConclusion")}
+        </p>
       </aside>
 
       {gameVersion ? (

@@ -491,7 +491,8 @@
     },
     "products": {
       "caption": "All products at a glance. Switch between manufacturing and import prices. Retail price is the average across all districts. Profits are shown as net values, including ingredient costs, worker salaries, and taxes based on the selected difficulty. <br></br>Curious how it's calculated? Check out the <link>{toolsSection}</link> section.",
-      "priceIndexExplanation": "The price index adjusts a product's export price and, when Import is selected, its import cost. It does not change the average retail price or manufacturing costs. Net profit uses the selected source and sales channel, including raw materials and factory worker wages for manufactured products, plus income tax at the selected difficulty. In short, the displayed profit is the estimated amount left after the applicable product costs and income tax; factory-wide overhead is not included."
+      "priceIndexExplanation": "The price index adjusts a product's export price and, when Import is selected, its import cost. It does not change the average retail price or manufacturing costs. Net profit uses the selected source and sales channel, including raw materials and factory worker wages for manufactured products, plus income tax at the selected difficulty.",
+      "priceIndexExplanationConclusion": "In short, the displayed profit is the estimated amount left after the applicable product costs and income tax; factory-wide overhead is not included."
     },
     "ingredients": {
       "caption": "Overview of all raw ingredients including their properties. Select the difficulty to see the correct prices."

@@ -491,7 +491,8 @@
     },
     "products": {
       "caption": "Alle Produkte auf einen Blick. Du kannst ganz einfach zwischen Herstellungs- und Importpreisen umschalten. Der Einzelhandelspreis ist der Durchschnitt über alle Stadtbezirke. Die Gewinne sind Netto-Werte – also inklusive Zutaten, Gehältern und Steuern basierend auf der ausgewählten Schwierigkeit. <br></br>Neugierig, wie das berechnet wird? Schau dir die <link>{toolsSection}</link> Seite an.",
-      "priceIndexExplanation": "Der Preisindex passt den Exportpreis eines Produkts und – wenn Import ausgewählt ist – dessen Importkosten an. Er verändert weder den durchschnittlichen Verkaufspreis noch die Herstellungskosten. Der Nettogewinn basiert auf der gewählten Kosten- und Verkaufsoption; bei hergestellten Produkten fließen Rohstoffe und Fabrikarbeiterlöhne ein, außerdem die Einkommensteuer des gewählten Schwierigkeitsgrads. Kurz gesagt: Der angezeigte Gewinn ist der geschätzte Betrag, der nach den jeweiligen Produktkosten und der Einkommensteuer übrig bleibt; allgemeine Fabrikkosten sind nicht enthalten."
+      "priceIndexExplanation": "Der Preisindex passt den Exportpreis eines Produkts und – wenn Import ausgewählt ist – dessen Importkosten an. Er verändert weder den durchschnittlichen Verkaufspreis noch die Herstellungskosten. Der Nettogewinn basiert auf der gewählten Kosten- und Verkaufsoption; bei hergestellten Produkten fließen Rohstoffe und Fabrikarbeiterlöhne ein, außerdem die Einkommensteuer des gewählten Schwierigkeitsgrads.",
+      "priceIndexExplanationConclusion": "Kurz gesagt: Der angezeigte Gewinn ist der geschätzte Betrag, der nach den jeweiligen Produktkosten und der Einkommensteuer übrig bleibt; allgemeine Fabrikkosten sind nicht enthalten."
     },
     "ingredients": {
       "caption": "Übersicht aller Rohzutaten inklusive ihrer Eigenschaften. Wähle die Schwierigkeit, um die korrekten Preise zu sehen."

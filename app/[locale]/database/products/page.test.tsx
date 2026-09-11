@@ -64,6 +64,7 @@ describe("ProductsPage", () => {
     expect(explanation).toHaveTextContent(
       "factory-wide overhead is not included",
     );
+    expect(screen.getByText(/^In short,/)).toHaveClass("pt-2");
   });
 
   it("renders the price index explanation in German", () => {
@@ -87,5 +88,6 @@ describe("ProductsPage", () => {
     expect(explanation).toHaveTextContent(
       "allgemeine Fabrikkosten sind nicht enthalten",
     );
+    expect(screen.getByText(/^Kurz gesagt:/)).toHaveClass("pt-2");
   });
 });
