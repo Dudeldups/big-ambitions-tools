@@ -154,6 +154,9 @@ const PriceIndexPopover = ({
   const manufacturingCostNote = manufacturingCostsAreDeductible
     ? baseManufacturingCostNote
     : `${baseManufacturingCostNote} ${legacyTaxNote}`;
+  const popoverTitle = t.has("tools.factoryPlanner.priceIndexTitle")
+    ? t("tools.factoryPlanner.priceIndexTitle")
+    : t("tools.factoryPlanner.priceIndexButton");
 
   return (
     <Popover>
@@ -165,9 +168,7 @@ const PriceIndexPopover = ({
 
       <PopoverContent className="border-muted-foreground w-96 max-w-[calc(100vw-2rem)] border">
         <PopoverHeader>
-          <PopoverTitle>
-            {t("tools.factoryPlanner.priceIndexButton")}
-          </PopoverTitle>
+          <PopoverTitle>{popoverTitle}</PopoverTitle>
           <PopoverDescription>
             {t("tools.factoryPlanner.priceIndexDesc")}
           </PopoverDescription>

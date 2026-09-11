@@ -5,6 +5,7 @@ import { renderWithIntl, screen } from "@/__tests__/test-utils";
 import { BASE_PRODUCT_PRICE_INDEX } from "@/lib/constants";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
+import deMessages from "@/messages/de.json";
 import PriceIndexPopover from "./price-index-popover";
 
 vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
@@ -22,7 +23,7 @@ describe("PriceIndexPopover", () => {
     );
 
     expect(
-      screen.queryByRole("button", { name: /set price index/i }),
+      screen.queryByRole("button", { name: /price index & profit/i }),
     ).not.toBeInTheDocument();
   });
 
@@ -43,7 +44,9 @@ describe("PriceIndexPopover", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: /set price index/i }));
+    await user.click(
+      screen.getByRole("button", { name: /price index & profit/i }),
+    );
 
     const slider = screen.getByRole("slider");
     expect(slider).toHaveValue(String(BASE_PRODUCT_PRICE_INDEX));
@@ -73,7 +76,9 @@ describe("PriceIndexPopover", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: /set price index/i }));
+    await user.click(
+      screen.getByRole("button", { name: /price index & profit/i }),
+    );
 
     fireEvent.change(screen.getByRole("slider"), {
       target: { value: "not-a-number" },
@@ -102,7 +107,13 @@ describe("PriceIndexPopover", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: /set price index/i }));
+    await user.click(
+      screen.getByRole("button", { name: /price index & profit/i }),
+    );
+
+    expect(
+      screen.getByText("Price index & profit calculation"),
+    ).toBeInTheDocument();
 
     expect(screen.getByText("Export revenue / item")).toBeInTheDocument();
     expect(
@@ -142,7 +153,9 @@ describe("PriceIndexPopover", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: /set price index/i }));
+    await user.click(
+      screen.getByRole("button", { name: /price index & profit/i }),
+    );
 
     expect(screen.getByText("-$17.74")).toBeInTheDocument();
     expect(screen.getByText("$1.37")).toBeInTheDocument();
@@ -151,5 +164,38 @@ describe("PriceIndexPopover", () => {
     expect(
       screen.getByText(/Manufacturing costs do not reduce taxable income/),
     ).toBeInTheDocument();
+  });
+
+  it("renders the new calculation labels in German", async () => {
+    const user = userEvent.setup();
+    const playthrough = usePlaythroughStore.getState().createPlaythrough({
+      characterName: "Alex",
+      difficulty: "hard",
+      gameVersion: "1.0",
+    });
+    usePlaythroughStore.setState({ _hasHydrated: true });
+    setMockParams({ playthroughId: playthrough.id });
+
+    renderWithIntl(
+      <PriceIndexPopover
+        selectedProduct="cheapJewelry"
+        factoryWorkerSalary={27}
+      />,
+      { locale: "de", messagesOverride: deMessages },
+    );
+
+    await user.click(
+      screen.getByRole("button", { name: /preisindex & gewinn/i }),
+    );
+
+    expect(
+      screen.getByText("Preisindex- und Gewinnberechnung"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Ergebnis pro Stück")).toBeInTheDocument();
+    expect(screen.getByText("So wird gerechnet")).toBeInTheDocument();
+    expect(
+      screen.getByText("Steuerlich absetzbare Herstellungskosten"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Einkommensteuer (30 %)")).toBeInTheDocument();
   });
 });

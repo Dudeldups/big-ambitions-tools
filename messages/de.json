@@ -249,6 +249,8 @@
     "profit": "Gewinn",
     "netProfit": "Nettogewinn",
     "taxes": "Steuern",
+    "taxableIncome": "Zu versteuerndes Einkommen",
+    "taxDeductibleExpenses": "Steuerlich absetzbare Ausgaben",
     "salary": "Gehalt",
     "manufacturingCosts": "Herstellungskosten",
     "manufacturingCostsShort": "Herst.kosten",
@@ -588,6 +590,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "In Version 1.0 senken Rohstoffe und Mitarbeiterlöhne das zu versteuernde Einkommen. Fabrikausstattung, Palettenregale und qualifizierte Lieferfahrzeuge sind beim Kauf steuerlich absetzbar; einmalige Abzüge sind in dieser laufenden Steuerschätzung jedoch nicht enthalten.",
       "title": "Fabrikplaner",
       "desc": "Berechne die benötigten Zutaten, Maschinen und Arbeiter für deine Produktionslinien. Wähle einfach die Produkte aus, die du produzieren möchtest, und der Planer erledigt den Rest.",
       "information": {
@@ -623,8 +626,19 @@
       "genericFactoryName": "{productName} Fabrik",
       "estimatedSales": "Geschätzte wöchentliche Verkäufe",
       "estimatedSalesTooltip": "Trage den erwarteten Umsatz pro Produkt in deinen Geschäften ein.",
-      "priceIndexButton": "Preisindex wählen",
-      "priceIndexDesc": "Wähle den aktuellen Spiel-Preisindex für dieses Produkt aus, um das korrekte Einkommen zu berechnen. (Der Exportpreis ist genauer.)"
+      "priceIndexButton": "Preisindex & Gewinn",
+      "priceIndexTitle": "Preisindex- und Gewinnberechnung",
+      "priceIndexDesc": "Wähle den aktuellen Preisindex im Spiel aus, um Exportumsatz, Einkommensteuer und Nettogewinn pro Stück zu berechnen. Der Exportpreis liefert das genaueste Ergebnis.",
+      "priceIndexExportRevenue": "Exportumsatz / Stück",
+      "priceIndexDeductibleManufacturingCosts": "Steuerlich absetzbare Herstellungskosten",
+      "priceIndexProfitBeforeTax": "Gewinn vor Steuern",
+      "priceIndexProfitBeforeTaxTaxable": "Gewinn vor Steuern (steuerpflichtig)",
+      "priceIndexIncomeTax": "Einkommensteuer ({rate} %)",
+      "priceIndexResultHeading": "Ergebnis pro Stück",
+      "priceIndexCalculationHeading": "So wird gerechnet",
+      "priceIndexTaxHeading": "Einkommensteuer",
+      "priceIndexManufacturingCostNote": "Die Herstellungskosten enthalten Rohstoffe und Fabrikarbeiterlöhne pro Stück.",
+      "priceIndexLegacyTaxNote": "In dieser Spielversion senken die Herstellungskosten das zu versteuernde Einkommen nicht."
     }
   },
   "contact": {
