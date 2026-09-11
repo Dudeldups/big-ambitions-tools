@@ -69,6 +69,26 @@ export const getEmployeeSalary = (
   );
 };
 
+export const getTaxableIncome = (
+  income: number,
+  deductibleExpenses: number,
+): number => Math.max(0, income - deductibleExpenses);
+
+export const getIncomeTax = (
+  income: number,
+  deductibleExpenses: number,
+  difficulty: Difficulty,
+): number =>
+  getTaxableIncome(income, deductibleExpenses) * TAX_RATE[difficulty];
+
+export const getProfitAfterIncomeTax = (
+  income: number,
+  expenses: number,
+  deductibleExpenses: number,
+  difficulty: Difficulty,
+): number =>
+  income - expenses - getIncomeTax(income, deductibleExpenses, difficulty);
+
 export const getManufacturePrice = (
   product: Product,
   difficulty: Difficulty,
@@ -114,9 +134,16 @@ export const getProfitMarginForProduct = (
       ? getManufacturePrice(product, difficulty, gameData)
       : getImportPrice(product.wholesalePrice, difficulty, priceIndex);
 
-  const taxMult = 1 - TAX_RATE[difficulty];
-
-  const margin = salePrice * taxMult - costPerItem;
+  const deductibleExpenses = gameData.taxRules
+    .recurringFactoryExpensesDeductible
+    ? costPerItem
+    : 0;
+  const margin = getProfitAfterIncomeTax(
+    salePrice,
+    costPerItem,
+    deductibleExpenses,
+    difficulty,
+  );
   const marginPercent = salePrice !== 0 ? (margin / salePrice) * 100 : 0;
 
   return { margin, marginPercent };

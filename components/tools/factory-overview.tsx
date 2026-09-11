@@ -20,6 +20,7 @@ import { usePriceIndices } from "@/lib/hooks/usePriceIndices";
 import { TAX_RATE } from "@/lib/constants";
 import OverviewTableWrapper from "./overview-table-wrapper";
 import { useTranslations } from "next-intl";
+import { getIncomeTax, getTaxableIncome } from "@/lib/calculations/math";
 
 type FactoryOverviewProps = {
   values: FactoryFormValues;
@@ -28,10 +29,21 @@ type FactoryOverviewProps = {
 const FactoryOverview = ({ values }: FactoryOverviewProps) => {
   const tGeneral = useTranslations("general");
   const tCounts = useTranslations("counts");
+  const tFactoryPlanner = useTranslations("tools.factoryPlanner");
   const { activePlaythrough } = useActivePlaythrough();
   const difficulty = activePlaythrough?.difficulty;
   const calculationPeriod = useAppState((s) => s.calculationPeriod) ?? "weekly";
   const priceIndices = usePriceIndices();
+
+  const taxDeductibleExpensesLabel = tGeneral.has("taxDeductibleExpenses")
+    ? tGeneral("taxDeductibleExpenses")
+    : "Tax-deductible expenses";
+  const taxableIncomeLabel = tGeneral.has("taxableIncome")
+    ? tGeneral("taxableIncome")
+    : "Taxable income";
+  const taxDeductionNote = tFactoryPlanner.has("taxDeductionNote")
+    ? tFactoryPlanner("taxDeductionNote")
+    : "In version 1.0, ingredients and employee wages reduce taxable income. Factory equipment, pallet shelves, and qualifying delivery vehicles are deductible when purchased, but one-time deductions are not included in this recurring tax estimate.";
 
   // TODO add skeletons
   if (!difficulty || !priceIndices || !activePlaythrough) return null;
@@ -69,7 +81,11 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
 
   const timeMult = getTimeMultiplier(calculationPeriod, values.openingHours);
   const taxRate = TAX_RATE[difficulty];
-  const totalTaxes = totalIncome * taxRate;
+  const taxDeductions = gameData.taxRules.recurringFactoryExpensesDeductible
+    ? totalRecurringCost
+    : 0;
+  const taxableIncome = getTaxableIncome(totalIncome, taxDeductions);
+  const totalTaxes = getIncomeTax(totalIncome, taxDeductions, difficulty);
 
   const profitForPeriod = totalIncome - totalTaxes - totalRecurringCost;
 
@@ -125,18 +141,30 @@ const FactoryOverview = ({ values }: FactoryOverviewProps) => {
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">
+            {gameData.taxRules.recurringFactoryExpensesDeductible
+              ? taxDeductibleExpensesLabel
+              : tGeneral("expenses")}
+          </span>
+          <span className="amount text-destructive">
+            {formatToUSD(totalRecurringCost)}
+          </span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">{taxableIncomeLabel}</span>
+          <span className="amount">{formatToUSD(taxableIncome)}</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">
             {tGeneral("taxes")} ({taxRate * 100}%)
           </span>
           <span className="amount text-destructive">
             {formatToUSD(totalTaxes)}
           </span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-muted-foreground">{tGeneral("expenses")}</span>
-          <span className="amount text-destructive">
-            {formatToUSD(totalRecurringCost)}
-          </span>
-        </div>
+
+        {gameData.taxRules.recurringFactoryExpensesDeductible && (
+          <p className="text-muted-foreground text-sm">{taxDeductionNote}</p>
+        )}
 
         <Separator />
 

@@ -249,6 +249,8 @@
     "profit": "Profit",
     "netProfit": "Net profit",
     "taxes": "Taxes",
+    "taxableIncome": "Taxable income",
+    "taxDeductibleExpenses": "Tax-deductible expenses",
     "salary": "Salary",
     "manufacturingCosts": "Manufacturing costs",
     "manufacturingCostsShort": "Manuf. costs",
@@ -588,6 +590,7 @@
       }
     },
     "factoryPlanner": {
+      "taxDeductionNote": "In version 1.0, ingredients and employee wages reduce taxable income. Factory equipment, pallet shelves, and qualifying delivery vehicles are deductible when purchased, but one-time deductions are not included in this recurring tax estimate.",
       "title": "Factory Planner",
       "desc": "Calculate the required ingredients, machines, and workers for your production lines. Just select the products you want to produce and the planner will do the rest.",
       "information": {

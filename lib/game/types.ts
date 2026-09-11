@@ -93,6 +93,10 @@ export type InventoryItem = {
   purchasePrice: number;
 };
 
+export type TaxRules = {
+  recurringFactoryExpensesDeductible: boolean;
+};
+
 export type GameData = {
   products: Partial<Record<ProductName, Product>>;
   ingredients: Partial<Record<IngredientName, Ingredient>>;
@@ -102,4 +106,5 @@ export type GameData = {
   vehicles: Partial<Record<VehicleName, Vehicle>>;
   shelves: Partial<Record<ShelfName, Shelf>>;
   inventoryItems: Partial<Record<InventoryItemName, InventoryItem>>;
+  taxRules: TaxRules;
 };
