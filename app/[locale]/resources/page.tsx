@@ -84,10 +84,10 @@ export default function ResourcesPage() {
             >
               <span
                 aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-0.75 bg-(--resource-accent) opacity-80"
+                className="absolute inset-y-0 left-0 w-0.75 bg-(--resource-accent) opacity-80"
               />
               <CardHeader className="gap-5 px-6 pt-2">
-                <div className="flex items-center gap-4">
+                <div className="flex items-start justify-between gap-4">
                   <ImageCircleBg
                     size="sm"
                     className="shrink-0 bg-[color-mix(in_oklab,var(--resource-accent)_10%,var(--color-card))] text-(--resource-accent) ring-1 ring-[color-mix(in_oklab,var(--resource-accent)_18%,transparent)]"
