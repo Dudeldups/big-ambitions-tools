@@ -13,4 +13,5 @@ export const ROUTES = [
   "/privacy",
   "/tools",
   "/contact",
+  "/resources",
 ];

@@ -284,7 +284,8 @@
       "hourly": "Valandinis",
       "daily": "Kasdienis",
       "weekly": "Savaitinis"
-    }
+    },
+    "resources": "Ištekliai"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palečių lentyna} other {Palečių lentynos}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Valdyk ir lygink savo {gameName} žaidimo būsenas. Sek progresą, analizuok statistiką ir optimizuok savo verslą."
+    },
+    "resources": {
+      "description": "Atraskite naudingus Big Ambitions bendruomenės išteklius, įskaitant BA Maps, Bigger Ambitions ir oficialų Big Ambitions Discord."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Nepavyko eksportuoti nustatymų.",
     "importSuccess": "Nustatymai sėkmingai importuoti!",
     "importError": "Nepavyko importuoti nustatymų. Patikrink JSON failą."
+  },
+  "resources": {
+    "title": "Big Ambitions ištekliai",
+    "intro": "Naudingos svetainės, įrankiai ir bendruomenės Big Ambitions žaidėjams.",
+    "badges": {
+      "community": "Bendruomenės projektas",
+      "official": "Oficialus"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Tyrinėkite Big Ambitions naudodami interaktyvų 3D žemėlapį. Raskite pastatus, įmones ir įdomias vietas, o importavę savo žaidimo duomenis matykite labiau suasmenintą vaizdą.",
+      "cta": "Naršyti BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Dar viena naudinga Big Ambitions bendruomenės svetainė su papildoma informacija apie žaidimą. Tikrai verta apsilankyti!",
+      "cta": "Apsilankyti Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Oficialus Big Ambitions Discord",
+      "description": "Prisijunkite prie oficialios Big Ambitions bendruomenės Discord platformoje, kad galėtumėte bendrauti su kitais žaidėjais, užduoti klausimus, dalytis idėjomis ir sekti žaidimo naujienas.",
+      "cta": "Prisijungti prie Discord"
+    },
+    "opensInNewTab": "(atidaroma naujame skirtuke)",
+    "suggestion": "Žinote dar vieną naudingą Big Ambitions išteklių?",
+    "suggestCta": "Pasiūlykite jį per mūsų kontaktų formą."
   }
 }

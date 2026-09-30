@@ -284,7 +284,8 @@
       "hourly": "Hver time",
       "daily": "Dagligt",
       "weekly": "Ugentligt"
-    }
+    },
+    "resources": "Ressourcer"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Pallehylde} other {Pallehylder}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Hold styr på og sammenlign dine {gameName} spilstande. Få overblik over din fremgang, analyser statistikker og optimer din strategi."
+    },
+    "resources": {
+      "description": "Opdag nyttige Big Ambitions-ressourcer fra fællesskabet, herunder BA Maps, Bigger Ambitions og den officielle Big Ambitions Discord."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Kunne ikke eksportere indstillinger.",
     "importSuccess": "Indstillinger importeret!",
     "importError": "Kunne ikke importere indstillinger. Tjek venligst JSON-filen."
+  },
+  "resources": {
+    "title": "Big Ambitions-ressourcer",
+    "intro": "Nyttige hjemmesider, værktøjer og fællesskaber for Big Ambitions-spillere.",
+    "badges": {
+      "community": "Fællesskabsprojekt",
+      "official": "Officiel"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Udforsk Big Ambitions med et interaktivt 3D-kort. Find bygninger, virksomheder og interessante steder, og importer dine egne spildata for at få en mere personlig visning.",
+      "cta": "Udforsk BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Endnu en nyttig Big Ambitions-fanside med flere oplysninger om spillet. Den er bestemt et besøg værd!",
+      "cta": "Besøg Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Officiel Big Ambitions Discord",
+      "description": "Bliv en del af det officielle Big Ambitions-fællesskab på Discord for at tale med andre spillere, stille spørgsmål, dele idéer og følge nyt om spillet.",
+      "cta": "Deltag på Discord"
+    },
+    "opensInNewTab": "(åbner i en ny fane)",
+    "suggestion": "Kender du en anden nyttig Big Ambitions-ressource?",
+    "suggestCta": "Foreslå den via vores kontaktformular."
   }
 }

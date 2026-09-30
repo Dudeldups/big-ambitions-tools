@@ -284,7 +284,8 @@
       "hourly": "hodinově",
       "daily": "denně",
       "weekly": "týdně"
-    }
+    },
+    "resources": "Zdroje"
   },
   "counts": {
     "palletShelf": "{count, plural, one {paletový regál} few {paletové regály} other {paletových regálů}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Spravuj a porovnávej své průběhy hry {gameName}. Sleduj svůj postup v různých obtížnostech, analyzuj statistiky výroby a optimalizuj své podnikání."
+    },
+    "resources": {
+      "description": "Objevte užitečné komunitní zdroje pro Big Ambitions, včetně BA Maps, Bigger Ambitions a oficiálního Discordu Big Ambitions."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Export nastavení se nezdařil.",
     "importSuccess": "Nastavení bylo úspěšně importováno!",
     "importError": "Import nastavení se nezdařil. Zkontroluj soubor JSON."
+  },
+  "resources": {
+    "title": "Zdroje pro Big Ambitions",
+    "intro": "Užitečné weby, nástroje a komunity pro hráče Big Ambitions.",
+    "badges": {
+      "community": "Komunitní projekt",
+      "official": "Oficiální"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Prozkoumejte Big Ambitions pomocí interaktivní 3D mapy. Najděte budovy, podniky a zajímavá místa a importujte vlastní herní data pro přizpůsobenější zobrazení.",
+      "cta": "Prozkoumat BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Další užitečný komunitní web Big Ambitions s doplňujícími informacemi o hře. Rozhodně stojí za návštěvu!",
+      "cta": "Navštívit Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Oficiální Discord Big Ambitions",
+      "description": "Připojte se k oficiální komunitě Big Ambitions na Discordu, kde můžete mluvit s ostatními hráči, ptát se, sdílet nápady a sledovat novinky ze hry.",
+      "cta": "Připojit se na Discord"
+    },
+    "opensInNewTab": "(otevře se na nové kartě)",
+    "suggestion": "Znáte další užitečný zdroj pro Big Ambitions?",
+    "suggestCta": "Navrhněte ho prostřednictvím našeho kontaktního formuláře."
   }
 }

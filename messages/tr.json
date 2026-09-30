@@ -284,7 +284,8 @@
       "hourly": "Saatlik",
       "daily": "Günlük",
       "weekly": "Haftalık"
-    }
+    },
+    "resources": "Kaynaklar"
   },
   "counts": {
     "palletShelf": "{count, plural, one {palet rafı} other {palet rafı}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "{gameName} oyun durumlarını yönet ve karşılaştır. İlerlemeni takip et, üretim istatistiklerini analiz et ve stratejini optimize et."
+    },
+    "resources": {
+      "description": "BA Maps, Bigger Ambitions ve resmî Big Ambitions Discord sunucusu dahil faydalı Big Ambitions topluluk kaynaklarını keşfedin."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Ayarlar dışa aktarılamadı.",
     "importSuccess": "Ayarlar başarıyla içe aktarıldı!",
     "importError": "Ayarlar içe aktarılamadı. Lütfen JSON dosyasını kontrol et."
+  },
+  "resources": {
+    "title": "Big Ambitions Kaynakları",
+    "intro": "Big Ambitions oyuncuları için faydalı web siteleri, araçlar ve topluluklar.",
+    "badges": {
+      "community": "Topluluk Projesi",
+      "official": "Resmî"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Big Ambitions'ı etkileşimli bir 3B haritayla keşfedin. Binaları, işletmeleri ve ilgi çekici yerleri bulun; daha kişisel bir görünüm için kendi oyun verilerinizi haritaya aktarın.",
+      "cta": "BA Maps'i keşfet"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Oyun hakkında ek bilgiler sunan bir başka faydalı Big Ambitions topluluk sitesi. Kesinlikle göz atmaya değer!",
+      "cta": "Bigger Ambitions'ı ziyaret et"
+    },
+    "discord": {
+      "title": "Resmî Big Ambitions Discord Sunucusu",
+      "description": "Diğer oyuncularla sohbet etmek, soru sormak, fikir paylaşmak ve oyunun gelişmelerini takip etmek için Discord'daki resmî Big Ambitions topluluğuna katılın.",
+      "cta": "Discord'a katıl"
+    },
+    "opensInNewTab": "(yeni sekmede açılır)",
+    "suggestion": "Big Ambitions için başka faydalı bir kaynak biliyor musunuz?",
+    "suggestCta": "İletişim formumuz aracılığıyla önerin."
   }
 }

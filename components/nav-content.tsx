@@ -26,6 +26,10 @@ const NavContent = ({ onAction }: NavContentProps) => {
       href: "/tools",
     },
     {
+      name: tGeneral("resources"),
+      href: "/resources",
+    },
+    {
       name: tGeneral("contact"),
       href: "/contact",
     },
@@ -33,8 +37,11 @@ const NavContent = ({ onAction }: NavContentProps) => {
 
   return (
     <>
-      <nav className="max-md:w-full" aria-label="main navigation">
-        <ul className="flex flex-col items-end gap-4 max-md:w-full md:flex-row md:items-center">
+      <nav
+        className="min-w-0 max-md:w-full md:me-4"
+        aria-label="main navigation"
+      >
+        <ul className="flex flex-col items-end gap-4 max-md:w-full md:flex-row md:flex-wrap md:items-center">
           {links.map((link) => (
             <li key={link.href} className="max-md:w-full">
               <NavLink
@@ -49,7 +56,7 @@ const NavContent = ({ onAction }: NavContentProps) => {
         </ul>
       </nav>
 
-      <div className="flex items-end gap-4 max-md:flex-col md:items-center">
+      <div className="flex shrink-0 items-end gap-4 max-md:flex-col md:items-center">
         <SettingsBackupDialog />
         <ThemeToggle />
 
