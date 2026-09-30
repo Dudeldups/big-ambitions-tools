@@ -20,7 +20,7 @@ import { DataTable } from "../tables/data-table";
 import { cn } from "@/lib/utils";
 import NoDataFound from "../no-data-found";
 import ImporterTable from "../tables/importer-table";
-import { getShoppingList } from "@/lib/utils/getShoppingList";
+import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
 import { mergeShoppingLists } from "@/lib/utils/mergeShoppingLists";
 
 type ProductRow = {
@@ -81,8 +81,9 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
   }));
 
   const shoppingListData = mergeShoppingLists(
-    factories.flatMap((factory) =>
-      getShoppingList(factory, difficulty, gameData),
+    factories.flatMap(
+      (factory) =>
+        getFactorySupplyPlan(factory, difficulty, gameData).weeklyList,
     ),
   );
 
