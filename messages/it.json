@@ -529,7 +529,9 @@
       "gameVersionNotice": {
         "title": "Dati di gioco versionati",
         "desc": "Le partite ora usano dati di gioco versionati. Puoi modificare la versione del gioco per ogni partita nella <link>panoramica</link>."
-      }
+      },
+      "backupHint": "Salva le tue partite, le fabbriche e le impostazioni dell’app in un file di backup sul tuo dispositivo. Puoi usare questo file per ripristinare i dati in seguito o trasferirli su un altro dispositivo.",
+      "backupButton": "Backup e ripristino dei dati"
     },
     "playthroughDetail": {
       "desc": "Qui puoi vedere le statistiche di produzione del tuo impero. Vai alla pagina Fabbriche per avere una panoramica delle tue fabbriche, tenere traccia degli articoli da ordinare per le linee di produzione e altro. Il pianificatore delle fabbriche ti mostrerà tutti i dettagli sulle statistiche di produzione, quantità d'ordine e altro.",
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Backup e ripristino impostazioni",
     "dialogTriggerSrOnly": "Backup e ripristino impostazioni",
     "dialogTitle": "Backup e ripristino impostazioni",
-    "dialogDescription": "Esporta o importa le tue partite salvate e le impostazioni delle fabbriche.",
+    "dialogDescription": "Esegui il backup o il ripristino delle tue partite salvate, delle fabbriche e delle impostazioni dell’app.",
     "exportTitle": "Esporta impostazioni",
     "exportDescription": "Scarica i tuoi dati come file di backup JSON.",
     "exportButton": "Esporta",
     "importTitle": "Importa impostazioni",
-    "importDescription": "Ripristina i tuoi dati da un file di backup JSON.",
+    "importDescription": "Sostituisce i tuoi dati salvati con quelli di un file di backup JSON.",
     "importButton": "Importa",
     "exportSuccess": "Impostazioni esportate con successo!",
     "exportError": "Impossibile esportare le impostazioni.",

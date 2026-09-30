@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Date de joc versionate",
         "desc": "Partidele folosesc acum date de joc versionate. Poți edita versiunea pentru fiecare partidă în <link>rezumat</link>."
-      }
+      },
+      "backupHint": "Salvează partidele, fabricile și setările aplicației într-un fișier de backup pe dispozitivul tău. Cu acest fișier poți restaura datele mai târziu sau le poți transfera pe alt dispozitiv.",
+      "backupButton": "Backup și restaurare date"
     },
     "playthroughDetail": {
       "desc": "Aici poți vedea statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” pentru o imagine de ansamblu asupra fabricilor tale, ca să urmărești produsele necesare liniilor de producție și nu numai. Planificatorul îți arată toate detaliile despre statisticile de producție, cantitățile comandate și multe alte detalii.",
       "productionOverview": "Rezumat săptămânal al producției",
       "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici.",
       "shoppingList": {
-        "title": "Lista de cumpărături a jocului salvat",
-        "desc": "Această listă reunește necesarul săptămânal de ingrediente al tuturor fabricilor din acest joc salvat, inclusiv al tuturor grupurilor și al fabricilor fără grup. Ține cont de programul de funcționare și de limitele de producție."
+        "title": "Lista de cumpărături a partidei",
+        "desc": "Această listă reunește necesarul săptămânal de ingrediente al tuturor fabricilor din această partidă, inclusiv al tuturor grupurilor și al fabricilor fără grup. Ține cont de programul de funcționare și de limitele de producție."
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Backup și restaurare setări",
     "dialogTriggerSrOnly": "Backup și restaurare setări",
     "dialogTitle": "Backup și restaurare setări",
-    "dialogDescription": "Exportă sau importă jocurile salvate și setările fabricilor.",
+    "dialogDescription": "Fă backup sau restaurează partidele salvate, fabricile și setările aplicației.",
     "exportTitle": "Exportă setările",
     "exportDescription": "Descarcă datele tale ca fișier de backup JSON.",
     "exportButton": "Exportă",
     "importTitle": "Importă setările",
-    "importDescription": "Restaurează datele tale dintr-un fișier de backup JSON.",
+    "importDescription": "Înlocuiește datele tale salvate cu datele dintr-un fișier de backup JSON.",
     "importButton": "Importă",
     "exportSuccess": "Setările au fost exportate cu succes!",
     "exportError": "Eroare la exportarea setărilor.",

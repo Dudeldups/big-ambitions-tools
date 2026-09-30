@@ -529,7 +529,9 @@
       "gameVersionNotice": {
         "title": "Données de jeu versionnées",
         "desc": "Les parties utilisent désormais des données de jeu versionnées. Tu peux modifier la version du jeu pour chaque partie dans la <link>vue d'ensemble</link>."
-      }
+      },
+      "backupHint": "Enregistre tes parties, tes usines et les paramètres de l’application dans un fichier de sauvegarde sur ton appareil. Ce fichier te permet de restaurer tes données plus tard ou de les transférer sur un autre appareil.",
+      "backupButton": "Sauvegarder et restaurer les données"
     },
     "playthroughDetail": {
       "desc": "C'est ici que tu peux consulter les statistiques de production de ton empire. Va sur la page des usines pour obtenir un aperçu, suivre les articles à commander pour tes lignes de production et plus encore. Le planificateur d'usine t'affichera tous les détails sur les statistiques de production, les quantités à commander et plus encore.",
@@ -537,7 +539,7 @@
       "noProductionData": "Aucune donnée disponible pour l'instant. Crée des usines et tu verras apparaître tes statistiques de production ici.",
       "shoppingList": {
         "title": "Liste d’achats de la partie",
-        "desc": "Cette liste regroupe les besoins hebdomadaires en ingrédients de toutes les usines de cette partie, y compris tous les groupes et les usines non regroupées. Elle tient compte des horaires d’ouverture et des limites de production."
+        "desc": "Cette liste regroupe les besoins hebdomadaires en ingrédients de toutes les usines de cette partie, y compris tous les groupes et les usines non regroupées. Elle tient compte des heures d’ouverture et des limites de production."
       }
     },
     "factories": {
@@ -765,16 +767,16 @@
     "dialogTriggerTitle": "Sauvegarder et restaurer les paramètres",
     "dialogTriggerSrOnly": "Sauvegarder et restaurer les paramètres",
     "dialogTitle": "Sauvegarder et restaurer les paramètres",
-    "dialogDescription": "Exportez ou importez vos parties sauvegardées et configurations d'usines.",
+    "dialogDescription": "Sauvegarde ou restaure tes parties enregistrées, tes usines et les paramètres de l’application.",
     "exportTitle": "Exporter les paramètres",
-    "exportDescription": "Téléchargez vos données sous forme de fichier de sauvegarde JSON.",
+    "exportDescription": "Télécharge tes données sous forme de fichier de sauvegarde JSON.",
     "exportButton": "Exporter",
     "importTitle": "Importer les paramètres",
-    "importDescription": "Restaurez vos données à partir d'un fichier de sauvegarde JSON.",
+    "importDescription": "Remplace tes données enregistrées par celles d’un fichier de sauvegarde JSON.",
     "importButton": "Importer",
     "exportSuccess": "Paramètres exportés avec succès !",
     "exportError": "Échec de l'exportation des paramètres.",
     "importSuccess": "Paramètres importés avec succès !",
-    "importError": "Échec de l'importation des paramètres. Veuillez vérifier le fichier JSON."
+    "importError": "Échec de l’importation des paramètres. Vérifie le fichier JSON."
   }
 }

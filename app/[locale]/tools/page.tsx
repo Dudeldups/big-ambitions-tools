@@ -6,12 +6,10 @@ import CreatePlaythroughForm from "@/components/tools/create-playthrough-form";
 import PlaythroughOverview from "@/components/tools/playthrough-overview";
 import { GLOSSARY } from "@/i18n/glossary";
 import { TriangleAlert } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const Tools = () => {
   const t = useTranslations("tools");
-  const locale = useLocale();
-  const showBackupHint = locale === "de" || locale === "en";
   const tGeneral = useTranslations("general");
   const plannerHighlights = [
     {
@@ -75,16 +73,14 @@ const Tools = () => {
             <p className="text-card-foreground">{t("playthroughs.warning")}</p>
           </div>
 
-          {showBackupHint && (
-            <div className="border-border/60 space-y-3 border-t pt-4">
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {t("playthroughs.backupHint")}
-              </p>
-              <SettingsBackupDialog
-                triggerLabel={t("playthroughs.backupButton")}
-              />
-            </div>
-          )}
+          <div className="border-border/60 space-y-3 border-t pt-4">
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {t("playthroughs.backupHint")}
+            </p>
+            <SettingsBackupDialog
+              triggerLabel={t("playthroughs.backupButton")}
+            />
+          </div>
         </div>
 
         <SectionSeparator />

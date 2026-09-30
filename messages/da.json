@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Versionerede spildata",
         "desc": "Spilstande bruger nu versionerede spildata. Du kan ændre spilversionen for hver spilstand i <link>oversigten</link>."
-      }
+      },
+      "backupHint": "Gem dine spilstande, fabrikker og appindstillinger som en sikkerhedskopifil på din enhed. Brug filen til at gendanne dine data senere eller overføre dem til en anden enhed.",
+      "backupButton": "Sikkerhedskopier og gendan data"
     },
     "playthroughDetail": {
       "desc": "Her kan du se dit imperiums produktionsstatistik. Gå til siden 'Fabrikker' for at få et overblik, holde styr på varer, der skal bestilles, og meget mere. Fabrikplanlæggeren viser dig alle detaljer om produktionsstatistik, bestillingsmængder og mere.",
       "productionOverview": "Ugentlig produktionsoversigt",
       "noProductionData": "Ingen data tilgængelig endnu. Opret fabrikker, så kan du se din produktionsstatistik her.",
       "shoppingList": {
-        "title": "Samlet indkøbsliste for gennemspilningen",
-        "desc": "Denne liste samler det ugentlige behov for ingredienser fra alle fabrikker i denne gennemspilning, inklusive alle grupper og fabrikker uden en gruppe. Den tager højde for åbningstider og produktionsgrænser."
+        "title": "Samlet indkøbsliste for spilstanden",
+        "desc": "Denne liste samler det ugentlige behov for ingredienser fra alle fabrikker i denne spilstand, inklusive alle grupper og fabrikker uden en gruppe. Den tager højde for åbningstider og produktionsgrænser."
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Sikkerhedskopier og gendan indstillinger",
     "dialogTriggerSrOnly": "Sikkerhedskopier og gendan indstillinger",
     "dialogTitle": "Sikkerhedskopier og gendan indstillinger",
-    "dialogDescription": "Eksporter eller importer dine gemte gennemspilninger og fabriksindstillinger.",
+    "dialogDescription": "Sikkerhedskopier eller gendan dine gemte spilstande, fabrikker og appindstillinger.",
     "exportTitle": "Eksporter indstillinger",
     "exportDescription": "Download dine data som en JSON-sikkerhedskopifil.",
     "exportButton": "Eksporter",
     "importTitle": "Importer indstillinger",
-    "importDescription": "Gendan dine data fra en JSON-sikkerhedskopifil.",
+    "importDescription": "Erstatter dine gemte data med data fra en JSON-sikkerhedskopifil.",
     "importButton": "Importer",
     "exportSuccess": "Indstillinger eksporteret!",
     "exportError": "Kunne ikke eksportere indstillinger.",

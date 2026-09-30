@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Pelin versiotiedot",
         "desc": "Tallennuksissa käytetään nyt versioituja pelitietoja. Voit muuttaa peliversion jokaiselle tallennukselle <link>yleisnäkymässä</link>."
-      }
+      },
+      "backupHint": "Tallenna tallennuksesi, tehtaasi ja sovelluksen asetukset varmuuskopiotiedostona laitteellesi. Voit palauttaa tietosi tiedostosta myöhemmin tai siirtää ne toiselle laitteelle.",
+      "backupButton": "Varmuuskopioi ja palauta tiedot"
     },
     "playthroughDetail": {
       "desc": "Tässä näet imperiumisi tuotantotilastot. Käy \"Tehtaat\"-sivulla katsomassa tehtaasi, seuraamassa tilattavia osia ja paljon muuta. Tehtaan suunnittelija näyttää tarkat tiedot tuotantomääristä, tilauksista ja niin edelleen.",
       "productionOverview": "Viikoittainen tuotannon yleiskatsaus",
       "noProductionData": "Tietoja ei vielä ole. Luo tehtaita, niin näet tuotantotilastosi tässä.",
       "shoppingList": {
-        "title": "Pelikerran yhteinen ostoslista",
-        "desc": "Tämä lista kokoaa tämän pelikerran kaikkien tehtaiden viikoittaisen raaka-ainetarpeen, mukaan lukien kaikki ryhmät ja ryhmittämättömät tehtaat. Aukioloajat ja tuotantorajat huomioidaan."
+        "title": "Tallennuksen yhteinen ostoslista",
+        "desc": "Tämä lista kokoaa tämän tallennuksen kaikkien tehtaiden viikoittaisen ainesosatarpeen, mukaan lukien kaikki ryhmät ja ryhmittämättömät tehtaat. Aukioloajat ja tuotantorajat huomioidaan."
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Varmuuskopioi ja palauta asetukset",
     "dialogTriggerSrOnly": "Varmuuskopioi ja palauta asetukset",
     "dialogTitle": "Varmuuskopioi ja palauta asetukset",
-    "dialogDescription": "Vie tai tuo tallennetut pelikerrat ja tehdasasetukset.",
+    "dialogDescription": "Varmuuskopioi tai palauta tallennuksesi, tehtaasi ja sovelluksen asetukset.",
     "exportTitle": "Vie asetukset",
     "exportDescription": "Lataa tietosi JSON-varmuuskopiotiedostona.",
     "exportButton": "Vie",
     "importTitle": "Tuo asetukset",
-    "importDescription": "Palauta tietosi JSON-varmuuskopiotiedostosta.",
+    "importDescription": "Korvaa tallennetut tietosi JSON-varmuuskopiotiedoston tiedoilla.",
     "importButton": "Tuo",
     "exportSuccess": "Asetukset viety onnistuneesti!",
     "exportError": "Asetusten vienti epäonnistui.",

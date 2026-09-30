@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "버전별 게임 데이터",
         "desc": "이제 저장 데이터에 버전 정보가 적용돼요. <link>개요</link>에서 각 저장 데이터의 버전을 직접 수정할 수 있어요."
-      }
+      },
+      "backupHint": "플레이 내역, 공장, 앱 설정을 백업 파일로 기기에 저장할 수 있어요. 이 파일을 사용하면 나중에 데이터를 복원하거나 다른 기기로 옮길 수 있어요.",
+      "backupButton": "데이터 백업 및 복원"
     },
     "playthroughDetail": {
       "desc": "제국의 생산 통계를 여기서 확인할 수 있어요. '공장' 페이지에서 공장 현황을 확인하고, 생산 라인에 필요한 주문 품목 등을 관리해 보세요. 공장 계획기에서는 생산 통계와 주문량 등 모든 세부 정보를 볼 수 있어요.",
       "productionOverview": "주간 생산 개요",
       "noProductionData": "아직 데이터가 없어요. 공장을 만들어서 여기에 생산 통계를 확인하세요.",
       "shoppingList": {
-        "title": "저장 게임의 전체 구매 목록",
-        "desc": "이 목록은 모든 그룹과 그룹에 속하지 않은 공장을 포함하여, 이 저장 게임의 모든 공장에 필요한 주간 재료를 합산합니다. 영업시간과 생산 한도를 반영합니다."
+        "title": "저장 데이터 전체 구매 목록",
+        "desc": "이 목록은 이 저장 데이터의 모든 공장에 필요한 주간 재료를 합산합니다. 모든 그룹과 그룹에 속하지 않은 공장도 포함하며, 영업시간과 생산 한도를 반영합니다."
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "설정 백업 및 복원",
     "dialogTriggerSrOnly": "설정 백업 및 복원",
     "dialogTitle": "설정 백업 및 복원",
-    "dialogDescription": "저장된 플레이 데이터 및 공장 설정을 내보내거나 가져옵니다。",
+    "dialogDescription": "저장된 플레이 내역, 공장, 앱 설정을 백업하거나 복원합니다.",
     "exportTitle": "설정 내보내기",
-    "exportDescription": "데이터를 JSON 백업 파일로 다운로드합니다。",
+    "exportDescription": "데이터를 JSON 백업 파일로 다운로드합니다.",
     "exportButton": "내보내기",
     "importTitle": "설정 가져오기",
-    "importDescription": "JSON 백업 파일에서 데이터를 복원합니다。",
+    "importDescription": "저장된 데이터를 JSON 백업 파일의 데이터로 대체합니다.",
     "importButton": "가져오기",
     "exportSuccess": "설정을 성공적으로 내보냈습니다!",
     "exportError": "설정을 내보내지 못했습니다.",

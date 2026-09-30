@@ -529,7 +529,9 @@
       "gameVersionNotice": {
         "title": "Datos de juego versionados",
         "desc": "Las partidas ahora usan datos de juego versionados. Puedes cambiar la versión del juego para cada partida en la <link>vista general</link>."
-      }
+      },
+      "backupHint": "Guarda tus partidas, fábricas y ajustes de la aplicación en un archivo de copia de seguridad en tu dispositivo. Puedes usarlo para restaurar tus datos más adelante o transferirlos a otro dispositivo.",
+      "backupButton": "Crear copia de seguridad y restaurar datos"
     },
     "playthroughDetail": {
       "desc": "Aquí puedes ver las estadísticas de producción de tu imperio. Ve a la página de fábricas para ver un resumen, seguir los artículos que necesitas pedir para tus líneas de producción y más. El planificador de fábricas te mostrará todos los detalles sobre estadísticas de producción, cantidades de pedido y más.",
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Copia de seguridad y restauración de ajustes",
     "dialogTriggerSrOnly": "Copia de seguridad y restauración de ajustes",
     "dialogTitle": "Copia de seguridad y restauración de ajustes",
-    "dialogDescription": "Exporta o importa tus partidas guardadas y la configuración de fábricas.",
+    "dialogDescription": "Crea una copia de seguridad de tus partidas guardadas, fábricas y ajustes de la aplicación o restáuralos.",
     "exportTitle": "Exportar ajustes",
     "exportDescription": "Descarga tus datos como un archivo de copia de seguridad JSON.",
     "exportButton": "Exportar",
     "importTitle": "Importar ajustes",
-    "importDescription": "Restaura tus datos desde un archivo de copia de seguridad JSON.",
+    "importDescription": "Reemplaza tus datos guardados con los datos de un archivo de copia de seguridad JSON.",
     "importButton": "Importar",
     "exportSuccess": "¡Ajustes exportados con éxito!",
     "exportError": "Error al exportar los ajustes.",

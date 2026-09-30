@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Wersjonowane dane gry",
         "desc": "Stany gry korzystają teraz z wersjonowanych danych. Możesz zmienić wersję dla każdego stanu gry w <link>widoku ogólnym</link>."
-      }
+      },
+      "backupHint": "Zapisz swoje stany gry, fabryki i ustawienia aplikacji w pliku kopii zapasowej na swoim urządzeniu. Ten plik pozwoli ci później przywrócić dane lub przenieść je na inne urządzenie.",
+      "backupButton": "Kopia zapasowa i przywracanie danych"
     },
     "playthroughDetail": {
       "desc": "Tutaj zobaczysz statystyki produkcji swojego imperium. Wejdź na stronę „Fabryki”, aby zobaczyć podsumowanie fabryk, śledzić produkty, które musisz zamówić dla swoich linii produkcyjnych i wiele więcej. Planer fabryk pokaże Ci wszystkie szczegóły dotyczące statystyk produkcji, wielkości zamówień i nie tylko.",
       "productionOverview": "Tygodniowy przegląd produkcji",
       "noProductionData": "Jeszcze nie ma danych. Utwórz fabryki, a zobaczysz tu swoje statystyki produkcji.",
       "shoppingList": {
-        "title": "Łączna lista zakupów rozgrywki",
-        "desc": "Ta lista łączy tygodniowe zapotrzebowanie na składniki wszystkich fabryk w tej rozgrywce, w tym wszystkich grup i fabryk bez grupy. Uwzględnia godziny otwarcia i limity produkcji."
+        "title": "Łączna lista zakupów stanu gry",
+        "desc": "Ta lista łączy tygodniowe zapotrzebowanie na składniki wszystkich fabryk w tym stanie gry, w tym wszystkich grup i fabryk bez grupy. Uwzględnia godziny otwarcia i limity produkcji."
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Kopia zapasowa i przywracanie ustawień",
     "dialogTriggerSrOnly": "Kopia zapasowa i przywracanie ustawień",
     "dialogTitle": "Kopia zapasowa i przywracanie ustawień",
-    "dialogDescription": "Eksportuj lub importuj zapisane rozgrywki i ustawienia fabryk.",
+    "dialogDescription": "Utwórz kopię zapasową swoich zapisanych stanów gry, fabryk i ustawień aplikacji lub je przywróć.",
     "exportTitle": "Eksportuj ustawienia",
     "exportDescription": "Pobierz swoje dane jako plik kopii zapasowej JSON.",
     "exportButton": "Eksportuj",
     "importTitle": "Importuj ustawienia",
-    "importDescription": "Przywróć swoje dane z pliku kopii zapasowej JSON.",
+    "importDescription": "Zastępuje twoje zapisane dane danymi z pliku kopii zapasowej JSON.",
     "importButton": "Importuj",
     "exportSuccess": "Pomyślnie wyeksportowano ustawienia!",
     "exportError": "Nie udało się wyeksportować ustawień.",

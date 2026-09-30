@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Versionovaná herní data",
         "desc": "Průběhy her nyní využívají verzionovaná herní data. Verzi hry pro každý průběh můžeš upravit v <link>přehledu</link>."
-      }
+      },
+      "backupHint": "Ulož si své průběhy her, továrny a nastavení aplikace jako záložní soubor do svého zařízení. Pomocí tohoto souboru můžeš data později obnovit nebo přenést do jiného zařízení.",
+      "backupButton": "Zálohovat a obnovit data"
     },
     "playthroughDetail": {
       "desc": "Tady uvidíš výrobní statistiky svého impéria. Na stránce „Továrny“ najdeš přehled továren, můžeš sledovat položky k objednání pro své výrobní linky a mnoho dalšího. Plánovač továren ti ukáže vše podrobně – od statistik až po množství objednávek.",
       "productionOverview": "Týdenní přehled výroby",
       "noProductionData": "Zatím tu není žádná data. Vytvoř továrny a uvidíš statistiky výroby.",
       "shoppingList": {
-        "title": "Souhrnný nákupní seznam průchodu hrou",
-        "desc": "Tento seznam shrnuje týdenní potřebu surovin všech továren v tomto průchodu hrou, včetně všech skupin i nezařazených továren. Zohledňuje provozní dobu a výrobní limity."
+        "title": "Souhrnný nákupní seznam průběhu hry",
+        "desc": "Tento seznam shrnuje týdenní potřebu ingrediencí všech továren v tomto průběhu hry, včetně všech skupin i továren bez skupiny. Zohledňuje otevírací dobu a výrobní limity."
       }
     },
     "factories": {
@@ -765,16 +767,16 @@
     "dialogTriggerTitle": "Zálohovat a obnovit nastavení",
     "dialogTriggerSrOnly": "Zálohovat a obnovit nastavení",
     "dialogTitle": "Zálohovat a obnovit nastavení",
-    "dialogDescription": "Exportujte nebo importujte uložené průchody hrou a nastavení továren.",
+    "dialogDescription": "Zálohuj své uložené průběhy her, továrny a nastavení aplikace nebo je obnov ze zálohy.",
     "exportTitle": "Exportovat nastavení",
-    "exportDescription": "Stáhněte si svá data jako záložní soubor JSON.",
+    "exportDescription": "Stáhni si svá data jako záložní soubor JSON.",
     "exportButton": "Exportovat",
     "importTitle": "Importovat nastavení",
-    "importDescription": "Obnovte svá data ze záložního souboru JSON.",
+    "importDescription": "Nahradí tvá uložená data daty ze záložního souboru JSON.",
     "importButton": "Importovat",
     "exportSuccess": "Nastavení bylo úspěšně exportováno!",
     "exportError": "Export nastavení se nezdařil.",
     "importSuccess": "Nastavení bylo úspěšně importováno!",
-    "importError": "Import nastavení se nezdařil. Zkontrolujte soubor JSON."
+    "importError": "Import nastavení se nezdařil. Zkontroluj soubor JSON."
   }
 }

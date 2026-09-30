@@ -91,6 +91,11 @@ export function SettingsBackupDialog({
         <Button
           variant="outline"
           size={triggerLabel ? "default" : "icon"}
+          className={
+            triggerLabel
+              ? "h-auto min-h-8 max-w-full py-1 whitespace-normal"
+              : undefined
+          }
           title={t("dialogTriggerTitle")}
           disabled={!appHydrated || !playthroughHydrated}
         >

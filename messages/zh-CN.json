@@ -529,7 +529,9 @@
       "gameVersionNotice": {
         "title": "版本化游戏数据",
         "desc": "存档现在支持版本化了。你可以在 <link>概览</link> 里修改每个存档的版本。"
-      }
+      },
+      "backupHint": "将你的存档、工厂和应用设置保存为设备上的备份文件。以后可以使用此文件恢复数据，或将数据转移到其他设备。",
+      "backupButton": "备份与恢复数据"
     },
     "playthroughDetail": {
       "desc": "你可以在这里查看帝国的生产统计数据。去“工厂”页面看看工厂概览，追踪生产线所需的订购物品等等。工厂规划器会为你展示生产统计、订单量等所有细节。",
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "备份与恢复设置",
     "dialogTriggerSrOnly": "备份与恢复设置",
     "dialogTitle": "备份与恢复设置",
-    "dialogDescription": "导出或导入已保存的通关存档和工厂设置。",
+    "dialogDescription": "备份或恢复已保存的存档、工厂和应用设置。",
     "exportTitle": "导出设置",
     "exportDescription": "将数据下载为 JSON 备份文件。",
     "exportButton": "导出",
     "importTitle": "导入设置",
-    "importDescription": "从 JSON 备份文件中恢复数据。",
+    "importDescription": "使用 JSON 备份文件中的数据替换已保存的数据。",
     "importButton": "导入",
     "exportSuccess": "设置导出成功！",
     "exportError": "导出设置失败。",

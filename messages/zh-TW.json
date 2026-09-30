@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "遊戲資料版本",
         "desc": "現在的遊戲進度都改用版本化的遊戲資料了。你可以在 <link>概覽</link> 中修改每個遊戲進度的版本。"
-      }
+      },
+      "backupHint": "將你的遊戲進度、工廠和應用程式設定儲存為裝置上的備份檔案。之後可以使用此檔案還原資料，或將資料轉移到其他裝置。",
+      "backupButton": "備份與還原資料"
     },
     "playthroughDetail": {
       "desc": "這裡可以看到帝國的生產統計數據。前往「工廠」頁面查看工廠總覽，追蹤生產線需要訂購的物品等更多資訊。工廠規劃器會顯示所有關於生產數據、訂購數量等的詳細資訊。",
       "productionOverview": "每週生產概覽",
       "noProductionData": "目前還沒有數據。建立工廠後，就能在這裡看到生產統計。",
       "shoppingList": {
-        "title": "存檔總採購清單",
-        "desc": "此清單彙總了目前存檔中所有工廠每週所需的原料，包括所有群組中的工廠和未分組的工廠，並考慮營業時間和生產上限。"
+        "title": "遊戲進度總採購清單",
+        "desc": "此清單彙總了目前遊戲進度中所有工廠每週所需的原料，包括所有群組中的工廠和未分組的工廠，並考慮營業時間和生產上限。"
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "備份與還原設定",
     "dialogTriggerSrOnly": "備份與還原設定",
     "dialogTitle": "備份與還原設定",
-    "dialogDescription": "匯出或匯入已儲存的通關存檔與工廠設定。",
+    "dialogDescription": "備份或還原已儲存的遊戲進度、工廠和應用程式設定。",
     "exportTitle": "匯出設定",
     "exportDescription": "將資料下載為 JSON 備份檔案。",
     "exportButton": "匯出",
     "importTitle": "匯入設定",
-    "importDescription": "從 JSON 備份檔案還原資料。",
+    "importDescription": "使用 JSON 備份檔案中的資料取代已儲存的資料。",
     "importButton": "匯入",
     "exportSuccess": "設定匯出成功！",
     "exportError": "匯出設定失敗。",

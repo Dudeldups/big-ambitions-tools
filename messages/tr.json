@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Sürüm Bazlı Oyun Verileri",
         "desc": "Oyun durumları artık sürüm bazlı veriler kullanıyor. Her oyun durumu için oyun sürümünü <link>genel bakış</link> kısmından düzenleyebilirsin."
-      }
+      },
+      "backupHint": "Oyun durumlarını, fabrikalarını ve uygulama ayarlarını cihazına bir yedek dosyası olarak kaydet. Bu dosyayla verilerini daha sonra geri yükleyebilir veya başka bir cihaza aktarabilirsin.",
+      "backupButton": "Verileri yedekle ve geri yükle"
     },
     "playthroughDetail": {
       "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasında fabrikalarına genel bir bakış atabilir, üretim hatların için gereken siparişleri takip edebilir ve çok daha fazlasını keşfedebilirsin. Fabrika planlayıcısı ise sana üretim istatistikleri, sipariş miktarları ve daha pek çok detay sunar.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
       "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin.",
       "shoppingList": {
-        "title": "Kayıtlı oyunun toplam alışveriş listesi",
-        "desc": "Bu liste, tüm gruplar ve gruba dahil olmayan fabrikalar da dahil olmak üzere bu kayıtlı oyundaki bütün fabrikaların haftalık malzeme ihtiyacını birleştirir. Çalışma saatlerini ve üretim sınırlarını dikkate alır."
+        "title": "Oyun durumunun toplam alışveriş listesi",
+        "desc": "Bu liste, bu oyun durumundaki tüm fabrikaların haftalık malzeme ihtiyacını birleştirir. Tüm grupları ve gruba dahil olmayan fabrikaları kapsar. Açılış saatlerini ve üretim sınırlarını dikkate alır."
       }
     },
     "factories": {
@@ -765,16 +767,16 @@
     "dialogTriggerTitle": "Ayarları Yedekle ve Geri Yükle",
     "dialogTriggerSrOnly": "Ayarları yedekle ve geri yükle",
     "dialogTitle": "Ayarları Yedekle ve Geri Yükle",
-    "dialogDescription": "Kayıtlı oyunlarınızı ve fabrika ayarlarınızı dışa veya içe aktarın.",
+    "dialogDescription": "Kayıtlı oyun durumlarını, fabrikalarını ve uygulama ayarlarını yedekle veya geri yükle.",
     "exportTitle": "Ayarları Dışa Aktar",
-    "exportDescription": "Verilerinizi bir JSON yedek dosyası olarak indirin.",
+    "exportDescription": "Verilerini bir JSON yedek dosyası olarak indir.",
     "exportButton": "Dışa Aktar",
     "importTitle": "Ayarları İçe Aktar",
-    "importDescription": "Verilerinizi bir JSON yedek dosyasından geri yükleyin.",
+    "importDescription": "Kayıtlı verilerini bir JSON yedek dosyasındaki verilerle değiştirir.",
     "importButton": "İçe Aktar",
     "exportSuccess": "Ayarlar başarıyla dışa aktarıldı!",
     "exportError": "Ayarlar dışa aktarılamadı.",
     "importSuccess": "Ayarlar başarıyla içe aktarıldı!",
-    "importError": "Ayarlar içe aktarılamadı. Lütfen JSON dosyasını kontrol edin."
+    "importError": "Ayarlar içe aktarılamadı. Lütfen JSON dosyasını kontrol et."
   }
 }

@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Spelgegevens met versies",
         "desc": "Speelstanden gebruiken nu spelgegevens met versies. Je kunt de spelversie per speelstand aanpassen in het <link>overzicht</link>."
-      }
+      },
+      "backupHint": "Sla je speelstanden, fabrieken en appinstellingen op als back-upbestand op je apparaat. Met dit bestand kun je je gegevens later herstellen of naar een ander apparaat overzetten.",
+      "backupButton": "Gegevens back-uppen en herstellen"
     },
     "playthroughDetail": {
       "desc": "Hier zie je de productiestatistieken van je imperium. Ga naar de pagina 'Fabrieken' om een overzicht te krijgen, artikelen te tracken die besteld moeten worden, en meer. De fabriekplanner toont je alle details over productiestatistieken, bestelhoeveelheden en meer.",
       "productionOverview": "Wekelijks productieoverzicht",
       "noProductionData": "Nog geen gegevens beschikbaar. Maak fabrieken aan en je ziet je productiestatistieken hier.",
       "shoppingList": {
-        "title": "Boodschappenlijst voor de hele speelsessie",
-        "desc": "Deze lijst bundelt de wekelijkse behoefte aan ingrediënten van alle fabrieken in deze speelsessie, inclusief alle groepen en fabrieken zonder groep. Er wordt rekening gehouden met openingstijden en productielimieten."
+        "title": "Boodschappenlijst voor de hele speelstand",
+        "desc": "Deze lijst bundelt de wekelijkse behoefte aan ingrediënten van alle fabrieken in deze speelstand, inclusief alle groepen en fabrieken zonder groep. Er wordt rekening gehouden met openingstijden en productielimieten."
       }
     },
     "factories": {
@@ -765,12 +767,12 @@
     "dialogTriggerTitle": "Instellingen back-uppen & herstellen",
     "dialogTriggerSrOnly": "Instellingen back-uppen en herstellen",
     "dialogTitle": "Instellingen back-uppen & herstellen",
-    "dialogDescription": "Exporteer of importeer je opgeslagen speelsessies en fabrieksinstellingen.",
+    "dialogDescription": "Maak een back-up van je opgeslagen speelstanden, fabrieken en appinstellingen of herstel ze.",
     "exportTitle": "Instellingen exporteren",
     "exportDescription": "Download je gegevens als een JSON-back-upbestand.",
     "exportButton": "Exporteren",
     "importTitle": "Instellingen importeren",
-    "importDescription": "Herstel je gegevens vanuit een JSON-back-upbestand.",
+    "importDescription": "Vervangt je opgeslagen gegevens door de gegevens uit een JSON-back-upbestand.",
     "importButton": "Importeren",
     "exportSuccess": "Instellingen succesvol geëxporteerd!",
     "exportError": "Kan instellingen niet exporteren.",

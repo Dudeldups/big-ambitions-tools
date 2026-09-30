@@ -529,15 +529,17 @@
       "gameVersionNotice": {
         "title": "Versionuoti žaidimo duomenys",
         "desc": "Žaidimo būsenos dabar naudoja versijotus duomenis. Žaidimo versiją kiekvienai būsenai gali pakeisti <link>apžvalgoje</link>."
-      }
+      },
+      "backupHint": "Išsaugok savo žaidimo būsenas, gamyklas ir programėlės nustatymus kaip atsarginės kopijos failą savo įrenginyje. Šiuo failu vėliau galėsi atkurti duomenis arba perkelti juos į kitą įrenginį.",
+      "backupButton": "Duomenų atsarginė kopija ir atkūrimas"
     },
     "playthroughDetail": {
       "desc": "Čia pamatysi savo imperijos gamybos statistiką. Užsuk į „Gamyklos“ puslapį, kad peržiūrėtum gamyklas, stebėtum, kokias prekes reikia užsakyti savo gamybos linijoms, ir daugiau. Gamyklų planuotojas parodys visus duomenis apie gamybos statistiką, užsakymų kiekį ir daugiau.",
       "productionOverview": "Savaitinė gamybos apžvalga",
       "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką.",
       "shoppingList": {
-        "title": "Bendras žaidimo pirkinių sąrašas",
-        "desc": "Šiame sąraše sujungti visų šio žaidimo gamyklų savaitiniai ingredientų poreikiai, įskaitant visas grupes ir nepriskirtas gamyklas. Atsižvelgiama į darbo laiką ir gamybos ribas."
+        "title": "Bendras žaidimo būsenos pirkinių sąrašas",
+        "desc": "Šiame sąraše sujungti visų šios žaidimo būsenos gamyklų savaitiniai ingredientų poreikiai, įskaitant visas grupes ir gamyklas be grupės. Atsižvelgiama į darbo laiką ir gamybos ribas."
       }
     },
     "factories": {
@@ -765,16 +767,16 @@
     "dialogTriggerTitle": "Atsarginė nustatymų kopija ir atkūrimas",
     "dialogTriggerSrOnly": "Atsarginė nustatymų kopija ir atkūrimas",
     "dialogTitle": "Atsarginė nustatymų kopija ir atkūrimas",
-    "dialogDescription": "Eksportuokite arba importuokite išsaugotus žaidimus ir gamyklų nustatymus.",
+    "dialogDescription": "Sukurk išsaugotų žaidimo būsenų, gamyklų ir programėlės nustatymų atsarginę kopiją arba atkurk juos.",
     "exportTitle": "Eksportuoti nustatymus",
-    "exportDescription": "Atsisiųskite duomenis kaip JSON atsarginės kopijos failą.",
+    "exportDescription": "Atsisiųsk duomenis kaip JSON atsarginės kopijos failą.",
     "exportButton": "Eksportuoti",
     "importTitle": "Importuoti nustatymus",
-    "importDescription": "Atkurkite duomenis iš JSON atsarginės kopijos failo.",
+    "importDescription": "Pakeičia tavo išsaugotus duomenis duomenimis iš JSON atsarginės kopijos failo.",
     "importButton": "Importuoti",
     "exportSuccess": "Nustatymai sėkmingai eksportuoti!",
     "exportError": "Nepavyko eksportuoti nustatymų.",
     "importSuccess": "Nustatymai sėkmingai importuoti!",
-    "importError": "Nepavyko importuoti nustatymų. Patikrinkite JSON failą."
+    "importError": "Nepavyko importuoti nustatymų. Patikrink JSON failą."
   }
 }
