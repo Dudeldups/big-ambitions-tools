@@ -284,7 +284,8 @@
       "hourly": "每小時",
       "daily": "每日",
       "weekly": "每週"
-    }
+    },
+    "resources": "資源"
   },
   "counts": {
     "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "管理並比較你的 {gameName} 遊戲進度。追蹤不同難度的表現、分析生產數據，並優化經營策略。"
+    },
+    "resources": {
+      "description": "探索實用的 Big Ambitions 社群資源，包括 BA Maps、Bigger Ambitions 和 Big Ambitions 官方 Discord。"
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "匯出設定失敗。",
     "importSuccess": "設定匯入成功！",
     "importError": "匯入設定失敗，請檢查 JSON 檔案。"
+  },
+  "resources": {
+    "title": "Big Ambitions 資源",
+    "intro": "為 Big Ambitions 玩家精選的實用網站、工具和社群。",
+    "badges": {
+      "community": "社群專案",
+      "official": "官方"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "透過互動式 3D 地圖探索 Big Ambitions。尋找建築、商家和興趣點，也可以匯入自己的遊戲資料，取得更個人化的地圖檢視。",
+      "cta": "探索 BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "另一個實用的 Big Ambitions 社群網站，提供更多遊戲相關資訊。非常值得一看！",
+      "cta": "造訪 Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Big Ambitions 官方 Discord",
+      "description": "加入 Discord 上的 Big Ambitions 官方社群，與其他玩家交流、提問、分享想法，並掌握遊戲最新消息。",
+      "cta": "加入 Discord"
+    },
+    "opensInNewTab": "（在新分頁中開啟）",
+    "suggestion": "知道其他實用的 Big Ambitions 資源嗎？",
+    "suggestCta": "透過我們的聯絡表單推薦給我們。"
   }
 }

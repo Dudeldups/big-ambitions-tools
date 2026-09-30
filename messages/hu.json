@@ -284,7 +284,8 @@
       "hourly": "Óránként",
       "daily": "Naponta",
       "weekly": "Heti"
-    }
+    },
+    "resources": "Források"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raklappolc} other {Raklappolcok}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Kezeld és hasonlítsd össze a {gameName} játékállapodáidat. Tartsd nyomon a fejlődésedet, elemezd a statisztikákat és optimalizáld a stratégiádat."
+    },
+    "resources": {
+      "description": "Fedezd fel a Big Ambitions hasznos közösségi forrásait, köztük a BA Maps, a Bigger Ambitions és a hivatalos Big Ambitions Discord oldalát."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "A beállítások exportálása sikertelen.",
     "importSuccess": "Beállítások sikeresen importálva!",
     "importError": "A beállítások importálása sikertelen. Kérjük, ellenőrizd a JSON fájlt."
+  },
+  "resources": {
+    "title": "Big Ambitions források",
+    "intro": "Hasznos weboldalak, eszközök és közösségek a Big Ambitions játékosainak.",
+    "badges": {
+      "community": "Közösségi projekt",
+      "official": "Hivatalos"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Fedezd fel a Big Ambitions világát egy interaktív 3D-térképpel. Keress épületeket, vállalkozásokat és érdekes helyeket, és importáld saját játékadataidat a személyre szabottabb nézetért.",
+      "cta": "BA Maps felfedezése"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Egy másik hasznos Big Ambitions közösségi oldal, ahol további információkat találsz a játékról. Mindenképp érdemes megnézni!",
+      "cta": "Bigger Ambitions megtekintése"
+    },
+    "discord": {
+      "title": "Hivatalos Big Ambitions Discord",
+      "description": "Csatlakozz a Big Ambitions hivatalos Discord-közösségéhez, hogy más játékosokkal beszélgess, kérdezz, ötleteket ossz meg és kövesd a játék híreit.",
+      "cta": "Csatlakozás a Discordhoz"
+    },
+    "opensInNewTab": "(új lapon nyílik meg)",
+    "suggestion": "Ismersz más hasznos Big Ambitions forrást?",
+    "suggestCta": "Javasold a kapcsolatfelvételi űrlapunkon."
   }
 }

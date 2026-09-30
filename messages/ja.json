@@ -284,7 +284,8 @@
       "hourly": "時間ごと",
       "daily": "日ごと",
       "weekly": "週ごと"
-    }
+    },
+    "resources": "リソース"
   },
   "counts": {
     "palletShelf": "{count, plural, one {パレット棚} other {パレット棚}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "{gameName}のプレイスルーを管理・比較しよう。難易度ごとの進捗をチェックして、生産統計を分析し、ビジネスを最適化しよう。"
+    },
+    "resources": {
+      "description": "BA Maps、Bigger Ambitions、Big Ambitions 公式 Discord など、Big Ambitions の便利なコミュニティリソースをご紹介します。"
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "設定のエクスポートに失敗しました。",
     "importSuccess": "設定を正常にインポートしました！",
     "importError": "設定のインポートに失敗しました。JSONファイルを確認してください。"
+  },
+  "resources": {
+    "title": "Big Ambitions リソース",
+    "intro": "Big Ambitions のプレイヤーに役立つウェブサイト、ツール、コミュニティをご紹介します。",
+    "badges": {
+      "community": "コミュニティプロジェクト",
+      "official": "公式"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "インタラクティブな3Dマップで Big Ambitions を探索しましょう。建物、ビジネス、注目スポットを探したり、自分のゲームデータを取り込んで、プレイ状況に合わせた表示を利用したりできます。",
+      "cta": "BA Maps を探索"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "ゲームに関する情報が充実した、もう一つの便利な Big Ambitions コミュニティサイトです。ぜひチェックしてみてください！",
+      "cta": "Bigger Ambitions を見る"
+    },
+    "discord": {
+      "title": "Big Ambitions 公式 Discord",
+      "description": "Discord の Big Ambitions 公式コミュニティに参加して、他のプレイヤーと交流したり、質問やアイデアを共有したり、ゲームの最新情報をチェックしたりしましょう。",
+      "cta": "Discord に参加"
+    },
+    "opensInNewTab": "（新しいタブで開きます）",
+    "suggestion": "他にも役立つ Big Ambitions のリソースをご存じですか？",
+    "suggestCta": "お問い合わせフォームからご提案ください。"
   }
 }

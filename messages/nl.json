@@ -284,7 +284,8 @@
       "hourly": "Uurlijk",
       "daily": "Dagelijks",
       "weekly": "Wekelijks"
-    }
+    },
+    "resources": "Bronnen"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palletplank} other {Palletplanken}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Beheer en vergelijk je {gameName} speelstanden. Houd je voortgang bij op verschillende moeilijkheidsniveaus, analyseer productiestatistieken en optimaliseer je strategie."
+    },
+    "resources": {
+      "description": "Ontdek handige bronnen van de Big Ambitions-community, waaronder BA Maps, Bigger Ambitions en de officiële Big Ambitions Discord."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Kan instellingen niet exporteren.",
     "importSuccess": "Instellingen succesvol geïmporteerd!",
     "importError": "Kan instellingen niet importeren. Controleer het JSON-bestand."
+  },
+  "resources": {
+    "title": "Big Ambitions-bronnen",
+    "intro": "Handige websites, hulpmiddelen en community’s voor Big Ambitions-spelers.",
+    "badges": {
+      "community": "Communityproject",
+      "official": "Officieel"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Verken Big Ambitions met een interactieve 3D-kaart. Vind gebouwen, bedrijven en interessante locaties en importeer je eigen spelgegevens voor een persoonlijker overzicht.",
+      "cta": "BA Maps verkennen"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Nog een handige communitywebsite voor Big Ambitions met aanvullende informatie over het spel. Zeker een bezoek waard!",
+      "cta": "Bigger Ambitions bezoeken"
+    },
+    "discord": {
+      "title": "Officiële Big Ambitions Discord",
+      "description": "Sluit je aan bij de officiële Big Ambitions-community op Discord om met andere spelers te praten, vragen te stellen, ideeën te delen en het nieuws over het spel te volgen.",
+      "cta": "Lid worden op Discord"
+    },
+    "opensInNewTab": "(opent in een nieuw tabblad)",
+    "suggestion": "Ken je nog een handige bron voor Big Ambitions?",
+    "suggestCta": "Stel deze voor via ons contactformulier."
   }
 }

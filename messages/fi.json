@@ -284,7 +284,8 @@
       "hourly": "Tunnittain",
       "daily": "Päivittäin",
       "weekly": "Viikoittain"
-    }
+    },
+    "resources": "Resurssit"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Lavahylly} other {Lavahyllyt}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Vertaile ja pidä kirjaa {gameName}-tallennuksistasi. Seuraa edistymistäsi, analysoi tilastoja ja optimoi bisnestäsi."
+    },
+    "resources": {
+      "description": "Löydä hyödyllisiä Big Ambitions -yhteisöresursseja, kuten BA Maps, Bigger Ambitions ja Big Ambitionsin virallinen Discord."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Asetusten vienti epäonnistui.",
     "importSuccess": "Asetukset tuotu onnistuneesti!",
     "importError": "Asetusten tuonti epäonnistui. Tarkista JSON-tiedosto."
+  },
+  "resources": {
+    "title": "Big Ambitions -resurssit",
+    "intro": "Hyödyllisiä verkkosivustoja, työkaluja ja yhteisöjä Big Ambitions -pelaajille.",
+    "badges": {
+      "community": "Yhteisöprojekti",
+      "official": "Virallinen"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Tutki Big Ambitions -maailmaa interaktiivisella 3D-kartalla. Löydä rakennuksia, yrityksiä ja kiinnostavia kohteita ja tuo omat pelitietosi kartalle saadaksesi yksilöllisemmän näkymän.",
+      "cta": "Tutustu BA Mapsiin"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Toinen hyödyllinen Big Ambitions -yhteisösivusto, jossa on lisätietoa pelistä. Kannattaa ehdottomasti tutustua!",
+      "cta": "Vieraile Bigger Ambitionsissa"
+    },
+    "discord": {
+      "title": "Big Ambitionsin virallinen Discord",
+      "description": "Liity Big Ambitionsin viralliseen Discord-yhteisöön keskustellaksesi muiden pelaajien kanssa, kysyäksesi kysymyksiä, jakaaksesi ideoita ja seurataksesi pelin uutisia.",
+      "cta": "Liity Discordiin"
+    },
+    "opensInNewTab": "(avautuu uuteen välilehteen)",
+    "suggestion": "Tiedätkö muita hyödyllisiä Big Ambitions -resursseja?",
+    "suggestCta": "Ehdota niitä yhteydenottolomakkeellamme."
   }
 }

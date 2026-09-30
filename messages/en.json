@@ -284,7 +284,8 @@
       "hourly": "hourly",
       "daily": "daily",
       "weekly": "weekly"
-    }
+    },
+    "resources": "Resources"
   },
   "counts": {
     "palletShelf": "{count, plural, one {pallet shelf} other {pallet shelves}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Manage and compare your {gameName} playthroughs. Track your progress across different difficulties, analyze production stats, and optimize your business runs."
+    },
+    "resources": {
+      "description": "Discover useful Big Ambitions community resources, including BA Maps, Bigger Ambitions and the official Big Ambitions Discord."
     }
   },
   "settingsBackup": {
@@ -796,5 +800,31 @@
     "exportError": "Failed to export settings.",
     "importSuccess": "Settings imported successfully!",
     "importError": "Failed to import settings. Please check the JSON file."
+  },
+  "resources": {
+    "title": "Big Ambitions Resources",
+    "intro": "Useful websites, tools and community spaces for Big Ambitions players.",
+    "badges": {
+      "community": "Community Project",
+      "official": "Official"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Explore Big Ambitions with an interactive 3D map. Find buildings, businesses and points of interest — and bring your own game data into the map for a more personalized view.",
+      "cta": "Explore BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Another useful Big Ambitions community site with additional information about the game. Definitely worth checking out!",
+      "cta": "Visit Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Official Big Ambitions Discord",
+      "description": "Join the official Big Ambitions community on Discord to chat with other players, ask questions, share ideas and keep up with the game.",
+      "cta": "Join Discord"
+    },
+    "opensInNewTab": "(opens in a new tab)",
+    "suggestion": "Know another useful Big Ambitions resource?",
+    "suggestCta": "Suggest a resource through our contact form."
   }
 }

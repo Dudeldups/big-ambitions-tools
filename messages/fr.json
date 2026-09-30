@@ -284,7 +284,8 @@
       "hourly": "Par heure",
       "daily": "Par jour",
       "weekly": "Par semaine"
-    }
+    },
+    "resources": "Ressources"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Rayonnage à palettes} other {Rayonnages à palettes}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Gère et compare tes parties à {gameName}. Suis ta progression selon la difficulté, analyse tes stats de production et optimise ton business."
+    },
+    "resources": {
+      "description": "Découvrez des ressources communautaires utiles pour Big Ambitions, dont BA Maps, Bigger Ambitions et le Discord officiel de Big Ambitions."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Échec de l'exportation des paramètres.",
     "importSuccess": "Paramètres importés avec succès !",
     "importError": "Échec de l’importation des paramètres. Vérifie le fichier JSON."
+  },
+  "resources": {
+    "title": "Ressources Big Ambitions",
+    "intro": "Des sites, outils et espaces communautaires utiles pour les joueurs de Big Ambitions.",
+    "badges": {
+      "community": "Projet communautaire",
+      "official": "Officiel"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Explorez Big Ambitions avec une carte 3D interactive. Trouvez des bâtiments, des entreprises et des lieux intéressants, puis importez vos propres données de jeu pour une vue plus personnalisée.",
+      "cta": "Explorer BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Un autre site communautaire utile consacré à Big Ambitions, avec des informations supplémentaires sur le jeu. Il mérite vraiment une visite !",
+      "cta": "Visiter Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Discord officiel de Big Ambitions",
+      "description": "Rejoignez la communauté officielle de Big Ambitions sur Discord pour discuter avec d’autres joueurs, poser des questions, partager vos idées et suivre les nouveautés du jeu.",
+      "cta": "Rejoindre Discord"
+    },
+    "opensInNewTab": "(s’ouvre dans un nouvel onglet)",
+    "suggestion": "Vous connaissez une autre ressource utile pour Big Ambitions ?",
+    "suggestCta": "Proposez-la via notre formulaire de contact."
   }
 }

@@ -284,7 +284,8 @@
       "hourly": "Pe oră",
       "daily": "Zilnic",
       "weekly": "Săptămânal"
-    }
+    },
+    "resources": "Resurse"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Raft pentru paleți} other {Rafte pentru paleți}}",
@@ -779,6 +780,9 @@
     },
     "playthroughs": {
       "description": "Gestionează și compară partidele tale de {gameName}. Urmărește-ți progresul, analizează statisticile și optimizează-ți afacerea."
+    },
+    "resources": {
+      "description": "Descoperă resurse utile ale comunității Big Ambitions, inclusiv BA Maps, Bigger Ambitions și Discordul oficial Big Ambitions."
     }
   },
   "settingsBackup": {
@@ -797,5 +801,31 @@
     "exportError": "Eroare la exportarea setărilor.",
     "importSuccess": "Setările au fost importate cu succes!",
     "importError": "Eroare la importarea setărilor. Te rugăm să verifici fișierul JSON."
+  },
+  "resources": {
+    "title": "Resurse Big Ambitions",
+    "intro": "Site-uri, instrumente și comunități utile pentru jucătorii Big Ambitions.",
+    "badges": {
+      "community": "Proiect comunitar",
+      "official": "Oficial"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Explorează Big Ambitions cu o hartă 3D interactivă. Găsește clădiri, afaceri și puncte de interes și importă propriile date din joc pentru o vizualizare mai personalizată.",
+      "cta": "Explorează BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Un alt site util al comunității Big Ambitions, cu informații suplimentare despre joc. Merită cu siguranță o vizită!",
+      "cta": "Vizitează Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Discord oficial Big Ambitions",
+      "description": "Alătură-te comunității oficiale Big Ambitions pe Discord pentru a discuta cu alți jucători, a pune întrebări, a împărtăși idei și a urmări noutățile jocului.",
+      "cta": "Alătură-te pe Discord"
+    },
+    "opensInNewTab": "(se deschide într-o filă nouă)",
+    "suggestion": "Cunoști o altă resursă utilă pentru Big Ambitions?",
+    "suggestCta": "Propune-o prin formularul nostru de contact."
   }
 }
