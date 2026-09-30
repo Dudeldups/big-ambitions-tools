@@ -529,7 +529,9 @@
       "gameVersionNotice": {
         "title": "Versioned Game Data",
         "desc": "Playthroughs now use versioned game data. You can edit the game version for each playthrough in the <link>overview</link>."
-      }
+      },
+      "backupHint": "Save your playthroughs, factories and app settings as a backup file on your device. Use it to restore your data later or transfer it to another device.",
+      "backupButton": "Back up & restore data"
     },
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",

@@ -20,7 +20,13 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 
-export function SettingsBackupDialog() {
+type SettingsBackupDialogProps = {
+  triggerLabel?: string;
+};
+
+export function SettingsBackupDialog({
+  triggerLabel,
+}: SettingsBackupDialogProps = {}) {
   const t = useTranslations("settingsBackup");
   const [open, setOpen] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
@@ -84,12 +90,14 @@ export function SettingsBackupDialog() {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          size="icon"
+          size={triggerLabel ? "default" : "icon"}
           title={t("dialogTriggerTitle")}
           disabled={!appHydrated || !playthroughHydrated}
         >
           <Database className="size-4" />
-          <span className="sr-only">{t("dialogTriggerSrOnly")}</span>
+          {triggerLabel ?? (
+            <span className="sr-only">{t("dialogTriggerSrOnly")}</span>
+          )}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">

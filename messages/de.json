@@ -529,7 +529,9 @@
       "gameVersionNotice": {
         "title": "Versionierte Spieledaten",
         "desc": "Spielstände benutzen nun versionierte Spieledaten. Du kannst die Spielversion für jeden Spielstand in der <link>Übersicht</link> ändern."
-      }
+      },
+      "backupHint": "Speichere deine Spielstände, Fabriken und App-Einstellungen als Sicherungsdatei auf deinem Gerät. Mit dieser Datei kannst du deine Daten später wiederherstellen oder auf ein anderes Gerät übertragen.",
+      "backupButton": "Daten sichern & wiederherstellen"
     },
     "playthroughDetail": {
       "desc": "Hier siehst du die Produktionsstatistiken deines Imperiums. Gehe zur Seite \"Fabriken\", um einen Überblick zu bekommen, Artikel zu tracken, die bestellt werden müssen, und mehr. Der Fabrikplaner zeigt dir alle Details zu Produktionszahlen, Bestellmengen und mehr.",
