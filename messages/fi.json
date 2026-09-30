@@ -483,7 +483,8 @@
     "qotd": "Fredin 'Päivän mietelause' lisättiin etusivulle",
     "update11": "Lisätty pelidatan versiointia tukemaan kahta uusinta versiota",
     "update10": "Päivitetty Big Ambitions 1.0:aan ja lisätty ainesosien tilaaminen vain varastoryhmään",
-    "update12": "Päivitetty tehtaiden verolaskelmat ja parannettu yhteisvarastojen toimitussuunnitelmia"
+    "update12": "Päivitetty tehtaiden verolaskelmat ja parannettu yhteisvarastojen toimitussuunnitelmia",
+    "update13": "<items><item>Lisätty yhteinen viikoittainen ostoslista tallennuksen kaikille tehtaille (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Varmuuskopioi tallennukset ja sovelluksen asetukset tiedostoon ja palauta ne siitä (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Parannettu osto-ohjeita ja käännöksiä.</item></items>"
   },
   "database": {
     "intro": {

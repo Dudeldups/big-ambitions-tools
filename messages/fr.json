@@ -483,7 +483,8 @@
     "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
     "update11": "Versionnage des données de jeu ajouté pour prendre en charge les deux versions les plus récentes",
     "update10": "Mis à jour pour Big Ambitions 1.0 et ajout des commandes d'ingrédients uniquement vers le groupe d'entrepôt",
-    "update12": "Calculs fiscaux des usines mis à jour et plans de livraison depuis les entrepôts partagés améliorés"
+    "update12": "Calculs fiscaux des usines mis à jour et plans de livraison depuis les entrepôts partagés améliorés",
+    "update13": "<items><item>Ajout d’une liste d’achats hebdomadaire regroupant toutes les usines d’une partie (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Sauvegarde tes parties et les paramètres de l’application dans un fichier, puis restaure-les (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Amélioration des instructions d’achat et des traductions.</item></items>"
   },
   "database": {
     "intro": {

@@ -483,7 +483,8 @@
     "qotd": "Fred 'napi idézetét' hozzáadtuk a kezdőlaphoz",
     "update11": "Hozzáadtuk a játékadatok verziózását, hogy támogassuk a két legújabb verziót",
     "update10": "Frissítve Big Ambitions 1.0-ra, és hozzáadva az alapanyagok csak raktárcsoportba történő rendelése",
-    "update12": "Frissítettük a gyárak adószámításait és javítottuk a közös raktárak szállítási terveit"
+    "update12": "Frissítettük a gyárak adószámításait és javítottuk a közös raktárak szállítási terveit",
+    "update13": "<items><item>Heti összesített bevásárlólistát adtunk hozzá a játékállapotban lévő összes gyárhoz (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Készíts biztonsági mentést a játékállapotokról és az alkalmazás beállításairól egy fájlba, és állítsd vissza őket (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Javítottuk a beszerzési útmutatókat és a fordításokat.</item></items>"
   },
   "database": {
     "intro": {

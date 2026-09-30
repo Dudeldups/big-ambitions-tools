@@ -483,7 +483,8 @@
     "qotd": "首页新增了 Fred 的 '每日一语'",
     "update11": "新增游戏数据版本管理，以支持最新的两个版本",
     "update10": "已更新至 Big Ambitions 1.0，并新增仅向仓库组订购原料的功能",
-    "update12": "更新了工厂税务计算，并改进了共享仓库配送计划"
+    "update12": "更新了工厂税务计算，并改进了共享仓库配送计划",
+    "update13": "<items><item>新增汇总一个存档内所有工厂的每周采购清单（<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>）。</item><item>将存档和应用设置备份为文件，并从文件恢复（<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>）。</item><item>改进了采购说明和翻译。</item></items>"
   },
   "database": {
     "intro": {

@@ -483,7 +483,8 @@
     "qotd": "홈페이지에 프레드의 '오늘의 명언' 추가",
     "update11": "최신 두 버전을 지원하기 위한 게임 데이터 버전 관리 추가",
     "update10": "Big Ambitions 1.0으로 업데이트하고 재료를 창고 그룹으로만 주문하는 기능을 추가했습니다",
-    "update12": "공장 세금 계산을 업데이트하고 공유 창고 배송 계획을 개선했습니다"
+    "update12": "공장 세금 계산을 업데이트하고 공유 창고 배송 계획을 개선했습니다",
+    "update13": "<items><item>저장 데이터의 모든 공장을 포함하는 주간 구매 목록 추가 (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>저장 데이터와 앱 설정을 파일로 백업하고 복원 (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>구매 안내와 번역 개선.</item></items>"
   },
   "database": {
     "intro": {

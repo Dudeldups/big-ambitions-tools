@@ -483,7 +483,8 @@
     "qotd": "Freds 'Dagens citat' tilføjet til forsiden",
     "update11": "Versionering af spildata til understøttelse af de to nyeste versioner",
     "update10": "Opdateret til Big Ambitions 1.0 og tilføjet bestilling af ingredienser kun til lagergruppen",
-    "update12": "Opdaterede fabrikkernes skatteberegninger og forbedrede leveringsplaner fra fælles lagre"
+    "update12": "Opdaterede fabrikkernes skatteberegninger og forbedrede leveringsplaner fra fælles lagre",
+    "update13": "<items><item>Tilføjet en samlet ugentlig indkøbsliste for alle fabrikker i en spilstand (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Sikkerhedskopier spilstande og appindstillinger til en fil, og gendan dem (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Forbedret indkøbsvejledninger og oversættelser.</item></items>"
   },
   "database": {
     "intro": {

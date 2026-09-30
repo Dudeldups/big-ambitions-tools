@@ -483,7 +483,8 @@
     "qotd": "Aggiunta la 'Citazione del giorno' di Fred nella home",
     "update11": "Aggiunto il versionamento dei dati di gioco per supportare le due versioni più recenti",
     "update10": "Aggiornato per Big Ambitions 1.0 e aggiunto l'ordine degli ingredienti solo al gruppo di magazzino",
-    "update12": "Aggiornati i calcoli fiscali delle fabbriche e migliorati i piani di consegna dai magazzini condivisi"
+    "update12": "Aggiornati i calcoli fiscali delle fabbriche e migliorati i piani di consegna dai magazzini condivisi",
+    "update13": "<items><item>Aggiunta una lista della spesa settimanale per tutte le fabbriche di una partita (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Esegui il backup delle partite e delle impostazioni dell’app in un file e ripristinale (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Migliorate le istruzioni per gli acquisti e le traduzioni.</item></items>"
   },
   "database": {
     "intro": {

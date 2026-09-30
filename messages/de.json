@@ -483,7 +483,8 @@
     "qotd": "Freds 'Zitat des Tages' zur Startseite hinzugefügt",
     "update11": "Versionierung für Spieldaten hinzugefügt, um die beiden aktuellsten Versionen zu unterstützen",
     "update10": "Für Big Ambitions 1.0 aktualisiert und Bestellung von Zutaten nur an die Lagergruppe hinzugefügt",
-    "update12": "Steuerberechnungen für Fabriken aktualisiert und Lieferpläne für gemeinsame Lagerhäuser verbessert"
+    "update12": "Steuerberechnungen für Fabriken aktualisiert und Lieferpläne für gemeinsame Lagerhäuser verbessert",
+    "update13": "<items><item>Wöchentliche Gesamteinkaufsliste für alle Fabriken eines Spielstands hinzugefügt (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Spielstände und App-Einstellungen als Datei sichern und wiederherstellen (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Einkaufshinweise und Übersetzungen verbessert.</item></items>"
   },
   "database": {
     "intro": {
