@@ -1,21 +1,40 @@
 import { Factory } from "../stores/playthroughStore";
-import { GameData } from "../game/types";
-import { getOptimalPalletShelfAmount } from "./getOptimalPalletShelfAmount";
+import { Difficulty, GameData } from "../game/types";
+import { IngredientName } from "../game/ingredientNames";
+import { requireIngredient, requireShelf } from "../game/requireGameData";
+import { getFactorySupplyPlan } from "../utils/getFactorySupplyPlan";
+import { ceilWithTolerance } from "./math";
 
+// Size the warehouse for its actual weekly orders, including mixed strategies.
 export function getMissingPalletShelvesTotal(
   factories: (Factory | undefined)[],
   gameData: GameData,
+  difficulty: Difficulty = "normal",
 ): number {
-  return factories.reduce((acc, f) => {
-    if (!f) return acc;
+  const amounts = new Map<string, number>();
 
-    const required = getOptimalPalletShelfAmount(
-      f.workstations,
+  for (const factory of factories) {
+    if (!factory) continue;
+    const { warehouseList } = getFactorySupplyPlan(
+      factory,
+      difficulty,
       gameData,
-    ).external;
+    );
+    for (const entry of warehouseList) {
+      for (const item of entry.items) {
+        amounts.set(item.name, (amounts.get(item.name) ?? 0) + item.amount);
+      }
+    }
+  }
 
-    const missing = Math.max(required - f.shelfAmount, 0);
-
-    return acc + missing;
-  }, 0);
+  const boxes = Array.from(amounts.entries()).reduce(
+    (total, [name, amount]) => {
+      const ingredient = requireIngredient(gameData, name as IngredientName);
+      return total + ceilWithTolerance(amount / ingredient.amountPerBox);
+    },
+    0,
+  );
+  return ceilWithTolerance(
+    boxes / requireShelf(gameData, "palletShelf").storageCapacity,
+  );
 }

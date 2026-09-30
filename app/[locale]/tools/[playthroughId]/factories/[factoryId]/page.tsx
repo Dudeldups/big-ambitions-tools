@@ -19,8 +19,9 @@ import OneTimeCostDialog from "@/components/tools/one-time-cost-dialog";
 import DeleteDialog from "@/components/delete-dialog";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { toast } from "sonner";
-import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
-import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
+import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
+import { usesSeparatePurchasingAgent } from "@/lib/utils/usesSeparatePurchasingAgent";
+import messages from "@/messages/en.json";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import ImporterTable from "@/components/tables/importer-table";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
@@ -73,15 +74,13 @@ const FactoryIdPage = () => {
     ...deriveWorkstationData(activeFactory, gameData),
   ];
 
-  const requiredShelves = getOptimalPalletShelfAmount(
-    activeFactory.workstations,
-    gameData,
-  ).weekly;
-
-  const { factoryList, externalList } = splitShoppingListByShelves(
-    shoppingListData,
-    requiredShelves,
-    activeFactory.shelfAmount,
+  const {
+    factoryList,
+    warehouseList: externalList,
+    requiredFactoryShelves: requiredShelves,
+  } = getFactorySupplyPlan(
+    activeFactory,
+    activePlaythrough.difficulty,
     gameData,
   );
 
@@ -171,6 +170,11 @@ const FactoryIdPage = () => {
               {t("tools.factoryDetail.shoppingList.title")}
             </h3>
             <p>{t("tools.factoryDetail.shoppingList.desc")}</p>
+            <p className="text-muted-foreground">
+              {usesSeparatePurchasingAgent(activeFactory)
+                ? messages.tools.factoryDetail.splitPurchasingNote
+                : messages.tools.factoryDetail.centralPurchasingNote}
+            </p>
           </hgroup>
 
           <div className="mt-10 flex w-full min-w-0 flex-col gap-4 space-y-6">
@@ -181,32 +185,33 @@ const FactoryIdPage = () => {
         </div>
 
         {/* Split shopping list */}
-        {externalList.length > 0 && (
-          <div className="mt-14">
-            <hgroup className="max-w-2xl space-y-4">
-              <h3 className="text-xl font-semibold">
-                {t("tools.factoryDetail.splitShoppingList.title")}
-              </h3>
-              <p>
-                {t("tools.factoryDetail.splitShoppingList.desc", {
-                  shelfAmount: activeFactory.shelfAmount,
-                  requiredAmount: requiredShelves,
-                })}
-              </p>
-              <p>
-                {rich("tools.factoryDetail.splitShoppingList.desc1", {
-                  link: sLink(`/tools/${activePlaythrough.id}/factories`),
-                })}
-              </p>
-            </hgroup>
+        {usesSeparatePurchasingAgent(activeFactory) &&
+          externalList.length > 0 && (
+            <div className="mt-14">
+              <hgroup className="max-w-2xl space-y-4">
+                <h3 className="text-xl font-semibold">
+                  {t("tools.factoryDetail.splitShoppingList.title")}
+                </h3>
+                <p>
+                  {t("tools.factoryDetail.splitShoppingList.desc", {
+                    shelfAmount: activeFactory.shelfAmount,
+                    requiredAmount: requiredShelves,
+                  })}
+                </p>
+                <p>
+                  {rich("tools.factoryDetail.splitShoppingList.desc1", {
+                    link: sLink(`/tools/${activePlaythrough.id}/factories`),
+                  })}
+                </p>
+              </hgroup>
 
-            <div className="mt-10 flex w-full flex-col gap-4 space-y-6 overflow-x-auto">
-              {factoryList.map((group) => (
-                <ImporterTable key={group.importer} data={group} t={t} />
-              ))}
+              <div className="mt-10 flex w-full flex-col gap-4 space-y-6 overflow-x-auto">
+                {factoryList.map((group) => (
+                  <ImporterTable key={group.importer} data={group} t={t} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
 
       {/* Summary */}

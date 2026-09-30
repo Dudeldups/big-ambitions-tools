@@ -36,7 +36,7 @@ vi.mock("@/lib/hooks/useRichDefaults", () => ({
       const translations: Record<string, string> = {
         "general.palletShelves": "Pallet shelves",
         "tools.factoryPlanner.information.palletDesc":
-          "Define how many pallet shelves are available in this factory. Set this to 0 to order all ingredients to the warehouse group instead.",
+          "Enter the number of physical pallet shelves in this factory, including shelves used as a daily delivery buffer.",
         "tools.factoryPlanner.information.shelfExplanation":
           "Add at least one workstation to see the required number of pallet shelves.",
         "tools.factoryPlanner.information.enoughWeekly":
@@ -139,7 +139,7 @@ describe("PalletShelfField", () => {
     expect(screen.getByLabelText("Pallet shelves")).toHaveAttribute("min", "0");
     expect(
       screen.getByText(
-        "Define how many pallet shelves are available in this factory. Set this to 0 to order all ingredients to the warehouse group instead.",
+        "Enter the number of physical pallet shelves in this factory, including shelves used as a daily delivery buffer.",
       ),
     ).toBeInTheDocument();
   });

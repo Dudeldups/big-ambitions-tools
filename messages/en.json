@@ -539,7 +539,7 @@
     "factories": {
       "title": "Your factories",
       "desc": "An overview of your factories. You can edit or delete them and also copy the current values for a new factory. To see more details about each factory including a shopping list, just click their respective card.",
-      "desc1": "You can also group them together by clicking the Create Group button below. This will allow you to see those factories in one place and manage them as a group. Helpful if you use a central warehouse to provide ingredients for multiple factories. Based on the number of pallet shelves you've added, it will suggest a delivery plan for each factory.",
+      "desc1": "Create a group and drag in the factories supplied by one warehouse. Set a factory's Purchasing Agent amount to 0 for central purchasing of its full weekly demand. With a factory purchasing agent, the factory buys the share that fits on its shelves and the warehouse buys the remainder.",
       "noFactories": "There are no factories in your playthrough. Create one to get started!",
       "notFound": {
         "title": "Factory not found",
@@ -550,14 +550,16 @@
     "factoryDetail": {
       "editBtn": "Edit factory",
       "shoppingList": {
-        "title": "Shopping list",
-        "desc": "This is what your factory needs weekly to run at full capacity."
+        "title": "Weekly ingredient demand",
+        "desc": "This is the factory's total ingredient consumption for one week, including any production limits. Use the purchasing instructions below to decide where to order it."
       },
       "splitShoppingList": {
         "title": "Split shopping list",
         "desc": "Order these ingredients to your factory to split the order. This is the maximum amount your {shelfAmount} pallet shelves can hold. It also accounts for the number of boxes you are producing. You would need {requiredAmount} shelves to store all ingredients for a whole week of production.",
         "desc1": "The rest must be ordered to a warehouse by one or more separate purchasing agents. Go back to the <link>factory overview</link> and create a group to see a full list of what to order to that warehouse. It will also show you the delivery plan to each factory."
-      }
+      },
+      "centralPurchasingNote": "This factory uses central purchasing. Add it to a factory group and use that group's shopping list to order all ingredients to the warehouse. The group's delivery plan supplies this factory daily; do not place a second ingredient order directly to this factory.",
+      "splitPurchasingNote": "This factory uses a separate purchasing agent. If a split shopping list is shown below, use it for the factory's direct weekly order and the group shopping list for the warehouse's remaining share. If everything fits in the factory, order the full weekly demand directly."
     },
     "playthroughForm": {
       "title": "Create a new playthrough",
@@ -577,20 +579,23 @@
     "factoryGroups": {
       "buttonDesc": "Create group",
       "title": "Factory groups",
-      "desc": "You can group factories together for a better overview per product category. If the grouped factories do not have enough pallet shelves assigned, the shopping list will tell you what you need to order to each factory and also to the warehouse to supply the rest. The deliveries dialog will also show you what to send to each factory.",
+      "desc": "Group factories supplied by one warehouse to combine their weekly warehouse shopping lists and see daily deliveries. Factories with no purchasing agent use central purchasing; factories with their own purchasing agent buy ingredients directly and use the warehouse for the remainder. Both strategies can be mixed in one group.",
       "groupEmpty": "No factories in this group. Drag a factory card here to add it.",
       "ungroupedTitle": "Ungrouped factories",
       "ungroupedEmpty": "No ungrouped factories. Drag a factory card here or add a new factory.",
       "deliveries": {
         "buttonDesc": "Deliveries",
         "title": "Delivery Plan",
-        "descNeeded": "Delivery plans for each factory in this group. A shared warehouse will need {amount} pallet shelves to supply all factories in this group.",
-        "descEnough": "All factories have enough shelves to hold all needed ingredients."
+        "descNeeded": "Daily deliveries from this warehouse to each factory. Central purchasing supplies the full daily ingredient demand; separate purchasing supplies only the daily warehouse share. Quantities are rounded up to whole items. Warehouse pallet shelves needed: {amount}.",
+        "descEnough": "These factories buy all their ingredients directly and do not need warehouse deliveries."
       },
       "shoppingList": {
         "title": "Group shopping list",
-        "desc": "These are all ingredients needed to supply factories that don't have enough pallet shelves inside this group. It calculates based on the amount of shelves available in the factories so you can order the rest to a separate warehouse.<br></br>Shelves needed in warehouse: <strong>{amount}</strong>"
-      }
+        "desc": "Order these ingredients to the group's warehouse each week. Factories using central purchasing contribute their full 7-day demand. For factories with a separate purchasing agent, only the remaining warehouse share is included; order their direct share from the factory's split shopping list.<br></br>Pallet shelves needed for the warehouse's weekly ingredients: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Order these ingredients to the group's warehouse each week. Factories using central purchasing contribute their full 7-day demand. For factories with a separate purchasing agent, only the remaining warehouse share is included; order their direct share from the factory's split shopping list.",
+      "warehouseDeliveryDesc": "Daily deliveries from this warehouse to each factory. Central purchasing supplies the full daily ingredient demand; separate purchasing supplies only the daily warehouse share. Quantities are rounded up to whole items.",
+      "warehouseShelvesLabel": "Pallet shelves needed for the warehouse's weekly ingredients:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "In version 1.0, ingredients and employee wages reduce taxable income. Factory equipment, pallet shelves, and qualifying delivery vehicles are deductible when purchased, but one-time deductions are not included in this recurring tax estimate.",
@@ -600,7 +605,7 @@
         "legend": "Factory information",
         "name": "Factory name",
         "calcBasis": "Calculation basis",
-        "palletDesc": "Define how many pallet shelves are available in this factory. Set this to 0 to order all ingredients to the warehouse group instead.",
+        "palletDesc": "Enter the number of physical pallet shelves in this factory, including shelves used as a daily delivery buffer.",
         "dailyAmount": "Daily delivery requires <strong>{count}</strong> {object}.",
         "weeklyAmount": "Weekly delivery requires <strong>{count}</strong> {object}.",
         "shelfExplanation": "Add at least one workstation to see the required number of pallet shelves.",

@@ -1,5 +1,5 @@
 import { ProductName } from "../game/productNames";
-import { GameData, Product } from "../game/types";
+import { Product } from "../game/types";
 
 // function to lookup which products a workstation is used for
 export function getWorkstationProducts(

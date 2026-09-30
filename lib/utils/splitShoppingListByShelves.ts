@@ -1,3 +1,4 @@
+import { ceilWithTolerance } from "../calculations/math";
 import { IngredientName } from "../game/ingredientNames";
 import { requireIngredient } from "../game/requireGameData";
 import { GameData } from "../game/types";
@@ -17,51 +18,51 @@ export const splitShoppingListByShelves = (
   if (requiredShelves <= 0 || availableShelves >= requiredShelves) {
     return { factoryList: list, externalList: [] };
   }
+  if (availableShelves <= 0) {
+    return { factoryList: [], externalList: list };
+  }
 
   const factoryRatio = availableShelves / requiredShelves;
-
   const factoryList: ImporterShoppingList[] = [];
   const externalList: ImporterShoppingList[] = [];
 
   for (const entry of list) {
-    const factoryItems = [];
-    const externalItems = [];
+    const factoryItems: ImporterShoppingList["items"] = [];
+    const externalItems: ImporterShoppingList["items"] = [];
 
     for (const item of entry.items) {
-      const ingredientName = item.name as IngredientName;
-      const { amountPerBox } = requireIngredient(gameData, ingredientName);
-
-      const rawFactoryAmount = item.amount * factoryRatio;
-
-      // factory rounded to full boxes (fit as much in the factory as possible)
-      const factoryBoxes = Math.ceil(rawFactoryAmount / amountPerBox);
-      const factoryAmount = factoryBoxes * amountPerBox;
-
-      // remainder goes to external
+      if (item.amount <= 0) continue;
+      const { amountPerBox } = requireIngredient(
+        gameData,
+        item.name as IngredientName,
+      );
+      // Round the direct share to boxes without buying more than the weekly need.
+      const factoryAmount = Math.min(
+        item.amount,
+        ceilWithTolerance((item.amount * factoryRatio) / amountPerBox) *
+          amountPerBox,
+      );
       const remainingAmount = item.amount - factoryAmount;
+      const factoryValue = item.value * (factoryAmount / item.amount);
 
       factoryItems.push({
         name: item.name,
         amount: factoryAmount,
-        value: item.value * factoryRatio,
+        value: factoryValue,
       });
-
       if (remainingAmount > 0) {
         externalItems.push({
           name: item.name,
           amount: remainingAmount,
-          value: item.value * (1 - factoryRatio),
+          value: item.value - factoryValue,
         });
       }
     }
-
-    factoryList.push({ importer: entry.importer, items: factoryItems });
-
+    if (factoryItems.length > 0) {
+      factoryList.push({ importer: entry.importer, items: factoryItems });
+    }
     if (externalItems.length > 0) {
-      externalList.push({
-        importer: entry.importer,
-        items: externalItems,
-      });
+      externalList.push({ importer: entry.importer, items: externalItems });
     }
   }
 

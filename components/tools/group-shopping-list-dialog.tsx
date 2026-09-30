@@ -11,13 +11,12 @@ import {
 } from "../ui/dialog";
 import { ClipboardCheck } from "lucide-react";
 import ImporterTable from "../tables/importer-table";
-import { getShoppingList } from "@/lib/utils/getShoppingList";
+import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
+import messages from "@/messages/en.json";
 import { getPlaythroughGameData } from "@/lib/game/registry";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { mergeShoppingLists } from "@/lib/utils/mergeShoppingLists";
-import { getOptimalPalletShelfAmount } from "@/lib/calculations/getOptimalPalletShelfAmount";
-import { splitShoppingListByShelves } from "@/lib/utils/splitShoppingListByShelves";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
 import { cn } from "@/lib/utils";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
@@ -29,7 +28,7 @@ type GroupShoppingListDialogProps = {
 const GroupShoppingListDialog = ({
   factoryIds,
 }: GroupShoppingListDialogProps) => {
-  const { t, rich } = useRichDefaults();
+  const { t } = useRichDefaults();
   const { activePlaythrough } = useActivePlaythrough();
   const getFactoryById = usePlaythroughStore((s) => s.getFactoryById);
 
@@ -41,27 +40,24 @@ const GroupShoppingListDialog = ({
   const neededPalletShelvesTotal = getMissingPalletShelvesTotal(
     groupFactories,
     gameData,
+    activePlaythrough.difficulty,
   );
 
-  const splitPerFactory = groupFactories.flatMap((factory) => {
+  const warehouseLists = groupFactories.flatMap((factory) => {
     if (!factory) return [];
 
-    return splitShoppingListByShelves(
-      getShoppingList(factory, activePlaythrough.difficulty, gameData),
-      getOptimalPalletShelfAmount(factory.workstations, gameData).external,
-      factory.shelfAmount,
-      gameData,
-    ).externalList;
+    return getFactorySupplyPlan(factory, activePlaythrough.difficulty, gameData)
+      .warehouseList;
   });
 
-  const groupShoppingList = mergeShoppingLists(splitPerFactory);
+  const groupShoppingList = mergeShoppingLists(warehouseLists);
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button
           variant="foreground"
-          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
+          className={cn(groupShoppingList.length === 0 && "hidden")}
         >
           <ClipboardCheck className="size-5" />
           {t("tools.factoryGroups.shoppingList.title")}
@@ -74,9 +70,10 @@ const GroupShoppingListDialog = ({
             {t("tools.factoryGroups.shoppingList.title")}
           </DialogTitle>
           <DialogDescription>
-            {rich("tools.factoryGroups.shoppingList.desc", {
-              amount: neededPalletShelvesTotal,
-            })}
+            {messages.tools.factoryGroups.warehouseShoppingDesc}
+            <br />
+            {messages.tools.factoryGroups.warehouseShelvesLabel}{" "}
+            <strong>{neededPalletShelvesTotal}</strong>
           </DialogDescription>
         </DialogHeader>
 

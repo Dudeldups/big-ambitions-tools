@@ -179,7 +179,7 @@ describe("FactoryCardOverview", () => {
 
     const groupSection = screen
       .getByText(group.name)
-      .closest("div")?.parentElement!;
+      .closest("div")!.parentElement!;
     await user.click(
       within(groupSection).getByRole("button", { name: "delete-group" }),
     );

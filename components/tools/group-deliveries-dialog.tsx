@@ -13,7 +13,8 @@ import {
 import { Package } from "lucide-react";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
-import { getShoppingList } from "@/lib/utils/getShoppingList";
+import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
+import messages from "@/messages/en.json";
 import { getPlaythroughGameData } from "@/lib/game/registry";
 import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
@@ -38,19 +39,22 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
   const neededPalletShelvesTotal = getMissingPalletShelvesTotal(
     groupFactories,
     gameData,
+    activePlaythrough.difficulty,
   );
 
   const deliveryLists = groupFactories.flatMap((factory) => {
     if (!factory) return [];
-    const shoppingList = getShoppingList(
+    const { warehouseList } = getFactorySupplyPlan(
       factory,
       activePlaythrough.difficulty,
       gameData,
     );
 
+    if (warehouseList.length === 0) return [];
+
     return {
       destination: factory.name,
-      deliveryList: calculateDailyWarehouseSupply(shoppingList),
+      deliveryList: calculateDailyWarehouseSupply(warehouseList),
     };
   });
 
@@ -59,7 +63,7 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
       <DialogTrigger asChild>
         <Button
           variant="foreground"
-          className={cn(neededPalletShelvesTotal === 0 && "hidden")}
+          className={cn(deliveryLists.length === 0 && "hidden")}
         >
           <Package className="size-5" />
           {t("tools.factoryGroups.deliveries.buttonDesc")}
@@ -70,15 +74,10 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
         <DialogHeader>
           <DialogTitle>{t("tools.factoryGroups.deliveries.title")}</DialogTitle>
           <DialogDescription>
-            {neededPalletShelvesTotal > 0 ? (
-              <>
-                {t("tools.factoryGroups.deliveries.descNeeded", {
-                  amount: neededPalletShelvesTotal,
-                })}
-              </>
-            ) : (
-              <>{t("tools.factoryGroups.deliveries.descEnough")}</>
-            )}
+            {messages.tools.factoryGroups.warehouseDeliveryDesc}
+            <br />
+            {messages.tools.factoryGroups.warehouseShelvesLabel}{" "}
+            <strong>{neededPalletShelvesTotal}</strong>
           </DialogDescription>
         </DialogHeader>
 
