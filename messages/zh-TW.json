@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "備份與還原設定",
     "dialogTriggerSrOnly": "備份與還原設定",
     "dialogTitle": "備份與還原設定",
-    "dialogDescription": "匯出或匯入已儲存的通關存檔與工廠設定（IndexedDB 儲存空間）。",
+    "dialogDescription": "匯出或匯入已儲存的通關存檔與工廠設定。",
     "exportTitle": "匯出設定",
     "exportDescription": "將資料下載為 JSON 備份檔案。",
     "exportButton": "匯出",

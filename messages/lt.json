@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Atsarginė nustatymų kopija ir atkūrimas",
     "dialogTriggerSrOnly": "Atsarginė nustatymų kopija ir atkūrimas",
     "dialogTitle": "Atsarginė nustatymų kopija ir atkūrimas",
-    "dialogDescription": "Eksportuokite arba importuokite išsaugotus žaidimus ir gamyklų nustatymus („IndexedDB“ saugykla).",
+    "dialogDescription": "Eksportuokite arba importuokite išsaugotus žaidimus ir gamyklų nustatymus.",
     "exportTitle": "Eksportuoti nustatymus",
     "exportDescription": "Atsisiųskite duomenis kaip JSON atsarginės kopijos failą.",
     "exportButton": "Eksportuoti",

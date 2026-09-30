@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Instellingen back-uppen & herstellen",
     "dialogTriggerSrOnly": "Instellingen back-uppen en herstellen",
     "dialogTitle": "Instellingen back-uppen & herstellen",
-    "dialogDescription": "Exporteer of importeer je opgeslagen speelsessies en fabrieksinstellingen (IndexedDB-opslag).",
+    "dialogDescription": "Exporteer of importeer je opgeslagen speelsessies en fabrieksinstellingen.",
     "exportTitle": "Instellingen exporteren",
     "exportDescription": "Download je gegevens als een JSON-back-upbestand.",
     "exportButton": "Exporteren",

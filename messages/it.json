@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Backup e ripristino impostazioni",
     "dialogTriggerSrOnly": "Backup e ripristino impostazioni",
     "dialogTitle": "Backup e ripristino impostazioni",
-    "dialogDescription": "Esporta o importa le tue partite salvate e le impostazioni delle fabbriche (archiviazione IndexedDB).",
+    "dialogDescription": "Esporta o importa le tue partite salvate e le impostazioni delle fabbriche.",
     "exportTitle": "Esporta impostazioni",
     "exportDescription": "Scarica i tuoi dati come file di backup JSON.",
     "exportButton": "Esporta",

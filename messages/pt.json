@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Backup e Restauração de Configurações",
     "dialogTriggerSrOnly": "Backup e restauração de configurações",
     "dialogTitle": "Backup e Restauração de Configurações",
-    "dialogDescription": "Exporte ou importe seus jogos salvos e configurações de fábricas (armazenamento IndexedDB).",
+    "dialogDescription": "Exporte ou importe seus jogos salvos e configurações de fábricas.",
     "exportTitle": "Exportar Configurações",
     "exportDescription": "Baixe seus dados como um arquivo de backup JSON.",
     "exportButton": "Exportar",

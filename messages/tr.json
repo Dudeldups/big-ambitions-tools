@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Ayarları Yedekle ve Geri Yükle",
     "dialogTriggerSrOnly": "Ayarları yedekle ve geri yükle",
     "dialogTitle": "Ayarları Yedekle ve Geri Yükle",
-    "dialogDescription": "Kayıtlı oyunlarınızı ve fabrika ayarlarınızı (IndexedDB depolama) dışa veya içe aktarın.",
+    "dialogDescription": "Kayıtlı oyunlarınızı ve fabrika ayarlarınızı dışa veya içe aktarın.",
     "exportTitle": "Ayarları Dışa Aktar",
     "exportDescription": "Verilerinizi bir JSON yedek dosyası olarak indirin.",
     "exportButton": "Dışa Aktar",

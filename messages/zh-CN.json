@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "备份与恢复设置",
     "dialogTriggerSrOnly": "备份与恢复设置",
     "dialogTitle": "备份与恢复设置",
-    "dialogDescription": "导出或导入已保存的通关存档和工厂设置（IndexedDB 存储）。",
+    "dialogDescription": "导出或导入已保存的通关存档和工厂设置。",
     "exportTitle": "导出设置",
     "exportDescription": "将数据下载为 JSON 备份文件。",
     "exportButton": "导出",

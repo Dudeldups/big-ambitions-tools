@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Zálohovat a obnovit nastavení",
     "dialogTriggerSrOnly": "Zálohovat a obnovit nastavení",
     "dialogTitle": "Zálohovat a obnovit nastavení",
-    "dialogDescription": "Exportujte nebo importujte uložené průchody hrou a nastavení továren (úložiště IndexedDB).",
+    "dialogDescription": "Exportujte nebo importujte uložené průchody hrou a nastavení továren.",
     "exportTitle": "Exportovat nastavení",
     "exportDescription": "Stáhněte si svá data jako záložní soubor JSON.",
     "exportButton": "Exportovat",

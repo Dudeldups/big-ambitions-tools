@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Varmuuskopioi ja palauta asetukset",
     "dialogTriggerSrOnly": "Varmuuskopioi ja palauta asetukset",
     "dialogTitle": "Varmuuskopioi ja palauta asetukset",
-    "dialogDescription": "Vie tai tuo tallennetut pelikerrat ja tehdasasetukset (IndexedDB-tallennustila).",
+    "dialogDescription": "Vie tai tuo tallennetut pelikerrat ja tehdasasetukset.",
     "exportTitle": "Vie asetukset",
     "exportDescription": "Lataa tietosi JSON-varmuuskopiotiedostona.",
     "exportButton": "Vie",

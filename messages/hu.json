@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Beállítások mentése és visszaállítása",
     "dialogTriggerSrOnly": "Beállítások mentése és visszaállítása",
     "dialogTitle": "Beállítások mentése és visszaállítása",
-    "dialogDescription": "Exportáld vagy importáld a mentett játékaidat és gyárbeállításaidat (IndexedDB tárhely).",
+    "dialogDescription": "Exportáld vagy importáld a mentett játékaidat és gyárbeállításaidat.",
     "exportTitle": "Beállítások exportálása",
     "exportDescription": "Töltsd le az adataidat JSON biztonsági mentésfájlként.",
     "exportButton": "Exportálás",

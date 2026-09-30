@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Backup și restaurare setări",
     "dialogTriggerSrOnly": "Backup și restaurare setări",
     "dialogTitle": "Backup și restaurare setări",
-    "dialogDescription": "Exportă sau importă jocurile salvate și setările fabricilor (stocare IndexedDB).",
+    "dialogDescription": "Exportă sau importă jocurile salvate și setările fabricilor.",
     "exportTitle": "Exportă setările",
     "exportDescription": "Descarcă datele tale ca fișier de backup JSON.",
     "exportButton": "Exportă",

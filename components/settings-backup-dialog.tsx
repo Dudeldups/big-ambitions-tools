@@ -1,11 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Download, Upload, Database } from "lucide-react";
-import { get, set, entries } from "idb-keyval";
 import { toast } from "sonner";
+import { useAppStore } from "@/lib/stores/appStore";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
+import {
+  exportSettingsBackup,
+  importSettingsBackup,
+} from "@/lib/utils/settingsBackup";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -21,65 +25,44 @@ export function SettingsBackupDialog() {
   const [open, setOpen] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [isImporting, setIsImporting] = useState(false);
+  const fileInput = useRef<HTMLInputElement>(null);
+  const appHydrated = useAppStore((s) => s._hasHydrated);
+  const playthroughHydrated = usePlaythroughStore((s) => s._hasHydrated);
+  const busy = isExporting || isImporting;
 
-  const handleExport = async () => {
+  const handleExport = () => {
+    if (busy) return;
+    setIsExporting(true);
+    let url: string | undefined;
+    let link: HTMLAnchorElement | undefined;
     try {
-      setIsExporting(true);
-      const allEntries = await entries();
-      const backupData: Record<string, any> = {};
-
-      for (const [key, value] of allEntries) {
-        backupData[String(key)] = value;
-      }
-
-      if (!backupData["playthrough-storage"]) {
-        const ptData = await get("playthrough-storage");
-        if (ptData) {
-          backupData["playthrough-storage"] = ptData;
-        }
-      }
-
-      const blob = new Blob([JSON.stringify(backupData, null, 2)], {
+      const blob = new Blob([exportSettingsBackup()], {
         type: "application/json",
       });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
+      url = URL.createObjectURL(blob);
+      link = document.createElement("a");
       link.href = url;
       link.download = `${new Date().toISOString().split("T")[0]}-big-ambitions-settings.json`;
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-
       toast.success(t("exportSuccess"));
     } catch (error) {
       console.error("Export error:", error);
       toast.error(t("exportError"));
     } finally {
+      link?.remove();
+      if (url) URL.revokeObjectURL(url);
       setIsExporting(false);
     }
   };
 
   const handleImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
+    const input = event.currentTarget;
+    const file = input.files?.[0];
+    if (!file || busy) return;
+    setIsImporting(true);
     try {
-      setIsImporting(true);
-      const fileText = await file.text();
-      const parsedData = JSON.parse(fileText);
-
-      if (typeof parsedData !== "object" || parsedData === null) {
-        throw new Error("Invalid format");
-      }
-
-      for (const [key, value] of Object.entries(parsedData)) {
-        await set(key, value);
-      }
-
-      // Rehydrate store so current UI updates immediately
-      await usePlaythroughStore.persist.rehydrate();
-
+      await importSettingsBackup(await file.text());
       toast.success(t("importSuccess"));
       setOpen(false);
     } catch (error) {
@@ -87,15 +70,24 @@ export function SettingsBackupDialog() {
       toast.error(t("importError"));
     } finally {
       setIsImporting(false);
-      // Reset input value
-      event.target.value = "";
+      input.value = "";
     }
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={(nextOpen) => {
+        if (!busy) setOpen(nextOpen);
+      }}
+    >
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon" title={t("dialogTriggerTitle")}>
+        <Button
+          variant="outline"
+          size="icon"
+          title={t("dialogTriggerTitle")}
+          disabled={!appHydrated || !playthroughHydrated}
+        >
           <Database className="size-4" />
           <span className="sr-only">{t("dialogTriggerSrOnly")}</span>
         </Button>
@@ -103,13 +95,10 @@ export function SettingsBackupDialog() {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{t("dialogTitle")}</DialogTitle>
-          <DialogDescription>
-            {t("dialogDescription")}
-          </DialogDescription>
+          <DialogDescription>{t("dialogDescription")}</DialogDescription>
         </DialogHeader>
-
         <div className="flex flex-col gap-4 py-4">
-          <div className="flex items-center justify-between rounded-lg border p-4">
+          <div className="flex items-center justify-between gap-4 rounded-lg border p-4">
             <div className="space-y-0.5">
               <div className="font-medium">{t("exportTitle")}</div>
               <div className="text-muted-foreground text-sm">
@@ -118,42 +107,39 @@ export function SettingsBackupDialog() {
             </div>
             <Button
               onClick={handleExport}
-              disabled={isExporting}
+              disabled={busy}
               className="flex items-center gap-2"
             >
               <Download className="size-4" />
               {t("exportButton")}
             </Button>
           </div>
-
-          <div className="flex items-center justify-between rounded-lg border p-4">
+          <div className="flex items-center justify-between gap-4 rounded-lg border p-4">
             <div className="space-y-0.5">
               <div className="font-medium">{t("importTitle")}</div>
               <div className="text-muted-foreground text-sm">
                 {t("importDescription")}
               </div>
             </div>
-            <label>
-              <input
-                type="file"
-                accept=".json,application/json"
-                className="hidden"
-                onChange={handleImport}
-                disabled={isImporting}
-              />
-              <Button
-                type="button"
-                variant="outline"
-                disabled={isImporting}
-                className="pointer-events-none flex items-center gap-2"
-                asChild
-              >
-                <span>
-                  <Upload className="size-4" />
-                  {t("importButton")}
-                </span>
-              </Button>
-            </label>
+            <input
+              ref={fileInput}
+              type="file"
+              accept=".json,application/json"
+              className="hidden"
+              aria-label={t("importTitle")}
+              onChange={handleImport}
+              disabled={busy}
+            />
+            <Button
+              type="button"
+              variant="outline"
+              disabled={busy}
+              onClick={() => fileInput.current?.click()}
+              className="flex items-center gap-2"
+            >
+              <Upload className="size-4" />
+              {t("importButton")}
+            </Button>
           </div>
         </div>
       </DialogContent>

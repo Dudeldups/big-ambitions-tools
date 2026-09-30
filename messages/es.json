@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Copia de seguridad y restauración de ajustes",
     "dialogTriggerSrOnly": "Copia de seguridad y restauración de ajustes",
     "dialogTitle": "Copia de seguridad y restauración de ajustes",
-    "dialogDescription": "Exporta o importa tus partidas guardadas y la configuración de fábricas (almacenamiento IndexedDB).",
+    "dialogDescription": "Exporta o importa tus partidas guardadas y la configuración de fábricas.",
     "exportTitle": "Exportar ajustes",
     "exportDescription": "Descarga tus datos como un archivo de copia de seguridad JSON.",
     "exportButton": "Exportar",

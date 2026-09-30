@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Sauvegarder et restaurer les paramètres",
     "dialogTriggerSrOnly": "Sauvegarder et restaurer les paramètres",
     "dialogTitle": "Sauvegarder et restaurer les paramètres",
-    "dialogDescription": "Exportez ou importez vos parties sauvegardées et configurations d'usines (stockage IndexedDB).",
+    "dialogDescription": "Exportez ou importez vos parties sauvegardées et configurations d'usines.",
     "exportTitle": "Exporter les paramètres",
     "exportDescription": "Téléchargez vos données sous forme de fichier de sauvegarde JSON.",
     "exportButton": "Exporter",

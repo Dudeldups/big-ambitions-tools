@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "設定のバックアップと復元",
     "dialogTriggerSrOnly": "設定のバックアップと復元",
     "dialogTitle": "設定のバックアップと復元",
-    "dialogDescription": "保存されたプレイスルーや工場設定（IndexedDBストレージ）をエクスポートまたはインポートします。",
+    "dialogDescription": "保存されたプレイスルーや工場設定をエクスポートまたはインポートします。",
     "exportTitle": "設定をエクスポート",
     "exportDescription": "データをJSONバックアップファイルとしてダウンロードします。",
     "exportButton": "エクスポート",

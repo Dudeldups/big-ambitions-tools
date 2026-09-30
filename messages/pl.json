@@ -761,7 +761,7 @@
     "dialogTriggerTitle": "Kopia zapasowa i przywracanie ustawień",
     "dialogTriggerSrOnly": "Kopia zapasowa i przywracanie ustawień",
     "dialogTitle": "Kopia zapasowa i przywracanie ustawień",
-    "dialogDescription": "Eksportuj lub importuj zapisane rozgrywki i ustawienia fabryk (pamięć IndexedDB).",
+    "dialogDescription": "Eksportuj lub importuj zapisane rozgrywki i ustawienia fabryk.",
     "exportTitle": "Eksportuj ustawienia",
     "exportDescription": "Pobierz swoje dane jako plik kopii zapasowej JSON.",
     "exportButton": "Eksportuj",
