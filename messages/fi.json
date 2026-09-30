@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Tässä näet imperiumisi tuotantotilastot. Käy \"Tehtaat\"-sivulla katsomassa tehtaasi, seuraamassa tilattavia osia ja paljon muuta. Tehtaan suunnittelija näyttää tarkat tiedot tuotantomääristä, tilauksista ja niin edelleen.",
       "productionOverview": "Viikoittainen tuotannon yleiskatsaus",
-      "noProductionData": "Tietoja ei vielä ole. Luo tehtaita, niin näet tuotantotilastosi tässä."
+      "noProductionData": "Tietoja ei vielä ole. Luo tehtaita, niin näet tuotantotilastosi tässä.",
+      "shoppingList": {
+        "title": "Pelikerran yhteinen ostoslista",
+        "desc": "Tämä lista kokoaa tämän pelikerran kaikkien tehtaiden viikoittaisen raaka-ainetarpeen, mukaan lukien kaikki ryhmät ja ryhmittämättömät tehtaat. Aukioloajat ja tuotantorajat huomioidaan."
+      }
     },
     "factories": {
       "title": "Omat tehtaat",

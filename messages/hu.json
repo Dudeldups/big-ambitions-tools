@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Itt láthatod az imperiumod gyártási statisztikáit. A Gyárak oldalon áttekintést kapsz a gyáraidról, nyomon követheted a rendelendő termékeket és még sok mást. A gyártervező minden részletet mutat a gyártási adatokról, a rendelési mennyiségekről és még több.",
       "productionOverview": "Heti gyártási áttekintés",
-      "noProductionData": "Még nincs adat. Hozz létre gyárakat, és itt látni fogod a gyártási statisztikáidat."
+      "noProductionData": "Még nincs adat. Hozz létre gyárakat, és itt látni fogod a gyártási statisztikáidat.",
+      "shoppingList": {
+        "title": "A játék teljes bevásárlólistája",
+        "desc": "Ez a lista összesíti a játék összes gyárának heti alapanyagigényét, beleértve az összes csoportot és a csoportba nem sorolt gyárakat is. Figyelembe veszi a nyitvatartási időt és a termelési korlátokat."
+      }
     },
     "factories": {
       "title": "Gyáraid",

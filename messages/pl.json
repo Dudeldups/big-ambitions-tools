@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Tutaj zobaczysz statystyki produkcji swojego imperium. Wejdź na stronę „Fabryki”, aby zobaczyć podsumowanie fabryk, śledzić produkty, które musisz zamówić dla swoich linii produkcyjnych i wiele więcej. Planer fabryk pokaże Ci wszystkie szczegóły dotyczące statystyk produkcji, wielkości zamówień i nie tylko.",
       "productionOverview": "Tygodniowy przegląd produkcji",
-      "noProductionData": "Jeszcze nie ma danych. Utwórz fabryki, a zobaczysz tu swoje statystyki produkcji."
+      "noProductionData": "Jeszcze nie ma danych. Utwórz fabryki, a zobaczysz tu swoje statystyki produkcji.",
+      "shoppingList": {
+        "title": "Łączna lista zakupów rozgrywki",
+        "desc": "Ta lista łączy tygodniowe zapotrzebowanie na składniki wszystkich fabryk w tej rozgrywce, w tym wszystkich grup i fabryk bez grupy. Uwzględnia godziny otwarcia i limity produkcji."
+      }
     },
     "factories": {
       "title": "Twoje fabryki",

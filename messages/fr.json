@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "C'est ici que tu peux consulter les statistiques de production de ton empire. Va sur la page des usines pour obtenir un aperçu, suivre les articles à commander pour tes lignes de production et plus encore. Le planificateur d'usine t'affichera tous les détails sur les statistiques de production, les quantités à commander et plus encore.",
       "productionOverview": "Aperçu de la production hebdomadaire",
-      "noProductionData": "Aucune donnée disponible pour l'instant. Crée des usines et tu verras apparaître tes statistiques de production ici."
+      "noProductionData": "Aucune donnée disponible pour l'instant. Crée des usines et tu verras apparaître tes statistiques de production ici.",
+      "shoppingList": {
+        "title": "Liste d’achats de la partie",
+        "desc": "Cette liste regroupe les besoins hebdomadaires en ingrédients de toutes les usines de cette partie, y compris tous les groupes et les usines non regroupées. Elle tient compte des horaires d’ouverture et des limites de production."
+      }
     },
     "factories": {
       "title": "Tes usines",

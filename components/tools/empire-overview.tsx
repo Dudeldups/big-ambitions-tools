@@ -112,9 +112,9 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
         <div className="mt-14 min-w-0 overflow-x-auto">
           <hgroup className="max-w-2xl space-y-4">
             <h3 className="text-xl font-semibold">
-              {t("tools.factoryDetail.shoppingList.title")}
+              {t("tools.playthroughDetail.shoppingList.title")}
             </h3>
-            <p>{t("tools.factoryDetail.shoppingList.desc")}</p>
+            <p>{t("tools.playthroughDetail.shoppingList.desc")}</p>
           </hgroup>
 
           <div className="mt-10 flex w-full min-w-0 flex-col gap-4 space-y-6">

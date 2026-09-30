@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Hier siehst du die Produktionsstatistiken deines Imperiums. Gehe zur Seite \"Fabriken\", um einen Überblick zu bekommen, Artikel zu tracken, die bestellt werden müssen, und mehr. Der Fabrikplaner zeigt dir alle Details zu Produktionszahlen, Bestellmengen und mehr.",
       "productionOverview": "Wöchentlicher Produktionsüberblick",
-      "noProductionData": "Noch keine Daten verfügbar. Erstelle Fabriken, und du wirst deine Produktionsstatistiken hier sehen."
+      "noProductionData": "Noch keine Daten verfügbar. Erstelle Fabriken, und du wirst deine Produktionsstatistiken hier sehen.",
+      "shoppingList": {
+        "title": "Gesamte Einkaufsliste des Spielstands",
+        "desc": "Diese Liste fasst den wöchentlichen Zutatenbedarf aller Fabriken dieses Spielstands zusammen, einschließlich aller Gruppen und nicht gruppierter Fabriken. Öffnungszeiten und Produktionslimits werden berücksichtigt."
+      }
     },
     "factories": {
       "title": "Deine Fabriken",

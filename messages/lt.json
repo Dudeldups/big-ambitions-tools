@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Čia pamatysi savo imperijos gamybos statistiką. Užsuk į „Gamyklos“ puslapį, kad peržiūrėtum gamyklas, stebėtum, kokias prekes reikia užsakyti savo gamybos linijoms, ir daugiau. Gamyklų planuotojas parodys visus duomenis apie gamybos statistiką, užsakymų kiekį ir daugiau.",
       "productionOverview": "Savaitinė gamybos apžvalga",
-      "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką."
+      "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką.",
+      "shoppingList": {
+        "title": "Bendras žaidimo pirkinių sąrašas",
+        "desc": "Šiame sąraše sujungti visų šio žaidimo gamyklų savaitiniai ingredientų poreikiai, įskaitant visas grupes ir nepriskirtas gamyklas. Atsižvelgiama į darbo laiką ir gamybos ribas."
+      }
     },
     "factories": {
       "title": "Tavo gamyklos",

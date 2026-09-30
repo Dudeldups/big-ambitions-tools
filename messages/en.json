@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
       "productionOverview": "Weekly Production Overview",
-      "noProductionData": "No data available yet. Create factories and you'll see your production stats here."
+      "noProductionData": "No data available yet. Create factories and you'll see your production stats here.",
+      "shoppingList": {
+        "title": "Playthrough shopping list",
+        "desc": "This list combines the weekly ingredient demand of every factory in this playthrough, including all groups and ungrouped factories. It accounts for opening hours and production limits."
+      }
     },
     "factories": {
       "title": "Your factories",

@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Aqui você pode ver as estatísticas de produção do seu império. Vá para a página de fábricas para ver um resumo das suas fábricas, acompanhar os itens que precisam ser pedidos para suas linhas de produção e mais. O planejador de fábrica mostrará todos os detalhes sobre estatísticas de produção, quantidades de pedido e mais.",
       "productionOverview": "Visão geral semanal de produção",
-      "noProductionData": "Ainda sem dados disponíveis. Crie fábricas e você verá suas estatísticas de produção aqui."
+      "noProductionData": "Ainda sem dados disponíveis. Crie fábricas e você verá suas estatísticas de produção aqui.",
+      "shoppingList": {
+        "title": "Lista de compras do jogo salvo",
+        "desc": "Esta lista reúne a necessidade semanal de ingredientes de todas as fábricas deste jogo salvo, incluindo todos os grupos e as fábricas sem grupo. Considera os horários de funcionamento e os limites de produção."
+      }
     },
     "factories": {
       "title": "Suas fábricas",

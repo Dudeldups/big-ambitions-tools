@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Her kan du se dit imperiums produktionsstatistik. Gå til siden 'Fabrikker' for at få et overblik, holde styr på varer, der skal bestilles, og meget mere. Fabrikplanlæggeren viser dig alle detaljer om produktionsstatistik, bestillingsmængder og mere.",
       "productionOverview": "Ugentlig produktionsoversigt",
-      "noProductionData": "Ingen data tilgængelig endnu. Opret fabrikker, så kan du se din produktionsstatistik her."
+      "noProductionData": "Ingen data tilgængelig endnu. Opret fabrikker, så kan du se din produktionsstatistik her.",
+      "shoppingList": {
+        "title": "Samlet indkøbsliste for gennemspilningen",
+        "desc": "Denne liste samler det ugentlige behov for ingredienser fra alle fabrikker i denne gennemspilning, inklusive alle grupper og fabrikker uden en gruppe. Den tager højde for åbningstider og produktionsgrænser."
+      }
     },
     "factories": {
       "title": "Dine fabrikker",

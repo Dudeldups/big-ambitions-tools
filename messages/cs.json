@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Tady uvidíš výrobní statistiky svého impéria. Na stránce „Továrny“ najdeš přehled továren, můžeš sledovat položky k objednání pro své výrobní linky a mnoho dalšího. Plánovač továren ti ukáže vše podrobně – od statistik až po množství objednávek.",
       "productionOverview": "Týdenní přehled výroby",
-      "noProductionData": "Zatím tu není žádná data. Vytvoř továrny a uvidíš statistiky výroby."
+      "noProductionData": "Zatím tu není žádná data. Vytvoř továrny a uvidíš statistiky výroby.",
+      "shoppingList": {
+        "title": "Souhrnný nákupní seznam průchodu hrou",
+        "desc": "Tento seznam shrnuje týdenní potřebu surovin všech továren v tomto průchodu hrou, včetně všech skupin i nezařazených továren. Zohledňuje provozní dobu a výrobní limity."
+      }
     },
     "factories": {
       "title": "Tvoje továrny",

@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Aici poți vedea statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” pentru o imagine de ansamblu asupra fabricilor tale, ca să urmărești produsele necesare liniilor de producție și nu numai. Planificatorul îți arată toate detaliile despre statisticile de producție, cantitățile comandate și multe alte detalii.",
       "productionOverview": "Rezumat săptămânal al producției",
-      "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici."
+      "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici.",
+      "shoppingList": {
+        "title": "Lista de cumpărături a jocului salvat",
+        "desc": "Această listă reunește necesarul săptămânal de ingrediente al tuturor fabricilor din acest joc salvat, inclusiv al tuturor grupurilor și al fabricilor fără grup. Ține cont de programul de funcționare și de limitele de producție."
+      }
     },
     "factories": {
       "title": "Fabricile tale",

@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Qui puoi vedere le statistiche di produzione del tuo impero. Vai alla pagina Fabbriche per avere una panoramica delle tue fabbriche, tenere traccia degli articoli da ordinare per le linee di produzione e altro. Il pianificatore delle fabbriche ti mostrerà tutti i dettagli sulle statistiche di produzione, quantità d'ordine e altro.",
       "productionOverview": "Panoramica settimanale della produzione",
-      "noProductionData": "Non ci sono ancora dati disponibili. Crea delle fabbriche e vedrai qui le tue statistiche di produzione."
+      "noProductionData": "Non ci sono ancora dati disponibili. Crea delle fabbriche e vedrai qui le tue statistiche di produzione.",
+      "shoppingList": {
+        "title": "Lista della spesa della partita",
+        "desc": "Questa lista riunisce il fabbisogno settimanale di ingredienti di tutte le fabbriche di questa partita, inclusi tutti i gruppi e le fabbriche senza gruppo. Tiene conto degli orari di apertura e dei limiti di produzione."
+      }
     },
     "factories": {
       "title": "Le tue fabbriche",

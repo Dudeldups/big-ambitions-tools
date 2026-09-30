@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "Hier zie je de productiestatistieken van je imperium. Ga naar de pagina 'Fabrieken' om een overzicht te krijgen, artikelen te tracken die besteld moeten worden, en meer. De fabriekplanner toont je alle details over productiestatistieken, bestelhoeveelheden en meer.",
       "productionOverview": "Wekelijks productieoverzicht",
-      "noProductionData": "Nog geen gegevens beschikbaar. Maak fabrieken aan en je ziet je productiestatistieken hier."
+      "noProductionData": "Nog geen gegevens beschikbaar. Maak fabrieken aan en je ziet je productiestatistieken hier.",
+      "shoppingList": {
+        "title": "Boodschappenlijst voor de hele speelsessie",
+        "desc": "Deze lijst bundelt de wekelijkse behoefte aan ingrediënten van alle fabrieken in deze speelsessie, inclusief alle groepen en fabrieken zonder groep. Er wordt rekening gehouden met openingstijden en productielimieten."
+      }
     },
     "factories": {
       "title": "Je fabrieken",

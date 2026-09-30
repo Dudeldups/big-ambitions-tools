@@ -534,7 +534,11 @@
     "playthroughDetail": {
       "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasında fabrikalarına genel bir bakış atabilir, üretim hatların için gereken siparişleri takip edebilir ve çok daha fazlasını keşfedebilirsin. Fabrika planlayıcısı ise sana üretim istatistikleri, sipariş miktarları ve daha pek çok detay sunar.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
-      "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
+      "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin.",
+      "shoppingList": {
+        "title": "Kayıtlı oyunun toplam alışveriş listesi",
+        "desc": "Bu liste, tüm gruplar ve gruba dahil olmayan fabrikalar da dahil olmak üzere bu kayıtlı oyundaki bütün fabrikaların haftalık malzeme ihtiyacını birleştirir. Çalışma saatlerini ve üretim sınırlarını dikkate alır."
+      }
     },
     "factories": {
       "title": "Fabrikaların",

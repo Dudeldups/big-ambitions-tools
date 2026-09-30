@@ -148,7 +148,7 @@ describe("empire weekly shopping list", () => {
         screen.queryByTestId("importer-lunartide"),
       ).not.toBeInTheDocument();
       expect(
-        screen.queryByText("Weekly Shopping List"),
+        screen.queryByText("Playthrough shopping list"),
       ).not.toBeInTheDocument();
     },
   );
