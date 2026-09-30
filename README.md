@@ -74,12 +74,33 @@ docker-compose up -d
 
 ## ⚠️ Disclaimer
 
-This is a fan-made project and is not affiliated with the developers of _Big Ambitions_.
+This is a fan-made project and is not affiliated with Hovgaard Games.
 
-All game-related images and assets belong to their respective owners.
+All game-related images and assets belong to their respective owners and are
+not covered by this repository's software license.
 
 ---
 
 ## 📜 License
 
-MIT License
+The original source code and original project content of **Big Ambitions Tools**
+are licensed under the
+[PolyForm Perimeter License 1.0.1](./LICENSE).
+
+You may view, use, modify, and redistribute the source code subject to the
+license terms. In particular, the license does **not** permit using this
+software to provide a product or service that competes with Big Ambitions Tools.
+
+This repository is **source-available**, not distributed under an OSI-approved
+open-source license.
+
+The license applies only to original work for which the respective copyright
+holders have the right to grant these permissions. Big Ambitions game assets,
+images, screenshots, names, trademarks, and other third-party content are
+excluded from this license and remain subject to the rights of their respective
+owners.
+
+This is a fan-made project and is not affiliated with Hovgaard Games.
+
+If there is any conflict between this summary and the LICENSE file, the
+LICENSE file controls.
