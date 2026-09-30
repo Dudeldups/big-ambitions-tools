@@ -99,7 +99,7 @@ export default function ResourcesPage() {
                       <Icon className="size-8" />
                     </span>
                   </ImageCircleBg>
-                  <span className="text-foreground min-w-0 rounded-full border border-[color-mix(in_oklab,var(--resource-accent)_25%,var(--color-border))] bg-[color-mix(in_oklab,var(--resource-accent)_8%,var(--color-card))] px-3 py-1 text-center text-xs leading-relaxed font-semibold tracking-wider uppercase">
+                  <span className="bg-secondary-foreground text-background min-w-0 rounded-full border border-transparent px-3 py-1 text-center text-xs leading-relaxed font-semibold tracking-wider uppercase">
                     {t(`badges.${badge}`)}
                   </span>
                 </div>
