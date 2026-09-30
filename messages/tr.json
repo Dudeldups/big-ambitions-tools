@@ -529,17 +529,23 @@
       "gameVersionNotice": {
         "title": "Sürüm Bazlı Oyun Verileri",
         "desc": "Oyun durumları artık sürüm bazlı veriler kullanıyor. Her oyun durumu için oyun sürümünü <link>genel bakış</link> kısmından düzenleyebilirsin."
-      }
+      },
+      "backupHint": "Oyun durumlarını, fabrikalarını ve uygulama ayarlarını cihazına bir yedek dosyası olarak kaydet. Bu dosyayla verilerini daha sonra geri yükleyebilir veya başka bir cihaza aktarabilirsin.",
+      "backupButton": "Verileri yedekle ve geri yükle"
     },
     "playthroughDetail": {
       "desc": "İmparatorluğunun üretim istatistiklerini buradan görebilirsin. Fabrikalar sayfasında fabrikalarına genel bir bakış atabilir, üretim hatların için gereken siparişleri takip edebilir ve çok daha fazlasını keşfedebilirsin. Fabrika planlayıcısı ise sana üretim istatistikleri, sipariş miktarları ve daha pek çok detay sunar.",
       "productionOverview": "Haftalık Üretim Genel Bakışı",
-      "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin."
+      "noProductionData": "Henüz veri mevcut değil. Fabrikalar oluştur ve burada üretim istatistiklerini göreceksin.",
+      "shoppingList": {
+        "title": "Oyun durumunun toplam alışveriş listesi",
+        "desc": "Bu liste, bu oyun durumundaki tüm fabrikaların haftalık malzeme ihtiyacını birleştirir. Tüm grupları ve gruba dahil olmayan fabrikaları kapsar. Açılış saatlerini ve üretim sınırlarını dikkate alır."
+      }
     },
     "factories": {
       "title": "Fabrikaların",
       "desc": "Fabrikalarına buradan göz atabilirsin. Düzenleyebilir, silebilir veya yeni bir fabrika için mevcut değerleri kopyalayabilirsin. Alışveriş listesi de dahil olmak üzere daha fazla detay için ilgili karta tıklaman yeterli.",
-      "desc1": "Aşağıdaki 'Grup Oluştur' butonuna tıklayarak onları da gruplandırabilirsin. Böylece tüm fabrikaları tek bir yerde görebilir ve grup olarak yönetebilirsin. Birden fazla fabrikanın malzemesini sağlamak için merkezi bir depo kullanıyorsan işe yarar. Eklediğin palet rafı sayısına göre her fabrika için bir teslimat planı önerecek.",
+      "desc1": "Bir grup oluştur ve aynı depodan beslenen fabrikaları gruba sürükle. Haftalık ihtiyacın tamamını merkezi olarak satın almak için fabrikanın Satın Alma Uzmanı sayısını 0 yap. Kendi satın alma uzmanı varsa fabrika raflarına sığan kısmı, depo ise kalan kısmı satın alır.",
       "noFactories": "Oyununda henüz hiç fabrika yok. Başlamak için bir tane oluştur!",
       "notFound": {
         "title": "Fabrika bulunamadı",
@@ -550,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Fabrikayı düzenle",
       "shoppingList": {
-        "title": "Alışveriş Listesi",
-        "desc": "Fabrikanın tam kapasiteyle çalışması için haftalık olarak gereken malzemeler bunlar."
+        "title": "Haftalık malzeme ihtiyacı",
+        "desc": "Bu, üretim sınırları da dikkate alınarak fabrikanın bir haftadaki toplam malzeme tüketimidir. Nereye sipariş vereceğini belirlemek için aşağıdaki satın alma talimatlarını kullan."
       },
       "splitShoppingList": {
         "title": "Bölünmüş Satın Alma Listesi",
         "desc": "Siparişi bölmek için bu malzemeleri doğrudan fabrikana sipariş et. Bu, {shelfAmount} palet rafının alabileceği maksimum miktar. Ürettiğin kutu sayısını da hesaba katıyor. Bir haftalık üretimin tüm malzemelerini depolamak için {requiredAmount} rafa ihtiyacın olacak.",
         "desc1": "Kalan kısım, bir veya daha fazla satın alma görevlisi tarafından depoya sipariş edilecek. Tam listeyi görmek için <link>fabrika genel görünümüne</link> geri dön ve bir grup oluştur; böylece o depoya ne sipariş edileceğini ve her fabrikanın teslimat planını görebilirsin."
-      }
+      },
+      "centralPurchasingNote": "Bu fabrika merkezi satın alma kullanıyor. Fabrikayı bir fabrika grubuna ekle ve tüm malzemeleri depoya sipariş etmek için grubun satın alma listesini kullan. Grubun teslimat planı fabrikayı günlük olarak besler; aynı malzemeler için doğrudan fabrikaya ikinci bir sipariş verme.",
+      "splitPurchasingNote": "Bu fabrikanın kendi satın alma uzmanı var. Aşağıda bölünmüş satın alma listesi görünüyorsa fabrikanın doğrudan haftalık siparişi için onu, deponun kalan payı için grup listesini kullan. Her şey fabrikaya sığıyorsa haftalık ihtiyacın tamamını doğrudan sipariş et."
     },
     "playthroughForm": {
       "title": "Yeni oyun durumu oluştur",
@@ -577,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Grup oluştur",
       "title": "Fabrika Grupları",
-      "desc": "Ürün kategorileri başına daha iyi bir genel bakış için fabrikaları gruplandırabilirsin. Gruplanmış fabrikalara yeterli Palet Rafı atanmamışsa, Alışveriş Listesi sana her fabrika ve depoya ne sipariş etmen gerektiğini gösterecek. Teslimat diyalogu da her fabrikaya gönderilmesi gerekenleri gösterir.",
+      "desc": "Haftalık depo satın alma listelerini birleştirmek ve günlük teslimatları görmek için aynı depodan beslenen fabrikaları grupla. Satın alma uzmanı olmayan fabrikalar merkezi satın alma kullanır; kendi uzmanı olanlar doğrudan satın alır ve kalan kısım için depoyu kullanır. İki strateji aynı grupta birlikte kullanılabilir.",
       "groupEmpty": "Bu grupta fabrika yok. Buraya bir fabrika kartı sürükleyerek ekleyebilirsin.",
       "ungroupedTitle": "Gruplandırılmamış Fabrikalar",
       "ungroupedEmpty": "Henüz gruplanmamış fabrika yok. Bir kartı buraya sürükle veya yeni bir fabrika ekle.",
       "deliveries": {
         "buttonDesc": "Teslimatlar",
         "title": "Teslimat Planı",
-        "descNeeded": "Bu gruptaki her fabrika için teslimat planları. Ortak bir deponun bu gruptaki tüm fabrikaları tedarik etmek için {amount} Palet Rafına ihtiyacı olacak.",
-        "descEnough": "Tüm fabrikalar, tüm gerekli malzemeleri saklamak için yeterli Palet Rafına sahip."
+        "descNeeded": "Bu depodan her fabrikaya günlük teslimatlar. Merkezi satın alma günlük malzeme ihtiyacının tamamını karşılar; fabrikanın kendi satın alma uzmanı varsa yalnızca deponun günlük payı teslim edilir. Miktarlar tam ürün adedine yukarı yuvarlanır. Deponun haftalık malzemeleri için gereken palet rafları: {amount}.",
+        "descEnough": "Bu fabrikalar tüm malzemelerini doğrudan satın alır ve depodan teslimata ihtiyaç duymaz."
       },
       "shoppingList": {
         "title": "Grup Alışveriş Listesi",
-        "desc": "Bu grupta yeterli rafı olmayan fabrikalar için gereken tüm malzemeler burada. Fabrikalardaki mevcut raflara göre hesaplama yapar, böylece kalan kısmı ayrı bir depoya sipariş edebilirsin.<br></br>Depoda gereken raf sayısı: <strong>{amount}</strong>"
-      }
+        "desc": "Bu malzemeleri her hafta grubun deposuna sipariş et. Merkezi satın alma kullanan fabrikaların 7 günlük ihtiyacının tamamı dahildir. Kendi satın alma uzmanı olan fabrikalar için yalnızca deponun kalan payı dahildir; doğrudan paylarını fabrikanın bölünmüş satın alma listesinden sipariş et.<br></br>Deponun haftalık malzemeleri için gereken palet rafları: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Bu malzemeleri her hafta grubun deposuna sipariş et. Merkezi satın alma kullanan fabrikaların 7 günlük ihtiyacının tamamı dahildir. Kendi satın alma uzmanı olan fabrikalar için yalnızca deponun kalan payı dahildir; doğrudan paylarını fabrikanın bölünmüş satın alma listesinden sipariş et.",
+      "warehouseDeliveryDesc": "Bu depodan her fabrikaya günlük teslimatlar. Merkezi satın alma günlük malzeme ihtiyacının tamamını karşılar; fabrikanın kendi satın alma uzmanı varsa yalnızca deponun günlük payı teslim edilir. Miktarlar tam ürün adedine yukarı yuvarlanır.",
+      "warehouseShelvesLabel": "Deponun haftalık malzemeleri için gereken palet rafları:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "1.0 sürümünde ham maddeler ve çalışan ücretleri vergiye tabi geliri azaltır. Fabrika ekipmanı, palet rafları ve uygun teslimat araçları satın alındığında vergiden düşülebilir, ancak tek seferlik indirimler bu düzenli vergi tahminine dahil değildir.",
@@ -600,7 +611,7 @@
         "legend": "Fabrik Bilgileri",
         "name": "Fabrik Adı",
         "calcBasis": "Hesaplama Temeli",
-        "palletDesc": "Bu fabrikada mevcut Palet Rafı sayısını tanımla. Tüm malzemeleri depo grubuna sipariş etmek için bunu 0 olarak ayarla.",
+        "palletDesc": "Günlük teslimatlar için tampon olarak kullanılanlar dahil, bu fabrikadaki fiziksel palet raflarının sayısını gir.",
         "dailyAmount": "Günlük teslimat için <strong>{count}</strong> {object} gerekiyor.",
         "weeklyAmount": "Haftalık teslimat için <strong>{count}</strong> {object} gerekiyor.",
         "shelfExplanation": "Gerekli palet rafı sayısını görmek için en az bir çalışma istasyonu ekle.",
@@ -755,5 +766,22 @@
     "playthroughs": {
       "description": "{gameName} oyun durumlarını yönet ve karşılaştır. İlerlemeni takip et, üretim istatistiklerini analiz et ve stratejini optimize et."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Ayarları Yedekle ve Geri Yükle",
+    "dialogTriggerSrOnly": "Ayarları yedekle ve geri yükle",
+    "dialogTitle": "Ayarları Yedekle ve Geri Yükle",
+    "dialogDescription": "Kayıtlı oyun durumlarını, fabrikalarını ve uygulama ayarlarını yedekle veya geri yükle.",
+    "exportTitle": "Ayarları Dışa Aktar",
+    "exportDescription": "Verilerini bir JSON yedek dosyası olarak indir.",
+    "exportButton": "Dışa Aktar",
+    "importTitle": "Ayarları İçe Aktar",
+    "importDescription": "Kayıtlı verilerini bir JSON yedek dosyasındaki verilerle değiştirir.",
+    "importButton": "İçe Aktar",
+    "exportSuccess": "Ayarlar başarıyla dışa aktarıldı!",
+    "exportError": "Ayarlar dışa aktarılamadı.",
+    "importSuccess": "Ayarlar başarıyla içe aktarıldı!",
+    "importError": "Ayarlar içe aktarılamadı. Lütfen JSON dosyasını kontrol et."
   }
 }

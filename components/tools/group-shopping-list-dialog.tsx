@@ -12,7 +12,6 @@ import {
 import { ClipboardCheck } from "lucide-react";
 import ImporterTable from "../tables/importer-table";
 import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
-import messages from "@/messages/en.json";
 import { getPlaythroughGameData } from "@/lib/game/registry";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
@@ -70,9 +69,9 @@ const GroupShoppingListDialog = ({
             {t("tools.factoryGroups.shoppingList.title")}
           </DialogTitle>
           <DialogDescription>
-            {messages.tools.factoryGroups.warehouseShoppingDesc}
+            {t("tools.factoryGroups.warehouseShoppingDesc")}
             <br />
-            {messages.tools.factoryGroups.warehouseShelvesLabel}{" "}
+            {t("tools.factoryGroups.warehouseShelvesLabel")}{" "}
             <strong>{neededPalletShelvesTotal}</strong>
           </DialogDescription>
         </DialogHeader>

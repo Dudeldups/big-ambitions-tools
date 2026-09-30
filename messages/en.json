@@ -529,12 +529,18 @@
       "gameVersionNotice": {
         "title": "Versioned Game Data",
         "desc": "Playthroughs now use versioned game data. You can edit the game version for each playthrough in the <link>overview</link>."
-      }
+      },
+      "backupHint": "Save your playthroughs, factories and app settings as a backup file on your device. Use it to restore your data later or transfer it to another device.",
+      "backupButton": "Back up & restore data"
     },
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
       "productionOverview": "Weekly Production Overview",
-      "noProductionData": "No data available yet. Create factories and you'll see your production stats here."
+      "noProductionData": "No data available yet. Create factories and you'll see your production stats here.",
+      "shoppingList": {
+        "title": "Playthrough shopping list",
+        "desc": "This list combines the weekly ingredient demand of every factory in this playthrough, including all groups and ungrouped factories. It accounts for opening hours and production limits."
+      }
     },
     "factories": {
       "title": "Your factories",
@@ -760,5 +766,21 @@
     "playthroughs": {
       "description": "Manage and compare your {gameName} playthroughs. Track your progress across different difficulties, analyze production stats, and optimize your business runs."
     }
+  },
+  "settingsBackup": {
+    "dialogTriggerTitle": "Backup & Restore Settings",
+    "dialogTriggerSrOnly": "Backup and restore settings",
+    "dialogTitle": "Backup & Restore Settings",
+    "dialogDescription": "Back up or restore your saved playthroughs, factories and app settings.",
+    "exportTitle": "Export Settings",
+    "exportDescription": "Download your data as a JSON backup file.",
+    "exportButton": "Export",
+    "importTitle": "Import Settings",
+    "importDescription": "Replace your saved data with the data from a JSON backup file.",
+    "importButton": "Import",
+    "exportSuccess": "Settings exported successfully!",
+    "exportError": "Failed to export settings.",
+    "importSuccess": "Settings imported successfully!",
+    "importError": "Failed to import settings. Please check the JSON file."
   }
 }

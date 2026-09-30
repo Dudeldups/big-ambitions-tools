@@ -529,17 +529,23 @@
       "gameVersionNotice": {
         "title": "Date de joc versionate",
         "desc": "Partidele folosesc acum date de joc versionate. Poți edita versiunea pentru fiecare partidă în <link>rezumat</link>."
-      }
+      },
+      "backupHint": "Salvează partidele, fabricile și setările aplicației într-un fișier de backup pe dispozitivul tău. Cu acest fișier poți restaura datele mai târziu sau le poți transfera pe alt dispozitiv.",
+      "backupButton": "Backup și restaurare date"
     },
     "playthroughDetail": {
       "desc": "Aici poți vedea statisticile de producție ale imperiului tău. Mergi la pagina „Fabrici” pentru o imagine de ansamblu asupra fabricilor tale, ca să urmărești produsele necesare liniilor de producție și nu numai. Planificatorul îți arată toate detaliile despre statisticile de producție, cantitățile comandate și multe alte detalii.",
       "productionOverview": "Rezumat săptămânal al producției",
-      "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici."
+      "noProductionData": "Nu există încă date. Creează fabrici și vei vedea statisticile de producție aici.",
+      "shoppingList": {
+        "title": "Lista de cumpărături a partidei",
+        "desc": "Această listă reunește necesarul săptămânal de ingrediente al tuturor fabricilor din această partidă, inclusiv al tuturor grupurilor și al fabricilor fără grup. Ține cont de programul de funcționare și de limitele de producție."
+      }
     },
     "factories": {
       "title": "Fabricile tale",
       "desc": "Vezi aici toate fabricile tale. Le poți edita, șterge sau copia valorile actuale pentru o fabrică nouă. Apasă pur și simplu pe cardul fiecărei fabrici pentru detalii și lista de cumpărături.",
-      "desc1": "Poți să le grupezi făcând clic pe butonul „Creează grup” de mai jos. Astfel le poți vedea într-un singur loc și le poți gestiona ca un grup. E util dacă folosești un depozit central care furnizează ingrediente pentru mai multe fabrici. În funcție de numărul de rafte de paleți adăugate, sistemul va sugera un plan de livrare pentru fiecare fabrică.",
+      "desc1": "Creează un grup și trage în el fabricile aprovizionate de același depozit. Setează numărul de agenți de achiziții ai unei fabrici la 0 pentru a cumpăra centralizat întregul necesar săptămânal. Cu propriul agent de achiziții, fabrica cumpără partea care încape pe rafturi, iar depozitul cumpără restul.",
       "noFactories": "Nu există încă fabrici în partida ta. Creează una pentru a începe!",
       "notFound": {
         "title": "Fabrică nu găsită",
@@ -550,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Editează fabrica",
       "shoppingList": {
-        "title": "Listă de cumpărături",
-        "desc": "Iată de ce are nevoie fabrica ta săptămânal pentru a funcționa la capacitate maximă."
+        "title": "Necesar săptămânal de ingrediente",
+        "desc": "Acesta este consumul total de ingrediente al fabricii pentru o săptămână, ținând cont de limitele de producție. Urmează instrucțiunile de achiziție de mai jos pentru a decide unde să le comanzi."
       },
       "splitShoppingList": {
         "title": "Listă de cumpărături împărțită",
         "desc": "Comandă aceste ingrediente direct la fabrica ta pentru a împărți comanda. Aceasta este cantitatea maximă pe care {shelfAmount} rafturi pentru paleți le pot reține. Se ia în considerare și numărul de cutii pe care le produci. Ai nevoie de {requiredAmount} rafturi pentru a stoca toate ingredientele pentru o săptămână întreagă de producție.",
         "desc1": "Restul trebuie comandat la un depozit de unul sau mai mulți agenți de achiziții separați. Întoarce-te la <link>prezentarea fabricilor</link> și creează un grup pentru a vedea lista completă cu ce trebuie comandat pentru acel depozit. Vei vedea acolo și planul de livrare pentru fiecare fabrică."
-      }
+      },
+      "centralPurchasingNote": "Această fabrică folosește achiziții centralizate. Adaug-o într-un grup de fabrici și folosește lista de cumpărături a grupului pentru a comanda toate ingredientele la depozit. Planul de livrări al grupului aprovizionează fabrica zilnic; nu face o a doua comandă de ingrediente direct la fabrică.",
+      "splitPurchasingNote": "Această fabrică are propriul agent de achiziții. Dacă mai jos apare o listă de cumpărături împărțită, folosește-o pentru comanda săptămânală directă a fabricii și lista grupului pentru partea rămasă a depozitului. Dacă totul încape în fabrică, comandă direct întregul necesar săptămânal."
     },
     "playthroughForm": {
       "title": "Creează o nouă partidă",
@@ -577,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Creează grup",
       "title": "Grupuri de fabrici",
-      "desc": "Poți grupa fabricile pentru o imagine de ansamblu mai bună pentru fiecare categorie de produs. Dacă fabricile grupate nu au suficiente rafturi pentru paleți, lista de cumpărături îți va spune ce să comanzi pentru fiecare fabrică și pentru depozit, ca să completezi restul stocului. Dialogul de livrări îți arată și ce trebuie trimis fiecărei fabrici.",
+      "desc": "Grupează fabricile aprovizionate de același depozit pentru a combina listele săptămânale de cumpărături ale depozitului și a vedea livrările zilnice. Fără agent de achiziții, achizițiile sunt centralizate; cu propriul agent, fabricile cumpără direct și folosesc depozitul pentru rest. Ambele strategii pot fi folosite în același grup.",
       "groupEmpty": "Nicio fabrică în acest grup. Trage un card de fabrică aici ca să îl adaugi.",
       "ungroupedTitle": "Fabrici ne-grupate",
       "ungroupedEmpty": "Nu e nimic pe aici. Trage un card aici sau creează o fabrică nouă.",
       "deliveries": {
         "buttonDesc": "Livrări",
         "title": "Plan de livrare",
-        "descNeeded": "Planuri de livrare pentru fiecare fabrică din acest grup. Un depozit comun va avea nevoie de {amount} rafturi de paleți pentru a aproviziona toate fabricile din acest grup.",
-        "descEnough": "Toate fabricile au suficiente rafturi de paleți pentru toate ingredientele necesare."
+        "descNeeded": "Livrări zilnice de la acest depozit la fiecare fabrică. Achizițiile centralizate acoperă întregul necesar zilnic de ingrediente; cu un agent de achiziții propriu este livrată doar partea zilnică a depozitului. Cantitățile sunt rotunjite în sus la unități întregi. Rafturi pentru paleți necesare pentru ingredientele săptămânale din depozit: {amount}.",
+        "descEnough": "Aceste fabrici cumpără toate ingredientele direct și nu au nevoie de livrări din depozit."
       },
       "shoppingList": {
         "title": "Lista de cumpărături grupată",
-        "desc": "Aici vezi toate ingredientele necesare pentru fabricile din acest grup care nu au suficiente rafturi de paleți. Calculul se face pe baza celor disponibile în fabrici, ca să poți comanda restul pentru un depozit separat.<br></br>Rafturi necesare în depozit: <strong>{amount}</strong>"
-      }
+        "desc": "Comandă aceste ingrediente la depozitul grupului în fiecare săptămână. Fabricile cu achiziții centralizate contribuie cu întregul necesar pentru 7 zile. Pentru fabricile cu propriul agent de achiziții este inclusă doar partea rămasă a depozitului; comandă partea directă din lista de cumpărături împărțită a fabricii.<br></br>Rafturi pentru paleți necesare pentru ingredientele săptămânale din depozit: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Comandă aceste ingrediente la depozitul grupului în fiecare săptămână. Fabricile cu achiziții centralizate contribuie cu întregul necesar pentru 7 zile. Pentru fabricile cu propriul agent de achiziții este inclusă doar partea rămasă a depozitului; comandă partea directă din lista de cumpărături împărțită a fabricii.",
+      "warehouseDeliveryDesc": "Livrări zilnice de la acest depozit la fiecare fabrică. Achizițiile centralizate acoperă întregul necesar zilnic de ingrediente; cu un agent de achiziții propriu este livrată doar partea zilnică a depozitului. Cantitățile sunt rotunjite în sus la unități întregi.",
+      "warehouseShelvesLabel": "Rafturi pentru paleți necesare pentru ingredientele săptămânale din depozit:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "În versiunea 1.0, materiile prime și salariile angajaților reduc venitul impozabil. Echipamentele fabricii, rafturile pentru paleți și vehiculele de livrare eligibile sunt deductibile la cumpărare, dar deducerile unice nu sunt incluse în această estimare a taxelor recurente.",
@@ -600,7 +611,7 @@
         "legend": "Informații despre fabrică",
         "name": "Numele fabricii",
         "calcBasis": "Baza de calcul",
-        "palletDesc": "Defineste câte rafturi pentru paleți sunt disponibile în această fabrică. Setează valoarea la 0 pentru a comanda toate ingredientele către grupul de depozite.",
+        "palletDesc": "Introdu numărul de rafturi pentru paleți existente fizic în această fabrică, inclusiv cele folosite ca rezervă pentru livrările zilnice.",
         "dailyAmount": "Pentru livrarea zilnică ai nevoie de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pentru livrarea săptămânală ai nevoie de <strong>{count}</strong> {object}.",
         "shelfExplanation": "Adaugă cel puțin un post de lucru ca să vezi câte rafturi pentru paleți sunt necesare.",
@@ -755,5 +766,22 @@
     "playthroughs": {
       "description": "Gestionează și compară partidele tale de {gameName}. Urmărește-ți progresul, analizează statisticile și optimizează-ți afacerea."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Backup și restaurare setări",
+    "dialogTriggerSrOnly": "Backup și restaurare setări",
+    "dialogTitle": "Backup și restaurare setări",
+    "dialogDescription": "Fă backup sau restaurează partidele salvate, fabricile și setările aplicației.",
+    "exportTitle": "Exportă setările",
+    "exportDescription": "Descarcă datele tale ca fișier de backup JSON.",
+    "exportButton": "Exportă",
+    "importTitle": "Importă setările",
+    "importDescription": "Înlocuiește datele tale salvate cu datele dintr-un fișier de backup JSON.",
+    "importButton": "Importă",
+    "exportSuccess": "Setările au fost exportate cu succes!",
+    "exportError": "Eroare la exportarea setărilor.",
+    "importSuccess": "Setările au fost importate cu succes!",
+    "importError": "Eroare la importarea setărilor. Te rugăm să verifici fișierul JSON."
   }
 }

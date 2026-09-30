@@ -14,7 +14,6 @@ import { Package } from "lucide-react";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { useActivePlaythrough } from "@/lib/hooks/useActivePlaythrough";
 import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
-import messages from "@/messages/en.json";
 import { getPlaythroughGameData } from "@/lib/game/registry";
 import { calculateDailyWarehouseSupply } from "@/lib/calculations/calculateDailyWarehouseSupply";
 import { getMissingPalletShelvesTotal } from "@/lib/calculations/getMissingPalletShelvesTotal";
@@ -74,9 +73,9 @@ const GroupDeliveriesDialog = ({ factoryIds }: GroupDeliveriesDialogProps) => {
         <DialogHeader>
           <DialogTitle>{t("tools.factoryGroups.deliveries.title")}</DialogTitle>
           <DialogDescription>
-            {messages.tools.factoryGroups.warehouseDeliveryDesc}
+            {t("tools.factoryGroups.warehouseDeliveryDesc")}
             <br />
-            {messages.tools.factoryGroups.warehouseShelvesLabel}{" "}
+            {t("tools.factoryGroups.warehouseShelvesLabel")}{" "}
             <strong>{neededPalletShelvesTotal}</strong>
           </DialogDescription>
         </DialogHeader>

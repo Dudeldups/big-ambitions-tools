@@ -529,17 +529,23 @@
       "gameVersionNotice": {
         "title": "Dati di gioco versionati",
         "desc": "Le partite ora usano dati di gioco versionati. Puoi modificare la versione del gioco per ogni partita nella <link>panoramica</link>."
-      }
+      },
+      "backupHint": "Salva le tue partite, le fabbriche e le impostazioni dell’app in un file di backup sul tuo dispositivo. Puoi usare questo file per ripristinare i dati in seguito o trasferirli su un altro dispositivo.",
+      "backupButton": "Backup e ripristino dei dati"
     },
     "playthroughDetail": {
       "desc": "Qui puoi vedere le statistiche di produzione del tuo impero. Vai alla pagina Fabbriche per avere una panoramica delle tue fabbriche, tenere traccia degli articoli da ordinare per le linee di produzione e altro. Il pianificatore delle fabbriche ti mostrerà tutti i dettagli sulle statistiche di produzione, quantità d'ordine e altro.",
       "productionOverview": "Panoramica settimanale della produzione",
-      "noProductionData": "Non ci sono ancora dati disponibili. Crea delle fabbriche e vedrai qui le tue statistiche di produzione."
+      "noProductionData": "Non ci sono ancora dati disponibili. Crea delle fabbriche e vedrai qui le tue statistiche di produzione.",
+      "shoppingList": {
+        "title": "Lista della spesa della partita",
+        "desc": "Questa lista riunisce il fabbisogno settimanale di ingredienti di tutte le fabbriche di questa partita, inclusi tutti i gruppi e le fabbriche senza gruppo. Tiene conto degli orari di apertura e dei limiti di produzione."
+      }
     },
     "factories": {
       "title": "Le tue fabbriche",
       "desc": "Una panoramica delle tue fabbriche. Puoi modificarle, eliminarle o copiare i valori attuali per una nuova fabbrica. Per vedere più dettagli su ogni fabbrica, inclusa la lista della spesa, clicca sulla relativa scheda.",
-      "desc1": "Puoi anche raggrupparle insieme cliccando sul pulsante Crea gruppo qui sotto. In questo modo vedrai tutte le fabbriche in un unico posto e le gestirai come gruppo. Utile se usi un magazzino centrale per fornire ingredienti a più fabbriche. In base al numero di scaffali per pallet aggiunti, suggerirà un piano di consegna per ogni fabbrica.",
+      "desc1": "Crea un gruppo e trascina al suo interno le fabbriche rifornite da un unico magazzino. Imposta il numero di addetti agli acquisti di una fabbrica su 0 per acquistare centralmente tutto il fabbisogno settimanale. Con un proprio addetto agli acquisti, la fabbrica compra la parte che entra negli scaffali e il magazzino compra il resto.",
       "noFactories": "Non ci sono ancora fabbriche nella tua partita. Creane una per iniziare!",
       "notFound": {
         "title": "Fabbrica non trovata",
@@ -550,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Modifica fabbrica",
       "shoppingList": {
-        "title": "Lista della spesa",
-        "desc": "Ecco di cosa ha bisogno la tua fabbrica ogni settimana per lavorare a pieno regime."
+        "title": "Fabbisogno settimanale di ingredienti",
+        "desc": "Questo è il consumo totale di ingredienti della fabbrica per una settimana, tenendo conto dei limiti di produzione. Segui le istruzioni di acquisto qui sotto per decidere dove ordinarli."
       },
       "splitShoppingList": {
         "title": "Lista della spesa divisa",
         "desc": "Ordina questi ingredienti direttamente alla tua fabbrica per dividere l'ordine. Questa è la quantità massima che i tuoi {shelfAmount} scaffali per pallet possono contenere. Tiene anche conto del numero di scatole che produci. Avresti bisogno di {requiredAmount} scaffali per immagazzinare tutti gli ingredienti per una settimana intera di produzione.",
         "desc1": "Il resto deve essere ordinato a un magazzino da uno o più addetti agli acquisti distinti. Torna alla <link>panoramica della fabbrica</link> e crea un gruppo per vedere l'elenco completo di ciò che ordinare a quel magazzino. Mostrerà anche il piano di consegna a ogni fabbrica."
-      }
+      },
+      "centralPurchasingNote": "Questa fabbrica usa gli acquisti centralizzati. Aggiungila a un gruppo di fabbriche e usa la lista della spesa del gruppo per ordinare tutti gli ingredienti al magazzino. Il piano di consegna del gruppo rifornisce la fabbrica ogni giorno; non effettuare un secondo ordine di ingredienti direttamente alla fabbrica.",
+      "splitPurchasingNote": "Questa fabbrica ha un proprio addetto agli acquisti. Se sotto compare una lista della spesa divisa, usala per l’ordine settimanale diretto della fabbrica e usa la lista del gruppo per la parte restante del magazzino. Se tutto entra nella fabbrica, ordina direttamente l’intero fabbisogno settimanale."
     },
     "playthroughForm": {
       "title": "Crea una nuova partita",
@@ -577,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Crea gruppo",
       "title": "Gruppi di fabbrica",
-      "desc": "Puoi raggruppare le fabbriche per avere una migliore panoramica per categoria di prodotto. Se le fabbriche raggruppate non hanno abbastanza scaffali per pallet assegnati, la lista acquisti ti dirà cosa ordinare per ogni fabbrica e anche per il magazzino per rifornire il resto. La finestra delle consegne ti mostrerà anche cosa inviare a ciascuna fabbrica.",
+      "desc": "Raggruppa le fabbriche rifornite da un unico magazzino per unire le liste della spesa settimanali del magazzino e vedere le consegne giornaliere. Senza addetto agli acquisti, gli acquisti sono centralizzati; con un proprio addetto, le fabbriche comprano direttamente e usano il magazzino per il resto. Le due strategie possono coesistere in un gruppo.",
       "groupEmpty": "Nessuna fabbrica in questo gruppo. Trascina una scheda di fabbrica qui per aggiungerla.",
       "ungroupedTitle": "Fabbriche non raggruppate",
       "ungroupedEmpty": "Qui non c'è ancora nulla. Trascina una scheda di fabbrica qui o aggiungine una nuova.",
       "deliveries": {
         "buttonDesc": "Consegne",
         "title": "Piano di consegna",
-        "descNeeded": "Piani di consegna per ogni fabbrica in questo gruppo. Un magazzino condiviso avrà bisogno di {amount} scaffali per pallet per rifornire tutte le fabbriche di questo gruppo.",
-        "descEnough": "Le fabbriche hanno abbastanza scaffali per tutti gli ingredienti necessari."
+        "descNeeded": "Consegne giornaliere da questo magazzino a ogni fabbrica. Gli acquisti centralizzati coprono tutto il fabbisogno giornaliero di ingredienti; con un addetto agli acquisti proprio, viene consegnata solo la parte giornaliera del magazzino. Le quantità sono arrotondate per eccesso a unità intere. Scaffali per pallet necessari per gli ingredienti settimanali del magazzino: {amount}.",
+        "descEnough": "Queste fabbriche comprano tutti gli ingredienti direttamente e non hanno bisogno di consegne dal magazzino."
       },
       "shoppingList": {
         "title": "Lista acquisti del gruppo",
-        "desc": "Qui vedi tutti gli ingredienti necessari per rifornire le fabbriche di questo gruppo che non hanno abbastanza scaffali per pallet. Il tool calcola in base agli scaffali disponibili nelle fabbriche, così puoi ordinare il resto da inviare al magazzino separato.<br></br>Scaffali per pallet necessari nel magazzino: <strong>{amount}</strong>"
-      }
+        "desc": "Ordina questi ingredienti al magazzino del gruppo ogni settimana. Le fabbriche con acquisti centralizzati contribuiscono con tutto il fabbisogno di 7 giorni. Per le fabbriche con un proprio addetto agli acquisti, è inclusa solo la parte restante del magazzino; ordina la parte diretta dalla lista della spesa divisa della fabbrica.<br></br>Scaffali per pallet necessari per gli ingredienti settimanali del magazzino: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Ordina questi ingredienti al magazzino del gruppo ogni settimana. Le fabbriche con acquisti centralizzati contribuiscono con tutto il fabbisogno di 7 giorni. Per le fabbriche con un proprio addetto agli acquisti, è inclusa solo la parte restante del magazzino; ordina la parte diretta dalla lista della spesa divisa della fabbrica.",
+      "warehouseDeliveryDesc": "Consegne giornaliere da questo magazzino a ogni fabbrica. Gli acquisti centralizzati coprono tutto il fabbisogno giornaliero di ingredienti; con un addetto agli acquisti proprio, viene consegnata solo la parte giornaliera del magazzino. Le quantità sono arrotondate per eccesso a unità intere.",
+      "warehouseShelvesLabel": "Scaffali per pallet necessari per gli ingredienti settimanali del magazzino:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Nella versione 1.0, le materie prime e gli stipendi dei dipendenti riducono il reddito imponibile. Le attrezzature di fabbrica, le scaffalature per pallet e i veicoli di consegna idonei sono deducibili al momento dell’acquisto, ma le detrazioni una tantum non sono incluse in questa stima delle imposte ricorrenti.",
@@ -600,7 +611,7 @@
         "legend": "Info fabbrica",
         "name": "Nome fabbrica",
         "calcBasis": "Base di calcolo",
-        "palletDesc": "Definisci quanti scaffali per pallet sono disponibili in questa fabbrica. Imposta questo valore su 0 per ordinare tutti gli ingredienti al gruppo di magazzino.",
+        "palletDesc": "Inserisci il numero di scaffali per pallet fisicamente presenti in questa fabbrica, inclusi quelli usati come riserva per le consegne giornaliere.",
         "dailyAmount": "Per la consegna giornaliera ti servono <strong>{count}</strong> {object}.",
         "weeklyAmount": "Per la consegna settimanale ti servono <strong>{count}</strong> {object}.",
         "shelfExplanation": "Aggiungi almeno una postazione di lavoro per vedere il numero necessario di scaffali per pallet.",
@@ -755,5 +766,22 @@
     "playthroughs": {
       "description": "Gestisci e confronta le tue partite di {gameName}. Segui i progressi nelle diverse difficoltà, analizza le statistiche di produzione e ottimizza la tua strategia."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Backup e ripristino impostazioni",
+    "dialogTriggerSrOnly": "Backup e ripristino impostazioni",
+    "dialogTitle": "Backup e ripristino impostazioni",
+    "dialogDescription": "Esegui il backup o il ripristino delle tue partite salvate, delle fabbriche e delle impostazioni dell’app.",
+    "exportTitle": "Esporta impostazioni",
+    "exportDescription": "Scarica i tuoi dati come file di backup JSON.",
+    "exportButton": "Esporta",
+    "importTitle": "Importa impostazioni",
+    "importDescription": "Sostituisce i tuoi dati salvati con quelli di un file di backup JSON.",
+    "importButton": "Importa",
+    "exportSuccess": "Impostazioni esportate con successo!",
+    "exportError": "Impossibile esportare le impostazioni.",
+    "importSuccess": "Impostazioni importate con successo!",
+    "importError": "Impossibile importare le impostazioni. Controlla il file JSON."
   }
 }

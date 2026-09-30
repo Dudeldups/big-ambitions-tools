@@ -529,17 +529,23 @@
       "gameVersionNotice": {
         "title": "Verziósított játékadatok",
         "desc": "A játékállapotok mostantól verziósított adatokat használnak. Az <link>áttekintésben</link> minden játékállapotnál külön is módosíthatod a játékverziót."
-      }
+      },
+      "backupHint": "Mentsd a játékállapotaidat, gyáraidat és az alkalmazás beállításait egy biztonsági mentésfájlba az eszközödön. Ezzel a fájllal később visszaállíthatod az adataidat, vagy átviheted őket egy másik eszközre.",
+      "backupButton": "Adatok mentése és visszaállítása"
     },
     "playthroughDetail": {
       "desc": "Itt láthatod az imperiumod gyártási statisztikáit. A Gyárak oldalon áttekintést kapsz a gyáraidról, nyomon követheted a rendelendő termékeket és még sok mást. A gyártervező minden részletet mutat a gyártási adatokról, a rendelési mennyiségekről és még több.",
       "productionOverview": "Heti gyártási áttekintés",
-      "noProductionData": "Még nincs adat. Hozz létre gyárakat, és itt látni fogod a gyártási statisztikáidat."
+      "noProductionData": "Még nincs adat. Hozz létre gyárakat, és itt látni fogod a gyártási statisztikáidat.",
+      "shoppingList": {
+        "title": "A játékállapot teljes bevásárlólistája",
+        "desc": "Ez a lista összesíti az ebben a játékállapotban lévő összes gyár heti hozzávalóigényét, beleértve az összes csoportot és a csoportba nem sorolt gyárakat is. Figyelembe veszi a nyitvatartási időt és a termelési korlátokat."
+      }
     },
     "factories": {
       "title": "Gyáraid",
       "desc": "Itt láthatod a gyáraidat. Szerkesztheted vagy törölheted őket, és másolhatod az aktuális értékeket egy új gyárhoz is. Ha több részletet szeretnél látni minden gyárról, beleértve a bevásárlólistát is, kattints egyszerűen a megfelelő kártyára.",
-      "desc1": "Az alábbi 'Csoport létrehozása' gombbal csoportosíthatod őket. Így egy helyen láthatod és kezelheted a gyárakat. Praktikus, ha központi raktárt használsz a gyárak ellátásához. A hozzáadott raklappolcok alapján a rendszer javasolni fog egy szállítási tervet minden egyes gyárhoz.",
+      "desc1": "Hozz létre egy csoportot, és húzd bele az egy raktárból ellátott gyárakat. Állítsd a gyár beszerzőinek számát 0-ra, hogy a teljes heti szükségletet központilag vásárold meg. Saját beszerzővel a gyár a polcaira férő részt veszi meg, a raktár pedig a többit.",
       "noFactories": "A játékodban még nincsenek gyárak. Hozz létre egyet, hogy elindulhass!",
       "notFound": {
         "title": "Gyár nem található",
@@ -550,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Gyár szerkesztése",
       "shoppingList": {
-        "title": "Bevásárlólista",
-        "desc": "Ez a gyár heti szükséglete a teljes kapacitáshoz."
+        "title": "Heti hozzávalóigény",
+        "desc": "Ez a gyár teljes egyheti hozzávaló-fogyasztása, a termelési korlátokat is figyelembe véve. Az alábbi beszerzési útmutató alapján döntsd el, hová rendeld meg."
       },
       "splitShoppingList": {
         "title": "Felosztott vásárlólista",
         "desc": "Rendeld ezeket az alapanyagokat közvetlenül a gyárba, hogy felosztsd a rendelést. Ez a maximális mennyiség, amit a {shelfAmount} darab raklappolc tárolni tud. Figyelembe veszi a gyártott dobozok számát is. Egy teljes heti gyártáshoz összesen {requiredAmount} raklappolcra lenne szükséged.",
         "desc1": "A maradékot egy vagy több különálló beszerzőnek kell raktárhoz rendelnie. Menj vissza a <link>gyári áttekintéshez</link>, és hozz létre egy csoportot, hogy lásd a teljes rendelési listát. Ez a gyárakonkénti szállítási tervet is mutatja."
-      }
+      },
+      "centralPurchasingNote": "Ez a gyár központi beszerzést használ. Add hozzá egy gyárcsoporthoz, és a csoport bevásárlólistájával rendelj minden hozzávalót a raktárba. A csoport szállítási terve naponta ellátja a gyárat; ne adj le második hozzávalórendelést közvetlenül a gyárba.",
+      "splitPurchasingNote": "Ennek a gyárnak saját beszerzője van. Ha alább felosztott vásárlólista jelenik meg, azt használd a gyár közvetlen heti rendeléséhez, a csoport listáját pedig a raktár fennmaradó részéhez. Ha minden elfér a gyárban, a teljes heti szükségletet közvetlenül rendeld meg."
     },
     "playthroughForm": {
       "title": "Új játékállapot létrehozása",
@@ -577,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Csoport létrehozása",
       "title": "Gyárcsoportok",
-      "desc": "A gyárakat termékkategóriánként csoportosíthatod a jobb áttekinthetőségért. Ha a csoportosított gyárakhoz nem elég raklappolc van hozzárendelve, a vásárlólista megmondja, mit kell megrendelned az egyes gyárakba és a raktárba is, hogy pótolni tudd a hiányt. A szállítási ablak is mutatja, mit küldj minden gyárba.",
+      "desc": "Csoportosítsd az egy raktárból ellátott gyárakat a heti raktári bevásárlólisták egyesítéséhez és a napi szállítások megtekintéséhez. Beszerző nélkül a gyár központi beszerzést használ; saját beszerzővel közvetlenül vásárol, a raktár pedig a többit biztosítja. A két stratégia egy csoporton belül is használható.",
       "groupEmpty": "Ebben a csoportban nincs gyár. Húzz egy gyárkártyát ide, hogy hozzáadhassad.",
       "ungroupedTitle": "Nem csoportosított gyárak",
       "ungroupedEmpty": "Semmi nincs itt egyelőre. Húzz ide egy kártyát, vagy hozz létre egy új gyárat.",
       "deliveries": {
         "buttonDesc": "Szállítások",
         "title": "Szállítási terv",
-        "descNeeded": "Szállítási tervek a csoport minden gyárához. Egy közös raktárnak {amount} raklappolcra lesz szüksége a csoport összes gyárának ellátásához.",
-        "descEnough": "Minden gyárban elég raklappolc van az összes szükséges összetevő tárolásához."
+        "descNeeded": "Napi szállítások ebből a raktárból az egyes gyárakba. A központi beszerzés a teljes napi hozzávalóigényt fedezi; saját beszerző esetén csak a napi raktári rész érkezik. A mennyiségeket egész darabokra felfelé kerekítjük. A raktár heti hozzávalóihoz szükséges raklappolcok: {amount}.",
+        "descEnough": "Ezek a gyárak minden hozzávalót közvetlenül vásárolnak, így nincs szükségük raktári szállításokra."
       },
       "shoppingList": {
         "title": "Csoport vásárlólista",
-        "desc": "Itt láthatod az összes összetevőt, ami a csoportban lévő gyárak kiegészítéséhez kell, ha nincs elég raklappolcuk. A számítás a gyárakban elérhető polcok alapján történik, így megrendelheted a többit egy külön raktárba.<br></br>Szükséges raklappolcok a raktárba: <strong>{amount}</strong>"
-      }
+        "desc": "Ezeket a hozzávalókat hetente rendeld a csoport raktárába. A központi beszerzésű gyárak teljes 7 napos szükséglete szerepel. Saját beszerzővel rendelkező gyáraknál csak a fennmaradó raktári rész szerepel; a közvetlen részt a gyár felosztott vásárlólistája alapján rendeld meg.<br></br>A raktár heti hozzávalóihoz szükséges raklappolcok: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Ezeket a hozzávalókat hetente rendeld a csoport raktárába. A központi beszerzésű gyárak teljes 7 napos szükséglete szerepel. Saját beszerzővel rendelkező gyáraknál csak a fennmaradó raktári rész szerepel; a közvetlen részt a gyár felosztott vásárlólistája alapján rendeld meg.",
+      "warehouseDeliveryDesc": "Napi szállítások ebből a raktárból az egyes gyárakba. A központi beszerzés a teljes napi hozzávalóigényt fedezi; saját beszerző esetén csak a napi raktári rész érkezik. A mennyiségeket egész darabokra felfelé kerekítjük.",
+      "warehouseShelvesLabel": "A raktár heti hozzávalóihoz szükséges raklappolcok:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Az 1.0-s verzióban a nyersanyagok és az alkalmazottak bérei csökkentik az adóköteles jövedelmet. A gyári berendezések, raklapállványok és az erre jogosult szállítójárművek vásárláskor levonhatók, de az egyszeri levonások nem szerepelnek ebben az ismétlődő adóbecslésben.",
@@ -600,7 +611,7 @@
         "legend": "Gyári információk",
         "name": "Gyár neve",
         "calcBasis": "Számítási alap",
-        "palletDesc": "Állítsd be, hány raklappolcod van ebben a gyárban. Állítsd 0-ra, hogy minden hozzávalót a raktárcsoportba rendelj.",
+        "palletDesc": "Add meg a gyárban ténylegesen található raklappolcok számát, beleértve a napi szállítások pufferéhez használt polcokat is.",
         "dailyAmount": "A napi szállításhoz <strong>{count}</strong> {object} kell.",
         "weeklyAmount": "A heti szállításhoz <strong>{count}</strong> {object} kell.",
         "shelfExplanation": "Adj hozzá legalább egy ruházati munkállomást, hogy lásd a szükséges raklappolcok számát.",
@@ -755,5 +766,22 @@
     "playthroughs": {
       "description": "Kezeld és hasonlítsd össze a {gameName} játékállapodáidat. Tartsd nyomon a fejlődésedet, elemezd a statisztikákat és optimalizáld a stratégiádat."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Beállítások mentése és visszaállítása",
+    "dialogTriggerSrOnly": "Beállítások mentése és visszaállítása",
+    "dialogTitle": "Beállítások mentése és visszaállítása",
+    "dialogDescription": "Készíts biztonsági mentést a játékállapotaidról, gyáraidról és az alkalmazás beállításairól, vagy állítsd vissza őket.",
+    "exportTitle": "Beállítások exportálása",
+    "exportDescription": "Töltsd le az adataidat JSON biztonsági mentésfájlként.",
+    "exportButton": "Exportálás",
+    "importTitle": "Beállítások importálása",
+    "importDescription": "Lecseréli a mentett adataidat egy JSON biztonsági mentésfájl adataira.",
+    "importButton": "Importálás",
+    "exportSuccess": "Beállítások sikeresen exportálva!",
+    "exportError": "A beállítások exportálása sikertelen.",
+    "importSuccess": "Beállítások sikeresen importálva!",
+    "importError": "A beállítások importálása sikertelen. Kérjük, ellenőrizd a JSON fájlt."
   }
 }

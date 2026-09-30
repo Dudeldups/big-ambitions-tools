@@ -529,17 +529,23 @@
       "gameVersionNotice": {
         "title": "Pelin versiotiedot",
         "desc": "Tallennuksissa käytetään nyt versioituja pelitietoja. Voit muuttaa peliversion jokaiselle tallennukselle <link>yleisnäkymässä</link>."
-      }
+      },
+      "backupHint": "Tallenna tallennuksesi, tehtaasi ja sovelluksen asetukset varmuuskopiotiedostona laitteellesi. Voit palauttaa tietosi tiedostosta myöhemmin tai siirtää ne toiselle laitteelle.",
+      "backupButton": "Varmuuskopioi ja palauta tiedot"
     },
     "playthroughDetail": {
       "desc": "Tässä näet imperiumisi tuotantotilastot. Käy \"Tehtaat\"-sivulla katsomassa tehtaasi, seuraamassa tilattavia osia ja paljon muuta. Tehtaan suunnittelija näyttää tarkat tiedot tuotantomääristä, tilauksista ja niin edelleen.",
       "productionOverview": "Viikoittainen tuotannon yleiskatsaus",
-      "noProductionData": "Tietoja ei vielä ole. Luo tehtaita, niin näet tuotantotilastosi tässä."
+      "noProductionData": "Tietoja ei vielä ole. Luo tehtaita, niin näet tuotantotilastosi tässä.",
+      "shoppingList": {
+        "title": "Tallennuksen yhteinen ostoslista",
+        "desc": "Tämä lista kokoaa tämän tallennuksen kaikkien tehtaiden viikoittaisen ainesosatarpeen, mukaan lukien kaikki ryhmät ja ryhmittämättömät tehtaat. Aukioloajat ja tuotantorajat huomioidaan."
+      }
     },
     "factories": {
       "title": "Omat tehtaat",
       "desc": "Tässä on yleiskatsaus tehtaisiisi. Voit muokata tai poistaa niitä ja kopioida nykyiset arvot myös uudelle tehtaalle. Klikkaa korttia nähdäksesi lisää tietoja, kuten ostoslistan.",
-      "desc1": "Voit myös ryhmitellä ne klikkaamalla alla olevaa 'Luo ryhmä' -painiketta. Näin näet kaikki tehtaat yhdessä paikassa ja voit hallita niitä ryhmänä. Kätevä juttu, jos käytät keskusvarastoa useammalle tehtaalle. Järjestelmä ehdottaa toimitussuunnitelmaa jokaiselle tehtaalle lisättyjen lavahyllyjen määrän perusteella.",
+      "desc1": "Luo ryhmä ja vedä siihen samasta varastosta toimituksia saavat tehtaat. Aseta tehtaan ostoasiantuntijoiden määräksi 0, jotta koko viikon tarve ostetaan keskitetysti. Oman ostoasiantuntijan kanssa tehdas ostaa hyllyihin mahtuvan osuuden ja varasto ostaa loput.",
       "noFactories": "Pelissäsi ei ole vielä tehtaita. Luo ensimmäinen ja pääset alkuun!",
       "notFound": {
         "title": "Tehtaata ei löytynyt",
@@ -550,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Muokkaa tehtaata",
       "shoppingList": {
-        "title": "Ostolista",
-        "desc": "Tehtaasi tarvitsee näitä viikoittain toimiakseen täydellä teholla."
+        "title": "Viikoittainen ainesosatarve",
+        "desc": "Tämä on tehtaan ainesosien kokonaiskulutus yhden viikon aikana, tuotantorajat huomioiden. Katso alla olevista osto-ohjeista, mihin ne kannattaa tilata."
       },
       "splitShoppingList": {
         "title": "Jaettu ostolista",
         "desc": "Tilaa nämä raaka-aineet suoraan tehtaallesi ja jaa tilaus osiin. Tämä on maksimimäärä, jonka {shelfAmount} lavahyllyä voi sisältää. Se huomioi myös tuottamiesi laatikoiden määrän. Tarvitset {requiredAmount} hyllyä säilyttääksesi kaikki raaka-aineet koko viikon tuotantoon.",
         "desc1": "Yksi tai useampi ostaja tilaa loput varastoon. Palaa <link>tehtaan yleiskatsaukseen</link> ja luo ryhmä, niin näet koko listan siitä, mitä varastoon pitää tilata. Sieltä näet myös toimitussuunnitelman jokaiselle tehtaalle."
-      }
+      },
+      "centralPurchasingNote": "Tämä tehdas käyttää keskitettyjä ostoja. Lisää se tehdasryhmään ja tilaa kaikki ainesosat varastoon ryhmän ostoslistan avulla. Ryhmän toimitussuunnitelma toimittaa ainesosat tehtaalle päivittäin; älä tee toista ainesosatilausta suoraan tehtaalle.",
+      "splitPurchasingNote": "Tällä tehtaalla on oma ostoasiantuntija. Jos alla näkyy jaettu ostolista, käytä sitä tehtaan suoraan viikkotilaukseen ja ryhmän ostoslistaa varaston jäljelle jäävään osuuteen. Jos kaikki mahtuu tehtaalle, tilaa koko viikon tarve suoraan sinne."
     },
     "playthroughForm": {
       "title": "Luo uusi tallennus",
@@ -577,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Luo ryhmä",
       "title": "Tehtaanryhmät",
-      "desc": "Voit ryhmitellä tehtaat tuotekategorioittain saadaksesi paremman yleiskuvan. Jos ryhmitellyillä tehtailla ei ole tarpeeksi lavahyllyjä, ostoslista kertoo, mitä sinun on tilattava kuhunkin tehtaaseen ja myös varastoon, jotta loppuosa saadaan katettua. Toimitusvalikko näyttää myös, mitä kuhunkin tehtaaseen tulee lähettää.",
+      "desc": "Ryhmittele samasta varastosta toimituksia saavat tehtaat yhdistääksesi niiden viikoittaiset varasto-ostoslistat ja nähdäksesi päivittäiset toimitukset. Ilman ostoasiantuntijaa tehdas käyttää keskitettyjä ostoja; oman asiantuntijan kanssa se ostaa suoraan ja käyttää varastoa loppuosuudelle. Molemmat tavat voivat olla samassa ryhmässä.",
       "groupEmpty": "Tässä ryhmässä ei ole tehtaita. Vedä tehdaskortti tänne lisätäksesi sen.",
       "ungroupedTitle": "Ryhmittämättömät tehtaat",
       "ungroupedEmpty": "Täällä on vielä tyhjää. Vedä tehdaskortti tänne tai lisää uusi tehdas.",
       "deliveries": {
         "buttonDesc": "Toimitukset",
         "title": "Toimitussuunnitelma",
-        "descNeeded": "Toimitussuunnitelmat tämän ryhmän tehtaille. Yhteinen varasto tarvitsee {amount} lavahyllyä toimittaakseen tavaraa kaikille tämän ryhmän tehtaille.",
-        "descEnough": "Kaikilla tehtailla on tarpeeksi hyllyä kaikkiin ainesosiin."
+        "descNeeded": "Päivittäiset toimitukset tästä varastosta kullekin tehtaalle. Keskitetyt ostot kattavat koko päivittäisen ainesosatarpeen; oman ostoasiantuntijan kanssa toimitetaan vain varaston päivittäinen osuus. Määrät pyöristetään ylöspäin kokonaisiksi tuotteiksi. Varaston viikoittaisille ainesosille tarvittavat lavahyllyt: {amount}.",
+        "descEnough": "Nämä tehtaat ostavat kaikki ainesosat suoraan eivätkä tarvitse varastotoimituksia."
       },
       "shoppingList": {
         "title": "Ryhmän ostoslista",
-        "desc": "Tässä näet kaikki raaka-aineet, joita ryhmän tehtaille tarvitaan, jos niissä ei ole tarpeeksi lavahyllyjä. Laskenta perustuu tehtaiden hyllymäärään, jotta voit tilata loput erilliseen varastoon.<br></br>Varastoon tarvittavat lavahyllyt: <strong>{amount}</strong>"
-      }
+        "desc": "Tilaa nämä ainesosat ryhmän varastoon joka viikko. Keskitettyjä ostoja käyttäviltä tehtailta mukana on koko 7 päivän tarve. Oman ostoasiantuntijan tehtaista mukana on vain varaston jäljelle jäävä osuus; tilaa suora osuus tehtaan jaetun ostolistan avulla.<br></br>Varaston viikoittaisille ainesosille tarvittavat lavahyllyt: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Tilaa nämä ainesosat ryhmän varastoon joka viikko. Keskitettyjä ostoja käyttäviltä tehtailta mukana on koko 7 päivän tarve. Oman ostoasiantuntijan tehtaista mukana on vain varaston jäljelle jäävä osuus; tilaa suora osuus tehtaan jaetun ostolistan avulla.",
+      "warehouseDeliveryDesc": "Päivittäiset toimitukset tästä varastosta kullekin tehtaalle. Keskitetyt ostot kattavat koko päivittäisen ainesosatarpeen; oman ostoasiantuntijan kanssa toimitetaan vain varaston päivittäinen osuus. Määrät pyöristetään ylöspäin kokonaisiksi tuotteiksi.",
+      "warehouseShelvesLabel": "Varaston viikoittaisille ainesosille tarvittavat lavahyllyt:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Versiossa 1.0 raaka-aineet ja työntekijöiden palkat pienentävät verotettavaa tuloa. Tehtaan laitteet, kuormalavahyllyt ja ehdot täyttävät jakeluajoneuvot ovat vähennyskelpoisia ostohetkellä, mutta kertaluonteisia vähennyksiä ei huomioida tässä toistuvan veron arviossa.",
@@ -600,7 +611,7 @@
         "legend": "Tehtaan tiedot",
         "name": "Tehtaan nimi",
         "calcBasis": "Laskentaperusta",
-        "palletDesc": "Määrittele tämän tehtaan lavahyllyjen määrä. Aseta arvoksi 0, jos haluat tilata kaikki ainesosat varastoryhmään.",
+        "palletDesc": "Anna tämän tehtaan fyysisten lavahyllyjen määrä, mukaan lukien päivittäisten toimitusten puskurina käytettävät hyllyt.",
         "dailyAmount": "Päivittäiseen toimitukseen tarvitset <strong>{count}</strong> {object}.",
         "weeklyAmount": "Viikkotoimitukseen tarvitset <strong>{count}</strong> {object}.",
         "shelfExplanation": "Lisää vähintään yksi työpiste, niin näet tarvittavien lavahyllyjen määrän.",
@@ -755,5 +766,22 @@
     "playthroughs": {
       "description": "Vertaile ja pidä kirjaa {gameName}-tallennuksistasi. Seuraa edistymistäsi, analysoi tilastoja ja optimoi bisnestäsi."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Varmuuskopioi ja palauta asetukset",
+    "dialogTriggerSrOnly": "Varmuuskopioi ja palauta asetukset",
+    "dialogTitle": "Varmuuskopioi ja palauta asetukset",
+    "dialogDescription": "Varmuuskopioi tai palauta tallennuksesi, tehtaasi ja sovelluksen asetukset.",
+    "exportTitle": "Vie asetukset",
+    "exportDescription": "Lataa tietosi JSON-varmuuskopiotiedostona.",
+    "exportButton": "Vie",
+    "importTitle": "Tuo asetukset",
+    "importDescription": "Korvaa tallennetut tietosi JSON-varmuuskopiotiedoston tiedoilla.",
+    "importButton": "Tuo",
+    "exportSuccess": "Asetukset viety onnistuneesti!",
+    "exportError": "Asetusten vienti epäonnistui.",
+    "importSuccess": "Asetukset tuotu onnistuneesti!",
+    "importError": "Asetusten tuonti epäonnistui. Tarkista JSON-tiedosto."
   }
 }
