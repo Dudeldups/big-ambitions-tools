@@ -284,7 +284,8 @@
       "hourly": "Valandinis",
       "daily": "Kasdienis",
       "weekly": "Savaitinis"
-    }
+    },
+    "resources": "Ištekliai"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Palečių lentyna} other {Palečių lentynos}}",
@@ -483,7 +484,8 @@
     "qotd": "Fredo 'Dienos citata' pridėta į pagrindinį puslapį",
     "update11": "Pridėtas žaidimo duomenų versijavimas, skirtas palaikyti dvi naujausias versijas",
     "update10": "Atnaujinta Big Ambitions 1.0 versijai ir pridėtas ingredientų užsakymas tik į sandėlio grupę",
-    "update12": "Atnaujinti fabrikų mokesčių skaičiavimai ir patobulinti pristatymo iš bendrų sandėlių planai"
+    "update12": "Atnaujinti fabrikų mokesčių skaičiavimai ir patobulinti pristatymo iš bendrų sandėlių planai",
+    "update13": "<items><item>Pridėtas bendras savaitinis visų žaidimo būsenos gamyklų pirkinių sąrašas (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Sukurk žaidimo būsenų ir programėlės nustatymų atsarginę kopiją faile ir atkurk juos iš jo (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Patobulintos pirkimo instrukcijos ir vertimai.</item></items>"
   },
   "database": {
     "intro": {
@@ -506,6 +508,16 @@
     },
     "vehicles": {
       "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai – tai tavo {deliveryDriver}, o maksimaliam tikslų skaičiui reikia 100 % {logisticsManager} įgūdžių."
+    },
+    "details": {
+      "unavailable": "Šio įrašo nėra žaidimo versijoje {version}.",
+      "noIngredients": "Šio produkto recepto duomenų nėra.",
+      "noProducts": "Šioje žaidimo versijoje nė vienas produktas nenaudoja šio ingrediento.",
+      "usedInProducts": "Produktai, kuriuose naudojamas šis ingredientas",
+      "oneOf": "Viena iš parinkčių",
+      "dialogDescription": "{name} duomenų bazės informacija",
+      "backToOverview": "Grįžti į apžvalgą",
+      "noWorkstationProducts": "Šioje žaidimo versijoje šioje darbo vietoje negaminami jokie produktai."
     }
   },
   "tools": {
@@ -529,17 +541,23 @@
       "gameVersionNotice": {
         "title": "Versionuoti žaidimo duomenys",
         "desc": "Žaidimo būsenos dabar naudoja versijotus duomenis. Žaidimo versiją kiekvienai būsenai gali pakeisti <link>apžvalgoje</link>."
-      }
+      },
+      "backupHint": "Išsaugok savo žaidimo būsenas, gamyklas ir programėlės nustatymus kaip atsarginės kopijos failą savo įrenginyje. Šiuo failu vėliau galėsi atkurti duomenis arba perkelti juos į kitą įrenginį.",
+      "backupButton": "Duomenų atsarginė kopija ir atkūrimas"
     },
     "playthroughDetail": {
       "desc": "Čia pamatysi savo imperijos gamybos statistiką. Užsuk į „Gamyklos“ puslapį, kad peržiūrėtum gamyklas, stebėtum, kokias prekes reikia užsakyti savo gamybos linijoms, ir daugiau. Gamyklų planuotojas parodys visus duomenis apie gamybos statistiką, užsakymų kiekį ir daugiau.",
       "productionOverview": "Savaitinė gamybos apžvalga",
-      "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką."
+      "noProductionData": "Dar nėra duomenų. Sukurk gamyklas ir čia pamatysi savo gamybos statistiką.",
+      "shoppingList": {
+        "title": "Bendras žaidimo būsenos pirkinių sąrašas",
+        "desc": "Šiame sąraše sujungti visų šios žaidimo būsenos gamyklų savaitiniai ingredientų poreikiai, įskaitant visas grupes ir gamyklas be grupės. Atsižvelgiama į darbo laiką ir gamybos ribas."
+      }
     },
     "factories": {
       "title": "Tavo gamyklos",
       "desc": "Štai tavo gamyklų apžvalga. Gali jas redaguoti, ištrinti arba nukopijuoti esamas reikšmes naujai gamyklai. Jei nori sužinoti daugiau apie kiekvieną gamyklą (įskaitant pirkimo sąrašą), tiesiog paspausk ant atitinkamos kortelės.",
-      "desc1": "Taip pat gali jas sugrupuoti paspaudus mygtuką „Sukurti grupę“ žemiau. Taip galėsi matyti visas gamyklas vienoje vietoje ir valdyti jas kaip grupę. Tai naudinga, jei naudojiesi centraliniu sandėliu, iš kurio ingredientai tiekiami kelioms gamykloms. Remiantis pridėtų palečių lentynų skaičiumi, kiekvienai gamyklai bus pasiūlytas pristatymo planas.",
+      "desc1": "Sukurk grupę ir nutempk į ją gamyklas, kurias aprūpina vienas sandėlis. Nustatyk gamyklos pirkimų agentų skaičių į 0, kad visas savaitinis poreikis būtų perkamas centralizuotai. Turėdama savo pirkimų agentą, gamykla perka dalį, kuri telpa jos lentynose, o sandėlis perka likutį.",
       "noFactories": "Tavo žaidime dar nėra fabrikų. Sukurk vieną, kad pradėtum!",
       "notFound": {
         "title": "Gamykla nerasta",
@@ -550,14 +568,16 @@
     "factoryDetail": {
       "editBtn": "Redaguoti gamyklą",
       "shoppingList": {
-        "title": "Pirkimų sąrašas",
-        "desc": "Štai ko tavo gamyklai reikia kas savaitę, kad dirbtų pilna jėga."
+        "title": "Savaitinis ingredientų poreikis",
+        "desc": "Tai visas gamyklos ingredientų suvartojimas per savaitę, atsižvelgiant į gamybos ribas. Pagal toliau pateiktas pirkimo instrukcijas nuspręsk, kur juos užsakyti."
       },
       "splitShoppingList": {
         "title": "Padalinta pirkimų sąrašas",
         "desc": "Užsakyk šiuos ingredientus tiesiai į tavo fabriką, kad padalintum užsakymą. Tai yra maksimali suma, kurią gali laikyti tavo {shelfAmount} palečių lentynų. Tai taip pat atsižvelgia į dėžučių, kurias gamini, skaičių. Tau reikėtų {requiredAmount} palečių lentynų, kad laikytum visus ingredientus visai savaitės gamybai.",
         "desc1": "Likusią dalį reikia užsakyti į sandėlį vienam ar keliems atskiriems pirkimo agentams. Grįžk į <link>fabrikų apžvalgą</link> ir sukurk grupę, kad pamatytum pilną sąrašą visko, ko reikia užsisakyti į tą sandėlį. Jis taip pat parodys tau pristatymo planą kiekvienai fabrikai."
-      }
+      },
+      "centralPurchasingNote": "Ši gamykla naudoja centralizuotą pirkimą. Pridėk ją prie gamyklų grupės ir pagal grupės pirkinių sąrašą užsakyk visus ingredientus į sandėlį. Grupės pristatymo planas aprūpina gamyklą kasdien; nepateik antro ingredientų užsakymo tiesiai į gamyklą.",
+      "splitPurchasingNote": "Ši gamykla turi savo pirkimų agentą. Jei toliau rodomas padalintas pirkimų sąrašas, naudok jį tiesioginiam savaitiniam gamyklos užsakymui, o grupės sąrašą – likusiai sandėlio daliai. Jei viskas telpa gamykloje, visą savaitinį poreikį užsakyk tiesiogiai."
     },
     "playthroughForm": {
       "title": "Sukurti naują žaidimo būseną",
@@ -577,20 +597,23 @@
     "factoryGroups": {
       "buttonDesc": "Sukurti grupę",
       "title": "Gamyklų grupės",
-      "desc": "Gali sugrupuoti gamyklas pagal produktų kategorijas, kad lengviau būtų viską apžvelgti. Jei sugrupuotoms gamykloms nebus pakankamai palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai gamyklai ir sandėliui, kad užpildytum trūkumą. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną gamyklą.",
+      "desc": "Sugrupuok vieno sandėlio aprūpinamas gamyklas, kad sujungtum jų savaitinius sandėlio pirkinių sąrašus ir matytum kasdienius pristatymus. Be pirkimų agento gamyklos perka centralizuotai; su savo agentu perka tiesiogiai, o likutį gauna iš sandėlio. Abi strategijos gali būti vienoje grupėje.",
       "groupEmpty": "Šioje grupėje nėra gamyklų. Pervilkite gamyklos kortelę čia, kad ją pridėtumėte.",
       "ungroupedTitle": "Nesugrupuotos gamyklos",
       "ungroupedEmpty": "Čia nieko nėra. Persitrauk kortelę čia arba sukurk naują gamyklą.",
       "deliveries": {
         "buttonDesc": "Pristatymai",
         "title": "Tiekimo planas",
-        "descNeeded": "Tiekimo planai kiekvienam šios grupės fabrikui. Bendram sandėliui reikės {amount} palečių lentynų, kad jis aprūpintų visus šios grupės fabrikus.",
-        "descEnough": "Visoms gamykloms užtenka lentynų visus reikiamus ingredientus laikyti."
+        "descNeeded": "Kasdieniai pristatymai iš šio sandėlio į kiekvieną gamyklą. Centralizuotas pirkimas aprūpina visu dienos ingredientų poreikiu; turint savo pirkimų agentą pristatoma tik dienos sandėlio dalis. Kiekiai apvalinami į viršų iki sveikų vienetų. Palečių lentynos, reikalingos savaitiniams sandėlio ingredientams: {amount}.",
+        "descEnough": "Šios gamyklos visus ingredientus perka tiesiogiai ir joms nereikia pristatymų iš sandėlio."
       },
       "shoppingList": {
         "title": "Grupės pirkimo sąrašas",
-        "desc": "Šioje grupėje pamatysi visus ingredientus, reikalingus gamykloms, kurioms trūksta lentynų. Įrankis apskaičiuos kiek jų reikia gamyklose, kad likutį galėtum užsisakyti į atskirą sandėlį.<br></br>Sandėlyje reikalingų lentynų: <strong>{amount}</strong>"
-      }
+        "desc": "Šiuos ingredientus kas savaitę užsakyk į grupės sandėlį. Centralizuotai perkančių gamyklų įtrauktas visas 7 dienų poreikis. Gamykloms su savo pirkimų agentu įtraukta tik likusi sandėlio dalis; tiesioginę dalį užsakyk pagal gamyklos padalintą pirkimų sąrašą.<br></br>Palečių lentynos, reikalingos savaitiniams sandėlio ingredientams: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Šiuos ingredientus kas savaitę užsakyk į grupės sandėlį. Centralizuotai perkančių gamyklų įtrauktas visas 7 dienų poreikis. Gamykloms su savo pirkimų agentu įtraukta tik likusi sandėlio dalis; tiesioginę dalį užsakyk pagal gamyklos padalintą pirkimų sąrašą.",
+      "warehouseDeliveryDesc": "Kasdieniai pristatymai iš šio sandėlio į kiekvieną gamyklą. Centralizuotas pirkimas aprūpina visu dienos ingredientų poreikiu; turint savo pirkimų agentą pristatoma tik dienos sandėlio dalis. Kiekiai apvalinami į viršų iki sveikų vienetų.",
+      "warehouseShelvesLabel": "Palečių lentynos, reikalingos savaitiniams sandėlio ingredientams:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "1.0 versijoje žaliavos ir darbuotojų atlyginimai mažina apmokestinamąsias pajamas. Gamyklos įranga, palečių lentynos ir tinkamos pristatymo transporto priemonės yra atskaitomos jas perkant, tačiau vienkartiniai atskaitymai į šį pasikartojančių mokesčių įvertį neįtraukti.",
@@ -600,7 +623,7 @@
         "legend": "Gamyklos informacija",
         "name": "Gamyklos pavadinimas",
         "calcBasis": "Skaičiavimo pagrindas",
-        "palletDesc": "Nustatyk, kiek palečių lentynų yra šioje gamykloje. Nustatyk 0, kad visus ingredientus užsakytum į sandėlio grupę.",
+        "palletDesc": "Įvesk šioje gamykloje fiziškai esančių palečių lentynų skaičių, įskaitant kasdienių pristatymų rezervui naudojamas lentynas.",
         "dailyAmount": "Dienos pristatymui reikia <strong>{count}</strong> {object}.",
         "weeklyAmount": "Savaitės pristatymui reikia <strong>{count}</strong> {object}.",
         "shelfExplanation": "Pridėk bent vieną darbo vietą, kad pamatytum reikalingų palečių lentynų kiekį.",
@@ -747,13 +770,62 @@
       "description": "{gameName} fanų įrankiai. Planuok gamyklas, skaičiuok gamybos statistiką, valdyk pristatymo planus ir naršyk po žaidimo duomenis."
     },
     "database": {
-      "description": "Išsamūs {gameName} duomenys apie produktus, mašinas, transportą, pelno skaičiavimus ir daugiau."
+      "description": "Išsamūs {gameName} duomenys apie produktus, mašinas, transportą, pelno skaičiavimus ir daugiau.",
+      "productDescription": "{name} žaidime {gameName}: kainos, gamybos greitis, darbo stotis ir recepto ingredientai su kiekiais.",
+      "ingredientDescription": "{name} žaidime {gameName}: importo kaina, kiekis pakuotėje, importuotojai ir šį ingredientą naudojantys produktai.",
+      "workstationDescription": "{name} žaidime {gameName}: reikalingos mašinos, įsigijimo išlaidos ir šioje darbo stotyje gaminami produktai."
     },
     "tools": {
       "description": "Valdyk {gameName} ekonomiką. Nuo pažangaus gamyklų planavimo iki sudėtingos logistikos — gauk duomenis savo imperijai plėsti."
     },
     "playthroughs": {
       "description": "Valdyk ir lygink savo {gameName} žaidimo būsenas. Sek progresą, analizuok statistiką ir optimizuok savo verslą."
+    },
+    "resources": {
+      "description": "Atraskite naudingus Big Ambitions bendruomenės išteklius, įskaitant BA Maps, Bigger Ambitions ir oficialų Big Ambitions Discord."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Atsarginė nustatymų kopija ir atkūrimas",
+    "dialogTriggerSrOnly": "Atsarginė nustatymų kopija ir atkūrimas",
+    "dialogTitle": "Atsarginė nustatymų kopija ir atkūrimas",
+    "dialogDescription": "Sukurk išsaugotų žaidimo būsenų, gamyklų ir programėlės nustatymų atsarginę kopiją arba atkurk juos.",
+    "exportTitle": "Eksportuoti nustatymus",
+    "exportDescription": "Atsisiųsk duomenis kaip JSON atsarginės kopijos failą.",
+    "exportButton": "Eksportuoti",
+    "importTitle": "Importuoti nustatymus",
+    "importDescription": "Pakeičia tavo išsaugotus duomenis duomenimis iš JSON atsarginės kopijos failo.",
+    "importButton": "Importuoti",
+    "exportSuccess": "Nustatymai sėkmingai eksportuoti!",
+    "exportError": "Nepavyko eksportuoti nustatymų.",
+    "importSuccess": "Nustatymai sėkmingai importuoti!",
+    "importError": "Nepavyko importuoti nustatymų. Patikrink JSON failą."
+  },
+  "resources": {
+    "title": "Big Ambitions ištekliai",
+    "intro": "Naudingos svetainės, įrankiai ir bendruomenės Big Ambitions žaidėjams.",
+    "badges": {
+      "community": "Bendruomenės projektas",
+      "official": "Oficialus"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Tyrinėkite Big Ambitions naudodami interaktyvų 3D žemėlapį. Raskite pastatus, įmones ir įdomias vietas, o importavę savo žaidimo duomenis matykite labiau suasmenintą vaizdą.",
+      "cta": "Naršyti BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Dar viena naudinga Big Ambitions bendruomenės svetainė su papildoma informacija apie žaidimą. Tikrai verta apsilankyti!",
+      "cta": "Apsilankyti Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Oficialus Big Ambitions Discord",
+      "description": "Prisijunkite prie oficialios Big Ambitions bendruomenės Discord platformoje, kad galėtumėte bendrauti su kitais žaidėjais, užduoti klausimus, dalytis idėjomis ir sekti žaidimo naujienas.",
+      "cta": "Prisijungti prie Discord"
+    },
+    "opensInNewTab": "(atidaroma naujame skirtuke)",
+    "suggestion": "Žinote dar vieną naudingą Big Ambitions išteklių?",
+    "suggestCta": "Pasiūlykite jį per mūsų kontaktų formą."
   }
 }

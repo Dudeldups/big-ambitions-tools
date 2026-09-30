@@ -284,7 +284,8 @@
       "hourly": "시간당",
       "daily": "일별",
       "weekly": "주별"
-    }
+    },
+    "resources": "자료"
   },
   "counts": {
     "palletShelf": "{count, plural, one {팔레트 선반} other {팔레트 선반들}}",
@@ -483,7 +484,8 @@
     "qotd": "홈페이지에 프레드의 '오늘의 명언' 추가",
     "update11": "최신 두 버전을 지원하기 위한 게임 데이터 버전 관리 추가",
     "update10": "Big Ambitions 1.0으로 업데이트하고 재료를 창고 그룹으로만 주문하는 기능을 추가했습니다",
-    "update12": "공장 세금 계산을 업데이트하고 공유 창고 배송 계획을 개선했습니다"
+    "update12": "공장 세금 계산을 업데이트하고 공유 창고 배송 계획을 개선했습니다",
+    "update13": "<items><item>저장 데이터의 모든 공장을 포함하는 주간 구매 목록 추가 (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>저장 데이터와 앱 설정을 파일로 백업하고 복원 (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>구매 안내와 번역 개선.</item></items>"
   },
   "database": {
     "intro": {
@@ -506,6 +508,16 @@
     },
     "vehicles": {
       "caption": "짐을 가득 채우고 싶어, 아니면 그냥 제일 빠른 차를 원해? 여기서 다 찾을 수 있어. 운전자 스킬은 {deliveryDriver}를 말하고, 목적지를 최대로 찍으려면 {logisticsManager} 스킬이 100%여야 해."
+    },
+    "details": {
+      "unavailable": "이 항목은 게임 버전 {version}에서 사용할 수 없습니다.",
+      "noIngredients": "이 제품의 레시피 데이터가 없습니다.",
+      "noProducts": "이 게임 버전에서는 이 재료를 사용하는 제품이 없습니다.",
+      "usedInProducts": "이 재료를 사용하는 제품",
+      "oneOf": "다음 중 하나",
+      "dialogDescription": "{name} 데이터베이스 세부 정보",
+      "backToOverview": "목록으로 돌아가기",
+      "noWorkstationProducts": "이 게임 버전에서는 이 작업대에서 생산되는 제품이 없습니다."
     }
   },
   "tools": {
@@ -529,17 +541,23 @@
       "gameVersionNotice": {
         "title": "버전별 게임 데이터",
         "desc": "이제 저장 데이터에 버전 정보가 적용돼요. <link>개요</link>에서 각 저장 데이터의 버전을 직접 수정할 수 있어요."
-      }
+      },
+      "backupHint": "플레이 내역, 공장, 앱 설정을 백업 파일로 기기에 저장할 수 있어요. 이 파일을 사용하면 나중에 데이터를 복원하거나 다른 기기로 옮길 수 있어요.",
+      "backupButton": "데이터 백업 및 복원"
     },
     "playthroughDetail": {
       "desc": "제국의 생산 통계를 여기서 확인할 수 있어요. '공장' 페이지에서 공장 현황을 확인하고, 생산 라인에 필요한 주문 품목 등을 관리해 보세요. 공장 계획기에서는 생산 통계와 주문량 등 모든 세부 정보를 볼 수 있어요.",
       "productionOverview": "주간 생산 개요",
-      "noProductionData": "아직 데이터가 없어요. 공장을 만들어서 여기에 생산 통계를 확인하세요."
+      "noProductionData": "아직 데이터가 없어요. 공장을 만들어서 여기에 생산 통계를 확인하세요.",
+      "shoppingList": {
+        "title": "저장 데이터 전체 구매 목록",
+        "desc": "이 목록은 이 저장 데이터의 모든 공장에 필요한 주간 재료를 합산합니다. 모든 그룹과 그룹에 속하지 않은 공장도 포함하며, 영업시간과 생산 한도를 반영합니다."
+      }
     },
     "factories": {
       "title": "내 공장",
       "desc": "여기서 공장 목록을 확인할 수 있어요. 공장을 편집하거나 삭제하고, 새 공장을 위해 현재 값을 복사할 수도 있어요. 공장별 상세 정보와 구매 목록 등을 보려면 해당 카드를 클릭하세요.",
-      "desc1": "아래 '그룹 생성' 버튼을 눌러 공장들을 하나로 묶어보세요. 한눈에 모아보고 그룹으로 관리할 수 있어 정말 편해요. 중앙 창고를 통해 여러 공장에 재료를 공급한다면 특히 유용하죠. 추가한 팔레트 선반 수에 따라 각 공장별 배송 계획도 추천해 드려요.",
+      "desc1": "같은 창고에서 공급받는 공장들을 그룹으로 끌어다 놓으세요. 공장의 구매 담당자 수를 0으로 설정하면 주간 수요 전체를 창고에서 중앙 구매합니다. 자체 구매 담당자가 있으면 공장은 선반에 들어가는 부분을 직접 구매하고 창고는 나머지를 구매합니다.",
       "noFactories": "저장 데이터에 공장이 없어. 시작하려면 하나 만들어봐!",
       "notFound": {
         "title": "공장을 찾을 수 없어요",
@@ -550,14 +568,16 @@
     "factoryDetail": {
       "editBtn": "공장 편집",
       "shoppingList": {
-        "title": "장보기 목록",
-        "desc": "공장이 풀 가동되려면 매주 이게 필요해요."
+        "title": "주간 재료 수요",
+        "desc": "생산 한도를 고려한 공장의 일주일간 전체 재료 소비량입니다. 아래 구매 안내를 보고 어디로 주문할지 결정하세요."
       },
       "splitShoppingList": {
         "title": "분할 장보기 목록",
         "desc": "주문을 나누려면 이 재료들을 공장으로 바로 주문해봐. {shelfAmount}개의 팔레트 선반에 담을 수 있는 최대 양이야. 생산하는 박스 수도 계산되어 있어. 일주일치 생산량을 다 보관하려면 {requiredAmount}개의 선반이 필요할 거야.",
         "desc1": "나머지는 하나 이상의 별도 구매 담당자를 통해 창고로 주문해야 해요. <link>공장 개요</link>로 돌아가 그룹을 만들어 해당 창고에 주문할 항목의 전체 목록을 확인해 보세요. 각 공장별 배송 계획도 확인할 수 있어요."
-      }
+      },
+      "centralPurchasingNote": "이 공장은 중앙 구매를 사용합니다. 공장 그룹에 추가하고 그룹의 장보기 목록으로 모든 재료를 창고에 주문하세요. 그룹의 배송 계획이 매일 공장에 공급하므로 같은 재료를 공장에 직접 이중 주문하지 마세요.",
+      "splitPurchasingNote": "이 공장에는 자체 구매 담당자가 있습니다. 아래에 분할 장보기 목록이 표시되면 공장의 직접 주간 주문에는 그 목록을, 창고의 나머지 부분에는 그룹 목록을 사용하세요. 모든 재료가 공장에 들어가면 주간 수요 전체를 직접 주문하세요."
     },
     "playthroughForm": {
       "title": "새 저장 데이터 만들기",
@@ -577,20 +597,23 @@
     "factoryGroups": {
       "buttonDesc": "그룹 생성",
       "title": "공장 그룹",
-      "desc": "제품 카테고리별로 공장을 그룹화해서 한눈에 확인할 수 있어요. 그룹화된 공장에 팔레트 선반이 부족하면, 주문 목록에서 나머지를 채우기 위해 각 공장과 창고에 무엇을 더 주문해야 하는지 알려줄 거예요. 배송 창에서도 각 공장으로 보낼 물품을 바로 확인할 수 있어요.",
+      "desc": "같은 창고에서 공급받는 공장들을 그룹으로 묶어 주간 창고 장보기 목록을 합치고 일일 배송을 확인하세요. 구매 담당자가 없으면 중앙 구매를 사용하고, 자체 담당자가 있으면 직접 구매한 뒤 나머지를 창고에서 공급받습니다. 두 방식을 한 그룹에서 함께 사용할 수 있어요.",
       "groupEmpty": "이 그룹에는 공장이 없어요. 공장 카드를 여기로 끌어다 놓아 추가해 보세요.",
       "ungroupedTitle": "그룹화되지 않은 공장",
       "ungroupedEmpty": "여기는 아직 비어 있어요. 공장 카드를 여기로 드래그하거나 새 공장을 만들어 보세요.",
       "deliveries": {
         "buttonDesc": "배송",
         "title": "배송 계획",
-        "descNeeded": "이 그룹 공장들의 배송 계획이에요. 공유 창고에서 이 그룹의 모든 공장에 물량을 공급하려면 팔레트 선반 {amount}개가 필요해요.",
-        "descEnough": "모든 공장이 필요한 재료를 보관할 만큼 충분한 팔레트 선반을 가지고 있습니다."
+        "descNeeded": "이 창고에서 각 공장으로 보내는 일일 배송입니다. 중앙 구매는 하루 재료 수요 전체를 공급하고, 자체 구매 담당자가 있으면 창고의 일일 부분만 공급합니다. 수량은 정수 단위로 올림합니다. 창고의 주간 재료에 필요한 팔레트 선반: {amount}.",
+        "descEnough": "이 공장들은 모든 재료를 직접 구매하므로 창고 배송이 필요하지 않습니다."
       },
       "shoppingList": {
         "title": "그룹 구매 목록",
-        "desc": "이 그룹 내 선반이 부족한 공장에 필요한 모든 재료를 확인할 수 있어요. 공장의 현재 선반 수량을 기준으로 계산해서, 나머지는 별도 창고로 바로 주문할 수 있게 도와줘요.<br></br>창고에 필요한 선반: <strong>{amount}</strong>"
-      }
+        "desc": "이 재료들을 매주 그룹의 창고에 주문하세요. 중앙 구매를 사용하는 공장은 7일간 수요 전체가 포함됩니다. 자체 구매 담당자가 있는 공장은 창고의 나머지 부분만 포함되므로, 직접 구매할 부분은 공장의 분할 장보기 목록으로 주문하세요.<br></br>창고의 주간 재료에 필요한 팔레트 선반: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "이 재료들을 매주 그룹의 창고에 주문하세요. 중앙 구매를 사용하는 공장은 7일간 수요 전체가 포함됩니다. 자체 구매 담당자가 있는 공장은 창고의 나머지 부분만 포함되므로, 직접 구매할 부분은 공장의 분할 장보기 목록으로 주문하세요.",
+      "warehouseDeliveryDesc": "이 창고에서 각 공장으로 보내는 일일 배송입니다. 중앙 구매는 하루 재료 수요 전체를 공급하고, 자체 구매 담당자가 있으면 창고의 일일 부분만 공급합니다. 수량은 정수 단위로 올림합니다.",
+      "warehouseShelvesLabel": "창고의 주간 재료에 필요한 팔레트 선반:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "버전 1.0에서는 원자재와 직원 임금이 과세 소득을 줄여 줘요. 공장 장비, 팔레트 선반, 공제 대상 배송 차량은 구매 시 세금 공제를 받을 수 있지만, 일회성 공제는 이 반복 세금 추정치에 포함되지 않아요.",
@@ -600,7 +623,7 @@
         "legend": "공장 정보",
         "name": "공장 이름",
         "calcBasis": "계산 기준",
-        "palletDesc": "이 공장의 팔레트 선반 개수를 설정해 주세요. 0으로 설정하면 모든 재료를 대신 창고 그룹으로 주문합니다.",
+        "palletDesc": "이 공장에 실제로 있는 팔레트 선반 수를 입력하세요. 일일 배송의 임시 보관용으로 사용하는 선반도 포함합니다.",
         "dailyAmount": "일일 배송에는 <strong>{count}</strong> {object}가 필요해요.",
         "weeklyAmount": "주간 배송에는 <strong>{count}</strong> {object} 가 필요합니다.",
         "shelfExplanation": "작업대를 하나라도 추가해야 필요한 팔레트 선반 수가 보여요.",
@@ -747,13 +770,62 @@
       "description": "{gameName} 팬들을 위한 도구! 공장 계획, 생산 통계 계산, 배송 관리, 게임 데이터 확인까지 한 번에 해결하세요."
     },
     "database": {
-      "description": "{gameName}의 제품, 기계, 차량, 수익 계산 등 상세한 게임 데이터를 찾아보세요."
+      "description": "{gameName}의 제품, 기계, 차량, 수익 계산 등 상세한 게임 데이터를 찾아보세요.",
+      "productDescription": "{gameName}의 {name}: 가격, 생산 속도, 작업대, 레시피 재료와 수량.",
+      "ingredientDescription": "{gameName}의 {name}: 수입 가격, 포장 수량, 수입업체, 이 재료를 사용하는 제품.",
+      "workstationDescription": "{gameName}의 {name}: 필요한 기계, 구매 비용, 이 작업대에서 생산하는 제품."
     },
     "tools": {
       "description": "{gameName} 경제 마스터하기! 정교한 공장 계획부터 복잡한 물류 관리까지—제국 확장에 필요한 데이터를 확인해 봐."
     },
     "playthroughs": {
       "description": "{gameName} 저장 데이터를 관리하고 비교해 봐. 난이도별 진행 상황을 확인하고, 생산 통계를 분석해서 플레이를 최적화해 봐."
+    },
+    "resources": {
+      "description": "BA Maps, Bigger Ambitions, Big Ambitions 공식 Discord 등 유용한 Big Ambitions 커뮤니티 자료를 찾아보세요."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "설정 백업 및 복원",
+    "dialogTriggerSrOnly": "설정 백업 및 복원",
+    "dialogTitle": "설정 백업 및 복원",
+    "dialogDescription": "저장된 플레이 내역, 공장, 앱 설정을 백업하거나 복원합니다.",
+    "exportTitle": "설정 내보내기",
+    "exportDescription": "데이터를 JSON 백업 파일로 다운로드합니다.",
+    "exportButton": "내보내기",
+    "importTitle": "설정 가져오기",
+    "importDescription": "저장된 데이터를 JSON 백업 파일의 데이터로 대체합니다.",
+    "importButton": "가져오기",
+    "exportSuccess": "설정을 성공적으로 내보냈습니다!",
+    "exportError": "설정을 내보내지 못했습니다.",
+    "importSuccess": "설정을 성공적으로 가져왔습니다!",
+    "importError": "설정을 가져오지 못했습니다. JSON 파일을 확인해 주세요."
+  },
+  "resources": {
+    "title": "Big Ambitions 자료",
+    "intro": "Big Ambitions 플레이어에게 유용한 웹사이트, 도구, 커뮤니티를 소개합니다.",
+    "badges": {
+      "community": "커뮤니티 프로젝트",
+      "official": "공식"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "인터랙티브 3D 지도로 Big Ambitions를 탐험하세요. 건물, 사업체, 관심 장소를 찾고 자신의 게임 데이터를 가져와 플레이 상황에 맞는 지도를 볼 수 있습니다.",
+      "cta": "BA Maps 둘러보기"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "게임에 대한 추가 정보를 제공하는 또 하나의 유용한 Big Ambitions 커뮤니티 사이트입니다. 꼭 방문해 보세요!",
+      "cta": "Bigger Ambitions 방문"
+    },
+    "discord": {
+      "title": "Big Ambitions 공식 Discord",
+      "description": "Discord의 Big Ambitions 공식 커뮤니티에 참여해 다른 플레이어와 대화하고, 질문하고, 아이디어를 공유하며 게임 소식을 확인하세요.",
+      "cta": "Discord 참여"
+    },
+    "opensInNewTab": "(새 탭에서 열립니다)",
+    "suggestion": "다른 유용한 Big Ambitions 자료를 알고 계신가요?",
+    "suggestCta": "문의 양식을 통해 추천해 주세요."
   }
 }

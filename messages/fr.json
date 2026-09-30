@@ -284,7 +284,8 @@
       "hourly": "Par heure",
       "daily": "Par jour",
       "weekly": "Par semaine"
-    }
+    },
+    "resources": "Ressources"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Rayonnage à palettes} other {Rayonnages à palettes}}",
@@ -483,7 +484,8 @@
     "qotd": "Ajout de la 'Citation du jour' de Fred à l'accueil",
     "update11": "Versionnage des données de jeu ajouté pour prendre en charge les deux versions les plus récentes",
     "update10": "Mis à jour pour Big Ambitions 1.0 et ajout des commandes d'ingrédients uniquement vers le groupe d'entrepôt",
-    "update12": "Calculs fiscaux des usines mis à jour et plans de livraison depuis les entrepôts partagés améliorés"
+    "update12": "Calculs fiscaux des usines mis à jour et plans de livraison depuis les entrepôts partagés améliorés",
+    "update13": "<items><item>Ajout d’une liste d’achats hebdomadaire regroupant toutes les usines d’une partie (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Sauvegarde tes parties et les paramètres de l’application dans un fichier, puis restaure-les (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Amélioration des instructions d’achat et des traductions.</item></items>"
   },
   "database": {
     "intro": {
@@ -506,6 +508,16 @@
     },
     "vehicles": {
       "caption": "Un max de cargo ou juste un bolide ? Tu trouveras ton bonheur ici. Le skill du chauffeur dépend de ton {deliveryDriver}, et pour le max de destinations, il te faut un {logisticsManager} à 100 % de skill."
+    },
+    "details": {
+      "unavailable": "Cet élément n’est pas disponible dans la version {version} du jeu.",
+      "noIngredients": "Aucune donnée de recette n’est disponible pour ce produit.",
+      "noProducts": "Aucun produit n’utilise cet ingrédient dans cette version du jeu.",
+      "usedInProducts": "Produits utilisant cet ingrédient",
+      "oneOf": "Une des options",
+      "dialogDescription": "Détails de la base de données pour {name}",
+      "backToOverview": "Retour à la vue d’ensemble",
+      "noWorkstationProducts": "Aucun produit n’est fabriqué à ce poste de travail dans cette version du jeu."
     }
   },
   "tools": {
@@ -529,17 +541,23 @@
       "gameVersionNotice": {
         "title": "Données de jeu versionnées",
         "desc": "Les parties utilisent désormais des données de jeu versionnées. Tu peux modifier la version du jeu pour chaque partie dans la <link>vue d'ensemble</link>."
-      }
+      },
+      "backupHint": "Enregistre tes parties, tes usines et les paramètres de l’application dans un fichier de sauvegarde sur ton appareil. Ce fichier te permet de restaurer tes données plus tard ou de les transférer sur un autre appareil.",
+      "backupButton": "Sauvegarder et restaurer les données"
     },
     "playthroughDetail": {
       "desc": "C'est ici que tu peux consulter les statistiques de production de ton empire. Va sur la page des usines pour obtenir un aperçu, suivre les articles à commander pour tes lignes de production et plus encore. Le planificateur d'usine t'affichera tous les détails sur les statistiques de production, les quantités à commander et plus encore.",
       "productionOverview": "Aperçu de la production hebdomadaire",
-      "noProductionData": "Aucune donnée disponible pour l'instant. Crée des usines et tu verras apparaître tes statistiques de production ici."
+      "noProductionData": "Aucune donnée disponible pour l'instant. Crée des usines et tu verras apparaître tes statistiques de production ici.",
+      "shoppingList": {
+        "title": "Liste d’achats de la partie",
+        "desc": "Cette liste regroupe les besoins hebdomadaires en ingrédients de toutes les usines de cette partie, y compris tous les groupes et les usines non regroupées. Elle tient compte des heures d’ouverture et des limites de production."
+      }
     },
     "factories": {
       "title": "Tes usines",
       "desc": "Un aperçu de tes usines. Tu peux les modifier ou les supprimer, et aussi copier les valeurs actuelles pour créer une nouvelle usine. Pour voir plus de détails sur chaque usine, y compris une liste d'achats, clique simplement sur la carte correspondante.",
-      "desc1": "Tu peux aussi les regrouper en cliquant sur le bouton « Créer un groupe » ci-dessous. Cela te permet de voir ces usines au même endroit et de les gérer comme un groupe. Utile si tu utilises un entrepôt central pour fournir des ingrédients à plusieurs usines. En fonction du nombre de rayonnages à palettes que tu as ajoutés, un plan de livraison sera proposé pour chaque usine.",
+      "desc1": "Crée un groupe et glisse dedans les usines approvisionnées par un même entrepôt. Mets le nombre d’agents d’achats d’une usine à 0 pour centraliser l’achat de tous ses besoins hebdomadaires. Avec son propre agent d’achats, l’usine achète la part qui tient sur ses rayonnages et l’entrepôt achète le reste.",
       "noFactories": "Il n'y a pas encore d'usines dans ta partie. Crée-en une pour commencer !",
       "notFound": {
         "title": "Usine introuvable",
@@ -550,14 +568,16 @@
     "factoryDetail": {
       "editBtn": "Modifier l'usine",
       "shoppingList": {
-        "title": "Liste de courses",
-        "desc": "Voici ce dont ton usine a besoin chaque semaine pour fonctionner à pleine capacité."
+        "title": "Besoins hebdomadaires en ingrédients",
+        "desc": "Il s’agit de la consommation totale d’ingrédients de l’usine pour une semaine, en tenant compte des limites de production. Les consignes d’achat ci-dessous indiquent où les commander."
       },
       "splitShoppingList": {
         "title": "Liste de courses scindée",
         "desc": "Commande ces ingrédients directement à ton usine pour répartir la commande. C'est la quantité maximale que tes {shelfAmount} rayonnages à palettes peuvent contenir. Cela prend également en compte le nombre de caisses que tu produis. Tu aurais besoin de {requiredAmount} rayonnages pour stocker tous les ingrédients nécessaires à une semaine complète de production.",
         "desc1": "Le reste doit être commandé vers un entrepôt par un ou plusieurs agents d'achat distincts. Retourne à l'<link>aperçu des usines</link> et crée un groupe pour voir la liste complète de ce qu'il faut commander pour cet entrepôt. Tu y verras aussi le plan de livraison pour chaque usine."
-      }
+      },
+      "centralPurchasingNote": "Cette usine utilise les achats centralisés. Ajoute-la à un groupe d’usines et utilise la liste d’achats du groupe pour commander tous les ingrédients à l’entrepôt. Le plan de livraison du groupe approvisionne l’usine chaque jour ; ne passe pas une seconde commande d’ingrédients directement à l’usine.",
+      "splitPurchasingNote": "Cette usine a son propre agent d’achats. Si une liste de courses scindée apparaît ci-dessous, utilise-la pour la commande hebdomadaire directe de l’usine et la liste d’achats du groupe pour la part restante de l’entrepôt. Si tout tient dans l’usine, commande directement l’ensemble de ses besoins hebdomadaires."
     },
     "playthroughForm": {
       "title": "Créer une nouvelle partie",
@@ -577,20 +597,23 @@
     "factoryGroups": {
       "buttonDesc": "Créer un groupe",
       "title": "Groupes d'usines",
-      "desc": "Tu peux regrouper les usines pour avoir un meilleur aperçu par catégorie de produits. Si les usines regroupées n'ont pas suffisamment de rayonnages à palettes, la liste d'achats t'indiquera ce qu'il faut commander pour chaque usine ainsi que pour l'entrepôt afin de couvrir le reste. Le menu des livraisons t'indiquera également ce qui doit être envoyé à chaque usine.",
+      "desc": "Regroupe les usines approvisionnées par un même entrepôt pour réunir leurs listes d’achats hebdomadaires à l’entrepôt et voir les livraisons quotidiennes. Sans agent d’achats, les achats sont centralisés ; avec leur propre agent, les usines achètent directement et utilisent l’entrepôt pour le reste. Les deux stratégies peuvent coexister dans un groupe.",
       "groupEmpty": "Aucune usine dans ce groupe. Glisse une carte d'usine ici pour l'ajouter.",
       "ungroupedTitle": "Usines non regroupées",
       "ungroupedEmpty": "Rien de spécial par ici ! Glisse une carte d'usine ici ou crée une toute nouvelle usine.",
       "deliveries": {
         "buttonDesc": "Livraisons",
         "title": "Plan de livraison",
-        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Un entrepôt partagé aura besoin de {amount} rayonnages à palettes pour approvisionner toutes les usines de ce groupe.",
-        "descEnough": "Toutes les usines disposent de suffisamment de rayonnages à palettes pour stocker tous les ingrédients nécessaires."
+        "descNeeded": "Livraisons quotidiennes de cet entrepôt à chaque usine. Les achats centralisés couvrent tous les besoins quotidiens en ingrédients ; avec un agent d’achats propre à l’usine, seule la part quotidienne de l’entrepôt est livrée. Les quantités sont arrondies à l’unité supérieure. Rayonnages à palettes nécessaires pour les ingrédients hebdomadaires de l’entrepôt : {amount}.",
+        "descEnough": "Ces usines achètent tous leurs ingrédients directement et n’ont pas besoin de livraisons de l’entrepôt."
       },
       "shoppingList": {
         "title": "Liste d'achats du groupe",
-        "desc": "Voici tous les ingrédients nécessaires pour approvisionner les usines de ce groupe qui ne disposent pas de suffisamment de rayonnages sur place. L'outil calcule cela en fonction des rayonnages disponibles dans les usines afin que tu puisses commander le reste vers un entrepôt séparé.<br></br>Rayonnages nécessaires dans l'entrepôt : <strong>{amount}</strong>"
-      }
+        "desc": "Commande ces ingrédients chaque semaine à l’entrepôt du groupe. Les usines aux achats centralisés y ajoutent tous leurs besoins pour 7 jours. Pour les usines avec leur propre agent d’achats, seule la part restante de l’entrepôt est incluse ; commande leur part directe depuis la liste de courses scindée de l’usine.<br></br>Rayonnages à palettes nécessaires pour les ingrédients hebdomadaires de l’entrepôt : <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Commande ces ingrédients chaque semaine à l’entrepôt du groupe. Les usines aux achats centralisés y ajoutent tous leurs besoins pour 7 jours. Pour les usines avec leur propre agent d’achats, seule la part restante de l’entrepôt est incluse ; commande leur part directe depuis la liste de courses scindée de l’usine.",
+      "warehouseDeliveryDesc": "Livraisons quotidiennes de cet entrepôt à chaque usine. Les achats centralisés couvrent tous les besoins quotidiens en ingrédients ; avec un agent d’achats propre à l’usine, seule la part quotidienne de l’entrepôt est livrée. Les quantités sont arrondies à l’unité supérieure.",
+      "warehouseShelvesLabel": "Rayonnages à palettes nécessaires pour les ingrédients hebdomadaires de l’entrepôt :"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Dans la version 1.0, les matières premières et les salaires des employés réduisent le revenu imposable. L’équipement de l’usine, les rayonnages à palettes et les véhicules de livraison éligibles sont déductibles à l’achat, mais les déductions ponctuelles ne sont pas incluses dans cette estimation des impôts récurrents.",
@@ -600,7 +623,7 @@
         "legend": "Informations sur l'usine",
         "name": "Nom de l'usine",
         "calcBasis": "Base de calcul",
-        "palletDesc": "Indique combien de rayonnages à palettes sont disponibles dans cette usine. Définissez cette valeur sur 0 pour commander tous les ingrédients au groupe d'entrepôt.",
+        "palletDesc": "Indique le nombre de rayonnages à palettes réellement présents dans cette usine, y compris ceux utilisés comme réserve pour les livraisons quotidiennes.",
         "dailyAmount": "Pour la livraison quotidienne, il te faut <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pour la livraison hebdomadaire, il te faut <strong>{count}</strong> {object}.",
         "shelfExplanation": "Ajoute au moins un poste de travail pour afficher le nombre de rayonnages à palettes requis.",
@@ -747,13 +770,62 @@
       "description": "Des outils fan-made pour {gameName}. Planifie tes usines, calcule tes stats de production, gère tes plans de livraison et explore les données du jeu."
     },
     "database": {
-      "description": "Retrouve toutes les données détaillées du jeu : produits, machines, véhicules, calculs de profit et plus encore pour {gameName}."
+      "description": "Retrouve toutes les données détaillées du jeu : produits, machines, véhicules, calculs de profit et plus encore pour {gameName}.",
+      "productDescription": "{name} dans {gameName} : prix, cadence de production, poste de travail et ingrédients de la recette avec quantités.",
+      "ingredientDescription": "{name} dans {gameName} : prix d’importation, quantité par colis, importateurs et produits utilisant cet ingrédient.",
+      "workstationDescription": "{name} dans {gameName} : machines nécessaires, coûts d’achat et produits fabriqués à ce poste de travail."
     },
     "tools": {
       "description": "Domine l'économie de {gameName}. De la planification d'usines avancée à la gestion logistique complexe — récupère les données nécessaires pour bâtir ton empire."
     },
     "playthroughs": {
       "description": "Gère et compare tes parties à {gameName}. Suis ta progression selon la difficulté, analyse tes stats de production et optimise ton business."
+    },
+    "resources": {
+      "description": "Découvrez des ressources communautaires utiles pour Big Ambitions, dont BA Maps, Bigger Ambitions et le Discord officiel de Big Ambitions."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Sauvegarder et restaurer les paramètres",
+    "dialogTriggerSrOnly": "Sauvegarder et restaurer les paramètres",
+    "dialogTitle": "Sauvegarder et restaurer les paramètres",
+    "dialogDescription": "Sauvegarde ou restaure tes parties enregistrées, tes usines et les paramètres de l’application.",
+    "exportTitle": "Exporter les paramètres",
+    "exportDescription": "Télécharge tes données sous forme de fichier de sauvegarde JSON.",
+    "exportButton": "Exporter",
+    "importTitle": "Importer les paramètres",
+    "importDescription": "Remplace tes données enregistrées par celles d’un fichier de sauvegarde JSON.",
+    "importButton": "Importer",
+    "exportSuccess": "Paramètres exportés avec succès !",
+    "exportError": "Échec de l'exportation des paramètres.",
+    "importSuccess": "Paramètres importés avec succès !",
+    "importError": "Échec de l’importation des paramètres. Vérifie le fichier JSON."
+  },
+  "resources": {
+    "title": "Ressources Big Ambitions",
+    "intro": "Des sites, outils et espaces communautaires utiles pour les joueurs de Big Ambitions.",
+    "badges": {
+      "community": "Projet communautaire",
+      "official": "Officiel"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Explorez Big Ambitions avec une carte 3D interactive. Trouvez des bâtiments, des entreprises et des lieux intéressants, puis importez vos propres données de jeu pour une vue plus personnalisée.",
+      "cta": "Explorer BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Un autre site communautaire utile consacré à Big Ambitions, avec des informations supplémentaires sur le jeu. Il mérite vraiment une visite !",
+      "cta": "Visiter Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Discord officiel de Big Ambitions",
+      "description": "Rejoignez la communauté officielle de Big Ambitions sur Discord pour discuter avec d’autres joueurs, poser des questions, partager vos idées et suivre les nouveautés du jeu.",
+      "cta": "Rejoindre Discord"
+    },
+    "opensInNewTab": "(s’ouvre dans un nouvel onglet)",
+    "suggestion": "Vous connaissez une autre ressource utile pour Big Ambitions ?",
+    "suggestCta": "Proposez-la via notre formulaire de contact."
   }
 }

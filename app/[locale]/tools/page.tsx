@@ -1,3 +1,4 @@
+import { SettingsBackupDialog } from "@/components/settings-backup-dialog";
 import DefaultHgroup from "@/components/deco/default-hgroup";
 import SectionSeparator from "@/components/deco/section-separator";
 import SectionWrapper from "@/components/deco/section-wrapper";
@@ -64,11 +65,22 @@ const Tools = () => {
           caption={t("playthroughs.desc")}
         />
 
-        <div className="bg-card shadow-accent border-destructive/50 mx-auto flex max-w-md flex-col items-center gap-4 rounded-lg border p-4 shadow-sm md:max-w-xl md:flex-row">
-          <div className="bg-destructive/10 text-foreground border-destructive/50 pointer-events-none rounded-md border p-1.5">
-            <TriangleAlert className="size-6" />
+        <div className="bg-card shadow-accent border-destructive/50 mx-auto w-full max-w-md space-y-4 rounded-lg border p-4 shadow-sm md:max-w-xl">
+          <div className="flex flex-col items-center gap-4 md:flex-row">
+            <div className="bg-destructive/10 text-foreground border-destructive/50 pointer-events-none shrink-0 rounded-md border p-1.5">
+              <TriangleAlert className="size-6" />
+            </div>
+            <p className="text-card-foreground">{t("playthroughs.warning")}</p>
           </div>
-          <p className="text-card-foreground">{t("playthroughs.warning")}</p>
+
+          <div className="border-border/60 space-y-3 border-t pt-4">
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {t("playthroughs.backupHint")}
+            </p>
+            <SettingsBackupDialog
+              triggerLabel={t("playthroughs.backupButton")}
+            />
+          </div>
         </div>
 
         <SectionSeparator />

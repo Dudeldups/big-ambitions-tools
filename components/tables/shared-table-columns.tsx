@@ -19,6 +19,7 @@ import {
 import { Translator } from "@/lib/types";
 import { Skeleton } from "../ui/skeleton";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 export const createTranslatedColumn = <T, K extends keyof T>(
   t: Translator,
@@ -53,7 +54,15 @@ export const createColumnWithImage = <T extends { itemName: string }>(
   t: Translator,
   accessorKey: keyof T,
   translationKeyPrefix: string,
-  { enableHiding = true, enableSorting = true } = {},
+  {
+    enableHiding = true,
+    enableSorting = true,
+    getHref,
+  }: {
+    enableHiding?: boolean;
+    enableSorting?: boolean;
+    getHref?: (row: T) => string;
+  } = {},
 ): ColumnDef<T> => ({
   id: String(accessorKey),
   accessorKey,
@@ -76,18 +85,30 @@ export const createColumnWithImage = <T extends { itemName: string }>(
   cell: ({ row, getValue }) => {
     const itemName = row.original.itemName;
     const translatedValue = getValue<string>();
-
-    return (
-      <div className="flex items-center gap-2">
+    const content = (
+      <>
         <Image
           src={`/assets/gameImages/${itemName}.png`}
-          alt={itemName}
+          alt=""
+          aria-hidden="true"
           width={24}
           height={24}
           className="object-contain"
         />
         <span>{translatedValue}</span>
-      </div>
+      </>
+    );
+
+    return getHref ? (
+      <Link
+        href={getHref(row.original)}
+        scroll={false}
+        className="focus-visible:ring-ring inline-flex items-center gap-2 rounded-sm underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+      >
+        {content}
+      </Link>
+    ) : (
+      <div className="flex items-center gap-2">{content}</div>
     );
   },
 

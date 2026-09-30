@@ -284,7 +284,8 @@
       "hourly": "Por hora",
       "daily": "Diario",
       "weekly": "Semanal"
-    }
+    },
+    "resources": "Recursos"
   },
   "counts": {
     "palletShelf": "{count, plural, one {Estante de palets} other {Estantes de palets}}",
@@ -483,7 +484,8 @@
     "qotd": "Añadida la 'Frase del día' de Fred a la página de inicio",
     "update11": "Añadido versionado de datos del juego para admitir las dos versiones más recientes",
     "update10": "Actualizado para Big Ambitions 1.0 y añadidos los pedidos de ingredientes solo al grupo de almacén",
-    "update12": "Actualizados los cálculos de impuestos de las fábricas y mejorados los planes de entrega desde almacenes compartidos"
+    "update12": "Actualizados los cálculos de impuestos de las fábricas y mejorados los planes de entrega desde almacenes compartidos",
+    "update13": "<items><item>Añadida una lista de compras semanal para todas las fábricas de una partida (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Crea una copia de seguridad de las partidas y los ajustes de la aplicación en un archivo y restáuralos (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Mejoradas las instrucciones de compra y las traducciones.</item></items>"
   },
   "database": {
     "intro": {
@@ -506,6 +508,16 @@
     },
     "vehicles": {
       "caption": "¿Buscas capacidad de carga máxima o simplemente el viaje más rápido? Aquí lo encontrarás. La habilidad del conductor depende de tu {deliveryDriver}, y para el máximo número de destinos necesitas un {logisticsManager} con un nivel de habilidad al 100%."
+    },
+    "details": {
+      "unavailable": "Este artículo no está disponible en la versión {version} del juego.",
+      "noIngredients": "No hay datos de receta disponibles para este producto.",
+      "noProducts": "Ningún producto utiliza este ingrediente en esta versión del juego.",
+      "usedInProducts": "Productos que utilizan este ingrediente",
+      "oneOf": "Una de las opciones",
+      "dialogDescription": "Detalles de la base de datos de {name}",
+      "backToOverview": "Volver a la vista general",
+      "noWorkstationProducts": "En esta versión del juego no se fabrica ningún producto en esta estación de trabajo."
     }
   },
   "tools": {
@@ -529,17 +541,23 @@
       "gameVersionNotice": {
         "title": "Datos de juego versionados",
         "desc": "Las partidas ahora usan datos de juego versionados. Puedes cambiar la versión del juego para cada partida en la <link>vista general</link>."
-      }
+      },
+      "backupHint": "Guarda tus partidas, fábricas y ajustes de la aplicación en un archivo de copia de seguridad en tu dispositivo. Puedes usarlo para restaurar tus datos más adelante o transferirlos a otro dispositivo.",
+      "backupButton": "Crear copia de seguridad y restaurar datos"
     },
     "playthroughDetail": {
       "desc": "Aquí puedes ver las estadísticas de producción de tu imperio. Ve a la página de fábricas para ver un resumen, seguir los artículos que necesitas pedir para tus líneas de producción y más. El planificador de fábricas te mostrará todos los detalles sobre estadísticas de producción, cantidades de pedido y más.",
       "productionOverview": "Resumen semanal de producción",
-      "noProductionData": "Aún no hay datos disponibles. Crea fábricas y verás tus estadísticas de producción aquí."
+      "noProductionData": "Aún no hay datos disponibles. Crea fábricas y verás tus estadísticas de producción aquí.",
+      "shoppingList": {
+        "title": "Lista de compras de la partida",
+        "desc": "Esta lista reúne las necesidades semanales de ingredientes de todas las fábricas de esta partida, incluidos todos los grupos y las fábricas sin grupo. Tiene en cuenta los horarios de apertura y los límites de producción."
+      }
     },
     "factories": {
       "title": "Tus fábricas",
       "desc": "Aquí tienes un resumen de tus fábricas. Puedes editarlas o eliminarlas y también copiar los valores actuales para una nueva fábrica. Para ver más detalles sobre cada fábrica, incluida una lista de compras, simplemente haz clic en su tarjeta correspondiente.",
-      "desc1": "También puedes agruparlas pulsando el botón 'Crear grupo' de abajo. Así las verás todas juntas y podrás gestionarlas como un grupo. Te viene genial si usas un almacén central para abastecer varias fábricas con ingredientes. Según la cantidad de estanterías para palés que añadas, te sugerirá un plan de entregas para cada fábrica.",
+      "desc1": "Crea un grupo y arrastra a él las fábricas abastecidas por un mismo almacén. Pon el número de agentes de compras de una fábrica en 0 para comprar de forma centralizada toda su demanda semanal. Con su propio agente de compras, la fábrica compra lo que cabe en sus estanterías y el almacén compra el resto.",
       "noFactories": "Aún no hay fábricas en tu partida. Crea una para empezar.",
       "notFound": {
         "title": "Fábrica no encontrada",
@@ -550,14 +568,16 @@
     "factoryDetail": {
       "editBtn": "Editar fábrica",
       "shoppingList": {
-        "title": "Lista de compras",
-        "desc": "Esto es lo que tu fábrica necesita semanalmente para funcionar a plena capacidad."
+        "title": "Demanda semanal de ingredientes",
+        "desc": "Este es el consumo total de ingredientes de la fábrica durante una semana, teniendo en cuenta los límites de producción. Sigue las instrucciones de compra de abajo para decidir dónde pedirlos."
       },
       "splitShoppingList": {
         "title": "Lista de compras dividida",
         "desc": "Pide estos ingredientes directamente a tu fábrica para dividir el pedido. Esta es la cantidad máxima que pueden contener tus {shelfAmount} estanterías para palés. También tiene en cuenta el número de cajas que estás produciendo. Necesitarías {requiredAmount} estanterías para palés para almacenar todos los ingredientes para una semana completa de producción.",
         "desc1": "El resto debe ser pedido a un almacén por uno o varios agentes de compras separados. Vuelve a la <link>vista general de fábricas</link> y crea un grupo para ver la lista completa de lo que hay que pedir al almacén. También te mostrará el plan de entrega a cada fábrica."
-      }
+      },
+      "centralPurchasingNote": "Esta fábrica usa compras centralizadas. Añádela a un grupo de fábricas y utiliza la lista de compras del grupo para pedir todos los ingredientes al almacén. El plan de entregas del grupo abastece la fábrica a diario; no hagas un segundo pedido de ingredientes directamente a la fábrica.",
+      "splitPurchasingNote": "Esta fábrica tiene su propio agente de compras. Si abajo aparece una lista de compras dividida, úsala para el pedido semanal directo de la fábrica y la lista del grupo para la parte restante del almacén. Si todo cabe en la fábrica, pide directamente toda la demanda semanal."
     },
     "playthroughForm": {
       "title": "Crear una nueva partida",
@@ -577,20 +597,23 @@
     "factoryGroups": {
       "buttonDesc": "Crear grupo",
       "title": "Grupos de fábricas",
-      "desc": "Puedes agrupar fábricas para ver mejor cada categoría de producto. Si las fábricas del grupo no tienen suficientes estanterías para palés, la lista de pedidos te dirá qué pedir para cada fábrica y también para el almacén para completar el resto. El diálogo de entregas también te mostrará qué enviar a cada fábrica.",
+      "desc": "Agrupa fábricas abastecidas por un mismo almacén para combinar sus listas de compras semanales del almacén y ver las entregas diarias. Sin agente de compras, la compra es centralizada; con su propio agente, las fábricas compran directamente y usan el almacén para el resto. Ambas estrategias pueden combinarse en un grupo.",
       "groupEmpty": "No hay fábricas en este grupo. Arrastra una tarjeta de fábrica aquí para añadirla.",
       "ungroupedTitle": "Fábricas sin agrupar",
       "ungroupedEmpty": "Aquí no hay nada todavía. Arrastra una tarjeta de fábrica aquí o crea una nueva.",
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plan de entregas",
-        "descNeeded": "Planes de entrega para cada fábrica en este grupo. Un almacén compartido necesitará {amount} estanterías para palés para abastecer todas las fábricas de este grupo.",
-        "descEnough": "Todas las fábricas tienen suficientes estanterías para almacenar todos los ingredientes necesarios."
+        "descNeeded": "Entregas diarias de este almacén a cada fábrica. Las compras centralizadas cubren toda la demanda diaria de ingredientes; con un agente de compras propio, solo se entrega la parte diaria del almacén. Las cantidades se redondean hacia arriba a unidades enteras. Estanterías para palés necesarias para los ingredientes semanales del almacén: {amount}.",
+        "descEnough": "Estas fábricas compran todos sus ingredientes directamente y no necesitan entregas del almacén."
       },
       "shoppingList": {
         "title": "Lista de compras del grupo",
-        "desc": "Aquí tienes todos los ingredientes necesarios para abastecer las fábricas de este grupo que no tienen suficientes estanterías para palés disponibles allí. El cálculo se basa en las estanterías para palés existentes en las fábricas para que puedas pedir el resto a un almacén separado.<br></br>Estanterías para palés necesarias en el almacén: <strong>{amount}</strong>"
-      }
+        "desc": "Pide estos ingredientes al almacén del grupo cada semana. Las fábricas con compras centralizadas aportan toda su demanda de 7 días. Para las fábricas con su propio agente de compras, solo se incluye la parte restante del almacén; pide su parte directa desde la lista de compras dividida de la fábrica.<br></br>Estanterías para palés necesarias para los ingredientes semanales del almacén: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Pide estos ingredientes al almacén del grupo cada semana. Las fábricas con compras centralizadas aportan toda su demanda de 7 días. Para las fábricas con su propio agente de compras, solo se incluye la parte restante del almacén; pide su parte directa desde la lista de compras dividida de la fábrica.",
+      "warehouseDeliveryDesc": "Entregas diarias de este almacén a cada fábrica. Las compras centralizadas cubren toda la demanda diaria de ingredientes; con un agente de compras propio, solo se entrega la parte diaria del almacén. Las cantidades se redondean hacia arriba a unidades enteras.",
+      "warehouseShelvesLabel": "Estanterías para palés necesarias para los ingredientes semanales del almacén:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "En la versión 1.0, las materias primas y los salarios de los empleados reducen los ingresos imponibles. El equipamiento de fábrica, las estanterías para palés y los vehículos de reparto que cumplan los requisitos son deducibles al comprarlos, pero las deducciones únicas no se incluyen en esta estimación de impuestos recurrentes.",
@@ -600,7 +623,7 @@
         "legend": "Información de la fábrica",
         "name": "Nombre de la fábrica",
         "calcBasis": "Base del cálculo",
-        "palletDesc": "Define cuántas estanterías para palés hay disponibles en esta fábrica. Establece este valor en 0 para pedir todos los ingredientes al grupo de almacén.",
+        "palletDesc": "Introduce el número de estanterías para palés que hay físicamente en esta fábrica, incluidas las que sirven de reserva para las entregas diarias.",
         "dailyAmount": "Para la entrega diaria necesitas <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para la entrega semanal necesitas <strong>{count}</strong> {object}.",
         "shelfExplanation": "Añade al menos una estación de trabajo para ver el número necesario de estanterías para palés.",
@@ -747,13 +770,62 @@
       "description": "Herramientas de fans para {gameName}. Planifica fábricas, calcula estadísticas de producción, gestiona planes de entrega y explora los datos del juego."
     },
     "database": {
-      "description": "Explora datos detallados sobre productos, máquinas, vehículos, cálculos de beneficios y mucho más para {gameName}."
+      "description": "Explora datos detallados sobre productos, máquinas, vehículos, cálculos de beneficios y mucho más para {gameName}.",
+      "productDescription": "{name} en {gameName}: precios, ritmo de producción, estación de trabajo e ingredientes de la receta con cantidades.",
+      "ingredientDescription": "{name} en {gameName}: precio de importación, cantidad por paquete, importadores y productos que usan este ingrediente.",
+      "workstationDescription": "{name} en {gameName}: máquinas necesarias, costes de compra y productos fabricados en esta estación de trabajo."
     },
     "tools": {
       "description": "Domina la economía de {gameName}. Desde la planificación avanzada de fábricas hasta la gestión logística compleja: consigue los datos que necesitas para expandir tu imperio."
     },
     "playthroughs": {
       "description": "Gestiona y compara tus partidas de {gameName}. Controla tu progreso, analiza estadísticas y optimiza tu estrategia."
+    },
+    "resources": {
+      "description": "Descubre recursos útiles de la comunidad de Big Ambitions, como BA Maps, Bigger Ambitions y el Discord oficial de Big Ambitions."
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "Copia de seguridad y restauración de ajustes",
+    "dialogTriggerSrOnly": "Copia de seguridad y restauración de ajustes",
+    "dialogTitle": "Copia de seguridad y restauración de ajustes",
+    "dialogDescription": "Crea una copia de seguridad de tus partidas guardadas, fábricas y ajustes de la aplicación o restáuralos.",
+    "exportTitle": "Exportar ajustes",
+    "exportDescription": "Descarga tus datos como un archivo de copia de seguridad JSON.",
+    "exportButton": "Exportar",
+    "importTitle": "Importar ajustes",
+    "importDescription": "Reemplaza tus datos guardados con los datos de un archivo de copia de seguridad JSON.",
+    "importButton": "Importar",
+    "exportSuccess": "¡Ajustes exportados con éxito!",
+    "exportError": "Error al exportar los ajustes.",
+    "importSuccess": "¡Ajustes importados con éxito!",
+    "importError": "Error al importar los ajustes. Por favor, comprueba el archivo JSON."
+  },
+  "resources": {
+    "title": "Recursos de Big Ambitions",
+    "intro": "Sitios web, herramientas y comunidades útiles para jugadores de Big Ambitions.",
+    "badges": {
+      "community": "Proyecto comunitario",
+      "official": "Oficial"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Explora Big Ambitions con un mapa 3D interactivo. Encuentra edificios, negocios y puntos de interés, e importa tus propios datos del juego para obtener una vista más personalizada.",
+      "cta": "Explorar BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Otro sitio comunitario útil de Big Ambitions con información adicional sobre el juego. ¡Sin duda merece una visita!",
+      "cta": "Visitar Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Discord oficial de Big Ambitions",
+      "description": "Únete a la comunidad oficial de Big Ambitions en Discord para conversar con otros jugadores, hacer preguntas, compartir ideas y seguir las novedades del juego.",
+      "cta": "Unirse a Discord"
+    },
+    "opensInNewTab": "(se abre en una pestaña nueva)",
+    "suggestion": "¿Conoces otro recurso útil para Big Ambitions?",
+    "suggestCta": "Sugiérelo a través de nuestro formulario de contacto."
   }
 }

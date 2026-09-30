@@ -52,7 +52,9 @@ export const productsColumns = (
   };
 
   return [
-    createColumnWithImage(t, "itemName", "products"),
+    createColumnWithImage(t, "itemName", "products", {
+      getHref: (row) => `/database/products/${row.itemName}`,
+    }),
     createSourcePriceColumn(
       difficulty,
       displayPrices,

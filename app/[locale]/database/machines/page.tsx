@@ -14,6 +14,7 @@ import SectionSeparator from "@/components/deco/section-separator";
 import { useAppState } from "@/lib/hooks/useAppState";
 import { getGameData } from "@/lib/game/registry";
 import { DataTableSkeleton } from "@/components/cemetery/data-table-skeleton";
+import { Link } from "@/i18n/navigation";
 
 export default function MachinesPage() {
   const t = useTranslations();
@@ -52,7 +53,9 @@ export default function MachinesPage() {
 
           <SectionSeparator />
 
-          <DefaultHgroup title={t("general.workstations")} />
+          <div id="workstations" className="scroll-mt-8">
+            <DefaultHgroup title={t("general.workstations")} />
+          </div>
 
           <DataTable
             columns={workstationsColumns(t, machines)}
@@ -80,7 +83,13 @@ export default function MachinesPage() {
                     )}
                   >
                     <TableCell rowSpan={2} className="align-top">
-                      {t(`workstations.${itemName as WorkstationName}`)}
+                      <Link
+                        href={`/database/workstations/${itemName}`}
+                        scroll={false}
+                        className="focus-visible:ring-ring rounded-sm underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                      >
+                        {t(`workstations.${itemName as WorkstationName}`)}
+                      </Link>
                     </TableCell>
 
                     <TableCell>
@@ -126,7 +135,9 @@ export default function MachinesPage() {
             rowCount={8}
           />
           <SectionSeparator />
-          <DefaultHgroup title={t("general.workstations")} />
+          <div id="workstations" className="scroll-mt-8">
+            <DefaultHgroup title={t("general.workstations")} />
+          </div>
           <DataTableSkeleton
             className="mt-14 max-w-max"
             columnCount={3}

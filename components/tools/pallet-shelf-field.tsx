@@ -9,7 +9,6 @@ import { getPlaythroughGameData } from "@/lib/game/registry";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { useRichDefaults } from "@/lib/hooks/useRichDefaults";
 import { Check, CircleX, TriangleAlert } from "lucide-react";
-import messages from "@/messages/en.json";
 
 type Props = {
   className?: string;
@@ -55,7 +54,7 @@ export function PalletShelfField({ className, control, errors }: Props) {
               {t("general.palletShelves")}
             </FieldLabel>
             <FieldDescription>
-              {messages.tools.factoryPlanner.information.palletDesc}
+              {t("tools.factoryPlanner.information.palletDesc")}
             </FieldDescription>
 
             <Input

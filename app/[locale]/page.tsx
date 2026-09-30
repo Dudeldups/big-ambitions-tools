@@ -264,8 +264,7 @@ export default function Home() {
           {updateHistory
             .slice()
             .sort(
-              (a, b) =>
-                new Date(b.date).getTime() - new Date(a.date).getTime(),
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
             )
             .map((update, index) => (
               <li
@@ -275,13 +274,28 @@ export default function Home() {
                 )}
               >
                 <span className="bg-foreground/60 hidden size-2 rounded-full sm:block" />
-                <time className="text-muted-foreground relative text-sm whitespace-nowrap">
+                <time
+                  dateTime={update.date}
+                  className="text-muted-foreground relative text-sm whitespace-nowrap"
+                >
                   {format.dateTime(new Date(update.date), dateFormattingRules)}
                 </time>
 
-                <span className="min-w-0 leading-relaxed wrap-break-word">
-                  {tUpdates(update.id)}
-                </span>
+                <div className="min-w-0 leading-relaxed wrap-break-word">
+                  {tUpdates.rich(update.id, {
+                    items: (chunks) => (
+                      <ul className="list-disc space-y-2 pl-4">{chunks}</ul>
+                    ),
+                    item: (chunks) => <li>{chunks}</li>,
+                    shoppingPr: sLink(
+                      "https://github.com/Dudeldups/big-ambitions-tools/pull/1",
+                    ),
+                    backupPr: sLink(
+                      "https://github.com/Dudeldups/big-ambitions-tools/pull/2",
+                    ),
+                    contributor: sLink("https://github.com/FusRoDev"),
+                  })}
+                </div>
               </li>
             ))}
         </ul>

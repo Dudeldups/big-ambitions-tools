@@ -19,6 +19,9 @@ import { Translator } from "@/lib/types";
 import { DataTable } from "../tables/data-table";
 import { cn } from "@/lib/utils";
 import NoDataFound from "../no-data-found";
+import ImporterTable from "../tables/importer-table";
+import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
+import { mergeShoppingLists } from "@/lib/utils/mergeShoppingLists";
 
 type ProductRow = {
   itemName: string;
@@ -77,6 +80,13 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
     itemName: item.name.replace(/^products\./, ""),
   }));
 
+  const shoppingListData = mergeShoppingLists(
+    factories.flatMap(
+      (factory) =>
+        getFactorySupplyPlan(factory, difficulty, gameData).weeklyList,
+    ),
+  );
+
   const tableColumns = (t: Translator): ColumnDef<ProductRow>[] => [
     createColumnWithImage<ProductRow>(t, "itemName", "products"),
     createNumericColumn("amount"),
@@ -96,6 +106,23 @@ const EmpireOverview = ({ className }: EmpireOverviewProps) => {
         />
       ) : (
         <NoDataFound text={t("tools.playthroughDetail.noProductionData")} />
+      )}
+
+      {shoppingListData.length > 0 && (
+        <div className="mt-14 min-w-0 overflow-x-auto">
+          <hgroup className="max-w-2xl space-y-4">
+            <h3 className="text-xl font-semibold">
+              {t("tools.playthroughDetail.shoppingList.title")}
+            </h3>
+            <p>{t("tools.playthroughDetail.shoppingList.desc")}</p>
+          </hgroup>
+
+          <div className="mt-10 flex w-full min-w-0 flex-col gap-4 space-y-6">
+            {shoppingListData.map((group) => (
+              <ImporterTable key={group.importer} data={group} t={t} />
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );

@@ -284,7 +284,8 @@
       "hourly": "hourly",
       "daily": "daily",
       "weekly": "weekly"
-    }
+    },
+    "resources": "Resources"
   },
   "counts": {
     "palletShelf": "{count, plural, one {pallet shelf} other {pallet shelves}}",
@@ -483,7 +484,8 @@
     "qotd": "Added Fred's 'Quote of the day' to the homepage",
     "update11": "Added versioning for game data to support the two latest versions",
     "update10": "Updated for Big Ambitions 1.0 and added warehouse-only factory ordering",
-    "update12": "Updated factory tax calculations and improved shared-warehouse delivery plans"
+    "update12": "Updated factory tax calculations and improved shared-warehouse delivery plans",
+    "update13": "<items><item>Added a weekly shopping list covering all factories in a playthrough (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Back up playthroughs and app settings to a file and restore them (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Improved purchasing instructions and translations.</item></items>"
   },
   "database": {
     "intro": {
@@ -506,6 +508,16 @@
     },
     "vehicles": {
       "caption": "Looking for maximum cargo or just the fastest ride? You'll find it here. Driver skill refers to your {deliveryDriver}, and max destinations require a {logisticsManager} at 100% skill."
+    },
+    "details": {
+      "unavailable": "This item is not available in game version {version}.",
+      "noIngredients": "No recipe data is available for this product.",
+      "noProducts": "No products use this ingredient in this game version.",
+      "usedInProducts": "Products that use this ingredient",
+      "oneOf": "One of",
+      "dialogDescription": "Database details for {name}",
+      "backToOverview": "Back to overview",
+      "noWorkstationProducts": "No products are made at this workstation in this game version."
     }
   },
   "tools": {
@@ -529,12 +541,18 @@
       "gameVersionNotice": {
         "title": "Versioned Game Data",
         "desc": "Playthroughs now use versioned game data. You can edit the game version for each playthrough in the <link>overview</link>."
-      }
+      },
+      "backupHint": "Save your playthroughs, factories and app settings as a backup file on your device. Use it to restore your data later or transfer it to another device.",
+      "backupButton": "Back up & restore data"
     },
     "playthroughDetail": {
       "desc": "This is where you can see the production stats of your empire. Visit the factories page to see an overview of your factories, keep track of items you need to order for your production lines and more. The factory planner will show you all details about production stats, order amounts, and more.",
       "productionOverview": "Weekly Production Overview",
-      "noProductionData": "No data available yet. Create factories and you'll see your production stats here."
+      "noProductionData": "No data available yet. Create factories and you'll see your production stats here.",
+      "shoppingList": {
+        "title": "Playthrough shopping list",
+        "desc": "This list combines the weekly ingredient demand of every factory in this playthrough, including all groups and ungrouped factories. It accounts for opening hours and production limits."
+      }
     },
     "factories": {
       "title": "Your factories",
@@ -752,13 +770,61 @@
       "description": "Fan-made tools for {gameName}. Plan factories, calculate production stats, manage delivery plans, and browse game data."
     },
     "database": {
-      "description": "Browse detailed game data across products, machines, vehicles, profit calculations, and more for {gameName}."
+      "description": "Browse detailed game data across products, machines, vehicles, profit calculations, and more for {gameName}.",
+      "productDescription": "{name} in {gameName}: prices, production rate, workstation and recipe ingredients with quantities.",
+      "ingredientDescription": "{name} in {gameName}: import price, pack size, importers and products that use this ingredient.",
+      "workstationDescription": "{name} in {gameName}: required machines, purchase costs and products made at this workstation."
     },
     "tools": {
       "description": "Master the economy of {gameName}. From advanced factory planning to complex logistics management—get the data you need to scale your empire."
     },
     "playthroughs": {
       "description": "Manage and compare your {gameName} playthroughs. Track your progress across different difficulties, analyze production stats, and optimize your business runs."
+    },
+    "resources": {
+      "description": "Discover useful Big Ambitions community resources, including BA Maps, Bigger Ambitions and the official Big Ambitions Discord."
     }
+  },
+  "settingsBackup": {
+    "dialogTriggerTitle": "Backup & Restore Settings",
+    "dialogTriggerSrOnly": "Backup and restore settings",
+    "dialogTitle": "Backup & Restore Settings",
+    "dialogDescription": "Back up or restore your saved playthroughs, factories and app settings.",
+    "exportTitle": "Export Settings",
+    "exportDescription": "Download your data as a JSON backup file.",
+    "exportButton": "Export",
+    "importTitle": "Import Settings",
+    "importDescription": "Replace your saved data with the data from a JSON backup file.",
+    "importButton": "Import",
+    "exportSuccess": "Settings exported successfully!",
+    "exportError": "Failed to export settings.",
+    "importSuccess": "Settings imported successfully!",
+    "importError": "Failed to import settings. Please check the JSON file."
+  },
+  "resources": {
+    "title": "Big Ambitions Resources",
+    "intro": "Useful websites, tools and community spaces for Big Ambitions players.",
+    "badges": {
+      "community": "Community Project",
+      "official": "Official"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "Explore Big Ambitions with an interactive 3D map. Find buildings, businesses and points of interest — and bring your own game data into the map for a more personalized view.",
+      "cta": "Explore BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "Another useful Big Ambitions community site with additional information about the game. Definitely worth checking out!",
+      "cta": "Visit Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Official Big Ambitions Discord",
+      "description": "Join the official Big Ambitions community on Discord to chat with other players, ask questions, share ideas and keep up with the game.",
+      "cta": "Join Discord"
+    },
+    "opensInNewTab": "(opens in a new tab)",
+    "suggestion": "Know another useful Big Ambitions resource?",
+    "suggestCta": "Suggest a resource through our contact form."
   }
 }

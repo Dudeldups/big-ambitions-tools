@@ -284,7 +284,8 @@
       "hourly": "每小時",
       "daily": "每日",
       "weekly": "每週"
-    }
+    },
+    "resources": "資源"
   },
   "counts": {
     "palletShelf": "{count, plural, one {棧板架} other {棧板架}}",
@@ -483,7 +484,8 @@
     "qotd": "首頁新增 Fred 的「今日語錄」",
     "update11": "新增遊戲數據版本控制，以支援最新的兩個版本",
     "update10": "已更新至 Big Ambitions 1.0，並新增僅向倉庫群組訂購原料的功能",
-    "update12": "更新了工廠稅務計算，並改進了共用倉庫配送計畫"
+    "update12": "更新了工廠稅務計算，並改進了共用倉庫配送計畫",
+    "update13": "<items><item>新增彙總一個遊戲進度內所有工廠的每週採購清單（<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>）。</item><item>將遊戲進度和應用程式設定備份為檔案，並從檔案還原（<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>）。</item><item>改善了採購說明與翻譯。</item></items>"
   },
   "database": {
     "intro": {
@@ -506,6 +508,16 @@
     },
     "vehicles": {
       "caption": "想要最大載貨量還是只要最快？這裡都能找到。{deliveryDriver} 的駕駛技能會影響表現，而若想跑更多目的地，則需要 {logisticsManager} 達到 100% 技能。"
+    },
+    "details": {
+      "unavailable": "此項目在遊戲版本 {version} 中無法使用。",
+      "noIngredients": "此產品沒有可用的配方資料。",
+      "noProducts": "此遊戲版本中沒有產品使用此原料。",
+      "usedInProducts": "使用此原料的產品",
+      "oneOf": "以下選項之一",
+      "dialogDescription": "{name} 的資料庫詳細資訊",
+      "backToOverview": "返回總覽",
+      "noWorkstationProducts": "此遊戲版本中沒有在該工作站生產的產品。"
     }
   },
   "tools": {
@@ -529,17 +541,23 @@
       "gameVersionNotice": {
         "title": "遊戲資料版本",
         "desc": "現在的遊戲進度都改用版本化的遊戲資料了。你可以在 <link>概覽</link> 中修改每個遊戲進度的版本。"
-      }
+      },
+      "backupHint": "將你的遊戲進度、工廠和應用程式設定儲存為裝置上的備份檔案。之後可以使用此檔案還原資料，或將資料轉移到其他裝置。",
+      "backupButton": "備份與還原資料"
     },
     "playthroughDetail": {
       "desc": "這裡可以看到帝國的生產統計數據。前往「工廠」頁面查看工廠總覽，追蹤生產線需要訂購的物品等更多資訊。工廠規劃器會顯示所有關於生產數據、訂購數量等的詳細資訊。",
       "productionOverview": "每週生產概覽",
-      "noProductionData": "目前還沒有數據。建立工廠後，就能在這裡看到生產統計。"
+      "noProductionData": "目前還沒有數據。建立工廠後，就能在這裡看到生產統計。",
+      "shoppingList": {
+        "title": "遊戲進度總採購清單",
+        "desc": "此清單彙總了目前遊戲進度中所有工廠每週所需的原料，包括所有群組中的工廠和未分組的工廠，並考慮營業時間和生產上限。"
+      }
     },
     "factories": {
       "title": "你的工廠",
       "desc": "這裡可以看你的工廠概況。你可以編輯、刪除，或是直接複製現有數值來開新工廠。想看更多細節（包含採購清單）？點一下卡片就好。",
-      "desc1": "你也可以按下方的「建立群組」把工廠分組，方便一次管理所有工廠。如果你是用中央倉庫來供料給多間工廠，這功能超好用！系統也會根據你新增的棧板架數量，幫每個工廠建議配送計畫。",
+      "desc1": "建立群組，並將由同一倉庫供貨的工廠拖入群組。將工廠的採購專員人數設為0，即可集中採購其全部每週需求。有專屬採購專員時，工廠直接採購棧板架能容納的部分，倉庫採購其餘部分。",
       "noFactories": "你的遊戲進度裡還沒有任何工廠，快來建立一個吧！",
       "notFound": {
         "title": "找不到工廠",
@@ -550,14 +568,16 @@
     "factoryDetail": {
       "editBtn": "編輯工廠",
       "shoppingList": {
-        "title": "採購清單",
-        "desc": "為了維持滿載生產，你的工廠每週需要這些物資。"
+        "title": "每週原料需求",
+        "desc": "這是考慮生產上限後，工廠一週的原料總消耗量。請依照下方的採購說明決定將原料訂購到哪裡。"
       },
       "splitShoppingList": {
         "title": "分拆採購清單",
         "desc": "把這些原料直接訂到工廠，好把訂單拆開。這是你的 {shelfAmount} 個棧板架所能容納的最大量，也會考慮到你生產的箱數。若要儲存一整週生產所需的原料，你需要 {requiredAmount} 個棧板架。",
         "desc1": "剩下的東西需要由一位或多位採購專員向倉庫訂購。返回 <link>工廠總覽</link> 並建立群組，即可查看該倉庫的完整訂購清單，還能看到各個工廠的配送計劃。"
-      }
+      },
+      "centralPurchasingNote": "此工廠使用集中採購。將它加入工廠群組，並使用群組的採購清單將所有原料訂購到倉庫。群組的配送計畫會每天供貨給工廠，請勿再次將相同原料直接訂購到工廠。",
+      "splitPurchasingNote": "此工廠有專屬採購專員。如果下方顯示分拆採購清單，請用它下單工廠每週直接採購的部分，並用群組採購清單下單倉庫的剩餘部分。如果全部原料都能放進工廠，就直接訂購全部每週需求。"
     },
     "playthroughForm": {
       "title": "建立新遊戲進度",
@@ -577,20 +597,23 @@
     "factoryGroups": {
       "buttonDesc": "建立群組",
       "title": "工廠群組",
-      "desc": "你可以將工廠分組，方便按產品類別查看。如果分組內的工廠棧板架不足，購物清單會告訴你每個工廠和倉庫分別需要補貨多少。配送視窗也會顯示要發送到各個工廠的物品。",
+      "desc": "將同一倉庫供貨的工廠組成群組，即可合併每週的倉庫採購清單並查看每日配送。沒有採購專員的工廠使用集中採購；有專屬採購專員的工廠直接採購，並由倉庫供應剩餘部分。兩種方式可以在同一群組中混用。",
       "groupEmpty": "這個群組裡還沒有工廠，把工廠卡片拖到這裡來新增吧。",
       "ungroupedTitle": "未分組的工廠",
       "ungroupedEmpty": "目前還沒什麼未分組的工廠。把卡片拖過來，或是直接新增一家新工廠。",
       "deliveries": {
         "buttonDesc": "配送",
         "title": "配送計劃",
-        "descNeeded": "這個群組裡每個工廠的配送計畫。共用倉庫需要 {amount} 個棧板架，才能供應這個群組裡的所有工廠。",
-        "descEnough": "所有工廠都有足夠的棧板架來存放所有需要的原料。"
+        "descNeeded": "從此倉庫向各工廠的每日配送。集中採購供應全部每日原料需求；有專屬採購專員時，只配送倉庫供應的每日部分。數量向上取整。 倉庫每週原料所需的棧板架： {amount}。",
+        "descEnough": "這些工廠直接採購所有原料，不需要倉庫配送。"
       },
       "shoppingList": {
         "title": "群組購物清單",
-        "desc": "這裡列出了這個群組中，因為棧板架不足而需要補貨的所有原料。系統會根據工廠現有的棧板架數量來計算，方便你把剩下的部分訂到另外的倉庫。<br></br>倉庫需要的棧板架：<strong>{amount}</strong>"
-      }
+        "desc": "每週將這些原料訂購到群組的倉庫。集中採購的工廠計入全部7天需求。有專屬採購專員的工廠只計入倉庫供應的剩餘部分；請透過工廠的分拆採購清單訂購其直接採購部分。<br></br>倉庫每週原料所需的棧板架： <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "每週將這些原料訂購到群組的倉庫。集中採購的工廠計入全部7天需求。有專屬採購專員的工廠只計入倉庫供應的剩餘部分；請透過工廠的分拆採購清單訂購其直接採購部分。",
+      "warehouseDeliveryDesc": "從此倉庫向各工廠的每日配送。集中採購供應全部每日原料需求；有專屬採購專員時，只配送倉庫供應的每日部分。數量向上取整。",
+      "warehouseShelvesLabel": "倉庫每週原料所需的棧板架："
     },
     "factoryPlanner": {
       "taxDeductionNote": "在1.0版本中，原材料和員工薪資會減少應稅收入。工廠設備、棧板貨架和符合條件的配送車輛可在購買時扣稅，但此週期性稅費估算不包含一次性扣除。",
@@ -600,7 +623,7 @@
         "legend": "工廠資訊",
         "name": "工廠名稱",
         "calcBasis": "計算基準",
-        "palletDesc": "設定此工廠可用的棧板架數量。將此設為 0，即可改為將所有原料訂購至倉庫群組。",
+        "palletDesc": "請輸入此工廠實際擁有的棧板架數量，包括用作每日配送緩衝區的棧板架。",
         "dailyAmount": "每日配送需要 <strong>{count}</strong> {object}。",
         "weeklyAmount": "每週配送需要 <strong>{count}</strong> {object}。",
         "shelfExplanation": "新增至少一個工作站，就能看到需要的棧板架數量。",
@@ -747,13 +770,62 @@
       "description": "{gameName} 粉絲專屬工具！規劃工廠、計算生產數據、管理配送計畫，並隨時瀏覽遊戲資料。"
     },
     "database": {
-      "description": "深入探索 {gameName} 的詳細數據：涵蓋產品、機器、車輛、利潤計算等等。"
+      "description": "深入探索 {gameName} 的詳細數據：涵蓋產品、機器、車輛、利潤計算等等。",
+      "productDescription": "{gameName}中的{name}：價格、生產速度、工作站以及配方原料和用量。",
+      "ingredientDescription": "{gameName}中的{name}：進口價格、包裝數量、進口商以及使用此原料的產品。",
+      "workstationDescription": "{gameName}中的{name}：所需機器、購買成本以及此工作站生產的產品。"
     },
     "tools": {
       "description": "掌控 {gameName} 的經濟命脈。從進階工廠規劃到複雜的物流管理——獲取擴張帝國所需的一切數據。"
     },
     "playthroughs": {
       "description": "管理並比較你的 {gameName} 遊戲進度。追蹤不同難度的表現、分析生產數據，並優化經營策略。"
+    },
+    "resources": {
+      "description": "探索實用的 Big Ambitions 社群資源，包括 BA Maps、Bigger Ambitions 和 Big Ambitions 官方 Discord。"
     }
+  },
+  "settingsBackup": {
+    "__NOTE": "generated by AI",
+    "dialogTriggerTitle": "備份與還原設定",
+    "dialogTriggerSrOnly": "備份與還原設定",
+    "dialogTitle": "備份與還原設定",
+    "dialogDescription": "備份或還原已儲存的遊戲進度、工廠和應用程式設定。",
+    "exportTitle": "匯出設定",
+    "exportDescription": "將資料下載為 JSON 備份檔案。",
+    "exportButton": "匯出",
+    "importTitle": "匯入設定",
+    "importDescription": "使用 JSON 備份檔案中的資料取代已儲存的資料。",
+    "importButton": "匯入",
+    "exportSuccess": "設定匯出成功！",
+    "exportError": "匯出設定失敗。",
+    "importSuccess": "設定匯入成功！",
+    "importError": "匯入設定失敗，請檢查 JSON 檔案。"
+  },
+  "resources": {
+    "title": "Big Ambitions 資源",
+    "intro": "為 Big Ambitions 玩家精選的實用網站、工具和社群。",
+    "badges": {
+      "community": "社群專案",
+      "official": "官方"
+    },
+    "baMaps": {
+      "title": "BA Maps",
+      "description": "透過互動式 3D 地圖探索 Big Ambitions。尋找建築、商家和興趣點，也可以匯入自己的遊戲資料，取得更個人化的地圖檢視。",
+      "cta": "探索 BA Maps"
+    },
+    "biggerAmbitions": {
+      "title": "Bigger Ambitions",
+      "description": "另一個實用的 Big Ambitions 社群網站，提供更多遊戲相關資訊。非常值得一看！",
+      "cta": "造訪 Bigger Ambitions"
+    },
+    "discord": {
+      "title": "Big Ambitions 官方 Discord",
+      "description": "加入 Discord 上的 Big Ambitions 官方社群，與其他玩家交流、提問、分享想法，並掌握遊戲最新消息。",
+      "cta": "加入 Discord"
+    },
+    "opensInNewTab": "（在新分頁中開啟）",
+    "suggestion": "知道其他實用的 Big Ambitions 資源嗎？",
+    "suggestCta": "透過我們的聯絡表單推薦給我們。"
   }
 }
