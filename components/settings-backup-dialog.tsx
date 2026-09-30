@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Download, Upload, Database } from "lucide-react";
+import { Download, Upload, ArchiveRestore } from "lucide-react";
 import { toast } from "sonner";
 import { useAppStore } from "@/lib/stores/appStore";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
@@ -94,7 +94,7 @@ export function SettingsBackupDialog({
           title={t("dialogTriggerTitle")}
           disabled={!appHydrated || !playthroughHydrated}
         >
-          <Database className="size-4" />
+          <ArchiveRestore className="size-4" />
           {triggerLabel ?? (
             <span className="sr-only">{t("dialogTriggerSrOnly")}</span>
           )}
