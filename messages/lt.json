@@ -483,7 +483,8 @@
     "qotd": "Fredo 'Dienos citata' pridėta į pagrindinį puslapį",
     "update11": "Pridėtas žaidimo duomenų versijavimas, skirtas palaikyti dvi naujausias versijas",
     "update10": "Atnaujinta Big Ambitions 1.0 versijai ir pridėtas ingredientų užsakymas tik į sandėlio grupę",
-    "update12": "Atnaujinti fabrikų mokesčių skaičiavimai ir patobulinti pristatymo iš bendrų sandėlių planai"
+    "update12": "Atnaujinti fabrikų mokesčių skaičiavimai ir patobulinti pristatymo iš bendrų sandėlių planai",
+    "update13": "<items><item>Pridėtas bendras savaitinis visų žaidimo būsenos gamyklų pirkinių sąrašas (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Sukurk žaidimo būsenų ir programėlės nustatymų atsarginę kopiją faile ir atkurk juos iš jo (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Patobulintos pirkimo instrukcijos ir vertimai.</item></items>"
   },
   "database": {
     "intro": {

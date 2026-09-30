@@ -483,7 +483,8 @@
     "qotd": "Added Fred's 'Quote of the day' to the homepage",
     "update11": "Added versioning for game data to support the two latest versions",
     "update10": "Updated for Big Ambitions 1.0 and added warehouse-only factory ordering",
-    "update12": "Updated factory tax calculations and improved shared-warehouse delivery plans"
+    "update12": "Updated factory tax calculations and improved shared-warehouse delivery plans",
+    "update13": "<items><item>Added a weekly shopping list covering all factories in a playthrough (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Back up playthroughs and app settings to a file and restore them (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Improved purchasing instructions and translations.</item></items>"
   },
   "database": {
     "intro": {

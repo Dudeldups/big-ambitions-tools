@@ -483,7 +483,8 @@
     "qotd": "Fred'in 'Günün Sözü' ana sayfaya eklendi",
     "update11": "En güncel iki sürümü desteklemek için oyun verilerine sürümleme eklendi",
     "update10": "Big Ambitions 1.0 için güncellendi ve malzemelerin yalnızca depo grubuna sipariş edilmesi eklendi",
-    "update12": "Fabrika vergi hesaplamaları güncellendi ve ortak depo teslimat planları iyileştirildi"
+    "update12": "Fabrika vergi hesaplamaları güncellendi ve ortak depo teslimat planları iyileştirildi",
+    "update13": "<items><item>Bir oyun durumundaki tüm fabrikalar için haftalık toplam alışveriş listesi eklendi (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Oyun durumlarını ve uygulama ayarlarını bir dosyaya yedekle ve geri yükle (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Satın alma açıklamaları ve çeviriler iyileştirildi.</item></items>"
   },
   "database": {
     "intro": {

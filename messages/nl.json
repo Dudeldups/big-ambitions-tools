@@ -483,7 +483,8 @@
     "qotd": "Freds 'Citaat van de dag' toegevoegd aan de homepage",
     "update11": "Versionering voor gamedata toegevoegd om de twee nieuwste versies te ondersteunen",
     "update10": "Bijgewerkt voor Big Ambitions 1.0 en het bestellen van ingrediënten alleen naar de magazijngroep toegevoegd",
-    "update12": "Belastingberekeningen voor fabrieken bijgewerkt en leveringsplannen vanuit gedeelde magazijnen verbeterd"
+    "update12": "Belastingberekeningen voor fabrieken bijgewerkt en leveringsplannen vanuit gedeelde magazijnen verbeterd",
+    "update13": "<items><item>Wekelijkse boodschappenlijst voor alle fabrieken in een speelstand toegevoegd (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Maak een back-up van speelstanden en appinstellingen in een bestand en herstel ze (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Inkoopinstructies en vertalingen verbeterd.</item></items>"
   },
   "database": {
     "intro": {

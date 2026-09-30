@@ -483,7 +483,8 @@
     "qotd": "Am adăugat 'Citatul zilei' lui Fred pe homepage",
     "update11": "Am adăugat versionarea datelor de joc pentru a susține cele mai noi două versiuni",
     "update10": "Actualizat pentru Big Ambitions 1.0 și adăugată comandarea ingredientelor doar către grupul de depozite",
-    "update12": "Am actualizat calculele fiscale ale fabricilor și am îmbunătățit planurile de livrare din depozitele comune"
+    "update12": "Am actualizat calculele fiscale ale fabricilor și am îmbunătățit planurile de livrare din depozitele comune",
+    "update13": "<items><item>Adăugată o listă săptămânală de cumpărături pentru toate fabricile dintr-o partidă (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Fă backup partidelor și setărilor aplicației într-un fișier și restaurează-le (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Îmbunătățite instrucțiunile de cumpărare și traducerile.</item></items>"
   },
   "database": {
     "intro": {

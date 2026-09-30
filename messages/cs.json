@@ -483,7 +483,8 @@
     "qotd": "Přidáno Fredův 'Citát dne' na hlavní stránku",
     "update11": "Přidáno verzování herních dat pro podporu dvou nejnovějších verzí",
     "update10": "Aktualizováno pro Big Ambitions 1.0 a přidáno objednávání surovin pouze do skladové skupiny",
-    "update12": "Aktualizovány výpočty daní továren a vylepšeny plány dodávek ze sdílených skladů"
+    "update12": "Aktualizovány výpočty daní továren a vylepšeny plány dodávek ze sdílených skladů",
+    "update13": "<items><item>Přidán souhrnný týdenní nákupní seznam pro všechny továrny v jednom průběhu hry (<shoppingPr>#1</shoppingPr>, <contributor>@FusRoDev</contributor>).</item><item>Zálohuj průběhy her a nastavení aplikace do souboru a obnov je z něj (<backupPr>#2</backupPr>, <contributor>@FusRoDev</contributor>).</item><item>Vylepšeny pokyny k nákupu a překlady.</item></items>"
   },
   "database": {
     "intro": {
