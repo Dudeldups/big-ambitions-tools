@@ -507,6 +507,16 @@
     },
     "vehicles": {
       "caption": "Op zoek naar maximale lading of gewoon de snelste rit? Je vindt het hier. De driver skill van je {deliveryDriver} bepaalt dit, en voor het maximale aantal bestemmingen heb je een {logisticsManager} met 100% skill nodig."
+    },
+    "details": {
+      "unavailable": "Dit item is niet beschikbaar in spelversie {version}.",
+      "noIngredients": "Er zijn geen receptgegevens beschikbaar voor dit product.",
+      "noProducts": "Geen producten gebruiken dit ingrediënt in deze spelversie.",
+      "usedInProducts": "Producten die dit ingrediënt gebruiken",
+      "oneOf": "Een van de opties",
+      "dialogDescription": "Databasegegevens voor {name}",
+      "backToOverview": "Terug naar het overzicht",
+      "noWorkstationProducts": "In deze spelversie worden op dit werkstation geen producten gemaakt."
     }
   },
   "tools": {
@@ -759,7 +769,10 @@
       "description": "Fan-tools voor {gameName}. Plan fabrieken, bereken productiestatistieken, beheer leveringsschema's en ontdek alle game-data."
     },
     "database": {
-      "description": "Bekijk gedetailleerde spelgegevens van producten, machines, voertuigen, winstberekeningen en meer voor {gameName}."
+      "description": "Bekijk gedetailleerde spelgegevens van producten, machines, voertuigen, winstberekeningen en meer voor {gameName}.",
+      "productDescription": "{name} in {gameName}: prijzen, productiesnelheid, werkstation en receptingrediënten met hoeveelheden.",
+      "ingredientDescription": "{name} in {gameName}: importprijs, aantal per verpakking, importeurs en producten die dit ingrediënt gebruiken.",
+      "workstationDescription": "{name} in {gameName}: benodigde machines, aanschafkosten en producten die op dit werkstation worden gemaakt."
     },
     "tools": {
       "description": "Beheers de economie van {gameName}. Van geavanceerde fabrieksplanning tot complexe logistiek — krijg de data die je nodig hebt om je imperium uit te breiden."

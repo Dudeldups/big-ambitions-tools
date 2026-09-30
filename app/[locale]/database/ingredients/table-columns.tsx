@@ -19,7 +19,9 @@ export const ingredientsColumns = (
   t: Translator,
   difficulty: Difficulty | null,
 ): ColumnDef<IngredientsColumnData>[] => [
-  createColumnWithImage(t, "itemName", "ingredients"),
+  createColumnWithImage(t, "itemName", "ingredients", {
+    getHref: (row) => `/database/ingredients/${row.itemName}`,
+  }),
   createNumericColumn("amountPerBox"),
   createCurrencyColumn("importPrice", difficulty, (row, diff) =>
     getImportPrice(row.wholesalePrice, diff as Difficulty),

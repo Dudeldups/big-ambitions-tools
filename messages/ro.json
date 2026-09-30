@@ -507,6 +507,16 @@
     },
     "vehicles": {
       "caption": "Cauți încărcătură maximă sau doar cea mai rapidă mașină? Aici o găsești. Skill-ul șoferului se referă la {deliveryDriver}, iar pentru un număr maxim de destinații ai nevoie de un {logisticsManager} cu 100% skill."
+    },
+    "details": {
+      "unavailable": "Această înregistrare nu este disponibilă în versiunea de joc {version}.",
+      "noIngredients": "Nu sunt disponibile date despre rețeta acestui produs.",
+      "noProducts": "Niciun produs nu folosește acest ingredient în această versiune a jocului.",
+      "usedInProducts": "Produse care folosesc acest ingredient",
+      "oneOf": "Una dintre opțiuni",
+      "dialogDescription": "Detalii din baza de date pentru {name}",
+      "backToOverview": "Înapoi la prezentarea generală",
+      "noWorkstationProducts": "În această versiune a jocului nu se fabrică produse la această stație de lucru."
     }
   },
   "tools": {
@@ -759,7 +769,10 @@
       "description": "Tool-uri pentru fanii lui {gameName}. Planifică fabrici, calculează statistici de producție, gestionează planurile de livrare și explorează datele jocului."
     },
     "database": {
-      "description": "Explorează date detaliate despre produse, utilaje, vehicule, calcule de profit și multe altele pentru {gameName}."
+      "description": "Explorează date detaliate despre produse, utilaje, vehicule, calcule de profit și multe altele pentru {gameName}.",
+      "productDescription": "{name} în {gameName}: prețuri, ritm de producție, stație de lucru și ingredientele rețetei cu cantități.",
+      "ingredientDescription": "{name} în {gameName}: preț de import, cantitate per pachet, importatori și produse care folosesc acest ingredient.",
+      "workstationDescription": "{name} în {gameName}: utilaje necesare, costuri de achiziție și produse fabricate la această stație de lucru."
     },
     "tools": {
       "description": "Stăpânește economia lui {gameName}. De la planificarea avansată a fabricilor până la gestionarea logistică complexă – obține datele necesare pentru a-ți extinde imperiul."

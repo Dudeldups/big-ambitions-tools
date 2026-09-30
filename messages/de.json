@@ -507,6 +507,16 @@
     },
     "vehicles": {
       "caption": "Brauchst du massig Stauraum oder willst du einfach nur den schnellsten Flitzer? Hier wirst du fündig. Der Fahrer-Skill bezieht sich auf deinen {deliveryDriver}, und für das Maximum an Zielen brauchst du einen {logisticsManager} mit 100 % Skill."
+    },
+    "details": {
+      "unavailable": "Dieser Eintrag ist in Spielversion {version} nicht verfügbar.",
+      "noIngredients": "Für dieses Produkt sind keine Rezeptdaten verfügbar.",
+      "noProducts": "In dieser Spielversion wird diese Zutat von keinem Produkt verwendet.",
+      "usedInProducts": "Produkte mit dieser Zutat",
+      "oneOf": "Eine der Optionen",
+      "dialogDescription": "Datenbankdetails für {name}",
+      "backToOverview": "Zurück zur Übersicht",
+      "noWorkstationProducts": "In dieser Spielversion werden an dieser Arbeitsstation keine Produkte hergestellt."
     }
   },
   "tools": {
@@ -759,7 +769,10 @@
       "description": "Fan-Tools für {gameName}. Plane Fabriken, berechne Produktionsstatistiken, verwalte Lieferpläne und stöbere in den Spieldaten."
     },
     "database": {
-      "description": "Detaillierte Spieldaten zu Produkten, Maschinen, Fahrzeugen, Gewinnberechnungen und mehr für {gameName}."
+      "description": "Detaillierte Spieldaten zu Produkten, Maschinen, Fahrzeugen, Gewinnberechnungen und mehr für {gameName}.",
+      "productDescription": "{name} in {gameName}: Preise, Produktionsrate, Arbeitsstation und Rezeptzutaten mit Mengen.",
+      "ingredientDescription": "{name} in {gameName}: Importpreis, Packungsmenge, Importeure und Produkte, die diese Zutat verwenden.",
+      "workstationDescription": "{name} in {gameName}: benötigte Maschinen, Anschaffungskosten und Produkte dieser Arbeitsstation."
     },
     "tools": {
       "description": "Meistere die Wirtschaft von {gameName}. Von fortgeschrittener Fabrikplanung bis hin zu komplexem Logistikmanagement – hol dir die Daten für dein Imperium."

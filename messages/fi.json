@@ -507,6 +507,16 @@
     },
     "vehicles": {
       "caption": "Etsitkö paljon tavaraa vai vain nopeinta menoa? Löydät ne täältä. Kuljettajan taitotaso riippuu {deliveryDriver}-hahmostasi, ja enimmäismäärä kohteita vaatii {logisticsManager}:n 100 % taidon."
+    },
+    "details": {
+      "unavailable": "Tämä kohde ei ole käytettävissä peliversiossa {version}.",
+      "noIngredients": "Tälle tuotteelle ei ole saatavilla reseptitietoja.",
+      "noProducts": "Mikään tuote ei käytä tätä ainesosaa tässä peliversiossa.",
+      "usedInProducts": "Tuotteet, joissa tätä ainesosaa käytetään",
+      "oneOf": "Yksi vaihtoehdoista",
+      "dialogDescription": "Tietokannan tiedot: {name}",
+      "backToOverview": "Takaisin yleiskatsaukseen",
+      "noWorkstationProducts": "Tässä peliversiossa tällä työasemalla ei valmisteta tuotteita."
     }
   },
   "tools": {
@@ -759,7 +769,10 @@
       "description": "{gameName}-fanien työkaluja. Suunnittele tehtaat, laske tuotantotilastot, hallitse toimitussuunnitelmia ja selaa pelidataa."
     },
     "database": {
-      "description": "Selaa {gameName}-pelin yksityiskohtaista pelidataa: tuotteet, koneet, ajoneuvot, tulolaskelmat ja paljon muuta."
+      "description": "Selaa {gameName}-pelin yksityiskohtaista pelidataa: tuotteet, koneet, ajoneuvot, tulolaskelmat ja paljon muuta.",
+      "productDescription": "{name} pelissä {gameName}: hinnat, tuotantonopeus, työasema ja reseptin ainesosat määrineen.",
+      "ingredientDescription": "{name} pelissä {gameName}: tuontihinta, pakkausmäärä, maahantuojat ja tätä ainesosaa käyttävät tuotteet.",
+      "workstationDescription": "{name} pelissä {gameName}: tarvittavat koneet, hankintakustannukset ja tällä työasemalla valmistettavat tuotteet."
     },
     "tools": {
       "description": "Ota haltuun {gameName}-talous. Edistyneestä tehdassuunnittelusta monimutkaiseen logistiikkaan – tässä on kaikki data, jota tarvitset imperiumisi kasvattamiseen."

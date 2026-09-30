@@ -507,6 +507,16 @@
     },
     "vehicles": {
       "caption": "Szukasz mnóstwa miejsca czy po prostu najszybszej bryki? Znajdziesz to tutaj. Skill kierowcy zależy od Twojego {deliveryDriver}, a dla maksymalnej liczby celów potrzebujesz {logisticsManager} ze 100% skillem."
+    },
+    "details": {
+      "unavailable": "Ten wpis nie jest dostępny w wersji gry {version}.",
+      "noIngredients": "Dane przepisu dla tego produktu są niedostępne.",
+      "noProducts": "W tej wersji gry żaden produkt nie używa tego składnika.",
+      "usedInProducts": "Produkty używające tego składnika",
+      "oneOf": "Jedna z opcji",
+      "dialogDescription": "Szczegóły w bazie danych: {name}",
+      "backToOverview": "Powrót do przeglądu",
+      "noWorkstationProducts": "W tej wersji gry na tym stanowisku pracy nie są wytwarzane żadne produkty."
     }
   },
   "tools": {
@@ -759,7 +769,10 @@
       "description": "Fanowskie narzędzia do {gameName}. Planuj fabryki, obliczaj statystyki produkcji, zarządzaj planami dostaw i przeglądaj dane z gry."
     },
     "database": {
-      "description": "Szczegółowe dane o grach dla {gameName}: produkty, maszyny, pojazdy, obliczenia zysków i wiele więcej."
+      "description": "Szczegółowe dane o grach dla {gameName}: produkty, maszyny, pojazdy, obliczenia zysków i wiele więcej.",
+      "productDescription": "{name} w {gameName}: ceny, tempo produkcji, stanowisko pracy i składniki receptury wraz z ilościami.",
+      "ingredientDescription": "{name} w {gameName}: cena importu, liczba sztuk w opakowaniu, importerzy i produkty wykorzystujące ten składnik.",
+      "workstationDescription": "{name} w {gameName}: wymagane maszyny, koszty zakupu i produkty wytwarzane na tym stanowisku pracy."
     },
     "tools": {
       "description": "Zdominuj ekonomię w {gameName}. Od zaawansowanego planowania fabryk po skomplikowaną logistykę – zgarnij dane potrzebne do budowy własnego imperium."

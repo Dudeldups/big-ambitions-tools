@@ -20,9 +20,13 @@ const DataTableOptionsBar = <TData,>({
   table,
 }: DataTableOptionsBarProps<TData>) => {
   const pathname = usePathname();
-  const isProductsPage = pathname === "/database/products";
+  const isProductsPage =
+    pathname === "/database/products" ||
+    pathname.startsWith("/database/products/");
   const hasDifficultySelector =
-    pathname === "/database/ingredients" || pathname === "/database/products";
+    pathname === "/database/ingredients" ||
+    pathname.startsWith("/database/ingredients/") ||
+    isProductsPage;
 
   const isMobile = useBreakpoint("mobile");
   const isTablet = useBreakpoint("mdToXl");
