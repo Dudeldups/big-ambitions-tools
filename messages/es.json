@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "¿Buscas capacidad de carga máxima o simplemente el viaje más rápido? Aquí lo encontrarás. La habilidad del conductor depende de tu {deliveryDriver}, y para el máximo número de destinos necesitas un {logisticsManager} con un nivel de habilidad al 100%."
+    },
+    "details": {
+      "unavailable": "Este artículo no está disponible en la versión {version} del juego.",
+      "noIngredients": "No hay datos de receta disponibles para este producto.",
+      "noProducts": "Ningún producto utiliza este ingrediente en esta versión del juego.",
+      "usedInProducts": "Productos que utilizan este ingrediente",
+      "oneOf": "Una de las opciones",
+      "dialogDescription": "Detalles de la base de datos de {name}",
+      "backToOverview": "Volver a la vista general",
+      "noWorkstationProducts": "En esta versión del juego no se fabrica ningún producto en esta estación de trabajo."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Herramientas de fans para {gameName}. Planifica fábricas, calcula estadísticas de producción, gestiona planes de entrega y explora los datos del juego."
     },
     "database": {
-      "description": "Explora datos detallados sobre productos, máquinas, vehículos, cálculos de beneficios y mucho más para {gameName}."
+      "description": "Explora datos detallados sobre productos, máquinas, vehículos, cálculos de beneficios y mucho más para {gameName}.",
+      "productDescription": "{name} en {gameName}: precios, ritmo de producción, estación de trabajo e ingredientes de la receta con cantidades.",
+      "ingredientDescription": "{name} en {gameName}: precio de importación, cantidad por paquete, importadores y productos que usan este ingrediente.",
+      "workstationDescription": "{name} en {gameName}: máquinas necesarias, costes de compra y productos fabricados en esta estación de trabajo."
     },
     "tools": {
       "description": "Domina la economía de {gameName}. Desde la planificación avanzada de fábricas hasta la gestión logística compleja: consigue los datos que necesitas para expandir tu imperio."

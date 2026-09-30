@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "想要最大載貨量還是只要最快？這裡都能找到。{deliveryDriver} 的駕駛技能會影響表現，而若想跑更多目的地，則需要 {logisticsManager} 達到 100% 技能。"
+    },
+    "details": {
+      "unavailable": "此項目在遊戲版本 {version} 中無法使用。",
+      "noIngredients": "此產品沒有可用的配方資料。",
+      "noProducts": "此遊戲版本中沒有產品使用此原料。",
+      "usedInProducts": "使用此原料的產品",
+      "oneOf": "以下選項之一",
+      "dialogDescription": "{name} 的資料庫詳細資訊",
+      "backToOverview": "返回總覽",
+      "noWorkstationProducts": "此遊戲版本中沒有在該工作站生產的產品。"
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "{gameName} 粉絲專屬工具！規劃工廠、計算生產數據、管理配送計畫，並隨時瀏覽遊戲資料。"
     },
     "database": {
-      "description": "深入探索 {gameName} 的詳細數據：涵蓋產品、機器、車輛、利潤計算等等。"
+      "description": "深入探索 {gameName} 的詳細數據：涵蓋產品、機器、車輛、利潤計算等等。",
+      "productDescription": "{gameName}中的{name}：價格、生產速度、工作站以及配方原料和用量。",
+      "ingredientDescription": "{gameName}中的{name}：進口價格、包裝數量、進口商以及使用此原料的產品。",
+      "workstationDescription": "{gameName}中的{name}：所需機器、購買成本以及此工作站生產的產品。"
     },
     "tools": {
       "description": "掌控 {gameName} 的經濟命脈。從進階工廠規劃到複雜的物流管理——獲取擴張帝國所需的一切數據。"

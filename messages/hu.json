@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Keresed a maximális teherkapacitást vagy csak a leggyorsabb autót? Itt találod őket. A sofőr készsége a {deliveryDriver}-re vonatkozik, a maximális úti célhoz pedig egy 100%-os skillű {logisticsManager} kell."
+    },
+    "details": {
+      "unavailable": "Ez a bejegyzés nem érhető el a(z) {version} játékverzióban.",
+      "noIngredients": "Ehhez a termékhez nem érhető el receptadat.",
+      "noProducts": "Ebben a játékverzióban egyetlen termék sem használja ezt az összetevőt.",
+      "usedInProducts": "Ezt az összetevőt használó termékek",
+      "oneOf": "Az egyik lehetőség",
+      "dialogDescription": "Adatbázisadatok: {name}",
+      "backToOverview": "Vissza az áttekintéshez",
+      "noWorkstationProducts": "Ebben a játékverzióban ezen a munkaállomáson nem készülnek termékek."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Rajongói eszközök a {gameName}-hez. Terveelj gyárakat, számold ki a termelési adatokat, kezeld a szállítási terveket és böngéssz a játékadatokban."
     },
     "database": {
-      "description": "Böngéssz a {gameName} részletes játékadatai között: termékek, gépek, járművek, profitszámítások és még több."
+      "description": "Böngéssz a {gameName} részletes játékadatai között: termékek, gépek, járművek, profitszámítások és még több.",
+      "productDescription": "{name} a {gameName} játékban: árak, termelési sebesség, munkaállomás és a recept hozzávalói mennyiségekkel.",
+      "ingredientDescription": "{name} a {gameName} játékban: importár, csomagonkénti mennyiség, importőrök és az ezt a hozzávalót használó termékek.",
+      "workstationDescription": "{name} a {gameName} játékban: szükséges gépek, beszerzési költségek és az ezen a munkaállomáson gyártott termékek."
     },
     "tools": {
       "description": "Uráld a {gameName} gazdaságát. A fejlett gyártervezéstől a komplex logisztikai menedzsmentig — szerezd meg az adatokat, amikkel bővítheted a birodalmadat."

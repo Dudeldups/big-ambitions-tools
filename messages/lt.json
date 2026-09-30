@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Ieškai didžiausios talpos ar tiesiog greičiausios mašinos? Čia rasi. Vairuotojo įgūdžiai – tai tavo {deliveryDriver}, o maksimaliam tikslų skaičiui reikia 100 % {logisticsManager} įgūdžių."
+    },
+    "details": {
+      "unavailable": "Šio įrašo nėra žaidimo versijoje {version}.",
+      "noIngredients": "Šio produkto recepto duomenų nėra.",
+      "noProducts": "Šioje žaidimo versijoje nė vienas produktas nenaudoja šio ingrediento.",
+      "usedInProducts": "Produktai, kuriuose naudojamas šis ingredientas",
+      "oneOf": "Viena iš parinkčių",
+      "dialogDescription": "{name} duomenų bazės informacija",
+      "backToOverview": "Grįžti į apžvalgą",
+      "noWorkstationProducts": "Šioje žaidimo versijoje šioje darbo vietoje negaminami jokie produktai."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "{gameName} fanų įrankiai. Planuok gamyklas, skaičiuok gamybos statistiką, valdyk pristatymo planus ir naršyk po žaidimo duomenis."
     },
     "database": {
-      "description": "Išsamūs {gameName} duomenys apie produktus, mašinas, transportą, pelno skaičiavimus ir daugiau."
+      "description": "Išsamūs {gameName} duomenys apie produktus, mašinas, transportą, pelno skaičiavimus ir daugiau.",
+      "productDescription": "{name} žaidime {gameName}: kainos, gamybos greitis, darbo stotis ir recepto ingredientai su kiekiais.",
+      "ingredientDescription": "{name} žaidime {gameName}: importo kaina, kiekis pakuotėje, importuotojai ir šį ingredientą naudojantys produktai.",
+      "workstationDescription": "{name} žaidime {gameName}: reikalingos mašinos, įsigijimo išlaidos ir šioje darbo stotyje gaminami produktai."
     },
     "tools": {
       "description": "Valdyk {gameName} ekonomiką. Nuo pažangaus gamyklų planavimo iki sudėtingos logistikos — gauk duomenis savo imperijai plėsti."

@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Hledáš hodně místa pro náklad, nebo prostě nejrychlejší svezení? Najdeš to tady. Skill řidiče závisí na tvém {deliveryDriver} a pro maximální počet cílů potřebuješ {logisticsManager} se 100% skillem."
+    },
+    "details": {
+      "unavailable": "Tato položka není dostupná ve verzi hry {version}.",
+      "noIngredients": "Pro tento produkt nejsou k dispozici údaje o receptu.",
+      "noProducts": "V této verzi hry tuto surovinu nepoužívá žádný produkt.",
+      "usedInProducts": "Produkty používající tuto surovinu",
+      "oneOf": "Jedna z možností",
+      "dialogDescription": "Podrobnosti databáze pro {name}",
+      "backToOverview": "Zpět na přehled",
+      "noWorkstationProducts": "V této verzi hry se na této pracovní stanici nevyrábějí žádné produkty."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Nástroje od fanoušků pro {gameName}. Plánuj továrny, vypočítávej statistiky výroby, spravuj plány dodávek a procházej si herní data."
     },
     "database": {
-      "description": "Detailní herní údaje o produktech, strojích, vozidlech, výpočtech zisku a další pro {gameName}."
+      "description": "Detailní herní údaje o produktech, strojích, vozidlech, výpočtech zisku a další pro {gameName}.",
+      "productDescription": "{name} v {gameName}: ceny, rychlost výroby, pracovní stanice a suroviny receptu s množstvím.",
+      "ingredientDescription": "{name} v {gameName}: dovozní cena, množství v balení, dovozci a produkty využívající tuto surovinu.",
+      "workstationDescription": "{name} v {gameName}: potřebné stroje, pořizovací náklady a produkty vyráběné na této pracovní stanici."
     },
     "tools": {
       "description": "Ovládni ekonomiku {gameName}. Od pokročilého plánování továren až po komplexní logistiku – získej všechna data pro své impérium."

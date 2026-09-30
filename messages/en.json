@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Looking for maximum cargo or just the fastest ride? You'll find it here. Driver skill refers to your {deliveryDriver}, and max destinations require a {logisticsManager} at 100% skill."
+    },
+    "details": {
+      "unavailable": "This item is not available in game version {version}.",
+      "noIngredients": "No recipe data is available for this product.",
+      "noProducts": "No products use this ingredient in this game version.",
+      "usedInProducts": "Products that use this ingredient",
+      "oneOf": "One of",
+      "dialogDescription": "Database details for {name}",
+      "backToOverview": "Back to overview",
+      "noWorkstationProducts": "No products are made at this workstation in this game version."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Fan-made tools for {gameName}. Plan factories, calculate production stats, manage delivery plans, and browse game data."
     },
     "database": {
-      "description": "Browse detailed game data across products, machines, vehicles, profit calculations, and more for {gameName}."
+      "description": "Browse detailed game data across products, machines, vehicles, profit calculations, and more for {gameName}.",
+      "productDescription": "{name} in {gameName}: prices, production rate, workstation and recipe ingredients with quantities.",
+      "ingredientDescription": "{name} in {gameName}: import price, pack size, importers and products that use this ingredient.",
+      "workstationDescription": "{name} in {gameName}: required machines, purchase costs and products made at this workstation."
     },
     "tools": {
       "description": "Master the economy of {gameName}. From advanced factory planning to complex logistics management—get the data you need to scale your empire."

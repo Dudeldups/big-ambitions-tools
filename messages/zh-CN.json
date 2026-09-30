@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "想要超大容量还是极速体验？这儿都能找到。司机技能指的是你的 {deliveryDriver}，而跑满目的地则需要 {logisticsManager} 拥有 100% 技能。"
+    },
+    "details": {
+      "unavailable": "此条目在游戏版本 {version} 中不可用。",
+      "noIngredients": "此产品没有可用的配方数据。",
+      "noProducts": "此游戏版本中没有产品使用此原料。",
+      "usedInProducts": "使用此原料的产品",
+      "oneOf": "以下选项之一",
+      "dialogDescription": "{name} 的数据库详情",
+      "backToOverview": "返回总览",
+      "noWorkstationProducts": "此游戏版本中没有在该工作站生产的产品。"
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "{gameName} 粉丝自制工具！规划工厂、计算生产数据、管理配送计划，还能轻松查阅游戏数据。"
     },
     "database": {
-      "description": "浏览 {gameName} 的详细游戏数据，包括产品、机器、车辆、利润计算等内容。"
+      "description": "浏览 {gameName} 的详细游戏数据，包括产品、机器、车辆、利润计算等内容。",
+      "productDescription": "{gameName}中的{name}：价格、生产速度、工作站以及配方原料和用量。",
+      "ingredientDescription": "{gameName}中的{name}：进口价格、包装数量、进口商以及使用此原料的产品。",
+      "workstationDescription": "{gameName}中的{name}：所需机器、购买成本以及此工作站生产的产品。"
     },
     "tools": {
       "description": "掌控 {gameName} 的经济命脉。从进阶工厂规划到复杂的物流管理——获取扩张帝国所需的一切数据。"

@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "大量の荷物か、それとも最速の乗り物か？ここにあるよ。ドライバースキルは {deliveryDriver} のこと。最大目的地には、{logisticsManager} で 100% のスキルが必要だよ。"
+    },
+    "details": {
+      "unavailable": "この項目はゲームバージョン {version} では利用できません。",
+      "noIngredients": "この製品のレシピデータはありません。",
+      "noProducts": "このゲームバージョンでは、この材料を使う製品はありません。",
+      "usedInProducts": "この材料を使う製品",
+      "oneOf": "いずれか",
+      "dialogDescription": "{name} のデータベース詳細",
+      "backToOverview": "一覧に戻る",
+      "noWorkstationProducts": "このゲームバージョンでは、このワークステーションで製造される製品はありません。"
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "{gameName}のファン向けツール！工場の計画、生産統計の計算、配送プランの管理、ゲームデータの閲覧までこれ一つで。"
     },
     "database": {
-      "description": "{gameName}の製品、機械、車両、利益計算など、詳細なゲームデータをチェックしよう。"
+      "description": "{gameName}の製品、機械、車両、利益計算など、詳細なゲームデータをチェックしよう。",
+      "productDescription": "{gameName}の{name}：価格、生産速度、作業ステーション、レシピの材料と必要数量。",
+      "ingredientDescription": "{gameName}の{name}：輸入価格、梱包数量、輸入業者、この材料を使用する製品。",
+      "workstationDescription": "{gameName}の{name}：必要な機械、購入費用、この作業ステーションで生産する製品。"
     },
     "tools": {
       "description": "{gameName}の経済を攻略。高度な工場計画から複雑な物流管理まで、帝国拡大に必要なデータが手に入る。"

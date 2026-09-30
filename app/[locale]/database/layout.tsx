@@ -5,6 +5,7 @@ import {
 } from "@/lib/generateTranslatedMetadata";
 import { Metadata } from "next";
 import DatabaseLayoutClient from "./layout-client";
+import DatabaseModalFocusProvider from "@/components/database/database-modal-focus-provider";
 
 export async function generateMetadata({
   params,
@@ -23,8 +24,19 @@ export async function generateMetadata({
   });
 }
 
-const DatabaseLayout = ({ children }: { children: React.ReactNode }) => {
-  return <DatabaseLayoutClient>{children}</DatabaseLayoutClient>;
+const DatabaseLayout = ({
+  children,
+  modal,
+}: {
+  children: React.ReactNode;
+  modal?: React.ReactNode;
+}) => {
+  return (
+    <>
+      <DatabaseLayoutClient>{children}</DatabaseLayoutClient>
+      <DatabaseModalFocusProvider>{modal}</DatabaseModalFocusProvider>
+    </>
+  );
 };
 
 export default DatabaseLayout;

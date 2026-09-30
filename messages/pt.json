@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Procuras carga máxima ou apenas o veículo mais rápido? Encontras tudo aqui. A habilidade do motorista refere-se ao teu {deliveryDriver}, e para o máximo de destinos precisas de um {logisticsManager} com 100% de habilidade."
+    },
+    "details": {
+      "unavailable": "Este item não está disponível na versão {version} do jogo.",
+      "noIngredients": "Não há dados de receita disponíveis para este produto.",
+      "noProducts": "Nenhum produto usa este ingrediente nesta versão do jogo.",
+      "usedInProducts": "Produtos que usam este ingrediente",
+      "oneOf": "Uma das opções",
+      "dialogDescription": "Detalhes da base de dados de {name}",
+      "backToOverview": "Voltar à visão geral",
+      "noWorkstationProducts": "Nesta versão do jogo, nenhum produto é fabricado nesta estação de trabalho."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Ferramentas feitas por fãs para {gameName}! Planeje suas fábricas, calcule estatísticas de produção, gerencie planos de entrega e explore os dados do jogo."
     },
     "database": {
-      "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}."
+      "description": "Explore dados detalhados de produtos, máquinas, veículos, cálculos de lucro e muito mais para {gameName}.",
+      "productDescription": "{name} em {gameName}: preços, ritmo de produção, estação de trabalho e ingredientes da receita com quantidades.",
+      "ingredientDescription": "{name} em {gameName}: preço de importação, quantidade por embalagem, importadores e produtos que utilizam este ingrediente.",
+      "workstationDescription": "{name} em {gameName}: máquinas necessárias, custos de compra e produtos fabricados nesta estação de trabalho."
     },
     "tools": {
       "description": "Domine a economia de {gameName}. Do planejamento avançado de fábricas à gestão logística complexa — consiga os dados que você precisa para expandir seu império."

@@ -64,3 +64,6 @@ export const PRODUCT_NAMES = [
 ] as const;
 
 export type ProductName = (typeof PRODUCT_NAMES)[number];
+
+export const isProductName = (value: string): value is ProductName =>
+  (PRODUCT_NAMES as readonly string[]).includes(value);

@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Un max de cargo ou juste un bolide ? Tu trouveras ton bonheur ici. Le skill du chauffeur dépend de ton {deliveryDriver}, et pour le max de destinations, il te faut un {logisticsManager} à 100 % de skill."
+    },
+    "details": {
+      "unavailable": "Cet élément n’est pas disponible dans la version {version} du jeu.",
+      "noIngredients": "Aucune donnée de recette n’est disponible pour ce produit.",
+      "noProducts": "Aucun produit n’utilise cet ingrédient dans cette version du jeu.",
+      "usedInProducts": "Produits utilisant cet ingrédient",
+      "oneOf": "Une des options",
+      "dialogDescription": "Détails de la base de données pour {name}",
+      "backToOverview": "Retour à la vue d’ensemble",
+      "noWorkstationProducts": "Aucun produit n’est fabriqué à ce poste de travail dans cette version du jeu."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Des outils fan-made pour {gameName}. Planifie tes usines, calcule tes stats de production, gère tes plans de livraison et explore les données du jeu."
     },
     "database": {
-      "description": "Retrouve toutes les données détaillées du jeu : produits, machines, véhicules, calculs de profit et plus encore pour {gameName}."
+      "description": "Retrouve toutes les données détaillées du jeu : produits, machines, véhicules, calculs de profit et plus encore pour {gameName}.",
+      "productDescription": "{name} dans {gameName} : prix, cadence de production, poste de travail et ingrédients de la recette avec quantités.",
+      "ingredientDescription": "{name} dans {gameName} : prix d’importation, quantité par colis, importateurs et produits utilisant cet ingrédient.",
+      "workstationDescription": "{name} dans {gameName} : machines nécessaires, coûts d’achat et produits fabriqués à ce poste de travail."
     },
     "tools": {
       "description": "Domine l'économie de {gameName}. De la planification d'usines avancée à la gestion logistique complexe — récupère les données nécessaires pour bâtir ton empire."

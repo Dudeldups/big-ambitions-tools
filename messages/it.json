@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Cerchi il massimo carico o solo il bolide più veloce? Qui troverai quello che cerchi. La skill del driver si riferisce al tuo {deliveryDriver}, e per il numero massimo di destinazioni ti serve un {logisticsManager} con il 100% di skill."
+    },
+    "details": {
+      "unavailable": "Questo elemento non è disponibile nella versione {version} del gioco.",
+      "noIngredients": "Non sono disponibili dati della ricetta per questo prodotto.",
+      "noProducts": "Nessun prodotto utilizza questo ingrediente in questa versione del gioco.",
+      "usedInProducts": "Prodotti che utilizzano questo ingrediente",
+      "oneOf": "Una delle opzioni",
+      "dialogDescription": "Dettagli del database per {name}",
+      "backToOverview": "Torna alla panoramica",
+      "noWorkstationProducts": "In questa versione del gioco non vengono realizzati prodotti in questa postazione di lavoro."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Tool creati dai fan per {gameName}. Pianifica fabbriche, calcola statistiche di produzione, gestisci piani di consegna e consulta i dati del gioco."
     },
     "database": {
-      "description": "Dati dettagliati su prodotti, macchinari, veicoli, calcoli dei profitti e molto altro per {gameName}."
+      "description": "Dati dettagliati su prodotti, macchinari, veicoli, calcoli dei profitti e molto altro per {gameName}.",
+      "productDescription": "{name} in {gameName}: prezzi, ritmo di produzione, postazione di lavoro e ingredienti della ricetta con quantità.",
+      "ingredientDescription": "{name} in {gameName}: prezzo di importazione, quantità per confezione, importatori e prodotti che usano questo ingrediente.",
+      "workstationDescription": "{name} in {gameName}: macchinari necessari, costi di acquisto e prodotti realizzati in questa postazione di lavoro."
     },
     "tools": {
       "description": "Domina l'economia di {gameName}. Dalla pianificazione avanzata delle fabbriche alla gestione logistica complessa: ottieni i dati necessari per espandere il tuo impero."

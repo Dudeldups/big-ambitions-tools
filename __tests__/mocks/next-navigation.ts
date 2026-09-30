@@ -2,6 +2,8 @@ import { vi } from "vitest";
 
 export const useParams = vi.fn(() => ({}));
 export const useSearchParams = vi.fn(() => new URLSearchParams());
+export const redirect = vi.fn();
+export const permanentRedirect = vi.fn();
 
 export function setMockParams(params: Record<string, string>) {
   useParams.mockReturnValue(params);

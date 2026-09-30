@@ -63,3 +63,6 @@ export const INGREDIENT_NAMES = [
 ] as const;
 
 export type IngredientName = (typeof INGREDIENT_NAMES)[number];
+
+export const isIngredientName = (value: string): value is IngredientName =>
+  (INGREDIENT_NAMES as readonly string[]).includes(value);

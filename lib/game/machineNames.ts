@@ -23,3 +23,6 @@ export const WORKSTATION_NAMES = [
 
 export type MachineName = (typeof MACHINE_NAMES)[number];
 export type WorkstationName = (typeof WORKSTATION_NAMES)[number];
+
+export const isWorkstationName = (value: string): value is WorkstationName =>
+  (WORKSTATION_NAMES as readonly string[]).includes(value);

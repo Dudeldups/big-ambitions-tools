@@ -21,6 +21,7 @@ const TableSwitcher = () => {
     {
       title: t("machines"),
       path: "/database/machines",
+      detailPath: "/database/workstations",
     },
     {
       title: t("inventory"),
@@ -45,7 +46,13 @@ const TableSwitcher = () => {
           <Button
             key={link.path}
             asChild
-            variant={pathname === link.path ? "foreground" : "ghost"}
+            variant={
+              pathname === link.path ||
+              pathname.startsWith(`${link.path}/`) ||
+              (link.detailPath && pathname.startsWith(`${link.detailPath}/`))
+                ? "foreground"
+                : "ghost"
+            }
           >
             <Link href={link.path}>{link.title}</Link>
           </Button>

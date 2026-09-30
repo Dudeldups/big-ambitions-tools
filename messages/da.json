@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Leder du efter masser af lastplads eller bare den hurtigste vogn? Det finder du her. Chaufførens skill er knyttet til din {deliveryDriver}, og for max destinationer skal du bruge en {logisticsManager} med 100 % skill."
+    },
+    "details": {
+      "unavailable": "Denne post er ikke tilgængelig i spilversion {version}.",
+      "noIngredients": "Der er ingen opskriftsdata tilgængelige for dette produkt.",
+      "noProducts": "Ingen produkter bruger denne ingrediens i denne spilversion.",
+      "usedInProducts": "Produkter, der bruger denne ingrediens",
+      "oneOf": "En af mulighederne",
+      "dialogDescription": "Databaseoplysninger for {name}",
+      "backToOverview": "Tilbage til oversigten",
+      "noWorkstationProducts": "Ingen produkter fremstilles på denne arbejdsstation i denne spilversion."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "Fan-værktøjer til {gameName}. Planlæg fabrikker, beregn produktionsstatistikker, hold styr på leveringsplaner og gennemse spildata."
     },
     "database": {
-      "description": "Få detaljerede spildata om produkter, maskiner, køretøjer, profitberegninger og meget mere til {gameName}."
+      "description": "Få detaljerede spildata om produkter, maskiner, køretøjer, profitberegninger og meget mere til {gameName}.",
+      "productDescription": "{name} i {gameName}: priser, produktionshastighed, arbejdsstation og opskriftens ingredienser med mængder.",
+      "ingredientDescription": "{name} i {gameName}: importpris, antal pr. pakke, importører og produkter, der bruger denne ingrediens.",
+      "workstationDescription": "{name} i {gameName}: nødvendige maskiner, indkøbsomkostninger og produkter fremstillet ved denne arbejdsstation."
     },
     "tools": {
       "description": "Bliv mester i økonomien i {gameName}. Fra avanceret fabrikplanlægning til kompleks logistik – få de data, du skal bruge til at udvide dit imperium."

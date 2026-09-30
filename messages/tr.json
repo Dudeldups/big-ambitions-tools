@@ -506,6 +506,16 @@
     },
     "vehicles": {
       "caption": "Maksimum yük mü yoksa sadece en hızlı araç mı arıyorsun? Aradığın burada! Sürücü yeteneği {deliveryDriver}'a bağlıdır ve maksimum hedef sayısı için %100 yetenekli bir {logisticsManager} gerekiyor."
+    },
+    "details": {
+      "unavailable": "Bu öğe oyunun {version} sürümünde mevcut değil.",
+      "noIngredients": "Bu ürün için tarif verisi mevcut değil.",
+      "noProducts": "Bu oyun sürümünde bu malzemeyi kullanan ürün yok.",
+      "usedInProducts": "Bu malzemeyi kullanan ürünler",
+      "oneOf": "Seçeneklerden biri",
+      "dialogDescription": "{name} veritabanı ayrıntıları",
+      "backToOverview": "Genel bakışa dön",
+      "noWorkstationProducts": "Oyunun bu sürümünde bu iş istasyonunda hiçbir ürün üretilmiyor."
     }
   },
   "tools": {
@@ -747,7 +757,10 @@
       "description": "{gameName} için fan araçları. Fabrikaları planla, üretim istatistiklerini hesapla, teslimat planlarını yönet ve oyun verilerine göz at."
     },
     "database": {
-      "description": "{gameName} için ürünler, makineler, araçlar, kâr hesaplamaları ve çok daha fazlasına dair detaylı oyun verileri."
+      "description": "{gameName} için ürünler, makineler, araçlar, kâr hesaplamaları ve çok daha fazlasına dair detaylı oyun verileri.",
+      "productDescription": "{gameName} oyununda {name}: fiyatlar, üretim hızı, iş istasyonu ve miktarlarıyla tarif malzemeleri.",
+      "ingredientDescription": "{gameName} oyununda {name}: ithalat fiyatı, paket miktarı, ithalatçılar ve bu malzemeyi kullanan ürünler.",
+      "workstationDescription": "{gameName} oyununda {name}: gerekli makineler, satın alma maliyetleri ve bu iş istasyonunda üretilen ürünler."
     },
     "tools": {
       "description": "{gameName} ekonomisinde ustalaş. İleri düzey fabrika planlamasından karmaşık lojistik yönetimine kadar—imparatorluğunu büyütmek için ihtiyacın olan tüm veriler burada."

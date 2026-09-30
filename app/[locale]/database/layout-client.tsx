@@ -2,7 +2,6 @@
 
 import SectionWrapper from "@/components/deco/section-wrapper";
 import TableSwitcher from "@/components/tables/table-switcher";
-import { usePathname } from "@/i18n/navigation";
 import { fadeIn, withMotion } from "@/lib/animations";
 import {
   getGameVersionLabel,
@@ -28,7 +27,6 @@ const DatabaseLayoutClient = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("database");
   const tGeneral = useTranslations("general");
   const isMounted = useIsMounted();
-  const pathname = usePathname();
   const gameVersion = useAppState((state) => state.gameVersion);
   const setGameVersion = useAppStore((state) => state.setGameVersion);
 
@@ -74,7 +72,6 @@ const DatabaseLayoutClient = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         <motion.div
-          key={`content-${pathname}`}
           {...withMotion(fadeIn)}
           initial={isMounted ? "hidden" : false}
           animate="visible"
