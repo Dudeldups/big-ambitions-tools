@@ -545,7 +545,7 @@
     "factories": {
       "title": "Suas fábricas",
       "desc": "Uma visão geral das suas fábricas. Você pode editá-las ou excluí-las e também copiar os valores atuais para uma nova fábrica. Para ver mais detalhes sobre cada fábrica, incluindo uma lista de compras, basta clicar no respectivo cartão.",
-      "desc1": "Você também pode agrupá-las clicando no botão 'Criar Grupo' abaixo. Assim, você consegue ver todas as fábricas em um só lugar e gerenciá-las como um grupo. É útil se você usa um armazém central para fornecer ingredientes para várias fábricas. Com base no número de estantes para paletes adicionadas, será sugerido um plano de entrega para cada fábrica.",
+      "desc1": "Crie um grupo e arraste para ele as fábricas abastecidas por um mesmo armazém. Defina o número de agentes de compras de uma fábrica como 0 para comprar centralmente toda a demanda semanal. Com seu próprio agente de compras, a fábrica compra a parte que cabe nas estantes e o armazém compra o restante.",
       "noFactories": "Ainda não há fábricas na sua partida. Crie uma para começar!",
       "notFound": {
         "title": "Fábrica não encontrada",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Editar fábrica",
       "shoppingList": {
-        "title": "Lista de compras",
-        "desc": "Isso é o que sua fábrica precisa semanalmente para operar com capacidade total."
+        "title": "Demanda semanal de ingredientes",
+        "desc": "Este é o consumo total de ingredientes da fábrica durante uma semana, considerando os limites de produção. Use as instruções de compra abaixo para decidir onde fazer os pedidos."
       },
       "splitShoppingList": {
         "title": "Lista de compras dividida",
         "desc": "Encomende esses ingredientes diretamente na sua fábrica para dividir o pedido. Isso é a quantidade máxima que suas {shelfAmount} estantes para paletes podem armazenar. Também considera a quantidade de caixas que você está produzindo. Você precisaria de {requiredAmount} estantes para armazenar todos os ingredientes necessários para uma semana completa de produção.",
         "desc1": "Um ou mais agentes de compras diferentes precisam pedir o restante para um armazém. Volte para a <link>visão geral da fábrica</link> e crie um grupo para ver a lista completa do que pedir para esse armazém. Lá você também verá o plano de entrega para cada fábrica."
-      }
+      },
+      "centralPurchasingNote": "Esta fábrica usa compras centralizadas. Adicione-a a um grupo de fábricas e use a lista de compras do grupo para pedir todos os ingredientes ao armazém. O plano de entregas do grupo abastece a fábrica diariamente; não faça um segundo pedido de ingredientes diretamente à fábrica.",
+      "splitPurchasingNote": "Esta fábrica tem seu próprio agente de compras. Se uma lista de compras dividida aparecer abaixo, use-a para o pedido semanal direto da fábrica e a lista do grupo para a parte restante do armazém. Se tudo couber na fábrica, peça toda a demanda semanal diretamente."
     },
     "playthroughForm": {
       "title": "Criar nova partida",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Criar grupo",
       "title": "Grupos de fábricas",
-      "desc": "Você pode agrupar fábricas para obter uma visão geral mais clara por categoria de produto. Se as fábricas agrupadas não tiverem estantes de paletes suficientes atribuídas, a lista de compras dirá o que você precisa pedir para cada fábrica e também para o armazém para suprir o restante. O diálogo de entregas também mostrará o que enviar para cada fábrica.",
+      "desc": "Agrupe fábricas abastecidas por um mesmo armazém para combinar as listas de compras semanais do armazém e ver as entregas diárias. Sem agente de compras, as compras são centralizadas; com seu próprio agente, as fábricas compram diretamente e usam o armazém para o restante. As duas estratégias podem ser combinadas em um grupo.",
       "groupEmpty": "Nenhuma fábrica neste grupo. Arraste um cartão de fábrica aqui para adicioná-lo.",
       "ungroupedTitle": "Fábricas não agrupadas",
       "ungroupedEmpty": "Nada por aqui. Arraste um cartão de fábrica para cá ou crie uma nova fábrica.",
       "deliveries": {
         "buttonDesc": "Entregas",
         "title": "Plano de entregas",
-        "descNeeded": "Planos de entrega para cada fábrica neste grupo. Um armazém compartilhado precisará de {amount} estantes para paletes para abastecer todas as fábricas deste grupo.",
-        "descEnough": "Todas as fábricas têm estantes para paletes suficientes para guardar todos os ingredientes necessários."
+        "descNeeded": "Entregas diárias deste armazém para cada fábrica. As compras centralizadas cobrem toda a demanda diária de ingredientes; com um agente de compras próprio, só a parte diária do armazém é entregue. As quantidades são arredondadas para cima para unidades inteiras. Estantes para paletes necessárias para os ingredientes semanais do armazém: {amount}.",
+        "descEnough": "Estas fábricas compram todos os ingredientes diretamente e não precisam de entregas do armazém."
       },
       "shoppingList": {
         "title": "Lista de compras do grupo",
-        "desc": "Aqui você vê todos os ingredientes necessários para abastecer as fábricas deste grupo que não têm estantes para paletes suficientes no local. A ferramenta calcula tudo com base nas estantes disponíveis nas fábricas, para que você possa encomendar o resto para um armazém separado.<br></br>Estantes necessárias no armazém: <strong>{amount}</strong>"
-      }
+        "desc": "Peça estes ingredientes ao armazém do grupo toda semana. Fábricas com compras centralizadas contribuem com toda a demanda de 7 dias. Para fábricas com seu próprio agente de compras, só a parte restante do armazém é incluída; peça a parte direta pela lista de compras dividida da fábrica.<br></br>Estantes para paletes necessárias para os ingredientes semanais do armazém: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Peça estes ingredientes ao armazém do grupo toda semana. Fábricas com compras centralizadas contribuem com toda a demanda de 7 dias. Para fábricas com seu próprio agente de compras, só a parte restante do armazém é incluída; peça a parte direta pela lista de compras dividida da fábrica.",
+      "warehouseDeliveryDesc": "Entregas diárias deste armazém para cada fábrica. As compras centralizadas cobrem toda a demanda diária de ingredientes; com um agente de compras próprio, só a parte diária do armazém é entregue. As quantidades são arredondadas para cima para unidades inteiras.",
+      "warehouseShelvesLabel": "Estantes para paletes necessárias para os ingredientes semanais do armazém:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Na versão 1.0, as matérias-primas e os salários dos funcionários reduzem a renda tributável. Os equipamentos da fábrica, as prateleiras para paletes e os veículos de entrega elegíveis são dedutíveis no momento da compra, mas as deduções únicas não estão incluídas nesta estimativa de impostos recorrentes.",
@@ -606,7 +611,7 @@
         "legend": "Informações da Fábrica",
         "name": "Nome da Fábrica",
         "calcBasis": "Base de Cálculo",
-        "palletDesc": "Defina quantas estantes para paletes estão disponíveis nesta fábrica. Defina como 0 para encomendar todos os ingredientes para o grupo de armazém.",
+        "palletDesc": "Informe o número de estantes para paletes fisicamente presentes nesta fábrica, incluindo as usadas como reserva para as entregas diárias.",
         "dailyAmount": "Para a entrega diária você precisa de <strong>{count}</strong> {object}.",
         "weeklyAmount": "Para a entrega semanal você precisa de <strong>{count}</strong> {object}.",
         "shelfExplanation": "Adicione pelo menos uma estação de trabalho para ver o número necessário de estantes para paletes.",

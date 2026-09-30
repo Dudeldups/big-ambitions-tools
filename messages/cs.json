@@ -545,7 +545,7 @@
     "factories": {
       "title": "Tvoje továrny",
       "desc": "Zde máš přehled svých továren. Můžeš je upravovat, mazat nebo kopírovat jejich hodnoty pro novou továrnu. Podrobnosti o každé továrně včetně nákupního seznamu najdeš po kliknutí na kartu.",
-      "desc1": "Továrny můžeš také seskupit kliknutím na tlačítko Vytvořit skupinu níže. Díky tomu je uvidíš na jednom místě a můžeš je spravovat jako skupinu. Hodí se to, když používáš centrální sklad pro zásobování více továren. Podle počtu paletových regálů, které jsi přidal, ti nástroj navrhne plán dodávek pro každou továrnu.",
+      "desc1": "Vytvoř skupinu a přetáhni do ní továrny zásobované jedním skladem. Nastav počet nákupčích v továrně na 0, aby se celá týdenní potřeba nakupovala centrálně. S vlastním nákupčím továrna nakupuje část, která se vejde do jejích regálů, a sklad nakupuje zbytek.",
       "noFactories": "Zatím nemáš žádné továrny. Vytvoř první a můžeš začít!",
       "notFound": {
         "title": "Továrna nenalezena",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Upravit továrnu",
       "shoppingList": {
-        "title": "Nákupní seznam",
-        "desc": "To, co tvá továrna každý týden potřebuje, aby běžela na plné obrátky."
+        "title": "Týdenní potřeba ingrediencí",
+        "desc": "Toto je celková spotřeba ingrediencí továrny za jeden týden se zohledněním výrobních limitů. Podle pokynů k nákupu níže urči, kam je objednat."
       },
       "splitShoppingList": {
         "title": "Rozdělený nákupní seznam",
         "desc": "Objednej tyto suroviny přímo do své továrny, abys objednávku rozdělil/a. Tohle je maximální množství, které tvoje {shelfAmount} paletové regály pojmou. Zohledňuje se i počet krabic, které vyrábíš. Pro uložení všech surovin na celý týden výroby bys potřeboval/a {requiredAmount} regálů.",
         "desc1": "Jeden nebo více samostatných nákupních agentů musí zbytek objednat do skladu. Vrať se na <link>přehled továren</link> a vytvoř skupinu, abys viděl celý seznam toho, co do skladu objednat. Uvidíš tak i plán dodávek pro každou továrnu."
-      }
+      },
+      "centralPurchasingNote": "Tato továrna používá centrální nákup. Přidej ji do skupiny továren a pomocí nákupního seznamu skupiny objednej všechny ingredience do skladu. Plán dodávek skupiny zásobuje továrnu denně; neobjednávej stejné ingredience podruhé přímo do továrny.",
+      "splitPurchasingNote": "Tato továrna má vlastního nákupčího. Pokud se níže zobrazuje rozdělený nákupní seznam, použij ho pro přímou týdenní objednávku továrny a seznam skupiny pro zbývající podíl skladu. Pokud se vše vejde do továrny, objednej celou týdenní potřebu přímo."
     },
     "playthroughForm": {
       "title": "Vytvořit nový průběh hry",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Vytvořit skupinu",
       "title": "Skupiny továren",
-      "desc": "Továrny můžeš seskupit, abys měl lepší přehled podle produktové kategorie. Pokud seskupené továrny nemají dostatek paletových regálů, nákupní seznam ti řekne, co objednat pro jednotlivé továrny i do skladu, aby se vše doplnilo. Dialog dodávek ti také ukáže, co poslat do každé továrny.",
+      "desc": "Seskup továrny zásobované jedním skladem, abys spojil jejich týdenní nákupní seznamy pro sklad a viděl denní dodávky. Bez nákupčího továrny používají centrální nákup; s vlastním nákupčím nakupují přímo a sklad využívají pro zbytek. Obě strategie lze kombinovat v jedné skupině.",
       "groupEmpty": "V této skupině nejsou žádné továrny. Přetáhni sem kartu továrny a přidej ji.",
       "ungroupedTitle": "Továrny bez skupiny",
       "ungroupedEmpty": "Tady je prázdno. Přetáhni sem kartu nebo vytvoř novou továrnu.",
       "deliveries": {
         "buttonDesc": "Dodávky",
         "title": "Plán dodávek",
-        "descNeeded": "Plány dodávek pro každou továrnu v této skupině. Sdílený sklad bude potřebovat {amount} paletových regálů, aby zásoboval všechny továrny v této skupině.",
-        "descEnough": "Všechny továrny mají dost regálů na uložení všech potřebných surovin."
+        "descNeeded": "Denní dodávky z tohoto skladu do každé továrny. Centrální nákup pokrývá celou denní potřebu ingrediencí; s vlastním nákupčím se dodává jen denní podíl skladu. Množství se zaokrouhluje nahoru na celé kusy. Paletové regály potřebné pro týdenní ingredience ve skladu: {amount}.",
+        "descEnough": "Tyto továrny nakupují všechny ingredience přímo a nepotřebují dodávky ze skladu."
       },
       "shoppingList": {
         "title": "Skupinový nákupní seznam",
-        "desc": "Tady jsou všechny suroviny potřebné k zásobování továren v této skupině, které nemají dost paletových regálů přímo v továrně. Výpočet vychází z počtu dostupných regálů v továrnách, takže zbytek můžeš objednat do samostatného skladu.<br></br>Regály potřebné ve skladu: <strong>{amount}</strong>"
-      }
+        "desc": "Objednej tyto ingredience každý týden do skladu skupiny. Továrny s centrálním nákupem přispívají celou potřebou na 7 dní. U továren s vlastním nákupčím je zahrnut jen zbývající podíl skladu; přímý podíl objednej podle rozděleného nákupního seznamu továrny.<br></br>Paletové regály potřebné pro týdenní ingredience ve skladu: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Objednej tyto ingredience každý týden do skladu skupiny. Továrny s centrálním nákupem přispívají celou potřebou na 7 dní. U továren s vlastním nákupčím je zahrnut jen zbývající podíl skladu; přímý podíl objednej podle rozděleného nákupního seznamu továrny.",
+      "warehouseDeliveryDesc": "Denní dodávky z tohoto skladu do každé továrny. Centrální nákup pokrývá celou denní potřebu ingrediencí; s vlastním nákupčím se dodává jen denní podíl skladu. Množství se zaokrouhluje nahoru na celé kusy.",
+      "warehouseShelvesLabel": "Paletové regály potřebné pro týdenní ingredience ve skladu:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Ve verzi 1.0 snižují suroviny a mzdy zaměstnanců zdanitelný příjem. Vybavení továrny, paletové regály a způsobilá rozvozová vozidla lze při nákupu daňově odečíst, jednorázové odpočty ale nejsou v tomto odhadu pravidelných daní zahrnuty.",
@@ -606,7 +611,7 @@
         "legend": "Informace o továrně",
         "name": "Název továrny",
         "calcBasis": "Základ výpočtu",
-        "palletDesc": "Zadej, kolik paletových regálů je v této továrně k dispozici. Nastav hodnotu na 0, pokud chceš všechny suroviny objednávat místo toho do skladové skupiny.",
+        "palletDesc": "Zadej počet fyzických paletových regálů v této továrně včetně regálů používaných jako zásoba pro denní dodávky.",
         "dailyAmount": "Na denní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "weeklyAmount": "Na týdenní dodávku potřebuješ <strong>{count}</strong> {object}.",
         "shelfExplanation": "Přidej alespoň jednu pracovní stanici, aby se zobrazil potřebný počet paletových regálů.",

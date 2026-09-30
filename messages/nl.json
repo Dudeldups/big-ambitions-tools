@@ -545,7 +545,7 @@
     "factories": {
       "title": "Je fabrieken",
       "desc": "Hier heb je een overzicht van je fabrieken. Je kunt ze bewerken of verwijderen en ook huidige waarden voor een nieuwe fabriek kopiëren. Om meer details te zien over elke fabriek inclusief een inkooplijst, klik gewoon op de bijbehorende kaart.",
-      "desc1": "Je kunt ze ook groeperen door onder op de knop Groep maken te klikken. Zo zie je alle fabriken op één plek en beheer je ze als groep. Handig als je een centraal magazijn gebruikt om ingrediënten voor meerdere fabrieken te leveren. Op basis van het aantal palletplanken dat je hebt toegevoegd, wordt er een leveringsplan voor elke fabriek voorgesteld.",
+      "desc1": "Maak een groep en sleep de fabrieken erin die door één magazijn worden bevoorraad. Zet het aantal inkopers van een fabriek op 0 om de volledige weekbehoefte centraal in te kopen. Met een eigen inkoper koopt de fabriek het deel dat op haar palletstellingen past en koopt het magazijn de rest.",
       "noFactories": "Er zijn nog geen fabrieken in je spelstand. Maak er een aan om te beginnen!",
       "notFound": {
         "title": "Fabriek niet gevonden",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Fabriek bewerken",
       "shoppingList": {
-        "title": "Boodschappenlijstje",
-        "desc": "Dit is wat je fabriek wekelijks nodig heeft om met volle capaciteit te draaien."
+        "title": "Wekelijkse behoefte aan ingrediënten",
+        "desc": "Dit is het totale ingrediëntenverbruik van de fabriek voor één week, inclusief eventuele productielimieten. Gebruik de aankoopinstructies hieronder om te bepalen waar je ze bestelt."
       },
       "splitShoppingList": {
         "title": "Gesplitste boodschappenlijst",
         "desc": "Bestel deze ingrediënten direct naar je fabriek om de bestelling op te splitsen. Dit is het maximale aantal dat je {shelfAmount} palletplanken kunnen bevatten. Het houdt ook rekening met het aantal dozen dat je produceert. Je zou {requiredAmount} palletplanken nodig hebben om alle ingrediënten voor een hele week productie op te slaan.",
         "desc1": "De rest moet door één of meer aparte inkopers naar een magazijn worden besteld. Ga terug naar het <link>fabrieksoverzicht</link> en maak een groep aan om de volledige lijst te zien van wat er voor dat magazijn besteld moet worden. Je ziet daar ook het leveringsplan voor elke fabriek."
-      }
+      },
+      "centralPurchasingNote": "Deze fabriek koopt centraal in. Voeg haar toe aan een fabrieksgroep en gebruik de boodschappenlijst van die groep om alle ingrediënten naar het magazijn te bestellen. Het leveringsplan van de groep bevoorraadt de fabriek dagelijks; plaats geen tweede ingrediëntenbestelling rechtstreeks bij de fabriek.",
+      "splitPurchasingNote": "Deze fabriek heeft een eigen inkoper. Als hieronder een gesplitste boodschappenlijst staat, gebruik die dan voor de directe weekbestelling van de fabriek en de groepsboodschappenlijst voor het resterende magazijnaandeel. Als alles in de fabriek past, bestel je de volledige weekbehoefte rechtstreeks."
     },
     "playthroughForm": {
       "title": "Nieuwe spelstand aanmaken",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Groep aanmaken",
       "title": "Fabrieksgroepen",
-      "desc": "Je kunt fabriken groeperen voor een beter overzicht per productcategorie. Als de gegroepeerde fabrieken niet genoeg palletplanken hebben toegewezen, vertelt de boodschappenlijst wat je voor elke fabriek en ook voor het magazijn moet bestellen om de rest te leveren. De leveringsdialoog toont je ook wat naar elke fabriek gestuurd moet worden.",
+      "desc": "Groepeer fabrieken die door één magazijn worden bevoorraad om hun wekelijkse magazijnboodschappenlijsten samen te voegen en dagelijkse leveringen te zien. Fabrieken zonder inkoper kopen centraal in; fabrieken met een eigen inkoper kopen rechtstreeks en gebruiken het magazijn voor de rest. Beide strategieën kunnen in één groep worden gecombineerd.",
       "groupEmpty": "Geen fabrieken in deze groep. Sleep een fabriekkaart hierheen om deze toe te voegen.",
       "ungroupedTitle": "Ongegroepeerde fabrieken",
       "ungroupedEmpty": "Nog geen fabrieken in een groep. Sleep een kaart hierheen of voeg een nieuwe fabriek toe.",
       "deliveries": {
         "buttonDesc": "Leveringen",
         "title": "Leveringsplan",
-        "descNeeded": "Leveringsplannen voor elke fabriek in deze groep. Een gedeeld magazijn heeft {amount} palletplanken nodig om alle fabrieken in deze groep te bevoorraden.",
-        "descEnough": "Alle fabrieken hebben genoeg palletplanken voor alle benodigde ingrediënten."
+        "descNeeded": "Dagelijkse leveringen van dit magazijn naar elke fabriek. Centrale inkoop levert de volledige dagelijkse ingrediëntenbehoefte; met een eigen inkoper wordt alleen het dagelijkse magazijnaandeel geleverd. Hoeveelheden worden naar boven afgerond op hele artikelen. Benodigde palletstellingen voor de wekelijkse ingrediënten in het magazijn: {amount}.",
+        "descEnough": "Deze fabrieken kopen al hun ingrediënten rechtstreeks en hebben geen magazijnleveringen nodig."
       },
       "shoppingList": {
         "title": "Groepsboodschappenlijst",
-        "desc": "Dit zijn alle ingrediënten die nodig zijn voor de fabrieken in deze groep waarvoor niet genoeg palletplanken beschikbaar zijn. De berekening is gebaseerd op het aantal beschikbare palletplanken in de fabrieken, zodat je de rest naar een apart magazijn kunt bestellen.<br></br>Benodigde palletplanken in het magazijn: <strong>{amount}</strong>"
-      }
+        "desc": "Bestel deze ingrediënten elke week naar het magazijn van de groep. Fabrieken die centraal inkopen dragen hun volledige behoefte voor 7 dagen bij. Bij fabrieken met een eigen inkoper wordt alleen het resterende magazijnaandeel opgenomen; bestel hun directe aandeel via de gesplitste boodschappenlijst van de fabriek.<br></br>Benodigde palletstellingen voor de wekelijkse ingrediënten in het magazijn: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Bestel deze ingrediënten elke week naar het magazijn van de groep. Fabrieken die centraal inkopen dragen hun volledige behoefte voor 7 dagen bij. Bij fabrieken met een eigen inkoper wordt alleen het resterende magazijnaandeel opgenomen; bestel hun directe aandeel via de gesplitste boodschappenlijst van de fabriek.",
+      "warehouseDeliveryDesc": "Dagelijkse leveringen van dit magazijn naar elke fabriek. Centrale inkoop levert de volledige dagelijkse ingrediëntenbehoefte; met een eigen inkoper wordt alleen het dagelijkse magazijnaandeel geleverd. Hoeveelheden worden naar boven afgerond op hele artikelen.",
+      "warehouseShelvesLabel": "Benodigde palletstellingen voor de wekelijkse ingrediënten in het magazijn:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "In versie 1.0 verlagen grondstoffen en werknemerslonen het belastbare inkomen. Fabrieksapparatuur, palletstellingen en daarvoor in aanmerking komende bezorgvoertuigen zijn aftrekbaar bij aankoop, maar eenmalige aftrekposten zijn niet opgenomen in deze schatting van terugkerende belasting.",
@@ -606,7 +611,7 @@
         "legend": "Fabrikinformatie",
         "name": "Fabrieknaam",
         "calcBasis": "Berekeningsbasis",
-        "palletDesc": "Definieer hoeveel palletplanken er beschikbaar zijn in deze fabriek. Stel dit in op 0 om alle ingrediënten naar de magazijngroep te bestellen.",
+        "palletDesc": "Vul het aantal fysieke palletstellingen in deze fabriek in, inclusief de stellingen die als buffer voor dagelijkse leveringen dienen.",
         "dailyAmount": "Voor de dagelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "weeklyAmount": "Voor de wekelijkse levering heb je <strong>{count}</strong> {object} nodig.",
         "shelfExplanation": "Voeg minimaal één werkplek toe om het benodigde aantal palletplanken te zien.",

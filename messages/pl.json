@@ -545,7 +545,7 @@
     "factories": {
       "title": "Twoje fabryki",
       "desc": "Zobacz swoje fabryki. Możesz je edytować, usuwać lub kopiować aktualne wartości do nowej fabryki. Kliknij w kartę, aby zobaczyć szczegóły i listę zakupów.",
-      "desc1": "Możesz też je pogrupować, klikając przycisk 'Utwórz grupę' poniżej. Dzięki temu zobaczysz wszystkie fabryki w jednym miejscu i łatwiej nimi zarządzisz. To przydatne, jeśli używasz centralnego magazynu do dostarczania składników do wielu fabryk. Na podstawie liczby dodanych regałów paletowych system podpowie Ci plan dostaw dla każdej fabryki.",
+      "desc1": "Utwórz grupę i przeciągnij do niej fabryki zaopatrywane przez jeden magazyn. Ustaw liczbę specjalistów ds. zakupów w fabryce na 0, aby centralnie kupować całe tygodniowe zapotrzebowanie. Z własnym specjalistą fabryka kupuje część mieszczącą się na jej regałach, a magazyn kupuje resztę.",
       "noFactories": "W Twoim stanie gry nie ma jeszcze żadnych fabryk. Stwórz jedną, aby zacząć zabawę!",
       "notFound": {
         "title": "Nie znaleziono fabryki",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Edytuj fabrykę",
       "shoppingList": {
-        "title": "Lista zakupów",
-        "desc": "To, czego Twoja fabryka potrzebuje co tydzień, by pracować na pełnych obrotach."
+        "title": "Tygodniowe zapotrzebowanie na składniki",
+        "desc": "To całkowite zużycie składników przez fabrykę w ciągu tygodnia, z uwzględnieniem limitów produkcji. Skorzystaj z instrukcji zakupów poniżej, aby ustalić, dokąd je zamawiać."
       },
       "splitShoppingList": {
         "title": "Podział listy zakupów",
         "desc": "Zamów te składniki bezpośrednio do fabryki, aby podzielić zamówienie. To maksymalna pojemność Twoich {shelfAmount} regałów paletowych. Uwzględnia to też liczbę produkowanych kartonów. Aby przechowywać wszystkie składniki przez cały tydzień produkcji, potrzebujesz {requiredAmount} regałów.",
         "desc1": "Resztę musi zamówić jeden lub kilku oddzielnych agentów zakupowych. Wróć do <link>widoku fabryk</link> i utwórz grupę, aby zobaczyć pełną listę produktów do zamówienia dla tego magazynu. Zobaczysz tam również plan dostaw do każdej fabryki."
-      }
+      },
+      "centralPurchasingNote": "Ta fabryka korzysta z zakupów centralnych. Dodaj ją do grupy fabryk i użyj listy zakupów grupy, aby zamówić wszystkie składniki do magazynu. Plan dostaw grupy zaopatruje fabrykę codziennie; nie składaj drugiego zamówienia składników bezpośrednio do fabryki.",
+      "splitPurchasingNote": "Ta fabryka ma własnego specjalistę ds. zakupów. Jeśli poniżej widoczny jest podział listy zakupów, użyj go do bezpośredniego zamówienia tygodniowego fabryki, a listy grupy do pozostałej części magazynu. Jeśli wszystko mieści się w fabryce, zamów całe tygodniowe zapotrzebowanie bezpośrednio."
     },
     "playthroughForm": {
       "title": "Utwórz nowy stan gry",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Utwórz grupę",
       "title": "Grupy fabryk",
-      "desc": "Możesz grupować fabryki, aby mieć lepszy przegląd według kategorii produktów. Jeśli zgrupowane fabryki nie mają wystarczająco przypisanych regałów paletowych, lista zakupów powie Ci, co musisz zamówić dla każdej fabryki oraz do magazynu, aby dostarczyć resztę. Dialog dostaw również pokaże Ci, co należy wysłać do każdej fabryki.",
+      "desc": "Grupuj fabryki zaopatrywane przez jeden magazyn, aby łączyć ich tygodniowe listy zakupów do magazynu i widzieć codzienne dostawy. Bez specjalisty ds. zakupów fabryki kupują centralnie; z własnym specjalistą kupują bezpośrednio i korzystają z magazynu dla reszty. Obie strategie mogą występować w jednej grupie.",
       "groupEmpty": "Brak fabryk w tej grupie. Przeciągnij kartę fabryki tutaj, aby dodać ją.",
       "ungroupedTitle": "Nie zgrupowane fabryki",
       "ungroupedEmpty": "Tu jest pusto. Przeciągnij kartę tutaj lub dodaj nową fabrykę.",
       "deliveries": {
         "buttonDesc": "Dostawy",
         "title": "Plan dostaw",
-        "descNeeded": "Plany dostaw dla każdej fabryki w tej grupie. Wspólny magazyn będzie potrzebować {amount} regałów paletowych, aby zaopatrywać wszystkie fabryki w tej grupie.",
-        "descEnough": "Wszystkie fabryki mają wystarczająco dużo regałów, by pomieścić wszystkie potrzebne składniki."
+        "descNeeded": "Codzienne dostawy z tego magazynu do każdej fabryki. Zakupy centralne pokrywają całe dzienne zapotrzebowanie na składniki; przy własnym specjaliście ds. zakupów dostarczana jest tylko dzienna część magazynu. Ilości są zaokrąglane w górę do pełnych sztuk. Regały paletowe potrzebne na tygodniowe składniki w magazynie: {amount}.",
+        "descEnough": "Te fabryki kupują wszystkie składniki bezpośrednio i nie potrzebują dostaw z magazynu."
       },
       "shoppingList": {
         "title": "Lista zakupów grupy",
-        "desc": "Tu znajdziesz wszystkie składniki potrzebne do zaopatrzenia fabryk z tej grupy, które mają za mało regałów paletowych. Wszystko jest wyliczane na podstawie dostępnych regałów, żebyś mógł zamówić resztę do oddzielnego magazynu.<br></br>Regały potrzebne w magazynie: <strong>{amount}</strong>"
-      }
+        "desc": "Zamawiaj te składniki do magazynu grupy co tydzień. Fabryki z zakupami centralnymi uwzględniają całe zapotrzebowanie na 7 dni. Dla fabryk z własnym specjalistą ds. zakupów uwzględniona jest tylko pozostała część magazynu; część bezpośrednią zamów według podziału listy zakupów fabryki.<br></br>Regały paletowe potrzebne na tygodniowe składniki w magazynie: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Zamawiaj te składniki do magazynu grupy co tydzień. Fabryki z zakupami centralnymi uwzględniają całe zapotrzebowanie na 7 dni. Dla fabryk z własnym specjalistą ds. zakupów uwzględniona jest tylko pozostała część magazynu; część bezpośrednią zamów według podziału listy zakupów fabryki.",
+      "warehouseDeliveryDesc": "Codzienne dostawy z tego magazynu do każdej fabryki. Zakupy centralne pokrywają całe dzienne zapotrzebowanie na składniki; przy własnym specjaliście ds. zakupów dostarczana jest tylko dzienna część magazynu. Ilości są zaokrąglane w górę do pełnych sztuk.",
+      "warehouseShelvesLabel": "Regały paletowe potrzebne na tygodniowe składniki w magazynie:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "W wersji 1.0 surowce i wynagrodzenia pracowników zmniejszają dochód podlegający opodatkowaniu. Wyposażenie fabryki, regały paletowe i kwalifikujące się pojazdy dostawcze można odliczyć przy zakupie, ale jednorazowe odliczenia nie są uwzględnione w tym szacunku podatków cyklicznych.",
@@ -606,7 +611,7 @@
         "legend": "Informacje o fabryce",
         "name": "Nazwa fabryki",
         "calcBasis": "Podstawa obliczeń",
-        "palletDesc": "Zdefiniuj, ile regałów paletowych jest dostępnych w tej fabryce. Ustaw 0, aby zamawiać wszystkie składniki do grupy magazynowej.",
+        "palletDesc": "Podaj liczbę fizycznych regałów paletowych w tej fabryce, w tym regałów używanych jako bufor dla codziennych dostaw.",
         "dailyAmount": "Do dostawy dziennej potrzebujesz <strong>{count}</strong> {object}.",
         "weeklyAmount": "Do dostawy tygodniowej potrzebujesz <strong>{count}</strong> {object}.",
         "shelfExplanation": "Dodaj co najmniej jedno stanowisko pracy, aby zobaczyć potrzebną liczbę regałów paletowych.",

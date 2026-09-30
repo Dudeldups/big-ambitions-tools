@@ -545,7 +545,7 @@
     "factories": {
       "title": "Deine Fabriken",
       "desc": "Hier hast du einen Überblick über deine Fabriken. Du kannst sie bearbeiten oder löschen und auch aktuelle Werte für eine neue Fabrik kopieren. Um mehr Details zu jeder Fabrik inklusive einer Einkaufsliste zu sehen, klicke einfach auf die entsprechende Karte.",
-      "desc1": "Du kannst sie auch zusammenfassen, indem du unten auf \"Gruppe erstellen\" klickst. So siehst du alle Fabriken an einer Stelle und verwaltest sie als Gruppe. Praktisch, wenn du ein zentrales Lager nutzt, um Zutaten für mehrere Fabriken zu liefern. Basierend auf den Palettenregalen in der Fabrik wird ein Lieferplan für jede Fabrik vorgeschlagen.",
+      "desc1": "Erstelle eine Gruppe und ziehe die Fabriken hinein, die von einem Lagerhaus versorgt werden. Setze die Anzahl der Einkäufer einer Fabrik auf 0, um ihren gesamten Wochenbedarf zentral einzukaufen. Mit einem eigenen Einkäufer bestellt die Fabrik den Anteil, der auf ihre Regale passt; das Lagerhaus bestellt den Rest.",
       "noFactories": "Es gibt noch keine Fabriken in deinem Spielstand. Erstelle eine, um loszulegen!",
       "notFound": {
         "title": "Fabrik nicht gefunden",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Fabrik bearbeiten",
       "shoppingList": {
-        "title": "Einkaufsliste",
-        "desc": "Das ist, was deine Fabrik wöchentlich benötigt, um mit voller Kapazität zu laufen."
+        "title": "Wöchentlicher Zutatenbedarf",
+        "desc": "Das ist der gesamte Zutatenverbrauch der Fabrik für eine Woche, einschließlich aller Produktionslimits. Die Einkaufshinweise unten zeigen dir, wohin du die Zutaten bestellen solltest."
       },
       "splitShoppingList": {
         "title": "Geteilte Einkaufsliste",
         "desc": "Bestelle diese Zutaten direkt an deine Fabrik, um die Bestellung aufzuteilen. Dies ist die maximale Menge, die deine {shelfAmount} Palettenregale halten können. Es berücksichtigt auch die Anzahl der Kisten, die du produzierst. Du bräuchtest {requiredAmount} Regale, um alle Zutaten für eine ganze Woche Produktion zu lagern.",
         "desc1": "Der Rest muss von einem oder mehreren separaten Einkaufsagenten an ein Lagerhaus bestellt werden. Gehe zurück zur <link>Fabrik-Übersicht</link> und erstelle eine Gruppe, um die vollständige Liste zu sehen, was für das Lagerhaus bestellt werden muss. Es zeigt dir auch den Lieferplan zu jeder Fabrik."
-      }
+      },
+      "centralPurchasingNote": "Diese Fabrik kauft zentral ein. Füge sie einer Fabrik-Gruppe hinzu und bestelle über deren Einkaufsliste alle Zutaten ins Lagerhaus. Der Lieferplan der Gruppe versorgt die Fabrik täglich; bestelle die Zutaten nicht zusätzlich direkt zur Fabrik.",
+      "splitPurchasingNote": "Diese Fabrik hat einen eigenen Einkäufer. Wenn unten eine geteilte Einkaufsliste erscheint, nutze sie für die direkte Wochenbestellung der Fabrik und die Gruppen-Einkaufsliste für den verbleibenden Anteil des Lagerhauses. Passt alles in die Fabrik, bestelle den gesamten Wochenbedarf direkt dorthin."
     },
     "playthroughForm": {
       "title": "Neuen Spielstand erstellen",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Gruppe erstellen",
       "title": "Fabrik-Gruppen",
-      "desc": "Du kannst Fabriken zusammenfassen, um einen besseren Überblick pro Produktkategorie zu haben. Wenn die gruppierten Fabriken nicht genügend Palettenregale zugewiesen haben, sagt dir die Einkaufsliste, was du für jede Fabrik und auch für das Lagerhaus bestellen musst, um den Rest zu liefern. Der Lieferdialog zeigt dir auch, was an jede Fabrik gesendet werden soll.",
+      "desc": "Gruppiere Fabriken, die von einem Lagerhaus versorgt werden, um ihre wöchentlichen Lagerhaus-Einkaufslisten zusammenzufassen und tägliche Lieferungen zu sehen. Ohne Einkäufer kauft eine Fabrik zentral ein; mit eigenem Einkäufer bestellt sie Zutaten direkt und nutzt das Lagerhaus für den Rest. Beide Strategien können in einer Gruppe kombiniert werden.",
       "groupEmpty": "Keine Fabriken in dieser Gruppe. Ziehe eine Fabrik-Karte hierher, um sie hinzuzufügen.",
       "ungroupedTitle": "Nicht gruppierte Fabriken",
       "ungroupedEmpty": "Hier ist gerade nichts los. Zieh eine Karte hierher oder erstell eine völlig neue Fabrik.",
       "deliveries": {
         "buttonDesc": "Lieferungen",
         "title": "Lieferplan",
-        "descNeeded": "Lieferpläne für jede Fabrik in dieser Gruppe. Ein gemeinsam genutztes Lagerhaus benötigt {amount} Palettenregale, um alle Fabriken in dieser Gruppe zu versorgen.",
-        "descEnough": "Alle Fabriken haben genug Regale, um alle benötigten Zutaten aufzubewahren."
+        "descNeeded": "Tägliche Lieferungen von diesem Lagerhaus an jede Fabrik. Zentraler Einkauf deckt den gesamten täglichen Zutatenbedarf; ein eigener Einkäufer benötigt nur den täglichen Lagerhaus-Anteil. Die Mengen werden auf ganze Artikel aufgerundet. Benötigte Palettenregale für die wöchentlichen Zutaten im Lagerhaus: {amount}.",
+        "descEnough": "Diese Fabriken bestellen alle Zutaten direkt und benötigen keine Lieferungen aus dem Lagerhaus."
       },
       "shoppingList": {
         "title": "Gruppen-Einkaufsliste",
-        "desc": "Hier siehst du alle Zutaten, die du für die Fabriken in dieser Gruppe brauchst, für die vor Ort nicht genug Regalkapazität vorhanden ist. Das Tool berechnet das Ganze basierend auf den Regalen in den Fabriken, damit du den Rest einfach in ein separates Lagerhaus bestellen kannst.<br></br>Benötigte Regale im Lagerhaus: <strong>{amount}</strong>"
-      }
+        "desc": "Bestelle diese Zutaten jede Woche ins Lagerhaus der Gruppe. Zentral einkaufende Fabriken steuern ihren gesamten Bedarf für 7 Tage bei. Bei Fabriken mit eigenem Einkäufer ist nur der verbleibende Lagerhaus-Anteil enthalten; bestelle ihren direkten Anteil über die geteilte Einkaufsliste der Fabrik.<br></br>Benötigte Palettenregale für die wöchentlichen Zutaten im Lagerhaus: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Bestelle diese Zutaten jede Woche ins Lagerhaus der Gruppe. Zentral einkaufende Fabriken steuern ihren gesamten Bedarf für 7 Tage bei. Bei Fabriken mit eigenem Einkäufer ist nur der verbleibende Lagerhaus-Anteil enthalten; bestelle ihren direkten Anteil über die geteilte Einkaufsliste der Fabrik.",
+      "warehouseDeliveryDesc": "Tägliche Lieferungen von diesem Lagerhaus an jede Fabrik. Zentraler Einkauf deckt den gesamten täglichen Zutatenbedarf; ein eigener Einkäufer benötigt nur den täglichen Lagerhaus-Anteil. Die Mengen werden auf ganze Artikel aufgerundet.",
+      "warehouseShelvesLabel": "Benötigte Palettenregale für die wöchentlichen Zutaten im Lagerhaus:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "In Version 1.0 senken Rohstoffe und Mitarbeiterlöhne das zu versteuernde Einkommen. Fabrikausstattung, Palettenregale und qualifizierte Lieferfahrzeuge sind beim Kauf steuerlich absetzbar; einmalige Abzüge sind in dieser laufenden Steuerschätzung jedoch nicht enthalten.",
@@ -606,7 +611,7 @@
         "legend": "Fabrik-Informationen",
         "name": "Fabrikname",
         "calcBasis": "Berechnungsgrundlage",
-        "palletDesc": "Definiere, wie viele Palettenregale in dieser Fabrik verfügbar sind. Setze diesen Wert auf 0, um stattdessen alle Zutaten an die Lagergruppe zu bestellen.",
+        "palletDesc": "Gib die Anzahl der tatsächlich vorhandenen Palettenregale in dieser Fabrik an, einschließlich der Regale, die als Puffer für tägliche Lieferungen dienen.",
         "dailyAmount": "Für die tägliche Lieferung brauchst du <strong>{count}</strong> {object}.",
         "weeklyAmount": "Für die wöchentliche Lieferung brauchst du <strong>{count}</strong> {object}.",
         "shelfExplanation": "Füge mindestens eine Arbeitsstation hinzu, um die benötigten Palettenregale zu sehen.",

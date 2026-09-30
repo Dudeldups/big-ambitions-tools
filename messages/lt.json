@@ -545,7 +545,7 @@
     "factories": {
       "title": "Tavo gamyklos",
       "desc": "Štai tavo gamyklų apžvalga. Gali jas redaguoti, ištrinti arba nukopijuoti esamas reikšmes naujai gamyklai. Jei nori sužinoti daugiau apie kiekvieną gamyklą (įskaitant pirkimo sąrašą), tiesiog paspausk ant atitinkamos kortelės.",
-      "desc1": "Taip pat gali jas sugrupuoti paspaudus mygtuką „Sukurti grupę“ žemiau. Taip galėsi matyti visas gamyklas vienoje vietoje ir valdyti jas kaip grupę. Tai naudinga, jei naudojiesi centraliniu sandėliu, iš kurio ingredientai tiekiami kelioms gamykloms. Remiantis pridėtų palečių lentynų skaičiumi, kiekvienai gamyklai bus pasiūlytas pristatymo planas.",
+      "desc1": "Sukurk grupę ir nutempk į ją gamyklas, kurias aprūpina vienas sandėlis. Nustatyk gamyklos pirkimų agentų skaičių į 0, kad visas savaitinis poreikis būtų perkamas centralizuotai. Turėdama savo pirkimų agentą, gamykla perka dalį, kuri telpa jos lentynose, o sandėlis perka likutį.",
       "noFactories": "Tavo žaidime dar nėra fabrikų. Sukurk vieną, kad pradėtum!",
       "notFound": {
         "title": "Gamykla nerasta",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Redaguoti gamyklą",
       "shoppingList": {
-        "title": "Pirkimų sąrašas",
-        "desc": "Štai ko tavo gamyklai reikia kas savaitę, kad dirbtų pilna jėga."
+        "title": "Savaitinis ingredientų poreikis",
+        "desc": "Tai visas gamyklos ingredientų suvartojimas per savaitę, atsižvelgiant į gamybos ribas. Pagal toliau pateiktas pirkimo instrukcijas nuspręsk, kur juos užsakyti."
       },
       "splitShoppingList": {
         "title": "Padalinta pirkimų sąrašas",
         "desc": "Užsakyk šiuos ingredientus tiesiai į tavo fabriką, kad padalintum užsakymą. Tai yra maksimali suma, kurią gali laikyti tavo {shelfAmount} palečių lentynų. Tai taip pat atsižvelgia į dėžučių, kurias gamini, skaičių. Tau reikėtų {requiredAmount} palečių lentynų, kad laikytum visus ingredientus visai savaitės gamybai.",
         "desc1": "Likusią dalį reikia užsakyti į sandėlį vienam ar keliems atskiriems pirkimo agentams. Grįžk į <link>fabrikų apžvalgą</link> ir sukurk grupę, kad pamatytum pilną sąrašą visko, ko reikia užsisakyti į tą sandėlį. Jis taip pat parodys tau pristatymo planą kiekvienai fabrikai."
-      }
+      },
+      "centralPurchasingNote": "Ši gamykla naudoja centralizuotą pirkimą. Pridėk ją prie gamyklų grupės ir pagal grupės pirkinių sąrašą užsakyk visus ingredientus į sandėlį. Grupės pristatymo planas aprūpina gamyklą kasdien; nepateik antro ingredientų užsakymo tiesiai į gamyklą.",
+      "splitPurchasingNote": "Ši gamykla turi savo pirkimų agentą. Jei toliau rodomas padalintas pirkimų sąrašas, naudok jį tiesioginiam savaitiniam gamyklos užsakymui, o grupės sąrašą – likusiai sandėlio daliai. Jei viskas telpa gamykloje, visą savaitinį poreikį užsakyk tiesiogiai."
     },
     "playthroughForm": {
       "title": "Sukurti naują žaidimo būseną",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Sukurti grupę",
       "title": "Gamyklų grupės",
-      "desc": "Gali sugrupuoti gamyklas pagal produktų kategorijas, kad lengviau būtų viską apžvelgti. Jei sugrupuotoms gamykloms nebus pakankamai palečių lentynų, pirkimo sąrašas parodys, ką reikia užsakyti kiekvienai gamyklai ir sandėliui, kad užpildytum trūkumą. Tiekimo langelis taip pat parodys, ką siųsti į kiekvieną gamyklą.",
+      "desc": "Sugrupuok vieno sandėlio aprūpinamas gamyklas, kad sujungtum jų savaitinius sandėlio pirkinių sąrašus ir matytum kasdienius pristatymus. Be pirkimų agento gamyklos perka centralizuotai; su savo agentu perka tiesiogiai, o likutį gauna iš sandėlio. Abi strategijos gali būti vienoje grupėje.",
       "groupEmpty": "Šioje grupėje nėra gamyklų. Pervilkite gamyklos kortelę čia, kad ją pridėtumėte.",
       "ungroupedTitle": "Nesugrupuotos gamyklos",
       "ungroupedEmpty": "Čia nieko nėra. Persitrauk kortelę čia arba sukurk naują gamyklą.",
       "deliveries": {
         "buttonDesc": "Pristatymai",
         "title": "Tiekimo planas",
-        "descNeeded": "Tiekimo planai kiekvienam šios grupės fabrikui. Bendram sandėliui reikės {amount} palečių lentynų, kad jis aprūpintų visus šios grupės fabrikus.",
-        "descEnough": "Visoms gamykloms užtenka lentynų visus reikiamus ingredientus laikyti."
+        "descNeeded": "Kasdieniai pristatymai iš šio sandėlio į kiekvieną gamyklą. Centralizuotas pirkimas aprūpina visu dienos ingredientų poreikiu; turint savo pirkimų agentą pristatoma tik dienos sandėlio dalis. Kiekiai apvalinami į viršų iki sveikų vienetų. Palečių lentynos, reikalingos savaitiniams sandėlio ingredientams: {amount}.",
+        "descEnough": "Šios gamyklos visus ingredientus perka tiesiogiai ir joms nereikia pristatymų iš sandėlio."
       },
       "shoppingList": {
         "title": "Grupės pirkimo sąrašas",
-        "desc": "Šioje grupėje pamatysi visus ingredientus, reikalingus gamykloms, kurioms trūksta lentynų. Įrankis apskaičiuos kiek jų reikia gamyklose, kad likutį galėtum užsisakyti į atskirą sandėlį.<br></br>Sandėlyje reikalingų lentynų: <strong>{amount}</strong>"
-      }
+        "desc": "Šiuos ingredientus kas savaitę užsakyk į grupės sandėlį. Centralizuotai perkančių gamyklų įtrauktas visas 7 dienų poreikis. Gamykloms su savo pirkimų agentu įtraukta tik likusi sandėlio dalis; tiesioginę dalį užsakyk pagal gamyklos padalintą pirkimų sąrašą.<br></br>Palečių lentynos, reikalingos savaitiniams sandėlio ingredientams: <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Šiuos ingredientus kas savaitę užsakyk į grupės sandėlį. Centralizuotai perkančių gamyklų įtrauktas visas 7 dienų poreikis. Gamykloms su savo pirkimų agentu įtraukta tik likusi sandėlio dalis; tiesioginę dalį užsakyk pagal gamyklos padalintą pirkimų sąrašą.",
+      "warehouseDeliveryDesc": "Kasdieniai pristatymai iš šio sandėlio į kiekvieną gamyklą. Centralizuotas pirkimas aprūpina visu dienos ingredientų poreikiu; turint savo pirkimų agentą pristatoma tik dienos sandėlio dalis. Kiekiai apvalinami į viršų iki sveikų vienetų.",
+      "warehouseShelvesLabel": "Palečių lentynos, reikalingos savaitiniams sandėlio ingredientams:"
     },
     "factoryPlanner": {
       "taxDeductionNote": "1.0 versijoje žaliavos ir darbuotojų atlyginimai mažina apmokestinamąsias pajamas. Gamyklos įranga, palečių lentynos ir tinkamos pristatymo transporto priemonės yra atskaitomos jas perkant, tačiau vienkartiniai atskaitymai į šį pasikartojančių mokesčių įvertį neįtraukti.",
@@ -606,7 +611,7 @@
         "legend": "Gamyklos informacija",
         "name": "Gamyklos pavadinimas",
         "calcBasis": "Skaičiavimo pagrindas",
-        "palletDesc": "Nustatyk, kiek palečių lentynų yra šioje gamykloje. Nustatyk 0, kad visus ingredientus užsakytum į sandėlio grupę.",
+        "palletDesc": "Įvesk šioje gamykloje fiziškai esančių palečių lentynų skaičių, įskaitant kasdienių pristatymų rezervui naudojamas lentynas.",
         "dailyAmount": "Dienos pristatymui reikia <strong>{count}</strong> {object}.",
         "weeklyAmount": "Savaitės pristatymui reikia <strong>{count}</strong> {object}.",
         "shelfExplanation": "Pridėk bent vieną darbo vietą, kad pamatytum reikalingų palečių lentynų kiekį.",

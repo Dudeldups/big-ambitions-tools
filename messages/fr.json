@@ -545,7 +545,7 @@
     "factories": {
       "title": "Tes usines",
       "desc": "Un aperçu de tes usines. Tu peux les modifier ou les supprimer, et aussi copier les valeurs actuelles pour créer une nouvelle usine. Pour voir plus de détails sur chaque usine, y compris une liste d'achats, clique simplement sur la carte correspondante.",
-      "desc1": "Tu peux aussi les regrouper en cliquant sur le bouton « Créer un groupe » ci-dessous. Cela te permet de voir ces usines au même endroit et de les gérer comme un groupe. Utile si tu utilises un entrepôt central pour fournir des ingrédients à plusieurs usines. En fonction du nombre de rayonnages à palettes que tu as ajoutés, un plan de livraison sera proposé pour chaque usine.",
+      "desc1": "Crée un groupe et glisse dedans les usines approvisionnées par un même entrepôt. Mets le nombre d’agents d’achats d’une usine à 0 pour centraliser l’achat de tous ses besoins hebdomadaires. Avec son propre agent d’achats, l’usine achète la part qui tient sur ses rayonnages et l’entrepôt achète le reste.",
       "noFactories": "Il n'y a pas encore d'usines dans ta partie. Crée-en une pour commencer !",
       "notFound": {
         "title": "Usine introuvable",
@@ -556,14 +556,16 @@
     "factoryDetail": {
       "editBtn": "Modifier l'usine",
       "shoppingList": {
-        "title": "Liste de courses",
-        "desc": "Voici ce dont ton usine a besoin chaque semaine pour fonctionner à pleine capacité."
+        "title": "Besoins hebdomadaires en ingrédients",
+        "desc": "Il s’agit de la consommation totale d’ingrédients de l’usine pour une semaine, en tenant compte des limites de production. Les consignes d’achat ci-dessous indiquent où les commander."
       },
       "splitShoppingList": {
         "title": "Liste de courses scindée",
         "desc": "Commande ces ingrédients directement à ton usine pour répartir la commande. C'est la quantité maximale que tes {shelfAmount} rayonnages à palettes peuvent contenir. Cela prend également en compte le nombre de caisses que tu produis. Tu aurais besoin de {requiredAmount} rayonnages pour stocker tous les ingrédients nécessaires à une semaine complète de production.",
         "desc1": "Le reste doit être commandé vers un entrepôt par un ou plusieurs agents d'achat distincts. Retourne à l'<link>aperçu des usines</link> et crée un groupe pour voir la liste complète de ce qu'il faut commander pour cet entrepôt. Tu y verras aussi le plan de livraison pour chaque usine."
-      }
+      },
+      "centralPurchasingNote": "Cette usine utilise les achats centralisés. Ajoute-la à un groupe d’usines et utilise la liste d’achats du groupe pour commander tous les ingrédients à l’entrepôt. Le plan de livraison du groupe approvisionne l’usine chaque jour ; ne passe pas une seconde commande d’ingrédients directement à l’usine.",
+      "splitPurchasingNote": "Cette usine a son propre agent d’achats. Si une liste de courses scindée apparaît ci-dessous, utilise-la pour la commande hebdomadaire directe de l’usine et la liste d’achats du groupe pour la part restante de l’entrepôt. Si tout tient dans l’usine, commande directement l’ensemble de ses besoins hebdomadaires."
     },
     "playthroughForm": {
       "title": "Créer une nouvelle partie",
@@ -583,20 +585,23 @@
     "factoryGroups": {
       "buttonDesc": "Créer un groupe",
       "title": "Groupes d'usines",
-      "desc": "Tu peux regrouper les usines pour avoir un meilleur aperçu par catégorie de produits. Si les usines regroupées n'ont pas suffisamment de rayonnages à palettes, la liste d'achats t'indiquera ce qu'il faut commander pour chaque usine ainsi que pour l'entrepôt afin de couvrir le reste. Le menu des livraisons t'indiquera également ce qui doit être envoyé à chaque usine.",
+      "desc": "Regroupe les usines approvisionnées par un même entrepôt pour réunir leurs listes d’achats hebdomadaires à l’entrepôt et voir les livraisons quotidiennes. Sans agent d’achats, les achats sont centralisés ; avec leur propre agent, les usines achètent directement et utilisent l’entrepôt pour le reste. Les deux stratégies peuvent coexister dans un groupe.",
       "groupEmpty": "Aucune usine dans ce groupe. Glisse une carte d'usine ici pour l'ajouter.",
       "ungroupedTitle": "Usines non regroupées",
       "ungroupedEmpty": "Rien de spécial par ici ! Glisse une carte d'usine ici ou crée une toute nouvelle usine.",
       "deliveries": {
         "buttonDesc": "Livraisons",
         "title": "Plan de livraison",
-        "descNeeded": "Plans de livraison pour chaque usine de ce groupe. Un entrepôt partagé aura besoin de {amount} rayonnages à palettes pour approvisionner toutes les usines de ce groupe.",
-        "descEnough": "Toutes les usines disposent de suffisamment de rayonnages à palettes pour stocker tous les ingrédients nécessaires."
+        "descNeeded": "Livraisons quotidiennes de cet entrepôt à chaque usine. Les achats centralisés couvrent tous les besoins quotidiens en ingrédients ; avec un agent d’achats propre à l’usine, seule la part quotidienne de l’entrepôt est livrée. Les quantités sont arrondies à l’unité supérieure. Rayonnages à palettes nécessaires pour les ingrédients hebdomadaires de l’entrepôt : {amount}.",
+        "descEnough": "Ces usines achètent tous leurs ingrédients directement et n’ont pas besoin de livraisons de l’entrepôt."
       },
       "shoppingList": {
         "title": "Liste d'achats du groupe",
-        "desc": "Voici tous les ingrédients nécessaires pour approvisionner les usines de ce groupe qui ne disposent pas de suffisamment de rayonnages sur place. L'outil calcule cela en fonction des rayonnages disponibles dans les usines afin que tu puisses commander le reste vers un entrepôt séparé.<br></br>Rayonnages nécessaires dans l'entrepôt : <strong>{amount}</strong>"
-      }
+        "desc": "Commande ces ingrédients chaque semaine à l’entrepôt du groupe. Les usines aux achats centralisés y ajoutent tous leurs besoins pour 7 jours. Pour les usines avec leur propre agent d’achats, seule la part restante de l’entrepôt est incluse ; commande leur part directe depuis la liste de courses scindée de l’usine.<br></br>Rayonnages à palettes nécessaires pour les ingrédients hebdomadaires de l’entrepôt : <strong>{amount}</strong>"
+      },
+      "warehouseShoppingDesc": "Commande ces ingrédients chaque semaine à l’entrepôt du groupe. Les usines aux achats centralisés y ajoutent tous leurs besoins pour 7 jours. Pour les usines avec leur propre agent d’achats, seule la part restante de l’entrepôt est incluse ; commande leur part directe depuis la liste de courses scindée de l’usine.",
+      "warehouseDeliveryDesc": "Livraisons quotidiennes de cet entrepôt à chaque usine. Les achats centralisés couvrent tous les besoins quotidiens en ingrédients ; avec un agent d’achats propre à l’usine, seule la part quotidienne de l’entrepôt est livrée. Les quantités sont arrondies à l’unité supérieure.",
+      "warehouseShelvesLabel": "Rayonnages à palettes nécessaires pour les ingrédients hebdomadaires de l’entrepôt :"
     },
     "factoryPlanner": {
       "taxDeductionNote": "Dans la version 1.0, les matières premières et les salaires des employés réduisent le revenu imposable. L’équipement de l’usine, les rayonnages à palettes et les véhicules de livraison éligibles sont déductibles à l’achat, mais les déductions ponctuelles ne sont pas incluses dans cette estimation des impôts récurrents.",
@@ -606,7 +611,7 @@
         "legend": "Informations sur l'usine",
         "name": "Nom de l'usine",
         "calcBasis": "Base de calcul",
-        "palletDesc": "Indique combien de rayonnages à palettes sont disponibles dans cette usine. Définissez cette valeur sur 0 pour commander tous les ingrédients au groupe d'entrepôt.",
+        "palletDesc": "Indique le nombre de rayonnages à palettes réellement présents dans cette usine, y compris ceux utilisés comme réserve pour les livraisons quotidiennes.",
         "dailyAmount": "Pour la livraison quotidienne, il te faut <strong>{count}</strong> {object}.",
         "weeklyAmount": "Pour la livraison hebdomadaire, il te faut <strong>{count}</strong> {object}.",
         "shelfExplanation": "Ajoute au moins un poste de travail pour afficher le nombre de rayonnages à palettes requis.",

@@ -21,7 +21,6 @@ import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
 import { toast } from "sonner";
 import { getFactorySupplyPlan } from "@/lib/utils/getFactorySupplyPlan";
 import { usesSeparatePurchasingAgent } from "@/lib/utils/usesSeparatePurchasingAgent";
-import messages from "@/messages/en.json";
 import SectionWrapper from "@/components/deco/section-wrapper";
 import ImporterTable from "@/components/tables/importer-table";
 import OverviewTableWrapper from "@/components/tools/overview-table-wrapper";
@@ -172,8 +171,8 @@ const FactoryIdPage = () => {
             <p>{t("tools.factoryDetail.shoppingList.desc")}</p>
             <p className="text-muted-foreground">
               {usesSeparatePurchasingAgent(activeFactory)
-                ? messages.tools.factoryDetail.splitPurchasingNote
-                : messages.tools.factoryDetail.centralPurchasingNote}
+                ? t("tools.factoryDetail.splitPurchasingNote")
+                : t("tools.factoryDetail.centralPurchasingNote")}
             </p>
           </hgroup>
 
