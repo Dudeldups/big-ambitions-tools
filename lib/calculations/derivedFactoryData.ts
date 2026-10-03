@@ -254,10 +254,23 @@ export const deriveProductData = (
   );
 
   return Object.entries(productHourlyYieldByProduct).flatMap(
-    ([name, { effectiveRatePerHour, salesAmount }]) => {
+    ([
+      name,
+      {
+        effectiveRatePerHour,
+        effectiveDailyAmount,
+        effectiveWeeklyAmount,
+        salesAmount,
+      },
+    ]) => {
       const product = requireProduct(gameData, name as ProductName);
 
-      const totalAmount = effectiveRatePerHour * timeMult;
+      const totalAmount =
+        calculationPeriod === "weekly"
+          ? effectiveWeeklyAmount
+          : calculationPeriod === "daily"
+            ? effectiveDailyAmount
+            : effectiveRatePerHour;
       const weeklyToPeriodMult = timeMult / (openingHours * 7);
       const retailAmount = Math.min(
         salesAmount * weeklyToPeriodMult,
