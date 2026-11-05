@@ -4,7 +4,7 @@ import { _testFactoryFormValues } from "@/__tests__/test-values";
 import { useAppStore } from "@/lib/stores/appStore";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { Translator } from "@/lib/types";
-import { useForm, UseFormReturn } from "react-hook-form";
+import { useForm, useWatch, UseFormReturn } from "react-hook-form";
 import { useEffect } from "react";
 import FormInformation from "./form-information";
 
@@ -27,7 +27,7 @@ function FormInformationHarness({
   onFormReady?: (form: UseFormReturn<FactoryFormValues>) => void;
 }) {
   const form = useForm<FactoryFormValues>({ defaultValues });
-  const openingHours = form.watch("openingHours");
+  const openingHours = useWatch({ control: form.control, name: "openingHours" });
 
   useEffect(() => {
     onFormReady?.(form);
