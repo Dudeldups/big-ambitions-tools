@@ -7,7 +7,6 @@ type ContactActionResult = {
   success: boolean;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const emailAddress = process.env.RESEND_EMAIL;
 
 export async function sendContactMessage(
@@ -30,6 +29,7 @@ export async function sendContactMessage(
 
   const { name, email, message } = parsed.data;
 
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
     from: "Big Ambitions Tools <noreply@big-ambitions-tools.com>",
     to: emailAddress,

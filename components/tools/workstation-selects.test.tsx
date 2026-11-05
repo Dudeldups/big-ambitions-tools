@@ -11,13 +11,15 @@ import { getGameData } from "@/lib/game/registry";
 import { DEFAULT_GAME_VERSION } from "@/lib/game/versions";
 import { FactoryFormValues } from "@/lib/schemas/factory";
 import { usePlaythroughStore } from "@/lib/stores/playthroughStore";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import WorkstationSelects from "./workstation-selects";
 import React from "react";
 
 vi.mock("next/navigation", () => import("@/__tests__/mocks/next-navigation"));
 vi.mock("next/image", () => ({
   default: (props: React.ComponentProps<"img">) => (
+    // This test mock intentionally renders a native image.
+    // eslint-disable-next-line @next/next/no-img-element
     <img {...props} alt={props.alt} />
   ),
 }));
@@ -138,6 +140,7 @@ function WorkstationSelectsHarness() {
   });
 
   const { control, setValue, getValues } = form;
+  const workstations = useWatch({ control, name: "workstations" });
   const { fields, append, remove } = useFieldArray({
     control,
     name: "workstations",
@@ -163,7 +166,7 @@ function WorkstationSelectsHarness() {
         </div>
       ))}
       <pre data-testid="form-values">
-        {JSON.stringify(form.watch("workstations"), null, 2)}
+        {JSON.stringify(workstations, null, 2)}
       </pre>
     </div>
   );
@@ -196,6 +199,7 @@ function WorkstationSalesAmountHarness() {
   });
 
   const { control, setValue, getValues } = form;
+  const workstations = useWatch({ control, name: "workstations" });
   const { fields, append, remove } = useFieldArray({
     control,
     name: "workstations",
@@ -221,7 +225,7 @@ function WorkstationSalesAmountHarness() {
         </div>
       ))}
       <pre data-testid="sales-form-values">
-        {JSON.stringify(form.watch("workstations"), null, 2)}
+        {JSON.stringify(workstations, null, 2)}
       </pre>
     </div>
   );
